@@ -127,7 +127,7 @@ def build():
 
     doors = {}
     for side, sy in (("l", 1), ("r", -1)):
-        y = sy * (Wd / 2 + 0.004)
+        y = sy * (Wd / 2 + 0.008)
         hinge = empty(f"door_{side}_hinge", (0.06, y, BODY_Z + 0.045))
         d = box(f"door_{side}", (0.06 - 0.05, y, BODY_Z + 0.045),
                 (0.10, 0.008, 0.055), 0.002)
