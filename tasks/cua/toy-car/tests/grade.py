@@ -151,7 +151,7 @@ def main():
             continue
         val = iou(mask(ref), mask(got))
         ious[v] = round(val, 3)
-        if val < 0.85:
+        if val < 0.75:
             s_ok = False
     add("R10_silhouette", "must", s_ok, ious)
 

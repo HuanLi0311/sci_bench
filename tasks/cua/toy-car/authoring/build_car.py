@@ -115,9 +115,13 @@ def build():
         w = cylinder(name, WHEEL_D / 2, WHEEL_W)
         w.location = (x, y, WHEEL_D / 2)
         parent_keep(w, hub)
-        cap = box(name + "_cap", (x, y, WHEEL_D / 2), (0.012, WHEEL_W + 0.002, 0.012), 0.001)
-        cap.location = (x, y - fy * 0.004, WHEEL_D / 2 + 0.012)
-        parent_keep(cap, hub)
+        # tread blocks make a spinning wheel visible in a still frame
+        for k in range(4):
+            a = math.radians(k * 90)
+            tb = box(f"{name}_tread_{k}", (x + 0.026 * math.cos(a), y,
+                                           WHEEL_D / 2 + 0.026 * math.sin(a)),
+                     (0.012, WHEEL_W + 0.002, 0.006), 0.001)
+            parent_keep(tb, hub)
         if fx > 0:
             steer = empty("steer_" + name.split("_")[1], (x, y, WHEEL_D / 2))
             parent_keep(hub, steer)
