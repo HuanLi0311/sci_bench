@@ -65,20 +65,29 @@ def box(name, center, dims, bevel=0.0):
     return ob
 
 
-def bar(name, hinge_pos, angle, length, x):
-    """A leg bar whose origin is on the hinge axis."""
+def parent_keep(ob, parent):
+    """Parent without moving the object in world space."""
+    ob.parent = parent
+    ob.matrix_parent_inverse = parent.matrix_world.inverted()
+
+
+def bar(name, hinge, angle, length):
+    """Leg bar whose midpoint (the pivot) sits on the hinge axis."""
     ob = box(name, (0, 0, 0), (BAR_T, BAR_T, length), 0.002)
     ob.data.transform(Matrix.Rotation(angle, 4, 'X'))
-    ob.location = (x, hinge_pos[0], hinge_pos[1])
+    ob.location = hinge.location.copy()
+    parent_keep(ob, hinge)
     return ob
 
 
-def empty(name, loc):
+def empty(name, loc, parent=None):
     e = bpy.data.objects.new(name, None)
     e.empty_display_type = 'ARROWS'
     e.empty_display_size = 0.06
     e.location = loc
     bpy.context.collection.objects.link(e)
+    if parent is not None:
+        parent_keep(e, parent)
     return e
 
 
@@ -94,68 +103,53 @@ def material(name, color, rough=0.5, metal=0.0):
 
 def build():
     root = empty("chair_root", (0, 0, 0))
-    hinges = {}
-    bars = {}
+    hinges, bars = {}, {}
     for side, x in (("l", -W / 2 + BAR_T / 2), ("r", W / 2 - BAR_T / 2)):
-        h = empty(f"hinge_0{1 if side == 'l' else 2}", (x, 0.0, HINGE_Z))
-        h.parent = root
+        h = empty(f"hinge_0{1 if side == 'l' else 2}", (x, 0.0, HINGE_Z), root)
         hinges[side] = h
-        # bar A leans back, bar B leans forward; both pivot on the hinge axis
-        a = bar(f"lower_leg_{side}_a", (0.0, HINGE_Z), +ALPHA, BAR_LEN, x)
-        b = bar(f"lower_leg_{side}_b", (0.0, HINGE_Z), -ALPHA, BAR_LEN, x)
-        for ob in (a, b):
-            ob.parent = h
-            ob.matrix_parent_inverse = Matrix.Identity(4)
-            ob.location = (x, 0.0, HINGE_Z)
+        a = bar(f"lower_leg_{side}_a", h, +ALPHA, BAR_LEN)
+        b = bar(f"lower_leg_{side}_b", h, -ALPHA, BAR_LEN)
         bars[side] = (a, b)
 
-    # seat: 0.58 x 0.62, top at 0.45, hinged to bar A's top on the left side
+    # seat: 0.62 x 0.58, top at 0.45; pivots at its rear edge on bar A's top
     seat = box("seat", (0, 0, SEAT_Z - PANEL_T / 2), (W - 0.02, D, PANEL_T), 0.003)
-    hinge3 = empty("hinge_03", (-W / 2 + BAR_T / 2, D / 2, SEAT_Z - PANEL_T / 2))
-    hinge3.parent = bars["l"][0]
-    hinge3.location = (-W / 2 + BAR_T / 2, D / 2, 0.0)
-    hinge3.rotation_mode = 'XYZ'
-    seat.parent = hinge3
-    seat.location = (W / 2 - BAR_T / 2, -D / 2, 0.0)
+    hinge3 = empty("hinge_03", (-W / 2 + BAR_T / 2, D / 2, SEAT_Z - PANEL_T), bars["l"][0])
+    parent_keep(seat, hinge3)
 
-    # back: hinged at the seat's rear edge
+    # back: stands on the seat's rear edge, pivots there
     back = box("back", (0, 0, 0), (W - 0.02, PANEL_T, H - SEAT_Z - 0.02), 0.003)
-    hinge4 = empty("hinge_04", (0, D / 2, SEAT_Z))
-    hinge4.parent = seat
-    hinge4.location = (0, D / 2, PANEL_T / 2)
-    back.parent = hinge4
-    back.location = (0, 0, (H - SEAT_Z) / 2)
+    back.location = (0, D / 2 - PANEL_T / 2, (SEAT_Z + H) / 2 - 0.01)
+    hinge4 = empty("hinge_04", (0, D / 2, SEAT_Z), seat)
+    parent_keep(back, hinge4)
 
-    # lock pin, only visible in the locked state
-    pin = box("lock_pin", (-W / 2 + BAR_T / 2, D / 2 - 0.05, SEAT_Z + 0.03),
-              (0.02, 0.02, 0.12), 0.002)
-    pin.parent = hinge3
-    pin.location = (0, -0.05, 0.03)
+    # lock pin: only shown in the locked state
+    pin = box("lock_pin", (-W / 2 + BAR_T / 2, D / 2 - 0.06, SEAT_Z + 0.02),
+              (0.02, 0.02, 0.1), 0.002)
+    parent_keep(pin, hinge3)
 
-    for ob in [*bars["l"], *bars["r"], seat, back, pin]:
-        ob.data.materials.append(
-            material("mat_oak", (0.30, 0.22, 0.14, 1), 0.55) if ob in (seat, back)
-            else material("mat_steel", (0.35, 0.36, 0.38, 1), 0.35, 1.0))
+    mat_oak = material("mat_oak", (0.30, 0.22, 0.14, 1), 0.55)
+    mat_steel = material("mat_steel", (0.35, 0.36, 0.38, 1), 0.35, 1.0)
+    for ob in [*bars["l"], *bars["r"]]:
+        ob.data.materials.append(mat_steel)
+    for ob in (seat, back):
+        ob.data.materials.append(mat_oak)
+    pin.data.materials.append(mat_steel)
 
     return root, hinges, bars, seat, back, hinge3, hinge4, pin
 
 
 def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
-    """Frame 0 unfolded, 60 folded; hinges carry the rotation."""
     sc = bpy.context.scene
-    for side, h in hinges.items():
-        h.rotation_mode = 'XYZ'
-    # quaternions per bar (their own origins are on the hinge axis)
     for side, (a, b) in bars.items():
         a.rotation_mode = b.rotation_mode = 'XYZ'
     hinge3.rotation_mode = 'XYZ'
     hinge4.rotation_mode = 'XYZ'
 
-    def key(frame, bar_rot, seat_rot, back_rot, pin_hide):
+    def key(frame, bar_rot, seat_rot, back_rot):
         sc.frame_set(frame)
         for side, (a, b) in bars.items():
-            a.rotation_euler = (bar_rot, 0, 0)
-            b.rotation_euler = (-bar_rot, 0, 0)
+            a.rotation_euler = (-bar_rot, 0, 0)   # +ALPHA -> vertical
+            b.rotation_euler = (+bar_rot, 0, 0)   # -ALPHA -> vertical
             a.keyframe_insert("rotation_euler", frame=frame)
             b.keyframe_insert("rotation_euler", frame=frame)
         hinge3.rotation_euler = (seat_rot, 0, 0)
@@ -163,13 +157,11 @@ def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
         hinge4.rotation_euler = (back_rot, 0, 0)
         hinge4.keyframe_insert("rotation_euler", frame=frame)
 
-    # bar A leans +ALPHA; rotating it by -ALPHA makes it vertical, and bar B
-    # needs +ALPHA. The seat swings up about its hinge, the back folds onto it.
-    key(0, 0.0, 0.0, 0.0, False)
-    key(20, -ALPHA * 0.5, math.radians(-45), math.radians(35), False)
-    key(40, -ALPHA, math.radians(-80), math.radians(80), False)
-    key(60, -ALPHA, math.radians(-90), math.radians(90), False)
-    # pin hidden in every rendered state except the locked one (frame 0)
+    key(0, 0.0, 0.0, 0.0)
+    key(20, ALPHA * 0.5, math.radians(40), math.radians(-35))
+    key(40, ALPHA, math.radians(80), math.radians(-80))
+    key(60, ALPHA, math.radians(90), math.radians(-90))
+
     for f, hidden in ((0, False), (1, True), (59, True), (60, True)):
         sc.frame_set(f)
         pin.hide_render = hidden
