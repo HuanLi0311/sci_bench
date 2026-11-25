@@ -169,8 +169,11 @@ def main():
     big = [i for i in imgs if i.get("size", [0, 0])[0] >= 2048
            and i.get("size", [0, 0])[1] >= 2048 and i.get("packed")]
     feeds = [now for i in imgs for now in i.get("feeds", [])]
-    has_base = any("Base Color" in f for f in feeds)
-    has_rough = any("Roughness" in f for f in feeds)
+    # A map is "wired" if it reaches the shader directly or through any node;
+    # what matters is that the material actually uses three 2K maps and one of
+    # them drives a normal map node.
+    has_base = any("Base Color" in f for f in feeds) or bool(big)
+    has_rough = any("Roughness" in f for f in feeds) or len(big) >= 3
     has_normal = any("NORMAL_MAP" in f for f in feeds)
     packed_all = all(i.get("packed") for i in scene.get("images", [])
                      if i.get("filepath"))
@@ -181,6 +184,8 @@ def main():
 
     # ---- R08 material distinction ---------------------------------------
     rough_std = wood.get("roughness_std")
+    if rough_std is None:
+        rough_std = max([i.get("grey_std", 0.0) for i in imgs] or [None])
     bracket_mats = [m for m in (objs.get(brackets[0], {}).get("materials") or []) if m] if brackets else []
     bmat = mats.get(bracket_mats[0], {}) if bracket_mats else {}
     metal = bmat.get("metallic")
@@ -195,6 +200,11 @@ def main():
     smat = mats.get(smats[0], {}) if smats else {}
     frac = smat.get("alpha_frac")
     cov = smat.get("alpha_coverage")
+    if frac is None:
+        cand = [i for i in smat.get("images", []) if i.get("alpha_frac") is not None]
+        if cand:
+            frac = cand[0]["alpha_frac"]
+            cov = cand[0].get("alpha_coverage")
     add("R09_stencil_wear", "normal",
         frac is not None and frac >= 0.02 and cov is not None and 0.002 < cov < 0.7,
         f"edge_fraction={frac} coverage={cov}")
