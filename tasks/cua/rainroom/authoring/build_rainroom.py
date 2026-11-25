@@ -87,20 +87,21 @@ def mat(name, color, rough=0.5, metal=0.0, transmission=0.0, ior=1.45):
 
 
 def build_room():
+    WH = H - T  # clear wall height; floor slab below, ceiling slab above
     parts = [box("floor", (0, 0, -T / 2), (W, D, T)),
-             box("ceiling", (0, 0, H + T / 2), (W, D, T)),
-             box("wall_back", (0, D / 2 - T / 2, H / 2), (W, T, H)),
-             box("wall_front", (0, -D / 2 + T / 2, H / 2), (W, T, H)),
-             box("wall_left", (-W / 2 + T / 2, 0, H / 2), (T, D, H))]
+             box("ceiling", (0, 0, WH + T / 2), (W, D, T)),
+             box("wall_back", (0, D / 2 - T / 2, WH / 2), (W, T, WH)),
+             box("wall_front", (0, -D / 2 + T / 2, WH / 2), (W, T, WH)),
+             box("wall_left", (-W / 2 + T / 2, 0, WH / 2), (T, D, WH))]
     # right wall with a 1.2 x 1.4 window opening
     win_w, win_h, win_z = 1.2, 1.4, 1.5
     side = (D - win_w) / 2
-    parts.append(box("wall_right_lo", (W / 2 - T / 2, -D / 2 + side / 2, H / 2),
-                     (T, side, H)))
-    parts.append(box("wall_right_hi", (W / 2 - T / 2, D / 2 - side / 2, H / 2),
-                     (T, side, H)))
-    parts.append(box("wall_right_top", (W / 2 - T / 2, 0, (win_z + win_h / 2 + H) / 2),
-                     (T, win_w, H - win_z - win_h / 2)))
+    parts.append(box("wall_right_lo", (W / 2 - T / 2, -D / 2 + side / 2, WH / 2),
+                     (T, side, WH)))
+    parts.append(box("wall_right_hi", (W / 2 - T / 2, D / 2 - side / 2, WH / 2),
+                     (T, side, WH)))
+    parts.append(box("wall_right_top", (W / 2 - T / 2, 0, (win_z + win_h / 2 + WH) / 2),
+                     (T, win_w, WH - win_z - win_h / 2)))
     parts.append(box("wall_right_sill", (W / 2 - T / 2, 0, (win_z - win_h / 2) / 2),
                      (T, win_w, win_z - win_h / 2)))
     bpy.ops.object.select_all(action='DESELECT')
