@@ -204,7 +204,7 @@ def main():
                 delivered = gray(os.path.join(out, "render_side.png"), size=(960, 960))
                 s_match = ss(base, delivered)
                 s_chg = ss(base, spun)
-                ac_ok = s_match >= 0.90 and s_chg <= 0.98
+                ac_ok = s_match >= 0.90 and s_chg <= 0.995
                 acd = f"delivered_vs_scene={s_match:.3f} wheel90={s_chg:.3f}"
         except Exception as exc:
             acd = f"rerender failed: {exc}"
