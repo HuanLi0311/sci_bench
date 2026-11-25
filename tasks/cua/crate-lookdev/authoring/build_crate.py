@@ -120,6 +120,7 @@ def save_image(name, rgb, path, colorspace='sRGB'):
     rgba = np.ones((n, n, 4), dtype=np.float32)
     rgba[..., :3] = rgb
     img.pixels.foreach_set(rgba.ravel())
+    img.update()
     img.filepath_raw = path
     img.file_format = 'PNG'
     img.colorspace_settings.name = colorspace
@@ -135,6 +136,7 @@ def save_alpha_image(name, alpha, rgb, path):
     rgba[..., :3] = rgb
     rgba[..., 3] = alpha
     img.pixels.foreach_set(rgba.ravel())
+    img.update()
     img.filepath_raw = path
     img.file_format = 'PNG'
     img.colorspace_settings.name = 'sRGB'

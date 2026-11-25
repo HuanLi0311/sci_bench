@@ -260,11 +260,11 @@ def make_hdri(path, w=1024, h=512):
     # write Radiance .hdr (flat RGBE)
     def rgbe(x):
         v = np.maximum(x[..., 0], np.maximum(x[..., 1], x[..., 2]))
-        e = np.zeros_like(v)
-        nz = v > 1e-8
-        mant, exp = np.frexp(v)
-        e[nz] = exp[nz]
-        scale = np.where(nz, mant * 256.0 / np.where(v > 1e-8, v, 1.0), 0.0)
+        nz = v > 1e-32
+        mant, exp = np.frexp(np.where(nz, v, 1.0))
+        # Radiance: mantissa scaled to 0..255, exponent biased by 128
+        scale = np.where(nz, mant * 256.0 / np.where(nz, v, 1.0), 0.0)
+        e = np.where(nz, np.clip(exp + 128, 0, 255), 0)
         r = np.clip(x[..., 0] * scale, 0, 255).astype(np.uint8)
         g = np.clip(x[..., 1] * scale, 0, 255).astype(np.uint8)
         b = np.clip(x[..., 2] * scale, 0, 255).astype(np.uint8)
