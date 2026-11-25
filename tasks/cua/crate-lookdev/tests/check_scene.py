@@ -83,7 +83,7 @@ def material_report(mat):
             sinks = []
             for link in nt.links:
                 if link.from_node == n:
-                    sinks.append(link.to_socket.name)
+                    sinks.append(f"{link.to_node.type}:{link.to_socket.name}")
             info["feeds"] = sinks
             rep["images"].append(info)
             try:

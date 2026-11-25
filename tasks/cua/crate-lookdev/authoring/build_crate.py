@@ -287,7 +287,8 @@ def build_lid():
     bm = bmesh.new()
     bmesh.ops.create_cube(bm, size=1.0)
     for v in bm.verts:
-        v.co = Vector((v.co.x * W, (v.co.y - 0.5) * D, (v.co.z + 0.5) * T))
+        v.co = Vector((v.co.x * W, (v.co.y - 0.5) * D,
+                       0.0005 + (v.co.z + 0.5) * T))
     bm.to_mesh(me)
     bm.free()
     ob = bpy.data.objects.new("crate_lid", me)
