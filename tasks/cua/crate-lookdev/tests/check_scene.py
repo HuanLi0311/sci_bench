@@ -127,7 +127,13 @@ def overlap_test(lid, others, angles):
         if ob.name == lid.name:
             continue
         ev = ob.evaluated_get(deps)
-        others_bvh.append(BVHTree.FromObject(ev, deps))
+        me_other = ev.to_mesh()
+        mw = ev.matrix_world
+        verts_other = [mw @ v.co for v in me_other.vertices]
+        faces_other = [tuple(p.vertices) for p in me_other.polygons]
+        ev.to_mesh_clear()
+        others_bvh.append(BVHTree.FromPolygons(verts_other, faces_other,
+                                               all_triangles=False, epsilon=0.0))
 
     ev = lid.evaluated_get(deps)
     me = ev.to_mesh()

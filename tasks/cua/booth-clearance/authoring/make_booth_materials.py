@@ -82,8 +82,8 @@ def make_plan(out_dir):
             fontsize=9, ha="center")
     # furniture footprints, placed as the reference does
     layout = {
-        "cabinet_01": (-500, -1750, 1200, 500),
-        "cabinet_02": (1500, 1750, 1200, 500),
+        "cabinet_01": (1800, -1750, 1200, 500),
+        "cabinet_02": (-500, 1750, 1200, 500),
         "counter": (-2200, -1500, 1800, 600),
         "plinth_01": (2200, -1200, 800, 800),
         "plinth_02": (2200, 0, 800, 800),

@@ -90,8 +90,8 @@ def build_shell():
 
 def build_furniture():
     objs = {}
-    objs["cabinet_01"] = box("cabinet_01", (-0.5, -1.75, 1.0), (1.2, 0.5, 2.0), 0.006)
-    objs["cabinet_02"] = box("cabinet_02", (1.5, 1.75, 1.0), (1.2, 0.5, 2.0), 0.006)
+    objs["cabinet_01"] = box("cabinet_01", (1.8, -1.75, 1.0), (1.2, 0.5, 2.0), 0.006)
+    objs["cabinet_02"] = box("cabinet_02", (-0.5, 1.75, 1.0), (1.2, 0.5, 2.0), 0.006)
     objs["counter"] = box("counter", (-2.0, -1.5, 0.5), (1.8, 0.6, 1.0), 0.006)
     plinths = []
     for i, y in enumerate((-1.2, 0.0, 1.2)):

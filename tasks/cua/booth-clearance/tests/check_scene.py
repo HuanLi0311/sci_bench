@@ -41,6 +41,21 @@ def aabb_distance(a, b):
     return d ** 0.5
 
 
+def world_bvh(ob, deps):
+    """BVH built from world-space vertices.
+
+    BVHTree.FromObject keeps the object's local space, so a ray cast in world
+    coordinates silently tests the wrong volume for anything not at the origin.
+    """
+    ev = ob.evaluated_get(deps)
+    me = ev.to_mesh()
+    mw = ev.matrix_world
+    verts = [mw @ v.co for v in me.vertices]
+    faces = [tuple(p.vertices) for p in me.polygons]
+    ev.to_mesh_clear()
+    return BVHTree.FromPolygons(verts, faces, all_triangles=False, epsilon=0.0)
+
+
 def poly_count(ob):
     deps = bpy.context.evaluated_depsgraph_get()
     ev = ob.evaluated_get(deps)
@@ -154,7 +169,7 @@ def main():
         occluders = [o for o in mesh_objs
                      if o.name not in ("product_01", "product_02", "product_03",
                                        "booth_shell", "entrance_zone")]
-        trees = [BVHTree.FromObject(o.evaluated_get(deps), deps) for o in occluders]
+        trees = [world_bvh(o, deps) for o in occluders]
         origin = cam.matrix_world.translation.copy()
         for pname in ("product_01", "product_02", "product_03"):
             a = rep["objects"].get(pname, {}).get("aabb")
