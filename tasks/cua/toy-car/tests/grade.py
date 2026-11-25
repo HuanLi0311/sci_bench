@@ -65,7 +65,7 @@ def mask(p):
 
 def mask_file(p):
     a = np.asarray(Image.open(p).convert("L").resize((240, 240), Image.LANCZOS))
-    return a < 128
+    return a > 128
 
 
 def iou(a, b):
