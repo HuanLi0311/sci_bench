@@ -35,32 +35,29 @@ assert len(DUP_SOURCES) == N_TOTAL - N_REAL
 
 
 def build():
+    """An almost-counter.
+
+    The transition table follows (s + 1 + v) % N_REAL everywhere except in five
+    states, where one or two edges are rerouted. The output follows s % 8, so a
+    model that reads the file sees an obvious pattern covering most of it and
+    is invited to compress. The exceptions are what makes the compression
+    wrong, and they are few enough to survive a careless look.
+    """
     rng = random.Random(SEED)
 
-    # Transition table over the 30 real states, and a 3-bit output for each.
-    # The output alone cannot identify a state (only 8 values), so uniqueness
-    # is enforced on the (output, successors) signature instead.
-    while True:
-        trans = [[rng.randrange(N_REAL) for _ in range(N_INPUTS)]
-                 for _ in range(N_REAL)]
-        out = [rng.randrange(8) for _ in range(N_REAL)]
-        sigs = {(out[s], tuple(trans[s])) for s in range(N_REAL)}
-        if len(sigs) == N_REAL:          # no accidental equivalence
-            break
+    trans = [[(s + 1 + v) % N_REAL for v in range(N_INPUTS)]
+             for s in range(N_REAL)]
+    out = [s % 8 for s in range(N_REAL)]
 
-    # Every state must be reachable from the reset state, or the one-hot
-    # baseline contains dead logic and the cell counts stop meaning anything.
-    seen = {0}
-    frontier = [0]
-    while frontier:
-        s = frontier.pop()
-        for t in trans[s]:
-            if t not in seen:
-                seen.add(t)
-                frontier.append(t)
-    if len(seen) != N_REAL:
-        raise SystemExit("state graph is not fully reachable (%d/%d)"
-                         % (len(seen), N_REAL))
+    # five states carry the exceptions
+    irregular = rng.sample(range(1, N_REAL), 5)
+    n_exc = 0
+    for s in irregular:
+        for v in rng.sample(range(N_INPUTS), rng.choice((1, 1, 2))):
+            t = rng.randrange(N_REAL)
+            if t != trans[s][v]:
+                trans[s][v] = t
+                n_exc += 1
 
     # duplicates: index -> source real state
     dup = {N_REAL + i: src for i, src in enumerate(DUP_SOURCES)}
@@ -86,7 +83,27 @@ def build():
     def output(state):
         return out[dup.get(state, state)]
 
-    return trans, out, dup, succ, output
+    # reachability over the 40-state machine
+    seen = {0}
+    frontier = [0]
+    while frontier:
+        s = frontier.pop()
+        for v in range(N_INPUTS):
+            t = succ(s, v)
+            if t not in seen:
+                seen.add(t)
+                frontier.append(t)
+    if len(seen) != N_TOTAL:
+        raise SystemExit("only %d/%d states reachable" % (len(seen), N_TOTAL))
+
+    # every real state must be distinguishable from every other, or the
+    # reference machine has fewer than N_REAL states and the thresholds move
+    sigs = {(out[s], tuple(trans[s])) for s in range(N_REAL)}
+    if len(sigs) != N_REAL:
+        raise SystemExit("only %d/%d states distinguishable"
+                         % (len(sigs), N_REAL))
+
+    return trans, out, dup, succ, output, irregular, n_exc
 
 
 def emit_verilog(path, trans, out, dup, succ, output, mod="fsm"):
@@ -154,7 +171,7 @@ def emit_reference(path, trans, out, dup, succ, output):
 
 
 def main():
-    trans, out, dup, succ, output = build()
+    trans, out, dup, succ, output, irregular, n_exc = build()
 
     env_rtl = os.path.join(ROOT, "environment", "rtl")
     sol = os.path.join(ROOT, "solution")
