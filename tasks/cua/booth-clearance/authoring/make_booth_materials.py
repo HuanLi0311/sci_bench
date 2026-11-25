@@ -184,6 +184,23 @@ def make_logo(path):
         fh.write(svg)
 
 
+def make_logo_png(path):
+    """Raster version of the logo, for use as a decal texture."""
+    fig, ax = plt.subplots(figsize=(9, 3), dpi=200)
+    ax.add_patch(Polygon([[0.4, 1.5], [1.6, 0.4], [2.8, 1.5], [1.6, 2.6]],
+                         closed=True, fc=BRAND["primary"]))
+    ax.add_patch(Polygon([[1.6, 0.9], [2.2, 1.5], [1.6, 2.1], [1.0, 1.5]],
+                         closed=True, fc=BRAND["secondary"]))
+    ax.text(3.2, 1.5, "VOLTA", fontsize=64, fontweight="bold",
+            color=BRAND["primary"], va="center")
+    ax.set_xlim(0, 9)
+    ax.set_ylim(0, 3)
+    ax.axis("off")
+    fig.subplots_adjust(0, 0, 1, 1)
+    fig.savefig(path, transparent=True)
+    plt.close(fig)
+
+
 def make_constraints(path):
     doc = SimpleDocTemplate(path, pagesize=A4)
     st = getSampleStyleSheet()
@@ -236,6 +253,7 @@ def main():
     make_tables(os.path.join(materials, "tables"))
     make_brand(os.path.join(materials, "brand", "brand_sheet.pdf"))
     make_logo(os.path.join(materials, "brand", "logo.svg"))
+    make_logo_png(os.path.join(materials, "brand", "logo.png"))
     make_constraints(os.path.join(materials, "drawings", "constraints.pdf"))
     write_licence(os.path.join(materials, "LICENSE.txt"))
     print("booth materials written to", materials)
