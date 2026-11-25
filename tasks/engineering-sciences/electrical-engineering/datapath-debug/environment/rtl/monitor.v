@@ -4,7 +4,6 @@
 // Passive throughput monitor. Taps one stream link and counts accepted beats
 // and cycles spent stalled with valid high.
 //
-// §7: passive observers do not declare a revision.
 
 `timescale 1ns/1ps
 module monitor(

@@ -4,7 +4,6 @@
 // Passive checksum tap. Folds every accepted beat into an 8-bit signature so
 // that a run can be compared between builds. It observes, it never gates.
 //
-// Declares SPEC revision 1.0.
 
 `timescale 1ns/1ps
 module checksum8(

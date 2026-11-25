@@ -3,7 +3,6 @@
 //
 // Sequence generator. Emits NBEATS beats of an incrementing sequence.
 //
-// Declares SPEC revision 1.1.
 
 `timescale 1ns/1ps
 module axis_source #(

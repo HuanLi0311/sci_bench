@@ -11,7 +11,6 @@
 // The ready line is deliberately irregular so that the upstream is exercised
 // with a mix of drained and stalled conditions.
 //
-// Declares SPEC revision 1.0.
 
 `timescale 1ns/1ps
 module seq_check(

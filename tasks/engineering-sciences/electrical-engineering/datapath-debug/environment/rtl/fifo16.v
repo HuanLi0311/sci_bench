@@ -3,7 +3,6 @@
 //
 // 16-deep synchronous FIFO.
 //
-// Declares SPEC revision 1.0.
 
 `timescale 1ns/1ps
 module fifo16(

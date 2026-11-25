@@ -41,8 +41,7 @@ which suggests the stages disagree about something that only shows up when
 they run against each other. Nothing in the unit tests exercises a busy
 system, and none of them runs long enough to see the second half of a run.
 
-`SPEC.md` is the normative reference. Note that it is a revision history and
-that the modules were written at different times.
+`SPEC.md` is the normative reference.
 
 ## What we need
 

@@ -1,8 +1,8 @@
 # Stream Interface Specification — revision history
 
-This file is the normative reference for every module in `rtl/`. Each module
-declares the revision it was written against in its file header, and a module
-is conformant only if its behaviour matches that revision.
+This file is the normative reference for every module in `rtl/`. The revision
+each module was written against is recorded in `rtl/MANIFEST.txt`; a module is
+conformant only if its behaviour matches the revision it is recorded against.
 
 The current system revision is **1.1**. Modules still on 1.0 are expected to
 be migrated.
@@ -78,10 +78,3 @@ non-conformant: the two revisions are not interoperable, and no combination
 of a 1.0 endpoint and a 1.1 endpoint on the same link is correct.
 
 ---
-
-## Changelog
-
-| rev | change |
-|---|---|
-| 1.0 | initial |
-| 1.1 | §4.1 `full` changed from blocking to advisory; §5 payload widened from 12 to 16 bits |
