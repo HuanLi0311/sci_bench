@@ -23,7 +23,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # here and /usr/local/bin/nvm is a no-op shim: the installer's `command -v nvm`
 # probe passes, and its `nvm install` / `npm i -g @openai/codex` calls become
 # harmless. Node comes from nodejs.org (reachable), not apt's Node 18.
-RUN curl -fsSL --retry 4 -o /tmp/node.tar.xz \
+RUN apt-get update && apt-get install -y --no-install-recommends curl xz-utils \
+    && rm -rf /var/lib/apt/lists/* \
+    && curl -fsSL --retry 4 -o /tmp/node.tar.xz \
         https://nodejs.org/dist/v22.12.0/node-v22.12.0-linux-x64.tar.xz \
     && tar -xJf /tmp/node.tar.xz -C /opt \
     && rm -f /tmp/node.tar.xz \
