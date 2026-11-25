@@ -1,0 +1,204 @@
+"""QC runner for the CUA task pack.
+
+    python3 tools/sanity_check.py [task ...]
+
+Runs every check in SANITY_LIST.md against each task under tasks/cua/ and
+prints a table. Exits non-zero if any check fails. Docker must be available;
+runs inside WSL (`wsl.exe -e bash -lc 'python3 ...'`).
+"""
+import json
+import os
+import re
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REQUIRED = [
+    "task.toml", "instruction.md", "README.md",
+    "environment/Dockerfile", "tests/Dockerfile", "tests/test.sh",
+    "tests/grade.py", "tests/check_scene.py", "tests/rerender.py",
+    "solution/solve.sh",
+    "authoring/provenance/SOURCES.md", "authoring/calibration/results.md",
+]
+
+
+def sh(cmd, timeout=1800, cwd=None):
+    return subprocess.run(cmd, shell=True, capture_output=True, text=True,
+                          timeout=timeout, cwd=cwd)
+
+
+def check_layout(t):
+    missing = [f for f in REQUIRED if not os.path.exists(os.path.join(t, f))]
+    return (not missing), f"missing={missing}" if missing else "ok"
+
+
+def toml_get(text, section, key):
+    m = re.search(rf"^\[{re.escape(section)}\]\s*$(.*?)(?=^\[|\Z)", text,
+                  re.M | re.S)
+    if not m:
+        return None
+    km = re.search(rf'^{re.escape(key)}\s*=\s*(.+)$', m.group(1), re.M)
+    if not km:
+        return None
+    return km.group(1).strip().strip('"')
+
+
+def check_toml(t, name):
+    p = os.path.join(t, "task.toml")
+    if not os.path.exists(p):
+        return False, "no task.toml"
+    text = open(p).read()
+    problems = []
+    if 'schema_version = "1.4"' not in text:
+        problems.append("schema")
+    if f"terminal-bench-science/{name}" not in text:
+        problems.append("name")
+    for sec, key in (("verifier", "environment_mode"), ("agent", "timeout_sec"),
+                     ("verifier", "timeout_sec"), ("task", "description"),
+                     ("task", "authors"), ("task", "keywords")):
+        if toml_get(text, sec, key) is None:
+            problems.append(f"{sec}.{key}")
+    if toml_get(text, "verifier", "environment_mode") != "separate":
+        problems.append("mode!=separate")
+    return (not problems), problems or "ok"
+
+
+def check_suffix(t):
+    p = os.path.join(t, "instruction.md")
+    text = open(p).read() if os.path.exists(p) else ""
+    m = re.search(r"You have (\d+) seconds to complete this task\.", text)
+    if not m:
+        return False, "no suffix"
+    n = int(m.group(1))
+    agent = toml_get(open(os.path.join(t, "task.toml")).read(), "agent", "timeout_sec")
+    want = int(float(agent)) if agent else None
+    return (n == want), f"{n} vs {want}"
+
+
+def check_materials(t):
+    mdir = os.path.join(t, "environment", "materials")
+    if not os.path.isdir(mdir):
+        return False, "no materials"
+    files = [f for _, _, fs in os.walk(mdir) for f in fs]
+    return (len(files) >= 2 and os.path.exists(os.path.join(mdir, "LICENSE.txt")),
+            f"{len(files)} files")
+
+
+def image_exists(tag):
+    return sh(f"docker image inspect {tag} >/dev/null 2>&1").returncode == 0
+
+
+def build(t, kind, tag):
+    ctx = os.path.join(t, kind)
+    r = sh(f"docker build -q -t {tag} {ctx}", timeout=3600)
+    return r.returncode == 0, (r.stderr or "")[-300:]
+
+
+def check_isolation(tag):
+    r = sh(f"docker run --rm {tag} bash -lc "
+           "'test -d /app/solution && echo LEAK; test -d /app/tests && echo LEAK; "
+           "ls /app/out 2>/dev/null | wc -l'", timeout=300)
+    out = (r.stdout or "").strip().splitlines()
+    leak = any("LEAK" in line for line in out)
+    empty = out and out[-1].strip() == "0"
+    return (not leak and empty), f"leak={leak} out_files={out[-1] if out else '?'}"
+
+
+def check_oracle(t, tests_tag):
+    sol = os.path.join(t, "solution")
+    r = sh(f'docker run --rm -v "{sol}":/app/out {tests_tag} bash /tests/test.sh /app/out',
+           timeout=3600)
+    m = re.search(r'"reward":\s*(\d)', r.stdout or "")
+    if not m:
+        return False, "no reward in output"
+    reward = int(m.group(1))
+    failed = re.findall(r'"id": "([^"]+)"[^}]*?"pass": false', r.stdout or "", re.S)
+    return reward == 1, f"reward={reward} failed={failed}"
+
+
+def check_deliverables(t):
+    sol = os.path.join(t, "solution")
+    text = open(os.path.join(t, "instruction.md")).read()
+    names = set(re.findall(r"`([a-z0-9_]+\.(?:png|blend|json))`", text))
+    missing = [n for n in names if not os.path.exists(os.path.join(sol, n))]
+    return (not missing), (f"missing={missing}" if missing else f"{len(names)} files")
+
+
+def check_anticheat(t):
+    g = open(os.path.join(t, "tests", "grade.py")).read()
+    return ('"critical"' in g, "critical check present" if '"critical"' in g
+            else "no critical check")
+
+
+def check_negative(t):
+    p = os.path.join(t, "authoring", "calibration", "results.md")
+    if not os.path.exists(p):
+        return False, "no calibration file"
+    text = open(p).read().lower()
+    return ("reward 0" in text or "| 0 |" in text or "scores 0" in text), \
+        "recorded" if ("reward 0" in text or "| 0 |" in text) else "not recorded"
+
+
+def check_manifest(t):
+    p = os.path.join(t, "solution", "manifest.json")
+    if not os.path.exists(p):
+        return False, "no manifest"
+    man = json.load(open(p))
+    assets = man.get("assets", [])
+    ok = all(a.get("source") and a.get("license") for a in assets)
+    return ok, f"{len(assets)} assets"
+
+
+def main():
+    tasks = sys.argv[1:]
+    base = os.path.join(ROOT)
+    if not tasks:
+        tasks = sorted(d for d in os.listdir(base)
+                       if os.path.isdir(os.path.join(base, d))
+                       and os.path.exists(os.path.join(base, d, "task.toml")))
+    rows = []
+    for name in tasks:
+        t = os.path.join(base, name)
+        env_tag = f"cua-qc-{name}-env"
+        tests_tag = f"cua-qc-{name}-tests"
+        results = {}
+        results["1 layout"] = check_layout(t)
+        results["2 task.toml"] = check_toml(t, name)
+        results["3 suffix"] = check_suffix(t)
+        results["4 materials"] = check_materials(t)
+        ok, msg = build(t, "environment", env_tag) if not image_exists(env_tag) else (True, "cached")
+        results["5 env image"] = (ok, msg)
+        results["5b isolation"] = check_isolation(env_tag) if ok else (False, "no image")
+        ok_t, msg_t = build(t, "tests", tests_tag) if not image_exists(tests_tag) else (True, "cached")
+        results["6 tests image"] = (ok_t, msg_t)
+        results["7 oracle"] = check_oracle(t, tests_tag) if ok_t else (False, "no image")
+        results["8 deliverables"] = check_deliverables(t)
+        results["9 anti-cheat"] = check_anticheat(t)
+        results["10 negative"] = check_negative(t)
+        results["11 licences"] = check_manifest(t)
+        rows.append((name, results))
+
+    width = max(len(k) for _, r in rows for k in r)
+    names = [n for n, _ in rows]
+    header = "check".ljust(width + 2) + "  ".join(n[:16].ljust(16) for n in names)
+    print(header)
+    print("-" * len(header))
+    failures = 0
+    for key in rows[0][1]:
+        cells = []
+        for _, r in rows:
+            ok, msg = r[key]
+            cells.append(("PASS " if ok else "FAIL ").ljust(16))
+            if not ok:
+                failures += 1
+        print(key.ljust(width + 2) + "  ".join(cells))
+    print()
+    for name, r in rows:
+        for key, (ok, msg) in r.items():
+            if not ok:
+                print(f"{name} / {key}: {msg}")
+    return 1 if failures else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
