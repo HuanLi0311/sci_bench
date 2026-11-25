@@ -34,7 +34,7 @@ def main():
 
     cab = bpy.data.objects.get("cabinet_01")
     if cab is not None:
-        cab.location.x += 0.5
+        cab.location.y += 0.5
     bpy.context.view_layer.update()
 
     sc.render.filepath = moved_png
