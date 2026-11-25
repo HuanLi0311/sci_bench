@@ -115,7 +115,7 @@ def build():
         w = cylinder(name, WHEEL_D / 2, WHEEL_W)
         parent_keep(w, hub)
         w.location = (0, 0, 0)
-        hub.parent = body
+        parent_keep(hub, body)
         wheels[name] = (w, hub, fx, fy)
         parts[name] = w
     parts["wheels"] = wheels
@@ -126,7 +126,7 @@ def build():
         hinge = empty(f"door_{side}_hinge", (0.06, y, BODY_Z + 0.045))
         d = box(f"door_{side}", (0, 0, 0), (0.10, 0.008, 0.055), 0.002)
         parent_keep(d, hinge)
-        hinge.parent = body
+        parent_keep(hinge, body)
         doors[side] = (d, hinge)
         parts[f"door_{side}"] = d
     parts["doors"] = doors
