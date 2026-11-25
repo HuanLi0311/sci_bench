@@ -67,6 +67,7 @@ def box(name, center, dims, bevel=0.0):
 
 def parent_keep(ob, parent):
     """Parent without moving the object in world space."""
+    bpy.context.view_layer.update()
     ob.parent = parent
     ob.matrix_parent_inverse = parent.matrix_world.inverted()
 
