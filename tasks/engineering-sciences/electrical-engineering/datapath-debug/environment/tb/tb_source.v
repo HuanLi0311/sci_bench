@@ -19,6 +19,7 @@ module tb_source;
     integer i, bad = 0, checked = 0;
     initial begin
         repeat (3) @(posedge clk);
+        @(negedge clk);
         rst = 0;
         for (i = 0; i < 200; i = i + 1) begin
             @(posedge clk); #1;

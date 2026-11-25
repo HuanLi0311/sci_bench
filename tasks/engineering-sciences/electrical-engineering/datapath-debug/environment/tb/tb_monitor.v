@@ -17,6 +17,7 @@ module tb_monitor;
     integer i;
     initial begin
         repeat (3) @(posedge clk);
+        @(negedge clk);
         rst = 0;
         for (i = 0; i < 100; i = i + 1) begin
             valid = (i % 3) != 0;

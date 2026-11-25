@@ -16,6 +16,7 @@ module tb_top;
 
     initial begin
         repeat (3) @(posedge clk);
+        @(negedge clk);
         rst = 0;
         repeat (2000) @(posedge clk);
         $display("TOP_OK=%0d TOP_ERR=%0d TOP_BEATS=%0d",

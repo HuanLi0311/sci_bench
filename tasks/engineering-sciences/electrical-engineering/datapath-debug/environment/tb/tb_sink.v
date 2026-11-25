@@ -24,6 +24,7 @@ module tb_sink;
 
     initial begin
         repeat (3) @(posedge clk);
+        @(negedge clk);
         rst = 0;
         repeat (400) @(posedge clk);
         $display("SINK_OK=%0d SINK_ERR=%0d", ok_count, err_count);
