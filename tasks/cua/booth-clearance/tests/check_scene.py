@@ -131,24 +131,66 @@ def main():
                 clear[cab] = aabb_distance(a, ez)
     rep["entrance_clearance"] = clear
 
-    # hydrant clearance over everything but the shell
+    # hydrant clearance over everything but the shell (horizontal distance)
+    def point_box_xy(p, a):
+        dx = max(a[0][0] - p.x, 0.0, p.x - a[1][0])
+        dy = max(a[0][1] - p.y, 0.0, p.y - a[1][1])
+        return (dx * dx + dy * dy) ** 0.5
+
     hyd = {}
     for o in mesh_objs:
         if o.name == "booth_shell":
             continue
         a = rep["objects"][o.name]["aabb"]
-        if not a:
-            continue
-        c = Vector(((a[0][0] + a[1][0]) / 2, (a[0][1] + a[1][1]) / 2, (a[0][2] + a[1][2]) / 2))
-        d = min(Vector((max(a[0][0], min(HYDRANT.x, a[1][0])),
-                        max(a[0][1], min(HYDRANT.y, a[1][1])),
-                        max(a[0][2], min(HYDRANT.z, a[1][2])))) - Vector((HYDRANT.x, HYDRANT.y, 0)))
-        hyd[o.name] = float((c - Vector((HYDRANT.x, HYDRANT.y, c.z))).length) if False else float(
-            Vector((max(a[0][0], min(HYDRANT.x, a[1][0])),
-                    max(a[0][1], min(HYDRANT.y, a[1][1])),
-                    HYDRANT.z)) - HYDRAUNT_PLACEHOLDER)
+        if a:
+            hyd[o.name] = float(point_box_xy(HYDRANT, a))
     rep["hydrant_distance"] = hyd
 
+    # sight lines: entrance camera to each product centre
+    cam = bpy.data.objects.get("cam_entrance")
+    vis = {}
+    if cam is not None:
+        deps = bpy.context.evaluated_depsgraph_get()
+        occluders = [o for o in mesh_objs
+                     if o.name not in ("product_01", "product_02", "product_03",
+                                       "booth_shell", "entrance_zone")]
+        trees = [BVHTree.FromObject(o.evaluated_get(deps), deps) for o in occluders]
+        origin = cam.matrix_world.translation.copy()
+        for pname in ("product_01", "product_02", "product_03"):
+            a = rep["objects"].get(pname, {}).get("aabb")
+            if not a:
+                vis[pname] = None
+                continue
+            target = Vector(((a[0][0] + a[1][0]) / 2, (a[0][1] + a[1][1]) / 2,
+                             (a[0][2] + a[1][2]) / 2))
+            d = target - origin
+            dist = d.length
+            hit = False
+            for t in trees:
+                loc, _n, _i, _d = t.ray_cast(origin, d.normalized(), dist)
+                if loc is not None and (loc - origin).length < dist - 0.05:
+                    hit = True
+                    break
+            vis[pname] = not hit
+    rep["visible_from_entrance"] = vis
+
+    # brand colour on the shell
+    shell_mats = rep["objects"].get("booth_shell", {}).get("materials") or []
+    best = None
+    for m in shell_mats:
+        if not m:
+            continue
+        bc = rep["materials"].get(m, {}).get("basecolor")
+        if bc is None:
+            continue
+        delta = max(abs(bc[i] - PRIMARY[i]) * 255 for i in range(3))
+        if best is None or delta < best[1]:
+            best = (m, delta)
+    rep["brand_delta"] = best[1] if best else None
+    rep["brand_material"] = best[0] if best else None
+
+    rep["required_present"] = {n: (n in bpy.data.objects) for n in PANELS}
+    rep["has_lighting"] = any(o.type == 'LIGHT' for o in bpy.data.objects) and         ("lighting" in bpy.data.objects)
     with open(out_path, "w") as fh:
         json.dump(rep, fh, indent=1)
 
