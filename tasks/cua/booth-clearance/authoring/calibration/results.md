@@ -7,6 +7,7 @@ Local runs, 2026-11-26, verifier image rebuilt from `tests/`.
 | oracle | shipped `solution/` | **1** | 16/16, 1166 triangles |
 | shifted cabinet (anti-cheat) | re-render with `cabinet_01` +0.5 m in Y | n/a | SSIM 0.972 vs threshold 0.98 |
 | delivered-image substitution | not run yet | — | — |
+| negative: entrance_zone deleted | mutated `.blend` | 0 | R02 objects fails |
 
 Reference measurements: footprint 6.000 × 4.000 m; cabinet clearances 4.091 m
 and 1.805 m; hydrant 1.30 m; visibility true/true/true; brand delta 1.9e-6;

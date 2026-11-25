@@ -6,6 +6,7 @@ Local run, 2026-11-26.
 |---|---|---|---|
 | oracle | shipped `solution/` | **1** | 13/13, 96 triangles, fold 89 mm, 0 strict overlaps |
 | frame-30 re-render | anti-cheat | n/a | SSIM 0.915 vs frame 0 (threshold 0.98) |
+| negative: hinge_03 moved 50 mm | mutated `.blend` | 0 | R03 hinge position fails |
 
 Reference measurements: unfolded 0.620 x 0.580 x 0.823 m; folded thickness
 0.089 m; hinges at (-0.28,0,0.225), (0.28,0,0.225), (-0.28,0.27,0.43),

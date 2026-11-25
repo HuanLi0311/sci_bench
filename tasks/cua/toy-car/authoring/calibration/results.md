@@ -12,6 +12,7 @@ Local run, 2026-11-26.
 | silhouette IoU | 1.00 x4 | ≥0.75 |
 | anti-cheat delivered vs scene | 0.999 | ≥0.90 |
 | anti-cheat wheel spin+steer | 0.986 | ≤0.995 |
+| negative: wheels scaled 1.2x | mutated `.blend` | 0 | R04 wheel diameter fails |
 
 Notes
 - Silhouettes are compared after a border flood-fill that removes the white

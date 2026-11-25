@@ -13,6 +13,7 @@ Local run, 2026-11-26.
 | morning R−B − night R−B | 0.030 | ≥0.02 |
 | anti-cheat delivered vs scene | 0.999 | ≥0.85 |
 | anti-cheat light_night off | 0.610 | ≤0.98 |
+| negative: light_morning emptied | mutated `.blend` | 0 | R04 light sets fails |
 
 Notes
 - The batch spec's absolute hue rule (night R−B ≤ −0.02) was not reachable with
