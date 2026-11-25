@@ -8,8 +8,8 @@
 `timescale 1ns/1ps
 module axis_source #(
     parameter integer NBEATS = 5200,
-    parameter integer BURST  = 64,
-    parameter integer GAP    = 32
+    parameter integer BURST  = 16,
+    parameter integer GAP    = 64
 )(
     input  wire        clk,
     input  wire        rst,
