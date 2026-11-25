@@ -35,13 +35,30 @@ def main():
 
     lid = bpy.data.objects.get("crate_lid")
     hinge = lid.parent if lid is not None else None
-    if hinge is not None:
-        hinge.rotation_mode = 'XYZ'
-        hinge.rotation_euler[0] = math.radians(60)
-    elif lid is not None:
-        lid.rotation_mode = 'XYZ'
-        lid.rotation_euler[0] = math.radians(60)
-    bpy.context.view_layer.update()
+    obj = hinge if hinge is not None else lid
+    if obj is not None:
+        obj.rotation_mode = 'XYZ'
+        base = obj.rotation_euler[0]
+
+        def centre_z():
+            deps = bpy.context.evaluated_depsgraph_get()
+            ev = lid.evaluated_get(deps)
+            me = ev.to_mesh()
+            mw = ev.matrix_world
+            z = sum((mw @ v.co).z for v in me.vertices) / max(len(me.vertices), 1)
+            ev.to_mesh_clear()
+            return z
+
+        z0 = centre_z()
+        obj.rotation_euler[0] = base + math.radians(60)
+        bpy.context.view_layer.update()
+        z_pos = centre_z()
+        obj.rotation_euler[0] = base - math.radians(60)
+        bpy.context.view_layer.update()
+        z_neg = centre_z()
+        sign = 1 if z_pos > z_neg else -1
+        obj.rotation_euler[0] = base + sign * math.radians(60)
+        bpy.context.view_layer.update()
 
     sc.render.filepath = lid_png
     bpy.ops.render.render(write_still=True)

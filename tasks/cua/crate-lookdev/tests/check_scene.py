@@ -128,12 +128,23 @@ def overlap_test(lid, others, angles):
     faces = [tuple(p.vertices) for p in me.polygons]
     ev.to_mesh_clear()
 
-    out = {}
-    for deg in angles:
+    def pose(deg):
         M = (Matrix.Translation(pivot)
              @ Matrix.Rotation(np.deg2rad(deg), 4, 'X')
              @ Matrix.Translation(-pivot))
-        verts = [M @ v for v in base]
+        return [M @ v for v in base]
+
+    def mean_z(vs):
+        return sum(v.z for v in vs) / len(vs)
+
+    # Which sign of the hinge rotation lifts the lid? Agents are free to build
+    # the hinge facing either way; the check is that the *opening* direction is
+    # clean, not that a particular sign was chosen.
+    up = 1 if mean_z(pose(45)) > mean_z(base) else -1
+
+    out = {"sign": up}
+    for deg in angles:
+        verts = pose(up * deg)
         lb = BVHTree.FromPolygons(verts, faces, all_triangles=False, epsilon=0.0)
         out[str(deg)] = sum(len(lb.overlap(b)) for b in others_bvh)
     return out

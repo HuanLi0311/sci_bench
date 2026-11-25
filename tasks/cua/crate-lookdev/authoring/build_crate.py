@@ -314,12 +314,12 @@ def build_brackets():
                 idx += 1
                 name = f"bracket_{idx:02d}"
                 # plates sit 1.5 mm proud of the timber, wrapping the corner
-                px = sx * (W / 2 + 0.0015 / 2)
+                px = sx * (W / 2 + 0.001 / 2)
                 plate_x = box(name + "_x", (px, sy * (D / 2 - BAND / 2), (z0 + z1) / 2),
-                              (0.0015, BAND, BAND), bevel=0.0012, segments=2)
-                py = sy * (D / 2 + 0.0015 / 2)
+                              (0.001, BAND, BAND), bevel=0.001, segments=2)
+                py = sy * (D / 2 + 0.001 / 2)
                 plate_y = box(name + "_y", (sx * (W / 2 - BAND / 2 + 0.0015), py, (z0 + z1) / 2),
-                              (BAND + 0.003, 0.0015, BAND), bevel=0.0012, segments=2)
+                              (BAND + 0.002, 0.001, BAND), bevel=0.001, segments=2)
                 # join the two plates into one object
                 bpy.ops.object.select_all(action='DESELECT')
                 plate_x.select_set(True)

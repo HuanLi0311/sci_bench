@@ -139,7 +139,8 @@ def main():
                 and abs(pl[0]) < 0.01 and abs(pl[1] - 0.300) < 0.01
                 and abs(pl[2] - 0.580) < 0.01)
     overlap = lid.get("overlap") or {}
-    no_pen = all(v == 0 for v in overlap.values()) and bool(overlap)
+    angles = {k: v for k, v in overlap.items() if k != "sign"}
+    no_pen = bool(angles) and all(v == 0 for v in angles.values())
     add("R05_lid_hinge", "must", hinge_ok and no_pen,
         f"parent={lid.get('parent')} at {[round(c,3) for c in pl]} overlap={overlap}")
 
