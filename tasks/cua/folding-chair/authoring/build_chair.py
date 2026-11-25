@@ -159,9 +159,9 @@ def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
         hinge4.keyframe_insert("rotation_euler", frame=frame)
 
     key(0, 0.0, 0.0, 0.0)
-    key(20, ALPHA * 0.5, math.radians(40), math.radians(-35))
-    key(40, ALPHA, math.radians(80), math.radians(-80))
-    key(60, ALPHA, math.radians(90), math.radians(-90))
+    key(20, ALPHA * 0.5, math.radians(-40), math.radians(-35))
+    key(40, ALPHA, math.radians(-80), math.radians(-80))
+    key(60, ALPHA, math.radians(-90), math.radians(-90))
 
     for f, hidden in ((0, False), (1, True), (59, True), (60, True)):
         sc.frame_set(f)
@@ -184,7 +184,7 @@ def build_stage():
     bg.inputs["Strength"].default_value = 0.4
 
     # floor
-    floor = box("stage_floor", (0, 0, -0.01), (3, 3, 0.02))
+    floor = box("stage_floor", (0, 0, -0.31), (3, 3, 0.02))
     floor.data.materials.append(material("mat_floor", (0.18, 0.18, 0.19, 1), 0.6))
 
     for name, loc, power, size in (("key", (1.2, -1.4, 1.8), 250, 1.2),
