@@ -1,0 +1,102 @@
+{
+    "id": "cb9b39bf-88fc-4896-a55c-d1564b7ee2e8",
+    "task_name": "terminal-bench-science/datapath-debug",
+    "trial_name": "datapath-debug__p2YEPu8",
+    "trial_uri": "file:///mnt/d/%E8%BF%85%E9%9B%B7%E4%B8%8B%E8%BD%BD/ic-bench/tasks/engineering-sciences/electrical-engineering/datapath-debug/jobs/2026-11-25__20-26-30/datapath-debug__p2YEPu8",
+    "task_id": {
+        "path": "."
+    },
+    "source": null,
+    "task_checksum": "eac0c3e3196041938eb0a07a2ba75487d9b68a314d378e432a82af41037c5b9d",
+    "config": {
+        "task": {
+            "path": ".",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "datapath-debug__p2YEPu8",
+        "trials_dir": "jobs/2026-11-25__20-26-30",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": 0.3,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "codex",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "2f6c0daa-ba80-4f60-a1c7-732d687ef973",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "codex",
+        "version": "unknown",
+        "model_info": null
+    },
+    "agent_result": null,
+    "verifier_result": null,
+    "verifier_environment_mode": "separate",
+    "exception_info": {
+        "exception_type": "NonZeroAgentExitCodeError",
+        "exception_message": "Command failed (exit 1): set -euo pipefail; if ldd --version 2>&1 | grep -qi musl || [ -f /etc/alpine-release ]; then  npm install -g @openai/codex@latest; else  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash &&  export NVM_DIR=\"$HOME/.nvm\" &&  \\. \"$NVM_DIR/nvm.sh\" || true &&  command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } &&  nvm install 22 && nvm alias default 22 && npm -v &&  npm install -g @openai/codex@latest; fi && codex --version\nstdout:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r100 16631  100 16631    0     0  10497      0  0:00:01  0:00:01 --:--:-- 10499\n=> Downloading nvm from git to '/root/.nvm'\n\r=> Cloning into '/root/.nvm'...\nfatal: unable to access 'https://github.com/nvm-sh/nvm.git/': GnuTLS recv error (-110): The TLS connection was non-properly terminated.\nFailed to clone nvm repo. Please report this!\nError: NVM failed to load\n\nstderr: None",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 415, in run\n    await self._prepare()\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 459, in _prepare\n    await self._setup_agent()\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py\", line 1574, in _setup_agent\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 1050, in setup\n    await self.install(environment)\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/codex.py\", line 353, in install\n    await self.exec_as_agent(\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 995, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py\", line 962, in _exec\n    raise self._classify_exec_error(command, result)\nharbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 1): set -euo pipefail; if ldd --version 2>&1 | grep -qi musl || [ -f /etc/alpine-release ]; then  npm install -g @openai/codex@latest; else  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash &&  export NVM_DIR=\"$HOME/.nvm\" &&  \\. \"$NVM_DIR/nvm.sh\" || true &&  command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } &&  nvm install 22 && nvm alias default 22 && npm -v &&  npm install -g @openai/codex@latest; fi && codex --version\nstdout:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0\r100 16631  100 16631    0     0  10497      0  0:00:01  0:00:01 --:--:-- 10499\n=> Downloading nvm from git to '/root/.nvm'\n\r=> Cloning into '/root/.nvm'...\nfatal: unable to access 'https://github.com/nvm-sh/nvm.git/': GnuTLS recv error (-110): The TLS connection was non-properly terminated.\nFailed to clone nvm repo. Please report this!\nError: NVM failed to load\n\nstderr: None\n",
+        "occurred_at": "2026-11-25T12:31:31.513808Z"
+    },
+    "started_at": "2026-11-25T12:26:31.876005Z",
+    "finished_at": "2026-11-25T12:31:45.415091Z",
+    "environment_setup": {
+        "started_at": "2026-11-25T12:26:32.551928Z",
+        "finished_at": "2026-11-25T12:26:41.318658Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-25T12:26:41.318727Z",
+        "finished_at": "2026-11-25T12:31:31.506863Z"
+    },
+    "agent_execution": null,
+    "verifier": null,
+    "step_results": null
+}
