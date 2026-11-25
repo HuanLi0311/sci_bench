@@ -1,6 +1,6 @@
 # ic-bench — verifiable-reward IC tasks
 
-Two tasks, both Terminal-Bench-Science / Harbor format, both original work.
+Three tasks, all Terminal-Bench-Science / Harbor format, all original work.
 
 ## Tasks
 
@@ -8,11 +8,13 @@ Two tasks, both Terminal-Bench-Science / Harbor format, both original work.
 |---|---|---|---|
 | `opamp-triage` | Diagnose three drifted parameters of a CMOS op-amp macro-model from two noisy scope captures, then deliver a sizing that also holds at an amplitude and process corners that were never captured | reward 1.0 in container | **passes**, reward 1, all five tiers |
 | `fsm-recode` | Re-implement a 20-state one-hot controller so it is cycle-accurately equivalent but synthesises to <=160 cells and <=42 levels | 140 cells / 34 levels | **fails**, 485,034/500,000 cycles mismatched |
+| `datapath-debug` | Repair a four-stage streaming datapath whose modules were written against two revisions of one interface spec, so every unit test passes while the integrated system drops and rejects beats | `TOP_ERR=0`, 9000/9000 beats | pending |
 
 ```
 tasks/engineering-sciences/electrical-engineering/
   opamp-triage/
   fsm-recode/
+  datapath-debug/
 tasks/cua/
   crate-lookdev/
 ```
@@ -36,13 +38,13 @@ Both are laid out per the TB-Science schema: `instruction.md`, `task.toml`,
 
 ## Verified state
 
-| Check | opamp-triage | fsm-recode |
-|---|---|---|
-| all 24 static `ci_checks/` | pass | pass |
-| reference solution, host | reward 1 | reward 1 (140/34) |
-| reference solution, container (oracle) | **reward 1.0** | **reward 1.0** (0 mismatch, 140/34) |
-| agent image isolation | verified: only `sim/`, `fixtures/`, empty `out/`; no answer values | verified by construction: only `rtl/baseline.v` |
-| blind frontier model (codex) | **passes** — needs hardening | **fails** — discriminating |
+| Check | opamp-triage | fsm-recode | datapath-debug |
+|---|---|---|---|
+| all 24 static `ci_checks/` | pass | pass | same result as fsm-recode on every check |
+| reference solution, host | reward 1 | reward 1 (140/34) | reward 1 (`TOP_ERR=0`, 9000/9000) |
+| reference solution, container (oracle) | **reward 1.0** | **reward 1.0** (0 mismatch, 140/34) | **reward 1.0** (38 s) |
+| agent image isolation | verified: only `sim/`, `fixtures/`, empty `out/`; no answer values | verified by construction: only `rtl/baseline.v` | verified: only `rtl/`, `tb/`, `SPEC.md`, `REPORT.md`, `sim.sh`; no answer values |
+| blind frontier model (codex) | **passes** — needs hardening | **fails** — discriminating | pending |
 
 ## Blind-run findings
 
