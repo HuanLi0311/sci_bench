@@ -152,15 +152,15 @@ def make_wood(n=2048):
     uu, vv = np.meshgrid(v, v)
     warp = fbm(n, rng, octaves=4, base=6)
     # vertical grain running along the panel's U axis
-    grain = np.sin((uu * 34.0 + 4.0 * warp) * 2 * math.pi)
+    grain = np.sin((uu * 13.0 + 3.0 * warp) * 2 * math.pi)
     fine = fbm(n, rng, octaves=6, base=48)
     height = 0.55 * (grain * 0.5 + 0.5) + 0.45 * fine
     weather = fbm(n, rng, octaves=3, base=4)
     # weathered oak: grey-brown, desaturated where weather is high
-    base = np.array([0.34, 0.24, 0.15])
-    grey = np.array([0.43, 0.41, 0.37])
+    base = np.array([0.27, 0.185, 0.115])
+    grey = np.array([0.36, 0.335, 0.30])
     w = np.clip((weather - 0.45) * 2.2, 0, 1)[..., None]
-    albedo = base * (0.72 + 0.55 * height[..., None])
+    albedo = base * (0.62 + 0.55 * height[..., None])
     albedo = albedo * (1 - w) + grey * (0.65 + 0.5 * height[..., None]) * w
     albedo = np.clip(albedo, 0, 1)
     rough = np.clip(0.55 + 0.34 * (height - 0.5) + 0.16 * (weather - 0.5), 0.32, 0.94)
@@ -579,6 +579,7 @@ def main():
     hinge, lid = build_lid()
     uv_cube(lid, scale=0.45)
     brackets = build_brackets()
+    add_uv([b.name for b in brackets], scale=0.08)
 
     wood = make_wood()
     rust = make_rust()
