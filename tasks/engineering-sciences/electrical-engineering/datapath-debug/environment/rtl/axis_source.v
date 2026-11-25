@@ -22,6 +22,7 @@ module axis_source #(
     reg [15:0] n;
     reg [10:0] ph;
     reg        credit;
+    reg        ready_q;
 
     wire want   = (ph < BURST);
     wire ready  = !full;
@@ -36,13 +37,15 @@ module axis_source #(
             n      <= 16'd0;
             data   <= 16'd0;
             valid  <= 1'b0;
-            credit <= 1'b0;
-            done   <= 1'b0;
+            credit  <= 1'b0;
+            ready_q <= 1'b0;
+            done    <= 1'b0;
             ph     <= 11'd0;
         end else if (!done) begin
+            ready_q <= ready;
+            credit  <= ready ? 1'b0 : (retire ? 1'b1 : credit);
             if (valid) begin
                 if (retire) begin
-                    credit <= ready ? 1'b0 : 1'b1;
                     if (last) begin
                         done  <= 1'b1;
                         valid <= 1'b0;
