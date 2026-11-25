@@ -86,17 +86,24 @@ def material_report(mat):
                     sinks.append(f"{link.to_node.type}:{link.to_socket.name}")
             info["feeds"] = sinks
             rep["images"].append(info)
+            if "Roughness" in sinks or any("Roughness" in x for x in sinks):
+                rep["roughness_std"] = info.get("grey_std")
+                rep["roughness_mean"] = info.get("grey_mean")
+            if any("Alpha" in x for x in sinks):
+                rep["alpha_frac"] = info.get("alpha_frac")
+                rep["alpha_coverage"] = info.get("alpha_coverage")
             try:
                 w, h = img.size
                 arr = np.array(img.pixels[:], dtype=np.float32).reshape(h, w, -1)
-                if any("Roughness" in x for x in sinks):
-                    grey = arr[..., :3].mean(-1)
-                    rep["roughness_std"] = float(grey.std())
-                    rep["roughness_mean"] = float(grey.mean())
-                if any("Alpha" in x for x in sinks):
+                grey = arr[..., :3].mean(-1)
+                # stats are kept on the image itself: a map routed through a
+                # Mix or ColorRamp node is still the same map.
+                info["grey_std"] = float(grey.std())
+                info["grey_mean"] = float(grey.mean())
+                if arr.shape[-1] == 4:
                     a = arr[..., 3]
-                    rep["alpha_frac"] = float(((a > 0.05) & (a < 0.95)).mean())
-                    rep["alpha_coverage"] = float((a > 0.5).mean())
+                    info["alpha_frac"] = float(((a > 0.05) & (a < 0.95)).mean())
+                    info["alpha_coverage"] = float((a > 0.5).mean())
             except Exception:
                 pass
     return rep
@@ -202,7 +209,12 @@ def main():
 
     # derived checks the grader needs
     mesh_objs = [bpy.data.objects[n] for n in report["meshes"]]
-    body = [o for o in mesh_objs if o.name != STENCIL]
+    # Bounds are measured over the crate itself: five panels, the lid and the
+    # eight brackets. Anything else in the file (a floor, a backdrop, a stray
+    # helper) must not change whether the crate is the right size.
+    crate_names = [n for n in PANELS + [LID] if n in bpy.data.objects]
+    crate_names += [n for n in report["meshes"] if n.startswith("bracket")]
+    body = [bpy.data.objects[n] for n in crate_names]
     mins = [o for o in body if report["objects"][o.name]["aabb"]]
     if mins:
         mn = Vector((min(report["objects"][o.name]["aabb"][0][0] for o in mins),
