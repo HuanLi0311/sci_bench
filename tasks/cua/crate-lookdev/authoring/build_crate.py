@@ -129,9 +129,9 @@ def save_image(name, rgb, path, colorspace='sRGB'):
 
 
 def save_alpha_image(name, alpha, rgb, path):
-    n = alpha.shape[0]
-    img = bpy.data.images.new(name, width=n, height=n, alpha=True)
-    rgba = np.ones((n, n, 4), dtype=np.float32)
+    h, w = alpha.shape
+    img = bpy.data.images.new(name, width=w, height=h, alpha=True)
+    rgba = np.ones((h, w, 4), dtype=np.float32)
     rgba[..., :3] = rgb
     rgba[..., 3] = alpha
     img.pixels.foreach_set(rgba.ravel())
