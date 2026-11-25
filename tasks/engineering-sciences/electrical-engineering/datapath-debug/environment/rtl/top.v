@@ -23,7 +23,9 @@ module top(
     wire rst_s;
 
     wire [15:0] s_data;
-    wire        s_valid, s_ready;
+    wire        s_valid;
+
+    wire        s_ready;
 
     wire [15:0] f_data;
     wire        f_valid, f_ready;
@@ -41,7 +43,7 @@ module top(
 
     axis_source u_src(
         .clk(clk), .rst(rst_s),
-        .data(s_data), .valid(s_valid), .ready(s_ready), .done(gen_done)
+        .data(s_data), .valid(s_valid), .full(f_full), .done(gen_done)
     );
 
     fifo16 u_fifo(
