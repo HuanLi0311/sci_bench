@@ -21,8 +21,8 @@ SEAT_Z = 0.45
 BAR_T = 0.03
 PANEL_T = 0.02
 HINGE_Z = 0.225
-BAR_LEN = math.hypot(D, 2 * HINGE_Z)          # floor to seat-underside diagonal
-ALPHA = math.atan2(D, 2 * HINGE_Z)            # angle from vertical, radians
+BAR_LEN = math.hypot(D - 0.02, 2 * HINGE_Z)          # floor to seat-underside diagonal
+ALPHA = math.atan2(D - 0.02, 2 * HINGE_Z)            # angle from vertical, radians
 
 
 def log(*a):
