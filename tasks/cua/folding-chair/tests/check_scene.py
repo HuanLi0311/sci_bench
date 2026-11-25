@@ -127,7 +127,10 @@ def main():
                 ends[limb] = None
                 continue
             _b, verts = world_bvh(ob, deps)
-            ends[limb] = min((v - hp).length for v in verts)
+            # a scissor bar is pinned through its middle: the centroid of the
+            # bar must sit on the hinge axis
+            centroid = sum(verts, Vector()) / len(verts)
+            ends[limb] = (centroid - hp).length
     rep["hinge_end_distance"] = ends
 
     with open(out_path, "w") as fh:
