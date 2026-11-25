@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "."
+    },
+    "trial_name": "datapath-debug__iR3yL3u",
+    "trials_dir": "jobs/2026-11-25__21-24-28",
+    "agent_timeout_multiplier": 0.3,
+    "agent": {
+        "name": "codex"
+    },
+    "job_id": "1b806bc3-0ab0-4379-81d2-afca35fd0e59"
+}
