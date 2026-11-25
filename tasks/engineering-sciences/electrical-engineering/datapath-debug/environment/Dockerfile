@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN set -eux; \
     for i in 1 2 3; do \
         apt-get update \
-        && apt-get install -y --no-install-recommends iverilog python3 \
+        && apt-get install -y --no-install-recommends iverilog python3 curl ca-certificates nodejs npm ripgrep \
         && break; \
         sleep 5; \
     done; \
