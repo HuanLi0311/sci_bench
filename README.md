@@ -4,10 +4,10 @@ Two tasks, both Terminal-Bench-Science / Harbor format, both original work.
 
 ## Tasks
 
-| Task | What the agent must do | Reference | Frontier model |
+| Task | What the agent must do | Reference | Frontier model (codex, gpt-6.1-sol, high) |
 |---|---|---|---|
-| `opamp-triage` | Diagnose three drifted parameters of a CMOS op-amp macro-model from two noisy scope captures, then deliver a sizing that also holds at an amplitude and process corners that were never captured | reward 1.0 in container | not yet run |
-| `fsm-recode` | Re-implement a 20-state one-hot controller so it is cycle-accurately equivalent but synthesises to <=160 cells and <=42 levels | 140 cells / 34 levels | **failed**: 434,397/500,000 cycles mismatched |
+| `opamp-triage` | Diagnose three drifted parameters of a CMOS op-amp macro-model from two noisy scope captures, then deliver a sizing that also holds at an amplitude and process corners that were never captured | reward 1.0 in container | **passes**, reward 1, all five tiers |
+| `fsm-recode` | Re-implement a 20-state one-hot controller so it is cycle-accurately equivalent but synthesises to <=160 cells and <=42 levels | 140 cells / 34 levels | **fails**, 485,034/500,000 cycles mismatched |
 
 ```
 tasks/engineering-sciences/electrical-engineering/
@@ -26,9 +26,34 @@ Both are laid out per the TB-Science schema: `instruction.md`, `task.toml`,
 |---|---|---|
 | all 24 static `ci_checks/` | pass | pass |
 | reference solution, host | reward 1 | reward 1 (140/34) |
-| reference solution, container (oracle) | **reward 1.0** | not completed (memory reclaim killed the run mid-verifier) |
+| reference solution, container (oracle) | **reward 1.0** | **reward 1.0** (0 mismatch, 140/34) |
 | agent image isolation | verified: only `sim/`, `fixtures/`, empty `out/`; no answer values | verified by construction: only `rtl/baseline.v` |
-| blind frontier model | not yet run | failed equivalence |
+| blind frontier model (codex) | **passes** — needs hardening | **fails** — discriminating |
+
+## Blind-run findings
+
+**`opamp-triage` is too easy.** codex passed all five tiers. The task hands
+over the full specification (gain band, overshoot, settling, slew, all three
+amplitudes, the corner model), the simulator costs 50 ms, and there are 14
+parameters with a stated budget of 4 edits. That is a search problem, and the
+model solved it by search. The `vsat` holdout — designed to punish an agent
+that only fixes what it can see in the captures — did not bite, because the
+datasheet states the 1.2 V amplitude and the +/-1.5 V input range explicitly.
+
+**`fsm-recode` works, and for a reason worth recording.** codex produced a
+39-cell / 27-level design, comfortably inside both QoR budgets, and it did
+write its own equivalence testbench. It still failed on 485,034 of 500,000
+cycles. Two distinct errors compounded:
+
+1. It assumed the transition function was `state + in + 1` with three
+   hand-patched exceptions. The real table has no such regularity.
+2. Its testbench checked the design against *its own inferred state mapping*
+   (`16 -> 3, 17 -> 7, 18 -> 11, 19 -> 14`) rather than against observable
+   behaviour, so the implementation and the check shared one wrong premise.
+
+The second is the interesting one. It is not a failure to verify; it is
+verification that cannot fail. A task that only measured QoR would have
+scored this a pass.
 
 ## Why these two
 
