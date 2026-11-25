@@ -146,22 +146,25 @@ def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
     hinge3.rotation_mode = 'XYZ'
     hinge4.rotation_mode = 'XYZ'
 
-    def key(frame, bar_rot, seat_rot, back_rot):
+    def key(frame, bar_rot, seat_target, back_rel):
+        """bar_rot folds the legs; seat_target is the seat's world pitch;
+        back_rel is the back's rotation relative to the seat."""
         sc.frame_set(frame)
         for side, (a, b) in bars.items():
-            a.rotation_euler = (+bar_rot, 0, 0)   # -ALPHA -> vertical
-            b.rotation_euler = (-bar_rot, 0, 0)   # +ALPHA -> vertical
+            a.rotation_euler = (+bar_rot, 0, 0)
+            b.rotation_euler = (-bar_rot, 0, 0)
             a.keyframe_insert("rotation_euler", frame=frame)
             b.keyframe_insert("rotation_euler", frame=frame)
-        hinge3.rotation_euler = (seat_rot, 0, 0)
+        hinge3.rotation_euler = (seat_target - bar_rot, 0, 0)
         hinge3.keyframe_insert("rotation_euler", frame=frame)
-        hinge4.rotation_euler = (back_rot, 0, 0)
+        hinge4.rotation_euler = (back_rel, 0, 0)
         hinge4.keyframe_insert("rotation_euler", frame=frame)
 
     key(0, 0.0, 0.0, 0.0)
-    key(20, ALPHA * 0.5, math.radians(-40), math.radians(-35))
-    key(40, ALPHA, math.radians(-80), math.radians(-80))
-    key(60, ALPHA, math.radians(-90), math.radians(-90))
+    key(20, ALPHA * 0.5, math.radians(-45), math.radians(90))
+    key(40, ALPHA, math.radians(-80), math.radians(160))
+    key(60, ALPHA, math.radians(-90), math.radians(180))
+    sc.frame_set(0)
 
     for f, hidden in ((0, False), (1, True), (59, True), (60, True)):
         sc.frame_set(f)
