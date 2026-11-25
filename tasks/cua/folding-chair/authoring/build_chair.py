@@ -105,7 +105,7 @@ def material(name, color, rough=0.5, metal=0.0):
 def build():
     root = empty("chair_root", (0, 0, 0))
     hinges, bars = {}, {}
-    for side, x in (("l", -W / 2 + 0.02 + BAR_T / 2), ("r", W / 2 - 0.02 - BAR_T / 2)):
+    for side, x in (("l", -W / 2 + 0.03), ("r", W / 2 - 0.03)):
         h = empty(f"hinge_0{1 if side == 'l' else 2}", (x, 0.0, HINGE_Z), root)
         hinges[side] = h
         a = bar(f"lower_leg_{side}_a", h, -ALPHA, BAR_LEN)
@@ -115,14 +115,14 @@ def build():
         bars[side] = (a, b)
 
     # seat: 0.62 x 0.58, top at 0.45; pivots at its rear edge on bar A's top
-    seat = box("seat", (0, 0, SEAT_Z - PANEL_T / 2), (W - 2 * BAR_T - 0.01, D - 0.02, PANEL_T), 0.003)
-    hinge3 = empty("hinge_03", (-W / 2 + 0.02 + BAR_T / 2, D / 2 - 0.01, SEAT_Z - PANEL_T), bars["l"][0])
+    seat = box("seat", (0, -0.01, SEAT_Z - PANEL_T / 2), (W - 2 * BAR_T - 0.01, D - 0.02, PANEL_T), 0.003)
+    hinge3 = empty("hinge_03", (-W / 2 + 0.03, D / 2 - 0.02, SEAT_Z - PANEL_T), bars["l"][0])
     parent_keep(seat, hinge3)
 
     # back: stands on the seat's rear edge, pivots there
     back = box("back", (0, 0, 0), (W - 2 * BAR_T - 0.01, PANEL_T, H - SEAT_Z - 0.02), 0.003)
-    back.location = (0, D / 2 - 0.01 + PANEL_T / 2, (SEAT_Z + H) / 2 - 0.01)
-    hinge4 = empty("hinge_04", (0, D / 2 - 0.01, SEAT_Z + PANEL_T + 0.005), seat)
+    back.location = (0, D / 2 - PANEL_T / 2, (SEAT_Z + H) / 2 - 0.01)
+    hinge4 = empty("hinge_04", (0, D / 2 - 0.02, SEAT_Z + PANEL_T + 0.005), seat)
     parent_keep(back, hinge4)
 
     # lock pin: only shown in the locked state
