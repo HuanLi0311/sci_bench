@@ -64,16 +64,24 @@ def build():
 
     # duplicates: index -> source real state
     dup = {N_REAL + i: src for i, src in enumerate(DUP_SOURCES)}
+    src_to_dup = {src: N_REAL + i for i, src in enumerate(DUP_SOURCES)}
+
+    # Some edges must land on the copy rather than on its prototype, or the
+    # copies are unreachable and synthesis dead-codes them -- which would make
+    # minimisation worthless and the whole task collapse to a re-encoding.
+    rng2 = random.Random(SEED + 1)
+    edge_target = {}
+    for s in range(N_REAL):
+        for v in range(N_INPUTS):
+            t = trans[s][v]
+            if t in src_to_dup and rng2.random() < 0.5:
+                edge_target[(s, v)] = src_to_dup[t]
+            else:
+                edge_target[(s, v)] = t
 
     def succ(state, v):
         real = dup.get(state, state)
-        t = trans[real][v]
-        # A transition that lands on a duplicated source may go to the copy
-        # instead; both behave identically, so either is a legal target.
-        for copy, src in dup.items():
-            if src == t:
-                return t
-        return t
+        return edge_target[(real, v)]
 
     def output(state):
         return out[dup.get(state, state)]
