@@ -113,8 +113,8 @@ def build():
         y = fy * (Wd / 2 - WHEEL_W / 2 + 0.004)
         hub = empty(name + "_hub", (x, y, WHEEL_D / 2))
         w = cylinder(name, WHEEL_D / 2, WHEEL_W)
+        w.location = (x, y, WHEEL_D / 2)
         parent_keep(w, hub)
-        w.location = (0, 0, 0)
         parent_keep(hub, body)
         wheels[name] = (w, hub, fx, fy)
         parts[name] = w
@@ -124,7 +124,8 @@ def build():
     for side, sy in (("l", 1), ("r", -1)):
         y = sy * (Wd / 2 + 0.004)
         hinge = empty(f"door_{side}_hinge", (0.06, y, BODY_Z + 0.045))
-        d = box(f"door_{side}", (0, 0, 0), (0.10, 0.008, 0.055), 0.002)
+        d = box(f"door_{side}", (0.06 - 0.05, y, BODY_Z + 0.045),
+                (0.10, 0.008, 0.055), 0.002)
         parent_keep(d, hinge)
         parent_keep(hinge, body)
         doors[side] = (d, hinge)
