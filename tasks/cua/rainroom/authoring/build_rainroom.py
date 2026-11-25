@@ -150,9 +150,9 @@ def build_furniture():
     add("side_table_leg", box("side_table_leg", (-1.35, -0.9, 0.14), (0.06, 0.06, 0.28), 0.004), m_walnut)
     add("floor_lamp", cyl("floor_lamp", (1.55, 1.3, 0.9), 0.02, 1.8), m_copper)
     add("floor_lamp_shade", cyl("floor_lamp_shade", (1.55, 1.3, 1.72), 0.18, 0.28),
-        emissive("mat_shade_glow", (1.0, 0.72, 0.42, 1), 6.0))
+        emissive("mat_shade_glow", (0.95, 0.95, 1.0, 1), 1.6))
     add("table_lamp", cyl("table_lamp", (-1.35, -0.9, 0.42), 0.05, 0.22),
-        emissive("mat_lamp_glow", (1.0, 0.70, 0.40, 1), 3.0))
+        emissive("mat_lamp_glow", (0.95, 0.95, 1.0, 1), 1.0))
     add("bookshelf", box("bookshelf", (1.85, 0.1, 0.95), (0.35, 1.5, 1.9), 0.01), m_walnut)
     for i, (z, h) in enumerate(((0.35, 0.3), (0.75, 0.28), (1.15, 0.26), (1.55, 0.24))):
         add(f"books_{i+1}", box(f"books_{i+1}", (1.83, -0.35 + 0.2 * i, z), (0.12, 0.16, h), 0.004), m_linen)
@@ -198,7 +198,7 @@ def build_lights():
     morning = coll("light_morning")
     # night: cool window glow, two warm practicals
     light("night_window", "light_night", 'AREA', (2.6, 0, 1.5),
-          (0, math.radians(-90), 0), 520, (0.45, 0.60, 1.0), 1.2)
+          (0, math.radians(-90), 0), 700, (0.36, 0.52, 1.0), 1.2)
     light("night_lamp_a", "light_night", 'POINT', (1.55, 1.3, 1.56), (0, 0, 0),
           10, (1.0, 0.78, 0.58), 0.1)
     light("night_lamp_b", "light_night", 'POINT', (-1.35, -0.9, 0.66), (0, 0, 0),
