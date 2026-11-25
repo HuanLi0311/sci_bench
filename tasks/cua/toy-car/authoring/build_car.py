@@ -133,7 +133,7 @@ def build():
     return parts
 
 
-def materials(parts):
+def assign_materials(parts):
     m_body = material("mat_body", (0.55, 0.12, 0.10, 1), 0.45)
     m_dark = material("mat_chassis", (0.05, 0.05, 0.06, 1), 0.6)
     m_glass = material("mat_cabin", (0.25, 0.35, 0.42, 1), 0.15, 0.0)
@@ -229,7 +229,7 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     reset()
     parts = build()
-    materials(parts)
+    assign_materials(parts)
     stage()
     cams = cameras()
     render_views(cams, out_dir)
