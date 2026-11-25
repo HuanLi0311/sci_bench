@@ -15,7 +15,7 @@ module fifo16(
     output wire [15:0] out_data,
     output wire        out_valid,
     input  wire        out_ready,
-    output reg         full,
+    output wire        full,
     output reg         empty
 );
 
@@ -28,6 +28,8 @@ module fifo16(
     // at most sixteen beats and the upstream must not present a beat while
     // `ready` is low.
     assign in_ready  = (count < 5'd15);
+    assign full      = (count >= 5'd15);
+    assign full      = (count >= 5'd16);
     assign out_valid = (count != 5'd0);
     assign out_data  = mem[rp];
 
@@ -40,7 +42,6 @@ module fifo16(
             count <= 5'd0;
             wp    <= 4'd0;
             rp    <= 4'd0;
-            full  <= 1'b0;
             empty <= 1'b1;
             ready_q   <= 1'b0;
             credit_rx <= 1'b0;
@@ -55,7 +56,6 @@ module fifo16(
             ready_q   <= in_ready;
             credit_rx <= in_ready ? 1'b0 : (do_wr ? 1'b1 : credit_rx);
             count <= count + {4'd0, do_wr} - {4'd0, do_rd};
-            full  <= ((count + {4'd0, do_wr} - {4'd0, do_rd}) >= 5'd15);
             empty <= ((count + {4'd0, do_wr} - {4'd0, do_rd}) == 5'd0);
         end
     end
