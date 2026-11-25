@@ -35,6 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl xz-utils \
     && printf '#!/bin/sh\nexit 0\n' > /usr/local/bin/nvm \
     && chmod +x /usr/local/bin/nvm \
     && npm install -g @openai/codex@latest \
+    && ln -sf /opt/node-v22.12.0-linux-x64/bin/codex /usr/local/bin/codex \
     && node --version && codex --version
 
 # Agent-visible surface: the drawing pack, reference photos, HDRI, licence.
