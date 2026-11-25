@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 415, in run
+    await self._prepare()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 459, in _prepare
+    await self._setup_agent()
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 1574, in _setup_agent
+    await asyncio.wait_for(
+  File "/usr/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py", line 1050, in setup
+    await self.install(environment)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/codex.py", line 348, in install
+    await self.ensure_system_dependencies(
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py", line 751, in ensure_system_dependencies
+    await self.exec_as_root(environment, command=command, env=env)
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py", line 982, in exec_as_root
+    return await self._exec(
+           ^^^^^^^^^^^^^^^^^
+  File "/root/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/agents/installed/base.py", line 962, in _exec
+    raise self._classify_exec_error(command, result)
+harbor.agents.installed.base.NonZeroAgentExitCodeError: Command failed (exit 100): apt-get update && apt-get install -y curl bash nodejs npm ripgrep
+stdout: Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1562 kB]
+Get:4 http://archive.ub ... [96009 chars truncated] ... 6:899f3708357e1cec871de41f34ab62303ea003f1fff2a41999b792af5e09e065
+    - SHA1:6598e45121c74c539dc66f7c536366c89c723842 [weak]
+    - MD5Sum:eeb44992da48a9d69a922785cdcdd51f [weak]
+    - Filesize:17498308 [weak]
+   Hashes of received file:
+    - SHA512:73d4192344ab9deb8629b4ffaf25e8261f5aca7480c8393d98823d804581752fe905e342a0835a852eda56b08fca2c12ebc1a42d8c7b34347539943867002d31
+    - SHA256:3b98f8d9da9bc1b90eceab4ccb434d9ff3118ebd0d7feab8e5a8e7c3b4ac7407
+    - SHA1:81b028c76d576556a24fac824ab164e9d0bda70c [weak]
+    - MD5Sum:079994427b69711acd819afdd9fc4fb8 [weak]
+    - Filesize:17498308 [weak]
+   Last modification reported: Mon, 09 Nov 2026 11:27:00 +0000
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+
+stderr: None
