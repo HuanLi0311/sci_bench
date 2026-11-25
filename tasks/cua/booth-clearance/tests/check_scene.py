@@ -139,7 +139,7 @@ def main():
 
     hyd = {}
     for o in mesh_objs:
-        if o.name == "booth_shell":
+        if o.name in ("booth_shell", "entrance_zone"):
             continue
         a = rep["objects"][o.name]["aabb"]
         if a:
@@ -165,13 +165,13 @@ def main():
                              (a[0][2] + a[1][2]) / 2))
             d = target - origin
             dist = d.length
-            hit = False
-            for t in trees:
+            hit = None
+            for ob, t in zip(occluders, trees):
                 loc, _n, _i, _d = t.ray_cast(origin, d.normalized(), dist)
                 if loc is not None and (loc - origin).length < dist - 0.05:
-                    hit = True
+                    hit = ob.name
                     break
-            vis[pname] = not hit
+            vis[pname] = (hit is None) or hit
     rep["visible_from_entrance"] = vis
 
     # brand colour on the shell

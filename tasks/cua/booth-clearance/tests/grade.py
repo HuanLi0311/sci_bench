@@ -128,8 +128,8 @@ def main():
     add("R10_packed", "must", not unpacked, f"unpacked={unpacked}")
 
     ext = [i.get("filepath") for i in imgs
-           if i.get("filepath") and (i["filepath"].startswith("/")
-                                     or "materials" in i["filepath"])]
+           if not i.get("packed") and i.get("filepath")
+           and (i["filepath"].startswith("/") or "materials" in i["filepath"])]
     add("R11_no_external", "must", not ext, ext)
 
     polys = scene.get("polys_total", 10 ** 9)

@@ -284,6 +284,9 @@ def main():
     for img in bpy.data.images:
         if img.source == 'FILE' and not img.packed_file:
             img.pack()
+        if img.packed_file:
+            img.filepath_raw = ""
+            img.filepath = ""
 
     cams = add_cameras()
     render_all(cams, out_dir)
