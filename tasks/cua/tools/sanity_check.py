@@ -117,9 +117,11 @@ def check_oracle(t, tests_tag):
 
 
 def check_deliverables(t):
+    """Only files listed under 'What to deliver' count as deliverables."""
     sol = os.path.join(t, "solution")
     text = open(os.path.join(t, "instruction.md")).read()
-    names = set(re.findall(r"`([a-z0-9_]+\.(?:png|blend|json))`", text))
+    part = text.split("What to deliver", 1)[-1].split("##", 1)[0]
+    names = set(re.findall(r"`([a-z0-9_]+\.(?:png|blend|json))`", part))
     missing = [n for n in names if not os.path.exists(os.path.join(sol, n))]
     return (not missing), (f"missing={missing}" if missing else f"{len(names)} files")
 
