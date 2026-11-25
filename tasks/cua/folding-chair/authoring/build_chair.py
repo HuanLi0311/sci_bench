@@ -161,9 +161,9 @@ def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
         hinge4.keyframe_insert("rotation_euler", frame=frame)
 
     key(0, 0.0, 0.0, 0.0)
-    key(20, ALPHA * 0.5, math.radians(-45), math.radians(90))
-    key(40, ALPHA, math.radians(-80), math.radians(160))
-    key(60, ALPHA, math.radians(-90), math.radians(180))
+    key(20, ALPHA * 0.5, math.radians(-45), math.radians(0))
+    key(40, ALPHA, math.radians(-80), math.radians(0))
+    key(60, ALPHA, math.radians(-90), math.radians(0))
     sc.frame_set(0)
 
     for f, hidden in ((0, False), (1, True), (59, True), (60, True)):
