@@ -19,7 +19,8 @@ module tb_sink;
     always #1 clk = ~clk;
 
     always @(posedge clk) begin
-        if (valid && ready) data <= data + 16'd1;
+        if (rst) data <= 16'd0;
+        else if (valid && ready) data <= data + 16'd1;
     end
 
     initial begin
