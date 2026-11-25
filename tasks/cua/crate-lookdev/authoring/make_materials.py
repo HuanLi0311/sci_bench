@@ -219,10 +219,10 @@ def make_spec(path):
 # --------------------------------------------------------------------------
 # procedural studio HDRI (Radiance RGBE, equirectangular)
 # --------------------------------------------------------------------------
-def _smooth_noise2(n, cells, rng):
+def _smooth_noise2(h, w, cells, rng):
     g = rng.random((cells, cells))
-    y = np.linspace(0, cells - 1, n)
-    x = np.linspace(0, cells - 1, n)
+    y = np.linspace(0, cells - 1, h)
+    x = np.linspace(0, cells - 1, w)
     xi, yi = x.astype(int), y.astype(int)
     xi2, yi2 = np.minimum(xi + 1, cells - 1), np.minimum(yi + 1, cells - 1)
     fx, fy = (x - xi)[None, :], (y - yi)[:, None]
@@ -253,7 +253,7 @@ def make_hdri(path, w=1024, h=512):
     img += softbox(np.radians(40), np.radians(55), 0.35, 0.30, 3.0, (1.0, 0.97, 0.92))
     img += softbox(np.radians(-130), np.radians(40), 0.45, 0.40, 1.2, (0.9, 0.95, 1.0))
     img += softbox(np.radians(170), np.radians(25), 0.25, 0.20, 0.8, (1.0, 1.0, 1.0))
-    img += 0.02 * _smooth_noise2(h, 16, rng)[..., None]
+    img += 0.02 * _smooth_noise2(h, w, 16, rng)[..., None]
 
     img = np.clip(img, 0, None)
 
