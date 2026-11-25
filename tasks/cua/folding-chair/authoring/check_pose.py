@@ -33,7 +33,23 @@ for f in range(0, 61, 2):
             n = len(trees[a.name].overlap(trees[b.name]))
             if n:
                 worst[(a.name, b.name)] = worst.get((a.name, b.name), 0) + n
-print("OVERLAPS", worst if worst else "none")
+def shares_hinge(a, b):
+    pa = bpy.data.objects[a]; pb = bpy.data.objects[b]
+    chain = set()
+    for o in (pa, pb):
+        cur = o
+        while cur is not None:
+            chain.add((o.name, cur.name))
+            cur = cur.parent
+    # true if one is an ancestor of the other, or both share a hinge parent
+    for (an, cn) in chain:
+        if cn == b or cn == a or (pa.parent is not None and pa.parent == pb.parent):
+            return True
+    return False
+
+strict = {k: v for k, v in worst.items() if not shares_hinge(*k)}
+print("OVERLAPS_ALL", worst if worst else "none")
+print("OVERLAPS_STRICT", strict if strict else "none")
 
 for frame in (0, 30, 60):
     bpy.context.scene.frame_set(frame)
