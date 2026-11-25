@@ -154,9 +154,9 @@ def add_lighting():
     root = bpy.data.objects.new("lighting", None)
     root.empty_display_type = 'PLAIN_AXES'
     bpy.context.collection.objects.link(root)
-    specs = [("key", (1.0, -1.0, 3.2), 900, 2.0),
-             ("fill", (-2.0, 1.2, 2.6), 400, 2.0),
-             ("rim", (2.0, 1.0, 3.0), 500, 1.5)]
+    specs = [("key", (1.0, -1.0, 3.2), 220, 2.0),
+             ("fill", (-2.0, 1.2, 2.6), 90, 2.0),
+             ("rim", (2.0, 1.0, 3.0), 120, 1.5)]
     for name, loc, power, size in specs:
         ld = bpy.data.lights.new(name, 'AREA')
         ld.energy = power
