@@ -24,8 +24,8 @@ TB = os.path.join(HERE, "tb.v")
 BUDGET_FILE = os.environ.get("AMP_BUDGET_FILE", os.path.join(HERE, "budget.json"))
 CALL_BUDGET = int(os.environ.get("VERIFY_BUDGET", "12"))
 
-CELL_MAX = 420
-LEVEL_MAX = 57
+CELL_MAX = 360
+LEVEL_MAX = 55
 
 _lock = threading.Lock()
 
