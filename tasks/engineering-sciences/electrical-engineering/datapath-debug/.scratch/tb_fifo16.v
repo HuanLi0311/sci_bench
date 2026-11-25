@@ -17,7 +17,7 @@ module tb_fifo16;
         if (!full) begin $display("FIFO_FAIL full not asserted at 16 beats"); bad=bad+1; end
         out_ready=1;
         for (i=0;i<16;i=i+1) begin
-            @(negedge clk);
+            @(posedge clk);
             if (out_data !== i[15:0]) begin $display("FIFO_FAIL out[%0d]=%0d", i, out_data); bad=bad+1; end
         end
         out_ready=0; @(posedge clk); #1;
