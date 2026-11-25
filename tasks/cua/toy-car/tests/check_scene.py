@@ -127,8 +127,9 @@ def main():
         occ = {}
         body_bvh = world_bvh(body, bpy.context.evaluated_depsgraph_get())
         hinge.rotation_mode = 'XYZ'
+        sign = -1 if d.endswith("_l") else 1
         for deg in (0, 25, 50, 75):
-            hinge.rotation_euler = (0, 0, math.radians(deg))
+            hinge.rotation_euler = (0, 0, sign * math.radians(deg))
             bpy.context.view_layer.update()
             deps = bpy.context.evaluated_depsgraph_get()
             db = world_bvh(ob, deps)

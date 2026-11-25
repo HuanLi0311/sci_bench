@@ -115,6 +115,9 @@ def build():
         w = cylinder(name, WHEEL_D / 2, WHEEL_W)
         w.location = (x, y, WHEEL_D / 2)
         parent_keep(w, hub)
+        cap = box(name + "_cap", (x, y, WHEEL_D / 2), (0.012, WHEEL_W + 0.002, 0.012), 0.001)
+        cap.location = (x, y - fy * 0.004, WHEEL_D / 2 + 0.012)
+        parent_keep(cap, hub)
         if fx > 0:
             steer = empty("steer_" + name.split("_")[1], (x, y, WHEEL_D / 2))
             parent_keep(hub, steer)

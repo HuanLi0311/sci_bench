@@ -48,10 +48,8 @@ def gray(p, size=None):
 
 
 def mask(p):
-    im = Image.open(p)
-    if im.mode == "RGBA":
-        return (np.asarray(im)[..., 3] > 20)
-    return np.asarray(im.convert("L")) < 245
+    im = Image.open(p).convert("L").resize((240, 240), Image.LANCZOS)
+    return np.asarray(im) < 200
 
 
 def iou(a, b):
