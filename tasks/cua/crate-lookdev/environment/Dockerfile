@@ -23,14 +23,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 python3-numpy \
     && rm -rf /var/lib/apt/lists/*
 
-# Blender 4.2.3 LTS, official linux-x64 build (huaweicloud mirror of
-# download.blender.org; the primary host is not reachable from this network).
-RUN curl -fsSL --retry 4 --retry-delay 5 -o /tmp/blender.tar.xz \
-        https://mirrors.huaweicloud.com/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz \
-    && mkdir -p /opt/blender \
-    && tar -xJf /tmp/blender.tar.xz -C /opt/blender --strip-components=1 \
-    && ln -sf /opt/blender/blender /usr/local/bin/blender \
-    && rm -f /tmp/blender.tar.xz \
+# Blender from the Ubuntu archive. The official linux-x64 tarball is blocked
+# on this network (download.blender.org and its mirrors return 403/HTML), so
+# the task is pinned to the archive build instead. The verifier image is built
+# from the same layer, so reference and grading render with one binary.
+RUN apt-get update && apt-get install -y --no-install-recommends blender \
+    && rm -rf /var/lib/apt/lists/* \
     && blender --version | head -2
 
 # Agent-visible surface: the drawing pack, reference photos, HDRI, licence.
