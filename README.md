@@ -26,7 +26,16 @@ agent on a virtual 1920x1080 XFCE desktop. First one built:
 
 | Task | What the agent must do | Reference | Oracle |
 |---|---|---|---|
-| `crate-lookdev` | Build a weathered 800x600x600 mm wooden crate in the Blender 4.2 GUI from a three-view drawing — 20 mm panels, rear-hinged lid 0-95°, eight rusted corner brackets, worn stencil — and deliver a packed `.blend` plus four camera renders | 13/13 checks, 2858 tris | **reward 1**; swapped render and unpacked textures both score 0 |
+| `crate-lookdev` | Weathered 800x600x600 mm wooden crate in the Blender GUI from a three-view drawing: 20 mm panels, rear-hinged lid, eight rusted brackets, worn stencil | 13/13, 2858 tris | **reward 1**; swapped render and unpacked textures score 0 |
+| `booth-clearance` | 6x4 m exhibition booth from a floor plan: entrance, aisle and hydrant clearances, three products visible from the entrance camera, brand colours | 16/16, 1166 tris | **reward 1**; deleted entrance marker scores 0 |
+| `folding-chair` | 620x580x820 mm scissor chair whose four hinges drive a 0-60 fold to a 90 mm pack, no interpenetration in 31 sampled poses | 13/13, 96 tris | **reward 1**; displaced hinge scores 0 |
+| `toy-car` | 380 mm jointed car from two turntables: 240 mm wheelbase, spinning/steering wheels, front-edge door hinges, four silhouette-matched views | 14/14, 748 tris | **reward 1**; 1.2x wheels score 0 |
+| `rainroom` | 4.2x3.6x2.8 m interior with 26 objects, two switchable light collections and night/morning renders from one camera | 13/13, 1476 tris | **reward 1**; emptied light collection scores 0 |
+
+All five pass `tasks/cua/SANITY_LIST.md` via `tasks/cua/tools/sanity_check.py`
+(layout, task.toml, instruction suffix, materials, environment image and
+isolation, verifier image, oracle reward 1, deliverables, anti-cheat, recorded
+negative test, licences).
 
 Its base image is the local Blender desktop image (`blender-bench:gui`), recipe
 in `tasks/cua/crate-lookdev/authoring/base-image.md`.
