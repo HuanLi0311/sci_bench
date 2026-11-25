@@ -13,7 +13,21 @@ Two tasks, both Terminal-Bench-Science / Harbor format, both original work.
 tasks/engineering-sciences/electrical-engineering/
   opamp-triage/
   fsm-recode/
+tasks/cua/
+  crate-lookdev/
 ```
+
+## CUA batch
+
+`tasks/cua/` holds computer-use tasks that run against the harbor `computer-1`
+agent on a virtual 1920x1080 XFCE desktop. First one built:
+
+| Task | What the agent must do | Reference | Oracle |
+|---|---|---|---|
+| `crate-lookdev` | Build a weathered 800x600x600 mm wooden crate in the Blender 4.2 GUI from a three-view drawing — 20 mm panels, rear-hinged lid 0-95°, eight rusted corner brackets, worn stencil — and deliver a packed `.blend` plus four camera renders | 13/13 checks, 2858 tris | **reward 1**; swapped render and unpacked textures both score 0 |
+
+Its base image is the local Blender desktop image (`blender-bench:gui`), recipe
+in `tasks/cua/crate-lookdev/authoring/base-image.md`.
 
 Both are laid out per the TB-Science schema: `instruction.md`, `task.toml`,
 `environment/Dockerfile`, `tests/Dockerfile` (separate verifier), `tests/test.sh`,
