@@ -42,7 +42,12 @@ module relay(
             if (b_valid && a_free) begin
                 out_data  <= b_data;
                 out_valid <= 1'b1;
-                b_valid   <= 1'b0;
+                if (take) begin
+                    b_data  <= in_data;
+                    b_valid <= 1'b1;
+                end else begin
+                    b_valid <= 1'b0;
+                end
             end else if (take) begin
                 if (a_free) begin
                     out_data  <= in_data;
