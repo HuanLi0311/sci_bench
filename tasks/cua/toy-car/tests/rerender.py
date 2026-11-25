@@ -31,6 +31,11 @@ def main():
         if hub is not None:
             hub.rotation_mode = 'XYZ'
             hub.rotation_euler = (0, math.radians(90), 0)
+    for name in ("steer_fl", "steer_fr"):
+        st = bpy.data.objects.get(name)
+        if st is not None:
+            st.rotation_mode = 'XYZ'
+            st.rotation_euler = (0, 0, math.radians(25))
     bpy.context.view_layer.update()
 
     sc.render.filepath = spun_png
