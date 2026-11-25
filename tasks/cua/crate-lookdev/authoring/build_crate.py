@@ -313,14 +313,13 @@ def build_brackets():
             for z0, z1 in ((0.0, BAND), (BODY_H - BAND, BODY_H)):
                 idx += 1
                 name = f"bracket_{idx:02d}"
-                # plate on the x face
-                px = sx * (W / 2 - BAND_T / 2)
+                # plates sit 1.5 mm proud of the timber, wrapping the corner
+                px = sx * (W / 2 + 0.0015 / 2)
                 plate_x = box(name + "_x", (px, sy * (D / 2 - BAND / 2), (z0 + z1) / 2),
-                              (BAND_T, BAND, BAND), bevel=0.0015, segments=2)
-                # plate on the y face, inset in x so the two plates do not z-fight
-                py = sy * (D / 2 - BAND_T / 2)
-                plate_y = box(name + "_y", (sx * (W / 2 - BAND / 2 - BAND_T), py, (z0 + z1) / 2),
-                              (BAND - BAND_T, BAND_T, BAND), bevel=0.0015, segments=2)
+                              (0.0015, BAND, BAND), bevel=0.0012, segments=2)
+                py = sy * (D / 2 + 0.0015 / 2)
+                plate_y = box(name + "_y", (sx * (W / 2 - BAND / 2 + 0.0015), py, (z0 + z1) / 2),
+                              (BAND + 0.003, 0.0015, BAND), bevel=0.0012, segments=2)
                 # join the two plates into one object
                 bpy.ops.object.select_all(action='DESELECT')
                 plate_x.select_set(True)
