@@ -43,67 +43,65 @@ def build():
     is invited to compress. The exceptions are what makes the compression
     wrong, and they are few enough to survive a careless look.
     """
-    rng = random.Random(SEED)
+    rng0 = random.Random(SEED)
 
-    trans = [[(s + 1 + v) % N_REAL for v in range(N_INPUTS)]
-             for s in range(N_REAL)]
-    out = [s % 8 for s in range(N_REAL)]
+    # The exception set must leave every state reachable and every real state
+    # distinguishable; retry until it does rather than hand-tuning by hand.
+    for attempt in range(500):
+        rng = random.Random(SEED + attempt)
+        trans = [[(s + 1 + v) % N_REAL for v in range(N_INPUTS)]
+                 for s in range(N_REAL)]
+        out = [s % 8 for s in range(N_REAL)]
 
-    # five states carry the exceptions
-    irregular = rng.sample(range(1, N_REAL), 5)
-    n_exc = 0
-    for s in irregular:
-        for v in rng.sample(range(N_INPUTS), rng.choice((1, 1, 2))):
-            t = rng.randrange(N_REAL)
-            if t != trans[s][v]:
-                trans[s][v] = t
-                n_exc += 1
+        irregular = rng.sample(range(1, N_REAL), 5)
+        n_exc = 0
+        for s in irregular:
+            for v in rng.sample(range(N_INPUTS), rng.choice((1, 1, 2))):
+                t = rng.randrange(N_REAL)
+                if t != trans[s][v]:
+                    trans[s][v] = t
+                    n_exc += 1
 
-    # duplicates: index -> source real state
-    dup = {N_REAL + i: src for i, src in enumerate(DUP_SOURCES)}
-    src_to_dup = {src: N_REAL + i for i, src in enumerate(DUP_SOURCES)}
+        dup = {N_REAL + i: src for i, src in enumerate(DUP_SOURCES)}
+        src_to_dup = {src: N_REAL + i for i, src in enumerate(DUP_SOURCES)}
 
-    # Some edges must land on the copy rather than on its prototype, or the
-    # copies are unreachable and synthesis dead-codes them -- which would make
-    # minimisation worthless and the whole task collapse to a re-encoding.
-    rng2 = random.Random(SEED + 1)
-    edge_target = {}
-    for s in range(N_REAL):
-        for v in range(N_INPUTS):
-            t = trans[s][v]
-            if t in src_to_dup and rng2.random() < 0.5:
-                edge_target[(s, v)] = src_to_dup[t]
-            else:
-                edge_target[(s, v)] = t
+        rng2 = random.Random(SEED + 1)          # stable copy-edge choice
+        edge_target = {}
+        for s in range(N_REAL):
+            for v in range(N_INPUTS):
+                t = trans[s][v]
+                if t in src_to_dup and rng2.random() < 0.5:
+                    edge_target[(s, v)] = src_to_dup[t]
+                else:
+                    edge_target[(s, v)] = t
 
-    def succ(state, v):
-        real = dup.get(state, state)
-        return edge_target[(real, v)]
+        def succ(state, v, _et=edge_target, _dup=dup):
+            return _et[(_dup.get(state, state), v)]
 
-    def output(state):
-        return out[dup.get(state, state)]
+        # reachability over the 40-state machine
+        seen = {0}
+        frontier = [0]
+        while frontier:
+            s = frontier.pop()
+            for v in range(N_INPUTS):
+                t = succ(s, v)
+                if t not in seen:
+                    seen.add(t)
+                    frontier.append(t)
+        if len(seen) != N_TOTAL:
+            continue
 
-    # reachability over the 40-state machine
-    seen = {0}
-    frontier = [0]
-    while frontier:
-        s = frontier.pop()
-        for v in range(N_INPUTS):
-            t = succ(s, v)
-            if t not in seen:
-                seen.add(t)
-                frontier.append(t)
-    if len(seen) != N_TOTAL:
-        raise SystemExit("only %d/%d states reachable" % (len(seen), N_TOTAL))
+        # every real state distinguishable from every other
+        sigs = {(out[s], tuple(trans[s])) for s in range(N_REAL)}
+        if len(sigs) != N_REAL:
+            continue
 
-    # every real state must be distinguishable from every other, or the
-    # reference machine has fewer than N_REAL states and the thresholds move
-    sigs = {(out[s], tuple(trans[s])) for s in range(N_REAL)}
-    if len(sigs) != N_REAL:
-        raise SystemExit("only %d/%d states distinguishable"
-                         % (len(sigs), N_REAL))
+        def output(state, _dup=dup, _out=out):
+            return _out[_dup.get(state, state)]
 
-    return trans, out, dup, succ, output, irregular, n_exc
+        return trans, out, dup, succ, output, irregular, n_exc
+
+    raise SystemExit("could not build a valid machine in 500 attempts")
 
 
 def emit_verilog(path, trans, out, dup, succ, output, mod="fsm"):
