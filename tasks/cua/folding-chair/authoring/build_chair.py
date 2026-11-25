@@ -108,8 +108,8 @@ def build():
     for side, x in (("l", -W / 2 + BAR_T / 2), ("r", W / 2 - BAR_T / 2)):
         h = empty(f"hinge_0{1 if side == 'l' else 2}", (x, 0.0, HINGE_Z), root)
         hinges[side] = h
-        a = bar(f"lower_leg_{side}_a", h, +ALPHA, BAR_LEN)
-        b = bar(f"lower_leg_{side}_b", h, -ALPHA, BAR_LEN)
+        a = bar(f"lower_leg_{side}_a", h, -ALPHA, BAR_LEN)
+        b = bar(f"lower_leg_{side}_b", h, +ALPHA, BAR_LEN)
         bars[side] = (a, b)
 
     # seat: 0.62 x 0.58, top at 0.45; pivots at its rear edge on bar A's top
@@ -149,8 +149,8 @@ def animate(hinges, bars, seat, back, hinge3, hinge4, pin):
     def key(frame, bar_rot, seat_rot, back_rot):
         sc.frame_set(frame)
         for side, (a, b) in bars.items():
-            a.rotation_euler = (-bar_rot, 0, 0)   # +ALPHA -> vertical
-            b.rotation_euler = (+bar_rot, 0, 0)   # -ALPHA -> vertical
+            a.rotation_euler = (+bar_rot, 0, 0)   # -ALPHA -> vertical
+            b.rotation_euler = (-bar_rot, 0, 0)   # +ALPHA -> vertical
             a.keyframe_insert("rotation_euler", frame=frame)
             b.keyframe_insert("rotation_euler", frame=frame)
         hinge3.rotation_euler = (seat_rot, 0, 0)
