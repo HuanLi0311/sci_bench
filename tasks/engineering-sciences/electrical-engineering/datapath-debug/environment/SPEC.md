@@ -71,10 +71,10 @@ be exactly one greater than the previous one.
 
 ## §7 Conformance
 
-Every module that presents or consumes a stream link must declare a revision
-and must behave as that revision specifies. A module whose behaviour matches
-one revision on one port and a different revision on another is
-non-conformant: the two revisions are not interoperable, and no combination
+Every module that presents or consumes a stream link must behave as the
+revision recorded for it in `rtl/MANIFEST.txt` specifies. A module whose
+behaviour matches one revision on one port and a different revision on another
+is non-conformant, and the two revisions are not interoperable: no combination
 of a 1.0 endpoint and a 1.1 endpoint on the same link is correct.
 
 ---

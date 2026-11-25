@@ -12,7 +12,8 @@ Every stage passes its own unit test. `iverilog` and `python3` are installed.
 
 | Path | Contents |
 |---|---|
-| `/app/SPEC.md` | The normative interface specification. It is a revision history: the system moved from 1.0 to 1.1, and each module declares the revision it was written against in its header |
+| `/app/SPEC.md` | The normative interface specification. It carries two revisions: the system moved from 1.0 to 1.1 |
+| `/app/rtl/MANIFEST.txt` | The revision recorded for each module. It is maintained by hand |
 | `/app/REPORT.md` | The incident report, including a failing integration run |
 | `/app/rtl/` | The design. `axis_source.v`, `fifo16.v`, `throttle.v` are yours to change |
 | `/app/tb/` | One unit testbench per stage, with the invocation each one expects |
