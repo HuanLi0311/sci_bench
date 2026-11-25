@@ -198,16 +198,16 @@ def build_lights():
     morning = coll("light_morning")
     # night: cool window glow, two warm practicals
     light("night_window", "light_night", 'AREA', (2.6, 0, 1.5),
-          (0, math.radians(-90), 0), 260, (0.55, 0.68, 1.0), 1.2)
+          (0, math.radians(-90), 0), 520, (0.45, 0.60, 1.0), 1.2)
     light("night_lamp_a", "light_night", 'POINT', (1.55, 1.3, 1.56), (0, 0, 0),
-          45, (1.0, 0.72, 0.42), 0.1)
+          10, (1.0, 0.78, 0.58), 0.1)
     light("night_lamp_b", "light_night", 'POINT', (-1.35, -0.9, 0.66), (0, 0, 0),
-          18, (1.0, 0.70, 0.40), 0.08)
+          5, (1.0, 0.78, 0.58), 0.08)
     # morning: warm low sun through the window plus soft fill
     sun = light("morning_sun", "light_morning", 'SUN', (2.6, -1.2, 2.4),
-                (math.radians(62), 0, math.radians(115)), 3.2, (1.0, 0.86, 0.66))
-    light("morning_fill", "light_morning", 'AREA', (2.4, 0.4, 1.7),
-          (0, math.radians(-90), 0), 420, (1.0, 0.93, 0.82), 1.6)
+                (math.radians(62), 0, math.radians(115)), 5.0, (1.0, 0.86, 0.66))
+    light("morning_fill", "light_morning", 'AREA', (1.9, 0.4, 1.9),
+          (0, math.radians(-90), 0), 600, (1.0, 0.92, 0.80), 1.6)
     return night, morning
 
 
