@@ -1,0 +1,14 @@
+{
+    "agent_timeout_multiplier": 0.3,
+    "agent_setup_timeout_multiplier": 5.0,
+    "agents": [
+        {
+            "name": "codex"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "."
+        }
+    ]
+}
