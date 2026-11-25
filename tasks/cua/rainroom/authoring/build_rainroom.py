@@ -120,8 +120,21 @@ def build_furniture():
     m_linen = mat("mat_linen", (0.62, 0.60, 0.55, 1), 0.85)
     m_ceramic = mat("mat_ceramic", (0.82, 0.80, 0.76, 1), 0.22)
     m_copper = mat("mat_copper", (0.72, 0.42, 0.26, 1), 0.32, 1.0)
-    m_glass = mat("mat_glass", (0.85, 0.92, 0.95, 1), 0.06, transmission=1.0)
+    m_glass = mat("mat_glass", (0.85, 0.92, 0.95, 1), 0.06, transmission=0.0)
+    m_glass.node_tree.nodes["Principled BSDF"].inputs["Alpha"].default_value = 0.12
     m_plant = mat("mat_plant", (0.18, 0.28, 0.14, 1), 0.7)
+
+    def emissive(name, color, strength):
+        m = bpy.data.materials.new(name)
+        m.use_nodes = True
+        nt = m.node_tree
+        nt.nodes.clear()
+        out = nt.nodes.new("ShaderNodeOutputMaterial")
+        em = nt.nodes.new("ShaderNodeEmission")
+        em.inputs["Color"].default_value = color
+        em.inputs["Strength"].default_value = strength
+        nt.links.new(em.outputs["Emission"], out.inputs["Surface"])
+        return m
 
     def add(name, ob, material):
         ob.data.materials.append(material)
@@ -136,8 +149,10 @@ def build_furniture():
     add("side_table", box("side_table", (-1.35, -0.9, 0.28), (0.45, 0.45, 0.04), 0.01), m_walnut)
     add("side_table_leg", box("side_table_leg", (-1.35, -0.9, 0.14), (0.06, 0.06, 0.28), 0.004), m_walnut)
     add("floor_lamp", cyl("floor_lamp", (1.55, 1.3, 0.9), 0.02, 1.8), m_copper)
-    add("floor_lamp_shade", cyl("floor_lamp_shade", (1.55, 1.3, 1.72), 0.18, 0.28), m_linen)
-    add("table_lamp", cyl("table_lamp", (-1.35, -0.9, 0.42), 0.05, 0.22), m_ceramic)
+    add("floor_lamp_shade", cyl("floor_lamp_shade", (1.55, 1.3, 1.72), 0.18, 0.28),
+        emissive("mat_shade_glow", (1.0, 0.72, 0.42, 1), 6.0))
+    add("table_lamp", cyl("table_lamp", (-1.35, -0.9, 0.42), 0.05, 0.22),
+        emissive("mat_lamp_glow", (1.0, 0.70, 0.40, 1), 3.0))
     add("bookshelf", box("bookshelf", (1.85, 0.1, 0.95), (0.35, 1.5, 1.9), 0.01), m_walnut)
     for i, (z, h) in enumerate(((0.35, 0.3), (0.75, 0.28), (1.15, 0.26), (1.55, 0.24))):
         add(f"books_{i+1}", box(f"books_{i+1}", (1.83, -0.35 + 0.2 * i, z), (0.12, 0.16, h), 0.004), m_linen)
@@ -184,9 +199,9 @@ def build_lights():
     # night: cool window glow, two warm practicals
     light("night_window", "light_night", 'AREA', (2.6, 0, 1.5),
           (0, math.radians(-90), 0), 260, (0.55, 0.68, 1.0), 1.2)
-    light("night_lamp_a", "light_night", 'POINT', (1.55, 1.3, 1.7), (0, 0, 0),
+    light("night_lamp_a", "light_night", 'POINT', (1.55, 1.3, 1.56), (0, 0, 0),
           45, (1.0, 0.72, 0.42), 0.1)
-    light("night_lamp_b", "light_night", 'POINT', (-1.35, -0.9, 0.52), (0, 0, 0),
+    light("night_lamp_b", "light_night", 'POINT', (-1.35, -0.9, 0.66), (0, 0, 0),
           18, (1.0, 0.70, 0.40), 0.08)
     # morning: warm low sun through the window plus soft fill
     sun = light("morning_sun", "light_morning", 'SUN', (2.6, -1.2, 2.4),
