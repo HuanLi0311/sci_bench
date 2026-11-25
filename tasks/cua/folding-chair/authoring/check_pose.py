@@ -10,6 +10,31 @@ def aabb(ob):
     ev.to_mesh_clear()
     return [min(p[i] for p in pts) for i in range(3)], [max(p[i] for p in pts) for i in range(3)]
 
+from mathutils.bvhtree import BVHTree
+
+def world_bvh(ob, deps):
+    ev = ob.evaluated_get(deps)
+    me = ev.to_mesh()
+    mw = ev.matrix_world
+    verts = [mw @ v.co for v in me.vertices]
+    faces = [tuple(p.vertices) for p in me.polygons]
+    ev.to_mesh_clear()
+    return BVHTree.FromPolygons(verts, faces, all_triangles=False, epsilon=0.0)
+
+parts = [o for o in bpy.data.objects if o.type == 'MESH' and not o.name.startswith("stage") and o.name != "lock_pin"]
+worst = {}
+for f in range(0, 61, 2):
+    bpy.context.scene.frame_set(f)
+    bpy.context.view_layer.update()
+    deps = bpy.context.evaluated_depsgraph_get()
+    trees = {o.name: world_bvh(o, deps) for o in parts}
+    for i, a in enumerate(parts):
+        for b in parts[i+1:]:
+            n = len(trees[a.name].overlap(trees[b.name]))
+            if n:
+                worst[(a.name, b.name)] = worst.get((a.name, b.name), 0) + n
+print("OVERLAPS", worst if worst else "none")
+
 for frame in (0, 30, 60):
     bpy.context.scene.frame_set(frame)
     bpy.context.view_layer.update()
