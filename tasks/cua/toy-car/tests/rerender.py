@@ -25,11 +25,12 @@ def main():
     sc.render.filepath = base_png
     bpy.ops.render.render(write_still=True)
 
-    w = bpy.data.objects.get("wheel_fl")
-    hub = w.parent if w is not None else None
-    if hub is not None:
-        hub.rotation_mode = 'XYZ'
-        hub.rotation_euler = (0, math.radians(90), 0)
+    for name in ("wheel_fl", "wheel_fr", "wheel_rl", "wheel_rr"):
+        w = bpy.data.objects.get(name)
+        hub = w.parent if w is not None else None
+        if hub is not None:
+            hub.rotation_mode = 'XYZ'
+            hub.rotation_euler = (0, math.radians(90), 0)
     bpy.context.view_layer.update()
 
     sc.render.filepath = spun_png

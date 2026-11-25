@@ -48,8 +48,24 @@ def gray(p, size=None):
 
 
 def mask(p):
+    """Silhouette = everything not reachable from the border through white."""
     im = Image.open(p).convert("L").resize((240, 240), Image.LANCZOS)
-    return np.asarray(im) < 200
+    a = np.asarray(im)
+    h, w = a.shape
+    white = a > 230
+    seen = np.zeros_like(white, dtype=bool)
+    stack = [(y, x) for y in (0, h - 1) for x in range(w)] +             [(y, x) for x in (0, w - 1) for y in range(h)]
+    while stack:
+        y, x = stack.pop()
+        if 0 <= y < h and 0 <= x < w and white[y, x] and not seen[y, x]:
+            seen[y, x] = True
+            stack.extend(((y + 1, x), (y - 1, x), (y, x + 1), (y, x - 1)))
+    return ~seen
+
+
+def mask_file(p):
+    a = np.asarray(Image.open(p).convert("L").resize((240, 240), Image.LANCZOS))
+    return a < 128
 
 
 def iou(a, b):
@@ -149,7 +165,7 @@ def main():
         if not os.path.exists(ref) or not os.path.exists(got):
             s_ok = False
             continue
-        val = iou(mask(ref), mask(got))
+        val = iou(mask_file(ref), mask(got))
         ious[v] = round(val, 3)
         if val < 0.75:
             s_ok = False

@@ -120,7 +120,7 @@ def build():
             a = math.radians(k * 90)
             tb = box(f"{name}_tread_{k}", (x + 0.026 * math.cos(a), y,
                                            WHEEL_D / 2 + 0.026 * math.sin(a)),
-                     (0.012, WHEEL_W + 0.002, 0.006), 0.001)
+                     (0.022, WHEEL_W + 0.004, 0.012), 0.001)
             parent_keep(tb, hub)
         if fx > 0:
             steer = empty("steer_" + name.split("_")[1], (x, y, WHEEL_D / 2))
