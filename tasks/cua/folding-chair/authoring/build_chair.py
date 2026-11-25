@@ -108,8 +108,8 @@ def build():
     for side, x in (("l", -W / 2 + 0.03), ("r", W / 2 - 0.03)):
         h = empty(f"hinge_0{1 if side == 'l' else 2}", (x, 0.0, HINGE_Z), root)
         hinges[side] = h
-        a = bar(f"lower_leg_{side}_a", h, -ALPHA, BAR_LEN)
-        b = bar(f"lower_leg_{side}_b", h, +ALPHA, BAR_LEN)
+        a = bar(f"front_leg_{side}", h, -ALPHA, BAR_LEN)
+        b = bar(f"rear_leg_{side}", h, +ALPHA, BAR_LEN)
         a.location.x += 0.015
         b.location.x -= 0.015
         bars[side] = (a, b)
