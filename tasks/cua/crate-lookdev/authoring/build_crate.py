@@ -163,7 +163,7 @@ def make_wood(n=2048):
     albedo = base * (0.72 + 0.55 * height[..., None])
     albedo = albedo * (1 - w) + grey * (0.65 + 0.5 * height[..., None]) * w
     albedo = np.clip(albedo, 0, 1)
-    rough = np.clip(0.58 + 0.22 * (height - 0.5) + 0.10 * (weather - 0.5), 0.35, 0.92)
+    rough = np.clip(0.55 + 0.34 * (height - 0.5) + 0.16 * (weather - 0.5), 0.32, 0.94)
 
     # normal from height gradient
     dy, dx = np.gradient(height)
@@ -179,8 +179,8 @@ def make_rust(n=2048):
     rng = np.random.default_rng(11)
     patch = fbm(n, rng, octaves=5, base=10)
     speck = fbm(n, rng, octaves=6, base=64)
-    iron = np.array([0.16, 0.16, 0.17])
-    rust = np.array([0.42, 0.20, 0.09])
+    iron = np.array([0.26, 0.25, 0.25])
+    rust = np.array([0.55, 0.27, 0.11])
     m = np.clip((patch * 0.75 + speck * 0.25 - 0.42) * 2.6, 0, 1)[..., None]
     albedo = np.clip(iron * (1 - m) + rust * (0.85 + 0.3 * speck[..., None]) * m, 0, 1)
     rough = np.clip(0.66 + 0.18 * speck + 0.08 * (patch - 0.5), 0.60, 0.90)
@@ -208,7 +208,7 @@ def make_stencil_mask(materials_dir, n_w=2048, n_h=1024):
     cu.body = "HANDLE\nWITH CARE"
     cu.align_x = 'CENTER'
     cu.align_y = 'CENTER'
-    cu.size = 0.16
+    cu.size = 0.12
     cu.extrude = 0.0
     ob = bpy.data.objects.new("txt", cu)
     ob.location = (0, 0, 0)
@@ -334,21 +334,23 @@ def build_brackets():
 
 
 def build_stencil(mask):
-    """A 1 mm-thick painted plate on the front face carrying the worn mask."""
+    """A single-sided painted plane on the front face carrying the worn mask."""
+    import bmesh as _bm
     n_h, n_w = mask.shape
-    rgb = np.ones((n_h, n_w, 3), dtype=np.float32) * np.array([0.86, 0.85, 0.82])
+    rgb = np.ones((n_h, n_w, 3), dtype=np.float32) * np.array([0.88, 0.87, 0.84])
     img = save_alpha_image("stencil_mask", mask, rgb, "/tmp/stencil_mask.png")
 
-    ob = box("stencil_text", (0, -D / 2 - 0.0005, 0.42),
-             (0.62, 0.001, 0.31), bevel=0.0)
-    # direct UVs: x -> u, z -> v
-    bpy.context.view_layer.objects.active = ob
-    bpy.ops.object.select_all(action='DESELECT')
-    ob.select_set(True)
-    bpy.ops.object.mode_set(mode='EDIT')
-    bpy.ops.mesh.select_all(action='SELECT')
-    bpy.ops.uv.reset()
-    bpy.ops.object.mode_set(mode='OBJECT')
+    W2, Z0, Z1 = 0.31, 0.265, 0.575
+    y = -D / 2 - 0.0006
+    me = bpy.data.meshes.new("stencil_text")
+    me.from_pydata([(-W2, y, Z0), (W2, y, Z0), (W2, y, Z1), (-W2, y, Z1)],
+                   [], [(0, 1, 2, 3)])
+    me.update()
+    uv = me.uv_layers.new(name="UVMap")
+    for i, co in enumerate([(0, 0), (1, 0), (1, 1), (0, 1)]):
+        uv.data[i].uv = co
+    ob = bpy.data.objects.new("stencil_text", me)
+    bpy.context.collection.objects.link(ob)
 
     mat = bpy.data.materials.new("mat_stencil_paint")
     mat.use_nodes = True
@@ -357,9 +359,10 @@ def build_stencil(mask):
     nt.nodes.clear()
     out = nt.nodes.new("ShaderNodeOutputMaterial")
     bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
-    bsdf.inputs["Roughness"].default_value = 0.75
+    bsdf.inputs["Roughness"].default_value = 0.72
     tex = nt.nodes.new("ShaderNodeTexImage")
     tex.image = img
+    tex.interpolation = 'Linear'
     nt.links.new(tex.outputs["Color"], bsdf.inputs["Base Color"])
     nt.links.new(tex.outputs["Alpha"], bsdf.inputs["Alpha"])
     nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
