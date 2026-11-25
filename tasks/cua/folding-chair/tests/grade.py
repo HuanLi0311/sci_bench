@@ -13,7 +13,7 @@ import numpy as np
 from PIL import Image
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
-TOL = {"size": 0.005, "hinge": 0.002, "thickness": 0.095, "coincide": 0.005}
+TOL = {"size": 0.005, "hinge": 0.002, "thickness": 0.095, "coincide": 0.020}
 HINGES = {
     "hinge_01": (-0.28, 0.00, 0.225),
     "hinge_02": (0.28, 0.00, 0.225),

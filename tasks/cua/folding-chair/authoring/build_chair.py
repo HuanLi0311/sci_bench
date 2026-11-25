@@ -120,7 +120,7 @@ def build():
     parent_keep(seat, hinge3)
 
     # back: stands on the seat's rear edge, pivots there
-    back = box("back", (0, 0, 0), (W - 2 * BAR_T - 0.08, PANEL_T, H - SEAT_Z - 0.02), 0.003)
+    back = box("back", (0, 0, 0), (W - 2 * BAR_T - 0.08, PANEL_T, H - SEAT_Z + 0.01), 0.003)
     back.location = (0, D / 2 - PANEL_T / 2, (SEAT_Z + H) / 2 - 0.01)
     hinge4 = empty("hinge_04", (0, D / 2 - 0.02, SEAT_Z + PANEL_T + 0.005), seat)
     parent_keep(back, hinge4)
