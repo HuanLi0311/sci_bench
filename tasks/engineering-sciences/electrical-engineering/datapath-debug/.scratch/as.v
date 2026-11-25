@@ -7,7 +7,9 @@
 
 `timescale 1ns/1ps
 module axis_source #(
-    parameter integer NBEATS = 5200
+    parameter integer NBEATS = 5200,
+    parameter integer BURST  = 1000,
+    parameter integer GAP    = 0
 )(
     input  wire        clk,
     input  wire        rst,
@@ -17,12 +19,11 @@ module axis_source #(
     output reg         done
 );
 
-    parameter integer BURST = 200;
-    parameter integer GAP = 32;
     reg [15:0] n;
-    reg [7:0] ph;
-    wire want = (ph < BURST);
+    reg [10:0] ph;
     reg        credit;
+
+    wire want = (ph < BURST);
 
     wire ready  = !full;
     wire last   = (n == NBEATS - 1);
@@ -38,7 +39,7 @@ module axis_source #(
             valid  <= 1'b0;
             credit <= 1'b0;
             done   <= 1'b0;
-            ph     <= 8'd0;
+            ph     <= 11'd0;
         end else if (!done) begin
             if (!valid && want) begin
                 valid  <= 1'b1;
@@ -54,7 +55,7 @@ module axis_source #(
                     data <= {4'h0, n[11:0] + 12'd1};
                 end
             end
-            ph <= (ph == BURST+GAP-1) ? 8'd0 : ph + 8'd1;
+            ph <= (ph == BURST + GAP - 1) ? 11'd0 : ph + 11'd1;
         end
     end
 
