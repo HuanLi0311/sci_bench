@@ -21,7 +21,7 @@ module throttle(
     reg [2:0] phase;
 
     wire out_free = (!out_valid) || out_ready;
-    wire allow    = (phase != 3'd5) && (phase != 3'd6);
+    wire allow    = (phase != 3'd7);
 
     assign in_ready = allow && out_free;
 
