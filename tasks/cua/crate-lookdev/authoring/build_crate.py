@@ -117,13 +117,13 @@ def save_image(name, rgb, path, colorspace='sRGB'):
     """rgb: (n, n, 3) float 0..1, origin bottom-left (Blender pixel order)."""
     n = rgb.shape[0]
     img = bpy.data.images.new(name, width=n, height=n, alpha=False)
+    img.colorspace_settings.name = colorspace
     rgba = np.ones((n, n, 4), dtype=np.float32)
     rgba[..., :3] = rgb
     img.pixels.foreach_set(rgba.ravel())
     img.update()
     img.filepath_raw = path
     img.file_format = 'PNG'
-    img.colorspace_settings.name = colorspace
     img.save()
     img.pack()
     return img
@@ -132,6 +132,7 @@ def save_image(name, rgb, path, colorspace='sRGB'):
 def save_alpha_image(name, alpha, rgb, path):
     h, w = alpha.shape
     img = bpy.data.images.new(name, width=w, height=h, alpha=True)
+    img.colorspace_settings.name = 'sRGB'
     rgba = np.ones((h, w, 4), dtype=np.float32)
     rgba[..., :3] = rgb
     rgba[..., 3] = alpha
@@ -139,7 +140,6 @@ def save_alpha_image(name, alpha, rgb, path):
     img.update()
     img.filepath_raw = path
     img.file_format = 'PNG'
-    img.colorspace_settings.name = 'sRGB'
     img.alpha_mode = 'STRAIGHT'
     img.save()
     img.pack()
