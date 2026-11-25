@@ -13,8 +13,8 @@ module relay(
     input  wire [15:0] in_data,
     input  wire        in_valid,
     output wire        in_ready,
-    output reg  [15:0] out_data,
-    output reg         out_valid,
+    output wire [15:0] out_data,
+    output wire        out_valid,
     input  wire        out_ready
 );
 
@@ -26,6 +26,9 @@ module relay(
     // `out_ready` was low.
     reg        credit;
     reg        out_ready_q;
+
+    assign out_valid = a_valid;
+    assign out_data  = a_data;
 
     wire a_free  = (!a_valid) || out_ready;
     wire any_free = (!a_valid) || (!b_valid);
@@ -50,8 +53,6 @@ module relay(
             b_valid     <= 1'b0;
             credit      <= 1'b0;
             out_ready_q <= 1'b0;
-            out_data    <= 16'd0;
-            out_valid   <= 1'b0;
         end else begin
             out_ready_q <= out_ready;
             credit      <= out_ready ? 1'b0 : (retire ? 1'b1 : credit);
@@ -73,9 +74,6 @@ module relay(
                     b_valid <= 1'b1;
                 end
             end
-
-            out_data  <= a_data;
-            out_valid <= a_valid;
         end
     end
 

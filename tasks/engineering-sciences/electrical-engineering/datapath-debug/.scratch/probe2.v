@@ -13,7 +13,7 @@ module tb_probe;
       if (u.r_valid && u.r_ready) rel_emit=rel_emit+1;
       if (u.t_valid && u.t_ready) thr_in=thr_in+1;
       // overwrite detection: hold already has a beat but we take another
-      if (u.u_relay.take && u.u_relay.hold_valid && (!u.u_relay.out_valid || u.u_relay.out_ready)) bad_ovr=bad_ovr+1;
+      if (u.u_relay.take && u.u_relay.b_valid && (!u.u_relay.out_valid || u.u_relay.out_ready)) bad_ovr=bad_ovr+1;
     end
     integer g;
     initial begin
