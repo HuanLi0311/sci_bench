@@ -34,9 +34,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl xz-utils \
     && ln -sf /opt/node-v22.12.0-linux-x64/bin/npx /usr/local/bin/npx \
     && printf '#!/bin/sh\nexit 0\n' > /usr/local/bin/nvm \
     && chmod +x /usr/local/bin/nvm \
-    && npm install -g @openai/codex@latest \
-    && ln -sf /opt/node-v22.12.0-linux-x64/bin/codex /usr/local/bin/codex \
-    && node --version && codex --version
+    && node --version
+
+# Codex CLI, vendored. `npm i -g @openai/codex` fails inside the container:
+# the platform package (@openai/codex-linux-x64) is not on the public
+# registries reachable here. The directory below is a working 0.172.0 install
+# copied from the host; authoring/vendor-note.md records how to refresh it.
+COPY vendor/codex /opt/codex
+RUN ln -sf /opt/codex/bin/codex.js /usr/local/bin/codex && codex --version
 
 # Agent-visible surface: the drawing pack, reference photos, HDRI, licence.
 WORKDIR /app
