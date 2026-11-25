@@ -89,11 +89,11 @@ def material_report(mat):
             try:
                 w, h = img.size
                 arr = np.array(img.pixels[:], dtype=np.float32).reshape(h, w, -1)
-                if "Roughness" in sinks:
+                if any("Roughness" in x for x in sinks):
                     grey = arr[..., :3].mean(-1)
                     rep["roughness_std"] = float(grey.std())
                     rep["roughness_mean"] = float(grey.mean())
-                if "Alpha" in sinks:
+                if any("Alpha" in x for x in sinks):
                     a = arr[..., 3]
                     rep["alpha_frac"] = float(((a > 0.05) & (a < 0.95)).mean())
                     rep["alpha_coverage"] = float((a > 0.5).mean())
@@ -103,31 +103,40 @@ def material_report(mat):
 
 
 def overlap_test(lid, others, angles):
-    """Rotate the lid's parent (the hinge) and report BVH overlaps."""
+    """Rotate the lid about its hinge in world space and count BVH overlaps.
+
+    The evaluated copy is rebuilt per angle by transforming vertices directly:
+    dependency-graph updates for an empty parent are not reliable in
+    background mode, and a stale pose is exactly the bug this check exists to
+    catch.
+    """
+    from mathutils import Matrix
     hinge = lid.parent
-    out = {}
+    pivot = hinge.matrix_world.translation.copy()
+
     deps = bpy.context.evaluated_depsgraph_get()
+    others_bvh = []
+    for ob in others:
+        if ob.name == lid.name:
+            continue
+        ev = ob.evaluated_get(deps)
+        others_bvh.append(BVHTree.FromObject(ev, deps))
+
+    ev = lid.evaluated_get(deps)
+    me = ev.to_mesh()
+    base = [ev.matrix_world @ v.co for v in me.vertices]
+    faces = [tuple(p.vertices) for p in me.polygons]
+    ev.to_mesh_clear()
+
+    out = {}
     for deg in angles:
-        if hinge is not None:
-            hinge.rotation_euler[0] = angle_rad(deg, hinge)
-        bpy.context.view_layer.update()
-        deps = bpy.context.evaluated_depsgraph_get()
-        lb = BVHTree.FromObject(lid.evaluated_get(deps), deps)
-        hits = 0
-        for ob in others:
-            if ob.name == lid.name:
-                continue
-            bb = BVHTree.FromObject(ob.evaluated_get(deps), deps)
-            hits += len(lb.overlap(bb))
-        out[str(deg)] = hits
-    if hinge is not None:
-        hinge.rotation_euler[0] = 0.0
-    bpy.context.view_layer.update()
+        M = (Matrix.Translation(pivot)
+             @ Matrix.Rotation(np.deg2rad(deg), 4, 'X')
+             @ Matrix.Translation(-pivot))
+        verts = [M @ v for v in base]
+        lb = BVHTree.FromPolygons(verts, faces, all_triangles=False, epsilon=0.0)
+        out[str(deg)] = sum(len(lb.overlap(b)) for b in others_bvh)
     return out
-
-
-def angle_rad(deg, hinge):
-    return np.deg2rad(deg)
 
 
 def main():

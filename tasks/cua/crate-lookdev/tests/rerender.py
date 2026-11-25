@@ -23,7 +23,7 @@ def main():
         cam = cams[0] if cams else None
     sc.camera = cam
     sc.render.resolution_x = 960
-    sc.render.resolution_y = 540
+    sc.render.resolution_y = 720
     sc.render.resolution_percentage = 100
     sc.render.image_settings.file_format = 'PNG'
     sc.cycles.samples = 64

@@ -289,7 +289,7 @@ def main():
                 base = load_gray("/tmp/ac_base.png")
                 lidimg = load_gray("/tmp/ac_lid.png")
                 delivered = load_gray(os.path.join(out, "render_front.png"),
-                                      size=(960, 540))
+                                      size=(960, 720))
                 s_match = ss_img(base, delivered)
                 s_change = ss_img(base, lidimg)
                 ac_ok = s_match >= 0.90 and s_change <= 0.98
