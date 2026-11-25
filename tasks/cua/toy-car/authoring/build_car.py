@@ -115,7 +115,12 @@ def build():
         w = cylinder(name, WHEEL_D / 2, WHEEL_W)
         w.location = (x, y, WHEEL_D / 2)
         parent_keep(w, hub)
-        parent_keep(hub, body)
+        if fx > 0:
+            steer = empty("steer_" + name.split("_")[1], (x, y, WHEEL_D / 2))
+            parent_keep(hub, steer)
+            parent_keep(steer, body)
+        else:
+            parent_keep(hub, body)
         wheels[name] = (w, hub, fx, fy)
         parts[name] = w
     parts["wheels"] = wheels
