@@ -1,0 +1,13 @@
+{
+    "agent_timeout_multiplier": 0.3,
+    "agents": [
+        {
+            "name": "codex"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "."
+        }
+    ]
+}
