@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "booth-empty-marker-positive",
+  "task": "booth-clearance",
+  "started_at": "20261126T093556Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T093556Z-representation-booth-empty-marker-positive:/mutation",
+    "cua-qc-booth-clearance-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/booth.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "fa131dfd869e99723a468ad17a6e4f895425adf3078aadc0fa8ede1a621676df",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T09:36:00.055714+00:00"
+}

@@ -1,6 +1,6 @@
-# Current booth-clearance validation
+# Completed 20-check booth-clearance snapshot (superseded)
 
-Checked at 2026-11-26T08:52:53.529466+00:00. These records use the current 20-check verifier.
+Checked at 2026-11-26T08:52:53.529466+00:00. These records use the then-current 20-check verifier. A subsequent real-model review found an Empty-helper false rejection; the current 21-check verifier is being revalidated.
 
 | Case | Reward | Raw evidence |
 |---|---:|---|

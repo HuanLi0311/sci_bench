@@ -54,12 +54,46 @@ shell.data.materials.append(white)
 for face in shell.data.polygons:
     face.material_index = len(shell.data.materials) - 1
 ''',
+    "booth-closed-opening": '''import bpy
+shell = bpy.data.objects["booth_shell"]
+bpy.ops.mesh.primitive_cube_add(size=1, location=(-2.99, 0, 1.2))
+closure = bpy.context.object
+closure.name = "adversarial_entrance_closure"
+closure.dimensions = (0.02, 2.4, 2.4)
+bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+bpy.ops.object.select_all(action="DESELECT")
+closure.select_set(True)
+shell.select_set(True)
+bpy.context.view_layer.objects.active = shell
+bpy.ops.object.join()
+''',
+    "booth-camera-away": '''import bpy
+camera = bpy.data.objects["cam_entrance"]
+for constraint in list(camera.constraints):
+    camera.constraints.remove(constraint)
+camera.rotation_mode = "XYZ"
+camera.rotation_euler = (0, 0, 0)
+''',
+    "booth-empty-marker-positive": '''import bpy
+old = bpy.data.objects["entrance_zone"]
+matrix = old.matrix_world.copy()
+collections = list(old.users_collection)
+new = bpy.data.objects.new("empty_marker_replacement", None)
+for collection in collections:
+    collection.objects.link(new)
+new.matrix_world = matrix
+new.empty_display_type = "CUBE"
+new.empty_display_size = 1.0
+bpy.data.objects.remove(old, do_unlink=True)
+new.name = "entrance_zone"
+''',
 }
 
 
 def prepare(task, name, source):
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    run = ROOT / task / "authoring" / "runs" / (stamp + "-mutation-" + name)
+    prefix = "-representation-" if name.endswith("-positive") else "-mutation-"
+    run = ROOT / task / "authoring" / "runs" / (stamp + prefix + name)
     run.mkdir(parents=True)
     submission = run / "submission"
     shutil.copytree(ROOT / task / "solution", submission, ignore=shutil.ignore_patterns("*.blend1", "solve.sh"))
@@ -94,6 +128,6 @@ if __name__ == "__main__":
     if not options.only or options.only == "secondary-render-substitution":
         for task_name in RENDERS:
             prepare(task_name, "secondary-render-substitution", None)
-    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot")):
+    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot"), ("booth-clearance", "booth-closed-opening"), ("booth-clearance", "booth-camera-away"), ("booth-clearance", "booth-empty-marker-positive")):
         if not options.only or options.only == mutation:
             prepare(task_name, mutation, SCRIPTS[mutation])
