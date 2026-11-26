@@ -1,0 +1,28 @@
+[
+  {
+    "task": "folding-chair",
+    "argv": [
+      "docker",
+      "build",
+      "-t",
+      "cua-qc-folding-chair-env",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/environment"
+    ],
+    "started_at": "2026-11-26T11:41:56.482726+00:00",
+    "exit_code": 0,
+    "finished_at": "2026-11-26T11:41:57.678746+00:00"
+  },
+  {
+    "task": "toy-car",
+    "argv": [
+      "docker",
+      "build",
+      "-t",
+      "cua-qc-toy-car-env",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/toy-car/environment"
+    ],
+    "started_at": "2026-11-26T11:41:57.678938+00:00",
+    "exit_code": 0,
+    "finished_at": "2026-11-26T11:41:59.964222+00:00"
+  }
+]
