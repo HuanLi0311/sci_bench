@@ -24,7 +24,8 @@ HINGES = {
 }
 LIMBS = ["seat", "back", "front_leg_l", "front_leg_r", "rear_leg_l", "rear_leg_r"]
 CHECKS = []
-WORK = tempfile.mkdtemp(prefix="cua-verifier-")
+os.makedirs("/logs/verifier", exist_ok=True)
+WORK = tempfile.mkdtemp(prefix="work-", dir="/logs/verifier")
 
 
 def add(cid, level, ok, detail=""):

@@ -176,7 +176,7 @@ def main():
 
     for name in ['crate_front', 'crate_back', 'crate_left', 'crate_right', 'crate_bottom', 'crate_lid', 'stencil_text']:
         ob = bpy.data.objects.get(name)
-        if ob is None or ob.type != 'MESH' or not ob.data.polygons:
+        if ob is None or not ((ob.type == 'MESH' and len(ob.data.polygons)) or (name == 'stencil_text' and ob.type == 'FONT' and ob.data.body.strip())):
             raise ValueError(f"{name}: required nonempty mesh missing")
         if (ob.hide_render and name != "lock_pin") or not any(ob.name in scn.objects for scn in bpy.data.scenes):
             raise ValueError(f"{name}: required mesh hidden or outside scenes")

@@ -8,6 +8,7 @@ set -euo pipefail
 
 OUT="${1:-/app/out}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
+mkdir -p "$OUT"
 
 cp "$HERE/booth.blend" "$OUT/booth.blend"
 cp "$HERE"/render_entrance.png "$OUT/"

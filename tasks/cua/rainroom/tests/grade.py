@@ -12,7 +12,8 @@ from PIL import Image
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
-WORK = tempfile.mkdtemp(prefix="cua-verifier-")
+os.makedirs("/logs/verifier", exist_ok=True)
+WORK = tempfile.mkdtemp(prefix="work-", dir="/logs/verifier")
 
 
 def add(cid, level, ok, detail=""):
