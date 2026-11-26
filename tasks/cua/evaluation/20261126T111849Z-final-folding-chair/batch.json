@@ -83,6 +83,20 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "folding-chair",
+      "kind": "negative-chair-shared-hinge-collision",
+      "run": "folding-chair/authoring/runs/20261126T113037Z-final-negative-chair-shared-hinge-collision",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_no_interpenetration",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-26T11:30:45.703730+00:00"
 }

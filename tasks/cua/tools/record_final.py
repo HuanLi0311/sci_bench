@@ -4,7 +4,7 @@ WSL: python3 tasks/cua/tools/record_final.py
 All records remain in each task's authoring/runs; batch.json links them and
 records the common frozen source hashes used by every run for that task.
 The full set includes a historical model regrade for crate-lookdev; the booth
-subset contains Oracle, NOP and five adversarial submissions.
+subset contains Oracle, NOP and all prepared adversarial submissions.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
