@@ -55,4 +55,10 @@ Anti-cheat: the side camera is re-rendered, then all four wheels are spun 90°
 and the front pair steered 25°. The first render must match your
 `render_side.png` (SSIM ≥ 0.90) and the second must differ (SSIM ≤ 0.995).
 
+Each delivered view/state is independently re-rendered from its specified
+camera. It must match in every RGB channel (SSIM >= 0.90) and in image
+structure (relative RGB gradient error after a 2-pixel Gaussian blur <= 0.60).
+Agreement on a large uniform background alone is insufficient. Compositing
+or a video sequence cannot substitute for the delivered 3D scene.
+
 You have 7200 seconds to complete this task.

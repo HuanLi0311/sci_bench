@@ -53,4 +53,10 @@ Anti-cheat: the night camera is re-rendered with `light_night` on and then off.
 The on-render must match your `render_night.png` in mean luminance (within 15 %)
 and turning the collection off must change the image (SSIM ≤ 0.98).
 
+Each delivered view/state is independently re-rendered from its specified
+camera. It must match in every RGB channel (SSIM >= 0.90) and in image
+structure (relative RGB gradient error after a 2-pixel Gaussian blur <= 0.60).
+Agreement on a large uniform background alone is insufficient. Compositing
+or a video sequence cannot substitute for the delivered 3D scene.
+
 You have 7200 seconds to complete this task.

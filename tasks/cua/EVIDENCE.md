@@ -40,7 +40,7 @@ These are transcript statistics for a completed agent execution, not evidence th
 
 ## Verifier changes and tested boundaries
 
-The verifier now checks every delivered view/state against an independent RGB re-render from the submitted scene. It disables the compositor and sequencer for this check, requires the specified cameras, and retains each view's minimum per-channel SSIM (threshold 0.90). This closes the unchecked secondary-view path and the rainroom mean-luminance substitution path. Existing physical/light perturbation checks remain in place.
+The verifier now checks every delivered view/state against an independent RGB re-render from the submitted scene. It disables the compositor and sequencer for this check, requires the specified cameras, and retains each view's minimum per-channel SSIM (threshold 0.90). A real constant-colour top-view substitution still scored 1 under that check (SSIM 0.918), so the verifier also requires relative RGB gradient error <= 0.60 after a 2-pixel Gaussian blur. A constant image has gradient error 1 regardless of uniform-background area. Captured valid render pairs measured 0.093?0.459; the replay test and input hashes are in `evaluation/gradient-regression.json`. Full final Docker reruns validate the combined checks. Existing physical/light perturbation checks remain in place.
 
 Each grading invocation uses an isolated work directory and checks Blender's exit status with automatic embedded Python execution disabled. Unreadable scenes, malformed images and unexpected exceptions fail closed with a structured failure record. Source and subprocess logs make failed extraction distinguishable from a solved task.
 
@@ -59,3 +59,5 @@ python3 tasks/cua/tools/sanity_check.py
 ```
 
 The sanity check requires actual final Oracle and NOP records whose source hashes match the current verifier. It also checks rewards, per-check results, reference input hashes, untouched NOP output, original no-op command, and model inventory; prose containing "reward 1" cannot satisfy these gates.
+
+New isolated terminal-model trials for booth-clearance are recorded in its model-attempts index, separately from the historical crate archive. Runtime smoke calls are diagnostic checks, not task successes. A terminal trial whose tools cannot launch is an infrastructure failure even when its empty output receives reward 0.

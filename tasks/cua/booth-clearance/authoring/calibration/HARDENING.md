@@ -35,3 +35,11 @@ The frozen verifier used by these runs is recorded in `evaluation/20261126T08162
 | White back wall with unused green slot retained | [run](../runs/20261126T081650Z-final-negative-booth-unused-brand-slot/run.json) | `R08_brand_colour`, measured delta 223.992/255 |
 
 The grader skips expensive authenticity renders once a prerequisite already makes reward 1 impossible. This does not relax acceptance of any submission: this task has two normal checks and requires at least 80%, so both must pass. The log explicitly records the skip. Valid scenes and submitted-image substitutions still execute full independent rendering.
+
+## Discovered counterexample and structure fix
+
+The real [constant-top-view run](../runs/20261126T082402Z-final-negative-secondary-render-substitution/run.json) unexpectedly scored **1**, despite replacing the top image with constant RGB (209, 211, 210). Its RGB SSIM was 0.9176626638, above 0.90. This is a confirmed failure of the previous grader, retained without changing its original metrics or reward.
+
+The current grader adds `R_render_structure`: after a 2-pixel Gaussian blur, it divides the L2 difference of RGB image gradients by the trusted render's gradient L2 norm. A constant replacement scores exactly 1; the allowed error is at most 0.60. It still also requires RGB SSIM >=0.90. Twenty captured valid render pairs score 0.093?0.459; the same discovered exploit scores 1.000. Reproduce the component regression with `python3 tasks/cua/tools/check_render_metric.py`; the report includes both image hashes in `evaluation/gradient-regression.json` relative to `tasks/cua`.
+
+Earlier 19-check Oracle results remain valid for their snapshots, but do not prove the current 20-check verifier. The current verifier requires a fresh Oracle/NOP and the same five full negative cases, with matching hashes. The QC gate now requires every prepared negative case to be rejected; one unexpectedly accepted negative prevents a pass.
