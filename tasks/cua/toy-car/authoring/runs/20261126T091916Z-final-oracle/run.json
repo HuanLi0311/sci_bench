@@ -172,6 +172,60 @@
       "started_at": "2026-11-26T09:19:22.515614+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:19:22.750832+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-1f8c304779"
+      ],
+      "started_at": "2026-11-26T09:19:22.762059+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:22:33.331882+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-1f8c304779"
+      ],
+      "started_at": "2026-11-26T09:22:33.343041+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:22:33.388698+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-1f8c304779:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/toy-car/authoring/runs/20261126T091916Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:22:33.394854+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:22:33.618337+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-1f8c304779"
+      ],
+      "started_at": "2026-11-26T09:22:33.634397+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:22:33.855237+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-1f8c304779"
+      ],
+      "started_at": "2026-11-26T09:22:33.862518+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:22:33.936783+00:00"
     }
   ],
   "nop_definition": null,
@@ -400,5 +454,10 @@
       "sha256": "d9fab6d17c19bfb79cb2548577eb3f15ab80d056af0bb2f251ffff4a51e3705d",
       "bytes": 97618
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:22:33.948339+00:00"
 }
