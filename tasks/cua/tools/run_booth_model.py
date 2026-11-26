@@ -103,6 +103,7 @@ Original instruction follows verbatim:
         index_path = TASK / "authoring" / "model-attempts.json"
         index = json.loads(index_path.read_text())
         index["scope"] = "Recovered historical attempts plus newly recorded blind attempts; Oracle/NOP are excluded."
+        index["step_definition"] = "Each attempt's step_definition is authoritative; historical ATIF and raw Codex JSONL use distinct recorded counting rules."
         index.pop("absence_note", None)
         index["attempts"] = [item for item in index.get("attempts", []) if item["id"] != attempt_id]
         index["attempts"].append({"id": attempt_id, "path": str(run.relative_to(ROOT.parents[1])), "model_identifier": MODEL, "agent": "codex-terminal", "gui_compliant": False, "effective_config": effective, "outcome": "running", "reward": None, "raw_rollout_path": str((run / "raw-rollout").relative_to(ROOT.parents[1])), "trajectory_format": "Codex raw JSONL plus CLI --json events", "step_definition": "Pending final count_steps(raw-rollout); requests counted independently of successful tool execution", "agent_steps": None, "tool_calls": None})
@@ -211,6 +212,7 @@ Original instruction follows verbatim:
         index_path = TASK / "authoring" / "model-attempts.json"
         index = json.loads(index_path.read_text())
         index["scope"] = "Recovered historical attempts plus newly recorded blind attempts; Oracle/NOP are excluded."
+        index["step_definition"] = "Each attempt's step_definition is authoritative; historical ATIF and raw Codex JSONL use distinct recorded counting rules."
         index.pop("absence_note", None)
         steps = state.get("steps", {})
         index["attempts"] = [item for item in index.get("attempts", []) if item["id"] != attempt_id]

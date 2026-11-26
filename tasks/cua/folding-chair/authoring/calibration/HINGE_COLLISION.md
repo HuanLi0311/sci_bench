@@ -29,7 +29,11 @@ animation, images, dimensions and scoring thresholds are unchanged.
 
 Independent scene-level checks before publication found no collisions in
 the reference and detected the constructed collision. Full current-source
-Oracle/NOP and negative runs are linked from [current validation](VALIDATION.md).
+verification completed in [the frozen batch](../../../evaluation/20261126T111849Z-final-folding-chair/batch.json):
+Oracle reward 1 (15/15), true NOP reward 0, and all three negative cases
+reward 0. The shared-hinge negative successfully opens and fails
+`R07_no_interpenetration`, rather than failing on extraction or timeout.
+Oracle/NOP and negative runs are also linked from [current validation](VALIDATION.md).
 The new permanent case is `chair-shared-hinge-collision`; preparation lives
 in `tools/prepare_mutations.py`, and it is required by the shared
 `NEGATIVE_CASES` registry in `tools/sanity_check.py`.
