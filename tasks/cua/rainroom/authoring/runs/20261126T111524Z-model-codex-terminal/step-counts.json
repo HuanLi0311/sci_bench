@@ -1,0 +1,8 @@
+{
+  "agent_steps": 68,
+  "tool_calls": 64,
+  "reported_models": [
+    "gpt-6.1-sol"
+  ],
+  "step_definition": "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates."
+}

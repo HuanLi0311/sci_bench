@@ -1,0 +1,80 @@
+{
+  "scene": "rainroom.blend",
+  "assets": [
+    {
+      "path": "materials/drawings/room_plan.png",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    },
+    {
+      "path": "materials/tables/objects.xlsx",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    },
+    {
+      "path": "materials/spec/material_spec.pdf",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    },
+    {
+      "path": "materials/photos/ref_night.jpg",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    },
+    {
+      "path": "materials/photos/ref_morning.jpg",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    },
+    {
+      "path": "materials/photos/ref_detail.jpg",
+      "source": "supplied benchmark material",
+      "licence": "CC0-1.0"
+    }
+  ],
+  "objects": [
+    "rug",
+    "sofa",
+    "sofa_back",
+    "coffee_table",
+    "side_table",
+    "side_table_leg",
+    "floor_lamp",
+    "floor_lamp_shade",
+    "table_lamp",
+    "bookshelf",
+    "books_1",
+    "books_2",
+    "books_3",
+    "books_4",
+    "vase_01",
+    "vase_02",
+    "mug_01",
+    "mug_02",
+    "tray",
+    "candle_01",
+    "candle_02",
+    "bottle",
+    "plant_pot",
+    "plant_leaves",
+    "cushion_01",
+    "cushion_02"
+  ],
+  "materials": [
+    "Glass",
+    "Ceramic",
+    "Linen",
+    "Walnut",
+    "Copper"
+  ],
+  "lights": {
+    "night": "light_night",
+    "morning": "light_morning"
+  },
+  "camera": "cam_room",
+  "renders": {
+    "night": "render_night.png",
+    "morning": "render_morning.png"
+  },
+  "units": "metres"
+}

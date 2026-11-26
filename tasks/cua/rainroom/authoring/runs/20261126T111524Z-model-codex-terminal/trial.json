@@ -223,7 +223,102 @@
       "started_at": "2026-11-26T11:15:31.284619+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T11:15:31.546732+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "codex",
+        "exec",
+        "--json",
+        "--color",
+        "never",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--skip-git-repo-check",
+        "-C",
+        "/app",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"high\"",
+        "-c",
+        "features.multi_agent=false",
+        "-o",
+        "/app/model-final.txt",
+        "-"
+      ],
+      "started_at": "2026-11-26T11:15:31.580907+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:02.957935+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "stop",
+        "--time",
+        "5",
+        "cua-rainroom-model-0c6e1bcc5c"
+      ],
+      "started_at": "2026-11-26T12:05:03.116588+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:09.658875+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-rainroom-model-0c6e1bcc5c:/run/codex-home/sessions",
+        "/tmp/cua-booth-private-jl346bla/raw-rollout"
+      ],
+      "started_at": "2026-11-26T12:05:09.720824+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:10.089100+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-rainroom-model-0c6e1bcc5c:/app/out",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T111524Z-model-codex-terminal/submission"
+      ],
+      "started_at": "2026-11-26T12:05:10.826182+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:11.706433+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-rainroom-model-0c6e1bcc5c:/app/model-final.txt",
+        "/tmp/cua-booth-private-jl346bla/model-final.txt"
+      ],
+      "started_at": "2026-11-26T12:05:12.267884+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:12.441959+00:00"
     }
   ],
-  "outcome": "running"
+  "outcome": "running",
+  "agent_started_at": "2026-11-26T11:15:31.580872+00:00",
+  "agent_exit_code": 0,
+  "agent_finished_at": "2026-11-26T12:05:03.115725+00:00",
+  "submission": {
+    "manifest.json": {
+      "sha256": "8a194ef5123496ace5eb8878071be4a0affbd4a26fb55317b2ca7578cc0b389f",
+      "bytes": 1614
+    },
+    "rainroom.blend": {
+      "sha256": "4ca021250e03ffd7a307d3cad31397c4910741ce6dbebae84c4f1252300e15d2",
+      "bytes": 1704436
+    },
+    "render_morning.png": {
+      "sha256": "0c9bd3b5f92a2aa6cb04f61a41b0557b2212ca380a627c5e5edca1b9261f2a53",
+      "bytes": 1662261
+    },
+    "render_night.png": {
+      "sha256": "d94c7b610205471f56b72595fe3e976cb0ae6c017d18e3462647ac220c255aec",
+      "bytes": 1676054
+    }
+  }
 }
