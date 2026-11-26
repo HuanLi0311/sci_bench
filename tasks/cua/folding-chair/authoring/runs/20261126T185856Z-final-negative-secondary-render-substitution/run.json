@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T18:58:58.460172+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T18:58:58.586194+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-4e960ec852"
+      ],
+      "started_at": "2026-11-26T18:58:58.596303+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T19:05:01.713426+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-4e960ec852"
+      ],
+      "started_at": "2026-11-26T19:05:01.722745+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:01.784403+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-4e960ec852:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T185856Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T19:05:01.794312+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:02.075491+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-4e960ec852"
+      ],
+      "started_at": "2026-11-26T19:05:02.110063+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:02.156165+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-4e960ec852"
+      ],
+      "started_at": "2026-11-26T19:05:02.166207+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:02.291563+00:00"
     }
   ],
   "nop_definition": null,
@@ -170,5 +224,13 @@
       "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
       "bytes": 1418329
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T19:05:02.299841+00:00"
 }
