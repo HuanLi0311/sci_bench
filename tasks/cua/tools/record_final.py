@@ -1,8 +1,10 @@
-"""Freeze all five graders, then record Oracle, NOP, 9 negatives and model regrade.
+"""Freeze selected graders, then record Oracle, NOP and prepared negatives.
 
 WSL: python3 tasks/cua/tools/record_final.py
 All records remain in each task's authoring/runs; batch.json links them and
 records the common frozen source hashes used by every run for that task.
+The full set includes a historical model regrade for crate-lookdev; the booth
+subset contains Oracle, NOP and five adversarial submissions.
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
