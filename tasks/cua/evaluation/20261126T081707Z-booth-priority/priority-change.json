@@ -1,0 +1,22 @@
+{
+  "time_utc": "2026-11-26T08:17:07.856973+00:00",
+  "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved",
+  "processes": [
+    {
+      "pid": 1253427,
+      "argv": [
+        "/usr/bin/python3",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/tools/record_final.py",
+        "--jobs",
+        "1",
+        "--tasks",
+        "booth-clearance"
+      ],
+      "signal": "SIGTERM+SIGCONT",
+      "meaning": "Cancel full batch scheduling under new explicit priority"
+    }
+  ],
+  "cancelled_runs": [
+    "booth-clearance/authoring/runs/20261126T081631Z-final-negative-secondary-render-substitution"
+  ]
+}

@@ -1,0 +1,8 @@
+/app/out:
+total 4204
+drwxr-xr-x 1 root root    4096 Nov 26 08:17 .
+drwxr-xr-x 1 root root    4096 Nov 26 05:37 ..
+-rwxr-xr-x 1 root root  121525 Nov 26 08:17 booth.blend
+-rwxr-xr-x 1 root root     572 Nov 26 08:17 manifest.json
+-rwxr-xr-x 1 root root 1694302 Nov 26 08:17 render_entrance.png
+-rwxr-xr-x 1 root root 2467739 Nov 26 08:17 render_top.png

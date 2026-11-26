@@ -37,5 +37,55 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-moved-entrance-marker",
+      "run": "booth-clearance/authoring/runs/20261126T081628Z-final-negative-booth-moved-entrance-marker",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R05_entrance_clearance",
+        "R15_anti_cheat",
+        "R_all_render_authenticity"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-product-scaled",
+      "run": "booth-clearance/authoring/runs/20261126T081635Z-final-negative-booth-product-scaled",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_furniture_product_sizes",
+        "R_product_support",
+        "R15_anti_cheat",
+        "R_all_render_authenticity"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-product-floating",
+      "run": "booth-clearance/authoring/runs/20261126T081642Z-final-negative-booth-product-floating",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_product_support",
+        "R15_anti_cheat",
+        "R_all_render_authenticity"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-unused-brand-slot",
+      "run": "booth-clearance/authoring/runs/20261126T081650Z-final-negative-booth-unused-brand-slot",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R08_brand_colour",
+        "R15_anti_cheat",
+        "R_all_render_authenticity"
+      ]
+    }
+  ]
 }
