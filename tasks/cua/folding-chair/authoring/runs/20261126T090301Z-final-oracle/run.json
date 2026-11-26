@@ -59,6 +59,119 @@
       "started_at": "2026-11-26T09:03:03.254738+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:03:03.438332+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "cua-evidence-agent-ff37086485"
+      ],
+      "started_at": "2026-11-26T09:03:03.454062+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:03.739405+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-ff37086485",
+        "blender",
+        "--version"
+      ],
+      "started_at": "2026-11-26T09:03:03.749336+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:04.134564+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-ff37086485",
+        "ls",
+        "-laR",
+        "/app"
+      ],
+      "started_at": "2026-11-26T09:03:04.144839+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:04.326287+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-ff37086485",
+        "test",
+        "!",
+        "-e",
+        "/tests"
+      ],
+      "started_at": "2026-11-26T09:03:04.341273+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:04.521172+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-ff37086485",
+        "bash",
+        "/solution/solve.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T09:03:04.790929+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:05.150685+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-ff37086485",
+        "ls",
+        "-laR",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T09:03:05.189862+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:05.347372+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-agent-ff37086485:/app/out/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T090301Z-final-oracle/submission"
+      ],
+      "started_at": "2026-11-26T09:03:05.362585+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:05.695499+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-ff37086485",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T090301Z-final-oracle/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T090301Z-final-oracle/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T090301Z-final-oracle/verifier:/logs/verifier",
+        "cua-qc-folding-chair-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T09:03:06.062363+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:03:06.244059+00:00"
     }
   ],
   "nop_definition": null,
@@ -115,4 +228,89 @@
       "bytes": 60303
     },
     "materials/photos/ref_half.jpg": {
-      "sha256": "2842f22db8d3d1cadc811141f156e9bc9e7068feaefbe8630d2a3
+      "sha256": "2842f22db8d3d1cadc811141f156e9bc9e7068feaefbe8630d2a30d9dc230d24",
+      "bytes": 70865
+    },
+    "materials/photos/ref_hinge.jpg": {
+      "sha256": "3e0ce75ccbb5a1229fb3a2c64a0f08fbdbcdfc9eb7e6938ad071e071297bc996",
+      "bytes": 78553
+    },
+    "materials/photos/ref_locked.jpg": {
+      "sha256": "56d502be37078afb5955284e079dc3d6f79fb25ff3a89dc6e664e1a03eaa91d1",
+      "bytes": 68350
+    },
+    "materials/photos/ref_unfolded.jpg": {
+      "sha256": "8beb5f37000021b2140b857efb0d0ad8dd55774a1a27bc50c5d05db58c49a75e",
+      "bytes": 68350
+    },
+    "materials/tables/chair_sizes.xlsx": {
+      "sha256": "bf7fe1192bc196420e9551fab7a23bcb522e0d6d42dc0e2ed564a8aec2d3882e",
+      "bytes": 5027
+    },
+    "materials/tables/hinge_layout.xlsx": {
+      "sha256": "0d632ba1c71e2214db4485b4059baf694b0e30b4cb56dab1376a6e1b0311125b",
+      "bytes": 5016
+    }
+  },
+  "solution_source": {
+    "folding_chair.blend": {
+      "sha256": "faaec5aa87a50313d345edfc43cd77cd19ed5751fe811f5fefba4729c53d52b1",
+      "bytes": 93043
+    },
+    "folding_chair.blend1": {
+      "sha256": "d7be2231f7e05c16a07aadd3b38dd6e29e464002f197e4390c92334971346ecc",
+      "bytes": 92906
+    },
+    "manifest.json": {
+      "sha256": "d7af829a6d69f22f95f8323b511b0aef4f26c5aaa05e4843005bc53dd483d887",
+      "bytes": 1059
+    },
+    "render_folded.png": {
+      "sha256": "91bffb5cad07823c0dde4a4cbceddf46352c447f0fbe6c00455fc92ce0e3d6a8",
+      "bytes": 1401925
+    },
+    "render_half.png": {
+      "sha256": "966955c11a8df26326864af557e4adf5550277280126ea0de559f4d97a940603",
+      "bytes": 1434740
+    },
+    "render_locked.png": {
+      "sha256": "ecc7afe203fa9064841cafb09129166b9c78aa94ed38ad4a496d4affb754186b",
+      "bytes": 1418329
+    },
+    "render_unfolded.png": {
+      "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
+      "bytes": 1418329
+    },
+    "solve.sh": {
+      "sha256": "9d4ab58c6f2cce38f98025ee83628b761ebf1157e90798612d92ae3d88819b46",
+      "bytes": 478
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {
+    "folding_chair.blend": {
+      "sha256": "faaec5aa87a50313d345edfc43cd77cd19ed5751fe811f5fefba4729c53d52b1",
+      "bytes": 93043
+    },
+    "manifest.json": {
+      "sha256": "d7af829a6d69f22f95f8323b511b0aef4f26c5aaa05e4843005bc53dd483d887",
+      "bytes": 1059
+    },
+    "render_folded.png": {
+      "sha256": "91bffb5cad07823c0dde4a4cbceddf46352c447f0fbe6c00455fc92ce0e3d6a8",
+      "bytes": 1401925
+    },
+    "render_half.png": {
+      "sha256": "966955c11a8df26326864af557e4adf5550277280126ea0de559f4d97a940603",
+      "bytes": 1434740
+    },
+    "render_locked.png": {
+      "sha256": "ecc7afe203fa9064841cafb09129166b9c78aa94ed38ad4a496d4affb754186b",
+      "bytes": 1418329
+    },
+    "render_unfolded.png": {
+      "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
+      "bytes": 1418329
+    }
+  }
+}
