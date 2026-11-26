@@ -225,6 +225,38 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "oracle",
+      "run": "rainroom/authoring/runs/20261126T090928Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "rainroom",
+      "kind": "nop",
+      "run": "rainroom/authoring/runs/20261126T091908Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_objects",
+        "R03_room_size",
+        "R04_light_sets",
+        "R05_camera",
+        "R06_renders",
+        "R07_brightness",
+        "R08_time_of_day",
+        "R09_materials",
+        "R11_polys",
+        "R12_manifest",
+        "R_object_positions",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }

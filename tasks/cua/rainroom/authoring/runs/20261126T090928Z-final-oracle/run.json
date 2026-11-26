@@ -172,6 +172,60 @@
       "started_at": "2026-11-26T09:09:32.197912+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:09:32.376547+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-cdd01dd7be"
+      ],
+      "started_at": "2026-11-26T09:09:32.387589+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:07.042618+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-cdd01dd7be"
+      ],
+      "started_at": "2026-11-26T09:19:07.085610+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:07.182270+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-cdd01dd7be:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T090928Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:19:07.193420+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:07.682568+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-cdd01dd7be"
+      ],
+      "started_at": "2026-11-26T09:19:07.730778+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:08.064000+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-cdd01dd7be"
+      ],
+      "started_at": "2026-11-26T09:19:08.079747+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:08.215030+00:00"
     }
   ],
   "nop_definition": null,
@@ -280,5 +334,10 @@
       "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
       "bytes": 1441442
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:19:08.228311+00:00"
 }
