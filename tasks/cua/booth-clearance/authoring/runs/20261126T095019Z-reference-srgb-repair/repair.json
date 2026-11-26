@@ -300,7 +300,19 @@
         "--",
         "/stage/photos"
       ],
-      "started_at": "2026-11-26T10:04:49.219964+00:00"
+      "started_at": "2026-11-26T10:04:49.219964+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:23:16.660367+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "build",
+        "-t",
+        "cua-qc-booth-clearance-env",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/environment"
+      ],
+      "started_at": "2026-11-26T10:23:17.485307+00:00"
     }
   ],
   "color_probes": [
@@ -319,5 +331,50 @@
       "ok": true,
       "brand_delta": 8.449721489167672e-07
     }
-  ]
+  ],
+  "published_at": "2026-11-26T10:23:17.278533+00:00",
+  "published_solution": {
+    "booth.blend": {
+      "sha256": "fb539437a1869296870c4e28ce989b4e89e69764245d4f5b108077ebfd9df921",
+      "bytes": 120709
+    },
+    "booth.blend1": {
+      "sha256": "0ff214d5fbeaa041f47aa76d388b38196c9957e14186f056a8a0c60a283968b6",
+      "bytes": 121666
+    },
+    "manifest.json": {
+      "sha256": "8a15f3e6049efbb19322b10cb44a3ab38f0058c037c0e8a1a0a64710380674cf",
+      "bytes": 572
+    },
+    "render_entrance.png": {
+      "sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
+      "bytes": 1730640
+    },
+    "render_top.png": {
+      "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
+      "bytes": 2518726
+    },
+    "solve.sh": {
+      "sha256": "8cb15654c1c569c2b0d3e98786532eb5189231cfb721c2e358272f7cc5dc3fcd",
+      "bytes": 652
+    }
+  },
+  "published_photos": {
+    "ref_corner.jpg": {
+      "sha256": "0fc4c6318aea5d792810df1dd13ecd7e4eeecf78b90a05a93f67ffb73625fe8d",
+      "bytes": 77538
+    },
+    "ref_counter.jpg": {
+      "sha256": "fb791a412e854bd7f04c7f6c7a49014e87ec83aabcec95d7f3c4365ed8dcae76",
+      "bytes": 51751
+    },
+    "ref_overview.jpg": {
+      "sha256": "11a895ffebb5afa0b76dd4cded6f07c08db5e9cb45f4a08ba91bfb7e4b7ec627",
+      "bytes": 93999
+    },
+    "ref_products.jpg": {
+      "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
+      "bytes": 88811
+    }
+  }
 }

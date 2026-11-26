@@ -238,3 +238,12 @@ Fra:1 Mem:166.31M (Peak 166.31M) | Time:02:26.86 | Remaining:01:36.20 | Mem:154.
 Fra:1 Mem:166.31M (Peak 166.31M) | Time:02:47.16 | Remaining:01:15.97 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 33/48
 Fra:1 Mem:166.31M (Peak 166.31M) | Time:03:07.36 | Remaining:00:55.69 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 37/48
 Fra:1 Mem:166.31M (Peak 166.31M) | Time:03:27.35 | Remaining:00:35.39 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 41/48
+Fra:1 Mem:166.31M (Peak 166.31M) | Time:03:47.55 | Remaining:00:15.16 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 45/48
+Fra:1 Mem:229.60M (Peak 324.52M) | Time:04:32.87 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 48/48
+Fra:1 Mem:229.60M (Peak 324.52M) | Time:04:32.87 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Finished
+Saved: '/stage/photos/ref_corner.jpg'
+Time: 04:33.19 (Saving: 00:00.31)
+
+[photos] ref_corner
+
+Blender quit
