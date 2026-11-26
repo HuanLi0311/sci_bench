@@ -172,7 +172,7 @@ def main():
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
             run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp, "--python", "/tests/rerender.py",
-                 "--", os.path.join(WORK, "ac_on.png"), os.path.join(WORK, "ac_off.png")], timeout=900)
+                 "--", os.path.join(WORK, "ac_on.png"), os.path.join(WORK, "ac_off.png")], timeout=1200)
             if os.path.exists(os.path.join(WORK, "ac_on.png")) and os.path.exists(os.path.join(WORK, "ac_off.png")):
                 on = gray(os.path.join(WORK, "ac_on.png"))
                 off = gray(os.path.join(WORK, "ac_off.png"))

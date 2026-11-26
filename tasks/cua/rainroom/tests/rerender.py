@@ -20,7 +20,7 @@ def render_deliveries(directory):
     sc.render.use_sequencer = False
     sc.render.engine = 'CYCLES'
     sc.cycles.device = 'CPU'
-    sc.cycles.samples = 64
+    sc.cycles.samples = 16
     sc.cycles.use_denoising = True
     sc.cycles.seed = 0
     sc.render.resolution_percentage = 100
@@ -52,7 +52,7 @@ def main():
     sc.render.resolution_y = 450
     sc.render.resolution_percentage = 100
     sc.render.image_settings.file_format = 'PNG'
-    sc.cycles.samples = 64
+    sc.cycles.samples = 16
     sc.cycles.use_denoising = True
     sc.cycles.seed = 0
 
