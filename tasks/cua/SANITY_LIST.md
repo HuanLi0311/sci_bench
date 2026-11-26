@@ -18,10 +18,12 @@ python3 ic-bench/tasks/cua/tools/sanity_check.py        # on the host, docker av
 | 4 | **Materials** | `environment/materials/` is non-empty and has a `LICENSE.txt` |
 | 5 | **Environment image** | Dockerfile builds; `/app/materials` present, `/app/out` empty, no `solution/` or answer file inside the image |
 | 6 | **Verifier image** | `tests/Dockerfile` builds and `test.sh` is executable |
-| 7 | **Oracle** | running the verifier against `solution/` returns `reward.txt` = 1 and every check passes |
+| 7 | **Oracle** | an actual `*-final-oracle` run has raw logs, matching current verifier and reference SHA-256 hashes, valid metrics, `reward.txt` = 1, clean exit, and every check passes |
+| 7b | **True NOP** | an actual `*-final-nop` run from the fresh task environment executes only `/bin/true`, exports the untouched empty output, has zero solving steps and valid metrics/reward = 0 under the current verifier |
+| 7c | **Model records** | every recovered attempt has original config/logs and explicit version/outcome; available raw trajectories match the documented step/tool-call counts; unmeasured tasks are explicit |
 | 8 | **Deliverables** | the reference output contains every file the instruction names, at the stated resolution |
 | 9 | **Anti-cheat present** | `grade.py` has at least one `critical` check and `rerender.py` re-renders from the delivered scene |
-| 10 | **Negative test** | the tolerance table in `authoring/calibration/results.md` records at least one mutation that scores 0 |
+| 10 | **Negative test** | at least one actual `*-final-negative-*` record has the current verifier hash, valid metrics, completed grading and reward 0; prose alone does not count |
 | 11 | **Licences** | every asset in the solution `manifest.json` has `source` and `license` |
 
 ## Known local deviations (not failures)
@@ -33,3 +35,5 @@ python3 ic-bench/tasks/cua/tools/sanity_check.py        # on the host, docker av
   `crate-lookdev/authoring/base-image.md`.
 - Videos in `toy-car` are 3 s at 640×360 rather than 6 s at 1280×720.
 - `rainroom` ships three photographs rather than four.
+
+Raw evidence protocol and model-history limitations: [EVIDENCE.md](EVIDENCE.md). Run records: [RUNS.md](RUNS.md).

@@ -68,7 +68,7 @@ def check_toml(t, name):
 def check_suffix(t):
     p = os.path.join(t, "instruction.md")
     text = open(p).read() if os.path.exists(p) else ""
-    m = re.search(r"You have (\d+) seconds to complete this task\.", text)
+    m = re.search(r"You have (\d+) seconds to complete this task\.\s*\Z", text)
     if not m:
         return False, "no suffix"
     n = int(m.group(1))
@@ -188,12 +188,20 @@ def check_anticheat(t):
 
 
 def check_negative(t):
-    p = os.path.join(t, "authoring", "calibration", "results.md")
-    if not os.path.exists(p):
-        return False, "no calibration file"
-    text = open(p).read().lower()
-    return ("reward 0" in text or "| 0 |" in text or "scores 0" in text), \
-        "recorded" if ("reward 0" in text or "| 0 |" in text) else "not recorded"
+    current = {str(p.relative_to(Path(t) / "tests")): hashlib.sha256(p.read_bytes()).hexdigest()
+               for p in (Path(t) / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
+    count = 0
+    for path in (Path(t) / "authoring/runs").glob("*-final-negative-*/run.json"):
+        try:
+            meta = json.loads(path.read_text())
+            metrics = json.loads((path.parent / "verifier/metrics.json").read_text())
+            recorded = {name: item["sha256"] for name, item in meta["grader_source"].items()}
+            reward = int((path.parent / "verifier/reward.txt").read_text())
+            if recorded == current and meta.get("finished_at") and meta.get("outcome") == "graded" and reward == meta.get("reward") == metrics["reward"] == 0 and any(not c["pass"] for c in metrics["checks"]):
+                count += 1
+        except (OSError, ValueError, KeyError):
+            pass
+    return count > 0, f"{count} actual final mutations rejected"
 
 
 def check_manifest(t):
