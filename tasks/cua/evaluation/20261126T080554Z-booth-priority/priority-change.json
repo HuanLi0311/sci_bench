@@ -2,5 +2,9 @@
   "time_utc": "2026-11-26T08:05:54.490177+00:00",
   "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved",
   "processes": [],
-  "cancelled_runs": []
+  "cancelled_runs": [
+    "rainroom/authoring/runs/20261126T080542Z-pre-hardening-nop",
+    "toy-car/authoring/runs/20261126T080029Z-hardened-oracle",
+    "toy-car/authoring/runs/20261126T080602Z-pre-hardening-oracle"
+  ]
 }

@@ -172,6 +172,60 @@
       "started_at": "2026-11-26T07:51:41.323539+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T07:51:43.374407+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-7c23e2aedb"
+      ],
+      "started_at": "2026-11-26T07:51:43.474310+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T08:07:09.160379+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-7c23e2aedb"
+      ],
+      "started_at": "2026-11-26T08:07:09.169684+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:09.246487+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-7c23e2aedb:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T075120Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:07:09.255121+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:09.643602+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-7c23e2aedb"
+      ],
+      "started_at": "2026-11-26T08:07:09.678232+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:09.958311+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-7c23e2aedb"
+      ],
+      "started_at": "2026-11-26T08:07:09.969754+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:10.101745+00:00"
     }
   ],
   "nop_definition": null,
@@ -300,5 +354,12 @@
       "sha256": "9f723e8f9dfc2c21079efd74599f44ebda7370e54b74e19b0911f0b253496699",
       "bytes": 2467739
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R15_anti_cheat"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T08:07:10.113035+00:00"
 }

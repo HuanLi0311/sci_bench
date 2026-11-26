@@ -39,6 +39,21 @@ matrix = wheel.matrix_world.copy()
 wheel.parent = bpy.data.objects["chassis"]
 wheel.matrix_world = matrix
 ''',
+    "booth-product-scaled": '''import bpy
+bpy.data.objects["product_01"].scale *= 0.5
+''',
+    "booth-product-floating": '''import bpy
+bpy.data.objects["product_01"].location.z += 0.25
+''',
+    "booth-unused-brand-slot": '''import bpy
+shell = bpy.data.objects["booth_shell"]
+white = bpy.data.materials.new("adversarial_white_back_wall")
+white.use_nodes = True
+white.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value = (1, 1, 1, 1)
+shell.data.materials.append(white)
+for face in shell.data.polygons:
+    face.material_index = len(shell.data.materials) - 1
+''',
 }
 
 
@@ -79,6 +94,6 @@ if __name__ == "__main__":
     if not options.only or options.only == "secondary-render-substitution":
         for task_name in RENDERS:
             prepare(task_name, "secondary-render-substitution", None)
-    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent")):
+    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot")):
         if not options.only or options.only == mutation:
             prepare(task_name, mutation, SCRIPTS[mutation])
