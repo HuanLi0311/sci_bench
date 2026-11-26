@@ -71,6 +71,12 @@ def audit(run):
     isolation = json.loads((run / "container-isolation.json").read_text())
     initial = json.loads((run / "input-isolation.stdout.txt").read_text())
     inputs = {"materials_match_config": material_ok, "instruction_sha256": hashlib.sha256((run / "instruction.md").read_bytes()).hexdigest(), "material_files": [{"agent_path": "/app/materials/" + name, "stored_path": "input-materials/" + name, **value} for name, value in copied_materials.items()], "no_mounts": isolation["mounts"] == [], "forbidden_paths_absent": not any(initial["forbidden_paths"].values()), "initial_output_empty": initial["output_files"] == [], "submission_unchanged": submission_ok}
+    if state.get("grading_run"):
+        grade = json.loads((ROOT / state["grading_run"] / "run.json").read_text())
+        inputs["grader_matches_frozen_source"] = grade["grader_source"] == config["grader_source"] == inventory(run / "grader-source")
+        inputs["graded_submission_matches_original"] = grade["submission"] == state["submission"]
+        if not inputs["grader_matches_frozen_source"] or not inputs["graded_submission_matches_original"]:
+            raise ValueError("Graded source/submission differs from captured trial")
     if not all(inputs[key] for key in ("materials_match_config", "no_mounts", "forbidden_paths_absent", "initial_output_empty", "submission_unchanged")) or inputs["instruction_sha256"] != config["instruction_sha256"]:
         raise ValueError("Input/isolation/submission audit failed")
     (run / "input-reconstruction.json").write_text(json.dumps(inputs, indent=2) + "\n")

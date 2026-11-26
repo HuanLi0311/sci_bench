@@ -29,5 +29,36 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "folding-chair",
+      "kind": "oracle",
+      "run": "folding-chair/authoring/runs/20261126T111850Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "folding-chair",
+      "kind": "nop",
+      "run": "folding-chair/authoring/runs/20261126T112406Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_parts",
+        "R03_hinges",
+        "R04_unfolded",
+        "R05_folded_thickness",
+        "R06_animation",
+        "R08_hinge_coincidence",
+        "R09_states",
+        "R11_polys",
+        "R12_manifest",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ]
 }

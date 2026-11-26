@@ -40,16 +40,16 @@
   {
     "task": "folding-chair",
     "oracle": [
-      true,
-      "20261126T090301Z-final-oracle"
+      false,
+      "20261126T111850Z-final-oracle: 'reward'; 20261126T090301Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: grader differs from current source"
     ],
     "nop": [
-      true,
-      "20261126T090919Z-final-nop"
+      false,
+      "20261126T090919Z-final-nop: grader differs from current source; 20261126T080708Z-final-nop: grader differs from current source"
     ],
     "negatives": [
-      true,
-      "all 2 prepared negative cases rejected by the current verifier"
+      false,
+      "missing current-source negative cases: ['negative-chair-common-root-collision', 'negative-chair-shared-hinge-collision', 'negative-secondary-render-substitution']"
     ],
     "model_records": [
       true,
@@ -71,8 +71,8 @@
       "all 1 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
-      true,
-      "0 recorded attempts; complete raw trajectories checked where inference occurred"
+      false,
+      "model attempt 20261126T111524Z-codex-terminal-gpt-6.1-sol-high is still running"
     ]
   },
   {

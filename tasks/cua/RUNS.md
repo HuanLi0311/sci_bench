@@ -8,8 +8,8 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 |---|---|---|---|---|
 | booth-clearance | PASS | PASS | PASS | PASS |
 | crate-lookdev | PASS | PASS | PASS | PASS |
-| folding-chair | PASS | PASS | PASS | PASS |
-| rainroom | PASS | PASS | PASS | PASS |
+| folding-chair | not yet validated | not yet validated | not yet validated | PASS |
+| rainroom | PASS | PASS | PASS | not yet validated |
 | toy-car | PASS | PASS | PASS | PASS |
 
 | Task | Run | Reward | Failed checks / state |
@@ -77,6 +77,8 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | folding-chair | [final / oracle](folding-chair/authoring/runs/20261126T090301Z-final-oracle/run.json) | 1 | all checks pass |
 | folding-chair | [final / nop](folding-chair/authoring/runs/20261126T090919Z-final-nop/run.json) | 0 | R01_open, R02_parts, R03_hinges, R04_unfolded, R05_folded_thickness, R06_animation, R08_hinge_coincidence, R09_states, R11_polys, R12_manifest, R13_anti_cheat, R_all_render_authenticity, R_render_structure |
 | folding-chair | [final / negative-secondary-render-substitution](folding-chair/authoring/runs/20261126T092823Z-final-negative-secondary-render-substitution/run.json) | 0 | R_all_render_authenticity, R_render_structure |
+| folding-chair | [audit / negative-hinge-contact-probe](folding-chair/authoring/runs/20261126T111304Z-audit-negative-hinge-contact-probe/run.json) | 1 | unexpected-negative-pass: all checks pass |
+| folding-chair | [final / oracle](folding-chair/authoring/runs/20261126T111850Z-final-oracle/run.json) | 1 | all checks pass |
 | rainroom | [hardened / oracle](rainroom/authoring/runs/20261126T074425Z-hardened-oracle/run.json) | 0 | verifier-timeout: R13_anti_cheat |
 | rainroom | [pre-hardening / oracle](rainroom/authoring/runs/20261126T075009Z-pre-hardening-oracle/run.json) | 0 | verifier-timeout: R13_anti_cheat |
 | rainroom | [hardened / nop](rainroom/authoring/runs/20261126T080001Z-hardened-nop/run.json) | 0 | R01_open, R02_objects, R03_room_size, R04_light_sets, R05_camera, R06_renders, R07_brightness, R08_time_of_day, R09_materials, R11_polys, R12_manifest, R13_anti_cheat, R_object_positions, R_all_render_authenticity |
