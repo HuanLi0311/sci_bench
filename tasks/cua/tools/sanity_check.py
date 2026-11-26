@@ -49,7 +49,7 @@ def check_toml(t, name):
     p = os.path.join(t, "task.toml")
     if not os.path.exists(p):
         return False, "no task.toml"
-    text = open(p).read()
+    text = open(p, encoding="utf-8").read()
     problems = []
     if 'schema_version = "1.4"' not in text:
         problems.append("schema")
@@ -67,12 +67,12 @@ def check_toml(t, name):
 
 def check_suffix(t):
     p = os.path.join(t, "instruction.md")
-    text = open(p).read() if os.path.exists(p) else ""
+    text = open(p, encoding="utf-8").read() if os.path.exists(p) else ""
     m = re.search(r"You have (\d+) seconds to complete this task\.\s*\Z", text)
     if not m:
         return False, "no suffix"
     n = int(m.group(1))
-    agent = toml_get(open(os.path.join(t, "task.toml")).read(), "agent", "timeout_sec")
+    agent = toml_get(open(os.path.join(t, "task.toml"), encoding="utf-8").read(), "agent", "timeout_sec")
     want = int(float(agent)) if agent else None
     return (n == want), f"{n} vs {want}"
 
@@ -115,9 +115,9 @@ def check_recorded_run(t, kind):
     problems = []
     for run in candidates:
         try:
-            meta = json.loads((run / "run.json").read_text())
-            metrics = json.loads((run / "verifier/metrics.json").read_text())
-            reward = int((run / "verifier/reward.txt").read_text().strip())
+            meta = json.loads((run / "run.json").read_text(encoding="utf-8"))
+            metrics = json.loads((run / "verifier/metrics.json").read_text(encoding="utf-8"))
+            reward = int((run / "verifier/reward.txt").read_text(encoding="utf-8").strip())
             recorded = {name: entry["sha256"] for name, entry in meta["grader_source"].items()}
             if current != recorded:
                 raise ValueError("grader differs from current source")
@@ -153,7 +153,7 @@ def check_oracle(t, tests_tag):
 
 def check_model_records(t):
     try:
-        record = json.loads((Path(t) / "authoring/model-attempts.json").read_text())
+        record = json.loads((Path(t) / "authoring/model-attempts.json").read_text(encoding="utf-8"))
         for attempt in record["attempts"]:
             path = Path(attempt["path"])
             # Stored paths are repo-relative; the checker may be launched elsewhere.
@@ -162,7 +162,7 @@ def check_model_records(t):
             if not (path / "config.json").exists() or not (path / "trial.log").exists():
                 raise ValueError("attempt raw config/log missing")
             if attempt["trajectory_present"]:
-                trajectory = json.loads((path / "agent/trajectory.json").read_text())
+                trajectory = json.loads((path / "agent/trajectory.json").read_text(encoding="utf-8"))
                 agent = [s for s in trajectory["steps"] if s.get("source") == "agent"]
                 if len(agent) != attempt["agent_steps"] or sum(len(s.get("tool_calls", [])) for s in agent) != attempt["tool_calls"]:
                     raise ValueError("step count differs from raw trajectory")
@@ -174,7 +174,7 @@ def check_model_records(t):
 def check_deliverables(t):
     """Only files listed under 'What to deliver' count as deliverables."""
     sol = os.path.join(t, "solution")
-    text = open(os.path.join(t, "instruction.md")).read()
+    text = open(os.path.join(t, "instruction.md"), encoding="utf-8").read()
     part = text.split("What to deliver", 1)[-1].split("##", 1)[0]
     names = set(re.findall(r"`([a-z0-9_]+\.(?:png|blend|json))`", part))
     missing = [n for n in names if not os.path.exists(os.path.join(sol, n))]
@@ -182,7 +182,7 @@ def check_deliverables(t):
 
 
 def check_anticheat(t):
-    g = open(os.path.join(t, "tests", "grade.py")).read()
+    g = open(os.path.join(t, "tests", "grade.py"), encoding="utf-8").read()
     return ('"critical"' in g, "critical check present" if '"critical"' in g
             else "no critical check")
 
@@ -193,10 +193,10 @@ def check_negative(t):
     count = 0
     for path in (Path(t) / "authoring/runs").glob("*-final-negative-*/run.json"):
         try:
-            meta = json.loads(path.read_text())
-            metrics = json.loads((path.parent / "verifier/metrics.json").read_text())
+            meta = json.loads(path.read_text(encoding="utf-8"))
+            metrics = json.loads((path.parent / "verifier/metrics.json").read_text(encoding="utf-8"))
             recorded = {name: item["sha256"] for name, item in meta["grader_source"].items()}
-            reward = int((path.parent / "verifier/reward.txt").read_text())
+            reward = int((path.parent / "verifier/reward.txt").read_text(encoding="utf-8"))
             if recorded == current and meta.get("finished_at") and meta.get("outcome") == "graded" and reward == meta.get("reward") == metrics["reward"] == 0 and any(not c["pass"] for c in metrics["checks"]):
                 count += 1
         except (OSError, ValueError, KeyError):
@@ -208,7 +208,7 @@ def check_manifest(t):
     p = os.path.join(t, "solution", "manifest.json")
     if not os.path.exists(p):
         return False, "no manifest"
-    man = json.load(open(p))
+    man = json.load(open(p, encoding="utf-8"))
     assets = man.get("assets", [])
     ok = bool(assets) and all(a.get("source") and a.get("license") for a in assets)
     return ok, f"{len(assets)} assets"
