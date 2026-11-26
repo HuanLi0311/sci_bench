@@ -1,0 +1,12 @@
+{
+  "task": "rainroom",
+  "scope": "Recovered local historical task trials; authoring conversations and Oracle/NOP are not blind model attempts.",
+  "searched": [
+    "WSL /tmp/harbor-jobs",
+    "task authoring/runs",
+    "WSL /root/.codex/sessions"
+  ],
+  "step_definition": "ATIF: all steps; agent_steps: source=agent including reasoning/messages/tool requests; tool_calls: sum of tool_calls list lengths; no GUI-click inference",
+  "attempts": [],
+  "absence_note": "No historical model attempt was found for this task in the searched local run archives; no success or pass-rate claim is made."
+}

@@ -1,0 +1,337 @@
+{
+  "task": "crate-lookdev",
+  "scope": "Recovered local historical task trials; authoring conversations and Oracle/NOP are not blind model attempts.",
+  "searched": [
+    "WSL /tmp/harbor-jobs",
+    "task authoring/runs",
+    "WSL /root/.codex/sessions"
+  ],
+  "step_definition": "ATIF: all steps; agent_steps: source=agent including reasoning/messages/tool requests; tool_calls: sum of tool_calls list lengths; no GUI-click inference",
+  "attempts": [
+    {
+      "id": "crate-lookdev__ucWiZ3R",
+      "job": "2026-11-25__20-28-07",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": false,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-28-07/crate-lookdev__ucWiZ3R",
+      "exception_type": null,
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__KmoPru6",
+      "job": "2026-11-25__20-29-53",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-29-53/crate-lookdev__KmoPru6",
+      "exception_type": "AgentSetupTimeoutError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__NVJL4gC",
+      "job": "2026-11-25__20-29-53",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-29-53/crate-lookdev__NVJL4gC",
+      "exception_type": "AgentSetupTimeoutError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__PSUkzv2",
+      "job": "2026-11-25__20-29-53",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-29-53/crate-lookdev__PSUkzv2",
+      "exception_type": "AgentSetupTimeoutError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__gjxcNT8",
+      "job": "2026-11-25__20-40-40",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-40-40/crate-lookdev__gjxcNT8",
+      "exception_type": "CancelledError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__kmJ7FMr",
+      "job": "2026-11-25__20-40-40",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-40-40/crate-lookdev__kmJ7FMr",
+      "exception_type": "NonZeroAgentExitCodeError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__N6B3zRb",
+      "job": "2026-11-25__20-40-40",
+      "agent_config": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-40-40/crate-lookdev__N6B3zRb",
+      "exception_type": "NonZeroAgentExitCodeError",
+      "model_identifier": "opencode/hy4-flash-free",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__Ugpuest",
+      "job": "2026-11-25__20-53-28",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-53-28/crate-lookdev__Ugpuest",
+      "exception_type": "CancelledError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__XVkTb4u",
+      "job": "2026-11-25__20-53-28",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-53-28/crate-lookdev__XVkTb4u",
+      "exception_type": "CancelledError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__yQtVuyw",
+      "job": "2026-11-25__20-53-28",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-53-28/crate-lookdev__yQtVuyw",
+      "exception_type": "CancelledError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__QBCAbWD",
+      "job": "2026-11-25__20-58-33",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__20-58-33/crate-lookdev__QBCAbWD",
+      "exception_type": "NonZeroAgentExitCodeError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__mjosVdH",
+      "job": "2026-11-25__21-25-16",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__21-25-16/crate-lookdev__mjosVdH",
+      "exception_type": "RuntimeError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__S9aWJ8t",
+      "job": "2026-11-25__22-05-53",
+      "agent_config": {
+        "name": "codex"
+      },
+      "reported_agent": null,
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": false,
+      "atif_total_steps": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "llm_calls": 0,
+      "status": "infrastructure_failure_or_incomplete",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__22-05-53/crate-lookdev__S9aWJ8t",
+      "exception_type": "ValueError",
+      "model_identifier": null,
+      "model_version_note": "Not recorded/unconfigured; no model inference evidenced.",
+      "outcome": "infrastructure failure/cancellation; no model inference transcript exists in recovered source"
+    },
+    {
+      "id": "crate-lookdev__dMX45qL",
+      "job": "2026-11-25__22-10-48",
+      "agent_config": {
+        "name": "codex",
+        "model_name": "gpt-6.1-sol",
+        "kwargs": {
+          "config": "/root/.codex/config.toml"
+        }
+      },
+      "reported_agent": {
+        "name": "codex",
+        "version": "0.172.0",
+        "model_name": "gpt-6.1-sol",
+        "extra": {
+          "originator": "codex_exec",
+          "cwd": "/app"
+        }
+      },
+      "historical_verifier_result": null,
+      "result_present": true,
+      "trajectory_present": true,
+      "atif_total_steps": 73,
+      "agent_steps": 67,
+      "tool_calls": 66,
+      "llm_calls": 67,
+      "status": "completed_agent_ungraded",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/historical/2026-11-25__22-10-48/crate-lookdev__dMX45qL",
+      "exception_type": "ValueError",
+      "model_identifier": "gpt-6.1-sol",
+      "model_version_note": "Exact identifier as recorded; no immutable provider snapshot was recorded.",
+      "outcome": "agent completed, original verifier failed before scoring; see separate regrade",
+      "effective_config": {
+        "CLI": "codex-cli 0.172.0",
+        "reasoning_effort": "high",
+        "approval_policy": "never",
+        "sandbox": "danger-full-access",
+        "cwd": "/app",
+        "tools": [
+          "exec"
+        ],
+        "agent_type": "Codex terminal agent (not computer-1 CUA)",
+        "evidence": "agent/sessions/...jsonl turn_context"
+      }
+    }
+  ]
+}

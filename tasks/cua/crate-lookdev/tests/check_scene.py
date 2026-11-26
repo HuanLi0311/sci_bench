@@ -68,7 +68,15 @@ def material_report(mat):
     if not mat.use_nodes:
         return rep
     nt = mat.node_tree
-    bsdf = next((n for n in nt.nodes if n.type == 'BSDF_PRINCIPLED'), None)
+    outputs = [n for n in nt.nodes if n.type == 'OUTPUT_MATERIAL' and n.is_active_output]
+    active, todo = set(), list(outputs)
+    while todo:
+        node = todo.pop()
+        if node in active:
+            continue
+        active.add(node)
+        todo.extend(link.from_node for link in nt.links if link.to_node == node)
+    bsdf = next((n for n in nt.nodes if n.type == 'BSDF_PRINCIPLED' and n in active), None)
     if bsdf is not None:
         rep["metallic"] = float(bsdf.inputs["Metallic"].default_value)
         rep["roughness"] = float(bsdf.inputs["Roughness"].default_value)
@@ -87,7 +95,7 @@ def material_report(mat):
                     continue
                 visited.add(source)
                 for link in nt.links:
-                    if link.from_node == source:
+                    if link.from_node == source and link.to_node in active:
                         sinks.append(f"{link.to_node.type}:{link.to_socket.name}")
                         if link.to_node.type != 'BSDF_PRINCIPLED':
                             todo.append(link.to_node)

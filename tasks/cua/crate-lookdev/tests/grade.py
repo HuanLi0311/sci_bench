@@ -182,7 +182,7 @@ def main():
     imgs = wood.get("images", [])
     big = [i for i in imgs if i.get("size", [0, 0])[0] >= 2048
            and i.get("size", [0, 0])[1] >= 2048 and i.get("packed")]
-    feeds = [now for i in imgs for now in i.get("feeds", [])]
+    feeds = [now for i in big for now in i.get("feeds", [])]
     # A map is "wired" if it reaches the shader directly or through any node;
     # what matters is that the material actually uses three 2K maps and one of
     # them drives a normal map node.
@@ -192,7 +192,7 @@ def main():
     packed_all = all(i.get("packed") for i in scene.get("images", [])
                      if i.get("filepath"))
     add("R07_pbr_maps", "must",
-        len(big) >= 3 and has_base and has_rough and has_normal and packed_all,
+        len({i["name"] for i in big if any(f in i.get("feeds", []) for f in ("BSDF_PRINCIPLED:Base Color", "BSDF_PRINCIPLED:Roughness", "BSDF_PRINCIPLED:Normal"))}) >= 3 and has_base and has_rough and has_normal and packed_all,
         f"big_maps={len(big)} base={has_base} rough={has_rough} normal={has_normal} "
         f"packed_all={packed_all}")
 

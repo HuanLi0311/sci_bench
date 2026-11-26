@@ -34,7 +34,7 @@ def record(task, kind, label, source_submission=None):
     run_dir.mkdir(parents=True)
     commands = []
     meta = {"task": task, "kind": kind, "label": label, "started_at": stamp,
-            "agent": "reference-publisher" if kind == "oracle" else ("historical-artifact-regrade" if source_submission else "NOP"),
+            "agent": "reference-publisher" if kind == "oracle" else (("adversarial-input-regrade" if kind.startswith("negative-") else "historical-artifact-regrade") if source_submission else "NOP"),
             "model": None, "model_steps": 0, "commands": commands,
             "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out" if kind == "nop" else None}
 
@@ -96,8 +96,18 @@ def record(task, kind, label, source_submission=None):
         command(["docker", "cp", verifier + ":/tmp/.", str(run_dir / "verifier-tmp")], "collect-verifier-tmp")
         reward = run_dir / "verifier" / "reward.txt"
         meta["reward"] = int(reward.read_text().strip()) if reward.exists() else None
+        metrics = run_dir / "verifier" / "metrics.json"
+        try:
+            parsed_metrics = json.loads(metrics.read_text())
+            meta["failed_checks"] = [c["id"] for c in parsed_metrics.get("checks", []) if not c["pass"]]
+            meta["outcome"] = "graded" if "checks" in parsed_metrics else "verifier-error"
+        except (OSError, ValueError):
+            meta["outcome"] = "verifier-error"
+        if meta.get("agent_exit_code", 0) != 0:
+            meta["outcome"] = "agent-execution-error"
     except Exception as exc:
         meta["error"] = repr(exc)
+        meta["outcome"] = "harness-error"
     finally:
         for container in (agent, verifier):
             command(["docker", "rm", "-f", container], "cleanup-" + container)
