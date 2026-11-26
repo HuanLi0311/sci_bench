@@ -300,6 +300,10 @@ crash-*
 *.sql.gz
 *.sql
 dump.rdb
+# Raw local evaluation evidence is a required part of the CUA task pack.
+!tasks/cua/*/authoring/runs/**/*.log
+!tasks/cua/*/authoring/runs/**/out/
+!tasks/cua/*/authoring/runs/**/out/**
 .terraform/
 *.tfstate
 *.tfstate.*

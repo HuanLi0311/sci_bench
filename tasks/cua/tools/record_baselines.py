@@ -27,7 +27,7 @@ def inventory(path):
             for p in sorted(path.rglob("*")) if p.is_file()}
 
 
-def record(task, kind, label, source_submission=None):
+def record(task, kind, label, source_submission=None, grader_source=None):
     task_dir = ROOT / task
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = task_dir / "authoring" / "runs" / (stamp + "-" + label + "-" + kind)
@@ -53,7 +53,7 @@ def record(task, kind, label, source_submission=None):
         return item["exit_code"]
 
     tests = run_dir / "grader-source"
-    shutil.copytree(task_dir / "tests", tests, ignore=shutil.ignore_patterns("__pycache__"))
+    shutil.copytree(grader_source or task_dir / "tests", tests, ignore=shutil.ignore_patterns("__pycache__"))
     meta["grader_source"] = inventory(tests)
     meta["instruction_sha256"] = sha(task_dir / "instruction.md")
     meta["environment_source"] = inventory(task_dir / "environment")
@@ -114,6 +114,7 @@ def record(task, kind, label, source_submission=None):
         meta["finished_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
         (run_dir / "run.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(json.dumps({"task": task, "kind": kind, "reward": meta.get("reward"), "run": str(run_dir), "error": meta.get("error")}), flush=True)
+    return run_dir
 
 
 if __name__ == "__main__":
