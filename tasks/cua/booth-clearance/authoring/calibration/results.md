@@ -24,9 +24,9 @@ renders 1920×1080 and 2048×1536; SSIM match 0.995.
   keeps object-local space and produced a false "column occludes product_02"
   verdict before this was fixed. The same fix was applied to `crate-lookdev`.
 
-## Current frozen verifier evidence
+## Pre-gradient-check frozen verifier evidence (superseded)
 
-The current verifier has a complete Oracle and a genuine no-op baseline. Raw metadata, exact source/input SHA-256 hashes, stdout/stderr, per-check metrics and reward files are linked below.
+This earlier verifier snapshot has a complete Oracle and a genuine no-op baseline. A later full negative run exposed background dilution in SSIM; the current verifier also requires a gradient-structure check and must be revalidated. Raw metadata, exact source/input SHA-256 hashes, stdout/stderr, per-check metrics and reward files are linked below.
 
 | Run | Reward | Checks | Raw record |
 |---|---:|---|---|

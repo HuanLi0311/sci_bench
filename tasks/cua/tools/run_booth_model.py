@@ -149,7 +149,7 @@ Original instruction follows verbatim:
         index.pop("absence_note", None)
         steps = state.get("steps", {})
         index["attempts"] = [item for item in index.get("attempts", []) if item["id"] != attempt_id]
-        index["attempts"].append({"id": attempt_id, "path": str(run.relative_to(TASK)), "model_identifier": MODEL, "agent": "codex-terminal", "gui_compliant": False, "effective_config": effective, "outcome": state["outcome"], "reward": state.get("reward"), "raw_rollout_path": str((run / "raw-rollout").relative_to(TASK)), "trajectory_format": "Codex raw JSONL plus CLI --json events", "step_definition": steps.get("step_definition"), "agent_steps": steps.get("agent_steps"), "tool_calls": steps.get("tool_calls"), "grading_run": state.get("grading_run"), "cli_exit_code": state.get("agent_exit_code")})
+        index["attempts"].append({"id": attempt_id, "path": str(run.relative_to(ROOT.parents[1])), "model_identifier": MODEL, "agent": "codex-terminal", "gui_compliant": False, "effective_config": effective, "outcome": state["outcome"], "reward": state.get("reward"), "raw_rollout_path": str((run / "raw-rollout").relative_to(ROOT.parents[1])), "trajectory_format": "Codex raw JSONL plus CLI --json events", "step_definition": steps.get("step_definition"), "agent_steps": steps.get("agent_steps"), "tool_calls": steps.get("tool_calls"), "grading_run": state.get("grading_run"), "cli_exit_code": state.get("agent_exit_code")})
         index_path.write_text(json.dumps(index, indent=2) + "\n")
     print(json.dumps({"run": str(run), "outcome": state["outcome"], "reward": state.get("reward"), "steps": state.get("steps")}), flush=True)
 

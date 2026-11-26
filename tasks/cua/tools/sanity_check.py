@@ -188,20 +188,38 @@ def check_anticheat(t):
 
 
 def check_negative(t):
-    current = {p.relative_to(Path(t) / "tests").as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
-               for p in (Path(t) / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
-    count = 0
-    for path in (Path(t) / "authoring/runs").glob("*-final-negative-*/run.json"):
+    task = Path(t)
+    current = {p.relative_to(task / "tests").as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+               for p in (task / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
+    required = {"negative-" + p.name.split("-mutation-", 1)[1]
+                for p in (task / "authoring/runs").glob("*-mutation-*") if (p / "submission").is_dir()}
+    latest = {}
+    for path in sorted((task / "authoring/runs").glob("*-final-negative-*/run.json")):
         try:
             meta = json.loads(path.read_text(encoding="utf-8"))
-            metrics = json.loads((path.parent / "verifier/metrics.json").read_text(encoding="utf-8"))
             recorded = {name: item["sha256"] for name, item in meta["grader_source"].items()}
-            reward = int((path.parent / "verifier/reward.txt").read_text(encoding="utf-8"))
-            if recorded == current and meta.get("finished_at") and meta.get("outcome") == "graded" and reward == meta.get("reward") == metrics["reward"] == 0 and any(not c["pass"] for c in metrics["checks"]):
-                count += 1
+            if recorded == current:
+                latest[meta["kind"]] = (path, meta)
         except (OSError, ValueError, KeyError):
             pass
-    return count > 0, f"{count} actual final mutations rejected"
+    missing = required - latest.keys()
+    if not required or missing:
+        return False, f"missing current-source negative cases: {sorted(missing or ['all'])}"
+    for kind, (path, meta) in latest.items():
+        try:
+            metrics = json.loads((path.parent / "verifier/metrics.json").read_text(encoding="utf-8"))
+            reward = int((path.parent / "verifier/reward.txt").read_text(encoding="utf-8"))
+            if not meta.get("finished_at") or meta.get("outcome") != "graded":
+                raise ValueError("grading incomplete/errored")
+            if reward != 0 or meta.get("reward") != 0 or metrics["reward"] != 0:
+                raise ValueError("negative submission unexpectedly accepted")
+            if any("timed out" in str(c.get("detail", "")) for c in metrics["checks"]):
+                raise ValueError("timeout is not a rejected negative")
+            if not any(not c["pass"] for c in metrics["checks"]):
+                raise ValueError("no decisive failed check")
+        except (OSError, ValueError, KeyError) as exc:
+            return False, f"{kind}: {exc}"
+    return True, f"all {len(required)} prepared negative cases rejected by the current verifier"
 
 
 def check_manifest(t):

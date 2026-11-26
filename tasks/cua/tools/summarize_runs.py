@@ -29,6 +29,8 @@ def main():
                 classification = "verifier-timeout"
             elif error or meta.get("error"):
                 classification = "verifier-execution-error"
+            elif meta.get("kind", "").startswith("negative-") and meta.get("reward") == 1:
+                classification = "unexpected-negative-pass"
             else:
                 classification = "graded"
             rows.append({
