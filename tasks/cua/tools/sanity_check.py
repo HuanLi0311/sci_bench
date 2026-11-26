@@ -20,7 +20,7 @@ NEGATIVE_CASES = {
                         "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening",
                         "booth-camera-away", "booth-missing-secondary-color"},
     "crate-lookdev": {"secondary-render-substitution", "crate-disconnected-maps"},
-    "folding-chair": {"secondary-render-substitution", "chair-common-root-collision"},
+    "folding-chair": {"secondary-render-substitution", "chair-common-root-collision", "chair-shared-hinge-collision"},
     "rainroom": {"secondary-render-substitution"},
     "toy-car": {"secondary-render-substitution", "toy-wrong-wheel-parent"},
 }

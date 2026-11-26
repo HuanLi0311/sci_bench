@@ -3,8 +3,8 @@
     blender -b <file>.blend --python check_scene.py -- <out.json>
 
 Measures three states, the hinge pivots, the fold thickness, per-frame BVH
-overlaps (hinge-adjacent pairs excluded) and whether each leg's end still sits
-on its hinge.
+overlaps (zero-volume surface contact excluded) and whether each leg's end
+still sits on its hinge.
 """
 import json
 import sys
@@ -30,13 +30,6 @@ def world_bvh(ob, deps):
 def aabb_of(verts):
     return ([min(v[i] for v in verts) for i in range(3)],
             [max(v[i] for v in verts) for i in range(3)])
-
-
-def related(a, b):
-    """True when two objects sit on a shared hinge (contact is expected)."""
-    if a.parent is not None and a.parent is b.parent and a.parent.name in HINGES:
-        return True
-    return a.parent is b or b.parent is a
 
 
 def evaluated_triangles(ob):
@@ -129,12 +122,17 @@ def main():
         bpy.context.view_layer.update()
         deps = bpy.context.evaluated_depsgraph_get()
         parts = [o for o in meshes if not o.name.startswith("stage") and o.name != "lock_pin"]
-        trees = {o.name: world_bvh(o, deps)[0] for o in parts}
+        geometry = {o.name: world_bvh(o, deps) for o in parts}
+        bounds = {name: aabb_of(data[1]) for name, data in geometry.items()}
         for i, a in enumerate(parts):
             for b in parts[i + 1:]:
-                if related(a, b):
+                aa, bb = bounds[a.name], bounds[b.name]
+                # Surface contact has no positive volume. Allow 1 micrometre
+                # of numeric noise; sharing a hinge never excuses penetration.
+                if any(min(aa[1][axis], bb[1][axis]) - max(aa[0][axis], bb[0][axis]) <= 1e-6
+                       for axis in range(3)):
                     continue
-                n = len(trees[a.name].overlap(trees[b.name]))
+                n = len(geometry[a.name][0].overlap(geometry[b.name][0]))
                 if n:
                     key = "|".join(sorted((a.name, b.name)))
                     overlaps[key] = overlaps.get(key, 0) + n
