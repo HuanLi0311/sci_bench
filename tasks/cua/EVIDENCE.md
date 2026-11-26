@@ -63,3 +63,5 @@ The sanity check requires actual final Oracle and NOP records whose source hashe
 New isolated terminal-model trials for booth-clearance are recorded in its model-attempts index, separately from the historical crate archive. Runtime smoke calls are diagnostic checks, not task successes. A terminal trial whose tools cannot launch is an infrastructure failure even when its empty output receives reward 0.
 
 Booth brand-colour grading uses sRGB values converted from Blender linear shader inputs. The original reference used the wrong transfer convention; its scene/renders/input photos are corrected with unchanged geometry and a preserved backup. See [the colour-space audit](booth-clearance/authoring/calibration/COLOR_SPACE.md). Auxiliary Empty markers are supported; entrance geometry and camera-frame visibility are checked independently.
+
+All model attempts, exact reported versions/configuration links, raw traces and step accounting are indexed in [MODEL_ATTEMPTS.md](MODEL_ATTEMPTS.md).
