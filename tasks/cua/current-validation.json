@@ -1,0 +1,97 @@
+[
+  {
+    "task": "booth-clearance",
+    "oracle": [
+      true,
+      "20261126T083757Z-final-oracle"
+    ],
+    "nop": [
+      true,
+      "20261126T084447Z-final-nop"
+    ],
+    "negatives": [
+      true,
+      "all 5 prepared negative cases rejected by the current verifier"
+    ],
+    "model_records": [
+      false,
+      "model attempt 20261126T084651Z-codex-terminal-gpt-6.1-sol-high is still running"
+    ]
+  },
+  {
+    "task": "crate-lookdev",
+    "oracle": [
+      true,
+      "20261126T085622Z-final-oracle"
+    ],
+    "nop": [
+      true,
+      "20261126T090242Z-final-nop"
+    ],
+    "negatives": [
+      false,
+      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+    ],
+    "model_records": [
+      true,
+      "14 recorded attempts; complete raw trajectories checked where inference occurred"
+    ]
+  },
+  {
+    "task": "folding-chair",
+    "oracle": [
+      true,
+      "20261126T090301Z-final-oracle"
+    ],
+    "nop": [
+      true,
+      "20261126T090919Z-final-nop"
+    ],
+    "negatives": [
+      false,
+      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+    ],
+    "model_records": [
+      true,
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
+    ]
+  },
+  {
+    "task": "rainroom",
+    "oracle": [
+      false,
+      "20261126T090928Z-final-oracle: Expecting value: line 1 column 1 (char 0); 20261126T080717Z-final-oracle: Expecting value: line 1 column 1 (char 0)"
+    ],
+    "nop": [
+      false,
+      "no final nop evidence"
+    ],
+    "negatives": [
+      false,
+      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+    ],
+    "model_records": [
+      true,
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
+    ]
+  },
+  {
+    "task": "toy-car",
+    "oracle": [
+      false,
+      "20261126T080718Z-final-oracle: [Errno 2] No such file or directory: 'D:\\\\\u8fc5\u96f7\u4e0b\u8f7d\\\\ic-bench\\\\tasks\\\\cua\\\\toy-car\\\\authoring\\\\runs\\\\20261126T080718Z-final-oracle\\\\verifier\\\\metrics.json'"
+    ],
+    "nop": [
+      false,
+      "no final nop evidence"
+    ],
+    "negatives": [
+      false,
+      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+    ],
+    "model_records": [
+      true,
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
+    ]
+  }
+]

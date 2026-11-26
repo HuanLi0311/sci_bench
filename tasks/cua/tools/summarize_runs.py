@@ -2,14 +2,22 @@
 import json
 from pathlib import Path
 
+from sanity_check import check_model_records, check_negative, check_recorded_run
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
     rows = []
+    current = []
     for task in sorted(ROOT.iterdir()):
         if not (task / "task.toml").exists():
             continue
+        current.append({"task": task.name,
+                        "oracle": check_recorded_run(str(task), "oracle"),
+                        "nop": check_recorded_run(str(task), "nop"),
+                        "negatives": check_negative(str(task)),
+                        "model_records": check_model_records(str(task))})
         for path in sorted((task / "authoring/runs").glob("*/run.json")):
             meta = json.loads(path.read_text(encoding="utf-8"))
             metrics_path = path.parent / "verifier/metrics.json"
@@ -45,6 +53,13 @@ def main():
                 "grader_source": meta["grader_source"],
             })
     (ROOT / "run-index.json").write_text(json.dumps(rows, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "current-validation.json").write_text(json.dumps(current, indent=2) + "\n", encoding="utf-8")
+    summary = ["| Task | Oracle | True NOP | All prepared negatives | Model records |",
+               "|---|---|---|---|---|"]
+    for task in current:
+        cells = ["PASS" if task[key][0] else "not yet validated"
+                 for key in ("oracle", "nop", "negatives", "model_records")]
+        summary.append("| " + task["task"] + " | " + " | ".join(cells) + " |")
     lines = ["| Task | Run | Reward | Failed checks / state |", "|---|---|---|---|"]
     for row in rows:
         state = ", ".join(row["failed_checks"]) or ("all checks pass" if row["reward"] == 1 else "pending/error")
@@ -58,7 +73,8 @@ def main():
         "Rows labelled `final` use frozen snapshots; only completed evidence whose hashes match the current verifier validates the current task. Earlier final snapshots can be superseded. "
         "Earlier runs include development failures and different source snapshots; inspect `grader_source` hashes. "
         "A reward of 0 after an agent setup or verifier error is not a model-solving failure.\n\n"
-        + "\n".join(lines) + "\n", encoding="utf-8")
+        + "Model-record PASS validates provenance/completeness; it does not mean the model solved the task. Tasks without attempts are explicitly marked unmeasured in their inventories.\n\n"
+        + "\n".join(summary) + "\n\n" + "\n".join(lines) + "\n", encoding="utf-8")
     print(f"Indexed {len(rows)} actual captured runs")
 
 
