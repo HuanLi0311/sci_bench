@@ -5,6 +5,7 @@ Examples: python3 record_baselines.py --label pre-hardening
 The grader source is snapshotted before each run; no historical runs are invented.
 """
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import datetime as dt
 import hashlib
 import json
@@ -111,12 +112,15 @@ if __name__ == "__main__":
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
     parser.add_argument("--kinds", nargs="+", choices=["oracle", "nop"], default=["oracle", "nop"])
     parser.add_argument("--regrade", type=Path, help="Regrade preserved submission; requires exactly one task and ignores --kinds")
+    parser.add_argument("--jobs", type=int, default=1, choices=range(1, 4), help="Independent tasks to run concurrently (maximum 3)")
     options = parser.parse_args()
     if options.regrade:
         if len(options.tasks) != 1:
             parser.error("--regrade requires exactly one --tasks value")
         record(options.tasks[0], "model-regrade", options.label, options.regrade.resolve())
         raise SystemExit(0)
-    for selected_task in options.tasks:
+    def run_task(selected_task):
         for selected_kind in options.kinds:
             record(selected_task, selected_kind, options.label)
+    with ThreadPoolExecutor(max_workers=options.jobs) as pool:
+        list(pool.map(run_task, options.tasks))
