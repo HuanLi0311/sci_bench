@@ -34,3 +34,7 @@ This earlier verifier snapshot has a complete Oracle and a genuine no-op baselin
 | NOP | 0 | 5/19 pass | [metadata](../runs/20261126T082355Z-final-nop/run.json), [metrics](../runs/20261126T082355Z-final-nop/verifier/metrics.json), [reward](../runs/20261126T082355Z-final-nop/verifier/reward.txt) |
 
 NOP executes only `/bin/true` in the fresh task environment and exports the untouched empty `/app/out`; it is not a marker-deletion mutation. For the hardening changes and measured structural regressions, see [HARDENING.md](HARDENING.md).
+
+## Current 20-check validation
+
+See [VALIDATION.md](VALIDATION.md) for the current matching-source Oracle=1, true NOP=0 and all five negative cases=0, including the constant-image counterexample rejected after adding `R_render_structure`. All earlier 19-check results above remain tied to their own source snapshots.

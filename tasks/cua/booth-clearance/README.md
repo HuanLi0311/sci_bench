@@ -57,3 +57,5 @@ Reward is 1 only when every `must` and `critical` check passes and ≥ 80 % of t
 ## Execution evidence
 
 Current raw Oracle/NOP and mutation runs are indexed in [the CUA run index](../RUNS.md). The [evidence protocol](../EVIDENCE.md) defines no-op execution, source hashes, model-history limitations and step accounting. [Model attempts](authoring/model-attempts.json) lists every locally recovered attempt or explicitly records that this task is unmeasured. Only `final` records whose source hashes match the current verifier establish the current score. Old check counts below describe the original rubric; the final metrics include the added checks.
+
+The current hardened verifier has 20 checks. Its reference Oracle, true NOP and all five prepared negative cases are documented in [the current validation report](authoring/calibration/VALIDATION.md). The full model trial index distinguishes runtime failures, running attempts and terminal-model results; none is inferred from the reference Oracle.
