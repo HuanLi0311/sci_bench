@@ -123,5 +123,20 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "crate-lookdev",
+      "kind": "negative-crate-disconnected-maps",
+      "run": "crate-lookdev/authoring/runs/20261126T085517Z-final-negative-crate-disconnected-maps",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_pbr_maps",
+        "R08_materials",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ]
 }
