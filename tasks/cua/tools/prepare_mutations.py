@@ -112,7 +112,8 @@ print(json.dumps({"file": p.name, "size": original.size, "original_rgb_mean": Im
     else:
         script.write_text(source + '\nbpy.ops.wm.save_as_mainfile(filepath=' + repr("/mutation/submission/" + BLENDS[task]) + ', compress=True)\n')
         command = ["docker", "run", "--rm", "--network", "none", "--cpus", "4", "--memory", "8g", "-v", f"{run}:/mutation", f"cua-qc-{task}-tests", "blender", "-b", "/mutation/submission/" + BLENDS[task], "--python", "/mutation/mutate.py"]
-    meta = {"kind": "mutation-preparation", "name": name, "task": task, "started_at": stamp, "argv": command, "script_sha256": hashlib.sha256(script.read_bytes()).hexdigest(), "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt."}
+    positive = name.endswith("-positive")
+    meta = {"kind": "representation-preparation" if positive else "mutation-preparation", "name": name, "task": task, "started_at": stamp, "argv": command, "script_sha256": hashlib.sha256(script.read_bytes()).hexdigest(), "meaning": "Positive representation case for scene extraction only; no full Oracle score claimed." if positive else "Preserved reference copy mutated; this is a negative input, never NOP or model attempt."}
     with (run / "mutation.stdout.txt").open("wb") as stdout, (run / "mutation.stderr.txt").open("wb") as stderr:
         result = subprocess.run(command, stdout=stdout, stderr=stderr, timeout=600)
     meta["exit_code"] = result.returncode

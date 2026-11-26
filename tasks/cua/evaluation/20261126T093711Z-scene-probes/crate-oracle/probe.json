@@ -1,0 +1,64 @@
+{
+  "label": "crate-oracle",
+  "source_blend": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/solution/crate.blend",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/20261126T093711Z-scene-probes/source/crate-lookdev:/tests:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/solution:/submission:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/20261126T093711Z-scene-probes/crate-oracle:/diagnostic",
+    "cua-qc-crate-lookdev-tests",
+    "blender",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "2",
+    "-b",
+    "/submission/crate.blend",
+    "--python",
+    "/tests/check_scene.py",
+    "--",
+    "/diagnostic/scene.json"
+  ],
+  "started_at": "2026-11-26T09:37:26.399899+00:00",
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "69c349f0833583acb07575df79d8a4156c5d8a512a5c65f2f4756414903fc4f9",
+      "bytes": 11916
+    },
+    "grade.py": {
+      "sha256": "ba4d73a7edc4df65b29796a1c7b98627e3a94781ebcbf30b5639b455020d4462",
+      "bytes": 16604
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "8c9dd4f2057ff14d298a0acda74bffbb0e0f0688da7b206d41010e15697afe7f",
+      "bytes": 3119
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "submission_access": "read-only",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T09:37:50.517931+00:00",
+  "scene_ok": true,
+  "scene_error": null
+}
