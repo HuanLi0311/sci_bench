@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-26T11:25:05.924974+00:00",
+  "container": "cua-rainroom-model-0c6e1bcc5c",
+  "copy_exit_code": 0,
+  "event_type_counts": {
+    "session_meta": 1,
+    "event_msg": 45,
+    "response_item": 43,
+    "world_state": 1,
+    "turn_context": 1,
+    "token_usage_record": 10
+  },
+  "tool_requests_so_far": 10,
+  "tool_results_so_far": 10,
+  "last_raw_event_at": "2026-11-26T11:24:21.605Z",
+  "incomplete_live_lines": 0,
+  "scope": "live aggregate only, not completed trajectory"
+}
