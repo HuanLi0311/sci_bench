@@ -4,10 +4,18 @@ import json
 from pathlib import Path
 import unittest
 
-from rubric import check_sizes, check_support
+from rubric import check_sizes, check_support, linear_rgb_to_srgb
 
 
 class GeometryRegression(unittest.TestCase):
+    def test_blender_linear_brand_colour(self):
+        # Actual values extracted from the model's correctly entered #1F6F5C.
+        linear = (0.013702083379030228, 0.15896083414554596, 0.10702310502529144)
+        self.assertEqual(tuple(round(c * 255) for c in linear_rgb_to_srgb(linear)), (31, 111, 92))
+        self.assertEqual(linear_rgb_to_srgb((0, 0, 0)), [0, 0, 0])
+        for channel in linear_rgb_to_srgb((1, 1, 1)):
+            self.assertAlmostEqual(channel, 1)
+
     def test_reference_and_invalid_deliveries(self):
         objects = json.loads((Path(__file__).parent / "reference/geometry.json").read_text())["objects"]
         self.assertTrue(check_sizes(objects)[0])

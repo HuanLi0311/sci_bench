@@ -11,6 +11,7 @@ import numpy as np
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 from bpy_extras.object_utils import world_to_camera_view
+from rubric import linear_rgb_to_srgb
 
 PANELS = ["booth_shell", "counter", "cabinet_01", "cabinet_02",
           "product_01", "product_02", "product_03", "entrance_zone"]
@@ -120,7 +121,7 @@ def main():
             if b is not None:
                 linear = list(b.inputs["Base Color"].default_value)[:3]
                 info["basecolor_linear"] = linear
-                info["basecolor"] = [12.92 * value if value <= 0.0031308 else 1.055 * value ** (1 / 2.4) - 0.055 for value in linear]
+                info["basecolor"] = linear_rgb_to_srgb(linear)
                 info["basecolor_space"] = "sRGB"
                 info["metallic"] = float(b.inputs["Metallic"].default_value)
             for n in mat.node_tree.nodes:
