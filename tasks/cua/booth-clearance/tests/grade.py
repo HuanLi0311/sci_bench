@@ -4,6 +4,8 @@ Usage: python3 grade.py /app/out
 Exit 0 -> reward 1. Detail goes to stdout and /logs/verifier/metrics.json.
 """
 import json
+import tempfile
+import traceback
 import math
 import os
 import shutil
@@ -16,6 +18,7 @@ from PIL import Image
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
+WORK = tempfile.mkdtemp(prefix="cua-verifier-")
 
 
 def add(cid, level, ok, detail=""):
@@ -23,8 +26,17 @@ def add(cid, level, ok, detail=""):
     return ok
 
 
+def _log_process(cmd, result):
+    os.makedirs("/logs/verifier", exist_ok=True)
+    with open("/logs/verifier/blender-processes.jsonl", "a") as f:
+        f.write(json.dumps({"command": cmd, "returncode": result.returncode,
+                            "stdout": result.stdout, "stderr": result.stderr}) + "\n")
+
+
 def run(cmd, timeout):
-    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    _log_process(cmd, r)
+    return r
 
 
 def ss_img(a, b):
@@ -70,10 +82,10 @@ def main():
     ok = False
     if os.path.exists(blend):
         try:
-            r = run([BLENDER, "-b", blend, "--python", "/tests/check_scene.py",
-                     "--", "/tmp/scene.json"], timeout=600)
-            if os.path.exists("/tmp/scene.json"):
-                with open("/tmp/scene.json") as fh:
+            r = run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", blend, "--python", "/tests/check_scene.py",
+                     "--", os.path.join(WORK, "scene.json")], timeout=600)
+            if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
+                with open(os.path.join(WORK, "scene.json")) as fh:
                     scene = json.load(fh)
                 ok = bool(scene.get("ok"))
             if not ok:
@@ -177,13 +189,13 @@ def main():
     ac_ok, ac_detail = False, "not run"
     if ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_entrance.png")):
         try:
-            cp = "/tmp/anticheat.blend"
+            cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
-            run([BLENDER, "-b", cp, "--python", "/tests/rerender.py",
-                 "--", "/tmp/ac_base.png", "/tmp/ac_moved.png"], timeout=900)
-            if os.path.exists("/tmp/ac_base.png") and os.path.exists("/tmp/ac_moved.png"):
-                base = load_gray("/tmp/ac_base.png")
-                moved = load_gray("/tmp/ac_moved.png")
+            run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp, "--python", "/tests/rerender.py",
+                 "--", os.path.join(WORK, "ac_base.png"), os.path.join(WORK, "ac_moved.png")], timeout=900)
+            if os.path.exists(os.path.join(WORK, "ac_base.png")) and os.path.exists(os.path.join(WORK, "ac_moved.png")):
+                base = load_gray(os.path.join(WORK, "ac_base.png"))
+                moved = load_gray(os.path.join(WORK, "ac_moved.png"))
                 delivered = load_gray(os.path.join(out, "render_entrance.png"),
                                       size=(960, 540))
                 s_match = ss_img(base, delivered)
@@ -202,6 +214,23 @@ def main():
         and os.path.exists(os.path.join(out, "manifest.json")),
         "blend+manifest")
 
+    view_scores = {}
+    try:
+        for view in ['entrance', 'top']:
+            filename = "render_" + view + ".png"
+            trusted = Image.open(os.path.join(WORK, filename)).convert("RGB")
+            delivered = Image.open(os.path.join(out, filename)).convert("RGB").resize(trusted.size, Image.Resampling.LANCZOS)
+            a = np.asarray(trusted, np.float32)
+            b = np.asarray(delivered, np.float32)
+            # Check each colour channel: grayscale alone misses colour substitutions.
+            compare = globals().get("ss_img") or globals().get("ss")
+            view_scores[view] = min(compare(a[..., c], b[..., c]) for c in range(3))
+        views_ok = all(np.isfinite(v) and v >= 0.90 for v in view_scores.values())
+    except Exception as exc:
+        views_ok = False
+        view_scores["error"] = str(exc)
+    add("R_all_render_authenticity", "critical", views_ok, view_scores)
+
     must = [c for c in CHECKS if c["level"] == "must"]
     crit = [c for c in CHECKS if c["level"] == "critical"]
     norm = [c for c in CHECKS if c["level"] == "normal"]
@@ -213,11 +242,18 @@ def main():
     result = {"reward": reward, "must_pass": must_pass,
               "critical_pass": crit_pass, "normal_rate": round(rate, 3),
               "checks": CHECKS}
-    with open("/tmp/metrics.json", "w") as fh:
+    with open(os.path.join(WORK, "metrics.json"), "w") as fh:
         json.dump(result, fh, indent=1)
     print(json.dumps(result, indent=1))
     return 0 if reward == 1 else 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        CHECKS.append({"id": "R_verifier_error", "level": "must", "pass": False, "detail": str(exc)})
+        result = {"reward": 0, "must_pass": False, "critical_pass": False, "normal_rate": 0, "checks": CHECKS}
+        print(json.dumps(result, indent=1))
+        sys.exit(1)
