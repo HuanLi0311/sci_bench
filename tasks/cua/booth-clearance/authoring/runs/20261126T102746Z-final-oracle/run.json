@@ -257,4 +257,64 @@
     },
     "materials/photos/ref_overview.jpg": {
       "sha256": "11a895ffebb5afa0b76dd4cded6f07c08db5e9cb45f4a08ba91bfb7e4b7ec627",
-      "bytes": 9399
+      "bytes": 93999
+    },
+    "materials/photos/ref_products.jpg": {
+      "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
+      "bytes": 88811
+    },
+    "materials/tables/furniture_list.xlsx": {
+      "sha256": "b6f8fa972672aabfd159df130ec11d022e047c46d221077e02ec11a8422be6a0",
+      "bytes": 5076
+    },
+    "materials/tables/product_sizes.xlsx": {
+      "sha256": "63869b305d13fc2b064d6d401938cff676a9d2ce6ebfd2bb3254781c9649935e",
+      "bytes": 5075
+    }
+  },
+  "solution_source": {
+    "booth.blend": {
+      "sha256": "fb539437a1869296870c4e28ce989b4e89e69764245d4f5b108077ebfd9df921",
+      "bytes": 120709
+    },
+    "booth.blend1": {
+      "sha256": "0ff214d5fbeaa041f47aa76d388b38196c9957e14186f056a8a0c60a283968b6",
+      "bytes": 121666
+    },
+    "manifest.json": {
+      "sha256": "8a15f3e6049efbb19322b10cb44a3ab38f0058c037c0e8a1a0a64710380674cf",
+      "bytes": 572
+    },
+    "render_entrance.png": {
+      "sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
+      "bytes": 1730640
+    },
+    "render_top.png": {
+      "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
+      "bytes": 2518726
+    },
+    "solve.sh": {
+      "sha256": "8cb15654c1c569c2b0d3e98786532eb5189231cfb721c2e358272f7cc5dc3fcd",
+      "bytes": 652
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {
+    "booth.blend": {
+      "sha256": "fb539437a1869296870c4e28ce989b4e89e69764245d4f5b108077ebfd9df921",
+      "bytes": 120709
+    },
+    "manifest.json": {
+      "sha256": "8a15f3e6049efbb19322b10cb44a3ab38f0058c037c0e8a1a0a64710380674cf",
+      "bytes": 572
+    },
+    "render_entrance.png": {
+      "sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
+      "bytes": 1730640
+    },
+    "render_top.png": {
+      "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
+      "bytes": 2518726
+    }
+  }
+}
