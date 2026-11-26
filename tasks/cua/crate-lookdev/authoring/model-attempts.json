@@ -331,6 +331,19 @@
         ],
         "agent_type": "Codex terminal agent (not computer-1 CUA)",
         "evidence": "agent/sessions/...jsonl turn_context"
+      },
+      "posthoc_current_artifact_evaluation": {
+        "reward": 0,
+        "run": "crate-lookdev/authoring/runs/20261126T095121Z-final-model-regrade",
+        "source_matches_current": true,
+        "failed_checks": [
+          "R03_outer_size",
+          "R05_lid_hinge",
+          "R08_materials",
+          "R09_stencil_wear",
+          "R10_renders"
+        ],
+        "classification": "artifact-failure after successful scene extraction; original historical Harbor verifier was an infrastructure failure; earlier TextCurve exception scores are superseded and preserved"
       }
     }
   ]
