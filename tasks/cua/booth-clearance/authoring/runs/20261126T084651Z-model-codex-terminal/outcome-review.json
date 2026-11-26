@@ -1,0 +1,14 @@
+{
+    "agent_finished_at":  "2026-11-26T09:19:57.169168+00:00",
+    "artifact_rejection":  "The submitted entrance_zone is not a required nonempty mesh; check_scene.py returned 2 with that explicit ValueError.",
+    "model_capability_conclusion":  "Incomplete run due to provider rate limiting; saved artifacts independently fail the current task verifier.",
+    "classification":  "api-rate-limited",
+    "artifact_reward":  0,
+    "tool_calls":  73,
+    "budget_seconds":  7200,
+    "raw_outcome_preserved":  "agent-error in original trial.json",
+    "budget_was_artificially_shortened":  false,
+    "reason":  "Codex exited 1 after the provider returned 429 Too Many Requests and the CLI exhausted retries.",
+    "gui_compliant":  false,
+    "agent_steps":  88
+}

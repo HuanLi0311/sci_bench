@@ -289,6 +289,29 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "model-regrade",
+      "run": "crate-lookdev/authoring/runs/20261126T092240Z-final-model-regrade",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_parts",
+        "R03_outer_size",
+        "R04_thickness",
+        "R05_lid_hinge",
+        "R06_real_geometry",
+        "R07_pbr_maps",
+        "R08_materials",
+        "R09_stencil_wear",
+        "R10_renders",
+        "R11_polys",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
