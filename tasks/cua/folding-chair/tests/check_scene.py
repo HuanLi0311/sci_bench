@@ -39,6 +39,14 @@ def related(a, b):
     return a.parent is b or b.parent is a
 
 
+def evaluated_triangles(ob):
+    ev = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    mesh = ev.to_mesh()
+    count = sum(len(p.vertices) - 2 for p in mesh.polygons)
+    ev.to_mesh_clear()
+    return count
+
+
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
     for name in ['seat', 'back', 'front_leg_l', 'front_leg_r', 'rear_leg_l', 'rear_leg_r', 'lock_pin']:
@@ -68,7 +76,7 @@ def main():
     for ob in bpy.data.objects:
         e = {"type": ob.type, "parent": ob.parent.name if ob.parent else None}
         if ob.type == 'MESH':
-            e["polys"] = sum(len(p.vertices) - 2 for p in ob.data.polygons)
+            e["polys"] = evaluated_triangles(ob)
             e["materials"] = [m.name if m else None for m in ob.data.materials]
             rep["polys_total"] += e["polys"]
         rep["objects"][ob.name] = e

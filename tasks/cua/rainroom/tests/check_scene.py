@@ -27,6 +27,14 @@ def world_aabb(ob):
             [max(p[i] for p in pts) for i in range(3)]]
 
 
+def evaluated_triangles(ob):
+    ev = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    mesh = ev.to_mesh()
+    count = sum(len(p.vertices) - 2 for p in mesh.polygons)
+    ev.to_mesh_clear()
+    return count
+
+
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
     for name in ['room_shell', 'rug', 'sofa', 'sofa_back', 'coffee_table', 'side_table', 'side_table_leg', 'floor_lamp', 'floor_lamp_shade', 'table_lamp', 'bookshelf', 'books_1', 'books_2', 'books_3', 'books_4', 'vase_01', 'vase_02', 'mug_01', 'mug_02', 'tray', 'candle_01', 'candle_02', 'bottle', 'plant_pot', 'plant_leaves', 'cushion_01', 'cushion_02']:
@@ -47,7 +55,7 @@ def main():
         if ob.type == 'MESH':
             a = world_aabb(ob)
             e["aabb"] = a
-            e["polys"] = sum(len(p.vertices) - 2 for p in ob.data.polygons)
+            e["polys"] = evaluated_triangles(ob)
             e["materials"] = [m.name if m else None for m in ob.data.materials]
             rep["polys_total"] += e["polys"]
             rep["meshes"].append(ob.name)
