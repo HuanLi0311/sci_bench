@@ -1,0 +1,309 @@
+{
+  "started_at": "2026-11-26T11:14:58.595078+00:00",
+  "grader_sources_before": {
+    "folding-chair": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "3f211e77a364e619d57c43a0041965efaa7641c591114a4985be6c7b0ed5ec47",
+        "bytes": 6501
+      },
+      "grade.py": {
+        "sha256": "701642000bd129d440890845c5496c0cbf89e22c5465a80c8bf339b23078f260",
+        "bytes": 10237
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "d8958baf0b4af4e2993c8ea534fc77debc6d4a4481ed671d9b76d03c634e2149",
+        "bytes": 2028
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "rainroom": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
+        "bytes": 5918
+      },
+      "grade.py": {
+        "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
+        "bytes": 9627
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+        "bytes": 2291
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "toy-car": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "a5870f6ba1a728ca0c7057a47cdbe54eb527240934597118002671da5127f1f3",
+        "bytes": 6578
+      },
+      "grade.py": {
+        "sha256": "2e884f0fae9535646de7092d7d340d07caad5d6c763acadfee31ff34e7a9f9ec",
+        "bytes": 10616
+      },
+      "reference/silhouettes/back.png": {
+        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
+        "bytes": 348
+      },
+      "reference/silhouettes/front.png": {
+        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
+        "bytes": 347
+      },
+      "reference/silhouettes/side.png": {
+        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
+        "bytes": 440
+      },
+      "reference/silhouettes/top.png": {
+        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
+        "bytes": 471
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a85a9b10aca45a22cda7de9dc50244afe32d3da9ac6acf188ff452ae33684f35",
+        "bytes": 2407
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  "materials": {
+    "folding-chair": {
+      "LICENSE.txt": {
+        "sha256": "95179d37e705f61d2289908e0e6eb5a4759f1925b97a8d3e93315a00ba62fddc",
+        "bytes": 66
+      },
+      "drawings/hinge_layout.pdf": {
+        "sha256": "40d964944172eb66a0be0326f89762928285b274ff592c4fb7698facfe93f075",
+        "bytes": 21052
+      },
+      "drawings/hinge_layout.png": {
+        "sha256": "339236851f5f4dacd5c331bd44231abe92532055fb278c6ed1598d535283542a",
+        "bytes": 105019
+      },
+      "drawings/states.pdf": {
+        "sha256": "a4153781aa421510d6ea933c581454d248cca633d5026b006ba07ad9634763e1",
+        "bytes": 2186
+      },
+      "photos/ref_folded.jpg": {
+        "sha256": "198cb32692fc51bb9df89a3d34624128ebc43bc756ace9fee01e19cdff953605",
+        "bytes": 60303
+      },
+      "photos/ref_half.jpg": {
+        "sha256": "2842f22db8d3d1cadc811141f156e9bc9e7068feaefbe8630d2a30d9dc230d24",
+        "bytes": 70865
+      },
+      "photos/ref_hinge.jpg": {
+        "sha256": "3e0ce75ccbb5a1229fb3a2c64a0f08fbdbcdfc9eb7e6938ad071e071297bc996",
+        "bytes": 78553
+      },
+      "photos/ref_locked.jpg": {
+        "sha256": "56d502be37078afb5955284e079dc3d6f79fb25ff3a89dc6e664e1a03eaa91d1",
+        "bytes": 68350
+      },
+      "photos/ref_unfolded.jpg": {
+        "sha256": "8beb5f37000021b2140b857efb0d0ad8dd55774a1a27bc50c5d05db58c49a75e",
+        "bytes": 68350
+      },
+      "tables/chair_sizes.xlsx": {
+        "sha256": "bf7fe1192bc196420e9551fab7a23bcb522e0d6d42dc0e2ed564a8aec2d3882e",
+        "bytes": 5027
+      },
+      "tables/hinge_layout.xlsx": {
+        "sha256": "0d632ba1c71e2214db4485b4059baf694b0e30b4cb56dab1376a6e1b0311125b",
+        "bytes": 5016
+      }
+    },
+    "rainroom": {
+      "LICENSE.txt": {
+        "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+        "bytes": 61
+      },
+      "drawings/room_plan.png": {
+        "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+        "bytes": 88574
+      },
+      "photos/ref_detail.jpg": {
+        "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+        "bytes": 54191
+      },
+      "photos/ref_morning.jpg": {
+        "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+        "bytes": 71539
+      },
+      "photos/ref_night.jpg": {
+        "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+        "bytes": 62699
+      },
+      "spec/material_spec.pdf": {
+        "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+        "bytes": 2513
+      },
+      "tables/objects.xlsx": {
+        "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+        "bytes": 5921
+      }
+    },
+    "toy-car": {
+      "LICENSE.txt": {
+        "sha256": "f306f06e8934336c54af53bf28c218b686b4876ad62c3f112b16049bdead6a22",
+        "bytes": 122
+      },
+      "drawings/joint_spec.pdf": {
+        "sha256": "159a50bbe01f9de6af7f996dbdfb0a669041f5a1dc39e923436f52c5b06e9366",
+        "bytes": 2141
+      },
+      "frames/front_00.jpg": {
+        "sha256": "bb2c5492bfb4a767b2c6a9bda4e8314764995146758f0bfec8c357d5e2893aec",
+        "bytes": 4835
+      },
+      "frames/front_01.jpg": {
+        "sha256": "c8439ea431bfee7acce57655d32e507231e58ff1d093225af999c8e6a17ca3c2",
+        "bytes": 4820
+      },
+      "frames/front_02.jpg": {
+        "sha256": "d63b87527d03ab3b8940bac04d2a7b9394bf97a657389c0cb3d76614a477286a",
+        "bytes": 4837
+      },
+      "frames/front_03.jpg": {
+        "sha256": "e6207f5e8d6feeab81ebad3ac48b90bc5e80475ea1cabae79505e37fcec6f171",
+        "bytes": 4833
+      },
+      "frames/front_04.jpg": {
+        "sha256": "bc2ffae6458460bd217c77074c90d3290c647cd8cfce19cbe9f48faaadb6283f",
+        "bytes": 4836
+      },
+      "frames/front_05.jpg": {
+        "sha256": "2b09183d04840b3f537ce001907534d5ec7ed3843a80ad387883510407c6c93d",
+        "bytes": 4831
+      },
+      "frames/front_06.jpg": {
+        "sha256": "6bfe95f055327046ae40952486f0d2d7fa542e1f6962972863911ab2db262778",
+        "bytes": 4823
+      },
+      "frames/front_07.jpg": {
+        "sha256": "b1d3ac3ed931d369c7b18a145ed100c964862d82bd117bdf668972a68e29e1ed",
+        "bytes": 4820
+      },
+      "frames/side_00.jpg": {
+        "sha256": "6b278073a844a65d0a0b83ccc8b03a0b752c9bf0820a75ee2be11ce0f44769dd",
+        "bytes": 7484
+      },
+      "frames/side_01.jpg": {
+        "sha256": "7e8ba44b81a297820c7756815e55a75993884d2255f2b6d87df1e49a4629698b",
+        "bytes": 7470
+      },
+      "frames/side_02.jpg": {
+        "sha256": "95528fa1685dae56ca42e446bda47cea92df39843875cc40ac8188704d9e6f8c",
+        "bytes": 7484
+      },
+      "frames/side_03.jpg": {
+        "sha256": "0ce4644b9975f4e9b9b141a09cb90ae961223f22783a2b453e513aa3dda9aae3",
+        "bytes": 7484
+      },
+      "frames/side_04.jpg": {
+        "sha256": "dd1d79da770d0d422e79b63ddde1ee41464a3898f5ea337a087a1e92f8c85be1",
+        "bytes": 7482
+      },
+      "frames/side_05.jpg": {
+        "sha256": "5445a003075cee9a98d8cd1b222a5d168b9b058eacc21895ec6c89df9f695cc9",
+        "bytes": 7480
+      },
+      "frames/side_06.jpg": {
+        "sha256": "def57337d94d77de4dfc6c72402da8cfa89a88636ee81b5bce1108a4f00bb8b9",
+        "bytes": 7498
+      },
+      "frames/side_07.jpg": {
+        "sha256": "8a0a72f6080b13ac13056aa6383177a182783bde650645528bc5796a8bab790e",
+        "bytes": 7494
+      },
+      "photos/ref_back.jpg": {
+        "sha256": "c45a40bc55c54fd87b3161073aa63276897d374dd004a78d14b452ae058eb309",
+        "bytes": 25452
+      },
+      "photos/ref_front.jpg": {
+        "sha256": "1fb799556e6e97be9d3e86a546314900b7705b8f9e149ead0785bdb7ccb9183d",
+        "bytes": 25272
+      },
+      "photos/ref_side.jpg": {
+        "sha256": "5cb71174752e0f5be7c8e1ce1be5fd122ec36148cf654006e76df11d00eddc96",
+        "bytes": 33014
+      },
+      "photos/ref_top.jpg": {
+        "sha256": "2346a7b1118253c61f9fa0982885e8b8250aaf9803a47443f24c95c49fcecd12",
+        "bytes": 28314
+      },
+      "silhouettes/back.png": {
+        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
+        "bytes": 348
+      },
+      "silhouettes/front.png": {
+        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
+        "bytes": 347
+      },
+      "silhouettes/side.png": {
+        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
+        "bytes": 440
+      },
+      "silhouettes/top.png": {
+        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
+        "bytes": 471
+      },
+      "tables/car_sizes.xlsx": {
+        "sha256": "f49cedb3671cc8fd54d5c08ff23de24afa188a640a857c283762c1a1ea61c123",
+        "bytes": 5040
+      },
+      "videos/front.mp4": {
+        "sha256": "6cffe49e0e8f32b21b42ea5c60f9f6e79d431178b62726efdbd597a0f8586817",
+        "bytes": 8754
+      },
+      "videos/side.mp4": {
+        "sha256": "552500b879a26576903668e47d9e2ba8cae2434ee6f761af1569721dada75bb2",
+        "bytes": 10304
+      }
+    }
+  },
+  "private_provider_config_exists": true,
+  "runtime_binaries": {
+    "codex": true,
+    "codex-code-mode-host": true
+  },
+  "build_argv": [
+    "docker",
+    "build",
+    "-t",
+    "cua-qc-rainroom-env",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/environment"
+  ],
+  "build_exit_code": 0,
+  "finished_at": "2026-11-26T11:15:01.302525+00:00"
+}
