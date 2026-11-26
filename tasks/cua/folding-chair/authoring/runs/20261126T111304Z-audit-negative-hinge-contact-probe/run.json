@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T11:13:06.582078+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T11:13:06.709608+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-db99d2b7d7"
+      ],
+      "started_at": "2026-11-26T11:13:06.721163+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:18:32.691600+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-db99d2b7d7"
+      ],
+      "started_at": "2026-11-26T11:18:32.726590+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:18:32.866617+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-db99d2b7d7:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T111304Z-audit-negative-hinge-contact-probe/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T11:18:32.877447+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:18:33.314146+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-db99d2b7d7"
+      ],
+      "started_at": "2026-11-26T11:18:33.397372+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:18:33.450428+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-db99d2b7d7"
+      ],
+      "started_at": "2026-11-26T11:18:33.466870+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:18:33.596716+00:00"
     }
   ],
   "nop_definition": null,
@@ -174,5 +228,10 @@
       "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
       "bytes": 1418329
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T11:18:33.614772+00:00"
 }
