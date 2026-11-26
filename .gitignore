@@ -286,6 +286,11 @@ crash-*
 *.kra
 *.sketch
 *.blend
+# Required CUA reference deliverables and archived model submissions.
+!tasks/cua/*/solution/*.blend
+!tasks/cua/*/authoring/runs/**/submission/*.blend
+!tasks/cua/*/authoring/runs/historical/**/artifacts/app/out/*.blend
+!tasks/cua/toy-car/environment/materials/videos/*.mp4
 *.fbx
 *.stl
 

@@ -1,0 +1,110 @@
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 0.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": false,
+   "detail": "unreadable"
+  },
+  {
+   "id": "R02_objects",
+   "level": "must",
+   "pass": false,
+   "detail": "missing=[] lighting=None"
+  },
+  {
+   "id": "R03_size",
+   "level": "must",
+   "pass": false,
+   "detail": "[0, 0, 0] m"
+  },
+  {
+   "id": "R04_envelope",
+   "level": "must",
+   "pass": true,
+   "detail": "bounds=[[0, 0, 0], [0, 0, 0]]"
+  },
+  {
+   "id": "R05_entrance_clearance",
+   "level": "must",
+   "pass": false,
+   "detail": "{}"
+  },
+  {
+   "id": "R06_hydrant_clearance",
+   "level": "must",
+   "pass": true,
+   "detail": "violations={}"
+  },
+  {
+   "id": "R07_visibility",
+   "level": "must",
+   "pass": false,
+   "detail": "{}"
+  },
+  {
+   "id": "R08_brand_colour",
+   "level": "normal",
+   "pass": false,
+   "detail": "delta=None material=None"
+  },
+  {
+   "id": "R09_materials",
+   "level": "must",
+   "pass": true,
+   "detail": "meshes without material=[]"
+  },
+  {
+   "id": "R10_packed",
+   "level": "must",
+   "pass": true,
+   "detail": "unpacked=[]"
+  },
+  {
+   "id": "R11_no_external",
+   "level": "must",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "R12_polys",
+   "level": "normal",
+   "pass": false,
+   "detail": "1000000000 triangles"
+  },
+  {
+   "id": "R13_entrance_render",
+   "level": "must",
+   "pass": false,
+   "detail": "render_entrance.png:missing render_top.png:missing cam=False top=False"
+  },
+  {
+   "id": "R14_manifest",
+   "level": "must",
+   "pass": false,
+   "detail": "missing"
+  },
+  {
+   "id": "R15_anti_cheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "not run"
+  },
+  {
+   "id": "R16_deliverables",
+   "level": "must",
+   "pass": false,
+   "detail": "blend+manifest"
+  },
+  {
+   "id": "R_all_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/tmp/cua-verifier-elp3l_qo/render_entrance.png'\"}"
+  }
+ ]
+}

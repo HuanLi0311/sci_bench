@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "chair-common-root-collision",
+  "task": "folding-chair",
+  "started_at": "20261126T074348Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T074348Z-mutation-chair-common-root-collision:/mutation",
+    "cua-qc-folding-chair-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/folding_chair.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "cdef964fbd62605e2c113d283eb933452747d39a9de239534fff4f93cf6d7b4b",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T07:43:52.585639+00:00"
+}
