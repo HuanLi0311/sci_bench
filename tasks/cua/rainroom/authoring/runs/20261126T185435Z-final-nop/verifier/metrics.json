@@ -1,0 +1,104 @@
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 0.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": false,
+   "detail": "unreadable"
+  },
+  {
+   "id": "R02_objects",
+   "level": "must",
+   "pass": false,
+   "detail": "missing=[]"
+  },
+  {
+   "id": "R03_room_size",
+   "level": "must",
+   "pass": false,
+   "detail": "[0, 0, 0]"
+  },
+  {
+   "id": "R04_light_sets",
+   "level": "must",
+   "pass": false,
+   "detail": "night=0 morning=0"
+  },
+  {
+   "id": "R05_camera",
+   "level": "must",
+   "pass": false,
+   "detail": "None"
+  },
+  {
+   "id": "R06_renders",
+   "level": "must",
+   "pass": false,
+   "detail": "render_night.png:missing render_morning.png:missing"
+  },
+  {
+   "id": "R07_brightness",
+   "level": "must",
+   "pass": false,
+   "detail": "night=0.000 morning=0.000"
+  },
+  {
+   "id": "R08_time_of_day",
+   "level": "must",
+   "pass": false,
+   "detail": "night R-B=0.000 morning R-B=0.000 dLum=0.000"
+  },
+  {
+   "id": "R09_materials",
+   "level": "must",
+   "pass": false,
+   "detail": "glass=[] metal=[]"
+  },
+  {
+   "id": "R10_packed",
+   "level": "must",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "R11_polys",
+   "level": "normal",
+   "pass": false,
+   "detail": "1000000000 triangles"
+  },
+  {
+   "id": "R12_manifest",
+   "level": "must",
+   "pass": false,
+   "detail": "missing"
+  },
+  {
+   "id": "R_object_positions",
+   "level": "must",
+   "pass": false,
+   "detail": "{}"
+  },
+  {
+   "id": "R13_anti_cheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "skipped: prerequisite checks failed"
+  },
+  {
+   "id": "R_all_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/logs/verifier/work-u2x2pcga/render_night.png'\"}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{}"
+  }
+ ]
+}
