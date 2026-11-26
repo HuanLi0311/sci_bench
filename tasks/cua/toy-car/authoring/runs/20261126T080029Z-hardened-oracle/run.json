@@ -172,6 +172,49 @@
       "started_at": "2026-11-26T08:00:49.065291+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:00:49.736178+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-6905218a92"
+      ],
+      "started_at": "2026-11-26T08:00:49.793150+00:00",
+      "exit_code": 137,
+      "finished_at": "2026-11-26T08:06:17.001002+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-6905218a92"
+      ],
+      "started_at": "2026-11-26T08:06:17.052846+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:06:17.169769+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-6905218a92:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:06:17.198827+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:06:18.381205+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-6905218a92"
+      ],
+      "started_at": "2026-11-26T08:06:18.419008+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:06:18.569675+00:00"
     }
   ],
   "nop_definition": null,
@@ -377,24 +420,4 @@
       "bytes": 883
     },
     "render_back.png": {
-      "sha256": "a03242c53d1504ea64865cb958ffed2bdd56e2965bc50bee903483087475faa6",
-      "bytes": 229170
-    },
-    "render_front.png": {
-      "sha256": "698f492e4fb680964267a921139b79370a68bae0bb32b238b945528a4f94fad7",
-      "bytes": 225130
-    },
-    "render_side.png": {
-      "sha256": "2f5a7a91e4f8dfa3df4c3f877bfb98d7fcd20c048d8b9e1c2e5c655fa7026d99",
-      "bytes": 346609
-    },
-    "render_top.png": {
-      "sha256": "4db66cfb75243bc7ae9a57151fc4615fd0bf153f169d4b613973994f8add2755",
-      "bytes": 259516
-    },
-    "toy_car.blend": {
-      "sha256": "d9fab6d17c19bfb79cb2548577eb3f15ab80d056af0bb2f251ffff4a51e3705d",
-      "bytes": 97618
-    }
-  }
-}
+      "sha256": "a03242c53d1504ea64865cb958ffed2bdd56

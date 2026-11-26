@@ -22,6 +22,7 @@ if __name__ == "__main__":
     evidence = ROOT / "evaluation" / (stamp + "-booth-priority")
     evidence.mkdir(parents=True)
     record = {"time_utc": now(), "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved", "processes": [], "cancelled_runs": []}
+    (evidence / "priority-change.json").write_text(json.dumps(record, indent=2) + "\n")
     for proc in Path("/proc").glob("[0-9]*"):
         try:
             argv = (proc / "cmdline").read_bytes().split(b"\0")
@@ -31,11 +32,18 @@ if __name__ == "__main__":
         if len(args) < 2 or not args[0].endswith("python3"):
             continue
         if args[1].endswith("/record_final.py"):
-            os.kill(int(proc.name), signal.SIGSTOP)
+            try:
+                os.kill(int(proc.name), signal.SIGSTOP)
+            except ProcessLookupError:
+                continue
             record["processes"].append({"pid": int(proc.name), "argv": args, "signal": "SIGSTOP", "meaning": "Pause scheduling only; child verifiers keep running; resume with SIGCONT"})
         elif args[1].endswith("/record_baselines.py") and "--label" in args and args[args.index("--label") + 1] in ("pre-hardening", "hardened", "hardened-lf-fix"):
-            os.kill(int(proc.name), signal.SIGTERM)
+            try:
+                os.kill(int(proc.name), signal.SIGTERM)
+            except ProcessLookupError:
+                continue
             record["processes"].append({"pid": int(proc.name), "argv": args, "signal": "SIGTERM", "meaning": "Cancel obsolete duplicate harness under new task priority"})
+        (evidence / "priority-change.json").write_text(json.dumps(record, indent=2) + "\n")
     for run_json in ROOT.glob("*/authoring/runs/*/run.json"):
         meta = json.loads(run_json.read_text())
         if meta.get("finished_at") or meta.get("label") not in ("pre-hardening", "hardened", "hardened-lf-fix"):
