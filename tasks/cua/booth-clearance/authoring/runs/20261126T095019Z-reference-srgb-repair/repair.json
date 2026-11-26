@@ -267,7 +267,40 @@
         "--",
         "/stage/solution"
       ],
-      "started_at": "2026-11-26T09:50:39.458119+00:00"
+      "started_at": "2026-11-26T09:50:39.458119+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:04:49.167867+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "--env",
+        "PYTHONPATH=/source/tests",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T095019Z-reference-srgb-repair/source:/source:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T095019Z-reference-srgb-repair/stage:/stage",
+        "blender-bench:gui",
+        "blender",
+        "--disable-autoexec",
+        "--python-exit-code",
+        "2",
+        "-b",
+        "/stage/solution/booth.blend",
+        "--python",
+        "/source/render_photos.py",
+        "--",
+        "/stage/photos"
+      ],
+      "started_at": "2026-11-26T10:04:49.219964+00:00"
     }
   ],
   "color_probes": [

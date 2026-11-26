@@ -134,3 +134,12 @@ Fra:1 Mem:243.95M (Peak 243.95M) | Time:05:16.51 | Remaining:01:36.86 | Mem:232.
 Fra:1 Mem:243.95M (Peak 243.95M) | Time:05:41.91 | Remaining:01:10.94 | Mem:232.36M, Peak:232.36M | Scene, ViewLayer | Sample 53/64
 Fra:1 Mem:243.95M (Peak 243.95M) | Time:06:07.11 | Remaining:00:45.07 | Mem:232.36M, Peak:232.36M | Scene, ViewLayer | Sample 57/64
 Fra:1 Mem:243.95M (Peak 243.95M) | Time:06:32.69 | Remaining:00:19.30 | Mem:232.36M, Peak:232.36M | Scene, ViewLayer | Sample 61/64
+Fra:1 Mem:339.95M (Peak 483.95M) | Time:07:41.60 | Mem:232.36M, Peak:232.36M | Scene, ViewLayer | Sample 64/64
+Fra:1 Mem:339.95M (Peak 483.95M) | Time:07:41.60 | Mem:232.36M, Peak:232.36M | Scene, ViewLayer | Finished
+Saved: '/stage/solution/render_top.png'
+Time: 07:42.59 (Saving: 00:00.90)
+
+[formal] render_top
+Info: Saved "booth.blend"
+
+Blender quit
