@@ -19,7 +19,9 @@ def main():
             except (OSError, ValueError) as exc:
                 error = str(exc)
             details = " ".join(str(c.get("detail", "")) for c in metrics.get("checks", []))
-            if not meta.get("finished_at"):
+            if (path.parent / "cancellation.json").exists():
+                classification = "cancelled-by-priority"
+            elif not meta.get("finished_at"):
                 classification = "unfinished"
             elif meta.get("agent_exit_code") not in (None, 0):
                 classification = "agent-execution-error"

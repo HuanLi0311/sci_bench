@@ -22,3 +22,16 @@ python3 tasks/cua/booth-clearance/tests/test_rubric.py
 It uses geometry extracted from the real reference Oracle scene. It checks the reference, a resized product, a floating product and a missing plinth. This is a geometry regression check; only an actual full verifier run proves an Oracle reward.
 
 Final raw records and their exact source hashes are indexed in [RUNS.md](../../../RUNS.md). The recording protocol and definitions are in [EVIDENCE.md](../../../EVIDENCE.md). Development and interrupted runs remain visible, with their original logs and outcomes. A reward file after an execution error does not establish a solved/unsolved model trial. New model success is never inferred from the reference Oracle.
+
+## Captured structural regressions
+
+The frozen verifier used by these runs is recorded in `evaluation/20261126T081627Z-final-booth-clearance` (relative to `tasks/cua`). All four completed as normal grading, each with reward 0 and a decisive matching rubric failure:
+
+| Mutation | Evidence | Decisive failure |
+|---|---|---|
+| Entrance marker moved | [run](../runs/20261126T081628Z-final-negative-booth-moved-entrance-marker/run.json) | `R05_entrance_clearance` |
+| Product enlarged | [run](../runs/20261126T081635Z-final-negative-booth-product-scaled/run.json) | `R_furniture_product_sizes`, `R_product_support` |
+| Product floating above plinth | [run](../runs/20261126T081642Z-final-negative-booth-product-floating/run.json) | `R_product_support` |
+| White back wall with unused green slot retained | [run](../runs/20261126T081650Z-final-negative-booth-unused-brand-slot/run.json) | `R08_brand_colour`, measured delta 223.992/255 |
+
+The grader skips expensive authenticity renders once a prerequisite already makes reward 1 impossible. This does not relax acceptance of any submission: this task has two normal checks and requires at least 80%, so both must pass. The log explicitly records the skip. Valid scenes and submitted-image substitutions still execute full independent rendering.
