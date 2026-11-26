@@ -1,0 +1,4 @@
+`/bin/pwd` → `/app` (exit 0)  
+`/bin/true` → exit 0  
+
+SMOKE_TOOL_OK

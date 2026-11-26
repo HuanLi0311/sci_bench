@@ -23,7 +23,7 @@ python3 ic-bench/tasks/cua/tools/sanity_check.py        # on the host, docker av
 | 7c | **Model records** | every recovered attempt has original config/logs and explicit version/outcome; available raw trajectories match the documented step/tool-call counts; unmeasured tasks are explicit |
 | 8 | **Deliverables** | the reference output contains every file the instruction names, at the stated resolution |
 | 9 | **Anti-cheat present** | `grade.py` has at least one `critical` check and `rerender.py` re-renders from the delivered scene |
-| 10 | **Negative test** | at least one actual `*-final-negative-*` record has the current verifier hash, valid metrics, completed grading and reward 0; prose alone does not count |
+| 10 | **Negative test** | every prepared negative case has a completed `*-final-negative-*` record under the current verifier hash, valid metrics and reward 0; any unexpected pass, timeout or missing case fails the gate |
 | 11 | **Licences** | every asset in the solution `manifest.json` has `source` and `license` |
 
 ## Known local deviations (not failures)

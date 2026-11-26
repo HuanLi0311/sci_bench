@@ -141,7 +141,92 @@
       "started_at": "2026-11-26T08:43:18.911192+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:43:19.070752+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "cua-booth-model-772837547a",
+        "codex",
+        "exec",
+        "--json",
+        "--color",
+        "never",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--skip-git-repo-check",
+        "-C",
+        "/app",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"high\"",
+        "-c",
+        "features.multi_agent=false",
+        "-o",
+        "/app/model-final.txt",
+        "-"
+      ],
+      "started_at": "2026-11-26T08:43:19.085361+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:44:18.269322+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-772837547a:/run/codex-home/sessions",
+        "/tmp/cua-booth-private-gf8zuha3/raw-rollout"
+      ],
+      "started_at": "2026-11-26T08:44:18.281221+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:44:18.361746+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-772837547a:/app/out",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/20261126T084312Z-codex-runtime-smoke/submission"
+      ],
+      "started_at": "2026-11-26T08:44:18.403801+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:44:18.493199+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-772837547a:/app/model-final.txt",
+        "/tmp/cua-booth-private-gf8zuha3/model-final.txt"
+      ],
+      "started_at": "2026-11-26T08:44:18.509743+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:44:18.552677+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-booth-model-772837547a"
+      ],
+      "started_at": "2026-11-26T08:44:18.630993+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:44:19.072799+00:00"
     }
   ],
-  "outcome": "running"
+  "outcome": "smoke-completed-requires-tool-review",
+  "agent_started_at": "2026-11-26T08:43:19.085326+00:00",
+  "agent_exit_code": 0,
+  "agent_finished_at": "2026-11-26T08:44:18.281132+00:00",
+  "steps": {
+    "agent_steps": 3,
+    "tool_calls": 1,
+    "reported_models": [
+      "gpt-6.1-sol"
+    ],
+    "step_definition": "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates."
+  },
+  "finished_at": "2026-11-26T08:44:19.086856+00:00"
 }

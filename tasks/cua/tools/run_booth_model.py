@@ -89,6 +89,16 @@ Original instruction follows verbatim:
         effective["instruction_sha256"] = None
     (run / "config.json").write_text(json.dumps(effective, indent=2) + "\n")
     state = {"id": attempt_id, "started_at": now(), "effective_config": effective, "commands": [], "outcome": "running"}
+    if not options.smoke:
+        index_path = TASK / "authoring" / "model-attempts.json"
+        index = json.loads(index_path.read_text())
+        index["scope"] = "Recovered historical attempts plus newly recorded blind attempts; Oracle/NOP are excluded."
+        index.pop("absence_note", None)
+        index["attempts"] = [item for item in index.get("attempts", []) if item["id"] != attempt_id]
+        index["attempts"].append({"id": attempt_id, "path": str(run.relative_to(ROOT.parents[1])), "model_identifier": MODEL, "agent": "codex-terminal", "gui_compliant": False, "effective_config": effective, "outcome": "running", "reward": None, "raw_rollout_path": str((run / "raw-rollout").relative_to(ROOT.parents[1])), "trajectory_format": "Codex raw JSONL plus CLI --json events", "step_definition": "Pending final count_steps(raw-rollout); requests counted independently of successful tool execution", "agent_steps": None, "tool_calls": None})
+        temporary_index = index_path.with_suffix(".json.tmp")
+        temporary_index.write_text(json.dumps(index, indent=2) + "\n")
+        temporary_index.replace(index_path)
     container = "cua-booth-model-" + uuid.uuid4().hex[:10]
 
     def scrub(text):

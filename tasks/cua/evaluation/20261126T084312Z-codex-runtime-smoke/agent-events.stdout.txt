@@ -1,0 +1,9 @@
+{"type":"thread.started","thread_id":"01a21706-02ad-7ac3-9027-d7d33ec0823f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"I’m executing the two requested commands now and will report their actual results."}}
+{"type":"item.started","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc /bin/true","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc /bin/true","aggregated_output":"","exit_code":0,"status":"completed"}}
+{"type":"item.started","item":{"id":"item_2","type":"command_execution","command":"/bin/bash -lc /bin/pwd","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_2","type":"command_execution","command":"/bin/bash -lc /bin/pwd","aggregated_output":"/app\n","exit_code":0,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_3","type":"agent_message","text":"`/bin/pwd` → `/app` (exit 0)  \n`/bin/true` → exit 0  \n\nSMOKE_TOOL_OK"}}
+{"type":"turn.completed","usage":{"input_tokens":30341,"cached_input_tokens":28288,"cache_write_input_tokens":0,"output_tokens":233,"reasoning_output_tokens":68}}
