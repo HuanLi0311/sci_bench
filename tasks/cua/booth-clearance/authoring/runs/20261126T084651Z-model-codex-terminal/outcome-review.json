@@ -1,9 +1,9 @@
 {
     "agent_finished_at":  "2026-11-26T09:19:57.169168+00:00",
-    "artifact_rejection":  "The submitted entrance_zone is not a required nonempty mesh; check_scene.py returned 2 with that explicit ValueError.",
-    "model_capability_conclusion":  "Incomplete run due to provider rate limiting; saved artifacts independently fail the current task verifier.",
+    "artifact_rejection":  null,
+    "model_capability_conclusion":  "Saved artifacts pass all 22 current verifier checks. The CLI run ended due to provider 429 before a final answer, and this terminal baseline does not establish GUI/CUA compliance.",
     "classification":  "api-rate-limited",
-    "artifact_reward":  0,
+    "artifact_reward":  1,
     "tool_calls":  73,
     "budget_seconds":  7200,
     "raw_outcome_preserved":  "agent-error in original trial.json",
@@ -13,5 +13,7 @@
     "agent_steps":  88,
     "latest_artifact_reward":  1,
     "latest_grading_run":  "tasks/cua/booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade",
-    "reassessment":  "The same unchanged saved artifact passes all 22 checks after correcting legitimate Empty-marker and sRGB material handling. Original grade/reward files are preserved. The model CLI still ended due to provider 429 and this terminal baseline is not GUI compliant."
+    "reassessment":  "The same unchanged saved artifact passes all 22 checks after correcting legitimate Empty-marker and sRGB material handling. Original grade/reward files are preserved. The model CLI still ended due to provider 429 and this terminal baseline is not GUI compliant.",
+    "original_artifact_reward":  0,
+    "original_artifact_rejection":  "The submitted entrance_zone is not a required nonempty mesh; check_scene.py returned 2 with that explicit ValueError."
 }
