@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+  <rect width="900" height="300" fill="none"/>
+  <polygon points="40,150 160,40 280,150 160,260" fill="#1F6F5C"/>
+  <polygon points="160,90 220,150 160,210 100,150" fill="#F2C14E"/>
+  <text x="320" y="185" font-family="Helvetica" font-size="96" font-weight="bold"
+        fill="#1F6F5C">VOLTA</text>
+</svg>

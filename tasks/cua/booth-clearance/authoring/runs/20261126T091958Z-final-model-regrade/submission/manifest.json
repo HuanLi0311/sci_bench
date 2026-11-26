@@ -1,0 +1,753 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3",
+  "assets": [
+    {
+      "path": "booth.blend",
+      "role": "editable booth scene, geometry, procedural materials, lighting and cameras",
+      "source": "Self-authored from the supplied floor plan, constraints, product and furniture tables, brand sheet and reference photos; individual sources are inventoried in sceneAssets.",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "brand/logo.png",
+      "role": "packed texture",
+      "source": "Supplied design pack: materials/brand/logo.png",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "brand/logo.svg",
+      "role": "editable brand artwork",
+      "source": "Supplied design pack: materials/brand/logo.svg",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "brand/LICENSE.txt",
+      "role": "licence notice",
+      "source": "Supplied design pack: materials/LICENSE.txt",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "render_entrance.png",
+      "role": "render",
+      "source": "Self-authored Cycles render of booth.blend",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "render_top.png",
+      "role": "render",
+      "source": "Self-authored Cycles render of booth.blend",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_entrance.png",
+      "camera": "cam_entrance",
+      "scene": "Booth | Entrance",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "engine": "Cycles",
+      "device": "CPU",
+      "samples": 64,
+      "denoise": true,
+      "seed": 2406
+    },
+    {
+      "file": "render_top.png",
+      "camera": "cam_top",
+      "scene": "Booth | Top",
+      "resolution": [
+        2048,
+        1536
+      ],
+      "engine": "Cycles",
+      "device": "CPU",
+      "samples": 64,
+      "denoise": true,
+      "seed": 2406
+    }
+  ],
+  "coordinateSystem": {
+    "envelope": {
+      "min": [
+        -3,
+        -2,
+        0
+      ],
+      "max": [
+        3,
+        2,
+        4
+      ]
+    },
+    "entrance": {
+      "x": -3,
+      "centerY": 0,
+      "width": 2.4
+    },
+    "hydrant": {
+      "center": [
+        -4.2,
+        0
+      ],
+      "clearanceRadius": 1.2
+    }
+  },
+  "cameraNotes": {
+    "cam_entrance": {
+      "location": [
+        -1.5,
+        0,
+        1.6
+      ],
+      "lens_mm": 35,
+      "sensorFit": "VERTICAL",
+      "sensorHeight_mm": 28
+    },
+    "cam_top": {
+      "projection": "orthographic",
+      "orthoScale": 6.75
+    }
+  },
+  "licenceNotice": "All supplied materials are CC0-1.0 according to the supplied LICENSE.txt; all newly authored scene geometry, materials and renders are released as CC0-1.0.",
+  "validation": {
+    "triangles": 151434,
+    "envelope_m": [
+      6,
+      4,
+      4
+    ],
+    "cabinetEntranceClearance_m": {
+      "cabinet_01": 3.4044750109999335,
+      "cabinet_02": 2.057413440984674
+    },
+    "hydrantMinimumClearance_m": 1.2000000000000002,
+    "products": {
+      "product_01": {
+        "plinth": "plinth_01",
+        "verticalGap_m": 0.0,
+        "withinPlinthFootprint": true,
+        "unoccludedSightLineSamples": 9
+      },
+      "product_02": {
+        "plinth": "plinth_02",
+        "verticalGap_m": 0.0,
+        "withinPlinthFootprint": true,
+        "unoccludedSightLineSamples": 9
+      },
+      "product_03": {
+        "plinth": "plinth_03",
+        "verticalGap_m": 0.0,
+        "withinPlinthFootprint": true,
+        "unoccludedSightLineSamples": 9
+      }
+    },
+    "allMeshesHaveMaterials": true,
+    "allGeometryInsideEnvelope": true,
+    "allFileTexturesPacked": true,
+    "absoluteTexturePaths": []
+  },
+  "sceneAssets": [
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall / headline",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall / headline rule",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall / series label",
+      "file": "booth.blend"
+    },
+    {
+      "role": "light",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall / soft graze",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall / subline",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall edge detail",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall edge detail.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Back wall shadow skirting",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Brushed skirting",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Brushed skirting.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "light",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Ceiling / broad key",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Counter / welcome",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Entrance / forward chevron",
+      "file": "booth.blend"
+    },
+    {
+      "role": "light",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Entrance / soft fill",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Entrance / yellow threshold",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Floor / entrance label",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing.002",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing.003",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing.004",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / downlight housing.005",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens.002",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens.003",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens.004",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / luminous lens.005",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / slim track",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Lighting / slim track.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Logo plaque / gold edge",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P1000 / index",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P1000 / plinth caption",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P1000 / plinth title",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P2000 / index",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P2000 / plinth caption",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P2000 / plinth title",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P3000 / index",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P3000 / plinth caption",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/P3000 / plinth title",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Upper architectural reveal",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/Upper architectural reveal.001",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored display plane with supplied brand/logo.png texture; placement from brand_sheet.pdf",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/back_wall_logo",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored from supplied drawings/booth_floor_plan.png and drawings/constraints.pdf",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/booth_shell",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cabinet_01",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cabinet_01 / storage ID",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cabinet_02",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cabinet_02 / storage ID",
+      "file": "booth.blend"
+    },
+    {
+      "role": "camera",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cam_entrance",
+      "file": "booth.blend"
+    },
+    {
+      "role": "camera",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/cam_top",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored from supplied drawings/booth_floor_plan.png and drawings/constraints.pdf",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/corner_column",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/counter",
+      "file": "booth.blend"
+    },
+    {
+      "role": "reference / rig",
+      "source": "Self-authored from supplied drawings/booth_floor_plan.png and drawings/constraints.pdf",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/entrance_zone",
+      "file": "booth.blend"
+    },
+    {
+      "role": "reference / rig",
+      "source": "Self-authored; brand colours and visual direction from supplied brand_sheet.pdf and reference photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/lighting",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/plinth_01",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/plinth_02",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/furniture_list.xlsx",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/plinth_03",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/product_sizes.xlsx; styling informed by supplied photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/product_01",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/product_sizes.xlsx; styling informed by supplied photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/product_02",
+      "file": "booth.blend"
+    },
+    {
+      "role": "editable geometry",
+      "source": "Self-authored mesh; dimensions from supplied tables/product_sizes.xlsx; styling informed by supplied photos",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Object/product_03",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Brushed aluminium",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Exhibition wall | warm white",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Graphite | powder coated aluminium",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/LCD glass",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/LCD mint readout",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Lettering | pale sage",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Pale mineral terrazzo",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Rubber | soft touch",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/VOLTA / packed logo print",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/VOLTA • primary • #1F6F5C",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/VOLTA • secondary • #F2C14E",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Warm light diffuser",
+      "file": "booth.blend"
+    },
+    {
+      "role": "procedural or constant surface material",
+      "source": "Self-authored; VOLTA colours from supplied brand/brand_sheet.pdf where stated",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Material/Warm porcelain | satin lacquer",
+      "file": "booth.blend"
+    },
+    {
+      "role": "scene documentation",
+      "source": "Self-authored",
+      "license": "CC0-1.0",
+      "url": "",
+      "datablock": "Text/READ ME — VOLTA exhibition booth",
+      "file": "booth.blend"
+    }
+  ]
+}

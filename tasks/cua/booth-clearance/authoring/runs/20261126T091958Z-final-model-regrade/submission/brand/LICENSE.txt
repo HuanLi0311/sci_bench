@@ -1,0 +1,6 @@
+Booth material pack — CC0-1.0
+============================
+
+Floor plan, product and furniture tables, brand sheet, logo, constraints and
+reference photographs were all produced for this benchmark task and are
+released under CC0-1.0. Photographs are renders of the reference booth model.

@@ -205,7 +205,95 @@
       "started_at": "2026-11-26T08:46:54.278050+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:46:54.398590+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "cua-booth-model-904a434d05",
+        "codex",
+        "exec",
+        "--json",
+        "--color",
+        "never",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--skip-git-repo-check",
+        "-C",
+        "/app",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"high\"",
+        "-c",
+        "features.multi_agent=false",
+        "-o",
+        "/app/model-final.txt",
+        "-"
+      ],
+      "started_at": "2026-11-26T08:46:54.428757+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T09:19:57.128559+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-904a434d05:/run/codex-home/sessions",
+        "/tmp/cua-booth-private-l49lszp3/raw-rollout"
+      ],
+      "started_at": "2026-11-26T09:19:57.171148+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:57.409937+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-904a434d05:/app/out",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T084651Z-model-codex-terminal/submission"
+      ],
+      "started_at": "2026-11-26T09:19:57.585785+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:58.495022+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-904a434d05:/app/model-final.txt",
+        "/tmp/cua-booth-private-l49lszp3/model-final.txt"
+      ],
+      "started_at": "2026-11-26T09:19:58.518562+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:19:58.566792+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-booth-model-904a434d05"
+      ],
+      "started_at": "2026-11-26T09:20:09.568782+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:20:10.658264+00:00"
     }
   ],
-  "outcome": "running"
+  "outcome": "agent-error",
+  "agent_started_at": "2026-11-26T08:46:54.428727+00:00",
+  "agent_exit_code": 1,
+  "agent_finished_at": "2026-11-26T09:19:57.169168+00:00",
+  "steps": {
+    "agent_steps": 88,
+    "tool_calls": 73,
+    "reported_models": [
+      "gpt-6.1-sol"
+    ],
+    "step_definition": "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates."
+  },
+  "grading_run": "booth-clearance/authoring/runs/20261126T091958Z-final-model-regrade",
+  "reward": 0,
+  "grading_outcome": "graded",
+  "finished_at": "2026-11-26T09:20:10.672965+00:00"
 }
