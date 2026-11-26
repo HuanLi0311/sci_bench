@@ -7,10 +7,10 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | Task | Oracle | True NOP | All prepared negatives | Model records |
 |---|---|---|---|---|
 | booth-clearance | not yet validated | not yet validated | not yet validated | PASS |
-| crate-lookdev | not yet validated | not yet validated | not yet validated | PASS |
+| crate-lookdev | PASS | PASS | PASS | PASS |
 | folding-chair | PASS | PASS | PASS | PASS |
-| rainroom | PASS | PASS | not yet validated | PASS |
-| toy-car | PASS | PASS | not yet validated | PASS |
+| rainroom | PASS | PASS | PASS | PASS |
+| toy-car | PASS | PASS | PASS | PASS |
 
 | Task | Run | Reward | Failed checks / state |
 |---|---|---|---|
@@ -51,6 +51,11 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | crate-lookdev | [final / nop](crate-lookdev/authoring/runs/20261126T090242Z-final-nop/run.json) | 0 | R01_open, R02_parts, R03_outer_size, R04_thickness, R05_lid_hinge, R06_real_geometry, R07_pbr_maps, R08_materials, R09_stencil_wear, R10_renders, R11_polys, R12_manifest, R13_render_authenticity, R_all_render_authenticity, R_render_structure |
 | crate-lookdev | [final / model-regrade](crate-lookdev/authoring/runs/20261126T092240Z-final-model-regrade/run.json) | 0 | R01_open, R02_parts, R03_outer_size, R04_thickness, R05_lid_hinge, R06_real_geometry, R07_pbr_maps, R08_materials, R09_stencil_wear, R10_renders, R11_polys, R13_render_authenticity, R_all_render_authenticity, R_render_structure |
 | crate-lookdev | [final / negative-secondary-render-substitution](crate-lookdev/authoring/runs/20261126T092257Z-final-negative-secondary-render-substitution/run.json) | 0 | R_all_render_authenticity, R_render_structure |
+| crate-lookdev | [final / negative-crate-disconnected-maps](crate-lookdev/authoring/runs/20261126T094503Z-final-negative-crate-disconnected-maps/run.json) | 0 | R07_pbr_maps, R08_materials, R13_render_authenticity, R_all_render_authenticity, R_render_structure |
+| crate-lookdev | [final / oracle](crate-lookdev/authoring/runs/20261126T094534Z-final-oracle/run.json) | 1 | all checks pass |
+| crate-lookdev | [final / nop](crate-lookdev/authoring/runs/20261126T095104Z-final-nop/run.json) | 0 | R01_open, R02_parts, R03_outer_size, R04_thickness, R05_lid_hinge, R06_real_geometry, R07_pbr_maps, R08_materials, R09_stencil_wear, R10_renders, R11_polys, R12_manifest, R13_render_authenticity, R_all_render_authenticity, R_render_structure |
+| crate-lookdev | [final / model-regrade](crate-lookdev/authoring/runs/20261126T095121Z-final-model-regrade/run.json) | 0 | R03_outer_size, R05_lid_hinge, R08_materials, R09_stencil_wear, R10_renders, R13_render_authenticity, R_all_render_authenticity, R_render_structure |
+| crate-lookdev | [final / negative-secondary-render-substitution](crate-lookdev/authoring/runs/20261126T095146Z-final-negative-secondary-render-substitution/run.json) | 0 | R_all_render_authenticity, R_render_structure |
 | folding-chair | [pre-hardening / oracle](folding-chair/authoring/runs/20261126T074157Z-pre-hardening-oracle/run.json) | 1 | all checks pass |
 | folding-chair | [hardened / oracle](folding-chair/authoring/runs/20261126T074403Z-hardened-oracle/run.json) | 0 | verifier-timeout: R13_anti_cheat |
 | folding-chair | [pre-hardening / nop](folding-chair/authoring/runs/20261126T074941Z-pre-hardening-nop/run.json) | 0 | R01_open, R02_parts, R03_hinges, R04_unfolded, R05_folded_thickness, R06_animation, R08_hinge_coincidence, R09_states, R11_polys, R12_manifest, R13_anti_cheat, R_all_render_authenticity |
@@ -68,7 +73,7 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | rainroom | [final / oracle](rainroom/authoring/runs/20261126T080717Z-final-oracle/run.json) | None | cancelled-by-priority: invalid/missing metrics (see raw stderr) |
 | rainroom | [final / oracle](rainroom/authoring/runs/20261126T090928Z-final-oracle/run.json) | 1 | all checks pass |
 | rainroom | [final / nop](rainroom/authoring/runs/20261126T091908Z-final-nop/run.json) | 0 | R01_open, R02_objects, R03_room_size, R04_light_sets, R05_camera, R06_renders, R07_brightness, R08_time_of_day, R09_materials, R11_polys, R12_manifest, R_object_positions, R13_anti_cheat, R_all_render_authenticity, R_render_structure |
-| rainroom | [final / negative-secondary-render-substitution](rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/run.json) | None | unfinished: invalid/missing metrics (see raw stderr) |
+| rainroom | [final / negative-secondary-render-substitution](rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/run.json) | 0 | R_all_render_authenticity, R_render_structure |
 | toy-car | [hardened / oracle](toy-car/authoring/runs/20261126T080029Z-hardened-oracle/run.json) | None | cancelled-by-priority: invalid/missing metrics (see raw stderr) |
 | toy-car | [pre-hardening / oracle](toy-car/authoring/runs/20261126T080602Z-pre-hardening-oracle/run.json) | None | cancelled-by-priority: invalid/missing metrics (see raw stderr) |
 | toy-car | [hardened / nop](toy-car/authoring/runs/20261126T080619Z-hardened-nop/run.json) | 0 | R01_open, R02_parts, R03_wheelbase, R04_wheel_diameter, R05_axle_pose, R06_wheel_spin, R07_steering, R08_doors, R09_views, R10_silhouette, R12_polys, R13_manifest, R14_anti_cheat, R_all_render_authenticity |
@@ -77,3 +82,4 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | toy-car | [final / negative-toy-wrong-wheel-parent](toy-car/authoring/runs/20261126T085614Z-final-negative-toy-wrong-wheel-parent/run.json) | 0 | R07_steering, R14_anti_cheat, R_all_render_authenticity, R_render_structure |
 | toy-car | [final / oracle](toy-car/authoring/runs/20261126T091916Z-final-oracle/run.json) | 1 | all checks pass |
 | toy-car | [final / nop](toy-car/authoring/runs/20261126T092233Z-final-nop/run.json) | 0 | R01_open, R02_parts, R03_wheelbase, R04_wheel_diameter, R05_axle_pose, R06_wheel_spin, R07_steering, R08_doors, R09_views, R10_silhouette, R12_polys, R13_manifest, R14_anti_cheat, R_all_render_authenticity, R_render_structure |
+| toy-car | [final / negative-secondary-render-substitution](toy-car/authoring/runs/20261126T094129Z-final-negative-secondary-render-substitution/run.json) | 0 | R10_silhouette, R14_anti_cheat, R_all_render_authenticity, R_render_structure |

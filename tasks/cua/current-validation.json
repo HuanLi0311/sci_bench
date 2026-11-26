@@ -21,16 +21,16 @@
   {
     "task": "crate-lookdev",
     "oracle": [
-      false,
-      "20261126T085622Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: Expecting value: line 1 column 1 (char 0)"
+      true,
+      "20261126T094534Z-final-oracle"
     ],
     "nop": [
-      false,
-      "20261126T090242Z-final-nop: grader differs from current source"
+      true,
+      "20261126T095104Z-final-nop"
     ],
     "negatives": [
-      false,
-      "missing current-source negative cases: ['negative-crate-disconnected-maps', 'negative-secondary-render-substitution']"
+      true,
+      "all 2 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
@@ -67,8 +67,8 @@
       "20261126T091908Z-final-nop"
     ],
     "negatives": [
-      false,
-      "negative-secondary-render-substitution: Expecting value: line 1 column 1 (char 0)"
+      true,
+      "all 1 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
@@ -86,8 +86,8 @@
       "20261126T092233Z-final-nop"
     ],
     "negatives": [
-      false,
-      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+      true,
+      "all 2 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
