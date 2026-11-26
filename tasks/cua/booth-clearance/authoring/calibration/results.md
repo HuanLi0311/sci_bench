@@ -23,3 +23,14 @@ renders 1920×1080 and 2048×1536; SSIM match 0.995.
 - BVH ray casts must be built from world-space vertices. `BVHTree.FromObject`
   keeps object-local space and produced a false "column occludes product_02"
   verdict before this was fixed. The same fix was applied to `crate-lookdev`.
+
+## Current frozen verifier evidence
+
+The current verifier has a complete Oracle and a genuine no-op baseline. Raw metadata, exact source/input SHA-256 hashes, stdout/stderr, per-check metrics and reward files are linked below.
+
+| Run | Reward | Checks | Raw record |
+|---|---:|---|---|
+| Oracle | 1 | 19/19 pass | [metadata](../runs/20261126T081658Z-final-oracle/run.json), [metrics](../runs/20261126T081658Z-final-oracle/verifier/metrics.json), [reward](../runs/20261126T081658Z-final-oracle/verifier/reward.txt) |
+| NOP | 0 | 5/19 pass | [metadata](../runs/20261126T082355Z-final-nop/run.json), [metrics](../runs/20261126T082355Z-final-nop/verifier/metrics.json), [reward](../runs/20261126T082355Z-final-nop/verifier/reward.txt) |
+
+NOP executes only `/bin/true` in the fresh task environment and exports the untouched empty `/app/out`; it is not a marker-deletion mutation. For the hardening changes and measured structural regressions, see [HARDENING.md](HARDENING.md).
