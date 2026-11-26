@@ -1,0 +1,21 @@
+/app/out:
+total 20100
+drwxr-xr-x 1 root root     4096 Nov 26 09:45 .
+drwxr-xr-x 1 root root     4096 Nov 25 14:05 ..
+-rwxr-xr-x 1 root root 13019171 Nov 26 09:45 crate.blend
+-rwxr-xr-x 1 root root     1827 Nov 26 09:45 manifest.json
+-rwxr-xr-x 1 root root  1722469 Nov 26 09:45 render_back.png
+-rwxr-xr-x 1 root root  1868666 Nov 26 09:45 render_front.png
+-rwxr-xr-x 1 root root  1992194 Nov 26 09:45 render_macro.png
+-rwxr-xr-x 1 root root  1948077 Nov 26 09:45 render_top.png
+drwxr-xr-x 2 root root     4096 Nov 26 09:45 textures
+
+/app/out/textures:
+total 12232
+drwxr-xr-x 2 root root    4096 Nov 26 09:45 .
+drwxr-xr-x 1 root root    4096 Nov 26 09:45 ..
+-rwxr-xr-x 1 root root 3129403 Nov 26 09:45 iron_basecolor.png
+-rwxr-xr-x 1 root root 1964882 Nov 26 09:45 iron_roughness.png
+-rwxr-xr-x 1 root root 2288663 Nov 26 09:45 oak_basecolor.png
+-rwxr-xr-x 1 root root 3414606 Nov 26 09:45 oak_normal.png
+-rwxr-xr-x 1 root root 1710161 Nov 26 09:45 oak_roughness.png
