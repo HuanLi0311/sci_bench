@@ -188,9 +188,14 @@ def main():
             mdetail = f"unreadable: {exc}"
     add("R14_manifest", "must", man_ok, mdetail)
 
+    dimensions_ok, dimensions_detail = check_sizes(scene.get("objects", {}))
+    add("R_furniture_product_sizes", "must", dimensions_ok, dimensions_detail)
+    support_ok, support_detail = check_support(scene.get("objects", {}))
+    add("R_product_support", "must", support_ok, support_detail)
+
     # anti-cheat: move cabinet_01 by 0.5 m and re-render
-    ac_ok, ac_detail = False, "not run"
-    if ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_entrance.png")):
+    ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
+    if ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_entrance.png")):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
@@ -216,11 +221,6 @@ def main():
         os.path.exists(os.path.join(out, "booth.blend"))
         and os.path.exists(os.path.join(out, "manifest.json")),
         "blend+manifest")
-
-    dimensions_ok, dimensions_detail = check_sizes(scene.get("objects", {}))
-    add("R_furniture_product_sizes", "must", dimensions_ok, dimensions_detail)
-    support_ok, support_detail = check_support(scene.get("objects", {}))
-    add("R_product_support", "must", support_ok, support_detail)
 
     view_scores = {}
     try:
