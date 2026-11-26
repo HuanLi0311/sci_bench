@@ -46,3 +46,5 @@ Fra:1 Mem:15.84M (Peak 24.76M) | Time:00:00.07 | Mem:4.35M, Peak:4.35M | Scene, 
 Fra:1 Mem:15.84M (Peak 24.76M) | Time:00:00.07 | Mem:4.35M, Peak:4.35M | Scene, ViewLayer | Loading denoising kernels (may take a few minutes the first time)
 Fra:1 Mem:15.84M (Peak 24.76M) | Time:00:00.07 | Mem:4.35M, Peak:4.35M | Scene, ViewLayer | Sample 0/64
 Fra:1 Mem:166.24M (Peak 166.24M) | Time:00:06.05 | Remaining:06:16.24 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 1/64
+Fra:1 Mem:166.24M (Peak 166.24M) | Time:00:28.65 | Remaining:05:37.15 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 5/64
+Fra:1 Mem:166.24M (Peak 166.24M) | Time:00:49.75 | Remaining:05:03.60 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 9/64

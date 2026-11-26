@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T09:51:31.397647+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:51:31.530872+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-3abf1f68d9"
+      ],
+      "started_at": "2026-11-26T09:51:31.540455+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T09:51:45.969767+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-3abf1f68d9"
+      ],
+      "started_at": "2026-11-26T09:51:45.980256+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:46.025769+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-3abf1f68d9:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T095121Z-final-model-regrade/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:51:46.036855+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:46.369105+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-3abf1f68d9"
+      ],
+      "started_at": "2026-11-26T09:51:46.389926+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:46.431400+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-3abf1f68d9"
+      ],
+      "started_at": "2026-11-26T09:51:46.439250+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:46.528423+00:00"
     }
   ],
   "nop_definition": null,
@@ -354,5 +408,19 @@
       "sha256": "e20dc178aba959880627322448c08f2c707672ab88a74e825e059a2d9d32a3b4",
       "bytes": 4351286
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R03_outer_size",
+    "R05_lid_hinge",
+    "R08_materials",
+    "R09_stencil_wear",
+    "R10_renders",
+    "R13_render_authenticity",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:51:46.540122+00:00"
 }

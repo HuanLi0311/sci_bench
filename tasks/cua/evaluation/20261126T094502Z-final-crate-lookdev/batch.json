@@ -75,6 +75,23 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "model-regrade",
+      "run": "crate-lookdev/authoring/runs/20261126T095121Z-final-model-regrade",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R03_outer_size",
+        "R05_lid_hinge",
+        "R08_materials",
+        "R09_stencil_wear",
+        "R10_renders",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
