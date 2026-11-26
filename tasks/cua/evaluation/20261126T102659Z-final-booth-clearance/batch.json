@@ -167,6 +167,14 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "model-regrade",
+      "run": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
     }
   ]
 }
