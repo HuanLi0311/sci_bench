@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3 LTS",
+  "assets": [
+    {
+      "path": "textures/oak_basecolor.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/steel_basecolor.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_unfolded.png",
+      "camera": "cam_states",
+      "resolution": [
+        1200,
+        1200
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_half.png",
+      "camera": "cam_states",
+      "resolution": [
+        1200,
+        1200
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_folded.png",
+      "camera": "cam_states",
+      "resolution": [
+        1200,
+        1200
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_locked.png",
+      "camera": "cam_states",
+      "resolution": [
+        1200,
+        1200
+      ],
+      "samples": 64
+    }
+  ]
+}
