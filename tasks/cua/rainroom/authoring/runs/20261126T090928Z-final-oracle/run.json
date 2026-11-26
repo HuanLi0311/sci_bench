@@ -145,6 +145,33 @@
       "started_at": "2026-11-26T09:09:31.709508+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:09:31.952025+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-cdd01dd7be",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T090928Z-final-oracle/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T090928Z-final-oracle/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T090928Z-final-oracle/verifier:/logs/verifier",
+        "cua-qc-rainroom-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T09:09:32.197912+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:32.376547+00:00"
     }
   ],
   "nop_definition": null,
@@ -223,4 +250,35 @@
       "bytes": 105514
     },
     "render_morning.png": {
-      "sha256": "6b458696dad5
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "bytes": 1441442
+    },
+    "solve.sh": {
+      "sha256": "e8e58772fe750d5fbd1dd08b8550f5c767192759c3735b195081f0ceb5295688",
+      "bytes": 429
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {
+    "manifest.json": {
+      "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
+      "bytes": 1190
+    },
+    "rainroom.blend": {
+      "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
+      "bytes": 105368
+    },
+    "render_morning.png": {
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "bytes": 1441442
+    }
+  }
+}
