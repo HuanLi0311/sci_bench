@@ -42,3 +42,7 @@ the off pass must differ (SSIM ≤ 0.98; measured 0.610).
 
 Reward 1 requires every `must` and `critical` check plus ≥ 80 % of `normal`.
 Reference scores 13/13.
+
+## Execution evidence
+
+Current raw Oracle/NOP and mutation runs are indexed in [the CUA run index](../RUNS.md). The [evidence protocol](../EVIDENCE.md) defines no-op execution, source hashes, model-history limitations and step accounting. [Model attempts](authoring/model-attempts.json) lists every locally recovered attempt or explicitly records that this task is unmeasured. Only `final` records whose source hashes match the current verifier establish the current score. Old check counts below describe the original rubric; the final metrics include the added checks.

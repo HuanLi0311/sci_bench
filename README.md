@@ -32,7 +32,7 @@ agent on a virtual 1920x1080 XFCE desktop. First one built:
 | `toy-car` | 380 mm jointed car from two turntables: 240 mm wheelbase, spinning/steering wheels, front-edge door hinges, four silhouette-matched views | 14/14, 748 tris | **reward 1**; 1.2x wheels score 0 |
 | `rainroom` | 4.2x3.6x2.8 m interior with 26 objects, two switchable light collections and night/morning renders from one camera | 13/13, 1476 tris | **reward 1**; emptied light collection scores 0 |
 
-All five pass `tasks/cua/SANITY_LIST.md` via `tasks/cua/tools/sanity_check.py`
+Current CUA execution evidence is linked from [EVIDENCE.md](tasks/cua/EVIDENCE.md) and [RUNS.md](tasks/cua/RUNS.md). Historical Oracle claims in the table above describe the original rubric; final raw runs use the hardened verifier and include source hashes. `tasks/cua/tools/sanity_check.py` validates `tasks/cua/SANITY_LIST.md`
 (layout, task.toml, instruction suffix, materials, environment image and
 isolation, verifier image, oracle reward 1, deliverables, anti-cheat, recorded
 negative test, licences).

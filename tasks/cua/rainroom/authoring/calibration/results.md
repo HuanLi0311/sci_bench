@@ -1,3 +1,5 @@
+> Historical authoring notes below are preserved as claims/measurements from the earlier rubric. Their original raw Oracle logs were not in this task directory. Newly captured repeat executions are indexed in [RUNS.md](../../../RUNS.md), with exact source/input hashes, stdout/stderr, per-check metrics and reward files. These repeat executions do not reconstruct missing historical logs. A mutation is a negative test, not NOP. See [EVIDENCE.md](../../../EVIDENCE.md) and [model-attempts.json](../model-attempts.json).
+
 # Calibration — rainroom
 
 Local run, 2026-11-26.

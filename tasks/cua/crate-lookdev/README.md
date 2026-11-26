@@ -89,3 +89,7 @@ authoring/                    build_crate.py, make_materials.py, provenance
 The base image is the local `blender-bench:gui` desktop image; its recipe is in
 `authoring/base-image.md` so it can be rebuilt where the official Blender
 tarball is reachable.
+
+## Execution evidence
+
+Current raw Oracle/NOP and mutation runs are indexed in [the CUA run index](../RUNS.md). The [evidence protocol](../EVIDENCE.md) defines no-op execution, source hashes, model-history limitations and step accounting. [Model attempts](authoring/model-attempts.json) lists every locally recovered attempt or explicitly records that this task is unmeasured. Only `final` records whose source hashes match the current verifier establish the current score. Old check counts below describe the original rubric; the final metrics include the added checks.
