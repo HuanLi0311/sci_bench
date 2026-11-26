@@ -1,131 +1,238 @@
 {
-  "method": "RGB GaussianBlur radius1 then L2 first-difference mismatch / trusted gradient L2",
+  "method": "RGB Gaussian blur then L2 first-difference mismatch / trusted gradient L2",
+  "threshold": 0.6,
+  "blur_radius": 2,
   "measurements": [
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T075120Z-final-oracle/verifier/work-40aigu0_/render_entrance.png",
       "view": "render_entrance.png",
-      "gradient_error": 0.5546023751895294
+      "gradient_error": 0.5546023751895294,
+      "gradient_error_by_blur_radius": {
+        "1": 0.5546023751895294,
+        "2": 0.4588444501063292,
+        "3": 0.4827199925816254
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T075120Z-final-oracle/verifier/work-40aigu0_/render_top.png",
       "view": "render_top.png",
-      "gradient_error": 0.33733329378205407
+      "gradient_error": 0.33733329378205407,
+      "gradient_error_by_blur_radius": {
+        "1": 0.33733329378205407,
+        "2": 0.2656471109851956,
+        "3": 0.27490104446386615
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T080932Z-final-oracle/verifier/work-pobxpf85/render_entrance.png",
       "view": "render_entrance.png",
-      "gradient_error": 0.5546023751895294
+      "gradient_error": 0.5546023751895294,
+      "gradient_error_by_blur_radius": {
+        "1": 0.5546023751895294,
+        "2": 0.4588444501063292,
+        "3": 0.4827199925816254
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T080932Z-final-oracle/verifier/work-pobxpf85/render_top.png",
       "view": "render_top.png",
-      "gradient_error": 0.33733329378205407
+      "gradient_error": 0.33733329378205407,
+      "gradient_error_by_blur_radius": {
+        "1": 0.33733329378205407,
+        "2": 0.2656471109851956,
+        "3": 0.27490104446386615
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T081658Z-final-oracle/verifier/work-r78p98va/render_entrance.png",
       "view": "render_entrance.png",
-      "gradient_error": 0.5546023751895294
+      "gradient_error": 0.5546023751895294,
+      "gradient_error_by_blur_radius": {
+        "1": 0.5546023751895294,
+        "2": 0.4588444501063292,
+        "3": 0.4827199925816254
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T081658Z-final-oracle/verifier/work-r78p98va/render_top.png",
       "view": "render_top.png",
-      "gradient_error": 0.33733329378205407
+      "gradient_error": 0.33733329378205407,
+      "gradient_error_by_blur_radius": {
+        "1": 0.33733329378205407,
+        "2": 0.2656471109851956,
+        "3": 0.27490104446386615
+      }
     },
     {
       "task": "crate-lookdev",
       "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_back.png",
       "view": "render_back.png",
-      "gradient_error": 0.27554742325424575
+      "gradient_error": 0.27554742325424575,
+      "gradient_error_by_blur_radius": {
+        "1": 0.27554742325424575,
+        "2": 0.20744472566179667,
+        "3": 0.23016026365938
+      }
     },
     {
       "task": "crate-lookdev",
       "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_front.png",
       "view": "render_front.png",
-      "gradient_error": 0.2599934764848782
+      "gradient_error": 0.2599934764848782,
+      "gradient_error_by_blur_radius": {
+        "1": 0.2599934764848782,
+        "2": 0.23425815513582332,
+        "3": 0.2969380124705417
+      }
     },
     {
       "task": "crate-lookdev",
       "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_macro.png",
       "view": "render_macro.png",
-      "gradient_error": 0.3340314015173222
+      "gradient_error": 0.3340314015173222,
+      "gradient_error_by_blur_radius": {
+        "1": 0.3340314015173222,
+        "2": 0.2812688800541046,
+        "3": 0.31272615092413397
+      }
     },
     {
       "task": "crate-lookdev",
       "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_top.png",
       "view": "render_top.png",
-      "gradient_error": 0.3566958379424501
+      "gradient_error": 0.3566958379424501,
+      "gradient_error_by_blur_radius": {
+        "1": 0.3566958379424501,
+        "2": 0.2936998546704741,
+        "3": 0.310137758527488
+      }
     },
     {
       "task": "folding-chair",
       "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_folded.png",
       "view": "render_folded.png",
-      "gradient_error": 0.3526642419993174
+      "gradient_error": 0.3526642419993174,
+      "gradient_error_by_blur_radius": {
+        "1": 0.3526642419993174,
+        "2": 0.24925694365915732,
+        "3": 0.23388782198642794
+      }
     },
     {
       "task": "folding-chair",
       "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_half.png",
       "view": "render_half.png",
-      "gradient_error": 0.3184644651568998
+      "gradient_error": 0.3184644651568998,
+      "gradient_error_by_blur_radius": {
+        "1": 0.3184644651568998,
+        "2": 0.22555217248496265,
+        "3": 0.21565211749657678
+      }
     },
     {
       "task": "folding-chair",
       "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_locked.png",
       "view": "render_locked.png",
-      "gradient_error": 0.34447436209510324
+      "gradient_error": 0.34447436209510324,
+      "gradient_error_by_blur_radius": {
+        "1": 0.34447436209510324,
+        "2": 0.24574256877854622,
+        "3": 0.23344710837823335
+      }
     },
     {
       "task": "folding-chair",
       "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_unfolded.png",
       "view": "render_unfolded.png",
-      "gradient_error": 0.34447436209510324
+      "gradient_error": 0.34447436209510324,
+      "gradient_error_by_blur_radius": {
+        "1": 0.34447436209510324,
+        "2": 0.24574256877854622,
+        "3": 0.23344710837823335
+      }
     },
     {
       "task": "rainroom",
       "run": "rainroom/authoring/runs/20261126T075009Z-pre-hardening-oracle/verifier/work-p5pwtbwr/render_morning.png",
       "view": "render_morning.png",
-      "gradient_error": 0.4905993927744555
+      "gradient_error": 0.4905993927744555,
+      "gradient_error_by_blur_radius": {
+        "1": 0.4905993927744555,
+        "2": 0.4024221264348718,
+        "3": 0.4364514864837045
+      }
     },
     {
       "task": "rainroom",
       "run": "rainroom/authoring/runs/20261126T075009Z-pre-hardening-oracle/verifier/work-p5pwtbwr/render_night.png",
       "view": "render_night.png",
-      "gradient_error": 0.4810271688804921
+      "gradient_error": 0.4810271688804921,
+      "gradient_error_by_blur_radius": {
+        "1": 0.4810271688804921,
+        "2": 0.40836462967363624,
+        "3": 0.4597602491911556
+      }
     },
     {
       "task": "toy-car",
       "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_back.png",
       "view": "render_back.png",
-      "gradient_error": 0.13425070016247703
+      "gradient_error": 0.13425070016247703,
+      "gradient_error_by_blur_radius": {
+        "1": 0.13425070016247703,
+        "2": 0.09253551963054533,
+        "3": 0.10254280375588812
+      }
     },
     {
       "task": "toy-car",
       "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_front.png",
       "view": "render_front.png",
-      "gradient_error": 0.13786283412680284
+      "gradient_error": 0.13786283412680284,
+      "gradient_error_by_blur_radius": {
+        "1": 0.13786283412680284,
+        "2": 0.09334642857452657,
+        "3": 0.1026046701450819
+      }
     },
     {
       "task": "toy-car",
       "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_side.png",
       "view": "render_side.png",
-      "gradient_error": 0.15373179621552674
+      "gradient_error": 0.15373179621552674,
+      "gradient_error_by_blur_radius": {
+        "1": 0.15373179621552674,
+        "2": 0.10936650773337722,
+        "3": 0.11868095145709642
+      }
     },
     {
       "task": "toy-car",
       "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_top.png",
       "view": "render_top.png",
-      "gradient_error": 0.1919809665492046
+      "gradient_error": 0.1919809665492046,
+      "gradient_error_by_blur_radius": {
+        "1": 0.1919809665492046,
+        "2": 0.1487577994919789,
+        "3": 0.1882832375927028
+      }
     },
     {
       "task": "booth-clearance",
       "run": "booth-clearance/authoring/runs/20261126T082402Z-final-negative-secondary-render-substitution/verifier/work-ibqa6d1s/render_top.png",
       "view": "forged top",
-      "gradient_error": 1.0
+      "gradient_error": 1.0,
+      "gradient_error_by_blur_radius": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0
+      }
     }
   ]
 }
