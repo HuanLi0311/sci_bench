@@ -1,0 +1,90 @@
+dbus-daemon[20]: Cannot initialize inotify: Too many open files
+
+(xfce4-session:21): dbind-WARNING **: 07:53:02.097: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+dbus-daemon[20]: [session uid=0 pid=20] Activating service name='org.xfce.Xfconf' requested by ':1.1' (uid=0 pid=21 comm="xfce4-session" label="kernel")
+dbus-daemon[20]: [session uid=0 pid=20] Successfully activated service 'org.xfce.Xfconf'
+/usr/bin/iceauth:  creating new authority file /tmp/runtime-root/ICEauthority
+
+(xfce4-session:21): xfce4-session-WARNING **: 07:53:02.603: No GPG agent found
+
+(xfce4-session:21): xfce4-session-WARNING **: 07:53:02.617: No SSH authentication agent found
+
+(xfwm4:51): dbind-WARNING **: 07:53:03.281: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfwm4:51): xfwm4-WARNING **: 07:53:07.038: Another compositing manager is running on screen 0
+
+(xfsettingsd:69): dbind-WARNING **: 07:53:07.310: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfsettingsd:69): libupower-glib-WARNING **: 07:53:07.339: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(xfce4-panel:73): dbind-WARNING **: 07:53:07.876: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(migrate:79): dbind-WARNING **: 07:53:08.155: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:78): dbind-WARNING **: 07:53:09.159: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop:101): dbind-WARNING **: 07:53:09.571: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:101): WARNING **: 07:53:10.309: Thumbnailer failed calling GetFlavors
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.314: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(xfdesktop:101): GLib-GIO-WARNING **: 07:53:10.460: Error creating IO channel for /proc/self/mountinfo: Too many open files (g-io-error-quark, 31)
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.541: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.541: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.574: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.575: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+xfce4-panel-Message: 07:53:10.596: Plugin "(null)-7" was not found and has been removed from the configuration
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.630: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.631: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.663: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.663: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.714: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.715: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+xfce4-panel-Message: 07:53:10.717: Plugin "power-manager-plugin-9" was not found and has been removed from the configuration
+xfce4-panel-Message: 07:53:10.729: Plugin "notification-plugin-10" was not found and has been removed from the configuration
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.763: invalid (NULL) pointer instance
+
+(xfdesktop:101): GLib-GObject-CRITICAL **: 07:53:10.765: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(wrapper-2.0:116): dbind-WARNING **: 07:53:10.773: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:101): WARNING **: 07:53:10.787: Failed to get system bus: Could not connect: No such file or directory
+libclock-Message: 07:53:11.133: could not get proxy for org.freedesktop.login1
+
+(xfce4-panel:73): libclock-WARNING **: 07:53:11.134: could not instantiate a sleep monitor
+
+(xfsettingsd:114): dbind-WARNING **: 07:53:11.365: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:118): dbind-WARNING **: 07:53:11.394: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:128): dbind-WARNING **: 07:53:11.795: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfce4-panel:73): liblauncher-CRITICAL **: 07:53:12.350: Failed to start file monitor: Unable to find default local file monitor type
+
+(xfce4-panel:73): liblauncher-CRITICAL **: 07:53:12.519: Failed to start file monitor: Unable to find default local file monitor type
+
+(xfce4-panel:73): liblauncher-CRITICAL **: 07:53:12.635: Failed to start file monitor: Unable to find default local file monitor type
+
+(xfce4-panel:73): liblauncher-CRITICAL **: 07:53:12.775: Failed to start file monitor: Unable to find default local file monitor type
+
+(wrapper-2.0:118): libnotify-WARNING **: 07:53:13.664: Failed to connect to proxy
+
+(xfce4-session:21): xfce4-session-WARNING **: 07:53:13.708: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
+
+(xfce4-session:21): xfce4-session-WARNING **: 07:53:13.736: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
+
+(xfce4-session:21): xfce4-session-WARNING **: 07:53:13.776: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
+dbus-daemon[20]: [session uid=0 pid=20] Activating service name='org.xfce.Xfconf' requested by ':1.8' (uid=0 pid=73 comm="xfce4-panel" label="kernel")
+dbus-daemon[20]: [session uid=0 pid=20] Successfully activated service 'org.xfce.Xfconf'

@@ -1,0 +1,22 @@
+{
+  "time_utc": "2026-11-26T08:08:37.061378+00:00",
+  "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved",
+  "processes": [
+    {
+      "pid": 1225668,
+      "argv": [
+        "python3",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/tools/record_final.py",
+        "--jobs",
+        "3"
+      ],
+      "signal": "SIGTERM+SIGCONT",
+      "meaning": "Cancel full batch scheduling under new explicit priority"
+    }
+  ],
+  "cancelled_runs": [
+    "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle",
+    "rainroom/authoring/runs/20261126T080717Z-final-oracle",
+    "toy-car/authoring/runs/20261126T080718Z-final-oracle"
+  ]
+}

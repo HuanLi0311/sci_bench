@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-11-26T08:09:01.408896+00:00",
+  "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved",
+  "containers": [
+    {
+      "name": "cua-evidence-agent-ff83f37091",
+      "stop_exit_code": 0,
+      "stdout": "Flag --time has been deprecated, use --timeout instead\ncua-evidence-agent-ff83f37091\n",
+      "stderr": ""
+    }
+  ]
+}

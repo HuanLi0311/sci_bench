@@ -232,5 +232,8 @@
       "sha256": "552500b879a26576903668e47d9e2ba8cae2434ee6f761af1569721dada75bb2",
       "bytes": 10304
     }
-  }
+  },
+  "outcome": "cancelled-by-priority-change",
+  "finished_at": "2026-11-26T08:09:06.644688+00:00",
+  "cancellation": "cancellation.json"
 }

@@ -4,6 +4,7 @@ Run in the Ubuntu root namespace; keeps all already-running final verifiers
 alive. SIGCONT recorded final PID to resume its unchanged scheduling later.
 """
 import datetime as dt
+import argparse
 import json
 import os
 from pathlib import Path
@@ -18,6 +19,9 @@ def now():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cancel-final", action="store_true", help="Actively cancel the old full batch and its non-booth running verifiers under the new priority")
+    options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     evidence = ROOT / "evaluation" / (stamp + "-booth-priority")
     evidence.mkdir(parents=True)
@@ -33,10 +37,12 @@ if __name__ == "__main__":
             continue
         if args[1].endswith("/record_final.py"):
             try:
-                os.kill(int(proc.name), signal.SIGSTOP)
+                os.kill(int(proc.name), signal.SIGTERM if options.cancel_final else signal.SIGSTOP)
+                if options.cancel_final:
+                    os.kill(int(proc.name), signal.SIGCONT)
             except ProcessLookupError:
                 continue
-            record["processes"].append({"pid": int(proc.name), "argv": args, "signal": "SIGSTOP", "meaning": "Pause scheduling only; child verifiers keep running; resume with SIGCONT"})
+            record["processes"].append({"pid": int(proc.name), "argv": args, "signal": "SIGTERM+SIGCONT" if options.cancel_final else "SIGSTOP", "meaning": "Cancel full batch scheduling under new explicit priority" if options.cancel_final else "Pause scheduling only; child verifiers keep running; resume with SIGCONT"})
         elif args[1].endswith("/record_baselines.py") and "--label" in args and args[args.index("--label") + 1] in ("pre-hardening", "hardened", "hardened-lf-fix"):
             try:
                 os.kill(int(proc.name), signal.SIGTERM)
@@ -46,7 +52,8 @@ if __name__ == "__main__":
         (evidence / "priority-change.json").write_text(json.dumps(record, indent=2) + "\n")
     for run_json in ROOT.glob("*/authoring/runs/*/run.json"):
         meta = json.loads(run_json.read_text())
-        if meta.get("finished_at") or meta.get("label") not in ("pre-hardening", "hardened", "hardened-lf-fix"):
+        allowed = ("pre-hardening", "hardened", "hardened-lf-fix", "final") if options.cancel_final else ("pre-hardening", "hardened", "hardened-lf-fix")
+        if meta.get("finished_at") or meta.get("label") not in allowed or (meta.get("label") == "final" and meta.get("task") == "booth-clearance"):
             continue
         run = run_json.parent
         containers = []
