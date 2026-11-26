@@ -15,5 +15,7 @@
     "latest_grading_run":  "tasks/cua/booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade",
     "reassessment":  "The same unchanged saved artifact passes all 22 checks after correcting legitimate Empty-marker and sRGB material handling. Original grade/reward files are preserved. The model CLI still ended due to provider 429 and this terminal baseline is not GUI compliant.",
     "original_artifact_reward":  0,
-    "original_artifact_rejection":  "The submitted entrance_zone is not a required nonempty mesh; check_scene.py returned 2 with that explicit ValueError."
+    "original_artifact_rejection":  "The submitted entrance_zone is not a required nonempty mesh; check_scene.py returned 2 with that explicit ValueError.",
+    "same_original_and_regraded_blend_sha256":  true,
+    "submitted_blend_sha256":  "37e7468e0216c93778aeb34caeb85e3bfa53a02c0af97318384ccd46c691836a"
 }

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/tools/sanity_check.py",
+    "booth-clearance",
+    "crate-lookdev",
+    "folding-chair",
+    "rainroom",
+    "toy-car"
+  ],
+  "started_at": "2026-11-26T10:50:10.524888+00:00",
+  "scope": "Final complete current-source package and actual run gates for all five CUA tasks; model attempts terminal.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T10:51:09.900616+00:00"
+}
