@@ -1,0 +1,150 @@
+{
+  "task": "rainroom",
+  "kind": "negative-secondary-render-substitution",
+  "label": "final",
+  "started_at": "20261126T093333Z",
+  "agent": "adversarial-input-regrade",
+  "model": null,
+  "model_steps": null,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "started_at": "2026-11-26T09:33:34.344312+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:33:34.418343+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-env"
+      ],
+      "started_at": "2026-11-26T09:33:34.438128+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:33:34.517198+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-tests"
+      ],
+      "started_at": "2026-11-26T09:33:34.531264+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:33:34.609521+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-ad0fb9c582",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/verifier:/logs/verifier",
+        "cua-qc-rainroom-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T09:33:35.282436+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:33:35.458282+00:00"
+    }
+  ],
+  "nop_definition": null,
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
+      "bytes": 5918
+    },
+    "grade.py": {
+      "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
+      "bytes": 9627
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+      "bytes": 2291
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
+      "bytes": 715
+    },
+    "materials/LICENSE.txt": {
+      "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+      "bytes": 61
+    },
+    "materials/drawings/room_plan.png": {
+      "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+      "bytes": 88574
+    },
+    "materials/photos/ref_detail.jpg": {
+      "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+      "bytes": 54191
+    },
+    "materials/photos/ref_morning.jpg": {
+      "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+      "bytes": 71539
+    },
+    "materials/photos/ref_night.jpg": {
+      "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+      "bytes": 62699
+    },
+    "materials/spec/material_spec.pdf": {
+      "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+      "bytes": 2513
+    },
+    "materials/tables/objects.xlsx": {
+      "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+      "bytes": 5921
+    }
+  },
+  "source_submission": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T074333Z-mutation-secondary-render-substitution/submission",
+  "submission": {
+    "manifest.json": {
+      "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
+      "bytes": 1190
+    },
+    "rainroom.blend": {
+      "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
+      "bytes": 105368
+    },
+    "render_morning.png": {
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "96c458fb5488ea991310ecc1f48456fe6fd766a46822cc2f40c2fc2df5f4cead",
+      "bytes": 6390
+    }
+  }
+}

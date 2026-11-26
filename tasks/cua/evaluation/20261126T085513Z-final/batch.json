@@ -323,6 +323,17 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "folding-chair",
+      "kind": "negative-secondary-render-substitution",
+      "run": "folding-chair/authoring/runs/20261126T092823Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
