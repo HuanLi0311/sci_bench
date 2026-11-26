@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T09:51:57.285942+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:51:57.427585+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-86e955da33"
+      ],
+      "started_at": "2026-11-26T09:51:57.438809+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T09:57:36.099116+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-86e955da33"
+      ],
+      "started_at": "2026-11-26T09:57:36.130580+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:57:36.222317+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-86e955da33:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T095146Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:57:36.236009+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:57:36.668067+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-86e955da33"
+      ],
+      "started_at": "2026-11-26T09:57:36.700850+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:57:36.764910+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-86e955da33"
+      ],
+      "started_at": "2026-11-26T09:57:36.774593+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:57:36.902571+00:00"
     }
   ],
   "nop_definition": null,
@@ -374,5 +428,13 @@
       "sha256": "9c7f6626cec4731441af6d347a0c3f72e2ffc1a1765f556856e4b6192bcecf10",
       "bytes": 1710161
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:57:36.933019+00:00"
 }

@@ -92,6 +92,18 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "negative-secondary-render-substitution",
+      "run": "crate-lookdev/authoring/runs/20261126T095146Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-26T09:57:36.986260+00:00"
 }
