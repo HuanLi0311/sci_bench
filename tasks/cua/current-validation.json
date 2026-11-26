@@ -2,35 +2,35 @@
   {
     "task": "booth-clearance",
     "oracle": [
-      true,
-      "20261126T083757Z-final-oracle"
+      false,
+      "20261126T083757Z-final-oracle: grader differs from current source; 20261126T081658Z-final-oracle: grader differs from current source; 20261126T080932Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: grader differs from current source"
     ],
     "nop": [
-      true,
-      "20261126T084447Z-final-nop"
+      false,
+      "20261126T084447Z-final-nop: grader differs from current source; 20261126T082355Z-final-nop: grader differs from current source; 20261126T081623Z-final-nop: grader differs from current source; 20261126T080710Z-final-nop: grader differs from current source"
     ],
     "negatives": [
-      true,
-      "all 5 prepared negative cases rejected by the current verifier"
+      false,
+      "missing current-source negative cases: ['negative-booth-camera-away', 'negative-booth-closed-opening', 'negative-booth-moved-entrance-marker', 'negative-booth-product-floating', 'negative-booth-product-scaled', 'negative-booth-unused-brand-slot', 'negative-secondary-render-substitution']"
     ],
     "model_records": [
-      false,
-      "model attempt 20261126T084651Z-codex-terminal-gpt-6.1-sol-high is still running"
+      true,
+      "2 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   },
   {
     "task": "crate-lookdev",
     "oracle": [
-      true,
-      "20261126T085622Z-final-oracle"
+      false,
+      "20261126T085622Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: Expecting value: line 1 column 1 (char 0)"
     ],
     "nop": [
-      true,
-      "20261126T090242Z-final-nop"
+      false,
+      "20261126T090242Z-final-nop: grader differs from current source"
     ],
     "negatives": [
       false,
-      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+      "missing current-source negative cases: ['negative-crate-disconnected-maps', 'negative-secondary-render-substitution']"
     ],
     "model_records": [
       true,
@@ -48,8 +48,8 @@
       "20261126T090919Z-final-nop"
     ],
     "negatives": [
-      false,
-      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+      true,
+      "all 2 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
@@ -59,16 +59,16 @@
   {
     "task": "rainroom",
     "oracle": [
-      false,
-      "20261126T090928Z-final-oracle: Expecting value: line 1 column 1 (char 0); 20261126T080717Z-final-oracle: Expecting value: line 1 column 1 (char 0)"
+      true,
+      "20261126T090928Z-final-oracle"
     ],
     "nop": [
-      false,
-      "no final nop evidence"
+      true,
+      "20261126T091908Z-final-nop"
     ],
     "negatives": [
       false,
-      "missing current-source negative cases: ['negative-secondary-render-substitution']"
+      "negative-secondary-render-substitution: Expecting value: line 1 column 1 (char 0)"
     ],
     "model_records": [
       true,
@@ -78,12 +78,12 @@
   {
     "task": "toy-car",
     "oracle": [
-      false,
-      "20261126T080718Z-final-oracle: [Errno 2] No such file or directory: 'D:\\\\\u8fc5\u96f7\u4e0b\u8f7d\\\\ic-bench\\\\tasks\\\\cua\\\\toy-car\\\\authoring\\\\runs\\\\20261126T080718Z-final-oracle\\\\verifier\\\\metrics.json'"
+      true,
+      "20261126T091916Z-final-oracle"
     ],
     "nop": [
-      false,
-      "no final nop evidence"
+      true,
+      "20261126T092233Z-final-nop"
     ],
     "negatives": [
       false,
