@@ -1,0 +1,22 @@
+{
+  "kind": "mutation-preparation",
+  "name": "secondary-render-substitution",
+  "task": "folding-chair",
+  "started_at": "20261126T074330Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T074330Z-mutation-secondary-render-substitution:/mutation",
+    "cua-qc-folding-chair-tests",
+    "python3",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "a77b3a3e0c06c4b81f08e4f8b47a3798f56ece088f2411917c6928957764ecf2",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T07:43:33.877757+00:00"
+}

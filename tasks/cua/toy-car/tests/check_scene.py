@@ -107,7 +107,7 @@ def main():
             hub = w.parent
         if hub is not None:
             hub.rotation_mode = 'XYZ'
-            hub.rotation_euler = (0, math.radians(360), 0)
+            hub.rotation_euler = (0, math.radians(90), 0)
             bpy.context.view_layer.update()
             after = world_aabb(body)
             rep["body_after_spin"] = after
@@ -119,7 +119,7 @@ def main():
     steer = {}
     for w in ("wheel_fl", "wheel_fr"):
         ob = bpy.data.objects.get(w)
-        steer[w] = ob.parent.name if ob is not None and ob.parent is not None else None
+        steer[w] = (ob.parent.parent.name if ob is not None and ob.parent is not None and ob.parent.parent is not None else None)
     rep["steer_parents"] = steer
 
     # door hinges and clearance

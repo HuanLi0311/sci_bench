@@ -87,7 +87,7 @@ def main():
                      "--", os.path.join(WORK, "scene.json")], timeout=600)
             if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
                 with open(os.path.join(WORK, "scene.json")) as fh:
-                    scene = json.load(fh)
+                    scene = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
                 ok = bool(scene.get("ok"))
             if not ok:
                 print((r.stderr or "")[-2000:], file=sys.stderr)
@@ -115,7 +115,7 @@ def main():
     add("R04_envelope", "must", inside, f"bounds={b}")
 
     clear = scene.get("entrance_clearance") or {}
-    clear_ok = all(v >= 0.9 for v in clear.values()) and bool(clear)
+    clear_ok = set(clear) == {"cabinet_01", "cabinet_02"} and all(v >= 0.9 for v in clear.values()) and scene.get("entrance_marker_valid", False)
     add("R05_entrance_clearance", "must", clear_ok,
         {k: round(v, 3) for k, v in clear.items()})
 
@@ -177,7 +177,7 @@ def main():
     if os.path.exists(mp):
         try:
             with open(mp) as fh:
-                man = json.load(fh)
+                man = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
             assets = man.get("assets", [])
             man_ok = len(assets) >= 1 and all(a.get("source") and a.get("license")
                                               for a in assets)

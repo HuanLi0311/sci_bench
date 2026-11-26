@@ -112,12 +112,13 @@ if __name__ == "__main__":
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
     parser.add_argument("--kinds", nargs="+", choices=["oracle", "nop"], default=["oracle", "nop"])
     parser.add_argument("--regrade", type=Path, help="Regrade preserved submission; requires exactly one task and ignores --kinds")
+    parser.add_argument("--regrade-kind", default="model-regrade", help="Evidence kind for --regrade, e.g. negative-secondary-render")
     parser.add_argument("--jobs", type=int, default=1, choices=range(1, 4), help="Independent tasks to run concurrently (maximum 3)")
     options = parser.parse_args()
     if options.regrade:
         if len(options.tasks) != 1:
             parser.error("--regrade requires exactly one --tasks value")
-        record(options.tasks[0], "model-regrade", options.label, options.regrade.resolve())
+        record(options.tasks[0], options.regrade_kind, options.label, options.regrade.resolve())
         raise SystemExit(0)
     def run_task(selected_task):
         for selected_kind in options.kinds:

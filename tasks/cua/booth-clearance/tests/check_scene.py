@@ -152,6 +152,8 @@ def main():
             a = rep["objects"].get(cab, {}).get("aabb")
             if a:
                 clear[cab] = aabb_distance(a, ez)
+    # The marker must represent the specified fixed opening; moving it cannot redefine clearance.
+    rep["entrance_marker_valid"] = bool(ez) and abs((ez[0][0] + ez[1][0]) / 2 + 2.94) <= 0.05 and abs((ez[0][1] + ez[1][1]) / 2) <= 0.02 and abs(ez[1][1] - ez[0][1] - 2.4) <= 0.02
     rep["entrance_clearance"] = clear
 
     # hydrant clearance over everything but the shell (horizontal distance)
@@ -175,8 +177,7 @@ def main():
     if cam is not None:
         deps = bpy.context.evaluated_depsgraph_get()
         occluders = [o for o in mesh_objs
-                     if o.name not in ("product_01", "product_02", "product_03",
-                                       "booth_shell", "entrance_zone")]
+                     if o.name != "entrance_zone"]
         trees = [world_bvh(o, deps) for o in occluders]
         origin = cam.matrix_world.translation.copy()
         for pname in ("product_01", "product_02", "product_03"):
@@ -190,6 +191,8 @@ def main():
             dist = d.length
             hit = None
             for ob, t in zip(occluders, trees):
+                if ob.name == pname:
+                    continue
                 loc, _n, _i, _d = t.ray_cast(origin, d.normalized(), dist)
                 if loc is not None and (loc - origin).length < dist - 0.05:
                     hit = ob.name

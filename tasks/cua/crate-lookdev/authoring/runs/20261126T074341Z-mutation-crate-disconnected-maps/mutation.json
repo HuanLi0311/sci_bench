@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "crate-disconnected-maps",
+  "task": "crate-lookdev",
+  "started_at": "20261126T074341Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T074341Z-mutation-crate-disconnected-maps:/mutation",
+    "cua-qc-crate-lookdev-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/crate.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "3d23e4531942bc081a49d552eedf54690f6cda4a190fa3190dae592f464710d8",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T07:43:47.989732+00:00"
+}

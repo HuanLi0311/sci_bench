@@ -73,7 +73,7 @@ def main():
             r = run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", blend, "--python", "/tests/check_scene.py",
                      "--", os.path.join(WORK, "scene.json")], timeout=600)
             if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
-                rep = json.load(open(os.path.join(WORK, "scene.json")))
+                rep = json.load(open(os.path.join(WORK, "scene.json")), parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
                 ok = bool(rep.get("ok"))
             if not ok:
                 print((r.stderr or "")[-1500:], file=sys.stderr)

@@ -104,7 +104,7 @@ def main():
             r = run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", blend, "--python", "/tests/check_scene.py",
                      "--", os.path.join(WORK, "scene.json")], timeout=600)
             if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
-                rep = json.load(open(os.path.join(WORK, "scene.json")))
+                rep = json.load(open(os.path.join(WORK, "scene.json")), parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
                 ok = bool(rep.get("ok"))
             if not ok:
                 print((r.stderr or "")[-1500:], file=sys.stderr)
@@ -141,7 +141,7 @@ def main():
         f"body moved {moved:.2e}")
 
     steer = rep.get("steer_parents") or {}
-    add("R07_steering", "must", len(steer) == 2 and all(steer.values()), steer)
+    add("R07_steering", "must", steer == {"wheel_fl": "steer_fl", "wheel_fr": "steer_fr"}, steer)
 
     doors = rep.get("doors") or {}
     d_ok, dd = set(doors) == {"door_l", "door_r"}, {}

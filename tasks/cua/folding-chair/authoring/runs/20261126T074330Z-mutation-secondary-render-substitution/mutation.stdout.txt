@@ -1,0 +1,2 @@
+desktop ready on :1
+{"file": "render_locked.png", "size": [1200, 1200], "original_rgb_mean": [102.93622083333334, 102.66254930555556, 103.72342777777777], "replacement_rgb": [103, 103, 104]}

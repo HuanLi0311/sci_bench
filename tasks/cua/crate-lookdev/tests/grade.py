@@ -102,7 +102,7 @@ def main():
                      "--", os.path.join(WORK, "scene.json")], timeout=600)
             if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
                 with open(os.path.join(WORK, "scene.json")) as fh:
-                    scene = json.load(fh)
+                    scene = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
                 scene_ok = bool(scene.get("ok"))
             if not scene_ok:
                 print((r.stderr or "")[-2000:], file=sys.stderr)
@@ -287,7 +287,7 @@ def main():
     if os.path.exists(mp):
         try:
             with open(mp) as fh:
-                man = json.load(fh)
+                man = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
             assets = man.get("assets", [])
             have = [a for a in assets if a.get("source") and a.get("license")]
             hdri = [a for a in assets if a.get("role") == "hdri"

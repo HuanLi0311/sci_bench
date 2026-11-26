@@ -90,7 +90,7 @@ def main():
                      "--", os.path.join(WORK, "scene.json")], timeout=900)
             if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
                 with open(os.path.join(WORK, "scene.json")) as fh:
-                    rep = json.load(fh)
+                    rep = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
                 ok = bool(rep.get("ok"))
             if not ok:
                 print((r.stderr or "")[-2000:], file=sys.stderr)
@@ -175,7 +175,7 @@ def main():
     if os.path.exists(mp):
         try:
             with open(mp) as fh:
-                man = json.load(fh)
+                man = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
             assets = man.get("assets", [])
             man_ok = len(assets) >= 1 and all(a.get("source") and a.get("license")
                                               for a in assets)
