@@ -68,7 +68,9 @@ Anti-cheat: the scene is re-rendered from `cam_entrance` and compared with your
 0.5 m and rendered again (the image must change, SSIM ≤ 0.98).
 
 Both delivered images are independently re-rendered from their named cameras
-and compared per RGB channel (SSIM >= 0.90). The entrance marker must remain at
+and compared per RGB channel (SSIM >= 0.90). Their image structure must also
+match: relative RGB gradient error after a 2-pixel Gaussian blur <= 0.60.
+Uniform-background agreement alone is insufficient. The entrance marker must remain at
 the specified entrance; moving it does not redefine the clearance zone.
 Furniture, plinth and product sizes are checked against the supplied tables
 within 20 mm, allowing rotation in the floor plan. Each product must stand on
