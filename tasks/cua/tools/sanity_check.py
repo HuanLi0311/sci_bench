@@ -15,6 +15,16 @@ import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+NEGATIVE_CASES = {
+    "booth-clearance": {"secondary-render-substitution", "booth-moved-entrance-marker", "booth-product-scaled",
+                        "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening",
+                        "booth-camera-away", "booth-missing-secondary-color"},
+    "crate-lookdev": {"secondary-render-substitution", "crate-disconnected-maps"},
+    "folding-chair": {"secondary-render-substitution", "chair-common-root-collision"},
+    "rainroom": {"secondary-render-substitution"},
+    "toy-car": {"secondary-render-substitution", "toy-wrong-wheel-parent"},
+}
+
 REQUIRED = [
     "task.toml", "instruction.md", "README.md",
     "environment/Dockerfile", "tests/Dockerfile", "tests/test.sh",
@@ -218,8 +228,9 @@ def check_negative(t):
     task = Path(t)
     current = {p.relative_to(task / "tests").as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in (task / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
-    required = {"negative-" + p.name.split("-mutation-", 1)[1]
+    prepared = {p.name.split("-mutation-", 1)[1]
                 for p in (task / "authoring/runs").glob("*-mutation-*") if (p / "submission").is_dir()}
+    required = {"negative-" + name for name in NEGATIVE_CASES[task.name] | prepared}
     latest = {}
     for path in sorted((task / "authoring/runs").glob("*-final-negative-*/run.json")):
         try:

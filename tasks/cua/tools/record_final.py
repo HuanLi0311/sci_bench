@@ -14,6 +14,7 @@ from pathlib import Path
 import shutil
 
 from record_baselines import ROOT, TASKS, inventory, record
+from sanity_check import NEGATIVE_CASES
 
 
 if __name__ == "__main__":
@@ -39,10 +40,11 @@ if __name__ == "__main__":
         for path in sorted((ROOT / task / "authoring" / "runs").glob("*-mutation-*/submission")):
             name = path.parent.name.split("-mutation-", 1)[1]
             mutations[name] = path
+        if set(mutations) != NEGATIVE_CASES[task]:
+            raise SystemExit(f"Mutation cases differ for {task}: expected={sorted(NEGATIVE_CASES[task])}, actual={sorted(mutations)}")
         for name, path in mutations.items():
             mutation_jobs.append((task, [("negative-" + name, path)]))
-    expected_mutations = {"crate-lookdev": 2, "booth-clearance": 8, "folding-chair": 2, "rainroom": 1, "toy-car": 2}
-    expected_count = sum(expected_mutations[t] for t in options.tasks)
+    expected_count = sum(len(NEGATIVE_CASES[task]) for task in options.tasks)
     if len(mutation_jobs) != expected_count:
         raise SystemExit(f"Expected {expected_count} prepared mutations, found {len(mutation_jobs)}")
     jobs.extend(mutation_jobs)
