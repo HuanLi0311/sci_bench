@@ -1,0 +1,60 @@
+{
+  "generated_utc": "2026-11-26T19:13:38.648043+00:00",
+  "scope": [
+    "crate-lookdev",
+    "folding-chair",
+    "rainroom",
+    "toy-car"
+  ],
+  "definition": "GUI operations require recorded computer-1/CUA input events or equivalent screenshot/input calls; terminal exec/wait calls are not GUI operations.",
+  "tasks": {
+    "crate-lookdev": {
+      "attempts": 14,
+      "trajectory_count": 1,
+      "gui_trajectory_count": 0,
+      "terminal_trajectory_count": 1,
+      "agent_steps": 67,
+      "tool_calls": 66,
+      "notes": "ATIF trajectory; terminal Codex agent, not computer-1 CUA."
+    },
+    "folding-chair": {
+      "attempts": 0,
+      "trajectory_count": 0,
+      "gui_trajectory_count": 0,
+      "terminal_trajectory_count": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "notes": "No recovered model attempt or trajectory."
+    },
+    "rainroom": {
+      "attempts": 1,
+      "trajectory_count": 1,
+      "gui_trajectory_count": 0,
+      "terminal_trajectory_count": 1,
+      "agent_steps": 68,
+      "tool_calls": 64,
+      "tool_breakdown": {
+        "exec": 56,
+        "wait": 8
+      },
+      "notes": "Raw Codex JSONL; all tool calls are exec/wait; terminal baseline."
+    },
+    "toy-car": {
+      "attempts": 0,
+      "trajectory_count": 0,
+      "gui_trajectory_count": 0,
+      "terminal_trajectory_count": 0,
+      "agent_steps": 0,
+      "tool_calls": 0,
+      "notes": "No recovered model attempt or trajectory."
+    }
+  },
+  "totals": {
+    "attempts": 15,
+    "trajectory_count": 2,
+    "gui_trajectory_count": 0,
+    "terminal_trajectory_count": 2,
+    "agent_steps": 135,
+    "tool_calls": 130
+  }
+}

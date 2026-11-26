@@ -628,12 +628,14 @@
         }
       }
     },
-    "outcome": "running",
-    "reward": null,
+    "outcome": "task-failure",
+    "reward": 0,
     "raw_rollout_path": "tasks/cua/rainroom/authoring/runs/20261126T111524Z-model-codex-terminal/raw-rollout",
     "trajectory_format": "Codex raw JSONL plus CLI --json events",
     "step_definition": "Pending final count_steps(raw-rollout); requests counted independently of successful tool execution",
-    "agent_steps": null,
-    "tool_calls": null
+    "agent_steps": 68,
+    "tool_calls": 64,
+    "grading_run": "rainroom/authoring/runs/20261126T120513Z-final-model-regrade",
+    "cli_exit_code": 0
   }
 ]

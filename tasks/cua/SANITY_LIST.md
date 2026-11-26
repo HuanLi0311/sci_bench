@@ -37,3 +37,13 @@ python3 ic-bench/tasks/cua/tools/sanity_check.py        # on the host, docker av
 - `rainroom` ships three photographs rather than four.
 
 Raw evidence protocol and model-history limitations: [EVIDENCE.md](EVIDENCE.md). Run records: [RUNS.md](RUNS.md).
+
+## 12. CUA trajectory and visual-task delivery gates
+
+- [ ] Classify every recovered model attempt as GUI-compliant, terminal-only, or no usable trajectory; never infer GUI actions from an artifact alone.
+- [ ] Count raw trajectory agent steps and tool calls from the recorded source format; record zero GUI operations explicitly when only `exec`/`wait` or ATIF terminal tools are present.
+- [ ] A terminal artifact regrade is not a GUI success. If GUI performance is part of the purchased scope, require at least one real GUI trajectory with screenshots/input events.
+- [ ] After verifier changes, rerun current-source Oracle, true NOP, every prepared negative, and any model artifact regrade.
+- [ ] A render timeout, missing metrics, or verifier exception is infrastructure failure and must not be published as candidate reward `0`.
+- [ ] Package the trajectory index, raw JSONL/ATIF files, observation frames, current-source hashes, and the final GUI/terminal classification together.
+
