@@ -22,11 +22,11 @@
     "task": "crate-lookdev",
     "oracle": [
       true,
-      "20261126T094534Z-final-oracle"
+      "20261126T185106Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T095104Z-final-nop"
+      "20261126T185838Z-final-nop"
     ],
     "negatives": [
       true,
@@ -40,16 +40,16 @@
   {
     "task": "folding-chair",
     "oracle": [
-      false,
-      "20261126T111850Z-final-oracle: 'reward'; 20261126T090301Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: grader differs from current source"
+      true,
+      "20261126T185107Z-final-oracle"
     ],
     "nop": [
-      false,
-      "20261126T090919Z-final-nop: grader differs from current source; 20261126T080708Z-final-nop: grader differs from current source"
+      true,
+      "20261126T185750Z-final-nop"
     ],
     "negatives": [
-      false,
-      "missing current-source negative cases: ['negative-chair-common-root-collision', 'negative-chair-shared-hinge-collision', 'negative-secondary-render-substitution']"
+      true,
+      "all 3 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
@@ -60,30 +60,30 @@
     "task": "rainroom",
     "oracle": [
       true,
-      "20261126T090928Z-final-oracle"
+      "20261126T185131Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T091908Z-final-nop"
+      "20261126T185435Z-final-nop"
     ],
     "negatives": [
       true,
-      "all 1 prepared negative cases rejected by the current verifier"
+      "all 4 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
-      false,
-      "model attempt 20261126T111524Z-codex-terminal-gpt-6.1-sol-high is still running"
+      true,
+      "1 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   },
   {
     "task": "toy-car",
     "oracle": [
       true,
-      "20261126T091916Z-final-oracle"
+      "20261126T185446Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T092233Z-final-nop"
+      "20261126T185856Z-final-nop"
     ],
     "negatives": [
       true,
