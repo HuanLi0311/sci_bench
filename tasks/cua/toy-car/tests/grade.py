@@ -10,6 +10,7 @@ import hashlib
 
 import numpy as np
 from PIL import Image
+from render_compare import gradient_error
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
@@ -225,6 +226,7 @@ def main():
     add("R14_anti_cheat", "critical", ac_ok, acd)
 
     view_scores = {}
+    view_gradients = {}
     try:
         for view in ['front', 'side', 'back', 'top']:
             filename = "render_" + view + ".png"
@@ -233,11 +235,14 @@ def main():
             a, b = np.asarray(trusted, np.float32), np.asarray(delivered, np.float32)
             compare = globals().get("ss_img") or globals().get("ss")
             view_scores[view] = min(compare(a[..., c], b[..., c]) for c in range(3))
+            view_gradients[view] = gradient_error(a, b)
         views_ok = all(np.isfinite(v) and v >= 0.90 for v in view_scores.values())
     except Exception as exc:
         views_ok = False
         view_scores["error"] = str(exc)
     add("R_all_render_authenticity", "critical", views_ok, view_scores)
+    structure_ok = views_ok and all(np.isfinite(v) and v <= 0.60 for v in view_gradients.values())
+    add("R_render_structure", "critical", structure_ok, view_gradients)
 
     must = [c for c in CHECKS if c["level"] == "must"]
     crit = [c for c in CHECKS if c["level"] == "critical"]

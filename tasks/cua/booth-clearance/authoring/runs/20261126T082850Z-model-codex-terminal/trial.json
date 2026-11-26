@@ -182,7 +182,93 @@
       "started_at": "2026-11-26T08:28:52.964149+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:28:53.129246+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "cua-booth-model-71235184cc",
+        "codex",
+        "exec",
+        "--json",
+        "--color",
+        "never",
+        "--dangerously-bypass-approvals-and-sandbox",
+        "--skip-git-repo-check",
+        "-C",
+        "/app",
+        "-m",
+        "gpt-6.1-sol",
+        "-c",
+        "model_reasoning_effort=\"high\"",
+        "-o",
+        "/app/model-final.txt",
+        "-"
+      ],
+      "started_at": "2026-11-26T08:28:53.144644+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:03.127686+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-71235184cc:/run/codex-home/sessions",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082850Z-model-codex-terminal/raw-rollout"
+      ],
+      "started_at": "2026-11-26T08:36:03.191564+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:03.543703+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-71235184cc:/app/out",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082850Z-model-codex-terminal/submission"
+      ],
+      "started_at": "2026-11-26T08:36:03.640297+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:03.694485+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-booth-model-71235184cc:/app/model-final.txt",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082850Z-model-codex-terminal/model-final.txt"
+      ],
+      "started_at": "2026-11-26T08:36:03.700477+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:03.784350+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-booth-model-71235184cc"
+      ],
+      "started_at": "2026-11-26T08:36:09.380489+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:09.845290+00:00"
     }
   ],
-  "outcome": "running"
+  "outcome": "task-failure",
+  "agent_started_at": "2026-11-26T08:28:53.144608+00:00",
+  "agent_exit_code": 0,
+  "agent_finished_at": "2026-11-26T08:36:03.189972+00:00",
+  "steps": {
+    "agent_steps": 21,
+    "tool_calls": 18,
+    "reported_models": [
+      "gpt-6.1-sol"
+    ],
+    "step_definition": "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates."
+  },
+  "grading_run": "booth-clearance/authoring/runs/20261126T083604Z-final-model-regrade",
+  "reward": 0,
+  "grading_outcome": "graded",
+  "finished_at": "2026-11-26T08:36:09.869039+00:00"
 }

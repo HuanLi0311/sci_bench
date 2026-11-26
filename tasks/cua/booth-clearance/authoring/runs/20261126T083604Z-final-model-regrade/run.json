@@ -1,0 +1,244 @@
+{
+  "task": "booth-clearance",
+  "kind": "model-regrade",
+  "label": "final",
+  "started_at": "20261126T083604Z",
+  "agent": "historical-artifact-regrade",
+  "model": null,
+  "model_steps": null,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "started_at": "2026-11-26T08:36:05.352521+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:05.435648+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-booth-clearance-env"
+      ],
+      "started_at": "2026-11-26T08:36:05.449676+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:05.524406+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-booth-clearance-tests"
+      ],
+      "started_at": "2026-11-26T08:36:05.531330+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:05.603123+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-00347f3a7f",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T083604Z-final-model-regrade/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T083604Z-final-model-regrade/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T083604Z-final-model-regrade/verifier:/logs/verifier",
+        "cua-qc-booth-clearance-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T08:36:05.649460+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:05.771558+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-00347f3a7f"
+      ],
+      "started_at": "2026-11-26T08:36:05.782789+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T08:36:08.717109+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-00347f3a7f"
+      ],
+      "started_at": "2026-11-26T08:36:08.721874+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:08.753753+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-00347f3a7f:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T083604Z-final-model-regrade/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:36:08.764739+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:09.141090+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-00347f3a7f"
+      ],
+      "started_at": "2026-11-26T08:36:09.174711+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:09.221679+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-00347f3a7f"
+      ],
+      "started_at": "2026-11-26T08:36:09.232322+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:36:09.309772+00:00"
+    }
+  ],
+  "nop_definition": null,
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "9fbe13f59a175f7ce0fd4bff1a4aa36470755cd8048810511f07ad625d083f42",
+      "bytes": 10398
+    },
+    "grade.py": {
+      "sha256": "cd1dcece5c51c54cbf81c930240408b6efb5e8b7fc0e0863d96073dd02242a35",
+      "bytes": 11337
+    },
+    "reference/geometry.json": {
+      "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+      "bytes": 2570
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "b8a5992373eff7ac715f9ee020a2c54aaa01a104844059b68b47b0f0a8a6eaf8",
+      "bytes": 2160
+    },
+    "rubric.py": {
+      "sha256": "adf70db75fd9e845873807377f8d79180a0ee87a078f2721fdf0b8248e111107",
+      "bytes": 1680
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    },
+    "test_rubric.py": {
+      "sha256": "01cae93b2ef771f834cebcf981c58f3af88d3f504456c808c136aadfbc230fd6",
+      "bytes": 1044
+    }
+  },
+  "instruction_sha256": "bd02af7ab344bd5450cf29f32e52d1b79bc3dca4609951069cb45e04c7b9d218",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "63e5178bd9799148e1335b0c9260b0090b23d785ac73dc573d8ada3fc990b9fb",
+      "bytes": 633
+    },
+    "materials/LICENSE.txt": {
+      "sha256": "414c110381f66f77dbe349d0f31e780c97adc4faec9da457f44286bda19a4734",
+      "bytes": 289
+    },
+    "materials/brand/brand_sheet.pdf": {
+      "sha256": "9026c31199930da7e53c90cc2943d78f1a7cd56128a7172a053cfb4d5036c665",
+      "bytes": 2118
+    },
+    "materials/brand/logo.png": {
+      "sha256": "b9cc059d26ecc078ea73233b79f72ad80c4dda3991ee9830102815aca112a958",
+      "bytes": 26366
+    },
+    "materials/brand/logo.svg": {
+      "sha256": "39575ef834001d492339803d534d07bfa56be8f70b651c1a98b0336f08253ca9",
+      "bytes": 395
+    },
+    "materials/drawings/booth_floor_plan.pdf": {
+      "sha256": "f5f96facd93d5cc93560f2cf1f496ffc0553a227b30a886a72ca79a8a3452f10",
+      "bytes": 28147
+    },
+    "materials/drawings/booth_floor_plan.png": {
+      "sha256": "43a7c70adcd1941c049e1446501a1019fddea54610368932f5c4a641d2edf4be",
+      "bytes": 126863
+    },
+    "materials/drawings/constraints.pdf": {
+      "sha256": "986c9e1c5594cae4c955838fc5cebc351436e359158f647e0b35c95c6d780c8b",
+      "bytes": 2422
+    },
+    "materials/photos/ref_corner.jpg": {
+      "sha256": "f6b1ccf88e24d08ec17ff1b6bd64c0e12ce1ed2dc457d549efc22176f20361d5",
+      "bytes": 69138
+    },
+    "materials/photos/ref_counter.jpg": {
+      "sha256": "bdcd6accf32efa9e64223e8001c45d43352b407a24e75234a76e13848e5b7737",
+      "bytes": 48543
+    },
+    "materials/photos/ref_overview.jpg": {
+      "sha256": "5d8e2bbcc6c0b8528110edd7c0daa6150aaf1702c6b4832a167c3018a9f91803",
+      "bytes": 77291
+    },
+    "materials/photos/ref_products.jpg": {
+      "sha256": "c7d075a089f7e33212339bc5e0da9d5c7bf945ca0feceb339dab3f59467ee727",
+      "bytes": 70054
+    },
+    "materials/tables/furniture_list.xlsx": {
+      "sha256": "b6f8fa972672aabfd159df130ec11d022e047c46d221077e02ec11a8422be6a0",
+      "bytes": 5076
+    },
+    "materials/tables/product_sizes.xlsx": {
+      "sha256": "63869b305d13fc2b064d6d401938cff676a9d2ce6ebfd2bb3254781c9649935e",
+      "bytes": 5075
+    }
+  },
+  "source_submission": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082850Z-model-codex-terminal/submission",
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_objects",
+    "R03_size",
+    "R05_entrance_clearance",
+    "R07_visibility",
+    "R08_brand_colour",
+    "R12_polys",
+    "R13_entrance_render",
+    "R14_manifest",
+    "R_furniture_product_sizes",
+    "R_product_support",
+    "R15_anti_cheat",
+    "R16_deliverables",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T08:36:09.321376+00:00"
+}
