@@ -3,8 +3,17 @@
     "raw_outcome_preserved":  "task-failure in original trial.json",
     "gui_compliant":  false,
     "tool_calls":  18,
-    "reason":  "Codex native binary was copied without the required codex-code-mode-host companion; all attempted terminal operations failed before task materials could be read.",
+    "reason":  "11 terminal execution requests failed because the codex-code-mode-host companion was missing; no task-solving shell command ran. Seven other scheduling/wait requests were available and are not classified as failed terminal execution.",
     "reward":  0,
     "model_capability_result":  false,
-    "classification":  "infrastructure-failure"
+    "classification":  "infrastructure-failure",
+    "tool_requests_by_name":  {
+                                  "wait_agent":  1,
+                                  "exec":  11,
+                                  "spawn_agent":  1,
+                                  "sleep":  3,
+                                  "send_message":  2
+                              },
+    "terminal_execution_requests":  11,
+    "failed_terminal_requests":  11
 }
