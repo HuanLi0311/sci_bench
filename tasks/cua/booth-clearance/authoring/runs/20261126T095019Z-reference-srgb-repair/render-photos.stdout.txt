@@ -174,3 +174,4 @@ Fra:1 Mem:166.30M (Peak 166.30M) | Time:01:27.64 | Remaining:02:39.78 | Mem:154.
 Fra:1 Mem:166.30M (Peak 166.30M) | Time:01:48.64 | Remaining:02:19.66 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 21/48
 Fra:1 Mem:166.30M (Peak 166.30M) | Time:02:09.05 | Remaining:01:58.71 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 25/48
 Fra:1 Mem:166.30M (Peak 166.30M) | Time:02:29.84 | Remaining:01:38.16 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 29/48
+Fra:1 Mem:166.30M (Peak 166.30M) | Time:02:50.54 | Remaining:01:17.51 | Mem:154.65M, Peak:154.65M | Scene, ViewLayer | Sample 33/48
