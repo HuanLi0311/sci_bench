@@ -194,6 +194,9 @@ def main():
     support_ok, support_detail = check_support(scene.get("objects", {}))
     add("R_product_support", "must", support_ok, support_detail)
 
+    opening = scene.get("entrance_opening_samples", {})
+    add("R_actual_entrance_opening", "must", len(opening) == 5 and all(opening.values()), opening)
+
     # anti-cheat: move cabinet_01 by 0.5 m and re-render
     ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
     if ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_entrance.png")):

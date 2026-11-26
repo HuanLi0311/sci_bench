@@ -10,6 +10,7 @@ import bpy
 import numpy as np
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
+from bpy_extras.object_utils import world_to_camera_view
 
 PANELS = ["booth_shell", "counter", "cabinet_01", "cabinet_02",
           "product_01", "product_02", "product_03", "entrance_zone"]
@@ -67,7 +68,7 @@ def poly_count(ob):
 
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
-    for name in ['booth_shell', 'counter', 'cabinet_01', 'cabinet_02', 'entrance_zone', 'product_01', 'product_02', 'product_03', 'plinth_01', 'plinth_02', 'plinth_03']:
+    for name in ['booth_shell', 'counter', 'cabinet_01', 'cabinet_02', 'product_01', 'product_02', 'product_03', 'plinth_01', 'plinth_02', 'plinth_03']:
         ob = bpy.data.objects.get(name)
         if ob is None or ob.type != 'MESH' or not ob.data.polygons:
             raise ValueError(f"{name}: required nonempty mesh missing")
@@ -153,17 +154,32 @@ def main():
         rep["bounds"] = [list(mn), list(mx)]
         rep["size"] = [mx[i] - mn[i] for i in range(3)]
 
-    # entrance clearance: cabinets vs the entrance marker
-    ez = rep["objects"].get("entrance_zone", {}).get("aabb")
-    clear = {}
-    if ez:
-        for cab in ("cabinet_01", "cabinet_02"):
-            a = rep["objects"].get(cab, {}).get("aabb")
-            if a:
-                clear[cab] = aabb_distance(a, ez)
-    # The marker must represent the specified fixed opening; moving it cannot redefine clearance.
-    rep["entrance_marker_valid"] = bool(ez) and abs((ez[0][0] + ez[1][0]) / 2 + 3.0) <= 0.15 and abs((ez[0][1] + ez[1][1]) / 2) <= 0.02 and abs(ez[1][1] - ez[0][1] - 2.4) <= 0.02
-    rep["entrance_clearance"] = clear
+    # The entrance is fixed by the plan. A helper's scale cannot redefine it.
+    marker = bpy.data.objects.get("entrance_zone")
+    marker_point = marker.matrix_world.translation if marker is not None else None
+    if marker is not None and marker.type == 'MESH':
+        bounds = rep["objects"].get("entrance_zone", {}).get("aabb")
+        if bounds:
+            marker_point = Vector([(bounds[0][i] + bounds[1][i]) / 2 for i in range(3)])
+    rep["entrance_marker_valid"] = (marker is not None and marker.type in ('MESH', 'EMPTY')
+        and marker.name in sc.objects and abs(marker_point.x + 3.0) <= 0.15
+        and abs(marker_point.y) <= 0.02 and -0.06 <= marker_point.z <= 4.02)
+    rep["entrance_marker_type"] = marker.type if marker else None
+    # A vertical opening plane gives horizontal clear distances at any cabinet height.
+    entrance = [[-3.0, -1.2, -0.06], [-3.0, 1.2, 4.02]]
+    rep["entrance_clearance"] = {
+        name: aabb_distance(rep["objects"][name]["aabb"], entrance)
+        for name in ("cabinet_01", "cabinet_02") if rep["objects"].get(name, {}).get("aabb")}
+    # Check the actual shell cross-section, not just the presence of a marker.
+    shell = bpy.data.objects.get("booth_shell")
+    opening = {}
+    if shell is not None:
+        tree = world_bvh(shell, bpy.context.evaluated_depsgraph_get())
+        for y in (-1.21, -1.19, 0.0, 1.19, 1.21):
+            hit = tree.ray_cast(Vector((-3.05, y, 1.0)), Vector((1, 0, 0)), 0.30)[0]
+            should_be_open = abs(y) < 1.2
+            opening[str(y)] = (hit is None) == should_be_open
+    rep["entrance_opening_samples"] = opening
 
     # hydrant clearance over everything but the shell (horizontal distance)
     def point_box_xy(p, a):
@@ -189,6 +205,8 @@ def main():
                      if o.name != "entrance_zone"]
         trees = [world_bvh(o, deps) for o in occluders]
         origin = cam.matrix_world.translation.copy()
+        saved_resolution = (sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage)
+        sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = 1920, 1080, 100
         for pname in ("product_01", "product_02", "product_03"):
             a = rep["objects"].get(pname, {}).get("aabb")
             if not a:
@@ -196,6 +214,10 @@ def main():
                 continue
             target = Vector(((a[0][0] + a[1][0]) / 2, (a[0][1] + a[1][1]) / 2,
                              (a[0][2] + a[1][2]) / 2))
+            projected = world_to_camera_view(sc, cam, target)
+            if projected.z <= 0 or not (0 <= projected.x <= 1 and 0 <= projected.y <= 1):
+                vis[pname] = "outside camera frame"
+                continue
             d = target - origin
             dist = d.length
             hit = None
@@ -207,6 +229,7 @@ def main():
                     hit = ob.name
                     break
             vis[pname] = (hit is None) or hit
+        sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = saved_resolution
     rep["visible_from_entrance"] = vis
 
     # Measure material actually assigned to the inward-facing back wall.
