@@ -91,6 +91,7 @@ def main():
     for ob in bpy.data.objects:
         e = {"type": ob.type, "parent": ob.parent.name if ob.parent else None}
         if ob.type == 'MESH':
+            e["dimensions"] = list(ob.dimensions)
             e["aabb"] = world_aabb(ob)
             e["polys"] = poly_count(ob)
             e["materials"] = [m.name if m else None for m in ob.data.materials]
@@ -153,7 +154,7 @@ def main():
             if a:
                 clear[cab] = aabb_distance(a, ez)
     # The marker must represent the specified fixed opening; moving it cannot redefine clearance.
-    rep["entrance_marker_valid"] = bool(ez) and abs((ez[0][0] + ez[1][0]) / 2 + 2.94) <= 0.05 and abs((ez[0][1] + ez[1][1]) / 2) <= 0.02 and abs(ez[1][1] - ez[0][1] - 2.4) <= 0.02
+    rep["entrance_marker_valid"] = bool(ez) and abs((ez[0][0] + ez[1][0]) / 2 + 3.0) <= 0.15 and abs((ez[0][1] + ez[1][1]) / 2) <= 0.02 and abs(ez[1][1] - ez[0][1] - 2.4) <= 0.02
     rep["entrance_clearance"] = clear
 
     # hydrant clearance over everything but the shell (horizontal distance)

@@ -15,6 +15,7 @@ import hashlib
 
 import numpy as np
 from PIL import Image
+from rubric import check_sizes, check_support
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
@@ -215,6 +216,11 @@ def main():
         os.path.exists(os.path.join(out, "booth.blend"))
         and os.path.exists(os.path.join(out, "manifest.json")),
         "blend+manifest")
+
+    dimensions_ok, dimensions_detail = check_sizes(scene.get("objects", {}))
+    add("R_furniture_product_sizes", "must", dimensions_ok, dimensions_detail)
+    support_ok, support_detail = check_support(scene.get("objects", {}))
+    add("R_product_support", "must", support_ok, support_detail)
 
     view_scores = {}
     try:
