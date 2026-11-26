@@ -119,7 +119,7 @@ bpy.ops.wm.save_as_mainfile(filepath=os.path.join(out,"booth.blend"),compress=Tr
     target = latest / "submission/render_top.png"
     shutil.copy2(original_counterexample, target)
     (latest / "reuse-original-secondary.json").write_text(json.dumps({"source": str(original_counterexample.relative_to(ROOT)), "source_sha256": sha(original_counterexample), "target_sha256": sha(target), "reason": "Keep exactly the same solid-color counterexample PNG while using the corrected reference scene/colors"}, indent=2) + "\n")
-    for name in ("booth-moved-entrance-marker", "booth-product-scaled", "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening", "booth-camera-away", "booth-empty-marker-positive"):
+    for name in ("booth-moved-entrance-marker", "booth-product-scaled", "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening", "booth-camera-away", "booth-missing-secondary-color", "booth-empty-marker-positive"):
         prepare_mutations.prepare("booth-clearance", name, prepare_mutations.SCRIPTS[name])
     meta["finished_at"] = now()
     (run / "repair.json").write_text(json.dumps(meta, indent=2) + "\n")

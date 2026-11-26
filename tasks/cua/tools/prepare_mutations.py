@@ -74,6 +74,16 @@ for constraint in list(camera.constraints):
 camera.rotation_mode = "XYZ"
 camera.rotation_euler = (0, 0, 0)
 ''',
+    "booth-missing-secondary-color": '''import bpy
+material = bpy.data.materials["mat_brand_secondary"]
+node = next(n for n in material.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+node.inputs["Base Color"].default_value = (0.25, 0.25, 0.25, 1)
+material.diffuse_color = (0.25, 0.25, 0.25, 1)
+unused = bpy.data.materials.new("adversarial_unused_secondary_yellow")
+unused.use_nodes = True
+unused.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value = (0.8879231178819663, 0.5332764040105052, 0.07618538148130785, 1)
+bpy.data.objects["booth_shell"].data.materials.append(unused)
+''',
     "booth-empty-marker-positive": '''import bpy
 old = bpy.data.objects["entrance_zone"]
 matrix = old.matrix_world.copy()
@@ -129,6 +139,6 @@ if __name__ == "__main__":
     if not options.only or options.only == "secondary-render-substitution":
         for task_name in RENDERS:
             prepare(task_name, "secondary-render-substitution", None)
-    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot"), ("booth-clearance", "booth-closed-opening"), ("booth-clearance", "booth-camera-away"), ("booth-clearance", "booth-empty-marker-positive")):
+    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot"), ("booth-clearance", "booth-closed-opening"), ("booth-clearance", "booth-camera-away"), ("booth-clearance", "booth-missing-secondary-color"), ("booth-clearance", "booth-empty-marker-positive")):
         if not options.only or options.only == mutation:
             prepare(task_name, mutation, SCRIPTS[mutation])
