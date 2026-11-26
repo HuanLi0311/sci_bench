@@ -42,6 +42,7 @@ def _log_process(cmd, result):
 def run(cmd, timeout):
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     _log_process(cmd, r)
+    r.check_returncode()
     return r
 
 

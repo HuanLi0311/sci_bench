@@ -167,6 +167,14 @@ def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     out_path = argv[0]
 
+    for name in ['crate_front', 'crate_back', 'crate_left', 'crate_right', 'crate_bottom', 'crate_lid', 'stencil_text']:
+        ob = bpy.data.objects.get(name)
+        if ob is None or ob.type != 'MESH' or not ob.data.polygons:
+            raise ValueError(f"{name}: required nonempty mesh missing")
+        if (ob.hide_render and name != "lock_pin") or not any(ob.name in scn.objects for scn in bpy.data.scenes):
+            raise ValueError(f"{name}: required mesh hidden or outside scenes")
+        if any(not __import__('math').isfinite(c) for v in ob.data.vertices for c in v.co):
+            raise ValueError(f"{name}: non-finite vertex")
     sc = bpy.context.scene
     report = {
         "ok": True,

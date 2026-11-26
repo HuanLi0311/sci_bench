@@ -40,6 +40,7 @@ def _log_process(cmd, result):
 def run(cmd, timeout, env=None):
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, env=env)
     _log_process(cmd, r)
+    r.check_returncode()
     return r
 
 

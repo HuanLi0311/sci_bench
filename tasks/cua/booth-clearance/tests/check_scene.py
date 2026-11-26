@@ -67,6 +67,14 @@ def poly_count(ob):
 
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
+    for name in ['booth_shell', 'counter', 'cabinet_01', 'cabinet_02', 'entrance_zone', 'product_01', 'product_02', 'product_03', 'plinth_01', 'plinth_02', 'plinth_03']:
+        ob = bpy.data.objects.get(name)
+        if ob is None or ob.type != 'MESH' or not ob.data.polygons:
+            raise ValueError(f"{name}: required nonempty mesh missing")
+        if (ob.hide_render and name != "lock_pin") or not any(ob.name in scn.objects for scn in bpy.data.scenes):
+            raise ValueError(f"{name}: required mesh hidden or outside scenes")
+        if any(not __import__('math').isfinite(c) for v in ob.data.vertices for c in v.co):
+            raise ValueError(f"{name}: non-finite vertex")
     sc = bpy.context.scene
     rep = {
         "ok": True,

@@ -34,13 +34,21 @@ def aabb_of(verts):
 
 def related(a, b):
     """True when two objects sit on a shared hinge (contact is expected)."""
-    if a.parent is not None and a.parent is b.parent:
+    if a.parent is not None and a.parent is b.parent and a.parent.name in HINGES:
         return True
-    return a.parent is b or b.parent is a or a.parent is b.parent or b.parent is a.parent
+    return a.parent is b or b.parent is a
 
 
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
+    for name in ['seat', 'back', 'front_leg_l', 'front_leg_r', 'rear_leg_l', 'rear_leg_r', 'lock_pin']:
+        ob = bpy.data.objects.get(name)
+        if ob is None or ob.type != 'MESH' or not ob.data.polygons:
+            raise ValueError(f"{name}: required nonempty mesh missing")
+        if (ob.hide_render and name != "lock_pin") or not any(ob.name in scn.objects for scn in bpy.data.scenes):
+            raise ValueError(f"{name}: required mesh hidden or outside scenes")
+        if any(not __import__('math').isfinite(c) for v in ob.data.vertices for c in v.co):
+            raise ValueError(f"{name}: non-finite vertex")
     sc = bpy.context.scene
     rep = {
         "ok": True,
@@ -76,6 +84,16 @@ def main():
                               "packed": bool(img.packed_file is not None),
                               "filepath": img.filepath})
 
+    for name in LIMBS:
+        if bpy.data.objects[name].data.shape_keys is not None:
+            raise ValueError("shape keys are prohibited")
+    expected = {"front_leg_l": "hinge_01", "rear_leg_l": "hinge_01",
+                "front_leg_r": "hinge_02", "rear_leg_r": "hinge_02",
+                "seat": "hinge_03", "back": "hinge_04"}
+    for name, parent in expected.items():
+        if rep["objects"][name]["parent"] != parent:
+            raise ValueError(f"{name}: wrong hinge parent")
+
     # states
     for frame in (0, 30, 60):
         sc.frame_set(frame)
@@ -98,7 +116,7 @@ def main():
 
     # overlaps across the whole animation
     overlaps = {}
-    for frame in range(sc.frame_start, sc.frame_end + 1, 2):
+    for frame in range(0, 61, 2):
         sc.frame_set(frame)
         bpy.context.view_layer.update()
         deps = bpy.context.evaluated_depsgraph_get()
