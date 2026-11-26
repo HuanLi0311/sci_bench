@@ -137,6 +137,32 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "folding-chair",
+      "kind": "negative-chair-common-root-collision",
+      "run": "folding-chair/authoring/runs/20261126T085607Z-final-negative-chair-common-root-collision",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_no_interpenetration",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "toy-car",
+      "kind": "negative-toy-wrong-wheel-parent",
+      "run": "toy-car/authoring/runs/20261126T085614Z-final-negative-toy-wrong-wheel-parent",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_steering",
+        "R14_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
