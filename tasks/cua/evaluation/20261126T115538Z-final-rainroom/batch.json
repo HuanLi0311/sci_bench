@@ -29,5 +29,92 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "rainroom",
+      "kind": "oracle",
+      "run": "rainroom/authoring/runs/20261126T115540Z-final-oracle",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R13_anti_cheat"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "nop",
+      "run": "rainroom/authoring/runs/20261126T121102Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_objects",
+        "R03_room_size",
+        "R04_light_sets",
+        "R05_camera",
+        "R06_renders",
+        "R07_brightness",
+        "R08_time_of_day",
+        "R09_materials",
+        "R11_polys",
+        "R12_manifest",
+        "R_object_positions",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-secondary-render-substitution",
+      "run": "rainroom/authoring/runs/20261126T115540Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-unused-metal-slot",
+      "run": "rainroom/authoring/runs/20261126T121055Z-final-negative-rain-unused-metal-slot",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-disconnected-metal-shader",
+      "run": "rainroom/authoring/runs/20261126T121110Z-final-negative-rain-disconnected-metal-shader",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-linked-metal-default",
+      "run": "rainroom/authoring/runs/20261126T121114Z-final-negative-rain-linked-metal-default",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ],
+  "finished_at": "2026-11-26T12:11:25.816548+00:00"
 }

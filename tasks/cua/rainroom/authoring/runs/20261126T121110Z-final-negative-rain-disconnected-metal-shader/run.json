@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T12:11:13.981123+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T12:11:14.217268+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-db3c9ff94f"
+      ],
+      "started_at": "2026-11-26T12:11:14.230442+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T12:11:20.609585+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-db3c9ff94f"
+      ],
+      "started_at": "2026-11-26T12:11:20.621803+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:20.703349+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-db3c9ff94f:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T121110Z-final-negative-rain-disconnected-metal-shader/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T12:11:20.715726+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:21.407098+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-db3c9ff94f"
+      ],
+      "started_at": "2026-11-26T12:11:21.464044+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:21.550386+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-db3c9ff94f"
+      ],
+      "started_at": "2026-11-26T12:11:21.564903+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:21.749216+00:00"
     }
   ],
   "nop_definition": null,
@@ -100,4 +154,65 @@
       "bytes": 715
     },
     "materials/LICENSE.txt": {
- 
+      "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+      "bytes": 61
+    },
+    "materials/drawings/room_plan.png": {
+      "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+      "bytes": 88574
+    },
+    "materials/photos/ref_detail.jpg": {
+      "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+      "bytes": 54191
+    },
+    "materials/photos/ref_morning.jpg": {
+      "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+      "bytes": 71539
+    },
+    "materials/photos/ref_night.jpg": {
+      "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+      "bytes": 62699
+    },
+    "materials/spec/material_spec.pdf": {
+      "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+      "bytes": 2513
+    },
+    "materials/tables/objects.xlsx": {
+      "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+      "bytes": 5921
+    }
+  },
+  "source_submission": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T115458Z-mutation-rain-disconnected-metal-shader/submission",
+  "submission": {
+    "manifest.json": {
+      "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
+      "bytes": 1190
+    },
+    "rainroom.blend": {
+      "sha256": "cab256c8145b1a5d69c4ad72bed81ec5525e56a959fcda1951deb71d1f988886",
+      "bytes": 103789
+    },
+    "rainroom.blend1": {
+      "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
+      "bytes": 105368
+    },
+    "render_morning.png": {
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "bytes": 1441442
+    }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R09_materials",
+    "R13_anti_cheat",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T12:11:21.759998+00:00"
+}

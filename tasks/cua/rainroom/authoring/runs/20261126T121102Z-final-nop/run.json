@@ -247,4 +247,66 @@
       "bytes": 2291
     },
     "test.sh": {
-      "sha256": "fa87cb284fff91693a3032705dcc6446bd2
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
+      "bytes": 715
+    },
+    "materials/LICENSE.txt": {
+      "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+      "bytes": 61
+    },
+    "materials/drawings/room_plan.png": {
+      "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+      "bytes": 88574
+    },
+    "materials/photos/ref_detail.jpg": {
+      "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+      "bytes": 54191
+    },
+    "materials/photos/ref_morning.jpg": {
+      "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+      "bytes": 71539
+    },
+    "materials/photos/ref_night.jpg": {
+      "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+      "bytes": 62699
+    },
+    "materials/spec/material_spec.pdf": {
+      "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+      "bytes": 2513
+    },
+    "materials/tables/objects.xlsx": {
+      "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+      "bytes": 5921
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_objects",
+    "R03_room_size",
+    "R04_light_sets",
+    "R05_camera",
+    "R06_renders",
+    "R07_brightness",
+    "R08_time_of_day",
+    "R09_materials",
+    "R11_polys",
+    "R12_manifest",
+    "R_object_positions",
+    "R13_anti_cheat",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T12:11:14.865431+00:00"
+}
