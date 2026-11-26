@@ -1,0 +1,66 @@
+[
+  {
+    "tag": "cua-qc-crate-lookdev-env",
+    "id": "sha256:7e26221ea0befae7fb81763db2c845ba5928c387a14c570169b9edc49e4bc989",
+    "repo_digests": [
+      "cua-qc-crate-lookdev-env@sha256:7e26221ea0befae7fb81763db2c845ba5928c387a14c570169b9edc49e4bc989"
+    ],
+    "size": 1437154370
+  },
+  {
+    "tag": "cua-qc-crate-lookdev-tests",
+    "id": "sha256:feed04cc399b103d9b76904bebd0f9fa884673de10d54d41319fd692bc064472",
+    "repo_digests": [
+      "cua-qc-crate-lookdev-tests@sha256:feed04cc399b103d9b76904bebd0f9fa884673de10d54d41319fd692bc064472"
+    ],
+    "size": 1210028841
+  },
+  {
+    "tag": "cua-qc-folding-chair-env",
+    "id": "sha256:78b98a617d122307a33336b3ecd328985bdf050d3bd174c61bfbec0b7589c52e",
+    "repo_digests": [
+      "cua-qc-folding-chair-env@sha256:78b98a617d122307a33336b3ecd328985bdf050d3bd174c61bfbec0b7589c52e"
+    ],
+    "size": 1203180971
+  },
+  {
+    "tag": "cua-qc-folding-chair-tests",
+    "id": "sha256:3186472687aab81194b2c8d7eb208a742d1369d9d7a7520d44e17ed3555ec954",
+    "repo_digests": [
+      "cua-qc-folding-chair-tests@sha256:3186472687aab81194b2c8d7eb208a742d1369d9d7a7520d44e17ed3555ec954"
+    ],
+    "size": 1210032406
+  },
+  {
+    "tag": "cua-qc-rainroom-env",
+    "id": "sha256:4fd6eb5621036f20753eabf65277222e8855c41d062a531939d3d64cc28c54e1",
+    "repo_digests": [
+      "cua-qc-rainroom-env@sha256:4fd6eb5621036f20753eabf65277222e8855c41d062a531939d3d64cc28c54e1"
+    ],
+    "size": 1203065344
+  },
+  {
+    "tag": "cua-qc-rainroom-tests",
+    "id": "sha256:b4ac8efe25a40a328e02b690344eb0d19c9f1709cad66bdacc4830e0e2a247c4",
+    "repo_digests": [
+      "cua-qc-rainroom-tests@sha256:b4ac8efe25a40a328e02b690344eb0d19c9f1709cad66bdacc4830e0e2a247c4"
+    ],
+    "size": 1210025515
+  },
+  {
+    "tag": "cua-qc-toy-car-env",
+    "id": "sha256:8ba16b17d45c695a8e6b982f9c11bccdd59b16fdf650aa6592fa9f3c1f4a2779",
+    "repo_digests": [
+      "cua-qc-toy-car-env@sha256:8ba16b17d45c695a8e6b982f9c11bccdd59b16fdf650aa6592fa9f3c1f4a2779"
+    ],
+    "size": 1202958608
+  },
+  {
+    "tag": "cua-qc-toy-car-tests",
+    "id": "sha256:e33305f9a338f88e96f6fd4c4ef120c4a97c1d958ebe97224dc9ce51bde0d640",
+    "repo_digests": [
+      "cua-qc-toy-car-tests@sha256:e33305f9a338f88e96f6fd4c4ef120c4a97c1d958ebe97224dc9ce51bde0d640"
+    ],
+    "size": 1210027115
+  }
+]
