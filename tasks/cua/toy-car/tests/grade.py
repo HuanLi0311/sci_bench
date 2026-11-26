@@ -30,6 +30,7 @@ def _log_process(cmd, result):
 def run(cmd, timeout):
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     _log_process(cmd, r)
+    r.check_returncode()
     return r
 
 
@@ -143,7 +144,7 @@ def main():
     add("R07_steering", "must", len(steer) == 2 and all(steer.values()), steer)
 
     doors = rep.get("doors") or {}
-    d_ok, dd = True, {}
+    d_ok, dd = set(doors) == {"door_l", "door_r"}, {}
     for name, info in doors.items():
         if not info:
             d_ok = False

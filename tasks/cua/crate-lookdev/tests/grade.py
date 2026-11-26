@@ -185,9 +185,9 @@ def main():
     # A map is "wired" if it reaches the shader directly or through any node;
     # what matters is that the material actually uses three 2K maps and one of
     # them drives a normal map node.
-    has_base = any("Base Color" in f for f in feeds) or bool(big)
-    has_rough = any("Roughness" in f for f in feeds) or len(big) >= 3
-    has_normal = any("NORMAL_MAP" in f for f in feeds)
+    has_base = any("Base Color" in f for f in feeds)
+    has_rough = any("Roughness" in f for f in feeds)
+    has_normal = any("BSDF_PRINCIPLED:Normal" in f for f in feeds) and any("NORMAL_MAP" in f for f in feeds)
     packed_all = all(i.get("packed") for i in scene.get("images", [])
                      if i.get("filepath"))
     add("R07_pbr_maps", "must",
@@ -198,12 +198,10 @@ def main():
     # ---- R08 material distinction ---------------------------------------
     rough_std = wood.get("roughness_std")
     if rough_std is None:
-        rough_std = max([i.get("grey_std", 0.0) for i in imgs] or [None])
+        rough_std = max([i.get("grey_std", 0.0) for i in imgs if "BSDF_PRINCIPLED:Roughness" in i.get("feeds", [])] or [0.0])
     bracket_mats = [m for m in (objs.get(brackets[0], {}).get("materials") or []) if m] if brackets else []
     bmat = mats.get(bracket_mats[0], {}) if bracket_mats else {}
     metal = bmat.get("metallic")
-    if metal is None or metal < 0.9:
-        metal = max([i.get("mean", 0) for i in bmat.get("images", [])] or [0])
     rough_ok = rough_std is not None and rough_std >= 0.05
     add("R08_materials", "must", rough_ok and (metal or 0) >= 0.9,
         f"wood_roughness_std={rough_std} bracket_metallic={metal}")

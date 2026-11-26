@@ -80,10 +80,17 @@ def material_report(mat):
             info = image_report(img)
             info["node"] = n.name
             # which socket does it feed?
-            sinks = []
-            for link in nt.links:
-                if link.from_node == n:
-                    sinks.append(f"{link.to_node.type}:{link.to_socket.name}")
+            sinks, todo, visited = [], [n], set()
+            while todo:
+                source = todo.pop()
+                if source in visited:
+                    continue
+                visited.add(source)
+                for link in nt.links:
+                    if link.from_node == source:
+                        sinks.append(f"{link.to_node.type}:{link.to_socket.name}")
+                        if link.to_node.type != 'BSDF_PRINCIPLED':
+                            todo.append(link.to_node)
             info["feeds"] = sinks
             rep["images"].append(info)
             if "Roughness" in sinks or any("Roughness" in x for x in sinks):

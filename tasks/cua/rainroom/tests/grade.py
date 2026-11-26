@@ -29,6 +29,7 @@ def _log_process(cmd, result):
 def run(cmd, timeout):
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     _log_process(cmd, r)
+    r.check_returncode()
     return r
 
 
@@ -176,6 +177,9 @@ def main():
         except Exception as exc:
             acd = f"rerender failed: {exc}"
     add("R13_anti_cheat", "critical", ac_ok, acd)
+
+    errors = rep.get("position_errors", {})
+    add("R_object_positions", "must", len(errors) == 26 and all(v <= 0.15 for v in errors.values()), errors)
 
     view_scores = {}
     try:

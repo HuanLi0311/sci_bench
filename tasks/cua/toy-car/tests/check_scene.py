@@ -40,6 +40,14 @@ def centre(a):
 
 def main():
     out_path = sys.argv[sys.argv.index("--") + 1]
+    for name in ['body', 'chassis', 'wheel_fl', 'wheel_fr', 'wheel_rl', 'wheel_rr', 'door_l', 'door_r']:
+        ob = bpy.data.objects.get(name)
+        if ob is None or ob.type != 'MESH' or not ob.data.polygons:
+            raise ValueError(f"{name}: required nonempty mesh missing")
+        if ob.hide_render or ob.name not in bpy.context.scene.objects:
+            raise ValueError(f"{name}: hidden or outside current scene")
+        if any(not __import__('math').isfinite(c) for v in ob.data.vertices for c in v.co):
+            raise ValueError(f"{name}: non-finite vertex")
     rep = {"ok": True, "blender": bpy.app.version_string, "objects": {},
            "meshes": [], "polys_total": 0, "images": [], "cameras": {}}
 
