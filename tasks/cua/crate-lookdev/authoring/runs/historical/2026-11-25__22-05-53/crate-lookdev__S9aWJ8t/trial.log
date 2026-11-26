@@ -1,0 +1,6 @@
+Skipping image OS validation for hb__06eceffa1fd79ca265ae6befc818ff74: docker inspect returned 1
+Codex is already available at the requested version
+No Codex session directory found
+Trial crate-lookdev__S9aWJ8t failed: Model name is required
+No Codex session directory found
+Collecting main service artifacts

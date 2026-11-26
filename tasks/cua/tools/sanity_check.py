@@ -7,6 +7,8 @@ prints a table. Exits non-zero if any check fails. Docker must be available;
 runs inside WSL (`wsl.exe -e bash -lc 'python3 ...'`).
 """
 import json
+import hashlib
+from pathlib import Path
 import os
 import re
 import subprocess
@@ -104,16 +106,69 @@ def check_isolation(tag):
     return (not leak and empty), f"leak={leak} out_files={out[-1] if out else '?'}"
 
 
+def check_recorded_run(t, kind):
+    """A prose claim or a negative mutation is never evidence of Oracle/NOP."""
+    task = Path(t)
+    current = {str(p.relative_to(task / "tests")): hashlib.sha256(p.read_bytes()).hexdigest()
+               for p in (task / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
+    candidates = sorted((task / "authoring/runs").glob("*-final-" + kind), reverse=True)
+    problems = []
+    for run in candidates:
+        try:
+            meta = json.loads((run / "run.json").read_text())
+            metrics = json.loads((run / "verifier/metrics.json").read_text())
+            reward = int((run / "verifier/reward.txt").read_text().strip())
+            recorded = {name: entry["sha256"] for name, entry in meta["grader_source"].items()}
+            if current != recorded:
+                raise ValueError("grader differs from current source")
+            for name, entry in meta["grader_source"].items():
+                if hashlib.sha256((run / "grader-source" / name).read_bytes()).hexdigest() != entry["sha256"]:
+                    raise ValueError("snapshot hash mismatch")
+            if reward != metrics["reward"] or reward != meta["reward"]:
+                raise ValueError("reward disagreement")
+            if not meta.get("finished_at") or meta.get("error") or meta.get("agent_exit_code") != 0:
+                raise ValueError("agent did not complete cleanly")
+            if kind == "oracle":
+                if reward != 1 or meta.get("verifier_exit_code") != 0 or not metrics["checks"] or not all(c["pass"] for c in metrics["checks"]):
+                    raise ValueError("Oracle not all-pass")
+                for name, entry in meta["solution_source"].items():
+                    if hashlib.sha256((task / "solution" / name).read_bytes()).hexdigest() != entry["sha256"]:
+                        raise ValueError("reference differs from measured input")
+            else:
+                if reward != 0 or meta.get("model_steps") != 0 or meta.get("submission") != {}:
+                    raise ValueError("NOP must take zero solving steps and export original empty output")
+                if not any(c["argv"][-1:] == ["/bin/true"] and c["exit_code"] == 0 for c in meta["commands"]):
+                    raise ValueError("NOP no-op execution absent")
+            if not (run / "verifier.stdout.txt").exists() or not (run / "agent.stdout.txt").exists():
+                raise ValueError("raw logs missing")
+            return True, str(run.name)
+        except Exception as exc:
+            problems.append(f"{run.name}: {exc}")
+    return False, "; ".join(problems) or f"no final {kind} evidence"
+
+
 def check_oracle(t, tests_tag):
-    sol = os.path.join(t, "solution")
-    r = sh(f'docker run --rm -v "{sol}":/app/out {tests_tag} bash /tests/test.sh /app/out',
-           timeout=3600)
-    m = re.search(r'"reward":\s*(\d)', r.stdout or "")
-    if not m:
-        return False, "no reward in output"
-    reward = int(m.group(1))
-    failed = re.findall(r'"id": "([^"]+)"[^}]*?"pass": false', r.stdout or "", re.S)
-    return reward == 1, f"reward={reward} failed={failed}"
+    return check_recorded_run(t, "oracle")
+
+
+def check_model_records(t):
+    try:
+        record = json.loads((Path(t) / "authoring/model-attempts.json").read_text())
+        for attempt in record["attempts"]:
+            path = Path(attempt["path"])
+            # Stored paths are repo-relative; the checker may be launched elsewhere.
+            if not path.is_absolute():
+                path = Path(ROOT).parents[1] / path
+            if not (path / "config.json").exists() or not (path / "trial.log").exists():
+                raise ValueError("attempt raw config/log missing")
+            if attempt["trajectory_present"]:
+                trajectory = json.loads((path / "agent/trajectory.json").read_text())
+                agent = [s for s in trajectory["steps"] if s.get("source") == "agent"]
+                if len(agent) != attempt["agent_steps"] or sum(len(s.get("tool_calls", [])) for s in agent) != attempt["tool_calls"]:
+                    raise ValueError("step count differs from raw trajectory")
+        return True, f"{len(record['attempts'])} recovered attempts; empty tasks explicitly recorded"
+    except Exception as exc:
+        return False, str(exc)
 
 
 def check_deliverables(t):
@@ -147,7 +202,7 @@ def check_manifest(t):
         return False, "no manifest"
     man = json.load(open(p))
     assets = man.get("assets", [])
-    ok = all(a.get("source") and a.get("license") for a in assets)
+    ok = bool(assets) and all(a.get("source") and a.get("license") for a in assets)
     return ok, f"{len(assets)} assets"
 
 
@@ -171,9 +226,11 @@ def main():
         ok, msg = build(t, "environment", env_tag) if not image_exists(env_tag) else (True, "cached")
         results["5 env image"] = (ok, msg)
         results["5b isolation"] = check_isolation(env_tag) if ok else (False, "no image")
-        ok_t, msg_t = build(t, "tests", tests_tag) if not image_exists(tests_tag) else (True, "cached")
+        ok_t, msg_t = build(t, "tests", tests_tag)
         results["6 tests image"] = (ok_t, msg_t)
         results["7 oracle"] = check_oracle(t, tests_tag) if ok_t else (False, "no image")
+        results["7b true NOP"] = check_recorded_run(t, "nop")
+        results["7c model records"] = check_model_records(t)
         results["8 deliverables"] = check_deliverables(t)
         results["9 anti-cheat"] = check_anticheat(t)
         results["10 negative"] = check_negative(t)

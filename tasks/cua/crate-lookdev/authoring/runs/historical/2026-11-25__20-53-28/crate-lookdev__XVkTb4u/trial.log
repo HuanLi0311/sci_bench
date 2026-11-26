@@ -1,0 +1,4 @@
+Skipping image OS validation for hb__91b7b5461c192cf94a571ffcef3b3760: docker inspect returned 1
+Running command: apt-get update && apt-get install -y curl bash nodejs npm ripgrep
+Trial crate-lookdev__XVkTb4u cancelled
+Collecting main service artifacts
