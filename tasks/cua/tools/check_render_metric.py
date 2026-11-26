@@ -20,10 +20,10 @@ def main():
     records = []
     for case in calibration["measurements"]:
         trusted_path = ROOT / case["run"]
-        delivered_path = ROOT / case["task"] / "solution" / trusted_path.name
+        run = next(p for p in trusted_path.parents if (p / "run.json").exists())
+        delivered_path = run / "submission" / trusted_path.name
         forged = case["view"] == "forged top"
         if forged:
-            run = next(p for p in trusted_path.parents if p.name.endswith("secondary-render-substitution"))
             delivered_path = run / "submission/render_top.png"
         trusted = Image.open(trusted_path).convert("RGB")
         delivered = Image.open(delivered_path).convert("RGB").resize(trusted.size, Image.Resampling.LANCZOS)

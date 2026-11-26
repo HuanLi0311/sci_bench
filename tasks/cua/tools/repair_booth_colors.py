@@ -89,7 +89,8 @@ bpy.ops.wm.save_as_mainfile(filepath=os.path.join(out,"booth.blend"),compress=Tr
             raise RuntimeError(name + " failed; original files remain backed up")
         print(name, "exit", result.returncode, flush=True)
 
-    common = ["docker", "run", "--rm", "--network", "none", "--cpus", "4", "--memory", "8g", "-v", f"{source}:/source:ro", "-v", f"{stage}:/stage"]
+    meta["source"] = inventory(source)
+    common = ["docker", "run", "--rm", "--network", "none", "--cpus", "4", "--memory", "8g", "--env", "PYTHONPATH=/source/tests", "-v", f"{source}:/source:ro", "-v", f"{stage}:/stage"]
     command(common + ["-v", f"{backup / 'solution'}:/input:ro", "blender-bench:gui", "blender", "--disable-autoexec", "--python-exit-code", "2", "-b", "/input/booth.blend", "--python", "/source/update_colors.py", "--", "/stage/solution/booth.blend"], "update-colors")
     probes = [("old-reference", backup / "solution"), ("new-reference", stage / "solution"), ("blind-model", TASK / "authoring/runs/20261126T084651Z-model-codex-terminal/submission")]
     meta["color_probes"] = []
