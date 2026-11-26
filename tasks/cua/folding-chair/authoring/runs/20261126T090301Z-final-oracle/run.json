@@ -172,6 +172,60 @@
       "started_at": "2026-11-26T09:03:06.062363+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:03:06.244059+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-ff37086485"
+      ],
+      "started_at": "2026-11-26T09:03:06.258378+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:17.205972+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-ff37086485"
+      ],
+      "started_at": "2026-11-26T09:09:17.219278+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:17.300686+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-ff37086485:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T090301Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:09:17.313334+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:17.742747+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-ff37086485"
+      ],
+      "started_at": "2026-11-26T09:09:17.790963+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:19.377744+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-ff37086485"
+      ],
+      "started_at": "2026-11-26T09:09:19.390853+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:09:19.525118+00:00"
     }
   ],
   "nop_definition": null,
@@ -312,5 +366,10 @@
       "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
       "bytes": 1418329
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:09:19.540785+00:00"
 }
