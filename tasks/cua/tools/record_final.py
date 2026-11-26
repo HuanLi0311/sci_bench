@@ -21,6 +21,7 @@ if __name__ == "__main__":
     parser.add_argument("--jobs", type=int, default=3, choices=range(1, 4))
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
     parser.add_argument("--structure-first", action="store_true", help="Record structural negatives before Oracle/NOP, then secondary-render substitution")
+    parser.add_argument("--booth-model-artifact", type=Path, help="Regrade a preserved blind booth submission with the same frozen grader")
     options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     batch = ROOT / "evaluation" / (stamp + "-final" + ("-" + options.tasks[0] if len(options.tasks) == 1 else ""))
@@ -50,6 +51,10 @@ if __name__ == "__main__":
         raise SystemExit(f"Historical model output missing: {model}")
     if "crate-lookdev" in options.tasks:
         jobs.append(("crate-lookdev", [("model-regrade", model)]))
+    if options.booth_model_artifact:
+        if "booth-clearance" not in options.tasks or not options.booth_model_artifact.is_dir():
+            parser.error("--booth-model-artifact requires booth-clearance and an existing submission directory")
+        jobs.append(("booth-clearance", [("model-regrade", options.booth_model_artifact.resolve())]))
     if options.structure_first:
         jobs.sort(key=lambda job: (0 if job[1][0][0].startswith("negative-") and "secondary-render" not in job[1][0][0] else (2 if "secondary-render" in job[1][0][0] else 1)))
     (batch / "batch.json").write_text(json.dumps(meta, indent=2) + "\n")
