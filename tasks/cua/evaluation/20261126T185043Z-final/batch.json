@@ -309,6 +309,55 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "toy-car",
+      "kind": "oracle",
+      "run": "toy-car/authoring/runs/20261126T185446Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "toy-car",
+      "kind": "nop",
+      "run": "toy-car/authoring/runs/20261126T185856Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_parts",
+        "R03_wheelbase",
+        "R04_wheel_diameter",
+        "R05_axle_pose",
+        "R06_wheel_spin",
+        "R07_steering",
+        "R08_doors",
+        "R09_views",
+        "R10_silhouette",
+        "R12_polys",
+        "R13_manifest",
+        "R14_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "model-regrade",
+      "run": "crate-lookdev/authoring/runs/20261126T185802Z-final-model-regrade",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R03_outer_size",
+        "R05_lid_hinge",
+        "R08_materials",
+        "R09_stencil_wear",
+        "R10_renders",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }

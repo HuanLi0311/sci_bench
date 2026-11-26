@@ -168,6 +168,60 @@
       "started_at": "2026-11-26T18:58:59.887699+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T18:59:00.016436+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-7c7a22b941"
+      ],
+      "started_at": "2026-11-26T18:59:00.028421+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T18:59:03.320204+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-7c7a22b941"
+      ],
+      "started_at": "2026-11-26T18:59:03.332582+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:59:03.381891+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-7c7a22b941:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/toy-car/authoring/runs/20261126T185856Z-final-nop/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T18:59:03.395806+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:59:03.880961+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-7c7a22b941"
+      ],
+      "started_at": "2026-11-26T18:59:03.932638+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:59:04.280358+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-7c7a22b941"
+      ],
+      "started_at": "2026-11-26T18:59:04.294520+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:59:04.426672+00:00"
     }
   ],
   "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out",
@@ -337,5 +391,26 @@
     }
   },
   "agent_exit_code": 0,
-  "submission": {}
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_parts",
+    "R03_wheelbase",
+    "R04_wheel_diameter",
+    "R05_axle_pose",
+    "R06_wheel_spin",
+    "R07_steering",
+    "R08_doors",
+    "R09_views",
+    "R10_silhouette",
+    "R12_polys",
+    "R13_manifest",
+    "R14_anti_cheat",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T18:59:04.438507+00:00"
 }
