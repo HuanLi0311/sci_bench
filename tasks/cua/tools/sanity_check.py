@@ -126,6 +126,8 @@ def check_recorded_run(t, kind):
                     raise ValueError("snapshot hash mismatch")
             if reward != metrics["reward"] or reward != meta["reward"]:
                 raise ValueError("reward disagreement")
+            if any(c["id"] == "R_verifier_error" for c in metrics.get("checks", [])):
+                raise ValueError("verifier exception is not a valid baseline score")
             if not meta.get("finished_at") or meta.get("error") or meta.get("agent_exit_code") != 0:
                 raise ValueError("agent did not complete cleanly")
             if kind == "oracle":
@@ -240,8 +242,19 @@ def check_negative(t):
                 raise ValueError("negative submission unexpectedly accepted")
             if any("timed out" in str(c.get("detail", "")) for c in metrics["checks"]):
                 raise ValueError("timeout is not a rejected negative")
-            if not any(not c["pass"] for c in metrics["checks"]):
-                raise ValueError("no decisive failed check")
+            decisive = {
+                "negative-secondary-render-substitution": "R_render_structure",
+                "negative-booth-moved-entrance-marker": "R05_entrance_clearance",
+                "negative-booth-product-scaled": "R_furniture_product_sizes",
+                "negative-booth-product-floating": "R_product_support",
+                "negative-booth-unused-brand-slot": "R08_brand_colour",
+                "negative-crate-disconnected-maps": "R07_pbr_maps",
+                "negative-chair-common-root-collision": "R07_no_interpenetration",
+                "negative-toy-wrong-wheel-parent": "R07_steering",
+            }
+            failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
+            if "R_verifier_error" in failed or decisive.get(kind) not in failed:
+                raise ValueError("the intended rubric check did not reject the mutation")
         except (OSError, ValueError, KeyError) as exc:
             return False, f"{kind}: {exc}"
     return True, f"all {len(required)} prepared negative cases rejected by the current verifier"
