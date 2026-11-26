@@ -267,6 +267,8 @@ def check_negative(t):
                 "negative-toy-wrong-wheel-parent": "R07_steering",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
+            if not any(c["id"] == "R01_open" and c["pass"] for c in metrics["checks"]):
+                raise ValueError("valid-scene mutation failed extraction; rejection is not attributable to the intended check")
             if "R_verifier_error" in failed or decisive.get(kind) not in failed:
                 raise ValueError("the intended rubric check did not reject the mutation")
         except (OSError, ValueError, KeyError) as exc:
