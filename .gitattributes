@@ -1,0 +1,7 @@
+# Shell entrypoints must execute in Linux even when checked out on Windows.
+tasks/cua/**/*.sh text eol=lf
+tasks/cua/**/tests/*.py text eol=lf
+# Evidence checksums describe the actual captured bytes.
+tasks/cua/**/authoring/runs/** -text
+tasks/cua/**/solution/*.blend -text
+tasks/cua/**/environment/materials/** -text

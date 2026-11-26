@@ -3,6 +3,7 @@
 Only prepares inputs; record_baselines.py --regrade runs the actual verifier.
 """
 import datetime as dt
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -31,6 +32,12 @@ for name, x in (("collision_a", 0.0), ("collision_b", 0.01)):
 ''',
     "booth-moved-entrance-marker": '''import bpy
 bpy.data.objects["entrance_zone"].location.x += 10.0
+''',
+    "toy-wrong-wheel-parent": '''import bpy
+wheel = bpy.data.objects["wheel_fl"]
+matrix = wheel.matrix_world.copy()
+wheel.parent = bpy.data.objects["chassis"]
+wheel.matrix_world = matrix
 ''',
 }
 
@@ -66,7 +73,12 @@ print(json.dumps({"file": p.name, "size": original.size, "original_rgb_mean": Im
 
 
 if __name__ == "__main__":
-    for task_name in RENDERS:
-        prepare(task_name, "secondary-render-substitution", None)
-    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker")):
-        prepare(task_name, mutation, SCRIPTS[mutation])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--only", choices=["secondary-render-substitution", *SCRIPTS])
+    options = parser.parse_args()
+    if not options.only or options.only == "secondary-render-substitution":
+        for task_name in RENDERS:
+            prepare(task_name, "secondary-render-substitution", None)
+    for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent")):
+        if not options.only or options.only == mutation:
+            prepare(task_name, mutation, SCRIPTS[mutation])
