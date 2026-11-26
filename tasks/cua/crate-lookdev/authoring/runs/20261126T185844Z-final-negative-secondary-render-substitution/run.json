@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T18:58:58.898498+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T18:58:59.026627+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-d6720103fb"
+      ],
+      "started_at": "2026-11-26T18:58:59.037518+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T19:05:27.190582+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-d6720103fb"
+      ],
+      "started_at": "2026-11-26T19:05:27.200386+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:27.230208+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-d6720103fb:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T185844Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T19:05:27.238204+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:27.615791+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-d6720103fb"
+      ],
+      "started_at": "2026-11-26T19:05:27.684630+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:27.738783+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-d6720103fb"
+      ],
+      "started_at": "2026-11-26T19:05:27.749677+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T19:05:27.880513+00:00"
     }
   ],
   "nop_definition": null,
@@ -374,5 +428,13 @@
       "sha256": "9c7f6626cec4731441af6d347a0c3f72e2ffc1a1765f556856e4b6192bcecf10",
       "bytes": 1710161
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T19:05:27.890080+00:00"
 }
