@@ -54,6 +54,85 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-product-scaled",
+      "run": "booth-clearance/authoring/runs/20261126T102706Z-final-negative-booth-product-scaled",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_furniture_product_sizes",
+        "R_product_support",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-product-floating",
+      "run": "booth-clearance/authoring/runs/20261126T102712Z-final-negative-booth-product-floating",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_product_support",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-unused-brand-slot",
+      "run": "booth-clearance/authoring/runs/20261126T102720Z-final-negative-booth-unused-brand-slot",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R08_brand_colour",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-closed-opening",
+      "run": "booth-clearance/authoring/runs/20261126T102726Z-final-negative-booth-closed-opening",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_actual_entrance_opening",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-camera-away",
+      "run": "booth-clearance/authoring/runs/20261126T102733Z-final-negative-booth-camera-away",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_visibility",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-booth-missing-secondary-color",
+      "run": "booth-clearance/authoring/runs/20261126T102739Z-final-negative-booth-missing-secondary-color",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_secondary_brand_colour",
+        "R15_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }

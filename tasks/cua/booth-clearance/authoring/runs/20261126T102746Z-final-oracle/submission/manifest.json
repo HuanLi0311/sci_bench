@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3 LTS",
+  "assets": [
+    {
+      "path": "brand/logo.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_entrance.png",
+      "camera": "cam_entrance",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_top.png",
+      "camera": "cam_top",
+      "resolution": [
+        2048,
+        1536
+      ],
+      "samples": 64
+    }
+  ]
+}

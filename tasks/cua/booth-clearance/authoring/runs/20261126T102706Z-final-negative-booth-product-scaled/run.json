@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T10:27:08.254922+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T10:27:08.379334+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-bc573433d9"
+      ],
+      "started_at": "2026-11-26T10:27:08.389665+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T10:27:12.393976+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-bc573433d9"
+      ],
+      "started_at": "2026-11-26T10:27:12.411718+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:27:12.433740+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-bc573433d9:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T102706Z-final-negative-booth-product-scaled/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T10:27:12.440018+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:27:12.666826+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-bc573433d9"
+      ],
+      "started_at": "2026-11-26T10:27:12.692983+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:27:12.716213+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-bc573433d9"
+      ],
+      "started_at": "2026-11-26T10:27:12.730539+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:27:12.806057+00:00"
     }
   ],
   "nop_definition": null,
@@ -186,5 +240,16 @@
       "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
       "bytes": 2518726
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R_furniture_product_sizes",
+    "R_product_support",
+    "R15_anti_cheat",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T10:27:12.815233+00:00"
 }
