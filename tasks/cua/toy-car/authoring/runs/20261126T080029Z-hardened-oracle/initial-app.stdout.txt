@@ -1,0 +1,71 @@
+/app:
+total 16
+drwxr-xr-x 1 root root 4096 Nov 26 05:40 .
+drwxr-xr-x 1 root root 4096 Nov 26 08:00 ..
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 materials
+drwxr-xr-x 2 root root 4096 Nov 26 05:40 out
+
+/app/materials:
+total 32
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 .
+drwxr-xr-x 1 root root 4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root  122 Nov 25 17:59 LICENSE.txt
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 drawings
+drwxrwxrwx 2 root root 4096 Nov 25 18:01 frames
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 silhouettes
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 tables
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 videos
+
+/app/materials/drawings:
+total 12
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 .
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root 2141 Nov 25 17:59 joint_spec.pdf
+
+/app/materials/frames:
+total 136
+drwxrwxrwx 2 root root 4096 Nov 25 18:01 .
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root 4835 Nov 25 18:01 front_00.jpg
+-rwxrwxrwx 1 root root 4820 Nov 25 18:01 front_01.jpg
+-rwxrwxrwx 1 root root 4837 Nov 25 18:01 front_02.jpg
+-rwxrwxrwx 1 root root 4833 Nov 25 18:01 front_03.jpg
+-rwxrwxrwx 1 root root 4836 Nov 25 18:01 front_04.jpg
+-rwxrwxrwx 1 root root 4831 Nov 25 18:01 front_05.jpg
+-rwxrwxrwx 1 root root 4823 Nov 25 18:01 front_06.jpg
+-rwxrwxrwx 1 root root 4820 Nov 25 18:01 front_07.jpg
+-rwxrwxrwx 1 root root 7484 Nov 25 18:01 side_00.jpg
+-rwxrwxrwx 1 root root 7470 Nov 25 18:01 side_01.jpg
+-rwxrwxrwx 1 root root 7484 Nov 25 18:01 side_02.jpg
+-rwxrwxrwx 1 root root 7484 Nov 25 18:01 side_03.jpg
+-rwxrwxrwx 1 root root 7482 Nov 25 18:01 side_04.jpg
+-rwxrwxrwx 1 root root 7480 Nov 25 18:01 side_05.jpg
+-rwxrwxrwx 1 root root 7498 Nov 25 18:01 side_06.jpg
+-rwxrwxrwx 1 root root 7494 Nov 25 18:01 side_07.jpg
+
+/app/materials/silhouettes:
+total 24
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 .
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root  348 Nov 25 18:17 back.png
+-rwxrwxrwx 1 root root  347 Nov 25 18:17 front.png
+-rwxrwxrwx 1 root root  440 Nov 25 18:17 side.png
+-rwxrwxrwx 1 root root  471 Nov 25 18:17 top.png
+
+/app/materials/tables:
+total 16
+drwxrwxrwx 2 root root 4096 Nov 25 17:59 .
+drwxr-xr-x 7 root root 4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root 5040 Nov 25 17:59 car_sizes.xlsx
+
+/app/materials/videos:
+total 32
+drwxrwxrwx 2 root root  4096 Nov 25 17:59 .
+drwxr-xr-x 7 root root  4096 Nov 26 05:40 ..
+-rwxrwxrwx 1 root root  8754 Nov 25 17:56 front.mp4
+-rwxrwxrwx 1 root root 10304 Nov 25 17:59 side.mp4
+
+/app/out:
+total 8
+drwxr-xr-x 2 root root 4096 Nov 26 05:40 .
+drwxr-xr-x 1 root root 4096 Nov 26 05:40 ..
