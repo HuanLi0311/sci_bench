@@ -1,0 +1,13 @@
+{
+    "task": {
+        "path": "."
+    },
+    "trial_name": "crate-lookdev__N6B3zRb",
+    "trials_dir": "/tmp/harbor-jobs/2026-11-25__20-40-40",
+    "agent_setup_timeout_multiplier": 4.0,
+    "agent": {
+        "name": "opencode",
+        "model_name": "opencode/hy4-flash-free"
+    },
+    "job_id": "f6322eb5-3598-4c4b-81a6-d0f373d15a44"
+}

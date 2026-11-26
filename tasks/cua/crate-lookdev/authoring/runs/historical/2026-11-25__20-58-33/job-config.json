@@ -1,0 +1,16 @@
+{
+    "job_name": "2026-11-25__20-58-33",
+    "jobs_dir": "/tmp/harbor-jobs",
+    "agent_setup_timeout_multiplier": 4.0,
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "codex"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "."
+        }
+    ]
+}

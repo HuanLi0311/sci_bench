@@ -1,0 +1,41 @@
+{
+    "id": "7114dd36-490e-45b8-b120-9d95ff87bf75",
+    "started_at": "2026-11-25T20:29:53.995350",
+    "updated_at": "2026-11-25T20:36:25.572769",
+    "finished_at": "2026-11-25T20:36:25.572769",
+    "n_total_trials": 3,
+    "stats": {
+        "n_completed_trials": 3,
+        "n_errored_trials": 3,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "opencode__hy4-flash-free__adhoc": {
+                "n_trials": 0,
+                "n_errors": 3,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {
+                    "2": 0.0
+                },
+                "reward_stats": {},
+                "exception_stats": {
+                    "AgentSetupTimeoutError": [
+                        "crate-lookdev__NVJL4gC",
+                        "crate-lookdev__KmoPru6",
+                        "crate-lookdev__PSUkzv2"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

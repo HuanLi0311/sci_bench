@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "."
+    },
+    "trial_name": "crate-lookdev__QBCAbWD",
+    "trials_dir": "/tmp/harbor-jobs/2026-11-25__20-58-33",
+    "agent_setup_timeout_multiplier": 4.0,
+    "agent": {
+        "name": "codex"
+    },
+    "job_id": "3fed9a82-2270-43a5-be05-105d4709efe0"
+}

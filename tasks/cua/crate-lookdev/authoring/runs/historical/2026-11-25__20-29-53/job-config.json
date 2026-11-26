@@ -1,0 +1,16 @@
+{
+    "jobs_dir": "/tmp/harbor-jobs",
+    "n_attempts": 3,
+    "n_concurrent_trials": 3,
+    "agents": [
+        {
+            "name": "opencode",
+            "model_name": "opencode/hy4-flash-free"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "."
+        }
+    ]
+}

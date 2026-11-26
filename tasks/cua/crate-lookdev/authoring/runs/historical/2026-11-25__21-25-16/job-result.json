@@ -1,0 +1,37 @@
+{
+    "id": "bbbf832e-ad97-46dc-a6d4-c4dd510e425c",
+    "started_at": "2026-11-25T21:25:16.608773",
+    "updated_at": "2026-11-25T21:32:34.981496",
+    "finished_at": "2026-11-25T21:32:34.981496",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 1,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "codex__adhoc": {
+                "n_trials": 0,
+                "n_errors": 1,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {},
+                "exception_stats": {
+                    "RuntimeError": [
+                        "crate-lookdev__mjosVdH"
+                    ]
+                }
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}
