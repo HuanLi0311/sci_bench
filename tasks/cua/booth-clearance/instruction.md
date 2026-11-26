@@ -78,4 +78,12 @@ its corresponding plinth, within 20 mm vertically and within its footprint.
 The brand-colour check measures materials actually used on the inward-facing
 back wall; an unused material slot does not count.
 
+`entrance_zone` is an auxiliary marker and may be either an Empty or a mesh.
+The marker identifies the specified entrance; its display size does not alter
+the required clear zone. Cabinet clearance is measured from the fixed vertical
+opening plane at x=-3 m, -1.2 <= y <= 1.2 m. The actual shell must have the
+2.4 m opening (checked at z=1 m), with wall on both sides. Product visibility
+requires the product centres to lie inside the entrance camera's frame as well
+as have unobstructed sight lines.
+
 You have 7200 seconds to complete this task.
