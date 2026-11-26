@@ -1,0 +1,8 @@
+/app/out:
+total 3004
+drwxr-xr-x 1 root root    4096 Nov 26 18:51 .
+drwxr-xr-x 1 root root    4096 Nov 26 05:41 ..
+-rwxr-xr-x 1 root root    1190 Nov 26 18:51 manifest.json
+-rwxr-xr-x 1 root root  105368 Nov 26 18:51 rainroom.blend
+-rwxr-xr-x 1 root root 1507461 Nov 26 18:51 render_morning.png
+-rwxr-xr-x 1 root root 1441442 Nov 26 18:51 render_night.png

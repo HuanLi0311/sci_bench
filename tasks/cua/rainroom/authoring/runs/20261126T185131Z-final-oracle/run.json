@@ -1,0 +1,284 @@
+{
+  "task": "rainroom",
+  "kind": "oracle",
+  "label": "final",
+  "started_at": "20261126T185131Z",
+  "agent": "reference-publisher",
+  "model": null,
+  "model_steps": 0,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "started_at": "2026-11-26T18:51:32.587096+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:32.733163+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-env"
+      ],
+      "started_at": "2026-11-26T18:51:32.744135+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:32.878065+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-tests"
+      ],
+      "started_at": "2026-11-26T18:51:32.889245+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:33.034817+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-agent-45096defae",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/solution:/solution:ro",
+        "cua-qc-rainroom-env",
+        "sleep",
+        "infinity"
+      ],
+      "started_at": "2026-11-26T18:51:33.056803+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:33.190098+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "cua-evidence-agent-45096defae"
+      ],
+      "started_at": "2026-11-26T18:51:33.223534+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:33.520710+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-45096defae",
+        "blender",
+        "--version"
+      ],
+      "started_at": "2026-11-26T18:51:33.532804+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:33.863507+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-45096defae",
+        "ls",
+        "-laR",
+        "/app"
+      ],
+      "started_at": "2026-11-26T18:51:33.874842+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:34.056351+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-45096defae",
+        "test",
+        "!",
+        "-e",
+        "/tests"
+      ],
+      "started_at": "2026-11-26T18:51:34.067395+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:34.247078+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-45096defae",
+        "bash",
+        "/solution/solve.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T18:51:34.416371+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:34.718680+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-45096defae",
+        "ls",
+        "-laR",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T18:51:34.729643+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:34.927593+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-agent-45096defae:/app/out/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T185131Z-final-oracle/submission"
+      ],
+      "started_at": "2026-11-26T18:51:34.959838+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:35.259387+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-45096defae",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T185131Z-final-oracle/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T185131Z-final-oracle/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T185131Z-final-oracle/verifier:/logs/verifier",
+        "cua-qc-rainroom-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T18:51:35.529229+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:35.767190+00:00"
+    }
+  ],
+  "nop_definition": null,
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "14fb06d4105fd0db89de5036bde8d37bf6c8cfee8227ac1ba31f9238e583ef55",
+      "bytes": 7794
+    },
+    "grade.py": {
+      "sha256": "3861e7c7883c1eab6e5182279eca342f3d9116d538c0991e28a2f114d9e43e03",
+      "bytes": 9959
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "48a136de1c05840f60aef88d43f6b3a9e17437779be85c1229bfe63bd0368b39",
+      "bytes": 2361
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
+      "bytes": 715
+    },
+    "materials/LICENSE.txt": {
+      "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+      "bytes": 61
+    },
+    "materials/drawings/room_plan.png": {
+      "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+      "bytes": 88574
+    },
+    "materials/photos/ref_detail.jpg": {
+      "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+      "bytes": 54191
+    },
+    "materials/photos/ref_morning.jpg": {
+      "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+      "bytes": 71539
+    },
+    "materials/photos/ref_night.jpg": {
+      "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+      "bytes": 62699
+    },
+    "materials/spec/material_spec.pdf": {
+      "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+      "bytes": 2513
+    },
+    "materials/tables/objects.xlsx": {
+      "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+      "bytes": 5921
+    }
+  },
+  "solution_source": {
+    "manifest.json": {
+      "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
+      "bytes": 1190
+    },
+    "rainroom.blend": {
+      "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
+      "bytes": 105368
+    },
+    "rainroom.blend1": {
+      "sha256": "7925307020984ffcb3e8c4f6898e91211655d858900645bd92c30ed26c6a71c2",
+      "bytes": 105514
+    },
+    "render_morning.png": {
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "bytes": 1441442
+    },
+    "solve.sh": {
+      "sha256": "e8e58772fe750d5fbd1dd08b8550f5c767192759c3735b195081f0ceb5295688",
+      "bytes": 429
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {
+    "manifest.json": {
+      "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
+      "bytes": 1190
+    },
+    "rainroom.blend": {
+      "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
+      "bytes": 105368
+    },
+    "render_morning.png": {
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "bytes": 1507461
+    },
+    "render_night.png": {
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "bytes": 1441442
+    }
+  }
+}

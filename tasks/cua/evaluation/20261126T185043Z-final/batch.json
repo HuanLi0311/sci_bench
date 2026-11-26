@@ -123,5 +123,98 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "crate-lookdev",
+      "kind": "negative-crate-disconnected-maps",
+      "run": "crate-lookdev/authoring/runs/20261126T185045Z-final-negative-crate-disconnected-maps",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_pbr_maps",
+        "R08_materials",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "folding-chair",
+      "kind": "negative-chair-common-root-collision",
+      "run": "folding-chair/authoring/runs/20261126T185045Z-final-negative-chair-common-root-collision",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_no_interpenetration",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "folding-chair",
+      "kind": "negative-chair-shared-hinge-collision",
+      "run": "folding-chair/authoring/runs/20261126T185045Z-final-negative-chair-shared-hinge-collision",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_no_interpenetration",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-unused-metal-slot",
+      "run": "rainroom/authoring/runs/20261126T185052Z-final-negative-rain-unused-metal-slot",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-disconnected-metal-shader",
+      "run": "rainroom/authoring/runs/20261126T185052Z-final-negative-rain-disconnected-metal-shader",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-rain-linked-metal-default",
+      "run": "rainroom/authoring/runs/20261126T185059Z-final-negative-rain-linked-metal-default",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R09_materials",
+        "R13_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "toy-car",
+      "kind": "negative-toy-wrong-wheel-parent",
+      "run": "toy-car/authoring/runs/20261126T185059Z-final-negative-toy-wrong-wheel-parent",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_steering",
+        "R14_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ]
 }

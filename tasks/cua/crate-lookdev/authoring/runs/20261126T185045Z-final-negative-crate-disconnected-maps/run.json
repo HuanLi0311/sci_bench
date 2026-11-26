@@ -5,7 +5,7 @@
   "started_at": "20261126T185045Z",
   "agent": "adversarial-input-regrade",
   "model": null,
-  "model_steps": 0,
+  "model_steps": null,
   "commands": [
     {
       "argv": [
@@ -37,6 +37,87 @@
       "started_at": "2026-11-26T18:50:56.622580+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T18:50:56.751985+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-dbb6aaa695",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T185045Z-final-negative-crate-disconnected-maps/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T185045Z-final-negative-crate-disconnected-maps/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T185045Z-final-negative-crate-disconnected-maps/verifier:/logs/verifier",
+        "cua-qc-crate-lookdev-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T18:51:00.154532+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:00.279217+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-dbb6aaa695"
+      ],
+      "started_at": "2026-11-26T18:51:00.289546+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T18:51:30.345497+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-dbb6aaa695"
+      ],
+      "started_at": "2026-11-26T18:51:30.353491+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:30.430412+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-dbb6aaa695:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T185045Z-final-negative-crate-disconnected-maps/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T18:51:30.436627+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:30.919065+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-dbb6aaa695"
+      ],
+      "started_at": "2026-11-26T18:51:30.947449+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:30.989553+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-dbb6aaa695"
+      ],
+      "started_at": "2026-11-26T18:51:30.994877+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T18:51:31.141435+00:00"
     }
   ],
   "nop_definition": null,
@@ -300,5 +381,67 @@
       "sha256": "f839e64b5a657d1aa9881d42d4cc30f7493cf333a7c5e4cc3bd7f719e8f01391",
       "bytes": 1082
     }
-  }
+  },
+  "source_submission": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T074341Z-mutation-crate-disconnected-maps/submission",
+  "submission": {
+    "crate.blend": {
+      "sha256": "68be32cdddeb66b4496d96acd919d4a9d8f86e48ad5616a2905dfe354d79126d",
+      "bytes": 13017514
+    },
+    "crate.blend1": {
+      "sha256": "04505499328cecb060f4651268cf328bb1dba40114df28a44d86321d87ef3d14",
+      "bytes": 13019171
+    },
+    "manifest.json": {
+      "sha256": "02444d32039716eb683b6c5e00280408eb17f5d5c16b508dc59a629ce81e4d3d",
+      "bytes": 1827
+    },
+    "render_back.png": {
+      "sha256": "9494755509dedb8180fcd3798b69407d55b7b58e9355925a1ad85ccf7b533a25",
+      "bytes": 1722469
+    },
+    "render_front.png": {
+      "sha256": "d2d4a5ee27981a71668ac7d041cb4aabf16dcf0988203ecbb83020220831ff2b",
+      "bytes": 1868666
+    },
+    "render_macro.png": {
+      "sha256": "edb1de344f2b2fbc56af32f60dd81b50054c06c8755e3601c0021004c6a6207b",
+      "bytes": 1992194
+    },
+    "render_top.png": {
+      "sha256": "690bb82de81c1e3550379d47043c7a79aaa6416029eed9b107368445395dd7ec",
+      "bytes": 1948077
+    },
+    "textures/iron_basecolor.png": {
+      "sha256": "3714f7f5f077c6f77bbce939bf9fc96ef80730bfdeb9e808664af9321f53489d",
+      "bytes": 3129403
+    },
+    "textures/iron_roughness.png": {
+      "sha256": "5621ecb43e9cfcaa4e0c6c4a69a3fa5f33a43c5afe547439adc0d40c4415b8bd",
+      "bytes": 1964882
+    },
+    "textures/oak_basecolor.png": {
+      "sha256": "f584563f0df5df402e78f65096c4fe328e710e75f23483202803bfbefc9917cc",
+      "bytes": 2288663
+    },
+    "textures/oak_normal.png": {
+      "sha256": "3af6b17c5976714a477283b12ba5788f90aba741b2230d5b8339bc4778b5f5c6",
+      "bytes": 3414606
+    },
+    "textures/oak_roughness.png": {
+      "sha256": "9c7f6626cec4731441af6d347a0c3f72e2ffc1a1765f556856e4b6192bcecf10",
+      "bytes": 1710161
+    }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R07_pbr_maps",
+    "R08_materials",
+    "R13_render_authenticity",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T18:51:31.148703+00:00"
 }
