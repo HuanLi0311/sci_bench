@@ -17,7 +17,7 @@ import time
 import tomllib
 import uuid
 
-from record_baselines import ROOT, inventory, record
+from record_baselines import ROOT, TASKS, inventory, record
 
 TASK = ROOT / "booth-clearance"
 MODEL = "gpt-6.1-sol"
@@ -46,9 +46,12 @@ def count_steps(directory):
 
 
 def main():
+    global TASK
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--smoke", action="store_true", help="Runtime-only model/tool smoke, no task materials or grading")
+    parser.add_argument("--task", choices=TASKS, default="booth-clearance", help="Task to run; preserves the original booth default")
     options = parser.parse_args()
+    TASK = ROOT / options.task
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run = (ROOT / "evaluation" / (stamp + "-codex-runtime-smoke")) if options.smoke else TASK / "authoring" / "runs" / (stamp + "-model-codex-terminal")
     run.mkdir(parents=True)
@@ -79,10 +82,17 @@ Original instruction follows verbatim:
     (run / "prompt.txt").write_text(prompt)
     if not options.smoke:
         shutil.copy2(TASK / "instruction.md", run / "instruction.md")
+        shutil.copytree(TASK / "environment/materials", run / "input-materials")
+        shutil.copytree(TASK / "tests", run / "grader-source", ignore=shutil.ignore_patterns("__pycache__"))
     effective = {"model_identifier": MODEL, "provider_label": provider, "reasoning_effort": EFFORT, "agent": "Codex terminal baseline", "cli_version": "0.172.0", "timeout_seconds": timeout, "approval": "never (externally isolated Docker)", "sandbox": "danger-full-access inside container only", "gui_compliant": False, "network": "Docker bridge; no host repository, Docker socket, solution/tests/authoring mounts", "credentials": "private minimal provider config; values omitted; never archived", "materials": inventory(TASK / "environment" / "materials"), "instruction_sha256": hashlib.sha256(instructions.encode()).hexdigest()}
     (run / "config.json").write_text(json.dumps(effective, indent=2) + "\n")
     effective["purpose"] = "runtime smoke without task assets" if options.smoke else "blind terminal baseline"
     effective["multi_agent"] = False
+    effective["task"] = options.task
+    effective["cpus"] = 4
+    effective["memory_mb"] = 8192
+    if not options.smoke:
+        effective["grader_source"] = inventory(run / "grader-source")
     effective["runtime_binaries"] = {p.name: {"bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()} for p in BINARY.parent.iterdir() if p.is_file()}
     if options.smoke:
         effective["materials"] = {}
@@ -99,7 +109,7 @@ Original instruction follows verbatim:
         temporary_index = index_path.with_suffix(".json.tmp")
         temporary_index.write_text(json.dumps(index, indent=2) + "\n")
         temporary_index.replace(index_path)
-    container = "cua-booth-model-" + uuid.uuid4().hex[:10]
+    container = "cua-" + options.task + "-model-" + uuid.uuid4().hex[:10]
 
     def scrub(text):
         return text.replace(secret, "[REDACTED_PRIVATE_CREDENTIAL]")
@@ -128,7 +138,7 @@ Original instruction follows verbatim:
             private_config = Path(private_dir) / "config.toml"
             private_config.write_text(f'model = {json.dumps(MODEL)}\nmodel_provider = {json.dumps(provider)}\nmodel_reasoning_effort = "high"\n[model_providers.{provider}]\n' + "\n".join(f'{key} = {json.dumps(value)}' for key, value in provider_config.items()) + "\n")
             private_config.chmod(0o600)
-            image = "blender-bench:gui" if options.smoke else "cua-qc-booth-clearance-env"
+            image = "blender-bench:gui" if options.smoke else f"cua-qc-{options.task}-env"
             command(["docker", "image", "inspect", image], "environment-image")
             if command(["docker", "create", "--name", container, "--cpus", "4", "--memory", "8g", "--env", "CODEX_HOME=/run/codex-home", image, "sleep", "infinity"], "container-create"):
                 raise RuntimeError("model container creation failed")
@@ -141,12 +151,21 @@ Original instruction follows verbatim:
             if not options.smoke:
                 command(["docker", "cp", str(TASK / "instruction.md"), container + ":/app/instruction.md"], "supply-instruction")
             command(["docker", "exec", container, "ls", "-laR", "/app"], "initial-app")
+            if not options.smoke:
+                probe = 'import pathlib,hashlib,json; root=pathlib.Path("/app/materials"); print(json.dumps({"materials":{str(p.relative_to(root)):{"sha256":hashlib.sha256(p.read_bytes()).hexdigest(),"bytes":p.stat().st_size} for p in sorted(root.rglob("*")) if p.is_file()},"output_files":[str(p) for p in pathlib.Path("/app/out").rglob("*") if p.is_file()],"forbidden_paths":{p:pathlib.Path(p).exists() for p in ["/solution","/tests","/authoring","/app/solution","/app/tests","/app/authoring"]}}))'
+                if command(["docker", "exec", container, "python3", "-c", probe], "input-isolation"):
+                    raise RuntimeError("input/isolation probe failed")
+                isolation = json.loads((run / "input-isolation.stdout.txt").read_text())
+                inspection = json.loads(subprocess.check_output(["docker", "inspect", container]))[0]
+                safe_inspection = {"image_id": inspection["Image"], "mounts": inspection["Mounts"], "environment_variable_names": [v.split("=", 1)[0] for v in inspection["Config"]["Env"]], "working_directory": inspection["Config"]["WorkingDir"]}
+                (run / "container-isolation.json").write_text(json.dumps(safe_inspection, indent=2) + "\n")
+                if isolation["materials"] != effective["materials"] or isolation["output_files"] or any(isolation["forbidden_paths"].values()) or safe_inspection["mounts"]:
+                    raise RuntimeError("agent material mismatch, nonempty output, or forbidden mounted/reference path")
             command(["docker", "exec", container, "codex", "--version"], "codex-version")
             state["agent_started_at"] = now()
             state["agent_exit_code"] = command(["docker", "exec", "-i", container, "codex", "exec", "--json", "--color", "never", "--dangerously-bypass-approvals-and-sandbox", "--skip-git-repo-check", "-C", "/app", "-m", MODEL, "-c", 'model_reasoning_effort="high"', "-c", "features.multi_agent=false", "-o", "/app/model-final.txt", "-"], "agent-events", prompt, timeout)
             state["agent_finished_at"] = now()
-            if state["agent_exit_code"] == 124:
-                command(["docker", "stop", "--time", "5", container], "stop-timed-out-agent")
+            command(["docker", "stop", "--time", "5", container], "freeze-agent-output")
             private_rollout = Path(private_dir) / "raw-rollout"
             command(["docker", "cp", container + ":/run/codex-home/sessions", str(private_rollout)], "collect-rollout")
             for path in private_rollout.rglob("*.jsonl"):
@@ -154,6 +173,7 @@ Original instruction follows verbatim:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(scrub(path.read_text()))
             command(["docker", "cp", container + ":/app/out", str(run / "submission")], "collect-submission")
+            state["submission"] = inventory(run / "submission")
             private_message = Path(private_dir) / "model-final.txt"
             command(["docker", "cp", container + ":/app/model-final.txt", str(private_message)], "collect-model-final")
             if private_message.exists():
@@ -161,10 +181,23 @@ Original instruction follows verbatim:
             state["steps"] = count_steps(run / "raw-rollout")
             (run / "step-counts.json").write_text(json.dumps(state["steps"], indent=2) + "\n")
             if not options.smoke and (run / "submission").is_dir():
-                grading = record("booth-clearance", "model-regrade", "final", run / "submission")
+                grading = record(options.task, "model-regrade", "final", run / "submission", run / "grader-source")
                 grade = json.loads((grading / "run.json").read_text())
                 state.update({"grading_run": str(grading.relative_to(ROOT)), "reward": grade.get("reward"), "grading_outcome": grade.get("outcome")})
+                state["submission_unchanged_after_grading"] = inventory(run / "submission") == state["submission"]
+                if not state["submission_unchanged_after_grading"]:
+                    raise RuntimeError("original model submission changed during grading")
             state["outcome"] = "agent-timeout" if state["agent_exit_code"] == 124 else ("agent-error" if state["agent_exit_code"] else ("smoke-completed-requires-tool-review" if options.smoke else ("terminal-artifact-pass-not-gui-compliant" if state.get("reward") == 1 else "task-failure")))
+            if state["agent_exit_code"] not in (0, 124):
+                events = [json.loads(line) for line in (run / "agent-events.stdout.txt").read_text().splitlines() if line.startswith("{")]
+                failures = [event.get("error", {}).get("message", event.get("message", "")) for event in events if event.get("type") in ("error", "turn.failed")]
+                terminal_error = failures[-1] if failures else ""
+                lowered = terminal_error.lower()
+                if "429" in lowered or "rate limit" in lowered or "too many requests" in lowered:
+                    state["outcome"] = "api-rate-limited"
+                elif "insufficient_quota" in lowered or "quota" in lowered or "credit" in lowered:
+                    state["outcome"] = "api-quota-exhausted"
+                state["terminal_error"] = terminal_error
     except Exception as exc:
         state["outcome"] = "harness-error"
         state["error"] = scrub(repr(exc))
