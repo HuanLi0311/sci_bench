@@ -264,6 +264,7 @@ def check_negative(t):
                 "negative-booth-missing-secondary-color": "R_secondary_brand_colour",
                 "negative-crate-disconnected-maps": "R07_pbr_maps",
                 "negative-chair-common-root-collision": "R07_no_interpenetration",
+                "negative-chair-shared-hinge-collision": "R07_no_interpenetration",
                 "negative-toy-wrong-wheel-parent": "R07_steering",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
