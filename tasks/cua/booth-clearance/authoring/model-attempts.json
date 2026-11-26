@@ -82,7 +82,7 @@
                                                                 },
                                                   "instruction_sha256":  "bd02af7ab344bd5450cf29f32e52d1b79bc3dca4609951069cb45e04c7b9d218"
                                               },
-                         "outcome":  "task-failure",
+                         "outcome":  "infrastructure-failure",
                          "reward":  0,
                          "raw_rollout_path":  "tasks/cua/booth-clearance/authoring/runs/20261126T082850Z-model-codex-terminal/raw-rollout",
                          "trajectory_format":  "Codex raw JSONL plus CLI --json events",

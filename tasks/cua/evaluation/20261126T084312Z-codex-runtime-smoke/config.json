@@ -1,0 +1,27 @@
+{
+  "model_identifier": "gpt-6.1-sol",
+  "provider_label": "oneton",
+  "reasoning_effort": "high",
+  "agent": "Codex terminal baseline",
+  "cli_version": "0.172.0",
+  "timeout_seconds": 600,
+  "approval": "never (externally isolated Docker)",
+  "sandbox": "danger-full-access inside container only",
+  "gui_compliant": false,
+  "network": "Docker bridge; no host repository, Docker socket, solution/tests/authoring mounts",
+  "credentials": "private minimal provider config; values omitted; never archived",
+  "materials": {},
+  "instruction_sha256": null,
+  "purpose": "runtime smoke without task assets",
+  "multi_agent": false,
+  "runtime_binaries": {
+    "codex-code-mode-host": {
+      "bytes": 69339672,
+      "sha256": "1800682c85429ff546b23a1aa96b5c1405fe74ac6743690d89d6dc5cfaf3b4f1"
+    },
+    "codex": {
+      "bytes": 321244472,
+      "sha256": "ad83b94c093f0cdd8176a6bc8005a461bdf23a759863e157d40f562b8a9d664d"
+    }
+  }
+}

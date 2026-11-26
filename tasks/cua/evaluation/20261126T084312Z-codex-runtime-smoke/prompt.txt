@@ -1,0 +1,1 @@
+Runtime smoke only. No benchmark task or assets are supplied. Do not spawn agents. Use the terminal tool to execute /bin/pwd and /bin/true. Report both actual results and SMOKE_TOOL_OK only if both really execute successfully. Do not merely describe the commands. Do not read credentials or configuration files.

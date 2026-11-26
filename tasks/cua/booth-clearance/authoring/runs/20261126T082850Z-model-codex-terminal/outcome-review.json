@@ -1,0 +1,10 @@
+{
+    "agent_steps":  21,
+    "raw_outcome_preserved":  "task-failure in original trial.json",
+    "gui_compliant":  false,
+    "tool_calls":  18,
+    "reason":  "Codex native binary was copied without the required codex-code-mode-host companion; all attempted terminal operations failed before task materials could be read.",
+    "reward":  0,
+    "model_capability_result":  false,
+    "classification":  "infrastructure-failure"
+}

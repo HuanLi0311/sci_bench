@@ -1,0 +1,60 @@
+[
+    {
+        "Architecture": "amd64",
+        "Config": {
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Entrypoint": [
+                "/usr/local/bin/entrypoint"
+            ],
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONIOENCODING=utf-8",
+                "DISPLAY=:1",
+                "LIBGL_ALWAYS_SOFTWARE=1",
+                "XDG_RUNTIME_DIR=/tmp/runtime-root"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "WorkingDir": "/work"
+        },
+        "Created": "2026-11-25T18:30:07.482978472+08:00",
+        "Descriptor": {
+            "digest": "sha256:210d1ac38c39509a58d74df77a21ead78d64396f16cc0a61bc08fc09813cacdf",
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "size": 2502
+        },
+        "Id": "sha256:210d1ac38c39509a58d74df77a21ead78d64396f16cc0a61bc08fc09813cacdf",
+        "Metadata": {
+            "LastTagTime": "2026-11-25T10:30:07.61755921Z"
+        },
+        "Os": "linux",
+        "Parent": "sha256:41fdb08fb6cde49b88c36b4c3915ca23ec46041eb87809a1dd8018e4ac468bfa",
+        "RepoDigests": [
+            "blender-bench@sha256:210d1ac38c39509a58d74df77a21ead78d64396f16cc0a61bc08fc09813cacdf"
+        ],
+        "RepoTags": [
+            "blender-bench:gui"
+        ],
+        "RootFS": {
+            "Layers": [
+                "sha256:369ede38a92da8cd72a76f15f37e496def401830f3c8b7d39c0c7695682a51ce",
+                "sha256:fb6863d5987e22dc5ad1ccbed055b720feedd0dea9536ee69d0a6a64c04ec377",
+                "sha256:beb5f5baf7a095afa79ee47749e08c663627f1026309047e3c0d6828900cdbd5",
+                "sha256:a549ebf7a5604d60aeffa74f06749575c137ac440d12ba098cb3e0a236b53214",
+                "sha256:240df5b20dc5d024c48e013b548eb5bc1b63f71e9049a7e8656a85b08b4acdd5",
+                "sha256:f22336085573de306b1deab22dfc6958bf78101016afad07cba674c73ff6ec00",
+                "sha256:f3f55e46cda0e5c9e23e511abd7f787c1071d9dc6c380cb2f8369031d6ffc3dc",
+                "sha256:5ce9e8d719c57a32ef88adce6e4ad7018824a166f740767fffaa3d378734affc",
+                "sha256:da87a795f7d2519f14eb6eab9c32d6b23dfce922ca49a6f43b3e771281ff7407",
+                "sha256:a8dcde1488ba10a82ce123899ed4f474b1cf4106f69989557f5a7ff47475c7ac"
+            ],
+            "Type": "layers"
+        },
+        "Size": 1198281709
+    }
+]
