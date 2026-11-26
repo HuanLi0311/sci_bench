@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "booth-camera-away",
+  "task": "booth-clearance",
+  "started_at": "20261126T102407Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T102407Z-mutation-booth-camera-away:/mutation",
+    "cua-qc-booth-clearance-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/booth.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "a66651864ad4825cd72de0c63a1c9a2d178ae0100cda6e16c218f1f2f3b7adef",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T10:24:10.721958+00:00"
+}

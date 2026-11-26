@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "booth-closed-opening",
+  "task": "booth-clearance",
+  "started_at": "20261126T102403Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T102403Z-mutation-booth-closed-opening:/mutation",
+    "cua-qc-booth-clearance-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/booth.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "9b1616e350d84ee21b47711549d06436482b68d6022875c691fd3b1c956b0502",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T10:24:07.430380+00:00"
+}

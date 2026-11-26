@@ -1,0 +1,6 @@
+{
+  "source": "booth-clearance/authoring/runs/20261126T074326Z-mutation-secondary-render-substitution/submission/render_top.png",
+  "source_sha256": "96ff394c1f0b0aef0fbe5fb0a6de6a7779d2a8ff60743d2b042fb264c012a9d4",
+  "target_sha256": "96ff394c1f0b0aef0fbe5fb0a6de6a7779d2a8ff60743d2b042fb264c012a9d4",
+  "reason": "Keep exactly the same solid-color counterexample PNG while using the corrected reference scene/colors"
+}

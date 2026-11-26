@@ -312,7 +312,9 @@
         "cua-qc-booth-clearance-env",
         "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/environment"
       ],
-      "started_at": "2026-11-26T10:23:17.485307+00:00"
+      "started_at": "2026-11-26T10:23:17.485307+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T10:23:46.047932+00:00"
     }
   ],
   "color_probes": [
@@ -376,5 +378,6 @@
       "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
       "bytes": 88811
     }
-  }
+  },
+  "finished_at": "2026-11-26T10:24:14.477986+00:00"
 }
