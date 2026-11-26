@@ -1,0 +1,127 @@
+{
+  "started_at": "20261126T085513Z",
+  "label": "final",
+  "grader_sources": {
+    "crate-lookdev": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "8fe6f62f0efb11c265356b93335b9a127b2965cbbe0eadba57ace361b8285f87",
+        "bytes": 11559
+      },
+      "grade.py": {
+        "sha256": "ba4d73a7edc4df65b29796a1c7b98627e3a94781ebcbf30b5639b455020d4462",
+        "bytes": 16604
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "8c9dd4f2057ff14d298a0acda74bffbb0e0f0688da7b206d41010e15697afe7f",
+        "bytes": 3119
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "folding-chair": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "3f211e77a364e619d57c43a0041965efaa7641c591114a4985be6c7b0ed5ec47",
+        "bytes": 6501
+      },
+      "grade.py": {
+        "sha256": "701642000bd129d440890845c5496c0cbf89e22c5465a80c8bf339b23078f260",
+        "bytes": 10237
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "d8958baf0b4af4e2993c8ea534fc77debc6d4a4481ed671d9b76d03c634e2149",
+        "bytes": 2028
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "rainroom": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
+        "bytes": 5918
+      },
+      "grade.py": {
+        "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
+        "bytes": 9627
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+        "bytes": 2291
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "toy-car": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "a5870f6ba1a728ca0c7057a47cdbe54eb527240934597118002671da5127f1f3",
+        "bytes": 6578
+      },
+      "grade.py": {
+        "sha256": "2e884f0fae9535646de7092d7d340d07caad5d6c763acadfee31ff34e7a9f9ec",
+        "bytes": 10616
+      },
+      "reference/silhouettes/back.png": {
+        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
+        "bytes": 348
+      },
+      "reference/silhouettes/front.png": {
+        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
+        "bytes": 347
+      },
+      "reference/silhouettes/side.png": {
+        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
+        "bytes": 440
+      },
+      "reference/silhouettes/top.png": {
+        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
+        "bytes": 471
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a85a9b10aca45a22cda7de9dc50244afe32d3da9ac6acf188ff452ae33684f35",
+        "bytes": 2407
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  "runs": []
+}
