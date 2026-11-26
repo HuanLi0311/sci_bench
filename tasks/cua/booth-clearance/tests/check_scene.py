@@ -107,7 +107,15 @@ def main():
     for mat in bpy.data.materials:
         info = {"name": mat.name, "basecolor": None, "images": []}
         if mat.use_nodes:
-            b = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
+            nodes = mat.node_tree.nodes
+            active, pending = set(), [n for n in nodes if n.type == 'OUTPUT_MATERIAL' and n.is_active_output]
+            while pending:
+                node = pending.pop()
+                if node in active:
+                    continue
+                active.add(node)
+                pending.extend(link.from_node for link in mat.node_tree.links if link.to_node == node)
+            b = next((n for n in nodes if n.type == 'BSDF_PRINCIPLED' and n in active), None)
             if b is not None:
                 info["basecolor"] = list(b.inputs["Base Color"].default_value)[:3]
                 info["metallic"] = float(b.inputs["Metallic"].default_value)
@@ -201,20 +209,31 @@ def main():
             vis[pname] = (hit is None) or hit
     rep["visible_from_entrance"] = vis
 
-    # brand colour on the shell
-    shell_mats = rep["objects"].get("booth_shell", {}).get("materials") or []
-    best = None
-    for m in shell_mats:
-        if not m:
-            continue
-        bc = rep["materials"].get(m, {}).get("basecolor")
-        if bc is None:
-            continue
-        delta = max(abs(bc[i] - PRIMARY[i]) * 255 for i in range(3))
-        if best is None or delta < best[1]:
-            best = (m, delta)
-    rep["brand_delta"] = best[1] if best else None
-    rep["brand_material"] = best[0] if best else None
+    # Measure material actually assigned to the inward-facing back wall.
+    # An unused green material slot must not authenticate a differently coloured wall.
+    shell = bpy.data.objects.get("booth_shell")
+    weighted_delta, area, used = 0.0, 0.0, set()
+    if shell is not None:
+        deps = bpy.context.evaluated_depsgraph_get()
+        evaluated = shell.evaluated_get(deps)
+        mesh = evaluated.to_mesh()
+        normal_matrix = evaluated.matrix_world.to_3x3().inverted().transposed()
+        for polygon in mesh.polygons:
+            center = evaluated.matrix_world @ polygon.center
+            normal = (normal_matrix @ polygon.normal).normalized()
+            if center.x < 2.95 or center.z < 0.05 or normal.x > -0.9:
+                continue
+            mat = mesh.materials[polygon.material_index] if polygon.material_index < len(mesh.materials) else None
+            color = rep["materials"].get(mat.name, {}).get("basecolor") if mat else None
+            delta = max(abs(color[i] - PRIMARY[i]) * 255 for i in range(3)) if color else 255.0
+            weighted_delta += polygon.area * delta
+            area += polygon.area
+            if mat:
+                used.add(mat.name)
+        evaluated.to_mesh_clear()
+    rep["brand_delta"] = weighted_delta / area if area > 0 else None
+    rep["brand_material"] = sorted(used)
+    rep["brand_back_wall_area"] = area
 
     rep["required_present"] = {n: (n in bpy.data.objects) for n in PANELS}
     rep["has_lighting"] = any(o.type == 'LIGHT' for o in bpy.data.objects) and         ("lighting" in bpy.data.objects)
