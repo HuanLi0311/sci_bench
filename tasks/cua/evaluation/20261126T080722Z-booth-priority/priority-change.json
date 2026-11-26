@@ -1,0 +1,18 @@
+{
+  "time_utc": "2026-11-26T08:07:22.513233+00:00",
+  "reason": "User requested booth-clearance first; no WSL restart; final verifier containers preserved",
+  "processes": [
+    {
+      "pid": 1225668,
+      "argv": [
+        "python3",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/tools/record_final.py",
+        "--jobs",
+        "3"
+      ],
+      "signal": "SIGSTOP",
+      "meaning": "Pause scheduling only; child verifiers keep running; resume with SIGCONT"
+    }
+  ],
+  "cancelled_runs": []
+}

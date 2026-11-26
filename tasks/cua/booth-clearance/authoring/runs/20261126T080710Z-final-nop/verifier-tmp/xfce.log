@@ -1,0 +1,45 @@
+
+(xfce4-session:20): dbind-WARNING **: 08:07:14.782: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+dbus-daemon[19]: [session uid=0 pid=19] Activating service name='org.xfce.Xfconf' requested by ':1.1' (uid=0 pid=20 comm="xfce4-session" label="kernel")
+dbus-daemon[19]: [session uid=0 pid=19] Successfully activated service 'org.xfce.Xfconf'
+/usr/bin/iceauth:  creating new authority file /tmp/runtime-root/ICEauthority
+
+(xfce4-session:20): xfce4-session-WARNING **: 08:07:14.823: No GPG agent found
+
+(xfce4-session:20): xfce4-session-WARNING **: 08:07:14.838: No SSH authentication agent found
+
+(xfwm4:33): dbind-WARNING **: 08:07:14.871: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfwm4:33): xfwm4-WARNING **: 08:07:16.247: Another compositing manager is running on screen 0
+
+(xfsettingsd:38): dbind-WARNING **: 08:07:16.296: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfsettingsd:38): libupower-glib-WARNING **: 08:07:16.308: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(xfce4-panel:42): dbind-WARNING **: 08:07:16.442: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(migrate:48): dbind-WARNING **: 08:07:16.480: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:47): dbind-WARNING **: 08:07:16.492: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop:57): dbind-WARNING **: 08:07:16.562: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:57): WARNING **: 08:07:16.748: Thumbnailer failed calling GetFlavors
+
+(xfdesktop:57): GLib-GObject-CRITICAL **: 08:07:16.749: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(xfsettingsd:85): dbind-WARNING **: 08:07:16.789: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:57): WARNING **: 08:07:16.879: Failed to get system bus: Could not connect: No such file or directory
+xfce4-panel-Message: 08:07:17.010: Plugin "(null)-7" was not found and has been removed from the configuration
+xfce4-panel-Message: 08:07:17.021: Plugin "power-manager-plugin-9" was not found and has been removed from the configuration
+xfce4-panel-Message: 08:07:17.022: Plugin "notification-plugin-10" was not found and has been removed from the configuration
+
+(wrapper-2.0:98): dbind-WARNING **: 08:07:17.063: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+libclock-Message: 08:07:17.066: could not get proxy for org.freedesktop.login1
+
+(xfce4-panel:42): libclock-WARNING **: 08:07:17.066: could not instantiate a sleep monitor
+
+(wrapper-2.0:99): dbind-WARNING **: 08:07:17.071: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:106): dbind-WARNING **: 08:07:17.219: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files

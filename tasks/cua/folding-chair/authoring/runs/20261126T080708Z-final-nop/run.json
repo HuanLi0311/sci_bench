@@ -92,6 +92,136 @@
       "started_at": "2026-11-26T08:07:11.204618+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:07:11.393203+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-4cd88a332b",
+        "test",
+        "!",
+        "-e",
+        "/tests"
+      ],
+      "started_at": "2026-11-26T08:07:11.406071+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:11.594681+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-4cd88a332b",
+        "/bin/true"
+      ],
+      "started_at": "2026-11-26T08:07:11.608673+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:11.790742+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-4cd88a332b",
+        "ls",
+        "-laR",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T08:07:11.802019+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:11.996540+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-agent-4cd88a332b:/app/out/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T080708Z-final-nop/submission"
+      ],
+      "started_at": "2026-11-26T08:07:12.010892+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:12.102178+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-4cd88a332b",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T080708Z-final-nop/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T080708Z-final-nop/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T080708Z-final-nop/verifier:/logs/verifier",
+        "cua-qc-folding-chair-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T08:07:12.158515+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:12.287996+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-4cd88a332b"
+      ],
+      "started_at": "2026-11-26T08:07:12.298163+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T08:07:15.913010+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-4cd88a332b"
+      ],
+      "started_at": "2026-11-26T08:07:15.945047+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:16.002334+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-4cd88a332b:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/folding-chair/authoring/runs/20261126T080708Z-final-nop/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:07:16.018005+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:16.469982+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-4cd88a332b"
+      ],
+      "started_at": "2026-11-26T08:07:16.518591+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:16.819989+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-4cd88a332b"
+      ],
+      "started_at": "2026-11-26T08:07:16.844448+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:07:16.976342+00:00"
     }
   ],
   "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out",
@@ -152,4 +282,40 @@
       "bytes": 78553
     },
     "materials/photos/ref_locked.jpg": {
-   
+      "sha256": "56d502be37078afb5955284e079dc3d6f79fb25ff3a89dc6e664e1a03eaa91d1",
+      "bytes": 68350
+    },
+    "materials/photos/ref_unfolded.jpg": {
+      "sha256": "8beb5f37000021b2140b857efb0d0ad8dd55774a1a27bc50c5d05db58c49a75e",
+      "bytes": 68350
+    },
+    "materials/tables/chair_sizes.xlsx": {
+      "sha256": "bf7fe1192bc196420e9551fab7a23bcb522e0d6d42dc0e2ed564a8aec2d3882e",
+      "bytes": 5027
+    },
+    "materials/tables/hinge_layout.xlsx": {
+      "sha256": "0d632ba1c71e2214db4485b4059baf694b0e30b4cb56dab1376a6e1b0311125b",
+      "bytes": 5016
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_parts",
+    "R03_hinges",
+    "R04_unfolded",
+    "R05_folded_thickness",
+    "R06_animation",
+    "R08_hinge_coincidence",
+    "R09_states",
+    "R11_polys",
+    "R12_manifest",
+    "R13_anti_cheat",
+    "R_all_render_authenticity"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T08:07:16.990464+00:00"
+}
