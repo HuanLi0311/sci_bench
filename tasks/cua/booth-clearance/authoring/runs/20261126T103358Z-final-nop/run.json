@@ -309,4 +309,42 @@
       "sha256": "11a895ffebb5afa0b76dd4cded6f07c08db5e9cb45f4a08ba91bfb7e4b7ec627",
       "bytes": 93999
     },
-    "materials/photos/ref
+    "materials/photos/ref_products.jpg": {
+      "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
+      "bytes": 88811
+    },
+    "materials/tables/furniture_list.xlsx": {
+      "sha256": "b6f8fa972672aabfd159df130ec11d022e047c46d221077e02ec11a8422be6a0",
+      "bytes": 5076
+    },
+    "materials/tables/product_sizes.xlsx": {
+      "sha256": "63869b305d13fc2b064d6d401938cff676a9d2ce6ebfd2bb3254781c9649935e",
+      "bytes": 5075
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_objects",
+    "R03_size",
+    "R05_entrance_clearance",
+    "R07_visibility",
+    "R08_brand_colour",
+    "R12_polys",
+    "R13_entrance_render",
+    "R14_manifest",
+    "R_furniture_product_sizes",
+    "R_product_support",
+    "R_actual_entrance_opening",
+    "R_secondary_brand_colour",
+    "R15_anti_cheat",
+    "R16_deliverables",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T10:34:05.101912+00:00"
+}
