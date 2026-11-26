@@ -29,7 +29,7 @@ data = {"blender_version": bpy.app.version_string, "active_scene": bpy.context.s
         "scene_names": [s.name for s in bpy.data.scenes],
         "entrance_zone": describe(marker) if marker else None,
         "related_objects": [describe(o) for o in bpy.data.objects if o is not marker and
-                            ("entrance" in o.name.lower() or (marker is not None and marker in o.parent_recursive))],
+                            ("entrance" in o.name.lower() or (marker is not None and o in marker.children_recursive))],
         "booth_shell": describe(shell) if shell else None}
 with open(sys.argv[sys.argv.index("--") + 1], "w") as f:
     json.dump(data, f, indent=2)
