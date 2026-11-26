@@ -179,14 +179,17 @@
                                                                        }
                                               },
                          "outcome":  "api-rate-limited",
-                         "reward":  0,
+                         "reward":  1,
                          "raw_rollout_path":  "tasks/cua/booth-clearance/authoring/runs/20261126T084651Z-model-codex-terminal/raw-rollout",
                          "trajectory_format":  "Codex raw JSONL plus CLI --json events",
                          "step_definition":  "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates.",
                          "agent_steps":  88,
                          "tool_calls":  73,
-                         "grading_run":  "booth-clearance/authoring/runs/20261126T091958Z-final-model-regrade",
-                         "cli_exit_code":  1
+                         "grading_run":  "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade",
+                         "cli_exit_code":  1,
+                         "original_reward":  0,
+                         "original_grading_run":  "booth-clearance/authoring/runs/20261126T091958Z-final-model-regrade",
+                         "artifact_result":  "pass-current-verifier-22-of-22"
                      }
                  ]
 }

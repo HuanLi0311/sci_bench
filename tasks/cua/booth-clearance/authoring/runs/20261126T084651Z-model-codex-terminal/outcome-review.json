@@ -10,5 +10,8 @@
     "budget_was_artificially_shortened":  false,
     "reason":  "Codex exited 1 after the provider returned 429 Too Many Requests and the CLI exhausted retries.",
     "gui_compliant":  false,
-    "agent_steps":  88
+    "agent_steps":  88,
+    "latest_artifact_reward":  1,
+    "latest_grading_run":  "tasks/cua/booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade",
+    "reassessment":  "The same unchanged saved artifact passes all 22 checks after correcting legitimate Empty-marker and sRGB material handling. Original grade/reward files are preserved. The model CLI still ended due to provider 429 and this terminal baseline is not GUI compliant."
 }
