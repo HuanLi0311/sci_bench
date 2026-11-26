@@ -6,8 +6,6 @@ Exit 0 -> reward 1. Detail goes to stdout and /logs/verifier/metrics.json.
 import json
 import tempfile
 import traceback
-import tempfile
-import traceback
 import math
 import os
 import shutil
@@ -21,19 +19,11 @@ from PIL import Image
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
 WORK = tempfile.mkdtemp(prefix="cua-verifier-")
-WORK = tempfile.mkdtemp(prefix="cua-verifier-")
 
 
 def add(cid, level, ok, detail=""):
     CHECKS.append({"id": cid, "level": level, "pass": bool(ok), "detail": str(detail)})
     return ok
-
-
-def _log_process(cmd, result):
-    os.makedirs("/logs/verifier", exist_ok=True)
-    with open("/logs/verifier/blender-processes.jsonl", "a") as f:
-        f.write(json.dumps({"command": cmd, "returncode": result.returncode,
-                            "stdout": result.stdout, "stderr": result.stderr}) + "\n")
 
 
 def _log_process(cmd, result):
@@ -231,23 +221,6 @@ def main():
             filename = "render_" + view + ".png"
             trusted = Image.open(os.path.join(WORK, filename)).convert("RGB")
             delivered = Image.open(os.path.join(out, filename)).convert("RGB").resize(trusted.size, Image.Resampling.LANCZOS)
-            a = np.asarray(trusted, np.float32)
-            b = np.asarray(delivered, np.float32)
-            # Check each colour channel: grayscale alone misses colour substitutions.
-            compare = globals().get("ss_img") or globals().get("ss")
-            view_scores[view] = min(compare(a[..., c], b[..., c]) for c in range(3))
-        views_ok = all(np.isfinite(v) and v >= 0.90 for v in view_scores.values())
-    except Exception as exc:
-        views_ok = False
-        view_scores["error"] = str(exc)
-    add("R_all_render_authenticity", "critical", views_ok, view_scores)
-
-    view_scores = {}
-    try:
-        for view in ['entrance', 'top']:
-            filename = "render_" + view + ".png"
-            trusted = Image.open(os.path.join(WORK, filename)).convert("RGB")
-            delivered = Image.open(os.path.join(out, filename)).convert("RGB").resize(trusted.size, Image.Resampling.LANCZOS)
             a, b = np.asarray(trusted, np.float32), np.asarray(delivered, np.float32)
             compare = globals().get("ss_img") or globals().get("ss")
             view_scores[view] = min(compare(a[..., c], b[..., c]) for c in range(3))
@@ -276,16 +249,9 @@ def main():
 
 if __name__ == "__main__":
     try:
-        try:
         sys.exit(main())
     except Exception as exc:
         traceback.print_exc(file=sys.stderr)
         CHECKS.append({"id": "R_verifier_error", "level": "must", "pass": False, "detail": str(exc)})
         print(json.dumps({"reward": 0, "must_pass": False, "critical_pass": False, "normal_rate": 0, "checks": CHECKS}, indent=1))
-        sys.exit(1)
-    except Exception as exc:
-        traceback.print_exc(file=sys.stderr)
-        CHECKS.append({"id": "R_verifier_error", "level": "must", "pass": False, "detail": str(exc)})
-        result = {"reward": 0, "must_pass": False, "critical_pass": False, "normal_rate": 0, "checks": CHECKS}
-        print(json.dumps(result, indent=1))
         sys.exit(1)
