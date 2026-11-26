@@ -1,0 +1,105 @@
+desktop ready on :1
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 1.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": true,
+   "detail": "4.2.3 LTS"
+  },
+  {
+   "id": "R02_parts",
+   "level": "must",
+   "pass": true,
+   "detail": "all present"
+  },
+  {
+   "id": "R03_wheelbase",
+   "level": "must",
+   "pass": true,
+   "detail": "0.2400 m"
+  },
+  {
+   "id": "R04_wheel_diameter",
+   "level": "must",
+   "pass": true,
+   "detail": "[0.06, 0.06, 0.06, 0.06]"
+  },
+  {
+   "id": "R05_axle_pose",
+   "level": "must",
+   "pass": true,
+   "detail": "level_dz=0.0 parallel_dx=0.0"
+  },
+  {
+   "id": "R06_wheel_spin",
+   "level": "must",
+   "pass": true,
+   "detail": "body moved 0.00e+00"
+  },
+  {
+   "id": "R07_steering",
+   "level": "must",
+   "pass": true,
+   "detail": "{'wheel_fl': 'steer_fl', 'wheel_fr': 'steer_fr'}"
+  },
+  {
+   "id": "R08_doors",
+   "level": "must",
+   "pass": true,
+   "detail": "{'door_l': {'hinge_x': 0.06, 'overlap': {'0': 0, '25': 0, '50': 0, '75': 0}}, 'door_r': {'hinge_x': 0.06, 'overlap': {'0': 0, '25': 0, '50': 0, '75': 0}}}"
+  },
+  {
+   "id": "R09_views",
+   "level": "must",
+   "pass": true,
+   "detail": "front:(1200, 1200) side:(1200, 1200) back:(1200, 1200) top:(1200, 1200)"
+  },
+  {
+   "id": "R10_silhouette",
+   "level": "must",
+   "pass": false,
+   "detail": "{'front': 1.0, 'side': 1.0, 'back': 0.0, 'top': 1.0}"
+  },
+  {
+   "id": "R11_packed",
+   "level": "must",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "R12_polys",
+   "level": "normal",
+   "pass": true,
+   "detail": "2764 triangles"
+  },
+  {
+   "id": "R13_manifest",
+   "level": "must",
+   "pass": true,
+   "detail": "assets=1"
+  },
+  {
+   "id": "R14_anti_cheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "skipped: prerequisite checks failed"
+  },
+  {
+   "id": "R_all_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/logs/verifier/work-rme38hkj/render_front.png'\"}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{}"
+  }
+ ]
+}

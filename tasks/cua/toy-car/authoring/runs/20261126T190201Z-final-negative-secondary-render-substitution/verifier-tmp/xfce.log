@@ -1,0 +1,53 @@
+
+(xfce4-session:21): dbind-WARNING **: 19:02:07.318: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+dbus-daemon[20]: [session uid=0 pid=20] Activating service name='org.xfce.Xfconf' requested by ':1.1' (uid=0 pid=21 comm="xfce4-session" label="kernel")
+dbus-daemon[20]: [session uid=0 pid=20] Successfully activated service 'org.xfce.Xfconf'
+/usr/bin/iceauth:  creating new authority file /tmp/runtime-root/ICEauthority
+
+(xfce4-session:21): xfce4-session-WARNING **: 19:02:07.374: No GPG agent found
+
+(xfce4-session:21): xfce4-session-WARNING **: 19:02:07.375: No SSH authentication agent found
+
+(xfwm4:34): dbind-WARNING **: 19:02:07.406: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfwm4:34): xfwm4-WARNING **: 19:02:08.539: Another compositing manager is running on screen 0
+
+(xfsettingsd:39): dbind-WARNING **: 19:02:08.579: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfsettingsd:39): libupower-glib-WARNING **: 19:02:08.591: Couldn't connect to proxy: Could not connect: No such file or directory
+
+(xfce4-panel:43): dbind-WARNING **: 19:02:09.492: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(migrate:69): dbind-WARNING **: 19:02:09.810: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(Thunar:65): dbind-WARNING **: 19:02:09.891: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(xfdesktop:85): dbind-WARNING **: 19:02:10.517: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:85): WARNING **: 19:02:11.779: Thumbnailer failed calling GetFlavors
+
+(xfdesktop:85): GLib-GObject-CRITICAL **: 19:02:11.782: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(xfsettingsd:92): dbind-WARNING **: 19:02:11.817: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+** (xfdesktop:85): WARNING **: 19:02:12.390: Failed to get system bus: Could not connect: No such file or directory
+xfce4-panel-Message: 19:02:12.505: Plugin "(null)-7" was not found and has been removed from the configuration
+xfce4-panel-Message: 19:02:12.512: Plugin "power-manager-plugin-9" was not found and has been removed from the configuration
+xfce4-panel-Message: 19:02:12.517: Plugin "notification-plugin-10" was not found and has been removed from the configuration
+
+(wrapper-2.0:99): dbind-WARNING **: 19:02:12.543: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:100): dbind-WARNING **: 19:02:12.550: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+libclock-Message: 19:02:12.562: could not get proxy for org.freedesktop.login1
+
+(xfce4-panel:43): libclock-WARNING **: 19:02:12.562: could not instantiate a sleep monitor
+
+(wrapper-2.0:110): dbind-WARNING **: 19:02:12.686: AT-SPI: Error retrieving accessibility bus address: org.freedesktop.DBus.Error.ServiceUnknown: The name org.a11y.Bus was not provided by any .service files
+
+(wrapper-2.0:100): libnotify-WARNING **: 19:02:13.041: Failed to connect to proxy
+
+(xfce4-session:21): xfce4-session-WARNING **: 19:02:13.066: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
+
+(xfce4-session:21): xfce4-session-WARNING **: 19:02:13.071: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
+
+(xfce4-session:21): xfce4-session-WARNING **: 19:02:13.075: failed to run script: Failed to execute child process ?/usr/bin/pm-is-supported? (No such file or directory)
