@@ -1,0 +1,44 @@
+[
+  {
+    "label": "booth-oracle",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "booth-model",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "booth-empty-positive",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "crate-oracle",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "crate-model-font",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "booth-closed-opening",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  },
+  {
+    "label": "booth-camera-away",
+    "exit_code": 0,
+    "scene_ok": true,
+    "scene_error": null
+  }
+]

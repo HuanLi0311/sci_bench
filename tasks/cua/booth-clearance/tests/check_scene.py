@@ -232,31 +232,37 @@ def main():
         sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = saved_resolution
     rep["visible_from_entrance"] = vis
 
-    # Measure material actually assigned to the inward-facing back wall.
-    # An unused green material slot must not authenticate a differently coloured wall.
+    # Read the material hit on the back wall from inside the booth. This is
+    # independent of wall thickness, face winding and unused material slots.
     shell = bpy.data.objects.get("booth_shell")
-    weighted_delta, area, used = 0.0, 0.0, set()
+    samples, used, sampled_faces = {}, set(), set()
+    sampled_area = 0.0
     if shell is not None:
-        deps = bpy.context.evaluated_depsgraph_get()
-        evaluated = shell.evaluated_get(deps)
+        evaluated = shell.evaluated_get(bpy.context.evaluated_depsgraph_get())
         mesh = evaluated.to_mesh()
-        normal_matrix = evaluated.matrix_world.to_3x3().inverted().transposed()
-        for polygon in mesh.polygons:
-            center = evaluated.matrix_world @ polygon.center
-            normal = (normal_matrix @ polygon.normal).normalized()
-            if center.x < 2.95 or center.z < 0.05 or normal.x > -0.9:
-                continue
-            mat = mesh.materials[polygon.material_index] if polygon.material_index < len(mesh.materials) else None
-            color = rep["materials"].get(mat.name, {}).get("basecolor") if mat else None
-            delta = max(abs(color[i] - PRIMARY[i]) * 255 for i in range(3)) if color else 255.0
-            weighted_delta += polygon.area * delta
-            area += polygon.area
-            if mat:
-                used.add(mat.name)
+        vertices = [evaluated.matrix_world @ v.co for v in mesh.vertices]
+        tree = BVHTree.FromPolygons(vertices, [tuple(p.vertices) for p in mesh.polygons], all_triangles=False)
+        for y in (-1.0, 0.0, 1.0):
+            for z in (0.5, 2.0, 3.5):
+                _hit, _normal, index, _distance = tree.ray_cast(Vector((0, y, z)), Vector((1, 0, 0)), 3.02)
+                delta = 255.0
+                if index is not None:
+                    polygon = mesh.polygons[index]
+                    mat = mesh.materials[polygon.material_index] if polygon.material_index < len(mesh.materials) else None
+                    color = rep["materials"].get(mat.name, {}).get("basecolor") if mat else None
+                    if color:
+                        delta = max(abs(color[i] - PRIMARY[i]) * 255 for i in range(3))
+                    if mat:
+                        used.add(mat.name)
+                    if index not in sampled_faces:
+                        sampled_area += polygon.area
+                        sampled_faces.add(index)
+                samples[f"{y},{z}"] = delta
         evaluated.to_mesh_clear()
-    rep["brand_delta"] = weighted_delta / area if area > 0 else None
+    rep["brand_delta"] = max(samples.values()) if len(samples) == 9 else None
     rep["brand_material"] = sorted(used)
-    rep["brand_back_wall_area"] = area
+    rep["brand_back_wall_samples"] = samples
+    rep["brand_sampled_face_area"] = sampled_area
 
     rep["required_present"] = {n: (n in bpy.data.objects) for n in PANELS}
     rep["has_lighting"] = any(o.type == 'LIGHT' for o in bpy.data.objects) and         ("lighting" in bpy.data.objects)
