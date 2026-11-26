@@ -67,4 +67,13 @@ Anti-cheat: the scene is re-rendered from `cam_entrance` and compared with your
 `render_entrance.png` (must match, SSIM ≥ 0.90), then `cabinet_01` is moved
 0.5 m and rendered again (the image must change, SSIM ≤ 0.98).
 
+Both delivered images are independently re-rendered from their named cameras
+and compared per RGB channel (SSIM >= 0.90). The entrance marker must remain at
+the specified entrance; moving it does not redefine the clearance zone.
+Furniture, plinth and product sizes are checked against the supplied tables
+within 20 mm, allowing rotation in the floor plan. Each product must stand on
+its corresponding plinth, within 20 mm vertically and within its footprint.
+The brand-colour check measures materials actually used on the inward-facing
+back wall; an unused material slot does not count.
+
 You have 7200 seconds to complete this task.
