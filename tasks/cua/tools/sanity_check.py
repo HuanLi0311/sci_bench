@@ -152,21 +152,46 @@ def check_oracle(t, tests_tag):
 
 
 def check_model_records(t):
+    def repo_path(value):
+        path = Path(value)
+        return path if path.is_absolute() else Path(ROOT).parents[1] / path
+
     try:
         record = json.loads((Path(t) / "authoring/model-attempts.json").read_text(encoding="utf-8"))
+        ids = [a["id"] for a in record["attempts"]]
+        if len(ids) != len(set(ids)):
+            raise ValueError("duplicate model attempt IDs")
         for attempt in record["attempts"]:
-            path = Path(attempt["path"])
-            # Stored paths are repo-relative; the checker may be launched elsewhere.
-            if not path.is_absolute():
-                path = Path(ROOT).parents[1] / path
+            path = repo_path(attempt["path"])
             if not (path / "config.json").exists() or not (path / "trial.log").exists():
                 raise ValueError("attempt raw config/log missing")
-            if attempt["trajectory_present"]:
+            if attempt.get("outcome") == "running":
+                raise ValueError(f"model attempt {attempt['id']} is still running")
+            if attempt.get("trajectory_format", "").startswith("Codex raw JSONL"):
+                raw = repo_path(attempt["raw_rollout_path"])
+                files = sorted(raw.rglob("*.jsonl"))
+                if not files or not (path / "agent-events.stdout.txt").exists():
+                    raise ValueError("complete raw Codex sessions/CLI events missing")
+                agent_steps = tool_calls = 0
+                for file in files:
+                    for line in file.read_text(encoding="utf-8").splitlines():
+                        event = json.loads(line)
+                        payload = event.get("payload", {})
+                        if event.get("type") != "response_item":
+                            continue
+                        call = payload.get("type") in ("function_call", "custom_tool_call")
+                        tool_calls += int(call)
+                        agent_steps += int(call or (payload.get("type") == "message" and payload.get("role") == "assistant"))
+                if agent_steps != attempt["agent_steps"] or tool_calls != attempt["tool_calls"]:
+                    raise ValueError("Codex step count differs from all raw sessions")
+                if attempt.get("reward") == 1 and not attempt.get("grading_run"):
+                    raise ValueError("model success has no grading evidence")
+            elif attempt.get("trajectory_present"):
                 trajectory = json.loads((path / "agent/trajectory.json").read_text(encoding="utf-8"))
-                agent = [s for s in trajectory["steps"] if s.get("source") == "agent"]
-                if len(agent) != attempt["agent_steps"] or sum(len(s.get("tool_calls", [])) for s in agent) != attempt["tool_calls"]:
-                    raise ValueError("step count differs from raw trajectory")
-        return True, f"{len(record['attempts'])} recovered attempts; empty tasks explicitly recorded"
+                agent = [step for step in trajectory["steps"] if step.get("source") == "agent"]
+                if len(agent) != attempt["agent_steps"] or sum(len(step.get("tool_calls", [])) for step in agent) != attempt["tool_calls"]:
+                    raise ValueError("ATIF step count differs from raw trajectory")
+        return True, f"{len(record['attempts'])} recorded attempts; complete raw trajectories checked where inference occurred"
     except Exception as exc:
         return False, str(exc)
 
