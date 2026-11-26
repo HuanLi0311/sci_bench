@@ -297,9 +297,20 @@
       "started_at": "2026-11-26T12:05:12.267884+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T12:05:12.441959+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-rainroom-model-0c6e1bcc5c"
+      ],
+      "started_at": "2026-11-26T12:05:29.961022+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:30.718819+00:00"
     }
   ],
-  "outcome": "running",
+  "outcome": "task-failure",
   "agent_started_at": "2026-11-26T11:15:31.580872+00:00",
   "agent_exit_code": 0,
   "agent_finished_at": "2026-11-26T12:05:03.115725+00:00",
@@ -320,5 +331,18 @@
       "sha256": "d94c7b610205471f56b72595fe3e976cb0ae6c017d18e3462647ac220c255aec",
       "bytes": 1676054
     }
-  }
+  },
+  "steps": {
+    "agent_steps": 68,
+    "tool_calls": 64,
+    "reported_models": [
+      "gpt-6.1-sol"
+    ],
+    "step_definition": "agent_steps = raw rollout response_item events whose payload is an assistant message or function_call/custom_tool_call; tool_calls = function_call/custom_tool_call events only. Excludes user/system messages, reasoning-only items, tool results, initialization, Oracle/verifier actions and CLI duplicates."
+  },
+  "grading_run": "rainroom/authoring/runs/20261126T120513Z-final-model-regrade",
+  "reward": 0,
+  "grading_outcome": "graded",
+  "submission_unchanged_after_grading": true,
+  "finished_at": "2026-11-26T12:05:30.733775+00:00"
 }

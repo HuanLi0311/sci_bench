@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T12:05:17.662432+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T12:05:17.986289+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-7c7e4e2504"
+      ],
+      "started_at": "2026-11-26T12:05:18.009522+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T12:05:27.911019+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-7c7e4e2504"
+      ],
+      "started_at": "2026-11-26T12:05:27.921511+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:28.007467+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-7c7e4e2504:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T120513Z-final-model-regrade/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T12:05:28.023117+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:28.940884+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-7c7e4e2504"
+      ],
+      "started_at": "2026-11-26T12:05:29.110672+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:29.260335+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-7c7e4e2504"
+      ],
+      "started_at": "2026-11-26T12:05:29.307523+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:05:29.608037+00:00"
     }
   ],
   "nop_definition": null,
@@ -146,5 +200,15 @@
       "sha256": "d94c7b610205471f56b72595fe3e976cb0ae6c017d18e3462647ac220c255aec",
       "bytes": 1676054
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R12_manifest",
+    "R13_anti_cheat",
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T12:05:29.621284+00:00"
 }
