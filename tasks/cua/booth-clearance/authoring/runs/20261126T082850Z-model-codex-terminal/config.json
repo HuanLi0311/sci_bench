@@ -1,0 +1,68 @@
+{
+  "model_identifier": "gpt-6.1-sol",
+  "provider_label": "oneton",
+  "reasoning_effort": "high",
+  "agent": "Codex terminal baseline",
+  "cli_version": "0.172.0",
+  "timeout_seconds": 7200,
+  "approval": "never (externally isolated Docker)",
+  "sandbox": "danger-full-access inside container only",
+  "gui_compliant": false,
+  "network": "Docker bridge; no host repository, Docker socket, solution/tests/authoring mounts",
+  "credentials": "private minimal provider config; values omitted; never archived",
+  "materials": {
+    "LICENSE.txt": {
+      "sha256": "414c110381f66f77dbe349d0f31e780c97adc4faec9da457f44286bda19a4734",
+      "bytes": 289
+    },
+    "brand/brand_sheet.pdf": {
+      "sha256": "9026c31199930da7e53c90cc2943d78f1a7cd56128a7172a053cfb4d5036c665",
+      "bytes": 2118
+    },
+    "brand/logo.png": {
+      "sha256": "b9cc059d26ecc078ea73233b79f72ad80c4dda3991ee9830102815aca112a958",
+      "bytes": 26366
+    },
+    "brand/logo.svg": {
+      "sha256": "39575ef834001d492339803d534d07bfa56be8f70b651c1a98b0336f08253ca9",
+      "bytes": 395
+    },
+    "drawings/booth_floor_plan.pdf": {
+      "sha256": "f5f96facd93d5cc93560f2cf1f496ffc0553a227b30a886a72ca79a8a3452f10",
+      "bytes": 28147
+    },
+    "drawings/booth_floor_plan.png": {
+      "sha256": "43a7c70adcd1941c049e1446501a1019fddea54610368932f5c4a641d2edf4be",
+      "bytes": 126863
+    },
+    "drawings/constraints.pdf": {
+      "sha256": "986c9e1c5594cae4c955838fc5cebc351436e359158f647e0b35c95c6d780c8b",
+      "bytes": 2422
+    },
+    "photos/ref_corner.jpg": {
+      "sha256": "f6b1ccf88e24d08ec17ff1b6bd64c0e12ce1ed2dc457d549efc22176f20361d5",
+      "bytes": 69138
+    },
+    "photos/ref_counter.jpg": {
+      "sha256": "bdcd6accf32efa9e64223e8001c45d43352b407a24e75234a76e13848e5b7737",
+      "bytes": 48543
+    },
+    "photos/ref_overview.jpg": {
+      "sha256": "5d8e2bbcc6c0b8528110edd7c0daa6150aaf1702c6b4832a167c3018a9f91803",
+      "bytes": 77291
+    },
+    "photos/ref_products.jpg": {
+      "sha256": "c7d075a089f7e33212339bc5e0da9d5c7bf945ca0feceb339dab3f59467ee727",
+      "bytes": 70054
+    },
+    "tables/furniture_list.xlsx": {
+      "sha256": "b6f8fa972672aabfd159df130ec11d022e047c46d221077e02ec11a8422be6a0",
+      "bytes": 5076
+    },
+    "tables/product_sizes.xlsx": {
+      "sha256": "63869b305d13fc2b064d6d401938cff676a9d2ce6ebfd2bb3254781c9649935e",
+      "bytes": 5075
+    }
+  },
+  "instruction_sha256": "bd02af7ab344bd5450cf29f32e52d1b79bc3dca4609951069cb45e04c7b9d218"
+}
