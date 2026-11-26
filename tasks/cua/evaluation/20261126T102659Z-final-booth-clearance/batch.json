@@ -175,6 +175,17 @@
       "reward": 1,
       "outcome": "graded",
       "failed_checks": []
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-secondary-render-substitution",
+      "run": "booth-clearance/authoring/runs/20261126T104017Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-26T10:46:37.091466+00:00"
 }
