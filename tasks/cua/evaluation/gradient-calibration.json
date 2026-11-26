@@ -1,0 +1,131 @@
+{
+  "method": "RGB GaussianBlur radius1 then L2 first-difference mismatch / trusted gradient L2",
+  "measurements": [
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T075120Z-final-oracle/verifier/work-40aigu0_/render_entrance.png",
+      "view": "render_entrance.png",
+      "gradient_error": 0.5546023751895294
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T075120Z-final-oracle/verifier/work-40aigu0_/render_top.png",
+      "view": "render_top.png",
+      "gradient_error": 0.33733329378205407
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T080932Z-final-oracle/verifier/work-pobxpf85/render_entrance.png",
+      "view": "render_entrance.png",
+      "gradient_error": 0.5546023751895294
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T080932Z-final-oracle/verifier/work-pobxpf85/render_top.png",
+      "view": "render_top.png",
+      "gradient_error": 0.33733329378205407
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T081658Z-final-oracle/verifier/work-r78p98va/render_entrance.png",
+      "view": "render_entrance.png",
+      "gradient_error": 0.5546023751895294
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T081658Z-final-oracle/verifier/work-r78p98va/render_top.png",
+      "view": "render_top.png",
+      "gradient_error": 0.33733329378205407
+    },
+    {
+      "task": "crate-lookdev",
+      "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_back.png",
+      "view": "render_back.png",
+      "gradient_error": 0.27554742325424575
+    },
+    {
+      "task": "crate-lookdev",
+      "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_front.png",
+      "view": "render_front.png",
+      "gradient_error": 0.2599934764848782
+    },
+    {
+      "task": "crate-lookdev",
+      "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_macro.png",
+      "view": "render_macro.png",
+      "gradient_error": 0.3340314015173222
+    },
+    {
+      "task": "crate-lookdev",
+      "run": "crate-lookdev/authoring/runs/20261126T075120Z-final-oracle/verifier/work-92iiqxc9/render_top.png",
+      "view": "render_top.png",
+      "gradient_error": 0.3566958379424501
+    },
+    {
+      "task": "folding-chair",
+      "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_folded.png",
+      "view": "render_folded.png",
+      "gradient_error": 0.3526642419993174
+    },
+    {
+      "task": "folding-chair",
+      "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_half.png",
+      "view": "render_half.png",
+      "gradient_error": 0.3184644651568998
+    },
+    {
+      "task": "folding-chair",
+      "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_locked.png",
+      "view": "render_locked.png",
+      "gradient_error": 0.34447436209510324
+    },
+    {
+      "task": "folding-chair",
+      "run": "folding-chair/authoring/runs/20261126T075120Z-final-oracle/verifier/work-b6a969zl/render_unfolded.png",
+      "view": "render_unfolded.png",
+      "gradient_error": 0.34447436209510324
+    },
+    {
+      "task": "rainroom",
+      "run": "rainroom/authoring/runs/20261126T075009Z-pre-hardening-oracle/verifier/work-p5pwtbwr/render_morning.png",
+      "view": "render_morning.png",
+      "gradient_error": 0.4905993927744555
+    },
+    {
+      "task": "rainroom",
+      "run": "rainroom/authoring/runs/20261126T075009Z-pre-hardening-oracle/verifier/work-p5pwtbwr/render_night.png",
+      "view": "render_night.png",
+      "gradient_error": 0.4810271688804921
+    },
+    {
+      "task": "toy-car",
+      "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_back.png",
+      "view": "render_back.png",
+      "gradient_error": 0.13425070016247703
+    },
+    {
+      "task": "toy-car",
+      "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_front.png",
+      "view": "render_front.png",
+      "gradient_error": 0.13786283412680284
+    },
+    {
+      "task": "toy-car",
+      "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_side.png",
+      "view": "render_side.png",
+      "gradient_error": 0.15373179621552674
+    },
+    {
+      "task": "toy-car",
+      "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle/verifier/work-x5xw6kn5/render_top.png",
+      "view": "render_top.png",
+      "gradient_error": 0.1919809665492046
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T082402Z-final-negative-secondary-render-substitution/verifier/work-ibqa6d1s/render_top.png",
+      "view": "forged top",
+      "gradient_error": 1.0
+    }
+  ]
+}
