@@ -126,6 +126,17 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "negative-secondary-render-substitution",
+      "run": "booth-clearance/authoring/runs/20261126T084454Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-26T08:51:52.041722+00:00"
 }
