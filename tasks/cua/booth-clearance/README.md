@@ -56,8 +56,4 @@ Reward is 1 only when every `must` and `critical` check passes and ≥ 80 % of t
 
 ## Execution evidence
 
-Current raw Oracle/NOP and mutation runs are indexed in [the CUA run index](../RUNS.md). The [evidence protocol](../EVIDENCE.md) defines no-op execution, source hashes, model-history limitations and step accounting. [Model attempts](authoring/model-attempts.json) lists every locally recovered attempt or explicitly records that this task is unmeasured. Only `final` records whose source hashes match the current verifier establish the current score. Old check counts below describe the original rubric; the final metrics include the added checks.
-
-The last completed 20-check snapshot and its reference Oracle, true NOP and five negative cases are documented in [the current validation report](authoring/calibration/VALIDATION.md). The full model trial index distinguishes runtime failures, running attempts and terminal-model results; none is inferred from the reference Oracle.
-
-The current revision has 21 checks: auxiliary Empty entrance markers are supported, clearance uses the fixed opening, the shell opening is checked directly, and visibility includes the camera frame. This revision is being revalidated; see the source-hash gates in [RUNS.md](../RUNS.md) rather than inferring a pass from the earlier snapshot.
+The current reference Oracle, true NOP and every required negative case have passed the source-hash evidence gates. See [current validation](authoring/calibration/VALIDATION.md), [raw runs](../RUNS.md), [model attempts](authoring/model-attempts.json) and [the evidence protocol](../EVIDENCE.md). Earlier rubric/check counts above describe the original snapshot; current counts and results are in the validation report.

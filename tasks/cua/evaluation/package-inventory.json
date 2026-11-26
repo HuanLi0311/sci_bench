@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-11-26T09:03:12.165504+00:00",
-  "scope": "task instruction, metadata, environment recipe/materials, reference deliverables, verifier source/reference fixtures; excludes backup blend1/cache",
+  "checked_utc": "2026-11-26T10:57:43.967712+00:00",
+  "scope": "instruction, metadata, environment recipe/materials, reference deliverables and complete verifier source/fixtures; excludes caches and blend1 backups",
   "tasks": {
     "booth-clearance": [
       {
@@ -53,26 +53,26 @@
       },
       {
         "path": "environment/materials/photos/ref_corner.jpg",
-        "bytes": 69138,
-        "sha256": "f6b1ccf88e24d08ec17ff1b6bd64c0e12ce1ed2dc457d549efc22176f20361d5",
+        "bytes": 77538,
+        "sha256": "0fc4c6318aea5d792810df1dd13ecd7e4eeecf78b90a05a93f67ffb73625fe8d",
         "tracked": true
       },
       {
         "path": "environment/materials/photos/ref_counter.jpg",
-        "bytes": 48543,
-        "sha256": "bdcd6accf32efa9e64223e8001c45d43352b407a24e75234a76e13848e5b7737",
+        "bytes": 51751,
+        "sha256": "fb791a412e854bd7f04c7f6c7a49014e87ec83aabcec95d7f3c4365ed8dcae76",
         "tracked": true
       },
       {
         "path": "environment/materials/photos/ref_overview.jpg",
-        "bytes": 77291,
-        "sha256": "5d8e2bbcc6c0b8528110edd7c0daa6150aaf1702c6b4832a167c3018a9f91803",
+        "bytes": 93999,
+        "sha256": "11a895ffebb5afa0b76dd4cded6f07c08db5e9cb45f4a08ba91bfb7e4b7ec627",
         "tracked": true
       },
       {
         "path": "environment/materials/photos/ref_products.jpg",
-        "bytes": 70054,
-        "sha256": "c7d075a089f7e33212339bc5e0da9d5c7bf945ca0feceb339dab3f59467ee727",
+        "bytes": 88811,
+        "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
         "tracked": true
       },
       {
@@ -89,14 +89,14 @@
       },
       {
         "path": "instruction.md",
-        "bytes": 4169,
-        "sha256": "bee3f40997418f296a69d2c1366425344fd3f56484a581a92ca9bd1a351cbe2d",
+        "bytes": 4939,
+        "sha256": "72fd615dc1531ded403d2c146202abb64ba2fb2893cdc39ffe895e06bd170330",
         "tracked": true
       },
       {
         "path": "solution/booth.blend",
-        "bytes": 121525,
-        "sha256": "9b89d01526ce2ff0c773f6735d216bc3a8b201795270b0dc8612084c2e9220bd",
+        "bytes": 120709,
+        "sha256": "fb539437a1869296870c4e28ce989b4e89e69764245d4f5b108077ebfd9df921",
         "tracked": true
       },
       {
@@ -107,14 +107,14 @@
       },
       {
         "path": "solution/render_entrance.png",
-        "bytes": 1694302,
-        "sha256": "4b1f478ce32c53a0981e6b1b1e6284569962a28bfd1774ff87b15ea380a886ff",
+        "bytes": 1730640,
+        "sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
         "tracked": true
       },
       {
         "path": "solution/render_top.png",
-        "bytes": 2467739,
-        "sha256": "9f723e8f9dfc2c21079efd74599f44ebda7370e54b74e19b0911f0b253496699",
+        "bytes": 2518726,
+        "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
         "tracked": true
       },
       {
@@ -131,8 +131,8 @@
       },
       {
         "path": "tests/check_scene.py",
-        "bytes": 10398,
-        "sha256": "9fbe13f59a175f7ce0fd4bff1a4aa36470755cd8048810511f07ad625d083f42",
+        "bytes": 14344,
+        "sha256": "f9b1cd5512cebda56b76584d2a64f6e2db4334c9b5b8c0e4aa69f1db19ba1e69",
         "tracked": true
       },
       {
@@ -143,8 +143,8 @@
       },
       {
         "path": "tests/grade.py",
-        "bytes": 11337,
-        "sha256": "cd1dcece5c51c54cbf81c930240408b6efb5e8b7fc0e0863d96073dd02242a35",
+        "bytes": 11742,
+        "sha256": "9dcc4fd1bd2cca51f7d77972b8854ca4531a08a3e7d7569594f86fd4ba6b9809",
         "tracked": true
       },
       {
@@ -167,8 +167,8 @@
       },
       {
         "path": "tests/rubric.py",
-        "bytes": 1680,
-        "sha256": "adf70db75fd9e845873807377f8d79180a0ee87a078f2721fdf0b8248e111107",
+        "bytes": 1835,
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
         "tracked": true
       },
       {
@@ -179,8 +179,8 @@
       },
       {
         "path": "tests/test_rubric.py",
-        "bytes": 1044,
-        "sha256": "01cae93b2ef771f834cebcf981c58f3af88d3f504456c808c136aadfbc230fd6",
+        "bytes": 1540,
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
         "tracked": true
       }
     ],
@@ -331,8 +331,8 @@
       },
       {
         "path": "tests/check_scene.py",
-        "bytes": 11559,
-        "sha256": "8fe6f62f0efb11c265356b93335b9a127b2965cbbe0eadba57ace361b8285f87",
+        "bytes": 11916,
+        "sha256": "69c349f0833583acb07575df79d8a4156c5d8a512a5c65f2f4756414903fc4f9",
         "tracked": true
       },
       {

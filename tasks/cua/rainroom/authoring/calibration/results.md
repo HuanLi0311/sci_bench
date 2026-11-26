@@ -26,3 +26,7 @@ Notes
   with opaque shades and a solid glass pane the room rendered black.
 - The room shell models the floor slab below and ceiling slab above, so the
   outer envelope is exactly 2.80 m with a 2.78 m clear height.
+
+## Final current-source validation
+
+The completed final records are in [VALIDATION.md](VALIDATION.md). Current-source Oracle reward=1, genuine NOP reward=0, and all required negative cases reward=0. Historical claims, failed development runs and superseded snapshots above remain tied to their own recorded inputs/source versions.

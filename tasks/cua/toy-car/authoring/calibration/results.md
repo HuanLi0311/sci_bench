@@ -25,3 +25,7 @@ Notes
   close to the 0.98 threshold.
 - Tread blocks are real geometry on the wheels so the spin is visible; without
   them a smooth cylinder renders identically at any angle.
+
+## Final current-source validation
+
+The completed final records are in [VALIDATION.md](VALIDATION.md). Current-source Oracle reward=1, genuine NOP reward=0, and all required negative cases reward=0. Historical claims, failed development runs and superseded snapshots above remain tied to their own recorded inputs/source versions.

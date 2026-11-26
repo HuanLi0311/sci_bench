@@ -45,4 +45,4 @@ Reference scores 13/13.
 
 ## Execution evidence
 
-Current raw Oracle/NOP and mutation runs are indexed in [the CUA run index](../RUNS.md). The [evidence protocol](../EVIDENCE.md) defines no-op execution, source hashes, model-history limitations and step accounting. [Model attempts](authoring/model-attempts.json) lists every locally recovered attempt or explicitly records that this task is unmeasured. Only `final` records whose source hashes match the current verifier establish the current score. Old check counts below describe the original rubric; the final metrics include the added checks.
+The current reference Oracle, true NOP and every required negative case have passed the source-hash evidence gates. See [current validation](authoring/calibration/VALIDATION.md), [raw runs](../RUNS.md), [model attempts](authoring/model-attempts.json) and [the evidence protocol](../EVIDENCE.md). Earlier rubric/check counts above describe the original snapshot; current counts and results are in the validation report.

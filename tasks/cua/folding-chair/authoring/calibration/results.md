@@ -25,3 +25,7 @@ pinned side by side, hence the 20 mm coincidence tolerance).
   the seat during the fold (measured 460 overlapping triangle pairs).
 - Pairs that share a hinge are excluded from the interpenetration check —
   contact at a pinned joint is expected, penetration elsewhere is not.
+
+## Final current-source validation
+
+The completed final records are in [VALIDATION.md](VALIDATION.md). Current-source Oracle reward=1, genuine NOP reward=0, and all required negative cases reward=0. Historical claims, failed development runs and superseded snapshots above remain tied to their own recorded inputs/source versions.

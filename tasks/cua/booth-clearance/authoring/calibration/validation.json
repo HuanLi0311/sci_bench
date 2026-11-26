@@ -1,83 +1,111 @@
 {
-  "timestamp_utc": "2026-11-26T08:52:53.538458+00:00",
+  "checked_utc": "2026-11-26T10:57:43.462077+00:00",
   "gates": {
     "oracle": [
       true,
-      "20261126T083757Z-final-oracle"
+      "20261126T102746Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T084447Z-final-nop"
+      "20261126T103358Z-final-nop"
     ],
-    "all_prepared_negatives": [
+    "negatives": [
       true,
-      "all 5 prepared negative cases rejected by the current verifier"
+      "all 8 prepared negative cases rejected by the current verifier"
     ],
-    "model_inventory": [
-      false,
-      "model attempt 20261126T084651Z-codex-terminal-gpt-6.1-sol-high is still running"
+    "models": [
+      true,
+      "2 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   },
   "grader_source": {
-    "check_scene.py": "9fbe13f59a175f7ce0fd4bff1a4aa36470755cd8048810511f07ad625d083f42",
+    "check_scene.py": "f9b1cd5512cebda56b76584d2a64f6e2db4334c9b5b8c0e4aa69f1db19ba1e69",
     "Dockerfile": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
-    "grade.py": "cd1dcece5c51c54cbf81c930240408b6efb5e8b7fc0e0863d96073dd02242a35",
+    "grade.py": "9dcc4fd1bd2cca51f7d77972b8854ca4531a08a3e7d7569594f86fd4ba6b9809",
     "render_compare.py": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
     "rerender.py": "b8a5992373eff7ac715f9ee020a2c54aaa01a104844059b68b47b0f0a8a6eaf8",
-    "rubric.py": "adf70db75fd9e845873807377f8d79180a0ee87a078f2721fdf0b8248e111107",
+    "rubric.py": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
     "test.sh": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
-    "test_rubric.py": "01cae93b2ef771f834cebcf981c58f3af88d3f504456c808c136aadfbc230fd6",
+    "test_rubric.py": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
     "reference/geometry.json": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf"
   },
   "records": [
     {
-      "run": "20261126T083757Z-final-oracle",
       "kind": "oracle",
+      "run": "20261126T102746Z-final-oracle",
       "reward": 1,
-      "passed_checks": 20,
-      "checks": 20
+      "passed_checks": 22,
+      "check_count": 22
     },
     {
-      "run": "20261126T084447Z-final-nop",
       "kind": "nop",
+      "run": "20261126T103358Z-final-nop",
       "reward": 0,
       "passed_checks": 5,
-      "checks": 20
+      "check_count": 22
     },
     {
-      "run": "20261126T084454Z-final-negative-secondary-render-substitution",
-      "kind": "negative-secondary-render-substitution",
+      "kind": "negative-booth-camera-away",
+      "run": "20261126T102733Z-final-negative-booth-camera-away",
       "reward": 0,
-      "passed_checks": 19,
-      "checks": 20
+      "passed_checks": 18,
+      "check_count": 22
     },
     {
-      "run": "20261126T083730Z-final-negative-booth-moved-entrance-marker",
+      "kind": "negative-booth-closed-opening",
+      "run": "20261126T102726Z-final-negative-booth-closed-opening",
+      "reward": 0,
+      "passed_checks": 18,
+      "check_count": 22
+    },
+    {
+      "kind": "negative-booth-missing-secondary-color",
+      "run": "20261126T102739Z-final-negative-booth-missing-secondary-color",
+      "reward": 0,
+      "passed_checks": 18,
+      "check_count": 22
+    },
+    {
       "kind": "negative-booth-moved-entrance-marker",
+      "run": "20261126T102659Z-final-negative-booth-moved-entrance-marker",
       "reward": 0,
-      "passed_checks": 16,
-      "checks": 20
+      "passed_checks": 18,
+      "check_count": 22
     },
     {
-      "run": "20261126T083737Z-final-negative-booth-product-scaled",
-      "kind": "negative-booth-product-scaled",
-      "reward": 0,
-      "passed_checks": 15,
-      "checks": 20
-    },
-    {
-      "run": "20261126T083743Z-final-negative-booth-product-floating",
       "kind": "negative-booth-product-floating",
+      "run": "20261126T102712Z-final-negative-booth-product-floating",
       "reward": 0,
-      "passed_checks": 16,
-      "checks": 20
+      "passed_checks": 18,
+      "check_count": 22
     },
     {
-      "run": "20261126T083750Z-final-negative-booth-unused-brand-slot",
-      "kind": "negative-booth-unused-brand-slot",
+      "kind": "negative-booth-product-scaled",
+      "run": "20261126T102706Z-final-negative-booth-product-scaled",
       "reward": 0,
-      "passed_checks": 16,
-      "checks": 20
+      "passed_checks": 17,
+      "check_count": 22
+    },
+    {
+      "kind": "negative-booth-unused-brand-slot",
+      "run": "20261126T102720Z-final-negative-booth-unused-brand-slot",
+      "reward": 0,
+      "passed_checks": 18,
+      "check_count": 22
+    },
+    {
+      "kind": "negative-secondary-render-substitution",
+      "run": "20261126T104017Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "passed_checks": 21,
+      "check_count": 22
+    },
+    {
+      "kind": "model-regrade",
+      "run": "20261126T103405Z-final-model-regrade",
+      "reward": 1,
+      "passed_checks": 22,
+      "check_count": 22
     }
   ]
 }

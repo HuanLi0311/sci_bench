@@ -1,0 +1,37 @@
+[
+  {
+    "task": "booth-clearance",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 22,
+    "negative_cases": 8
+  },
+  {
+    "task": "crate-lookdev",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 15,
+    "negative_cases": 2
+  },
+  {
+    "task": "folding-chair",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 15,
+    "negative_cases": 2
+  },
+  {
+    "task": "rainroom",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 16,
+    "negative_cases": 1
+  },
+  {
+    "task": "toy-car",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 16,
+    "negative_cases": 2
+  }
+]

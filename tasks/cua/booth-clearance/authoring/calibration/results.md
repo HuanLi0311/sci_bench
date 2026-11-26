@@ -38,3 +38,7 @@ NOP executes only `/bin/true` in the fresh task environment and exports the unto
 ## Current 20-check validation
 
 See [VALIDATION.md](VALIDATION.md) for the current matching-source Oracle=1, true NOP=0 and all five negative cases=0, including the constant-image counterexample rejected after adding `R_render_structure`. All earlier 19-check results above remain tied to their own source snapshots.
+
+## Final current-source validation
+
+The completed final records are in [VALIDATION.md](VALIDATION.md). Current-source Oracle reward=1, genuine NOP reward=0, and all required negative cases reward=0. Historical claims, failed development runs and superseded snapshots above remain tied to their own recorded inputs/source versions.

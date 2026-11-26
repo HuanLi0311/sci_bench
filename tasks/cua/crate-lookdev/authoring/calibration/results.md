@@ -48,3 +48,7 @@ Reference numbers measured by `check_scene.py`:
 
 - Five blind CUA trials against a frontier model have not been run; the
   published target pass rate (45–65%) is a design estimate, not a measurement.
+
+## Final current-source validation
+
+The completed final records are in [VALIDATION.md](VALIDATION.md). Current-source Oracle reward=1, genuine NOP reward=0, and all required negative cases reward=0. Historical claims, failed development runs and superseded snapshots above remain tied to their own recorded inputs/source versions.

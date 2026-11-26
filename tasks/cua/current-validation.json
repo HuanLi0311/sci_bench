@@ -2,16 +2,16 @@
   {
     "task": "booth-clearance",
     "oracle": [
-      false,
-      "20261126T083757Z-final-oracle: grader differs from current source; 20261126T081658Z-final-oracle: grader differs from current source; 20261126T080932Z-final-oracle: grader differs from current source; 20261126T075120Z-final-oracle: grader differs from current source"
+      true,
+      "20261126T102746Z-final-oracle"
     ],
     "nop": [
-      false,
-      "20261126T084447Z-final-nop: grader differs from current source; 20261126T082355Z-final-nop: grader differs from current source; 20261126T081623Z-final-nop: grader differs from current source; 20261126T080710Z-final-nop: grader differs from current source"
+      true,
+      "20261126T103358Z-final-nop"
     ],
     "negatives": [
-      false,
-      "missing current-source negative cases: ['negative-booth-camera-away', 'negative-booth-closed-opening', 'negative-booth-moved-entrance-marker', 'negative-booth-product-floating', 'negative-booth-product-scaled', 'negative-booth-unused-brand-slot', 'negative-secondary-render-substitution']"
+      true,
+      "all 8 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,

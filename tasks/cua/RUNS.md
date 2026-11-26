@@ -6,7 +6,7 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 
 | Task | Oracle | True NOP | All prepared negatives | Model records |
 |---|---|---|---|---|
-| booth-clearance | not yet validated | not yet validated | not yet validated | PASS |
+| booth-clearance | PASS | PASS | PASS | PASS |
 | crate-lookdev | PASS | PASS | PASS | PASS |
 | folding-chair | PASS | PASS | PASS | PASS |
 | rainroom | PASS | PASS | PASS | PASS |
@@ -40,6 +40,17 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | booth-clearance | [final / nop](booth-clearance/authoring/runs/20261126T084447Z-final-nop/run.json) | 0 | R01_open, R02_objects, R03_size, R05_entrance_clearance, R07_visibility, R08_brand_colour, R12_polys, R13_entrance_render, R14_manifest, R_furniture_product_sizes, R_product_support, R15_anti_cheat, R16_deliverables, R_all_render_authenticity, R_render_structure |
 | booth-clearance | [final / negative-secondary-render-substitution](booth-clearance/authoring/runs/20261126T084454Z-final-negative-secondary-render-substitution/run.json) | 0 | R_render_structure |
 | booth-clearance | [final / model-regrade](booth-clearance/authoring/runs/20261126T091958Z-final-model-regrade/run.json) | 0 | R01_open, R02_objects, R03_size, R05_entrance_clearance, R07_visibility, R08_brand_colour, R12_polys, R13_entrance_render, R_furniture_product_sizes, R_product_support, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-moved-entrance-marker](booth-clearance/authoring/runs/20261126T102659Z-final-negative-booth-moved-entrance-marker/run.json) | 0 | R05_entrance_clearance, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-product-scaled](booth-clearance/authoring/runs/20261126T102706Z-final-negative-booth-product-scaled/run.json) | 0 | R_furniture_product_sizes, R_product_support, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-product-floating](booth-clearance/authoring/runs/20261126T102712Z-final-negative-booth-product-floating/run.json) | 0 | R_product_support, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-unused-brand-slot](booth-clearance/authoring/runs/20261126T102720Z-final-negative-booth-unused-brand-slot/run.json) | 0 | R08_brand_colour, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-closed-opening](booth-clearance/authoring/runs/20261126T102726Z-final-negative-booth-closed-opening/run.json) | 0 | R_actual_entrance_opening, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-camera-away](booth-clearance/authoring/runs/20261126T102733Z-final-negative-booth-camera-away/run.json) | 0 | R07_visibility, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / negative-booth-missing-secondary-color](booth-clearance/authoring/runs/20261126T102739Z-final-negative-booth-missing-secondary-color/run.json) | 0 | R_secondary_brand_colour, R15_anti_cheat, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / oracle](booth-clearance/authoring/runs/20261126T102746Z-final-oracle/run.json) | 1 | all checks pass |
+| booth-clearance | [final / nop](booth-clearance/authoring/runs/20261126T103358Z-final-nop/run.json) | 0 | R01_open, R02_objects, R03_size, R05_entrance_clearance, R07_visibility, R08_brand_colour, R12_polys, R13_entrance_render, R14_manifest, R_furniture_product_sizes, R_product_support, R_actual_entrance_opening, R_secondary_brand_colour, R15_anti_cheat, R16_deliverables, R_all_render_authenticity, R_render_structure |
+| booth-clearance | [final / model-regrade](booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/run.json) | 1 | all checks pass |
+| booth-clearance | [final / negative-secondary-render-substitution](booth-clearance/authoring/runs/20261126T104017Z-final-negative-secondary-render-substitution/run.json) | 0 | R_render_structure |
 | crate-lookdev | [pre-hardening / oracle](crate-lookdev/authoring/runs/20261126T073902Z-pre-hardening-oracle/run.json) | 1 | all checks pass |
 | crate-lookdev | [pre-hardening / nop](crate-lookdev/authoring/runs/20261126T074125Z-pre-hardening-nop/run.json) | 0 | R01_open, R02_parts, R03_outer_size, R04_thickness, R05_lid_hinge, R06_real_geometry, R07_pbr_maps, R08_materials, R09_stencil_wear, R10_renders, R11_polys, R12_manifest, R13_render_authenticity, R_all_render_authenticity |
 | crate-lookdev | [hardened / oracle](crate-lookdev/authoring/runs/20261126T074403Z-hardened-oracle/run.json) | 0 | verifier-timeout: R13_render_authenticity |
