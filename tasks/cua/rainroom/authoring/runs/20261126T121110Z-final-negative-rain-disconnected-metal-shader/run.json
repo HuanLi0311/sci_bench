@@ -1,0 +1,103 @@
+{
+  "task": "rainroom",
+  "kind": "negative-rain-disconnected-metal-shader",
+  "label": "final",
+  "started_at": "20261126T121110Z",
+  "agent": "adversarial-input-regrade",
+  "model": null,
+  "model_steps": null,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "started_at": "2026-11-26T12:11:12.174587+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:12.419587+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-env"
+      ],
+      "started_at": "2026-11-26T12:11:12.434178+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:12.726932+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-tests"
+      ],
+      "started_at": "2026-11-26T12:11:12.743905+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:13.035663+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-db3c9ff94f",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T121110Z-final-negative-rain-disconnected-metal-shader/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T121110Z-final-negative-rain-disconnected-metal-shader/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T121110Z-final-negative-rain-disconnected-metal-shader/verifier:/logs/verifier",
+        "cua-qc-rainroom-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T12:11:13.981123+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T12:11:14.217268+00:00"
+    }
+  ],
+  "nop_definition": null,
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "14fb06d4105fd0db89de5036bde8d37bf6c8cfee8227ac1ba31f9238e583ef55",
+      "bytes": 7794
+    },
+    "grade.py": {
+      "sha256": "719a0fd2782bec5aced8223e2332bfafd9093279b59d2d1792b3ac0bf868d991",
+      "bytes": 9726
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+      "bytes": 2291
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
+      "bytes": 715
+    },
+    "materials/LICENSE.txt": {
+ 
