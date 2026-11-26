@@ -17,32 +17,36 @@ from record_baselines import ROOT, TASKS, inventory, record
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--jobs", type=int, default=3, choices=range(1, 4))
+    parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
     options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    batch = ROOT / "evaluation" / (stamp + "-final")
+    batch = ROOT / "evaluation" / (stamp + "-final" + ("-" + options.tasks[0] if len(options.tasks) == 1 else ""))
     batch.mkdir(parents=True)
     meta = {"started_at": stamp, "label": "final", "grader_sources": {}, "runs": []}
     jobs = []
-    for task in TASKS:
+    for task in options.tasks:
         source = batch / "grader-source" / task
         shutil.copytree(ROOT / task / "tests", source, ignore=shutil.ignore_patterns("__pycache__"))
         meta["grader_sources"][task] = inventory(source)
         jobs.append((task, [("oracle", None), ("nop", None)]))
     mutation_jobs = []
-    for task in TASKS:
+    for task in options.tasks:
         mutations = {}
         for path in sorted((ROOT / task / "authoring" / "runs").glob("*-mutation-*/submission")):
             name = path.parent.name.split("-mutation-", 1)[1]
             mutations[name] = path
         for name, path in mutations.items():
             mutation_jobs.append((task, [("negative-" + name, path)]))
-    if len(mutation_jobs) != 9:
-        raise SystemExit(f"Expected 9 prepared mutations, found {len(mutation_jobs)}")
+    expected_mutations = {"crate-lookdev": 2, "booth-clearance": 5, "folding-chair": 2, "rainroom": 1, "toy-car": 2}
+    expected_count = sum(expected_mutations[t] for t in options.tasks)
+    if len(mutation_jobs) != expected_count:
+        raise SystemExit(f"Expected {expected_count} prepared mutations, found {len(mutation_jobs)}")
     jobs.extend(mutation_jobs)
     model = ROOT / "crate-lookdev" / "authoring" / "runs" / "historical" / "2026-11-25__22-10-48" / "crate-lookdev__dMX45qL" / "artifacts" / "app" / "out"
-    if not model.is_dir():
+    if "crate-lookdev" in options.tasks and not model.is_dir():
         raise SystemExit(f"Historical model output missing: {model}")
-    jobs.append(("crate-lookdev", [("model-regrade", model)]))
+    if "crate-lookdev" in options.tasks:
+        jobs.append(("crate-lookdev", [("model-regrade", model)]))
     (batch / "batch.json").write_text(json.dumps(meta, indent=2) + "\n")
 
     def run_job(job):
