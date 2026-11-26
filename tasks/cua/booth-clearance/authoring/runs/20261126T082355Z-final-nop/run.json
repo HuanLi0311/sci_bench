@@ -168,6 +168,60 @@
       "started_at": "2026-11-26T08:23:58.741903+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:23:58.866146+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-5cfac42f06"
+      ],
+      "started_at": "2026-11-26T08:23:58.875686+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T08:24:01.820225+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-5cfac42f06"
+      ],
+      "started_at": "2026-11-26T08:24:01.835598+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:24:01.887280+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-5cfac42f06:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082355Z-final-nop/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:24:01.900746+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:24:02.235358+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-5cfac42f06"
+      ],
+      "started_at": "2026-11-26T08:24:02.267816+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:24:02.492802+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-5cfac42f06"
+      ],
+      "started_at": "2026-11-26T08:24:02.501688+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:24:02.576427+00:00"
     }
   ],
   "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out",
@@ -265,5 +319,25 @@
     }
   },
   "agent_exit_code": 0,
-  "submission": {}
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_objects",
+    "R03_size",
+    "R05_entrance_clearance",
+    "R07_visibility",
+    "R08_brand_colour",
+    "R12_polys",
+    "R13_entrance_render",
+    "R14_manifest",
+    "R_furniture_product_sizes",
+    "R_product_support",
+    "R15_anti_cheat",
+    "R16_deliverables",
+    "R_all_render_authenticity"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T08:24:02.585483+00:00"
 }

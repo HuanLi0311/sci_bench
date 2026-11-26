@@ -86,6 +86,37 @@
         "R15_anti_cheat",
         "R_all_render_authenticity"
       ]
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "oracle",
+      "run": "booth-clearance/authoring/runs/20261126T081658Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "booth-clearance",
+      "kind": "nop",
+      "run": "booth-clearance/authoring/runs/20261126T082355Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_objects",
+        "R03_size",
+        "R05_entrance_clearance",
+        "R07_visibility",
+        "R08_brand_colour",
+        "R12_polys",
+        "R13_entrance_render",
+        "R14_manifest",
+        "R_furniture_product_sizes",
+        "R_product_support",
+        "R15_anti_cheat",
+        "R16_deliverables",
+        "R_all_render_authenticity"
+      ]
     }
   ]
 }
