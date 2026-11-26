@@ -163,6 +163,38 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "oracle",
+      "run": "crate-lookdev/authoring/runs/20261126T085622Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "crate-lookdev",
+      "kind": "nop",
+      "run": "crate-lookdev/authoring/runs/20261126T090242Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_parts",
+        "R03_outer_size",
+        "R04_thickness",
+        "R05_lid_hinge",
+        "R06_real_geometry",
+        "R07_pbr_maps",
+        "R08_materials",
+        "R09_stencil_wear",
+        "R10_renders",
+        "R11_polys",
+        "R12_manifest",
+        "R13_render_authenticity",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
