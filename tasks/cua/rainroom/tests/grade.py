@@ -135,9 +135,11 @@ def main():
         f"night R-B={nl:.3f} morning R-B={ml:.3f} dLum={morning-night:.3f}")
 
     mats = rep.get("materials", {})
-    glass = [n for n, m in mats.items() if (m.get("transmission") or 0) > 0.5
-             or (m.get("alpha") is not None and m["alpha"] < 0.5)]
-    metal = [n for n, m in mats.items() if (m.get("metallic") or 0) >= 0.9]
+    glass = [n for n, m in mats.items() if m.get("assigned_faces", 0) > 0 and
+             ((m.get("transmission") or 0) > 0.5 or
+              (m.get("alpha") is not None and m["alpha"] < 0.5))]
+    metal = [n for n, m in mats.items() if m.get("assigned_faces", 0) > 0 and
+             (m.get("metallic") or 0) >= 0.9]
     add("R09_materials", "must", bool(glass) and bool(metal),
         f"glass={glass} metal={metal}")
 

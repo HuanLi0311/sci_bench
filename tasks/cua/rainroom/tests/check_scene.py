@@ -1,5 +1,6 @@
 """Extract a scene report from a submitted rainroom."""
 import json
+import math
 import sys
 
 import bpy
@@ -33,6 +34,26 @@ def evaluated_triangles(ob):
     count = sum(len(p.vertices) - 2 for p in mesh.polygons)
     ev.to_mesh_clear()
     return count
+
+
+def scalar_input(socket, visited=None):
+    """Read constant values without substituting a linked socket's default."""
+    if socket is None:
+        return None
+    if not socket.is_linked:
+        value = float(socket.default_value)
+        return value if math.isfinite(value) else None
+    visited = set() if visited is None else visited
+    node = socket.links[0].from_node
+    if node in visited:
+        return None
+    visited.add(node)
+    if node.type == 'VALUE':
+        value = float(node.outputs[0].default_value)
+        return value if math.isfinite(value) else None
+    if node.type == 'REROUTE':
+        return scalar_input(node.inputs[0], visited)
+    return None
 
 
 def main():
@@ -74,18 +95,43 @@ def main():
             "lights": [o.name for o in c.objects if o.type == 'LIGHT'],
         }
 
+    assigned_faces = {}
+    for ob in sc.objects:
+        if ob.type != 'MESH' or ob.hide_render:
+            continue
+        ev = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        mesh = ev.to_mesh()
+        try:
+            for polygon in mesh.polygons:
+                if polygon.area <= 1e-12 or polygon.material_index >= len(ev.material_slots):
+                    continue
+                material = ev.material_slots[polygon.material_index].material
+                if material is not None:
+                    assigned_faces[material.name] = assigned_faces.get(material.name, 0) + 1
+        finally:
+            ev.to_mesh_clear()
+
     for mat in bpy.data.materials:
         info = {"transmission": None, "metallic": None, "roughness": None,
-                "images": []}
+                "images": [], "assigned_faces": assigned_faces.get(mat.name, 0)}
         if mat.use_nodes:
-            b = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
-            em = next((n for n in mat.node_tree.nodes if n.type == 'EMISSION'), None)
+            active, todo = set(), []
+            for output in mat.node_tree.nodes:
+                if output.type == 'OUTPUT_MATERIAL' and output.is_active_output:
+                    todo.extend(link.from_node for link in output.inputs['Surface'].links)
+            while todo:
+                node = todo.pop()
+                if node in active:
+                    continue
+                active.add(node)
+                todo.extend(link.from_node for socket in node.inputs for link in socket.links)
+            b = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED' and n in active), None)
+            em = next((n for n in mat.node_tree.nodes if n.type == 'EMISSION' and n in active), None)
             if b is not None:
-                t = b.inputs.get("Transmission Weight")
-                info["transmission"] = float(t.default_value) if t else 0.0
-                info["metallic"] = float(b.inputs["Metallic"].default_value)
-                info["roughness"] = float(b.inputs["Roughness"].default_value)
-                info["alpha"] = float(b.inputs["Alpha"].default_value)
+                info["transmission"] = scalar_input(b.inputs.get("Transmission Weight"))
+                info["metallic"] = scalar_input(b.inputs["Metallic"])
+                info["roughness"] = scalar_input(b.inputs["Roughness"])
+                info["alpha"] = scalar_input(b.inputs["Alpha"])
             info["emissive"] = em is not None
         rep["materials"][mat.name] = info
 
