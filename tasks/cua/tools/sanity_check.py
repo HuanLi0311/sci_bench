@@ -248,6 +248,8 @@ def check_negative(t):
                 "negative-booth-product-scaled": "R_furniture_product_sizes",
                 "negative-booth-product-floating": "R_product_support",
                 "negative-booth-unused-brand-slot": "R08_brand_colour",
+                "negative-booth-closed-opening": "R_actual_entrance_opening",
+                "negative-booth-camera-away": "R07_visibility",
                 "negative-crate-disconnected-maps": "R07_pbr_maps",
                 "negative-chair-common-root-collision": "R07_no_interpenetration",
                 "negative-toy-wrong-wheel-parent": "R07_steering",
