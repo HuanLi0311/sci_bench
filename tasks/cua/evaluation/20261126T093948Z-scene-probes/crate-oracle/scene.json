@@ -1,0 +1,928 @@
+{
+ "ok": true,
+ "blender": "4.2.3 LTS",
+ "unit_system": "METRIC",
+ "unit_scale": 1.0,
+ "objects": {
+  "bracket_01": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4024999737739563,
+     -0.3009999990463257,
+     0.0
+    ],
+    [
+     -0.34049999713897705,
+     -0.24000000953674316,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    -0.40049999952316284,
+    -0.27000001072883606,
+    0.029999999329447746
+   ]
+  },
+  "bracket_02": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4024999737739563,
+     -0.3009999990463257,
+     0.5200000405311584
+    ],
+    [
+     -0.34049999713897705,
+     -0.24000000953674316,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    -0.40049999952316284,
+    -0.27000001072883606,
+    0.550000011920929
+   ]
+  },
+  "bracket_03": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4024999737739563,
+     0.24000000953674316,
+     0.0
+    ],
+    [
+     -0.34049999713897705,
+     0.3009999990463257,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    -0.40049999952316284,
+    0.27000001072883606,
+    0.029999999329447746
+   ]
+  },
+  "bracket_04": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4024999737739563,
+     0.24000000953674316,
+     0.5200000405311584
+    ],
+    [
+     -0.34049999713897705,
+     0.3009999990463257,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    -0.40049999952316284,
+    0.27000001072883606,
+    0.550000011920929
+   ]
+  },
+  "bracket_05": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     0.34049999713897705,
+     -0.3009999990463257,
+     0.0
+    ],
+    [
+     0.4024999737739563,
+     -0.24000000953674316,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    0.40049999952316284,
+    -0.27000001072883606,
+    0.029999999329447746
+   ]
+  },
+  "bracket_06": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     0.34049999713897705,
+     -0.3009999990463257,
+     0.5200000405311584
+    ],
+    [
+     0.4024999737739563,
+     -0.24000000953674316,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    0.40049999952316284,
+    -0.27000001072883606,
+    0.550000011920929
+   ]
+  },
+  "bracket_07": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     0.34049999713897705,
+     0.24000000953674316,
+     0.0
+    ],
+    [
+     0.4024999737739563,
+     0.3009999990463257,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    0.40049999952316284,
+    0.27000001072883606,
+    0.029999999329447746
+   ]
+  },
+  "bracket_08": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     0.34049999713897705,
+     0.24000000953674316,
+     0.5200000405311584
+    ],
+    [
+     0.4024999737739563,
+     0.3009999990463257,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 216,
+   "materials": [
+    "mat_rusted_iron"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.0010000000474974513
+    }
+   ],
+   "location": [
+    0.40049999952316284,
+    0.27000001072883606,
+    0.550000011920929
+   ]
+  },
+  "cam_back": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    -1.1299999952316284,
+    1.1299999952316284,
+    0.8999999761581421
+   ],
+   "rotation": [
+    1.222640872001648,
+    4.2607911865388814e-08,
+    -2.3561947345733643
+   ]
+  },
+  "cam_front": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    1.1299999952316284,
+    -1.1299999952316284,
+    0.8999999761581421
+   ],
+   "rotation": [
+    1.2226407527923584,
+    -6.358298776376614e-08,
+    0.7853983044624329
+   ]
+  },
+  "cam_macro": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 100.0,
+   "ortho_scale": 6.0,
+   "location": [
+    0.571599543094635,
+    -0.4715995788574219,
+    0.6100598573684692
+   ],
+   "rotation": [
+    1.328183889389038,
+    -5.118906187817629e-08,
+    0.7853980660438538
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 1.0,
+   "location": [
+    0.0,
+    0.0,
+    3.0
+   ],
+   "rotation": [
+    0.0,
+    -0.0,
+    0.0
+   ]
+  },
+  "crate_back": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4000000059604645,
+     0.2800000011920929,
+     0.0
+    ],
+    [
+     0.4000000059604645,
+     0.29999998211860657,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    0.0,
+    0.28999999165534973,
+    0.28999999165534973
+   ]
+  },
+  "crate_bottom": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.30000001192092896,
+     0.0
+    ],
+    [
+     0.4000000059604645,
+     0.30000001192092896,
+     0.019999999552965164
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    0.0,
+    0.0,
+    0.009999999776482582
+   ]
+  },
+  "crate_front": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.29999998211860657,
+     0.0
+    ],
+    [
+     0.4000000059604645,
+     -0.2800000011920929,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    0.0,
+    -0.28999999165534973,
+    0.28999999165534973
+   ]
+  },
+  "crate_left": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.3999999761581421,
+     -0.2800000011920929,
+     0.0
+    ],
+    [
+     -0.3799999952316284,
+     0.2800000011920929,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    -0.38999998569488525,
+    0.0,
+    0.28999999165534973
+   ]
+  },
+  "crate_lid": {
+   "type": "MESH",
+   "parent": "lid_hinge",
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.30000001192092896,
+     0.5805000066757202
+    ],
+    [
+     0.4000000059604645,
+     0.30000001192092896,
+     0.6004999876022339
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    0.0,
+    0.30000001192092896,
+    0.5799999833106995
+   ]
+  },
+  "crate_right": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     0.3799999952316284,
+     -0.2800000011920929,
+     0.0
+    ],
+    [
+     0.3999999761581421,
+     0.2800000011920929,
+     0.5799999833106995
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "mat_weathered_oak"
+   ],
+   "modifiers": [
+    {
+     "type": "BEVEL",
+     "width": 0.003000000026077032
+    }
+   ],
+   "location": [
+    0.38999998569488525,
+    0.0,
+    0.28999999165534973
+   ]
+  },
+  "lid_hinge": {
+   "type": "EMPTY",
+   "parent": null
+  },
+  "light_fill": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "light_key": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "light_rim": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "stencil_text": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -0.3100000023841858,
+     -0.30059999227523804,
+     0.26499998569488525
+    ],
+    [
+     0.3100000023841858,
+     -0.30059999227523804,
+     0.574999988079071
+    ]
+   ],
+   "polys": 2,
+   "materials": [
+    "mat_stencil_paint"
+   ],
+   "modifiers": [],
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "meshes": [
+  "bracket_01",
+  "bracket_02",
+  "bracket_03",
+  "bracket_04",
+  "bracket_05",
+  "bracket_06",
+  "bracket_07",
+  "bracket_08",
+  "crate_back",
+  "crate_bottom",
+  "crate_front",
+  "crate_left",
+  "crate_lid",
+  "crate_right",
+  "stencil_text"
+ ],
+ "cameras": {
+  "cam_back": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    -1.1299999952316284,
+    1.1299999952316284,
+    0.8999999761581421
+   ],
+   "rotation": [
+    1.222640872001648,
+    4.2607911865388814e-08,
+    -2.3561947345733643
+   ]
+  },
+  "cam_front": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    1.1299999952316284,
+    -1.1299999952316284,
+    0.8999999761581421
+   ],
+   "rotation": [
+    1.2226407527923584,
+    -6.358298776376614e-08,
+    0.7853983044624329
+   ]
+  },
+  "cam_macro": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 100.0,
+   "ortho_scale": 6.0,
+   "location": [
+    0.571599543094635,
+    -0.4715995788574219,
+    0.6100598573684692
+   ],
+   "rotation": [
+    1.328183889389038,
+    -5.118906187817629e-08,
+    0.7853980660438538
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 1.0,
+   "location": [
+    0.0,
+    0.0,
+    3.0
+   ],
+   "rotation": [
+    0.0,
+    -0.0,
+    0.0
+   ]
+  }
+ },
+ "materials": {
+  "mat_rusted_iron": {
+   "name": "mat_rusted_iron",
+   "nodes": {},
+   "images": [
+    {
+     "name": "iron_basecolor",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "filepath": "//textures/iron_basecolor.png",
+     "colorspace": "sRGB",
+     "mean": 0.4561609923839569,
+     "node": "Image Texture",
+     "feeds": [
+      "BSDF_PRINCIPLED:Base Color"
+     ],
+     "grey_std": 0.017183205112814903,
+     "grey_mean": 0.2748812139034271,
+     "alpha_frac": 0.0,
+     "alpha_coverage": 1.0
+    },
+    {
+     "name": "iron_roughness",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "filepath": "//textures/iron_roughness.png",
+     "colorspace": "Non-Color",
+     "mean": 0.8218752145767212,
+     "node": "Image Texture.001",
+     "feeds": [
+      "BSDF_PRINCIPLED:Roughness"
+     ],
+     "grey_std": 0.024730531498789787,
+     "grey_mean": 0.7625013589859009,
+     "alpha_frac": 0.0,
+     "alpha_coverage": 1.0
+    }
+   ],
+   "metallic": 1.0,
+   "roughness": 0.5,
+   "roughness_std": null,
+   "alpha_frac": null,
+   "basecolor_linked": true,
+   "roughness_mean": null
+  },
+  "mat_stencil_paint": {
+   "name": "mat_stencil_paint",
+   "nodes": {},
+   "images": [
+    {
+     "name": "stencil_mask",
+     "size": [
+      2048,
+      1024
+     ],
+     "packed": true,
+     "filepath": "//../../tmp/stencil_mask.png",
+     "colorspace": "sRGB",
+     "mean": 0.6570528149604797,
+     "node": "Image Texture",
+     "feeds": [
+      "BSDF_PRINCIPLED:Base Color",
+      "BSDF_PRINCIPLED:Alpha"
+     ],
+     "grey_std": 1.2516975402832031e-06,
+     "grey_mean": 0.8627463579177856,
+     "alpha_frac": 0.04340028762817383,
+     "alpha_coverage": 0.04340028762817383
+    }
+   ],
+   "metallic": 0.0,
+   "roughness": 0.7200000286102295,
+   "roughness_std": null,
+   "alpha_frac": null,
+   "basecolor_linked": true,
+   "alpha_coverage": null
+  },
+  "mat_weathered_oak": {
+   "name": "mat_weathered_oak",
+   "nodes": {},
+   "images": [
+    {
+     "name": "oak_basecolor",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "filepath": "//textures/oak_basecolor.png",
+     "colorspace": "sRGB",
+     "mean": 0.41898849606513977,
+     "node": "Image Texture",
+     "feeds": [
+      "BSDF_PRINCIPLED:Base Color"
+     ],
+     "grey_std": 0.044910602271556854,
+     "grey_mean": 0.22531795501708984,
+     "alpha_frac": 0.0,
+     "alpha_coverage": 1.0
+    },
+    {
+     "name": "oak_roughness",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "filepath": "//textures/oak_roughness.png",
+     "colorspace": "Non-Color",
+     "mean": 0.684127688407898,
+     "node": "Image Texture.001",
+     "feeds": [
+      "BSDF_PRINCIPLED:Roughness"
+     ],
+     "grey_std": 0.07203865051269531,
+     "grey_mean": 0.5788378715515137,
+     "alpha_frac": 0.0,
+     "alpha_coverage": 1.0
+    },
+    {
+     "name": "oak_normal",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "filepath": "//textures/oak_normal.png",
+     "colorspace": "Non-Color",
+     "mean": 0.7499945163726807,
+     "node": "Image Texture.002",
+     "feeds": [
+      "NORMAL_MAP:Color",
+      "BSDF_PRINCIPLED:Normal"
+     ],
+     "grey_std": 0.0057167476043105125,
+     "grey_mean": 0.6666591167449951,
+     "alpha_frac": 0.0,
+     "alpha_coverage": 1.0
+    }
+   ],
+   "metallic": 0.0,
+   "roughness": 0.5,
+   "roughness_std": null,
+   "alpha_frac": null,
+   "basecolor_linked": true,
+   "roughness_mean": null
+  }
+ },
+ "images": [
+  {
+   "name": "iron_basecolor",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/iron_basecolor.png",
+   "colorspace": "sRGB",
+   "mean": 0.4561609923839569
+  },
+  {
+   "name": "iron_roughness",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/iron_roughness.png",
+   "colorspace": "Non-Color",
+   "mean": 0.8218752145767212
+  },
+  {
+   "name": "oak_basecolor",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/oak_basecolor.png",
+   "colorspace": "sRGB",
+   "mean": 0.41898849606513977
+  },
+  {
+   "name": "oak_normal",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/oak_normal.png",
+   "colorspace": "Non-Color",
+   "mean": 0.7499945163726807
+  },
+  {
+   "name": "oak_roughness",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/oak_roughness.png",
+   "colorspace": "Non-Color",
+   "mean": 0.684127688407898
+  },
+  {
+   "name": "stencil_mask",
+   "size": [
+    2048,
+    1024
+   ],
+   "packed": true,
+   "filepath": "//../../tmp/stencil_mask.png",
+   "colorspace": "sRGB",
+   "mean": 0.6570528149604797
+  },
+  {
+   "name": "studio_soft.hdr",
+   "size": [
+    1024,
+    512
+   ],
+   "packed": true,
+   "filepath": "//../environment/materials/hdri/studio_soft.hdr",
+   "colorspace": "Linear Rec.709",
+   "mean": 0.4918537437915802
+  }
+ ],
+ "polys_total": 2858,
+ "bounds": [
+  [
+   -0.4024999737739563,
+   -0.3009999990463257,
+   0.0
+  ],
+  [
+   0.4024999737739563,
+   0.3009999990463257,
+   0.6004999876022339
+  ]
+ ],
+ "outer_size": [
+  0.8049999475479126,
+  0.6019999980926514,
+  0.6004999876022339
+ ],
+ "lid": {
+  "parent": "lid_hinge",
+  "parent_location": [
+   0.0,
+   0.30000001192092896,
+   0.5799999833106995
+  ],
+  "parent_type": "EMPTY",
+  "rotation_mode": "XYZ",
+  "aabb": [
+   [
+    -0.4000000059604645,
+    -0.30000001192092896,
+    0.5805000066757202
+   ],
+   [
+    0.4000000059604645,
+    0.30000001192092896,
+    0.6004999876022339
+   ]
+  ],
+  "overlap": {
+   "sign": -1,
+   "0": 0,
+   "45": 0,
+   "95": 0
+  }
+ },
+ "panels_present": [
+  "crate_front",
+  "crate_back",
+  "crate_left",
+  "crate_right",
+  "crate_bottom"
+ ],
+ "brackets": [
+  "bracket_01",
+  "bracket_02",
+  "bracket_03",
+  "bracket_04",
+  "bracket_05",
+  "bracket_06",
+  "bracket_07",
+  "bracket_08"
+ ],
+ "has_stencil": true
+}

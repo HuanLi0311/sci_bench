@@ -1,0 +1,76 @@
+{
+  "label": "booth-empty-positive",
+  "source_blend": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T093556Z-representation-booth-empty-marker-positive/submission/booth.blend",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/20261126T093948Z-scene-probes/source/booth-clearance:/tests:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T093556Z-representation-booth-empty-marker-positive/submission:/submission:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/20261126T093948Z-scene-probes/booth-empty-positive:/diagnostic",
+    "cua-qc-booth-clearance-tests",
+    "blender",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "2",
+    "-b",
+    "/submission/booth.blend",
+    "--python",
+    "/tests/check_scene.py",
+    "--",
+    "/diagnostic/scene.json"
+  ],
+  "started_at": "2026-11-26T09:39:58.684809+00:00",
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+      "bytes": 709
+    },
+    "check_scene.py": {
+      "sha256": "e1f0eea0accc237b7b7f7073dfe4c593309fe84bb30a52f44abcaeeb91b92bbc",
+      "bytes": 12349
+    },
+    "grade.py": {
+      "sha256": "b585252786717ed4222b03e60c379716cbb9b2d15790d8042c4cc2bff619a065",
+      "bytes": 11493
+    },
+    "reference/geometry.json": {
+      "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+      "bytes": 2570
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "b8a5992373eff7ac715f9ee020a2c54aaa01a104844059b68b47b0f0a8a6eaf8",
+      "bytes": 2160
+    },
+    "rubric.py": {
+      "sha256": "adf70db75fd9e845873807377f8d79180a0ee87a078f2721fdf0b8248e111107",
+      "bytes": 1680
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    },
+    "test_rubric.py": {
+      "sha256": "01cae93b2ef771f834cebcf981c58f3af88d3f504456c808c136aadfbc230fd6",
+      "bytes": 1044
+    }
+  },
+  "submission_access": "read-only",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T09:40:03.006374+00:00",
+  "scene_ok": true,
+  "scene_error": null
+}
