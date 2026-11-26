@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "rain-unused-metal-slot",
+  "task": "rainroom",
+  "started_at": "20261126T115352Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T115352Z-mutation-rain-unused-metal-slot:/mutation",
+    "cua-qc-rainroom-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/rainroom.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "8532a6e81b51e5fc6417c3c8b2634628b2fea843f29670d9fbe7740883d81402",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-26T11:54:03.425068+00:00"
+}
