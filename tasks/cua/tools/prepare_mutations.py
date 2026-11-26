@@ -42,6 +42,39 @@ for name, point in (("collision_a", (-.28, 0, .100)), ("collision_b", (-.277, .0
     ob.parent = hinge
     ob.matrix_world = matrix
 ''',
+    "rain-unused-metal-slot": '''import bpy
+for material in bpy.data.materials:
+    if material.use_nodes:
+        for node in material.node_tree.nodes:
+            if node.type == 'BSDF_PRINCIPLED':
+                node.inputs['Metallic'].default_value = 0.0
+fake = bpy.data.materials.new('adversarial_unused_metal')
+fake.use_nodes = True
+fake.node_tree.nodes.get('Principled BSDF').inputs['Metallic'].default_value = 1.0
+shell = bpy.data.objects['room_shell']
+shell.data.materials.append(fake)
+assert not any(p.material_index == len(shell.data.materials) - 1 for p in shell.data.polygons)
+''',
+    "rain-linked-metal-default": '''import bpy
+for material in bpy.data.materials:
+    if material.use_nodes:
+        for node in list(material.node_tree.nodes):
+            if node.type == 'BSDF_PRINCIPLED' and node.inputs['Metallic'].default_value >= .9:
+                zero = material.node_tree.nodes.new('ShaderNodeValue')
+                zero.outputs[0].default_value = 0.0
+                material.node_tree.links.new(zero.outputs[0], node.inputs['Metallic'])
+''',
+    "rain-disconnected-metal-shader": '''import bpy
+for material in bpy.data.materials:
+    if material.use_nodes:
+        for node in list(material.node_tree.nodes):
+            if node.type == 'BSDF_PRINCIPLED' and node.inputs['Metallic'].default_value >= .9:
+                diffuse = material.node_tree.nodes.new('ShaderNodeBsdfDiffuse')
+                diffuse.inputs['Color'].default_value = node.inputs['Base Color'].default_value
+                for output in material.node_tree.nodes:
+                    if output.type == 'OUTPUT_MATERIAL' and output.is_active_output:
+                        material.node_tree.links.new(diffuse.outputs[0], output.inputs['Surface'])
+''',
     "booth-moved-entrance-marker": '''import bpy
 bpy.data.objects["entrance_zone"].location.x += 10.0
 ''',
@@ -154,3 +187,6 @@ if __name__ == "__main__":
     for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("folding-chair", "chair-shared-hinge-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot"), ("booth-clearance", "booth-closed-opening"), ("booth-clearance", "booth-camera-away"), ("booth-clearance", "booth-missing-secondary-color"), ("booth-clearance", "booth-empty-marker-positive")):
         if not options.only or options.only == mutation:
             prepare(task_name, mutation, SCRIPTS[mutation])
+    for mutation in ("rain-unused-metal-slot", "rain-linked-metal-default", "rain-disconnected-metal-shader"):
+        if not options.only or options.only == mutation:
+            prepare("rainroom", mutation, SCRIPTS[mutation])

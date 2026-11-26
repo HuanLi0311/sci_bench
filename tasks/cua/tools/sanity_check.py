@@ -21,7 +21,8 @@ NEGATIVE_CASES = {
                         "booth-camera-away", "booth-missing-secondary-color"},
     "crate-lookdev": {"secondary-render-substitution", "crate-disconnected-maps"},
     "folding-chair": {"secondary-render-substitution", "chair-common-root-collision", "chair-shared-hinge-collision"},
-    "rainroom": {"secondary-render-substitution"},
+    "rainroom": {"secondary-render-substitution", "rain-unused-metal-slot",
+                 "rain-linked-metal-default", "rain-disconnected-metal-shader"},
     "toy-car": {"secondary-render-substitution", "toy-wrong-wheel-parent"},
 }
 
@@ -265,6 +266,9 @@ def check_negative(t):
                 "negative-crate-disconnected-maps": "R07_pbr_maps",
                 "negative-chair-common-root-collision": "R07_no_interpenetration",
                 "negative-chair-shared-hinge-collision": "R07_no_interpenetration",
+                "negative-rain-unused-metal-slot": "R09_materials",
+                "negative-rain-linked-metal-default": "R09_materials",
+                "negative-rain-disconnected-metal-shader": "R09_materials",
                 "negative-toy-wrong-wheel-parent": "R07_steering",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
