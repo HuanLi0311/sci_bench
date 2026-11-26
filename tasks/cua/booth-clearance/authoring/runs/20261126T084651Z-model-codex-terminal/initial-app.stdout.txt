@@ -1,0 +1,54 @@
+/app:
+total 24
+drwxr-xr-x 1 root root 4096 Nov 26 08:46 .
+drwxr-xr-x 1 root root 4096 Nov 26 08:46 ..
+-rwxrwxrwx 1 root root 4169 Nov 26 08:36 instruction.md
+drwxr-xr-x 6 root root 4096 Nov 26 05:37 materials
+drwxr-xr-x 2 root root 4096 Nov 26 05:37 out
+
+/app/materials:
+total 28
+drwxr-xr-x 6 root root 4096 Nov 26 05:37 .
+drwxr-xr-x 1 root root 4096 Nov 26 08:46 ..
+-rwxrwxrwx 1 root root  289 Nov 25 16:07 LICENSE.txt
+drwxrwxrwx 2 root root 4096 Nov 25 15:38 brand
+drwxrwxrwx 2 root root 4096 Nov 25 15:38 drawings
+drwxrwxrwx 2 root root 4096 Nov 25 16:23 photos
+drwxrwxrwx 2 root root 4096 Nov 25 15:38 tables
+
+/app/materials/brand:
+total 44
+drwxrwxrwx 2 root root  4096 Nov 25 15:38 .
+drwxr-xr-x 6 root root  4096 Nov 26 05:37 ..
+-rwxrwxrwx 1 root root  2118 Nov 25 16:07 brand_sheet.pdf
+-rwxrwxrwx 1 root root 26366 Nov 25 16:07 logo.png
+-rwxrwxrwx 1 root root   395 Nov 25 16:07 logo.svg
+
+/app/materials/drawings:
+total 164
+drwxrwxrwx 2 root root   4096 Nov 25 15:38 .
+drwxr-xr-x 6 root root   4096 Nov 26 05:37 ..
+-rwxrwxrwx 1 root root  28147 Nov 25 16:07 booth_floor_plan.pdf
+-rwxrwxrwx 1 root root 126863 Nov 25 16:07 booth_floor_plan.png
+-rwxrwxrwx 1 root root   2422 Nov 25 16:07 constraints.pdf
+
+/app/materials/photos:
+total 272
+drwxrwxrwx 2 root root  4096 Nov 25 16:23 .
+drwxr-xr-x 6 root root  4096 Nov 26 05:37 ..
+-rwxrwxrwx 1 root root 69138 Nov 25 16:23 ref_corner.jpg
+-rwxrwxrwx 1 root root 48543 Nov 25 16:22 ref_counter.jpg
+-rwxrwxrwx 1 root root 77291 Nov 25 16:18 ref_overview.jpg
+-rwxrwxrwx 1 root root 70054 Nov 25 16:20 ref_products.jpg
+
+/app/materials/tables:
+total 24
+drwxrwxrwx 2 root root 4096 Nov 25 15:38 .
+drwxr-xr-x 6 root root 4096 Nov 26 05:37 ..
+-rwxrwxrwx 1 root root 5076 Nov 25 16:07 furniture_list.xlsx
+-rwxrwxrwx 1 root root 5075 Nov 25 16:07 product_sizes.xlsx
+
+/app/out:
+total 8
+drwxr-xr-x 2 root root 4096 Nov 26 05:37 .
+drwxr-xr-x 1 root root 4096 Nov 26 08:46 ..

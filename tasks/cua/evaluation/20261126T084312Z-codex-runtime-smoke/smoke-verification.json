@@ -1,0 +1,25 @@
+{
+    "cli_sha256":  "7a5619847c731f4f6fe5a4a657919cd264c3d3cb28520cedf6d610906e87ccdb",
+    "true_pass":  true,
+    "command_executions":  [
+                               {
+                                   "id":  "item_1",
+                                   "type":  "command_execution",
+                                   "command":  "/bin/bash -lc /bin/true",
+                                   "aggregated_output":  "",
+                                   "exit_code":  0,
+                                   "status":  "completed"
+                               },
+                               {
+                                   "id":  "item_2",
+                                   "type":  "command_execution",
+                                   "command":  "/bin/bash -lc /bin/pwd",
+                                   "aggregated_output":  "/app\n",
+                                   "exit_code":  0,
+                                   "status":  "completed"
+                               }
+                           ],
+    "evidence":  "actual CLI item.completed command_execution events, not model final prose",
+    "pwd_pass":  true,
+    "verified":  true
+}
