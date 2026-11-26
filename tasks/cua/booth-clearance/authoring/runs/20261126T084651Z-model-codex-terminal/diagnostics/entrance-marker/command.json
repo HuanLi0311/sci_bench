@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T084651Z-model-codex-terminal/submission:/submission:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T084651Z-model-codex-terminal/diagnostics/entrance-marker:/diagnostic",
+    "cua-qc-booth-clearance-tests",
+    "blender",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "2",
+    "-b",
+    "/submission/booth.blend",
+    "--python",
+    "/diagnostic/inspect.py",
+    "--",
+    "/diagnostic/entrance.json"
+  ],
+  "started_at": "2026-11-26T09:24:23.328789+00:00",
+  "submission_access": "read-only",
+  "exit_code": 2,
+  "finished_at": "2026-11-26T09:24:26.925402+00:00"
+}
