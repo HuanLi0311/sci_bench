@@ -172,6 +172,60 @@
       "started_at": "2026-11-26T09:45:46.394336+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:45:46.512356+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-0012bd466d"
+      ],
+      "started_at": "2026-11-26T09:45:46.515869+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:03.279712+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-0012bd466d"
+      ],
+      "started_at": "2026-11-26T09:51:03.284862+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:03.362590+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-0012bd466d:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261126T094534Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:51:03.370503+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:03.646993+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-0012bd466d"
+      ],
+      "started_at": "2026-11-26T09:51:03.667794+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:03.941557+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-0012bd466d"
+      ],
+      "started_at": "2026-11-26T09:51:03.950903+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:51:04.082394+00:00"
     }
   ],
   "nop_definition": null,
@@ -532,5 +586,10 @@
       "sha256": "9c7f6626cec4731441af6d347a0c3f72e2ffc1a1765f556856e4b6192bcecf10",
       "bytes": 1710161
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:51:04.127079+00:00"
 }
