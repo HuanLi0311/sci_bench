@@ -15,7 +15,7 @@ from bpy_extras.object_utils import world_to_camera_view
 PANELS = ["booth_shell", "counter", "cabinet_01", "cabinet_02",
           "product_01", "product_02", "product_03", "entrance_zone"]
 HYDRANT = Vector((-4.2, 0.0, 0.0))
-PRIMARY = (0.1216, 0.4353, 0.3608)
+PRIMARY = (31 / 255, 111 / 255, 92 / 255)
 
 
 def world_aabb(ob):
@@ -118,7 +118,10 @@ def main():
                 pending.extend(link.from_node for link in mat.node_tree.links if link.to_node == node)
             b = next((n for n in nodes if n.type == 'BSDF_PRINCIPLED' and n in active), None)
             if b is not None:
-                info["basecolor"] = list(b.inputs["Base Color"].default_value)[:3]
+                linear = list(b.inputs["Base Color"].default_value)[:3]
+                info["basecolor_linear"] = linear
+                info["basecolor"] = [12.92 * value if value <= 0.0031308 else 1.055 * value ** (1 / 2.4) - 0.055 for value in linear]
+                info["basecolor_space"] = "sRGB"
                 info["metallic"] = float(b.inputs["Metallic"].default_value)
             for n in mat.node_tree.nodes:
                 if n.type == 'TEX_IMAGE' and n.image is not None:

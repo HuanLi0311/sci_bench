@@ -18,8 +18,13 @@ WALL_T = 0.02
 ENTRANCE = 2.4
 COLUMN = 0.4
 HYD = Vector((-4.2, 0.0, 0.0))
-BRAND_PRIMARY = (0.1216, 0.4353, 0.3608, 1.0)     # #1F6F5C
-BRAND_SECONDARY = (0.9490, 0.7569, 0.3059, 1.0)   # #F2C14E
+def linear_color(rgb):
+    values = [channel / 255 for channel in rgb]
+    return tuple(value / 12.92 if value <= 0.04045 else ((value + 0.055) / 1.055) ** 2.4 for value in values) + (1.0,)
+
+
+BRAND_PRIMARY = linear_color((31, 111, 92))      # sRGB #1F6F5C
+BRAND_SECONDARY = linear_color((242, 193, 78))  # sRGB #F2C14E
 
 PRODUCTS = [("product_01", 0.30, 0.20, 0.25),
             ("product_02", 0.38, 0.26, 0.32),
