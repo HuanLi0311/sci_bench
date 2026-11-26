@@ -109,7 +109,7 @@ def check_isolation(tag):
 def check_recorded_run(t, kind):
     """A prose claim or a negative mutation is never evidence of Oracle/NOP."""
     task = Path(t)
-    current = {str(p.relative_to(task / "tests")): hashlib.sha256(p.read_bytes()).hexdigest()
+    current = {p.relative_to(task / "tests").as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in (task / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
     candidates = sorted((task / "authoring/runs").glob("*-final-" + kind), reverse=True)
     problems = []
@@ -188,7 +188,7 @@ def check_anticheat(t):
 
 
 def check_negative(t):
-    current = {str(p.relative_to(Path(t) / "tests")): hashlib.sha256(p.read_bytes()).hexdigest()
+    current = {p.relative_to(Path(t) / "tests").as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                for p in (Path(t) / "tests").rglob("*") if p.is_file() and "__pycache__" not in p.parts}
     count = 0
     for path in (Path(t) / "authoring/runs").glob("*-final-negative-*/run.json"):
