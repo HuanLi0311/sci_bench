@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/tools/sanity_check.py",
+    "booth-clearance"
+  ],
+  "started_at": "2026-11-26T08:53:42.323326+00:00",
+  "scope": "booth package and verification evidence; model attempt still running; not final whole-task completion QC",
+  "model_attempts_running": [
+    "20261126T084651Z-codex-terminal-gpt-6.1-sol-high"
+  ],
+  "exit_code": 1,
+  "finished_at": "2026-11-26T08:54:21.533145+00:00"
+}

@@ -1,0 +1,18 @@
+check             booth-clearance 
+----------------------------------
+1 layout          PASS            
+2 task.toml       PASS            
+3 suffix          PASS            
+4 materials       PASS            
+5 env image       PASS            
+5b isolation      PASS            
+6 tests image     PASS            
+7 oracle          PASS            
+7b true NOP       PASS            
+7c model records  FAIL            
+8 deliverables    PASS            
+9 anti-cheat      PASS            
+10 negative       PASS            
+11 licences       PASS            
+
+booth-clearance / 7c model records: model attempt 20261126T084651Z-codex-terminal-gpt-6.1-sol-high is still running
