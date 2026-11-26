@@ -1,0 +1,29 @@
+{
+  "purpose": "Independent material negative, never NOP or model inference",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/evaluation/rain-material-audit/20261126T114734Z:/audit",
+    "cua-qc-rainroom-tests",
+    "blender",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "2",
+    "-b",
+    "/audit/submission/rainroom.blend",
+    "-t",
+    "4",
+    "--python",
+    "/audit/mutate.py"
+  ],
+  "exit_code": 0,
+  "mutation_sha256": "f26270d0e32857f424cdd815ca05fc394986deaa769252e303919d94d4b092a2"
+}
