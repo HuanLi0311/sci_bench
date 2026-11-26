@@ -334,6 +334,31 @@
         "R_all_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "rainroom",
+      "kind": "negative-secondary-render-substitution",
+      "run": "rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "toy-car",
+      "kind": "negative-secondary-render-substitution",
+      "run": "toy-car/authoring/runs/20261126T094129Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R10_silhouette",
+        "R14_anti_cheat",
+        "R_all_render_authenticity",
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-26T09:41:37.637287+00:00"
 }

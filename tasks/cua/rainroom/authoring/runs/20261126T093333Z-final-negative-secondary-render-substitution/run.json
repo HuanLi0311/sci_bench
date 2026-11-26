@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T09:33:35.282436+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T09:33:35.458282+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-ad0fb9c582"
+      ],
+      "started_at": "2026-11-26T09:33:35.474078+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-26T09:41:29.097649+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-ad0fb9c582"
+      ],
+      "started_at": "2026-11-26T09:41:29.111271+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:41:29.160479+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-ad0fb9c582:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/authoring/runs/20261126T093333Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T09:41:29.177164+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:41:29.451261+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-ad0fb9c582"
+      ],
+      "started_at": "2026-11-26T09:41:29.465703+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:41:29.487214+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-ad0fb9c582"
+      ],
+      "started_at": "2026-11-26T09:41:29.497330+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T09:41:29.579546+00:00"
     }
   ],
   "nop_definition": null,
@@ -146,5 +200,13 @@
       "sha256": "96c458fb5488ea991310ecc1f48456fe6fd766a46822cc2f40c2fc2df5f4cead",
       "bytes": 6390
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R_all_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T09:41:29.589214+00:00"
 }
