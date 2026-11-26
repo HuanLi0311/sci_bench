@@ -1,0 +1,172 @@
+{
+  "timestamp_utc": "2026-11-26T08:11:23.346260+00:00",
+  "scope": "static packaging and recovered model evidence only; not an Oracle/NOP or render run",
+  "checker_sha256": "aa03c3f769639754268815cd21dda5bd35e96b82b55016ccdb2f24f808564770",
+  "results": [
+    {
+      "task": "booth-clearance",
+      "checks": {
+        "layout": [
+          true,
+          "ok"
+        ],
+        "task_metadata": [
+          true,
+          "ok"
+        ],
+        "instruction_suffix": [
+          true,
+          "7200 vs 7200"
+        ],
+        "materials": [
+          true,
+          "13 files"
+        ],
+        "reference_deliverables": [
+          true,
+          "4 files"
+        ],
+        "model_inventory": [
+          true,
+          "0 recovered attempts; empty tasks explicitly recorded"
+        ],
+        "asset_licenses": [
+          true,
+          "1 assets"
+        ]
+      }
+    },
+    {
+      "task": "crate-lookdev",
+      "checks": {
+        "layout": [
+          true,
+          "ok"
+        ],
+        "task_metadata": [
+          true,
+          "ok"
+        ],
+        "instruction_suffix": [
+          true,
+          "7200 vs 7200"
+        ],
+        "materials": [
+          true,
+          "9 files"
+        ],
+        "reference_deliverables": [
+          true,
+          "6 files"
+        ],
+        "model_inventory": [
+          true,
+          "14 recovered attempts; empty tasks explicitly recorded"
+        ],
+        "asset_licenses": [
+          true,
+          "7 assets"
+        ]
+      }
+    },
+    {
+      "task": "folding-chair",
+      "checks": {
+        "layout": [
+          true,
+          "ok"
+        ],
+        "task_metadata": [
+          true,
+          "ok"
+        ],
+        "instruction_suffix": [
+          true,
+          "7200 vs 7200"
+        ],
+        "materials": [
+          true,
+          "11 files"
+        ],
+        "reference_deliverables": [
+          true,
+          "6 files"
+        ],
+        "model_inventory": [
+          true,
+          "0 recovered attempts; empty tasks explicitly recorded"
+        ],
+        "asset_licenses": [
+          true,
+          "2 assets"
+        ]
+      }
+    },
+    {
+      "task": "rainroom",
+      "checks": {
+        "layout": [
+          true,
+          "ok"
+        ],
+        "task_metadata": [
+          true,
+          "ok"
+        ],
+        "instruction_suffix": [
+          true,
+          "7200 vs 7200"
+        ],
+        "materials": [
+          true,
+          "7 files"
+        ],
+        "reference_deliverables": [
+          true,
+          "4 files"
+        ],
+        "model_inventory": [
+          true,
+          "0 recovered attempts; empty tasks explicitly recorded"
+        ],
+        "asset_licenses": [
+          true,
+          "1 assets"
+        ]
+      }
+    },
+    {
+      "task": "toy-car",
+      "checks": {
+        "layout": [
+          true,
+          "ok"
+        ],
+        "task_metadata": [
+          true,
+          "ok"
+        ],
+        "instruction_suffix": [
+          true,
+          "7200 vs 7200"
+        ],
+        "materials": [
+          true,
+          "29 files"
+        ],
+        "reference_deliverables": [
+          true,
+          "6 files"
+        ],
+        "model_inventory": [
+          true,
+          "0 recovered attempts; empty tasks explicitly recorded"
+        ],
+        "asset_licenses": [
+          true,
+          "1 assets"
+        ]
+      }
+    }
+  ]
+}
