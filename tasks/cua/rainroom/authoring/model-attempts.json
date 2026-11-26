@@ -1,12 +1,111 @@
 {
   "task": "rainroom",
-  "scope": "Recovered local historical task trials; authoring conversations and Oracle/NOP are not blind model attempts.",
+  "scope": "Recovered historical attempts plus newly recorded blind attempts; Oracle/NOP are excluded.",
   "searched": [
     "WSL /tmp/harbor-jobs",
     "task authoring/runs",
     "WSL /root/.codex/sessions"
   ],
   "step_definition": "ATIF: all steps; agent_steps: source=agent including reasoning/messages/tool requests; tool_calls: sum of tool_calls list lengths; no GUI-click inference",
-  "attempts": [],
-  "absence_note": "No historical model attempt was found for this task in the searched local run archives; no success or pass-rate claim is made."
+  "attempts": [
+    {
+      "id": "20261126T111524Z-codex-terminal-gpt-6.1-sol-high",
+      "path": "tasks/cua/rainroom/authoring/runs/20261126T111524Z-model-codex-terminal",
+      "model_identifier": "gpt-6.1-sol",
+      "agent": "codex-terminal",
+      "gui_compliant": false,
+      "effective_config": {
+        "model_identifier": "gpt-6.1-sol",
+        "provider_label": "oneton",
+        "reasoning_effort": "high",
+        "agent": "Codex terminal baseline",
+        "cli_version": "0.172.0",
+        "timeout_seconds": 7200,
+        "approval": "never (externally isolated Docker)",
+        "sandbox": "danger-full-access inside container only",
+        "gui_compliant": false,
+        "network": "Docker bridge; no host repository, Docker socket, solution/tests/authoring mounts",
+        "credentials": "private minimal provider config; values omitted; never archived",
+        "materials": {
+          "LICENSE.txt": {
+            "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+            "bytes": 61
+          },
+          "drawings/room_plan.png": {
+            "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+            "bytes": 88574
+          },
+          "photos/ref_detail.jpg": {
+            "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+            "bytes": 54191
+          },
+          "photos/ref_morning.jpg": {
+            "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+            "bytes": 71539
+          },
+          "photos/ref_night.jpg": {
+            "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+            "bytes": 62699
+          },
+          "spec/material_spec.pdf": {
+            "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+            "bytes": 2513
+          },
+          "tables/objects.xlsx": {
+            "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+            "bytes": 5921
+          }
+        },
+        "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+        "purpose": "blind terminal baseline",
+        "multi_agent": false,
+        "task": "rainroom",
+        "cpus": 4,
+        "memory_mb": 8192,
+        "grader_source": {
+          "Dockerfile": {
+            "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+            "bytes": 709
+          },
+          "check_scene.py": {
+            "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
+            "bytes": 5918
+          },
+          "grade.py": {
+            "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
+            "bytes": 9627
+          },
+          "render_compare.py": {
+            "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+            "bytes": 951
+          },
+          "rerender.py": {
+            "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+            "bytes": 2291
+          },
+          "test.sh": {
+            "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+            "bytes": 595
+          }
+        },
+        "runtime_binaries": {
+          "codex-code-mode-host": {
+            "bytes": 69339672,
+            "sha256": "1800682c85429ff546b23a1aa96b5c1405fe74ac6743690d89d6dc5cfaf3b4f1"
+          },
+          "codex": {
+            "bytes": 321244472,
+            "sha256": "ad83b94c093f0cdd8176a6bc8005a461bdf23a759863e157d40f562b8a9d664d"
+          }
+        }
+      },
+      "outcome": "running",
+      "reward": null,
+      "raw_rollout_path": "tasks/cua/rainroom/authoring/runs/20261126T111524Z-model-codex-terminal/raw-rollout",
+      "trajectory_format": "Codex raw JSONL plus CLI --json events",
+      "step_definition": "Pending final count_steps(raw-rollout); requests counted independently of successful tool execution",
+      "agent_steps": null,
+      "tool_calls": null
+    }
+  ]
 }

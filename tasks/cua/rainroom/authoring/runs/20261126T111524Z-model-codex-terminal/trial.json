@@ -1,0 +1,229 @@
+{
+  "id": "20261126T111524Z-codex-terminal-gpt-6.1-sol-high",
+  "started_at": "2026-11-26T11:15:27.503631+00:00",
+  "effective_config": {
+    "model_identifier": "gpt-6.1-sol",
+    "provider_label": "oneton",
+    "reasoning_effort": "high",
+    "agent": "Codex terminal baseline",
+    "cli_version": "0.172.0",
+    "timeout_seconds": 7200,
+    "approval": "never (externally isolated Docker)",
+    "sandbox": "danger-full-access inside container only",
+    "gui_compliant": false,
+    "network": "Docker bridge; no host repository, Docker socket, solution/tests/authoring mounts",
+    "credentials": "private minimal provider config; values omitted; never archived",
+    "materials": {
+      "LICENSE.txt": {
+        "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
+        "bytes": 61
+      },
+      "drawings/room_plan.png": {
+        "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
+        "bytes": 88574
+      },
+      "photos/ref_detail.jpg": {
+        "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
+        "bytes": 54191
+      },
+      "photos/ref_morning.jpg": {
+        "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
+        "bytes": 71539
+      },
+      "photos/ref_night.jpg": {
+        "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
+        "bytes": 62699
+      },
+      "spec/material_spec.pdf": {
+        "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
+        "bytes": 2513
+      },
+      "tables/objects.xlsx": {
+        "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
+        "bytes": 5921
+      }
+    },
+    "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+    "purpose": "blind terminal baseline",
+    "multi_agent": false,
+    "task": "rainroom",
+    "cpus": 4,
+    "memory_mb": 8192,
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
+        "bytes": 5918
+      },
+      "grade.py": {
+        "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
+        "bytes": 9627
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
+        "bytes": 2291
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "runtime_binaries": {
+      "codex-code-mode-host": {
+        "bytes": 69339672,
+        "sha256": "1800682c85429ff546b23a1aa96b5c1405fe74ac6743690d89d6dc5cfaf3b4f1"
+      },
+      "codex": {
+        "bytes": 321244472,
+        "sha256": "ad83b94c093f0cdd8176a6bc8005a461bdf23a759863e157d40f562b8a9d664d"
+      }
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-rainroom-env"
+      ],
+      "started_at": "2026-11-26T11:15:27.549442+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:27.659677+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "--env",
+        "CODEX_HOME=/run/codex-home",
+        "cua-qc-rainroom-env",
+        "sleep",
+        "infinity"
+      ],
+      "started_at": "2026-11-26T11:15:27.679749+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:27.868336+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "cua-rainroom-model-0c6e1bcc5c"
+      ],
+      "started_at": "2026-11-26T11:15:27.891744+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:28.380449+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "mkdir",
+        "-p",
+        "/run/codex-home",
+        "/app/out"
+      ],
+      "started_at": "2026-11-26T11:15:28.404102+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:28.563610+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/usr/local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host",
+        "cua-rainroom-model-0c6e1bcc5c:/usr/local/bin/codex-code-mode-host"
+      ],
+      "started_at": "2026-11-26T11:15:28.584246+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:28.885527+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/usr/local/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex",
+        "cua-rainroom-model-0c6e1bcc5c:/usr/local/bin/codex"
+      ],
+      "started_at": "2026-11-26T11:15:28.905689+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:30.114843+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/tmp/cua-booth-private-jl346bla/config.toml",
+        "cua-rainroom-model-0c6e1bcc5c:/run/codex-home/config.toml"
+      ],
+      "started_at": "2026-11-26T11:15:30.167739+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:30.228412+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/rainroom/instruction.md",
+        "cua-rainroom-model-0c6e1bcc5c:/app/instruction.md"
+      ],
+      "started_at": "2026-11-26T11:15:30.269134+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:30.406684+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "ls",
+        "-laR",
+        "/app"
+      ],
+      "started_at": "2026-11-26T11:15:30.453098+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:30.665550+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "python3",
+        "-c",
+        "import pathlib,hashlib,json; root=pathlib.Path(\"/app/materials\"); print(json.dumps({\"materials\":{str(p.relative_to(root)):{\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest(),\"bytes\":p.stat().st_size} for p in sorted(root.rglob(\"*\")) if p.is_file()},\"output_files\":[str(p) for p in pathlib.Path(\"/app/out\").rglob(\"*\") if p.is_file()],\"forbidden_paths\":{p:pathlib.Path(p).exists() for p in [\"/solution\",\"/tests\",\"/authoring\",\"/app/solution\",\"/app/tests\",\"/app/authoring\"]}}))"
+      ],
+      "started_at": "2026-11-26T11:15:30.747285+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:31.079828+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-rainroom-model-0c6e1bcc5c",
+        "codex",
+        "--version"
+      ],
+      "started_at": "2026-11-26T11:15:31.284619+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T11:15:31.546732+00:00"
+    }
+  ],
+  "outcome": "running"
+}
