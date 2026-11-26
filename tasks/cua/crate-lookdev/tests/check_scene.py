@@ -191,6 +191,8 @@ def main():
         evaluated = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
         mesh = evaluated.to_mesh()
         try:
+            if not mesh.vertices or not mesh.polygons:
+                raise ValueError(f"{name}: empty evaluated geometry")
             if any(not __import__('math').isfinite(c) for v in mesh.vertices for c in v.co):
                 raise ValueError(f"{name}: non-finite vertex")
         finally:
