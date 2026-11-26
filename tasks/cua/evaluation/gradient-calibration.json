@@ -233,6 +233,30 @@
         "2": 1.0,
         "3": 1.0
       }
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/verifier/work-8_0xtjih/render_entrance.png",
+      "view": "render_entrance.png",
+      "kind": "corrected sRGB reference"
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/verifier/work-8_0xtjih/render_top.png",
+      "view": "render_top.png",
+      "kind": "corrected sRGB reference"
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/verifier/work-jpcwsg_e/render_entrance.png",
+      "view": "render_entrance.png",
+      "kind": "independent model artifact"
+    },
+    {
+      "task": "booth-clearance",
+      "run": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/verifier/work-jpcwsg_e/render_top.png",
+      "view": "render_top.png",
+      "kind": "independent model artifact"
     }
   ]
 }

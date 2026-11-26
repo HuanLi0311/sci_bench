@@ -170,6 +170,38 @@
       "delivered_sha256": "96ff394c1f0b0aef0fbe5fb0a6de6a7779d2a8ff60743d2b042fb264c012a9d4",
       "gradient_error": 1.0,
       "expected": "reject"
+    },
+    {
+      "trusted": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/verifier/work-8_0xtjih/render_entrance.png",
+      "trusted_sha256": "e9539be2973726c5ec040746411ef04a20cb91bda2273dacf1e9bb148e96dbfe",
+      "delivered": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/submission/render_entrance.png",
+      "delivered_sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
+      "gradient_error": 0.29167013456661856,
+      "expected": "accept"
+    },
+    {
+      "trusted": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/verifier/work-8_0xtjih/render_top.png",
+      "trusted_sha256": "346120d52247b9028cf51939d5796a0ab36b937e07be70857fb7a286b5b8b39f",
+      "delivered": "booth-clearance/authoring/runs/20261126T102746Z-final-oracle/submission/render_top.png",
+      "delivered_sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
+      "gradient_error": 0.247034365263989,
+      "expected": "accept"
+    },
+    {
+      "trusted": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/verifier/work-jpcwsg_e/render_entrance.png",
+      "trusted_sha256": "99bf50596bf0e84520659452df7ef25fb1c8646ca31df84bd268fe872b2039cd",
+      "delivered": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/submission/render_entrance.png",
+      "delivered_sha256": "15636c34863b44b4515e1b2deaf4f0160f10e4710f0989ac6347955fd2c5aff6",
+      "gradient_error": 0.20312822844468936,
+      "expected": "accept"
+    },
+    {
+      "trusted": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/verifier/work-jpcwsg_e/render_top.png",
+      "trusted_sha256": "d1b48503292e697a35e97b3be027996fbd72ca6032fe1cb9bcf2bd685029f60b",
+      "delivered": "booth-clearance/authoring/runs/20261126T103405Z-final-model-regrade/submission/render_top.png",
+      "delivered_sha256": "b8044de1affc64ccbb4987b5f6d173cf586f9183fa0767b44f022a9455a87909",
+      "gradient_error": 0.14560543958712566,
+      "expected": "accept"
     }
   ]
 }
