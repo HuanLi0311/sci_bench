@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3 LTS",
+  "assets": [
+    {
+      "path": "textures/oak_basecolor.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/oak_roughness.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/oak_normal.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/iron_basecolor.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/iron_roughness.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "textures/stencil_mask.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    },
+    {
+      "path": "hdri/studio_soft.hdr",
+      "role": "hdri",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_front.png",
+      "camera": "cam_front",
+      "resolution": [
+        1600,
+        1200
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_back.png",
+      "camera": "cam_back",
+      "resolution": [
+        1600,
+        1200
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_top.png",
+      "camera": "cam_top",
+      "resolution": [
+        1600,
+        1280
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_macro.png",
+      "camera": "cam_macro",
+      "resolution": [
+        1600,
+        1200
+      ],
+      "samples": 64
+    }
+  ]
+}
