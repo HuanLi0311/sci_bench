@@ -197,6 +197,10 @@ def main():
     opening = scene.get("entrance_opening_samples", {})
     add("R_actual_entrance_opening", "must", len(opening) == 5 and all(opening.values()), opening)
 
+    secondary_delta = scene.get("secondary_brand_delta")
+    add("R_secondary_brand_colour", "must", secondary_delta is not None and secondary_delta <= 2.0,
+        {"delta": secondary_delta, "surfaces": scene.get("secondary_brand_surfaces", [])})
+
     # anti-cheat: move cabinet_01 by 0.5 m and re-render
     ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
     if ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_entrance.png")):

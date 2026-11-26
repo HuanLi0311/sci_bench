@@ -250,6 +250,7 @@ def check_negative(t):
                 "negative-booth-unused-brand-slot": "R08_brand_colour",
                 "negative-booth-closed-opening": "R_actual_entrance_opening",
                 "negative-booth-camera-away": "R07_visibility",
+                "negative-booth-missing-secondary-color": "R_secondary_brand_colour",
                 "negative-crate-disconnected-maps": "R07_pbr_maps",
                 "negative-chair-common-root-collision": "R07_no_interpenetration",
                 "negative-toy-wrong-wheel-parent": "R07_steering",

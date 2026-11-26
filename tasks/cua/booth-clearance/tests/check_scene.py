@@ -19,6 +19,7 @@ PANELS = ["booth_shell", "counter", "cabinet_01", "cabinet_02",
           "product_01", "product_02", "product_03", "entrance_zone"]
 HYDRANT = Vector((-4.2, 0.0, 0.0))
 PRIMARY = (31 / 255, 111 / 255, 92 / 255)
+SECONDARY = (242 / 255, 193 / 255, 78 / 255)
 
 
 def world_aabb(ob):
@@ -269,6 +270,38 @@ def main():
     rep["brand_material"] = sorted(used)
     rep["brand_back_wall_samples"] = samples
     rep["brand_sampled_face_area"] = sampled_area
+
+    # Secondary colour must be used by a real rendered surface, not merely
+    # declared in an unused material or material slot.
+    secondary = []
+    deps = bpy.context.evaluated_depsgraph_get()
+    for ob in sc.objects:
+        if ob.name == "entrance_zone" or ob.hide_render or ob.type not in ('MESH', 'FONT', 'CURVE', 'SURFACE'):
+            continue
+        evaluated = ob.evaluated_get(deps)
+        mesh = evaluated.to_mesh()
+        try:
+            candidates = {}
+            for index, mat in enumerate(mesh.materials):
+                color = rep["materials"].get(mat.name, {}).get("basecolor") if mat else None
+                if color:
+                    delta = max(abs(color[i] - SECONDARY[i]) * 255 for i in range(3))
+                    candidates[index] = (mat.name, delta)
+            used = set()
+            for polygon in mesh.polygons:
+                index = polygon.material_index
+                if index not in candidates or index in used:
+                    continue
+                points = [evaluated.matrix_world @ mesh.vertices[i].co for i in polygon.vertices]
+                area = sum((points[i] - points[0]).cross(points[i + 1] - points[0]).length / 2 for i in range(1, len(points) - 1))
+                if area > 1e-10:
+                    name, delta = candidates[index]
+                    secondary.append({"object": ob.name, "material": name, "delta": delta})
+                    used.add(index)
+        finally:
+            evaluated.to_mesh_clear()
+    rep["secondary_brand_delta"] = min((item["delta"] for item in secondary), default=None)
+    rep["secondary_brand_surfaces"] = [item for item in secondary if item["delta"] <= 2.0]
 
     rep["required_present"] = {n: (n in bpy.data.objects) for n in PANELS}
     rep["has_lighting"] = any(o.type == 'LIGHT' for o in bpy.data.objects) and         ("lighting" in bpy.data.objects)

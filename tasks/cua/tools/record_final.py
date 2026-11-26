@@ -41,7 +41,7 @@ if __name__ == "__main__":
             mutations[name] = path
         for name, path in mutations.items():
             mutation_jobs.append((task, [("negative-" + name, path)]))
-    expected_mutations = {"crate-lookdev": 2, "booth-clearance": 7, "folding-chair": 2, "rainroom": 1, "toy-car": 2}
+    expected_mutations = {"crate-lookdev": 2, "booth-clearance": 8, "folding-chair": 2, "rainroom": 1, "toy-car": 2}
     expected_count = sum(expected_mutations[t] for t in options.tasks)
     if len(mutation_jobs) != expected_count:
         raise SystemExit(f"Expected {expected_count} prepared mutations, found {len(mutation_jobs)}")
