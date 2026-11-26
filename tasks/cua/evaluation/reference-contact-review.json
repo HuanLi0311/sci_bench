@@ -1,0 +1,122 @@
+{
+  "checked_utc": "2026-11-26T11:40:26.063997+00:00",
+  "scope": "All 14 formal reference PNGs in the four non-booth tasks were visually reviewed in two labelled contact sheets; file rendering and view/state correspondence only, no subjective art-quality score",
+  "files": [
+    {
+      "path": "crate-lookdev/solution/render_back.png",
+      "sha256": "9494755509dedb8180fcd3798b69407d55b7b58e9355925a1ad85ccf7b533a25",
+      "resolution": [
+        1600,
+        1200
+      ]
+    },
+    {
+      "path": "crate-lookdev/solution/render_front.png",
+      "sha256": "d2d4a5ee27981a71668ac7d041cb4aabf16dcf0988203ecbb83020220831ff2b",
+      "resolution": [
+        1600,
+        1200
+      ]
+    },
+    {
+      "path": "crate-lookdev/solution/render_macro.png",
+      "sha256": "edb1de344f2b2fbc56af32f60dd81b50054c06c8755e3601c0021004c6a6207b",
+      "resolution": [
+        1600,
+        1200
+      ]
+    },
+    {
+      "path": "crate-lookdev/solution/render_top.png",
+      "sha256": "690bb82de81c1e3550379d47043c7a79aaa6416029eed9b107368445395dd7ec",
+      "resolution": [
+        1600,
+        1280
+      ]
+    },
+    {
+      "path": "folding-chair/solution/render_folded.png",
+      "sha256": "91bffb5cad07823c0dde4a4cbceddf46352c447f0fbe6c00455fc92ce0e3d6a8",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "folding-chair/solution/render_half.png",
+      "sha256": "966955c11a8df26326864af557e4adf5550277280126ea0de559f4d97a940603",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "folding-chair/solution/render_locked.png",
+      "sha256": "ecc7afe203fa9064841cafb09129166b9c78aa94ed38ad4a496d4affb754186b",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "folding-chair/solution/render_unfolded.png",
+      "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "rainroom/solution/render_morning.png",
+      "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
+      "resolution": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "rainroom/solution/render_night.png",
+      "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
+      "resolution": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "toy-car/solution/render_back.png",
+      "sha256": "a03242c53d1504ea64865cb958ffed2bdd56e2965bc50bee903483087475faa6",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "toy-car/solution/render_front.png",
+      "sha256": "698f492e4fb680964267a921139b79370a68bae0bb32b238b945528a4f94fad7",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "toy-car/solution/render_side.png",
+      "sha256": "2f5a7a91e4f8dfa3df4c3f877bfb98d7fcd20c048d8b9e1c2e5c655fa7026d99",
+      "resolution": [
+        1200,
+        1200
+      ]
+    },
+    {
+      "path": "toy-car/solution/render_top.png",
+      "sha256": "4db66cfb75243bc7ae9a57151fc4615fd0bf153f169d4b613973994f8add2755",
+      "resolution": [
+        1200,
+        1200
+      ]
+    }
+  ],
+  "contact_sheets": [
+    "reference-contact-review.png",
+    "reference-contact-review-secondary.png"
+  ]
+}
