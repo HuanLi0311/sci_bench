@@ -1,0 +1,41 @@
+{
+  "started_at": "20261126T081627Z",
+  "label": "final",
+  "grader_sources": {
+    "booth-clearance": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "9fbe13f59a175f7ce0fd4bff1a4aa36470755cd8048810511f07ad625d083f42",
+        "bytes": 10398
+      },
+      "grade.py": {
+        "sha256": "89a35ca64d8e74b6ab238ab93a71851e79305ea91149620f86a837bd26f9ca9d",
+        "bytes": 11044
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "rerender.py": {
+        "sha256": "b8a5992373eff7ac715f9ee020a2c54aaa01a104844059b68b47b0f0a8a6eaf8",
+        "bytes": 2160
+      },
+      "rubric.py": {
+        "sha256": "adf70db75fd9e845873807377f8d79180a0ee87a078f2721fdf0b8248e111107",
+        "bytes": 1680
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "01cae93b2ef771f834cebcf981c58f3af88d3f504456c808c136aadfbc230fd6",
+        "bytes": 1044
+      }
+    }
+  },
+  "runs": []
+}

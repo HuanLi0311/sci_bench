@@ -22,6 +22,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cancel-final", action="store_true", help="Actively cancel the old full batch and its non-booth running verifiers under the new priority")
     parser.add_argument("--cancel-booth-negatives", action="store_true", help="Also cancel obsolete booth negative runs, after preserving its completed Oracle")
+    parser.add_argument("--preserve-structure-first", action="store_true", help="Keep the newer structure-first booth scheduler alive")
+    parser.add_argument("--grader-sha256", help="Limit cancelled run containers to this snapshotted grade.py hash")
     options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     evidence = ROOT / "evaluation" / (stamp + "-booth-priority")
@@ -37,6 +39,8 @@ if __name__ == "__main__":
         if len(args) < 2 or not args[0].endswith("python3"):
             continue
         if args[1].endswith("/record_final.py"):
+            if options.preserve_structure_first and "--structure-first" in args:
+                continue
             try:
                 os.kill(int(proc.name), signal.SIGTERM if options.cancel_final else signal.SIGSTOP)
                 if options.cancel_final:
@@ -56,6 +60,8 @@ if __name__ == "__main__":
         allowed = ("pre-hardening", "hardened", "hardened-lf-fix", "final") if options.cancel_final else ("pre-hardening", "hardened", "hardened-lf-fix")
         preserve_booth = meta.get("label") == "final" and meta.get("task") == "booth-clearance" and not (options.cancel_booth_negatives and meta.get("kind", "").startswith("negative-"))
         if meta.get("finished_at") or meta.get("label") not in allowed or preserve_booth:
+            continue
+        if options.grader_sha256 and meta.get("grader_source", {}).get("grade.py", {}).get("sha256") != options.grader_sha256:
             continue
         run = run_json.parent
         containers = []
