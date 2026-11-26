@@ -1243,14 +1243,16 @@
     "run": "booth-clearance/authoring/runs/20261126T084454Z-final-negative-secondary-render-substitution",
     "kind": "negative-secondary-render-substitution",
     "label": "final",
-    "finished_at": null,
-    "reward": null,
+    "finished_at": "2026-11-26T08:51:51.971791+00:00",
+    "reward": 0,
     "agent_exit_code": null,
-    "verifier_exit_code": null,
-    "failed_checks": [],
-    "metrics_error": "Expecting value: line 1 column 1 (char 0)",
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_render_structure"
+    ],
+    "metrics_error": null,
     "run_error": null,
-    "classification": "unfinished",
+    "classification": "graded",
     "grader_source": {
       "Dockerfile": {
         "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
