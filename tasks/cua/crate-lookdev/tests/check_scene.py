@@ -188,8 +188,13 @@ def main():
             raise ValueError(f"{name}: required nonempty mesh missing")
         if (ob.hide_render and name != "lock_pin") or not any(ob.name in scn.objects for scn in bpy.data.scenes):
             raise ValueError(f"{name}: required mesh hidden or outside scenes")
-        if any(not __import__('math').isfinite(c) for v in ob.data.vertices for c in v.co):
-            raise ValueError(f"{name}: non-finite vertex")
+        evaluated = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        mesh = evaluated.to_mesh()
+        try:
+            if any(not __import__('math').isfinite(c) for v in mesh.vertices for c in v.co):
+                raise ValueError(f"{name}: non-finite vertex")
+        finally:
+            evaluated.to_mesh_clear()
     sc = bpy.context.scene
     report = {
         "ok": True,
@@ -206,7 +211,7 @@ def main():
 
     for ob in bpy.data.objects:
         entry = {"type": ob.type, "parent": ob.parent.name if ob.parent else None}
-        if ob.type == 'MESH':
+        if ob.type in ('MESH', 'FONT'):
             entry["aabb"] = world_aabb(ob)
             entry["polys"] = poly_count(ob)
             entry["materials"] = [m.name if m else None for m in ob.data.materials]
@@ -215,7 +220,8 @@ def main():
                                   for m in ob.modifiers]
             entry["location"] = list(ob.matrix_world.translation)
             report["polys_total"] += entry["polys"]
-            report["meshes"].append(ob.name)
+            if ob.type == 'MESH':
+                report["meshes"].append(ob.name)
         elif ob.type == 'CAMERA':
             cam = ob.data
             entry.update({
