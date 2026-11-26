@@ -1,0 +1,17 @@
+check             crate-lookdev     folding-chair     rainroom          toy-car         
+----------------------------------------------------------------------------------------
+1 layout          PASS              PASS              PASS              PASS            
+2 task.toml       PASS              PASS              PASS              PASS            
+3 suffix          PASS              PASS              PASS              PASS            
+4 materials       PASS              PASS              PASS              PASS            
+5 env image       PASS              PASS              PASS              PASS            
+5b isolation      PASS              PASS              PASS              PASS            
+6 tests image     PASS              PASS              PASS              PASS            
+7 oracle          PASS              PASS              PASS              PASS            
+7b true NOP       PASS              PASS              PASS              PASS            
+7c model records  PASS              PASS              PASS              PASS            
+8 deliverables    PASS              PASS              PASS              PASS            
+9 anti-cheat      PASS              PASS              PASS              PASS            
+10 negative       PASS              PASS              PASS              PASS            
+11 licences       PASS              PASS              PASS              PASS            
+
