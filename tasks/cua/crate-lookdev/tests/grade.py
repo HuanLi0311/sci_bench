@@ -301,8 +301,8 @@ def main():
     add("R12_manifest", "must", man_ok, m_detail)
 
     # ---- R13 anti-cheat --------------------------------------------------
-    ac_ok, ac_detail = False, "not run"
-    if scene_ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_front.png")):
+    ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
+    if scene_ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_front.png")):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)

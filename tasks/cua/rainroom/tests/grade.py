@@ -160,8 +160,11 @@ def main():
             md = f"unreadable: {exc}"
     add("R12_manifest", "must", man_ok, md)
 
-    ac_ok, acd = False, "not run"
-    if ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_night.png")):
+    errors = rep.get("position_errors", {})
+    add("R_object_positions", "must", len(errors) == 26 and all(v <= 0.15 for v in errors.values()), errors)
+
+    ac_ok, acd = False, "skipped: prerequisite checks failed"
+    if ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_night.png")):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
@@ -178,9 +181,6 @@ def main():
         except Exception as exc:
             acd = f"rerender failed: {exc}"
     add("R13_anti_cheat", "critical", ac_ok, acd)
-
-    errors = rep.get("position_errors", {})
-    add("R_object_positions", "must", len(errors) == 26 and all(v <= 0.15 for v in errors.values()), errors)
 
     view_scores = {}
     try:

@@ -118,14 +118,17 @@ Original instruction follows verbatim:
             state["agent_finished_at"] = now()
             if state["agent_exit_code"] == 124:
                 command(["docker", "stop", "--time", "5", container], "stop-timed-out-agent")
-            command(["docker", "cp", container + ":/run/codex-home/sessions", str(run / "raw-rollout")], "collect-rollout")
-            for path in (run / "raw-rollout").rglob("*.jsonl"):
-                path.write_text(scrub(path.read_text()))
+            private_rollout = Path(private_dir) / "raw-rollout"
+            command(["docker", "cp", container + ":/run/codex-home/sessions", str(private_rollout)], "collect-rollout")
+            for path in private_rollout.rglob("*.jsonl"):
+                target = run / "raw-rollout" / path.relative_to(private_rollout)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(scrub(path.read_text()))
             command(["docker", "cp", container + ":/app/out", str(run / "submission")], "collect-submission")
-            command(["docker", "cp", container + ":/app/model-final.txt", str(run / "model-final.txt")], "collect-model-final")
-            final_message = run / "model-final.txt"
-            if final_message.exists():
-                final_message.write_text(scrub(final_message.read_text()))
+            private_message = Path(private_dir) / "model-final.txt"
+            command(["docker", "cp", container + ":/app/model-final.txt", str(private_message)], "collect-model-final")
+            if private_message.exists():
+                (run / "model-final.txt").write_text(scrub(private_message.read_text()))
             state["steps"] = count_steps(run / "raw-rollout")
             (run / "step-counts.json").write_text(json.dumps(state["steps"], indent=2) + "\n")
             if (run / "submission").is_dir():

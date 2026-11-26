@@ -185,8 +185,8 @@ def main():
             mdetail = f"unreadable: {exc}"
     add("R12_manifest", "must", man_ok, mdetail)
 
-    ac_ok, ac_detail = False, "not run"
-    if ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_unfolded.png")):
+    ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
+    if ok and all(c["pass"] for c in CHECKS) and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_unfolded.png")):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
