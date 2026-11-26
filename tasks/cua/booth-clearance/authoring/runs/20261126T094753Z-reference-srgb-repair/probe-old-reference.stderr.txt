@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/source/tests/check_scene.py", line 14, in <module>
+    from rubric import linear_rgb_to_srgb
+ModuleNotFoundError: No module named 'rubric'
+
+Error: script failed, file: '/source/tests/check_scene.py', exiting.
