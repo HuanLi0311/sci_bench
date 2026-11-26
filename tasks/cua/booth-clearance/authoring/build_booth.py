@@ -119,6 +119,7 @@ def build_furniture():
 def material(name, color, rough=0.5, metal=0.0):
     m = bpy.data.materials.new(name)
     m.use_nodes = True
+    m.diffuse_color = color
     b = m.node_tree.nodes["Principled BSDF"]
     b.inputs["Base Color"].default_value = color
     b.inputs["Roughness"].default_value = rough

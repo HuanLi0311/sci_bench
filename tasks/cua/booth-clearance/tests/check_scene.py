@@ -3,6 +3,7 @@
     blender -b <file>.blend --python check_scene.py -- <out.json>
 """
 import json
+import os
 import sys
 from itertools import product
 
@@ -11,6 +12,7 @@ import numpy as np
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 from bpy_extras.object_utils import world_to_camera_view
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rubric import linear_rgb_to_srgb
 
 PANELS = ["booth_shell", "counter", "cabinet_01", "cabinet_02",
