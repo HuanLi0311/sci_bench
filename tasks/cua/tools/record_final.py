@@ -20,6 +20,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--jobs", type=int, default=3, choices=range(1, 4))
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
+    parser.add_argument("--structure-first", action="store_true", help="Record structural negatives before Oracle/NOP, then secondary-render substitution")
     options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     batch = ROOT / "evaluation" / (stamp + "-final" + ("-" + options.tasks[0] if len(options.tasks) == 1 else ""))
@@ -49,6 +50,8 @@ if __name__ == "__main__":
         raise SystemExit(f"Historical model output missing: {model}")
     if "crate-lookdev" in options.tasks:
         jobs.append(("crate-lookdev", [("model-regrade", model)]))
+    if options.structure_first:
+        jobs.sort(key=lambda job: (0 if job[1][0][0].startswith("negative-") and "secondary-render" not in job[1][0][0] else (2 if "secondary-render" in job[1][0][0] else 1)))
     (batch / "batch.json").write_text(json.dumps(meta, indent=2) + "\n")
 
     def run_job(job):

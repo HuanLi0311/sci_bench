@@ -21,6 +21,7 @@ def now():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cancel-final", action="store_true", help="Actively cancel the old full batch and its non-booth running verifiers under the new priority")
+    parser.add_argument("--cancel-booth-negatives", action="store_true", help="Also cancel obsolete booth negative runs, after preserving its completed Oracle")
     options = parser.parse_args()
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     evidence = ROOT / "evaluation" / (stamp + "-booth-priority")
@@ -53,7 +54,8 @@ if __name__ == "__main__":
     for run_json in ROOT.glob("*/authoring/runs/*/run.json"):
         meta = json.loads(run_json.read_text())
         allowed = ("pre-hardening", "hardened", "hardened-lf-fix", "final") if options.cancel_final else ("pre-hardening", "hardened", "hardened-lf-fix")
-        if meta.get("finished_at") or meta.get("label") not in allowed or (meta.get("label") == "final" and meta.get("task") == "booth-clearance"):
+        preserve_booth = meta.get("label") == "final" and meta.get("task") == "booth-clearance" and not (options.cancel_booth_negatives and meta.get("kind", "").startswith("negative-"))
+        if meta.get("finished_at") or meta.get("label") not in allowed or preserve_booth:
             continue
         run = run_json.parent
         containers = []
