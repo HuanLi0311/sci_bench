@@ -1,5 +1,6 @@
 """Anti-cheat: render the night camera with `light_night` on and off."""
 import sys
+import os
 
 import bpy
 
@@ -10,9 +11,37 @@ def set_coll(name, hide):
         c.hide_render = hide
 
 
+SPECS = [('night', 'cam_room', 800, 450, None), ('morning', 'cam_room', 800, 450, None)]
+
+def render_deliveries(directory):
+    sc = bpy.context.scene
+    # Prevent a compositor or video sequence from substituting the 3D scene.
+    sc.use_nodes = False
+    sc.render.use_sequencer = False
+    sc.render.engine = 'CYCLES'
+    sc.cycles.device = 'CPU'
+    sc.cycles.samples = 64
+    sc.cycles.use_denoising = True
+    sc.cycles.seed = 0
+    sc.render.resolution_percentage = 100
+    sc.render.image_settings.file_format = 'PNG'
+    for view, camera, width, height, frame in SPECS:
+        sc.camera = bpy.data.objects[camera]
+        sc.render.resolution_x, sc.render.resolution_y = width, height
+        if frame is not None:
+            sc.frame_set(frame)
+        bpy.data.collections["light_night"].hide_render = view != "night"
+        bpy.data.collections["light_morning"].hide_render = view != "morning"
+        sc.render.filepath = os.path.join(directory, "render_" + view + ".png")
+        bpy.ops.render.render(write_still=True)
+    bpy.data.collections["light_night"].hide_render = False
+    bpy.data.collections["light_morning"].hide_render = True
+
+
 def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     on_png, off_png = argv[0], argv[1]
+    render_deliveries(os.path.dirname(argv[0]))
     sc = bpy.context.scene
     cam = bpy.data.objects.get("cam_room")
     if cam is None:

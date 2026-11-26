@@ -1,5 +1,7 @@
 """Grader for toy-car. Usage: python3 grade.py /app/out"""
 import json
+import tempfile
+import traceback
 import os
 import shutil
 import subprocess
@@ -11,14 +13,24 @@ from PIL import Image
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
+WORK = tempfile.mkdtemp(prefix="cua-verifier-")
 
 
 def add(cid, level, ok, detail=""):
     CHECKS.append({"id": cid, "level": level, "pass": bool(ok), "detail": str(detail)})
 
 
+def _log_process(cmd, result):
+    os.makedirs("/logs/verifier", exist_ok=True)
+    with open("/logs/verifier/blender-processes.jsonl", "a") as f:
+        f.write(json.dumps({"command": cmd, "returncode": result.returncode,
+                            "stdout": result.stdout, "stderr": result.stderr}) + "\n")
+
+
 def run(cmd, timeout):
-    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    _log_process(cmd, r)
+    return r
 
 
 def ss(a, b):
@@ -88,10 +100,10 @@ def main():
     rep, ok = {}, False
     if os.path.exists(blend):
         try:
-            r = run([BLENDER, "-b", blend, "--python", "/tests/check_scene.py",
-                     "--", "/tmp/scene.json"], timeout=600)
-            if os.path.exists("/tmp/scene.json"):
-                rep = json.load(open("/tmp/scene.json"))
+            r = run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", blend, "--python", "/tests/check_scene.py",
+                     "--", os.path.join(WORK, "scene.json")], timeout=600)
+            if r.returncode == 0 and os.path.exists(os.path.join(WORK, "scene.json")):
+                rep = json.load(open(os.path.join(WORK, "scene.json")))
                 ok = bool(rep.get("ok"))
             if not ok:
                 print((r.stderr or "")[-1500:], file=sys.stderr)
@@ -194,13 +206,13 @@ def main():
     ac_ok, acd = False, "not run"
     if ok and os.path.exists(blend) and os.path.exists(os.path.join(out, "render_side.png")):
         try:
-            cp = "/tmp/anticheat.blend"
+            cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
-            run([BLENDER, "-b", cp, "--python", "/tests/rerender.py",
-                 "--", "/tmp/ac_base.png", "/tmp/ac_spun.png"], timeout=900)
-            if os.path.exists("/tmp/ac_base.png") and os.path.exists("/tmp/ac_spun.png"):
-                base = gray("/tmp/ac_base.png")
-                spun = gray("/tmp/ac_spun.png")
+            run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp, "--python", "/tests/rerender.py",
+                 "--", os.path.join(WORK, "ac_base.png"), os.path.join(WORK, "ac_spun.png")], timeout=900)
+            if os.path.exists(os.path.join(WORK, "ac_base.png")) and os.path.exists(os.path.join(WORK, "ac_spun.png")):
+                base = gray(os.path.join(WORK, "ac_base.png"))
+                spun = gray(os.path.join(WORK, "ac_spun.png"))
                 delivered = gray(os.path.join(out, "render_side.png"), size=(960, 960))
                 s_match = ss(base, delivered)
                 s_chg = ss(base, spun)
@@ -209,6 +221,21 @@ def main():
         except Exception as exc:
             acd = f"rerender failed: {exc}"
     add("R14_anti_cheat", "critical", ac_ok, acd)
+
+    view_scores = {}
+    try:
+        for view in ['front', 'side', 'back', 'top']:
+            filename = "render_" + view + ".png"
+            trusted = Image.open(os.path.join(WORK, filename)).convert("RGB")
+            delivered = Image.open(os.path.join(out, filename)).convert("RGB").resize(trusted.size, Image.Resampling.LANCZOS)
+            a, b = np.asarray(trusted, np.float32), np.asarray(delivered, np.float32)
+            compare = globals().get("ss_img") or globals().get("ss")
+            view_scores[view] = min(compare(a[..., c], b[..., c]) for c in range(3))
+        views_ok = all(np.isfinite(v) and v >= 0.90 for v in view_scores.values())
+    except Exception as exc:
+        views_ok = False
+        view_scores["error"] = str(exc)
+    add("R_all_render_authenticity", "critical", views_ok, view_scores)
 
     must = [c for c in CHECKS if c["level"] == "must"]
     crit = [c for c in CHECKS if c["level"] == "critical"]
@@ -219,10 +246,16 @@ def main():
     reward = 1 if (must_pass and crit_pass and rate >= 0.8) else 0
     result = {"reward": reward, "must_pass": must_pass, "critical_pass": crit_pass,
               "normal_rate": round(rate, 3), "checks": CHECKS}
-    json.dump(result, open("/tmp/metrics.json", "w"), indent=1)
+    json.dump(result, open(os.path.join(WORK, "metrics.json"), "w"), indent=1)
     print(json.dumps(result, indent=1))
     return 0 if reward else 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Exception as exc:
+        traceback.print_exc(file=sys.stderr)
+        CHECKS.append({"id": "R_verifier_error", "level": "must", "pass": False, "detail": str(exc)})
+        print(json.dumps({"reward": 0, "must_pass": False, "critical_pass": False, "normal_rate": 0, "checks": CHECKS}, indent=1))
+        sys.exit(1)

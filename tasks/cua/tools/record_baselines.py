@@ -26,14 +26,14 @@ def inventory(path):
             for p in sorted(path.rglob("*")) if p.is_file()}
 
 
-def record(task, kind, label):
+def record(task, kind, label, source_submission=None):
     task_dir = ROOT / task
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     run_dir = task_dir / "authoring" / "runs" / (stamp + "-" + label + "-" + kind)
     run_dir.mkdir(parents=True)
     commands = []
     meta = {"task": task, "kind": kind, "label": label, "started_at": stamp,
-            "agent": "reference-publisher" if kind == "oracle" else "NOP",
+            "agent": "reference-publisher" if kind == "oracle" else ("historical-artifact-regrade" if source_submission else "NOP"),
             "model": None, "model_steps": 0, "commands": commands,
             "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out" if kind == "nop" else None}
 
@@ -66,21 +66,27 @@ def record(task, kind, label):
     submission = run_dir / "submission"
     submission.mkdir()
     try:
-        mounts = ["-v", f"{task_dir / 'solution'}:/solution:ro"] if kind == "oracle" else []
-        if command(["docker", "create", "--name", agent, "--network", "none", "--cpus", "4", "--memory", "8g", *mounts, env_tag, "sleep", "infinity"], "agent-create"):
-            raise RuntimeError("agent container creation failed")
-        command(["docker", "start", agent], "agent-start")
-        command(["docker", "exec", agent, "blender", "--version"], "blender-version")
-        command(["docker", "exec", agent, "ls", "-laR", "/app"], "initial-app")
-        command(["docker", "exec", agent, "test", "!", "-e", "/tests"], "test-isolation")
-        if kind == "oracle":
-            meta["solution_source"] = inventory(task_dir / "solution")
-            meta["agent_exit_code"] = command(["docker", "exec", agent, "bash", "/solution/solve.sh", "/app/out"], "agent")
+        if source_submission:
+            meta["source_submission"] = str(source_submission)
+            meta["model_steps"] = None
+            meta["nop_definition"] = None
+            shutil.copytree(source_submission, submission, dirs_exist_ok=True)
         else:
-            meta["agent_exit_code"] = command(["docker", "exec", agent, "/bin/true"], "agent")
-        command(["docker", "exec", agent, "ls", "-laR", "/app/out"], "final-output")
-        if command(["docker", "cp", agent + ":/app/out/.", str(submission)], "collect-submission"):
-            raise RuntimeError("output collection failed")
+            mounts = ["-v", f"{task_dir / 'solution'}:/solution:ro"] if kind == "oracle" else []
+            if command(["docker", "create", "--name", agent, "--network", "none", "--cpus", "4", "--memory", "8g", *mounts, env_tag, "sleep", "infinity"], "agent-create"):
+                raise RuntimeError("agent container creation failed")
+            command(["docker", "start", agent], "agent-start")
+            command(["docker", "exec", agent, "blender", "--version"], "blender-version")
+            command(["docker", "exec", agent, "ls", "-laR", "/app"], "initial-app")
+            command(["docker", "exec", agent, "test", "!", "-e", "/tests"], "test-isolation")
+            if kind == "oracle":
+                meta["solution_source"] = inventory(task_dir / "solution")
+                meta["agent_exit_code"] = command(["docker", "exec", agent, "bash", "/solution/solve.sh", "/app/out"], "agent")
+            else:
+                meta["agent_exit_code"] = command(["docker", "exec", agent, "/bin/true"], "agent")
+            command(["docker", "exec", agent, "ls", "-laR", "/app/out"], "final-output")
+            if command(["docker", "cp", agent + ":/app/out/.", str(submission)], "collect-submission"):
+                raise RuntimeError("output collection failed")
         meta["submission"] = inventory(submission)
         (run_dir / "verifier").mkdir()
         command(["docker", "create", "--name", verifier, "--network", "none", "--cpus", "4", "--memory", "8g", "-v", f"{tests}:/tests:ro", "-v", f"{submission}:/app/out:ro", "-v", f"{run_dir / 'verifier'}:/logs/verifier", tests_tag, "bash", "/tests/test.sh", "/app/out"], "verifier-create")
@@ -104,7 +110,13 @@ if __name__ == "__main__":
     parser.add_argument("--label", required=True)
     parser.add_argument("--tasks", nargs="+", choices=TASKS, default=TASKS)
     parser.add_argument("--kinds", nargs="+", choices=["oracle", "nop"], default=["oracle", "nop"])
+    parser.add_argument("--regrade", type=Path, help="Regrade preserved submission; requires exactly one task and ignores --kinds")
     options = parser.parse_args()
+    if options.regrade:
+        if len(options.tasks) != 1:
+            parser.error("--regrade requires exactly one --tasks value")
+        record(options.tasks[0], "model-regrade", options.label, options.regrade.resolve())
+        raise SystemExit(0)
     for selected_task in options.tasks:
         for selected_kind in options.kinds:
             record(selected_task, selected_kind, options.label)

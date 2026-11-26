@@ -7,14 +7,39 @@ shifted 0.5 m along X. A real cabinet changes the picture; a painted backdrop
 does not.
 """
 import sys
+import os
 
 import bpy
+
+
+SPECS = [('entrance', 'cam_entrance', 960, 540, None), ('top', 'cam_top', 960, 720, None)]
+
+def render_deliveries(directory):
+    sc = bpy.context.scene
+    # Prevent a compositor or video sequence from substituting the 3D scene.
+    sc.use_nodes = False
+    sc.render.use_sequencer = False
+    sc.render.engine = 'CYCLES'
+    sc.cycles.device = 'CPU'
+    sc.cycles.samples = 64
+    sc.cycles.use_denoising = True
+    sc.cycles.seed = 0
+    sc.render.resolution_percentage = 100
+    sc.render.image_settings.file_format = 'PNG'
+    for view, camera, width, height, frame in SPECS:
+        sc.camera = bpy.data.objects[camera]
+        sc.render.resolution_x, sc.render.resolution_y = width, height
+        if frame is not None:
+            sc.frame_set(frame)
+        sc.render.filepath = os.path.join(directory, "render_" + view + ".png")
+        bpy.ops.render.render(write_still=True)
 
 
 def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     base_png, moved_png = argv[0], argv[1]
 
+    render_deliveries(os.path.dirname(argv[0]))
     sc = bpy.context.scene
     cam = bpy.data.objects.get("cam_entrance")
     if cam is None:
