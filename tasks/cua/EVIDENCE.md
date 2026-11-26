@@ -61,3 +61,5 @@ python3 tasks/cua/tools/sanity_check.py
 The sanity check requires actual final Oracle and NOP records whose source hashes match the current verifier. It also checks rewards, per-check results, reference input hashes, untouched NOP output, original no-op command, and model inventory; prose containing "reward 1" cannot satisfy these gates.
 
 New isolated terminal-model trials for booth-clearance are recorded in its model-attempts index, separately from the historical crate archive. Runtime smoke calls are diagnostic checks, not task successes. A terminal trial whose tools cannot launch is an infrastructure failure even when its empty output receives reward 0.
+
+Booth brand-colour grading uses sRGB values converted from Blender linear shader inputs. The original reference used the wrong transfer convention; its scene/renders/input photos are corrected with unchanged geometry and a preserved backup. See [the colour-space audit](booth-clearance/authoring/calibration/COLOR_SPACE.md). Auxiliary Empty markers are supported; entrance geometry and camera-frame visibility are checked independently.

@@ -5,12 +5,12 @@ This task is the current validation priority. The original reference `.blend`, r
 | Finding | Change | Evidence required |
 |---|---|---|
 | Only the entrance image was authenticated | Independently render entrance and top views; compare each RGB channel | Reference Oracle passes; substituted top view fails `R_all_render_authenticity` |
-| Moving the entrance marker could redefine the clearance test | Validate its position at x=-3 m, width 2.4 m and centred y=0 before measuring both cabinets | Moved-marker submission fails `R05_entrance_clearance` |
+| Moving the entrance marker could redefine the clearance test | Validate its location at the fixed entrance; measure against the fixed opening plane and check the actual 2.4 m shell opening | Moved-marker submission fails `R05_entrance_clearance` |
 | Shell and other products were omitted from visibility occluders | Build world-space BVHs for all meshes except the marker, skipping only the target product for each ray | Reference visibility passes; additional occluders can fail `R07_visibility` |
 | Furniture/product dimensions were not checked | Check table dimensions and vertical height within 20 mm; allow floor-plan rotation | Reference passes; resized product fails `R_furniture_product_sizes` |
 | Products could float above their plinths | Check each product's bottom against its plinth top and footprint | Floating product fails `R_product_support` |
-| An unused green material slot could pass brand colour | Measure the material actually assigned to the inward-facing back-wall faces and connected to the active material output | White wall retaining unused green slot fails `R08_brand_colour` |
-| Empty/name-only placeholders could count as required objects | Require actual nonempty meshes for the shell, furniture, products, marker and all three plinths | Missing/empty parts fail scene extraction |
+| An unused green material slot could pass brand colour | Sample the actual back-wall material by interior rays and convert linear shader values to sRGB before comparison | White wall retaining unused green slot fails `R08_brand_colour` |
+| Empty/name-only placeholders could count as required objects | Require actual nonempty meshes for the shell, furniture, products and all three plinths; auxiliary entrance markers may be Empty | Missing/empty parts fail scene extraction |
 | Failed Blender calls could leave stale files | Unique work directories, checked process exit codes, disabled embedded auto-execution, complete subprocess logs | Invalid scenes cannot reuse a prior report/render |
 
 The standard-library regression check is:
@@ -49,3 +49,7 @@ Earlier 19-check Oracle results remain valid for their snapshots, but do not pro
 The new model used a legitimate Blender Empty named `entrance_zone`, at (-3,0,0), with a cube display scaled (.01,1.2,.01). The original instruction only called it a marker. Treating it as a required solid mesh falsely rejected the file before extraction; that earlier 0 is retained with its exact source and is not evidence that the model failed the geometric task.
 
 The current revision distinguishes helper and furniture roles. A correctly located Empty or mesh can mark the entrance. Cabinet clearance is measured against the fixed entrance plane, so editing helper size cannot change the rule. Five world-space shell rays at z=1 m verify a 2.4 m opening with both jambs present, and product-centre visibility now also requires projection inside the entrance camera frame. This is 21 checks, with additional closed-opening and camera-away negative cases. The earlier 20-check validation above is superseded until these new matching-source runs complete.
+
+## Current colour semantics
+
+See [COLOR_SPACE.md](COLOR_SPACE.md) for the verified linear/sRGB bug and reference repair. The current revision has 22 checks, including an independently checked secondary brand colour on an actually assigned geometry surface; the prepared negative cases now total eight. Earlier validation snapshots remain attached to their own hashes.
