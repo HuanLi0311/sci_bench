@@ -77,6 +77,10 @@ within 20 mm, allowing rotation in the floor plan. Each product must stand on
 its corresponding plinth, within 20 mm vertically and within its footprint.
 The brand-colour check measures materials actually used on the inward-facing
 back wall; an unused material slot does not count.
+Colours are compared in sRGB (the space used by the hexadecimal values), with
+Blender's linear shader values converted before comparison. Secondary
+`#F2C14E` must also be assigned to an actual geometry surface; an unused yellow
+material or unused slot does not count.
 
 `entrance_zone` is an auxiliary marker and may be either an Empty or a mesh.
 The marker identifies the specified entrance; its display size does not alter
