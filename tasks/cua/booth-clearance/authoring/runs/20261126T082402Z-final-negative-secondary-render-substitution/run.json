@@ -64,6 +64,60 @@
       "started_at": "2026-11-26T08:24:04.767627+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-26T08:24:04.894708+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-a57a004151"
+      ],
+      "started_at": "2026-11-26T08:24:04.926710+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:30:44.098791+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-a57a004151"
+      ],
+      "started_at": "2026-11-26T08:30:44.120269+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:30:44.163011+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-a57a004151:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T082402Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-26T08:30:44.181989+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:30:44.463432+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-a57a004151"
+      ],
+      "started_at": "2026-11-26T08:30:44.482140+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:30:44.503888+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-a57a004151"
+      ],
+      "started_at": "2026-11-26T08:30:44.512502+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-26T08:30:44.583168+00:00"
     }
   ],
   "nop_definition": null,
@@ -178,5 +232,10 @@
       "sha256": "96ff394c1f0b0aef0fbe5fb0a6de6a7779d2a8ff60743d2b042fb264c012a9d4",
       "bytes": 12755
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-26T08:30:44.598526+00:00"
 }
