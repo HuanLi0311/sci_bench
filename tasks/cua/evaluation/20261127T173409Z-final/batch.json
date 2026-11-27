@@ -158,6 +158,14 @@
         "R15_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "drawer-cabinet",
+      "kind": "negative-cabinet-unpacked-maps",
+      "run": "drawer-cabinet/authoring/runs/20261127T174709Z-final-negative-cabinet-unpacked-maps",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
     }
   ]
 }
