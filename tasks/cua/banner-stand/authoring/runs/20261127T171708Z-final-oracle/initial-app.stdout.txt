@@ -1,0 +1,42 @@
+/app:
+total 16
+drwxr-xr-x 1 root root 4096 Nov 27 16:59 .
+drwxr-xr-x 1 root root 4096 Nov 27 17:17 ..
+drwxr-xr-x 5 root root 4096 Nov 27 16:59 materials
+drwxr-xr-x 2 root root 4096 Nov 27 16:59 out
+
+/app/materials:
+total 24
+drwxr-xr-x 5 root root 4096 Nov 27 16:59 .
+drwxr-xr-x 1 root root 4096 Nov 27 16:59 ..
+-rwxrwxrwx 1 root root  185 Nov 27 16:03 LICENSE.txt
+drwxrwxrwx 2 root root 4096 Nov 27 16:03 drawings
+drwxrwxrwx 2 root root 4096 Nov 27 16:03 photos
+drwxrwxrwx 2 root root 4096 Nov 27 16:03 spec
+
+/app/materials/drawings:
+total 32
+drwxrwxrwx 2 root root  4096 Nov 27 16:03 .
+drwxr-xr-x 5 root root  4096 Nov 27 16:59 ..
+-rwxrwxrwx 1 root root 23093 Nov 27 16:03 banner_three_views.png
+
+/app/materials/photos:
+total 4732
+drwxrwxrwx 2 root root    4096 Nov 27 16:03 .
+drwxr-xr-x 5 root root    4096 Nov 27 16:59 ..
+-rwxrwxrwx 1 root root 1596368 Nov 27 16:03 ref_folded.png
+-rwxrwxrwx 1 root root 1597065 Nov 27 16:03 ref_front.png
+-rwxrwxrwx 1 root root 1642430 Nov 27 16:03 ref_three_quarter.png
+
+/app/materials/spec:
+total 20
+drwxrwxrwx 2 root root 4096 Nov 27 16:03 .
+drwxr-xr-x 5 root root 4096 Nov 27 16:59 ..
+-rwxrwxrwx 1 root root 3607 Nov 27 16:03 banner_spec.pdf
+-rwxrwxrwx 1 root root  283 Nov 27 16:03 parts.csv
+-rwxrwxrwx 1 root root 1846 Nov 27 16:03 parts.xlsx
+
+/app/out:
+total 8
+drwxr-xr-x 2 root root 4096 Nov 27 16:59 .
+drwxr-xr-x 1 root root 4096 Nov 27 16:59 ..
