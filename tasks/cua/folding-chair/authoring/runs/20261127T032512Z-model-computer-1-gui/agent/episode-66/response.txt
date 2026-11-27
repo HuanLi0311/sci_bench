@@ -1,0 +1,1 @@
+{"analysis":"Duplicate outer leg to opposite side.","plan":"Create front right.","action":{"type":"keypress","keys":["shift","d"]}}

@@ -1,0 +1,1 @@
+{"analysis":"Save requested.","plan":"Wait for save completion, then frame crate closely.","action":{"type":"wait"}}

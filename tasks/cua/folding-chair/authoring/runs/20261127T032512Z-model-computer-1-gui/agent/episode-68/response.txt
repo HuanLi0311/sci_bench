@@ -1,0 +1,1 @@
+{"analysis":"Right outer bar in position.","plan":"Name front_leg_r.","action":{"type":"type","text":"front_leg_r"}}

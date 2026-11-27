@@ -1,0 +1,1 @@
+{"analysis":"Front right named. Rear bars need 23 mm lateral separation to avoid crossing collisions.","plan":"Confirm then duplicate for rear right.","action":{"type":"keypress","keys":["enter"]}}

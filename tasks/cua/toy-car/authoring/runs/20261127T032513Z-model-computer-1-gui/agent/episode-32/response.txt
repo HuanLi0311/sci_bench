@@ -1,0 +1,1 @@
+{"analysis":"Y scale is correct at 0.080. The transform needs an explicit Enter key to confirm.","plan":"Confirm width, then scale height.","action":{"type":"keypress","keys":["enter"]}}

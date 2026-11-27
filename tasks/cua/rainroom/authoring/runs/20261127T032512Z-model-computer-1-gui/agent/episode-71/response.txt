@@ -1,0 +1,1 @@
+{"analysis":"Save dialog ready.","plan":"Set output folder.","action":{"type":"click","x":1014,"y":303}}

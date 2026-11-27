@@ -1,0 +1,1 @@
+{"analysis":"Shell saved; next inspect at working scale and add hardware.","plan":"Frame selected lid.","action":{"type":"mouse_move","x":800,"y":500}}

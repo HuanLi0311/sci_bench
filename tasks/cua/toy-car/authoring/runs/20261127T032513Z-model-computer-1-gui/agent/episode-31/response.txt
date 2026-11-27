@@ -1,0 +1,1 @@
+{"analysis":"Width scaling is in progress; the interface may be a frame behind input.","plan":"Wait briefly for the transform to finish and verify dimensions.","action":{"type":"wait"}}
