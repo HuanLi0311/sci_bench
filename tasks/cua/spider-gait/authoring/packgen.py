@@ -134,19 +134,20 @@ class Canvas:
     def text(self, x, y, value, scale=2, color=(0, 0, 0), spacing=1):
         """Draw text with the 5x7 font; y is the top of the glyph box."""
         cx = x
+        s = self.s
+        block = max(1, int(round(scale * s)))
         for ch in str(value).upper():
             g = GLYPHS.get(ch, GLYPHS["?"])
             for row, bits in enumerate(g):
                 for col, bit in enumerate(bits):
-                    if bit == "1":
-                        for dy in range(scale):
-                            for dx in range(scale):
-                                px = cx + (col * scale + dx) / 1.0
-                                py = y + (row * scale + dy) / 1.0
-                                yi = int(round(py * self.s))
-                                xi = int(round(px * self.s))
-                                if 0 <= yi < self.buf.shape[0] and 0 <= xi < self.buf.shape[1]:
-                                    self.buf[yi, xi] = color
+                    if bit != "1":
+                        continue
+                    x0 = int(round((cx + col * scale) * s))
+                    y0 = int(round((y + row * scale) * s))
+                    x1 = min(self.buf.shape[1], x0 + block)
+                    y1 = min(self.buf.shape[0], y0 + block)
+                    if x1 > x0 and y1 > y0:
+                        self.buf[max(0, y0):y1, max(0, x0):x1] = color
             cx += (5 + spacing) * scale
         return cx
 

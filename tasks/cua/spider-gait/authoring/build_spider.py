@@ -211,7 +211,9 @@ def build_pose():
             t = (frame - 1) % S.CYCLE
             s_in_swing = (t - (p + S.STANCE_FRAMES)) % S.CYCLE
             if s_in_swing < S.SWING_FRAMES:
-                s = s_in_swing / S.SWING_FRAMES
+                # Half-frame offset keeps the lift near zero on the first and
+                # last swing frame, so touchdown and lift-off do not pop.
+                s = (s_in_swing + 0.5) / S.SWING_FRAMES
                 lift = math.sin(math.pi * s)
                 qa = local_quat(names[0], lift_axis, S.SWING_LIFT_DEG * lift)
                 qa = qa @ local_quat(names[0], (0, 0, 1), S.SWING_REACH_DEG * lift)
