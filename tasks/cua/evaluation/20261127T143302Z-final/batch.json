@@ -59,5 +59,75 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "skateboard-prop",
+      "kind": "oracle",
+      "run": "skateboard-prop/authoring/runs/20261127T143303Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "nop",
+      "run": "skateboard-prop/authoring/runs/20261127T144217Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_dimensions",
+        "R03_parts",
+        "R04_plies",
+        "R05_graphic_uv",
+        "R06_textures",
+        "R07_materials",
+        "R08_glb",
+        "R09_glb_roundtrip",
+        "R10_polys",
+        "R11_origin",
+        "R12_renders",
+        "R13_manifest",
+        "R14_anticheat",
+        "R15_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "oracle",
+      "run": "spider-gait/authoring/runs/20261127T143303Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "spider-gait",
+      "kind": "nop",
+      "run": "spider-gait/authoring/runs/20261127T143939Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_bones",
+        "R03_skinning",
+        "R04_size",
+        "R05_action",
+        "R06_loop",
+        "R07_support",
+        "R08_no_penetration",
+        "R09_swing_lift",
+        "R10_slide",
+        "R11_body_bob",
+        "R12_no_intersection",
+        "R13_renders",
+        "R14_polys",
+        "R15_self_contained",
+        "R16_manifest",
+        "R17_phase_anticheat",
+        "R18_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ]
 }
