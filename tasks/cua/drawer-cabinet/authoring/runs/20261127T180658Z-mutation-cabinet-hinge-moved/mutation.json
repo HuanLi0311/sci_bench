@@ -1,8 +1,8 @@
 {
   "kind": "mutation-preparation",
-  "name": "cabinet-unpacked-maps",
+  "name": "cabinet-hinge-moved",
   "task": "drawer-cabinet",
-  "started_at": "20261127T180550Z",
+  "started_at": "20261127T180658Z",
   "argv": [
     "docker",
     "run",
@@ -14,7 +14,7 @@
     "--memory",
     "8g",
     "-v",
-    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T180550Z-mutation-cabinet-unpacked-maps:/mutation",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T180658Z-mutation-cabinet-hinge-moved:/mutation",
     "cua-qc-drawer-cabinet-tests",
     "blender",
     "-b",
@@ -22,8 +22,8 @@
     "--python",
     "/mutation/mutate.py"
   ],
-  "script_sha256": "f559c0cb8bf010543ee3532f7e48046e2905938ecd0a71083d78b9633a4f9255",
+  "script_sha256": "9fddd409f7506dab32a072b6919d8791f4204c39f3f988c024b38c0598b48441",
   "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
   "exit_code": 0,
-  "finished_at": "2026-11-27T18:05:55.991392+00:00"
+  "finished_at": "2026-11-27T18:07:04.836038+00:00"
 }

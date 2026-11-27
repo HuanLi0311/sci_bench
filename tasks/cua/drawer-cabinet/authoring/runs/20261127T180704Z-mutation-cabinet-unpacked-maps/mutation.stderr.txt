@@ -1,0 +1,7 @@
+Failed to open dir (No such file or directory): /app/materials/textures/
+Traceback (most recent call last):
+  File "/mutation/mutate.py", line 2, in <module>
+    img = bpy.data.images.load("/app/materials/textures/wood_basecolor.png")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Error: Cannot read '/app/materials/textures/wood_basecolor.png': No such file or directory
+

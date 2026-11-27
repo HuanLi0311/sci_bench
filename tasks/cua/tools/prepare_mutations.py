@@ -168,21 +168,17 @@ for i in range(1, 6):
     d.parent = None
     d.matrix_world = m
 ''',
-    "cabinet-door-unparented": '''import bpy
-d = bpy.data.objects["door_right"]
-m = d.matrix_world.copy()
-d.parent = None
-d.matrix_world = m
+    "cabinet-hinge-moved": '''import bpy
+bpy.data.objects["hinge_right"].location.x += 0.050
 ''',
     "cabinet-unpacked-maps": '''import bpy
-img = bpy.data.images.new("adversarial_unpacked", 8, 8)
-img.filepath = "/app/materials/textures/wood_basecolor.png"
+img = bpy.data.images.load("/app/materials/textures/wood_basecolor.png")
+img.name = "adversarial_unpacked"
+img.use_fake_user = True
+assert img.packed_file is None
 ''',
-    "banner-leg-unparented": '''import bpy
-leg = bpy.data.objects["leg_rear"]
-m = leg.matrix_world.copy()
-leg.parent = None
-leg.matrix_world = m
+    "banner-hinge-moved": '''import bpy
+bpy.data.objects["hinge_rear"].location.y -= 0.060
 ''',
     "banner-canvas-cropped": '''import bpy
 me = bpy.data.objects["canvas"].data
@@ -191,8 +187,10 @@ for i in range(len(uv.data)):
     uv.data[i].uv = (uv.data[i].uv[0] * 0.8, uv.data[i].uv[1] * 0.8)
 ''',
     "banner-unpacked-print": '''import bpy
-img = bpy.data.images.new("adversarial_unpacked", 8, 8)
-img.filepath = "/app/materials/textures/banner_graphic.png"
+img = bpy.data.images.load("/app/materials/textures/banner_graphic.png")
+img.name = "adversarial_unpacked"
+img.use_fake_user = True
+assert img.packed_file is None
 ''',
     "booth-empty-marker-positive": '''import bpy
 old = bpy.data.objects["entrance_zone"]
@@ -256,10 +254,10 @@ if __name__ == "__main__":
                      "deck-single-ply", "deck-graphic-unlinked", "truck-dielectric"):
         if not options.only or options.only == mutation:
             prepare(("spider-gait" if mutation.startswith("spider") else "skateboard-prop"), mutation, SCRIPTS[mutation])
-    for mutation in ("cabinet-static-slides", "cabinet-door-unparented", "cabinet-unpacked-maps"):
+    for mutation in ("cabinet-static-slides", "cabinet-hinge-moved", "cabinet-unpacked-maps"):
         if not options.only or options.only == mutation:
             prepare("drawer-cabinet", mutation, SCRIPTS[mutation])
-    for mutation in ("banner-leg-unparented", "banner-canvas-cropped", "banner-unpacked-print"):
+    for mutation in ("banner-hinge-moved", "banner-canvas-cropped", "banner-unpacked-print"):
         if not options.only or options.only == mutation:
             prepare("banner-stand", mutation, SCRIPTS[mutation])
     for mutation in ("rain-unused-metal-slot", "rain-linked-metal-default", "rain-disconnected-metal-shader"):

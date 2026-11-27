@@ -1,8 +1,8 @@
 {
   "kind": "mutation-preparation",
-  "name": "banner-unpacked-print",
+  "name": "banner-hinge-moved",
   "task": "banner-stand",
-  "started_at": "20261127T180556Z",
+  "started_at": "20261127T180709Z",
   "argv": [
     "docker",
     "run",
@@ -14,7 +14,7 @@
     "--memory",
     "8g",
     "-v",
-    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T180556Z-mutation-banner-unpacked-print:/mutation",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T180709Z-mutation-banner-hinge-moved:/mutation",
     "cua-qc-banner-stand-tests",
     "blender",
     "-b",
@@ -22,8 +22,8 @@
     "--python",
     "/mutation/mutate.py"
   ],
-  "script_sha256": "2d6245208d7875fb8af3088d44e2edf1b154a124ab6cca658df0589fb58deb58",
+  "script_sha256": "d64b1a2be043eb2620858579b6880bbde9a63dabbefd388e80a0f3bbcb3ed198",
   "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
   "exit_code": 0,
-  "finished_at": "2026-11-27T18:05:59.812226+00:00"
+  "finished_at": "2026-11-27T18:07:13.328677+00:00"
 }
