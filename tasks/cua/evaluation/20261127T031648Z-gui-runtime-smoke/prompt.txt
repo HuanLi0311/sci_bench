@@ -1,0 +1,1 @@
+Runtime smoke only, not a benchmark trajectory: observe Blender, dismiss any startup dialog, select the default cube, move it 0.1 along X with the GUI, then report GUI_SMOKE_OK. Use only mouse/keyboard actions. Never open a terminal or scripting console.
