@@ -1,5 +1,5 @@
 import bpy, os, sys
-work = "/tmp/ac_test"
+work = "/hosttmp/ac_test"
 os.makedirs(work, exist_ok=True)
 sc = bpy.context.scene
 sc.render.engine = 'CYCLES'; sc.cycles.device='CPU'; sc.cycles.samples=64
