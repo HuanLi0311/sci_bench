@@ -6,11 +6,13 @@ Measured on the reference `solution/spider.blend` (Blender 4.2.3, Cycles CPU,
 | Metric | Reference | Threshold | Check |
 |---|---:|---|---|
 | bones / meshes | 25 / 26 | exact | R02, R03 |
+| bone heads/tails | match `bone_spec.csv` within 0.5 mm | exact | R02 |
 | mesh bound to its own bone | 26/26, 100 % of vertices | every mesh | R03 |
 | body length | 180.0 mm | 180 ± 5 | R04 |
 | foot span | 420.0 mm | 420 ± 10 | R04 |
 | stance height | 120.0 mm | 120 ± 5 | R04 |
 | loop seam | 0.0° / 0.0 mm | ≤ 0.5° / ≤ 1 mm | R06 |
+| playback fps | 24 | exact | R05 |
 | stance toe Z (max) | 1.5 mm | -1 … +2 mm | R07 |
 | lowest toe Z | 1.5 mm | ≥ -1 mm | R08 |
 | swing peak | 42.9 mm | ≥ 15 mm | R09 |
