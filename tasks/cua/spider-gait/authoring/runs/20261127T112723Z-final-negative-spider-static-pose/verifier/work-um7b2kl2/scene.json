@@ -1,0 +1,3571 @@
+{
+ "ok": true,
+ "blender": "4.2.3 LTS",
+ "unit_system": "METRIC",
+ "unit_scale": 1.0,
+ "frame_start": 1,
+ "frame_end": 24,
+ "fps": 24,
+ "objects": {
+  "body_abdomen": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.03500000014901161,
+     -0.09000000357627869,
+     0.09199999272823334
+    ],
+    [
+     0.03500000014901161,
+     -0.010000001639127731,
+     0.14800000190734863
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "body"
+   ]
+  },
+  "body_head": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.03200000151991844,
+     -0.010000001639127731,
+     0.10199999809265137
+    ],
+    [
+     0.03200000151991844,
+     0.09000000357627869,
+     0.14000000059604645
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "body"
+   ]
+  },
+  "cam_side": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 6.0,
+   "location": [
+    0.75,
+    0.03999999910593033,
+    0.12999999523162842
+   ],
+   "rotation": [
+    1.4909663200378418,
+    -8.814652119326638e-08,
+    1.570796251296997
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 0.5,
+   "location": [
+    0.0,
+    0.03999999910593033,
+    0.8999999761581421
+   ],
+   "rotation": [
+    0.0,
+    -0.0,
+    0.0
+   ]
+  },
+  "ground": {
+   "type": "MESH",
+   "parent": null,
+   "aabb": [
+    [
+     -1.600000023841858,
+     -1.600000023841858,
+     0.0
+    ],
+    [
+     1.600000023841858,
+     1.600000023841858,
+     0.0
+    ]
+   ],
+   "polys": 2,
+   "materials": [
+    "mat_ground"
+   ],
+   "modifiers": [],
+   "shape_keys": false,
+   "vertex_groups": []
+  },
+  "leg_01_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.038040630519390106,
+     0.07804062962532043,
+     0.10619998723268509
+    ],
+    [
+     0.04964062571525574,
+     0.08964063227176666,
+     0.11779998987913132
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_01_coxa"
+   ]
+  },
+  "leg_01_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.01801626943051815,
+     0.05815936625003815,
+     0.10659465193748474
+    ],
+    [
+     0.04774237424135208,
+     0.0876213014125824,
+     0.12138810008764267
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_01_coxa"
+   ]
+  },
+  "leg_01_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.03963879495859146,
+     0.07944329082965851,
+     0.06247691065073013
+    ],
+    [
+     0.0993751734495163,
+     0.13952448964118958,
+     0.11661355942487717
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_01_femur"
+   ]
+  },
+  "leg_01_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.09096650779247284,
+     0.13096652925014496,
+     0.06079999357461929
+    ],
+    [
+     0.10136650502681732,
+     0.14136652648448944,
+     0.07119999080896378
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_01_femur"
+   ]
+  },
+  "leg_01_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.09268668293952942,
+     0.1326344609260559,
+     0.0003086831420660019
+    ],
+    [
+     0.1498180776834488,
+     0.1898379623889923,
+     0.0691271424293518
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_01_tibia"
+   ]
+  },
+  "leg_02_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.04964062571525574,
+     0.07804062962532043,
+     0.10619998723268509
+    ],
+    [
+     -0.038040630519390106,
+     0.08964063227176666,
+     0.11779998987913132
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_02_coxa"
+   ]
+  },
+  "leg_02_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.04774237424135208,
+     0.05815936625003815,
+     0.10659465193748474
+    ],
+    [
+     -0.01801626943051815,
+     0.0876213014125824,
+     0.12138810008764267
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_02_coxa"
+   ]
+  },
+  "leg_02_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.0993751734495163,
+     0.07944329082965851,
+     0.06247691065073013
+    ],
+    [
+     -0.03963879495859146,
+     0.13952448964118958,
+     0.11661355942487717
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_02_femur"
+   ]
+  },
+  "leg_02_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.10136650502681732,
+     0.13096652925014496,
+     0.06079999357461929
+    ],
+    [
+     -0.09096650779247284,
+     0.14136652648448944,
+     0.07119999080896378
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_02_femur"
+   ]
+  },
+  "leg_02_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.1498180776834488,
+     0.1326344609260559,
+     0.0003086831420660019
+    ],
+    [
+     -0.09268668293952942,
+     0.1898379623889923,
+     0.0691271424293518
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_02_tibia"
+   ]
+  },
+  "leg_03_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.052112266421318054,
+     0.056578129529953,
+     0.10728875547647476
+    ],
+    [
+     0.06369589269161224,
+     0.06816774606704712,
+     0.11888118833303452
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_03_coxa"
+   ]
+  },
+  "leg_03_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.02762031927704811,
+     0.04511924833059311,
+     0.10759971290826797
+    ],
+    [
+     0.059977028518915176,
+     0.06730212271213531,
+     0.12148258835077286
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_03_coxa"
+   ]
+  },
+  "leg_03_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.054741889238357544,
+     0.05720803514122963,
+     0.06815395504236221
+    ],
+    [
+     0.1313449591398239,
+     0.09542186558246613,
+     0.11792690306901932
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_03_femur"
+   ]
+  },
+  "leg_03_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.12374366819858551,
+     0.08628325164318085,
+     0.06666182726621628
+    ],
+    [
+     0.13411666452884674,
+     0.09667226672172546,
+     0.07704104483127594
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_03_femur"
+   ]
+  },
+  "leg_03_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.126080721616745,
+     0.08747445046901703,
+     0.010885601863265038
+    ],
+    [
+     0.20213302969932556,
+     0.12252652645111084,
+     0.07518333196640015
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_03_tibia"
+   ]
+  },
+  "leg_04_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.06406094133853912,
+     0.05540524795651436,
+     0.10620000958442688
+    ],
+    [
+     -0.05246094986796379,
+     0.06700523942708969,
+     0.11780001223087311
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_04_coxa"
+   ]
+  },
+  "leg_04_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.06020450219511986,
+     0.045012280344963074,
+     0.10653063654899597
+    ],
+    [
+     -0.027773234993219376,
+     0.06622493267059326,
+     0.12146381288766861
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_04_coxa"
+   ]
+  },
+  "leg_04_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.13032886385917664,
+     0.0559634193778038,
+     0.06243516877293587
+    ],
+    [
+     -0.05494699999690056,
+     0.09051759541034698,
+     0.11666823923587799
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_04_femur"
+   ]
+  },
+  "leg_04_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.13299819827079773,
+     0.08131474256515503,
+     0.06080000475049019
+    ],
+    [
+     -0.12259820103645325,
+     0.09171473979949951,
+     0.07119999825954437
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_04_femur"
+   ]
+  },
+  "leg_04_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.19846045970916748,
+     0.08246076107025146,
+     0.00029459595680236816
+    ],
+    [
+     -0.12484504282474518,
+     0.11336860060691833,
+     0.0691642090678215
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_04_tibia"
+   ]
+  },
+  "leg_05_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.056199997663497925,
+     0.034199994057416916,
+     0.10619999468326569
+    ],
+    [
+     0.06780000030994415,
+     0.045799996703863144,
+     0.11779999732971191
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_05_coxa"
+   ]
+  },
+  "leg_05_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.03138487786054611,
+     0.03349999710917473,
+     0.10679513961076736
+    ],
+    [
+     0.06252048164606094,
+     0.04649999365210533,
+     0.12115117907524109
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_05_coxa"
+   ]
+  },
+  "leg_05_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.0592384859919548,
+     0.03449999541044235,
+     0.06260757148265839
+    ],
+    [
+     0.13810878992080688,
+     0.04549999535083771,
+     0.11644244939088821
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_05_femur"
+   ]
+  },
+  "leg_05_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.13079999387264252,
+     0.03479999676346779,
+     0.06080000102519989
+    ],
+    [
+     0.141199991106987,
+     0.04519999399781227,
+     0.07119999080896378
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_05_femur"
+   ]
+  },
+  "leg_05_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.13337542116641998,
+     0.03579999879002571,
+     0.00035290789674036205
+    ],
+    [
+     0.21099984645843506,
+     0.044199999421834946,
+     0.0690111368894577
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_05_tibia"
+   ]
+  },
+  "leg_06_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.06780000030994415,
+     0.034199994057416916,
+     0.10619999468326569
+    ],
+    [
+     -0.056199997663497925,
+     0.045799996703863144,
+     0.11779999732971191
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_06_coxa"
+   ]
+  },
+  "leg_06_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.06252048164606094,
+     0.03349999710917473,
+     0.10679513961076736
+    ],
+    [
+     -0.03138487786054611,
+     0.04649999365210533,
+     0.12115117907524109
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_06_coxa"
+   ]
+  },
+  "leg_06_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.13810878992080688,
+     0.03449999541044235,
+     0.06260757148265839
+    ],
+    [
+     -0.0592384859919548,
+     0.04549999535083771,
+     0.11644244939088821
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_06_femur"
+   ]
+  },
+  "leg_06_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.141199991106987,
+     0.03479999676346779,
+     0.06080000102519989
+    ],
+    [
+     -0.13079999387264252,
+     0.04519999399781227,
+     0.07119999080896378
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_06_femur"
+   ]
+  },
+  "leg_06_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.21099984645843506,
+     0.03579999879002571,
+     0.00035290789674036205
+    ],
+    [
+     -0.13337542116641998,
+     0.044199999421834946,
+     0.0690111368894577
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_06_tibia"
+   ]
+  },
+  "leg_07_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.044987425208091736,
+     -0.0013617434306070209,
+     0.10619999468326569
+    ],
+    [
+     0.05658743157982826,
+     0.010238254442811012,
+     0.11779999732971191
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_07_coxa"
+   ]
+  },
+  "leg_07_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.022494429722428322,
+     -7.187232404248789e-05,
+     0.10676641762256622
+    ],
+    [
+     0.05393379554152489,
+     0.02697570063173771,
+     0.12118512392044067
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_07_coxa"
+   ]
+  },
+  "leg_07_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.04683901369571686,
+     -0.04151943698525429,
+     0.06258886307477951
+    ],
+    [
+     0.1144198328256607,
+     0.009038683027029037,
+     0.11646697670221329
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_07_femur"
+   ]
+  },
+  "leg_07_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.10620468109846115,
+     -0.043206389993429184,
+     0.06080000475049019
+    ],
+    [
+     0.11660467833280563,
+     -0.0328063927590847,
+     0.07120000571012497
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_07_femur"
+   ]
+  },
+  "leg_07_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     0.10813470929861069,
+     -0.08186067640781403,
+     0.0003465498157311231
+    ],
+    [
+     0.17326763272285461,
+     -0.03430614620447159,
+     0.06902776658535004
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_07_tibia"
+   ]
+  },
+  "leg_08_ankle": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.05593310669064522,
+     -0.002391309943050146,
+     0.10728875547647476
+    ],
+    [
+     -0.04434790834784508,
+     0.009196758270263672,
+     0.11888118833303452
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_08_coxa"
+   ]
+  },
+  "leg_08_coxa": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.053470294922590256,
+     -0.0009738970547914505,
+     0.10783828049898148
+    ],
+    [
+     -0.022277656942605972,
+     0.0268179252743721,
+     0.12120062857866287
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_08_coxa"
+   ]
+  },
+  "leg_08_femur": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.11420439183712006,
+     -0.046488407999277115,
+     0.06831496953964233
+    ],
+    [
+     -0.046223945915699005,
+     0.00784876849502325,
+     0.11771607398986816
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_08_femur"
+   ]
+  },
+  "leg_08_knee": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.116402268409729,
+     -0.04828556254506111,
+     0.06666183471679688
+    ],
+    [
+     -0.10602486878633499,
+     -0.03790093958377838,
+     0.07704105228185654
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_08_femur"
+   ]
+  },
+  "leg_08_tibia": {
+   "type": "MESH",
+   "parent": "rig_spider",
+   "aabb": [
+    [
+     -0.1744702160358429,
+     -0.09164838492870331,
+     0.01094089262187481
+    ],
+    [
+     -0.10796414315700531,
+     -0.039491601288318634,
+     0.07503804564476013
+    ]
+   ],
+   "polys": 36,
+   "materials": [
+    "mat_leg_chitin"
+   ],
+   "modifiers": [
+    {
+     "type": "ARMATURE",
+     "object": "rig_spider"
+    }
+   ],
+   "shape_keys": false,
+   "vertex_groups": [
+    "leg_08_tibia"
+   ]
+  },
+  "light_fill": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "light_key": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "light_rim": {
+   "type": "LIGHT",
+   "parent": null
+  },
+  "rig_spider": {
+   "type": "ARMATURE",
+   "parent": null
+  }
+ },
+ "meshes": [
+  "body_abdomen",
+  "body_head",
+  "ground",
+  "leg_01_ankle",
+  "leg_01_coxa",
+  "leg_01_femur",
+  "leg_01_knee",
+  "leg_01_tibia",
+  "leg_02_ankle",
+  "leg_02_coxa",
+  "leg_02_femur",
+  "leg_02_knee",
+  "leg_02_tibia",
+  "leg_03_ankle",
+  "leg_03_coxa",
+  "leg_03_femur",
+  "leg_03_knee",
+  "leg_03_tibia",
+  "leg_04_ankle",
+  "leg_04_coxa",
+  "leg_04_femur",
+  "leg_04_knee",
+  "leg_04_tibia",
+  "leg_05_ankle",
+  "leg_05_coxa",
+  "leg_05_femur",
+  "leg_05_knee",
+  "leg_05_tibia",
+  "leg_06_ankle",
+  "leg_06_coxa",
+  "leg_06_femur",
+  "leg_06_knee",
+  "leg_06_tibia",
+  "leg_07_ankle",
+  "leg_07_coxa",
+  "leg_07_femur",
+  "leg_07_knee",
+  "leg_07_tibia",
+  "leg_08_ankle",
+  "leg_08_coxa",
+  "leg_08_femur",
+  "leg_08_knee",
+  "leg_08_tibia"
+ ],
+ "cameras": {
+  "cam_side": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 6.0,
+   "location": [
+    0.75,
+    0.03999999910593033,
+    0.12999999523162842
+   ],
+   "rotation": [
+    1.4909663200378418,
+    -8.814652119326638e-08,
+    1.570796251296997
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 50.0,
+   "ortho_scale": 0.5,
+   "location": [
+    0.0,
+    0.03999999910593033,
+    0.8999999761581421
+   ],
+   "rotation": [
+    0.0,
+    -0.0,
+    0.0
+   ]
+  }
+ },
+ "materials": {
+  "mat_chitin": {
+   "name": "mat_chitin",
+   "metallic": 0.0,
+   "roughness": 0.5199999809265137
+  },
+  "mat_ground": {
+   "name": "mat_ground",
+   "metallic": 0.0,
+   "roughness": 0.75
+  },
+  "mat_leg_chitin": {
+   "name": "mat_leg_chitin",
+   "metallic": 0.0,
+   "roughness": 0.5199999809265137
+  }
+ },
+ "images": [
+  {
+   "name": "chitin_basecolor",
+   "size": [
+    1024,
+    1024
+   ],
+   "packed": true,
+   "filepath": "//../environment/materials/textures/chitin_basecolor.png",
+   "source": "FILE"
+  }
+ ],
+ "libraries": [],
+ "polys_total": 2906,
+ "rig": "rig_spider",
+ "bones": {
+  "body": {
+   "parent": null,
+   "head": [
+    0.0,
+    0.0,
+    0.11999999731779099
+   ],
+   "tail": [
+    0.0,
+    -0.05000000074505806,
+    0.11999999731779099
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_01_coxa": {
+   "parent": "body",
+   "head": [
+    0.022627416998147964,
+    0.06262741982936859,
+    0.11500000208616257
+   ],
+   "tail": [
+    0.043840620666742325,
+    0.08384062349796295,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_01_femur": {
+   "parent": "leg_01_coxa",
+   "head": [
+    0.043840620666742325,
+    0.08384062349796295,
+    0.1120000034570694
+   ],
+   "tail": [
+    0.09616652131080627,
+    0.1361665278673172,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_01_tibia": {
+   "parent": "leg_01_femur",
+   "head": [
+    0.09616652131080627,
+    0.1361665278673172,
+    0.06599999964237213
+   ],
+   "tail": [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_02_coxa": {
+   "parent": "body",
+   "head": [
+    -0.022627416998147964,
+    0.06262741982936859,
+    0.11500000208616257
+   ],
+   "tail": [
+    -0.043840620666742325,
+    0.08384062349796295,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_02_femur": {
+   "parent": "leg_02_coxa",
+   "head": [
+    -0.043840620666742325,
+    0.08384062349796295,
+    0.1120000034570694
+   ],
+   "tail": [
+    -0.09616652131080627,
+    0.1361665278673172,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_02_tibia": {
+   "parent": "leg_02_femur",
+   "head": [
+    -0.09616652131080627,
+    0.1361665278673172,
+    0.06599999964237213
+   ],
+   "tail": [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_03_coxa": {
+   "parent": "body",
+   "head": [
+    0.030070163309574127,
+    0.05094464495778084,
+    0.11500000208616257
+   ],
+   "tail": [
+    0.05826094374060631,
+    0.06120524927973747,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_03_femur": {
+   "parent": "leg_03_coxa",
+   "head": [
+    0.05826094374060631,
+    0.06120524927973747,
+    0.1120000034570694
+   ],
+   "tail": [
+    0.1277981996536255,
+    0.08651474118232727,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_03_tibia": {
+   "parent": "leg_03_femur",
+   "head": [
+    0.1277981996536255,
+    0.08651474118232727,
+    0.06599999964237213
+   ],
+   "tail": [
+    0.19733545184135437,
+    0.11182422935962677,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_04_coxa": {
+   "parent": "body",
+   "head": [
+    -0.030070163309574127,
+    0.05094464495778084,
+    0.11500000208616257
+   ],
+   "tail": [
+    -0.05826094374060631,
+    0.06120524927973747,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_04_femur": {
+   "parent": "leg_04_coxa",
+   "head": [
+    -0.05826094374060631,
+    0.06120524927973747,
+    0.1120000034570694
+   ],
+   "tail": [
+    -0.1277981996536255,
+    0.08651474118232727,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_04_tibia": {
+   "parent": "leg_04_femur",
+   "head": [
+    -0.1277981996536255,
+    0.08651474118232727,
+    0.06599999964237213
+   ],
+   "tail": [
+    -0.19733545184135437,
+    0.11182422935962677,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_05_coxa": {
+   "parent": "body",
+   "head": [
+    0.03200000151991844,
+    0.03999999910593033,
+    0.11500000208616257
+   ],
+   "tail": [
+    0.06199999898672104,
+    0.03999999910593033,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_05_femur": {
+   "parent": "leg_05_coxa",
+   "head": [
+    0.06199999898672104,
+    0.03999999910593033,
+    0.1120000034570694
+   ],
+   "tail": [
+    0.13600000739097595,
+    0.03999999910593033,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_05_tibia": {
+   "parent": "leg_05_femur",
+   "head": [
+    0.13600000739097595,
+    0.03999999910593033,
+    0.06599999964237213
+   ],
+   "tail": [
+    0.20999999344348907,
+    0.03999999910593033,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_06_coxa": {
+   "parent": "body",
+   "head": [
+    -0.03200000151991844,
+    0.03999999910593033,
+    0.11500000208616257
+   ],
+   "tail": [
+    -0.06199999898672104,
+    0.03999999910593033,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_06_femur": {
+   "parent": "leg_06_coxa",
+   "head": [
+    -0.06199999898672104,
+    0.03999999910593033,
+    0.1120000034570694
+   ],
+   "tail": [
+    -0.13600000739097595,
+    0.03999999910593033,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_06_tibia": {
+   "parent": "leg_06_femur",
+   "head": [
+    -0.13600000739097595,
+    0.03999999910593033,
+    0.06599999964237213
+   ],
+   "tail": [
+    -0.20999999344348907,
+    0.03999999910593033,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_07_coxa": {
+   "parent": "body",
+   "head": [
+    0.026212865486741066,
+    0.021645553410053253,
+    0.11500000208616257
+   ],
+   "tail": [
+    0.05078742653131485,
+    0.0044382610358297825,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_07_femur": {
+   "parent": "leg_07_coxa",
+   "head": [
+    0.05078742653131485,
+    0.0044382610358297825,
+    0.1120000034570694
+   ],
+   "tail": [
+    0.11140467971563339,
+    -0.03800639510154724,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_07_tibia": {
+   "parent": "leg_07_femur",
+   "head": [
+    0.11140467971563339,
+    -0.03800639510154724,
+    0.06599999964237213
+   ],
+   "tail": [
+    0.17202192544937134,
+    -0.08045104891061783,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_08_coxa": {
+   "parent": "body",
+   "head": [
+    -0.026212865486741066,
+    0.021645553410053253,
+    0.11500000208616257
+   ],
+   "tail": [
+    -0.05078742653131485,
+    0.0044382610358297825,
+    0.1120000034570694
+   ],
+   "deform": true,
+   "connected": false
+  },
+  "leg_08_femur": {
+   "parent": "leg_08_coxa",
+   "head": [
+    -0.05078742653131485,
+    0.0044382610358297825,
+    0.1120000034570694
+   ],
+   "tail": [
+    -0.11140467971563339,
+    -0.03800639510154724,
+    0.06599999964237213
+   ],
+   "deform": true,
+   "connected": true
+  },
+  "leg_08_tibia": {
+   "parent": "leg_08_femur",
+   "head": [
+    -0.11140467971563339,
+    -0.03800639510154724,
+    0.06599999964237213
+   ],
+   "tail": [
+    -0.17202192544937134,
+    -0.08045104891061783,
+    0.001500000013038516
+   ],
+   "deform": true,
+   "connected": true
+  }
+ },
+ "bone_count": 25,
+ "pose_bone_rotation_modes": {
+  "body": "QUATERNION",
+  "leg_01_coxa": "QUATERNION",
+  "leg_01_femur": "QUATERNION",
+  "leg_01_tibia": "QUATERNION",
+  "leg_02_coxa": "QUATERNION",
+  "leg_02_femur": "QUATERNION",
+  "leg_02_tibia": "QUATERNION",
+  "leg_03_coxa": "QUATERNION",
+  "leg_03_femur": "QUATERNION",
+  "leg_03_tibia": "QUATERNION",
+  "leg_04_coxa": "QUATERNION",
+  "leg_04_femur": "QUATERNION",
+  "leg_04_tibia": "QUATERNION",
+  "leg_05_coxa": "QUATERNION",
+  "leg_05_femur": "QUATERNION",
+  "leg_05_tibia": "QUATERNION",
+  "leg_06_coxa": "QUATERNION",
+  "leg_06_femur": "QUATERNION",
+  "leg_06_tibia": "QUATERNION",
+  "leg_07_coxa": "QUATERNION",
+  "leg_07_femur": "QUATERNION",
+  "leg_07_tibia": "QUATERNION",
+  "leg_08_coxa": "QUATERNION",
+  "leg_08_femur": "QUATERNION",
+  "leg_08_tibia": "QUATERNION"
+ },
+ "skin": {
+  "body": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 32,
+   "shape_keys": false,
+   "dominant_group": "body",
+   "dominant_frac": 1.0
+  },
+  "leg_01_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_01_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_01_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_01_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_01_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_01_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_02_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_02_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_02_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_02_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_02_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_02_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_03_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_03_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_03_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_03_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_03_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_03_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_04_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_04_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_04_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_04_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_04_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_04_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_05_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_05_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_05_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_05_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_05_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_05_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_06_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_06_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_06_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_06_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_06_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_06_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_07_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_07_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_07_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_07_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_07_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_07_tibia",
+   "dominant_frac": 1.0
+  },
+  "leg_08_coxa": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_08_coxa",
+   "dominant_frac": 1.0
+  },
+  "leg_08_femur": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_08_femur",
+   "dominant_frac": 1.0
+  },
+  "leg_08_tibia": {
+   "present": true,
+   "armature_modifiers": [
+    "rig_spider"
+   ],
+   "unweighted": 0,
+   "max_influences": 1,
+   "min_weight_sum": 1.0,
+   "max_weight_sum": 1.0,
+   "vertices": 20,
+   "shape_keys": false,
+   "dominant_group": "leg_08_tibia",
+   "dominant_frac": 1.0
+  }
+ },
+ "action": {
+  "name": null
+ },
+ "seam": {
+  "max_rotation_deg": 0.0,
+  "max_translation_mm": 0.0
+ },
+ "feet": {
+  "leg_01": [
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ]
+  ],
+  "leg_02": [
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ],
+   [
+    -0.14849242568016052,
+    0.18849241733551025,
+    0.0015000030398368835
+   ]
+  ],
+  "leg_03": [
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ],
+   [
+    0.20104756951332092,
+    0.1210014671087265,
+    0.012154869735240936
+   ]
+  ],
+  "leg_04": [
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ],
+   [
+    -0.19733543694019318,
+    0.11182423681020737,
+    0.0014999955892562866
+   ]
+  ],
+  "leg_05": [
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ]
+  ],
+  "leg_06": [
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ],
+   [
+    -0.20999997854232788,
+    0.04000000283122063,
+    0.0015000104904174805
+   ]
+  ],
+  "leg_07": [
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ],
+   [
+    0.17202194035053253,
+    -0.08045104891061783,
+    0.0015000030398368835
+   ]
+  ],
+  "leg_08": [
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ],
+   [
+    -0.17323234677314758,
+    -0.0902763158082962,
+    0.012154866009950638
+   ]
+  ]
+ },
+ "body_head": [
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ],
+  [
+   0.0,
+   0.0,
+   0.11999999731779099
+  ]
+ ],
+ "body_aabb_keyframes": {
+  "1:body_head": [
+   [
+    -0.03200000151991844,
+    -0.010000001639127731,
+    0.10199999809265137
+   ],
+   [
+    0.03200000151991844,
+    0.09000000357627869,
+    0.14000000059604645
+   ]
+  ],
+  "1:body_abdomen": [
+   [
+    -0.03500000014901161,
+    -0.09000000357627869,
+    0.09199999272823334
+   ],
+   [
+    0.03500000014901161,
+    -0.010000001639127731,
+    0.14800000190734863
+   ]
+  ],
+  "10:body_head": [
+   [
+    -0.03200000151991844,
+    -0.010000001639127731,
+    0.10199999809265137
+   ],
+   [
+    0.03200000151991844,
+    0.09000000357627869,
+    0.14000000059604645
+   ]
+  ],
+  "10:body_abdomen": [
+   [
+    -0.03500000014901161,
+    -0.09000000357627869,
+    0.09199999272823334
+   ],
+   [
+    0.03500000014901161,
+    -0.010000001639127731,
+    0.14800000190734863
+   ]
+  ],
+  "18:body_head": [
+   [
+    -0.03200000151991844,
+    -0.010000001639127731,
+    0.10199999809265137
+   ],
+   [
+    0.03200000151991844,
+    0.09000000357627869,
+    0.14000000059604645
+   ]
+  ],
+  "18:body_abdomen": [
+   [
+    -0.03500000014901161,
+    -0.09000000357627869,
+    0.09199999272823334
+   ],
+   [
+    0.03500000014901161,
+    -0.010000001639127731,
+    0.14800000190734863
+   ]
+  ],
+  "21:body_head": [
+   [
+    -0.03200000151991844,
+    -0.010000001639127731,
+    0.10199999809265137
+   ],
+   [
+    0.03200000151991844,
+    0.09000000357627869,
+    0.14000000059604645
+   ]
+  ],
+  "21:body_abdomen": [
+   [
+    -0.03500000014901161,
+    -0.09000000357627869,
+    0.09199999272823334
+   ],
+   [
+    0.03500000014901161,
+    -0.010000001639127731,
+    0.14800000190734863
+   ]
+  ]
+ },
+ "collisions": {
+  "1": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "2": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "3": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "4": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "5": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "6": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "7": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "8": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "9": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "10": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "11": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "12": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "13": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "14": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "15": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "16": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "17": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "18": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "19": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "20": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "21": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "22": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "23": {
+   "overlaps": 0,
+   "pairs": []
+  },
+  "24": {
+   "overlaps": 0,
+   "pairs": []
+  }
+ },
+ "images_with_path": [
+  {
+   "name": "chitin_basecolor",
+   "size": [
+    1024,
+    1024
+   ],
+   "packed": true,
+   "filepath": "//../environment/materials/textures/chitin_basecolor.png",
+   "source": "FILE"
+  }
+ ],
+ "unpacked_images": []
+}
