@@ -1,0 +1,18 @@
+/app/out:
+total 19764
+drwxr-xr-x 1 root root     4096 Nov 27 17:15 .
+drwxr-xr-x 1 root root     4096 Nov 27 16:58 ..
+-rwxr-xr-x 1 root root 15082816 Nov 27 17:15 drawer_cabinet.blend
+-rwxr-xr-x 1 root root      913 Nov 27 17:15 manifest.json
+-rwxr-xr-x 1 root root  1724206 Nov 27 17:15 render_day.png
+-rwxr-xr-x 1 root root  1703139 Nov 27 17:15 render_detail.png
+-rwxr-xr-x 1 root root  1703448 Nov 27 17:15 render_night.png
+drwxr-xr-x 2 root root     4096 Nov 27 17:15 textures
+
+/app/out/textures:
+total 14080
+drwxr-xr-x 2 root root     4096 Nov 27 17:15 .
+drwxr-xr-x 1 root root     4096 Nov 27 17:15 ..
+-rwxr-xr-x 1 root root  1808263 Nov 27 17:15 wood_basecolor.png
+-rwxr-xr-x 1 root root 10914486 Nov 27 17:15 wood_normal.png
+-rwxr-xr-x 1 root root  1681485 Nov 27 17:15 wood_roughness.png
