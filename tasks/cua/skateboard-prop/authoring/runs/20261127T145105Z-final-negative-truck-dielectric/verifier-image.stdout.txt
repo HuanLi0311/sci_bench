@@ -1,0 +1,66 @@
+[
+    {
+        "Architecture": "amd64",
+        "Config": {
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "Entrypoint": [
+                "/usr/local/bin/entrypoint"
+            ],
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONIOENCODING=utf-8",
+                "DISPLAY=:1",
+                "LIBGL_ALWAYS_SOFTWARE=1",
+                "XDG_RUNTIME_DIR=/tmp/runtime-root",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "WorkingDir": "/tests"
+        },
+        "Created": "2026-11-27T22:32:08.331664205+08:00",
+        "Descriptor": {
+            "digest": "sha256:10378e8f7f6611cf12b6a94b5df8f8cca4183b15b6b1b46570813468d990c93b",
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "size": 3369
+        },
+        "Id": "sha256:10378e8f7f6611cf12b6a94b5df8f8cca4183b15b6b1b46570813468d990c93b",
+        "Metadata": {
+            "LastTagTime": "2026-11-27T14:32:08.475991173Z"
+        },
+        "Os": "linux",
+        "Parent": "sha256:5cbc7e716f2260d5592fec883c44f0eb9d3df3092c276203c91cf2c563c898bd",
+        "RepoDigests": [
+            "cua-qc-skateboard-prop-tests@sha256:10378e8f7f6611cf12b6a94b5df8f8cca4183b15b6b1b46570813468d990c93b"
+        ],
+        "RepoTags": [
+            "cua-qc-skateboard-prop-tests:latest"
+        ],
+        "RootFS": {
+            "Layers": [
+                "sha256:369ede38a92da8cd72a76f15f37e496def401830f3c8b7d39c0c7695682a51ce",
+                "sha256:fb6863d5987e22dc5ad1ccbed055b720feedd0dea9536ee69d0a6a64c04ec377",
+                "sha256:beb5f5baf7a095afa79ee47749e08c663627f1026309047e3c0d6828900cdbd5",
+                "sha256:a549ebf7a5604d60aeffa74f06749575c137ac440d12ba098cb3e0a236b53214",
+                "sha256:240df5b20dc5d024c48e013b548eb5bc1b63f71e9049a7e8656a85b08b4acdd5",
+                "sha256:f22336085573de306b1deab22dfc6958bf78101016afad07cba674c73ff6ec00",
+                "sha256:f3f55e46cda0e5c9e23e511abd7f787c1071d9dc6c380cb2f8369031d6ffc3dc",
+                "sha256:5ce9e8d719c57a32ef88adce6e4ad7018824a166f740767fffaa3d378734affc",
+                "sha256:da87a795f7d2519f14eb6eab9c32d6b23dfce922ca49a6f43b3e771281ff7407",
+                "sha256:a8dcde1488ba10a82ce123899ed4f474b1cf4106f69989557f5a7ff47475c7ac",
+                "sha256:0691b457fae601a2df9afe6670dc50e33bc96dec10e0ab1a4405c1532c37bcfd",
+                "sha256:5f3d5451f56814ed14cab12492874316b84cd10b39c9b45d4a4c749f3af2a3f8",
+                "sha256:6aa005f4ddebd68394ae62dc88074866e82ef5fc6386d264477fc495a04ae9ce",
+                "sha256:a954208354aece7753f088576d8aa767f9b1daf3734518861c8b80c9acd991dd"
+            ],
+            "Type": "layers"
+        },
+        "Size": 1210047646
+    }
+]
