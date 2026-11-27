@@ -128,6 +128,16 @@
         "R18_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "negative-deck-single-ply",
+      "run": "skateboard-prop/authoring/runs/20261127T144000Z-final-negative-deck-single-ply",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R04_plies"
+      ]
     }
   ]
 }
