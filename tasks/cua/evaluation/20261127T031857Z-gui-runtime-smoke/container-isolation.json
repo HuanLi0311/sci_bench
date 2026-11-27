@@ -1,0 +1,15 @@
+{
+  "image_id": "sha256:78b98a617d122307a33336b3ecd328985bdf050d3bd174c61bfbec0b7589c52e",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/evaluation/20261127T031857Z-gui-runtime-smoke/agent",
+      "Destination": "/logs/agent",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "network_mode": "none",
+  "name": "cua-gui-folding-chair-a1a976f5"
+}
