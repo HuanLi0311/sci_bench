@@ -1,0 +1,1 @@
+{"analysis":"Drawing loading.","plan":"Fit loaded drawing.","action":{"type":"keypress","keys":["Home"]}}

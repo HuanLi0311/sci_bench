@@ -1,0 +1,1 @@
+{"analysis":"Apply Scale is highlighted.","plan":"Execute by clicking the result.","action":{"type":"click","x":1041,"y":569}}

@@ -1,0 +1,1 @@
+{"analysis":"Sofa height set.","plan":"Confirm scale.","action":{"type":"keypress","keys":["enter"]}}

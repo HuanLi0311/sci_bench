@@ -1,0 +1,1 @@
+{"analysis":"Blender is unobstructed. Reference proportions suggest an 85 mm body height above the wheels.","plan":"Increase body height to 85 mm and position its bottom at 60 mm.","action":{"type":"mouse_move","x":796,"y":531}}

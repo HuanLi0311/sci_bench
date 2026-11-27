@@ -1,0 +1,1 @@
+{"analysis":"Operator search is open now.","plan":"Apply scale using native operator search.","action":{"type":"type","text":"Apply Scale"}}

@@ -1,0 +1,1 @@
+{"analysis":"Default PDF association did not display the document immediately.","plan":"Return to modeling with known rig requirements.","action":{"type":"click","x":1268,"y":311}}

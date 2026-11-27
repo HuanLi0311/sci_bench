@@ -1,0 +1,1 @@
+{"analysis":"Output directory selected.","plan":"Set filename.","action":{"type":"click","x":942,"y":886}}

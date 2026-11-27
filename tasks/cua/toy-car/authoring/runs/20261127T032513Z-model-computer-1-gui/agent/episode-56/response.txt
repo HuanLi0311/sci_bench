@@ -1,0 +1,1 @@
+{"analysis":"Height now matches the reference.","plan":"Confirm height and raise body to its final elevation.","action":{"type":"keypress","keys":["Return"]}}

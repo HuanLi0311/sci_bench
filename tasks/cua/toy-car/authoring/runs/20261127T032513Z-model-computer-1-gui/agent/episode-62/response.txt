@@ -1,0 +1,1 @@
+{"analysis":"body is named and selected.","plan":"Apply its scale before rounding edges.","action":{"type":"keypress","keys":["F3"]}}

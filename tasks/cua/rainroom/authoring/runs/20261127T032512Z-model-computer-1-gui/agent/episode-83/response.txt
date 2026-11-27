@@ -1,0 +1,1 @@
+{"analysis":"Adding sofa primitive.","plan":"Use Add menu shortcut.","action":{"type":"keypress","keys":["shift","a"]}}

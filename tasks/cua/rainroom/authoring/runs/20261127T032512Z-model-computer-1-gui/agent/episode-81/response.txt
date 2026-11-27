@@ -1,0 +1,1 @@
+{"analysis":"Hide shell in viewport only.","plan":"Furnish interior with shell hidden.","action":{"type":"keypress","keys":["h"]}}

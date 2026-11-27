@@ -1,0 +1,1 @@
+{"analysis":"Bracket primitive selected.","plan":"Create first solid bracket leaf.","action":{"type":"keypress","keys":["Return"]}}

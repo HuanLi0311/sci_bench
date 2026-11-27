@@ -1,0 +1,1 @@
+{"analysis":"Filename selected.","plan":"Write target filename.","action":{"type":"type","text":"folding_chair.blend"}}

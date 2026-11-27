@@ -5259,12 +5259,798 @@
         "cached_tokens": 198016,
         "cost_usd": 0.029539599999999888
       }
-    }
-  ],
-  "final_metrics": {
-    "total_prompt_tokens": 8214995,
-    "total_completion_tokens": 11212,
-    "total_cached_tokens": 7897856,
-    "total_cost_usd": 1.5361835999999998
-  }
-}
+    },
+    {
+      "step_id": 82,
+      "timestamp": "2026-11-27T03:52:56.180978+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Room shell saved. I will hide the shell temporarily to furnish the interior, retaining it for rendering.\nPlan: Select shell only, hide it, then add sofa base.",
+      "reasoning_content": "**Planning multi-field entry****Modeling room objects**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_80_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "click",
+            "x": 1707,
+            "y": 201,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_80_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep80.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 203590,
+        "completion_tokens": 432,
+        "cached_tokens": 200576,
+        "cost_usd": 0.03040559999999992
+      }
+    },
+    {
+      "step_id": 83,
+      "timestamp": "2026-11-27T03:53:43.174306+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Hide shell in viewport only.\nPlan: Furnish interior with shell hidden.",
+      "reasoning_content": "**Preparing object labels****Testing tabbed field entry**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_81_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "h"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_81_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep81.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 206102,
+        "completion_tokens": 218,
+        "cached_tokens": 203008,
+        "cost_usd": 0.02866879999999994
+      }
+    },
+    {
+      "step_id": 84,
+      "timestamp": "2026-11-27T03:54:17.745080+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Shell hidden for modeling; add sofa base via native Add Cube command.\nPlan: Create and size a soft rectangular sofa along the left wall.",
+      "reasoning_content": "**Preparing furniture objects****Opening cube creation menu**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_82_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "mouse_move",
+            "x": 768,
+            "y": 570,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_82_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep82.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 208592,
+        "completion_tokens": 379,
+        "cached_tokens": 205568,
+        "cost_usd": 0.030394800000000055
+      }
+    },
+    {
+      "step_id": 85,
+      "timestamp": "2026-11-27T03:54:50.566489+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Adding sofa primitive.\nPlan: Use Add menu shortcut.",
+      "reasoning_content": "**Testing Properties tab entry****Planning object names**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_83_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "shift",
+              "a"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_83_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep83.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 211098,
+        "completion_tokens": 221,
+        "cached_tokens": 208128,
+        "cost_usd": 0.028962799999999955
+      }
+    },
+    {
+      "step_id": 86,
+      "timestamp": "2026-11-27T03:55:23.743519+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Add menu open.\nPlan: Choose mesh cube for sofa base.",
+      "reasoning_content": "**Trying cube field entry****Preparing cube transform**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_84_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "mouse_move",
+            "x": 701,
+            "y": 596,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_84_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep84.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 213585,
+        "completion_tokens": 357,
+        "cached_tokens": 210560,
+        "cost_usd": 0.030675999999999926
+      }
+    },
+    {
+      "step_id": 87,
+      "timestamp": "2026-11-27T03:55:57.560763+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Mesh submenu opening.\nPlan: Choose cube.",
+      "reasoning_content": "**Preparing property entries****Preparing 26 object names**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_85_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "mouse_move",
+            "x": 795,
+            "y": 596,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_85_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep85.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 216076,
+        "completion_tokens": 272,
+        "cached_tokens": 212992,
+        "cost_usd": 0.03018720000000008
+      }
+    },
+    {
+      "step_id": 88,
+      "timestamp": "2026-11-27T03:56:23.932273+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Cube option visible.\nPlan: Add cube.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_86_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "click",
+            "x": 856,
+            "y": 618,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_86_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep86.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 218563,
+        "completion_tokens": 30,
+        "cached_tokens": 215552,
+        "cost_usd": 0.027877200000000046
+      }
+    },
+    {
+      "step_id": 89,
+      "timestamp": "2026-11-27T03:56:59.292922+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Sofa base cube added. I will edit its mesh to keep transforms clean and bevel the edges.\nPlan: Scale the base width.",
+      "reasoning_content": "**Testing field navigation****Preparing transform fields**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_87_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "sx.425",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_87_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep87.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 221049,
+        "completion_tokens": 326,
+        "cached_tokens": 218112,
+        "cost_usd": 0.030945199999999895
+      }
+    },
+    {
+      "step_id": 90,
+      "timestamp": "2026-11-27T03:57:38.126814+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Sofa width entered.\nPlan: Confirm and flatten base.",
+      "reasoning_content": "**Editing cube fields****Building sofa pieces**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_88_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_88_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep88.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 223551,
+        "completion_tokens": 262,
+        "cached_tokens": 220544,
+        "cost_usd": 0.03068840000000006
+      }
+    },
+    {
+      "step_id": 91,
+      "timestamp": "2026-11-27T03:58:19.154578+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Base width correct; use remaining full Y length 2 m and height 0.4 m.\nPlan: Flatten sofa base.",
+      "reasoning_content": "**Setting up core lights****Seeking table access**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_89_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "sz.2",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_89_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep89.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 226037,
+        "completion_tokens": 202,
+        "cached_tokens": 222976,
+        "cost_usd": 0.03043960000000001
+      }
+    },
+    {
+      "step_id": 92,
+      "timestamp": "2026-11-27T03:58:55.291031+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Sofa height set.\nPlan: Confirm scale.",
+      "reasoning_content": "**Preparing scene furniture**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_90_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_90_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep90.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 228538,
+        "completion_tokens": 197,
+        "cached_tokens": 225536,
+        "cost_usd": 0.0305276000000001
+      }
+    },
+    {
+      "step_id": 93,
+      "timestamp": "2026-11-27T03:59:40.921953+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Sofa base proportions established.\nPlan: Move base to left wall.",
+      "reasoning_content": "**Preparing tabbed field entry****Entering object fields**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_91_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "gx-1.45",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_91_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep91.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 231022,
+        "completion_tokens": 206,
+        "cached_tokens": 227968,
+        "cost_usd": 0.030964800000000015
+      }
+    },
+    {
+      "step_id": 94,
+      "timestamp": "2026-11-27T04:00:25.980919+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Moving sofa b

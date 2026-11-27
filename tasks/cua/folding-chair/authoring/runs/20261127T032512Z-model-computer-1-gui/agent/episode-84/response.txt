@@ -1,0 +1,1 @@
+{"analysis":"Save target correct.","plan":"Save baseline.","action":{"type":"click","x":1436,"y":886}}

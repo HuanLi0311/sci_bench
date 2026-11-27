@@ -1,0 +1,1 @@
+{"analysis":"First bracket leaf dimensioned to 60 ×2 ×60 mm.","plan":"Round thin plate edges slightly, position leaf relative to corner origin, duplicate perpendicular leaf.","action":{"type":"keypress","keys":["ctrl","b"]}}
