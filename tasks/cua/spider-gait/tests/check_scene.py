@@ -275,7 +275,7 @@ def main():
 
     # ---- self-intersection (femur/tibia only; coxae sit in sockets) ----
     coll = {}
-    for frame in KEY_FRAMES:
+    for frame in range(1, 25):
         sc.frame_set(frame)
         bpy.context.view_layer.update()
         parts = {}

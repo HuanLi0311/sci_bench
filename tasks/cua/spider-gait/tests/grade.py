@@ -226,7 +226,7 @@ def main():
             peak = max(series[f - 1][2] for f in swing_frames(leg))
             if peak < 0.015:
                 lift_bad.append(f"leg_{leg:02d}:{peak*1000:.1f}mm")
-        add("R09_swing_lift", "normal", not lift_bad, lift_bad[:6] or "all swing feet lift >= 15mm")
+        add("R09_swing_lift", "must", not lift_bad, lift_bad[:6] or "all swing feet lift >= 15mm")
 
         drift_bad = []
         for leg in range(1, 9):
@@ -243,13 +243,13 @@ def main():
     else:
         for cid in ("R07_support", "R08_no_penetration", "R09_swing_lift",
                     "R10_slide", "R11_body_bob"):
-            add(cid, "must" if cid in ("R07_support", "R08_no_penetration") else "normal",
+            add(cid, "must" if cid in ("R07_support", "R08_no_penetration", "R09_swing_lift") else "normal",
                 False, "feet missing")
 
     collisions = scene.get("collisions") or {}
     total_overlaps = sum(v.get("overlaps", 0) for v in collisions.values()) if collisions else 0
     add("R12_no_intersection", "normal",
-        bool(collisions) and total_overlaps == 0,
+        len(collisions) == 24 and total_overlaps == 0,
         {k: v.get("overlaps") for k, v in collisions.items()} or "not measured")
 
     renders_ok = True
