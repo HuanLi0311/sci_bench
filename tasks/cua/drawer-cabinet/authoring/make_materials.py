@@ -23,33 +23,37 @@ def front_view(c, ox, oy, s):
         return ox + x * s, oy - z * s
 
     c.rect(*p(-500, 900), *p(500, 0), INK, width=1.4)
-    # drawers on the left bay
     for i in range(5):
         z0 = 130 + i * 150
         z1 = z0 + 150
         c.rect(*p(-462, z0 + 4), *p(-22, z1 - 4), INK, width=1.1)
         cx, cy = p(-242, z0 + 75)
-        c.circle(cx, cy, 6, GREY, fill=GREY, width=0)
-        c.text(ox + (-462 - 40) * s, p(0, z0 + 75)[1] - 20, f"D{i + 1:02d}", 1, GREY)
-    # door
+        c.circle(cx, cy, 5, GREY, fill=GREY, width=0)
+        c.text(p(-462, z0 + 75)[0] - 46, p(-462, z0 + 75)[1] - 6, f"D{i + 1:02d}", 1, GREY)
     c.rect(*p(22, 130), *p(478, 880), INK, width=1.1)
     c.line(*p(22, 130), *p(478, 880), GREY, 0.6)
     c.line(*p(22, 880), *p(478, 130), GREY, 0.6)
-    cx, cy = p(58, 505)
-    c.line(cx, cy - 40, cx, cy + 40, INK, 1.0)
-    # dimensions
+    hx0, hy0 = p(58, 505)
+    c.line(hx0, hy0 - 40, hx0, hy0 + 40, INK, 1.0)
+
     yd = oy + 60
-    c.line(*p(-500, 0), p(0, 0)[0], yd, DIM, 1.0)
-    c.line(*p(500, 0), p(500, 0)[0], yd, DIM, 1.0)
-    c.line(ox - 500 * s, yd, ox + 500 * s, yd, DIM, 1.0)
-    c.text_center(ox, yd + 14, "1000", 2, DIM)
-    hx = ox - 500 * s - 60
-    c.line(hx, *p(-500, 0), hx, p(-500, 900)[1], DIM, 1.0)
-    c.text(hx - 78, oy - 450 * s, "900", 2, DIM)
-    # drawer height callout
-    c.line(*p(-462, 130), p(-462, 280)[0] - 30, p(-462, 130)[1], DIM, 0.8)
-    c.line(*p(-462, 280), p(-462, 280)[0] - 30, p(-462, 280)[1], DIM, 0.8)
-    c.text(p(-462, 205)[0] - 68, p(-462, 205)[1] - 6, "150", 1, DIM)
+    x0, y0 = p(-500, 0)
+    x1, _ = p(500, 0)
+    c.line(x0, yd, x1, yd, DIM, 1.0)
+    c.line(x0, yd - 8, x0, yd + 8, DIM, 1.0)
+    c.line(x1, yd - 8, x1, yd + 8, DIM, 1.0)
+    c.text_center((x0 + x1) / 2, yd + 14, "1000", 2, DIM)
+
+    dim_x = x0 - 60
+    _, top_y = p(-500, 900)
+    c.line(dim_x, top_y, dim_x, y0, DIM, 1.0)
+    c.line(dim_x - 8, top_y, dim_x + 8, top_y, DIM, 1.0)
+    c.line(dim_x - 8, y0, dim_x + 8, y0, DIM, 1.0)
+    c.text(dim_x - 78, (top_y + y0) / 2 - 6, "900", 2, DIM)
+
+    hdx = p(-462, 130)[0] - 34
+    c.line(hdx, p(-462, 130)[1], hdx, p(-462, 280)[1], DIM, 0.8)
+    c.text(hdx - 62, (p(-462, 130)[1] + p(-462, 280)[1]) / 2 - 6, "150", 1, DIM)
 
 
 def side_view(c, ox, oy, s):
@@ -59,31 +63,33 @@ def side_view(c, ox, oy, s):
     c.rect(*p(-225, 900), *p(225, 60), INK, width=1.4)
     c.rect(*p(-225, 60), *p(225, 0), GREY, width=1.0)
     c.text(ox - 40, oy - 30 * s, "PLINTH 60", 1, GREY)
-    # drawer pulled out 300 (the delivered detail state)
-    c.rect(*p(225, 280), *p(225 + 300, 430), WOOD, INK, 1.2)
-    c.rect(*p(225 + 300 - 18, 280), *p(225 + 300, 430), INK, width=1.1)
+    c.rect(*p(225, 280), *p(525, 430), INK, fill=WOOD, width=1.2)
+    c.rect(*p(525 - 18, 280), *p(525, 430), INK, fill=INK, width=1.0)
     c.dashed(*p(225, 355), *p(525, 355), DIM)
     c.text(p(300, 355)[0] + 10, p(300, 355)[1] - 26, "TRAVEL 420", 1, DIM)
-    c.line(*p(-225, 0), p(-225, 0)[0], oy + 40, DIM, 0.8)
-    c.line(*p(225, 0), p(225, 0)[0], oy + 40, DIM, 0.8)
-    c.text_center(ox, oy + 54, "450", 2, DIM)
+    yb = oy + 40
+    c.line(p(-225, 0)[0], yb, p(225, 0)[0], yb, DIM, 1.0)
+    c.line(p(-225, 0)[0], yb - 8, p(-225, 0)[0], yb + 8, DIM, 1.0)
+    c.line(p(225, 0)[0], yb - 8, p(225, 0)[0], yb + 8, DIM, 1.0)
+    c.text_center(ox, yb + 14, "450", 2, DIM)
 
 
 def door_detail(c, ox, oy, s):
+    import math
+
     def p(x, y):
         return ox + x * s, oy - y * s
 
-    c.rect(*p(-240, -100), *p(0, 100), WOOD, INK, 1.2)
+    c.rect(*p(-240, -100), *p(0, 100), INK, fill=WOOD, width=1.2)
     c.circle(*p(0, 0), 5, INK, fill=INK)
     c.text(ox + 12, oy - 96, "HINGE AXIS", 1, GREY)
-    import math
     for deg in (0, 55, 110):
         r = math.radians(deg)
-        ex = -240 * math.cos(r)
-        ey = 240 * math.sin(r)
+        ex, ey = -240 * math.cos(r), 240 * math.sin(r)
         c.line(*p(0, 0), *p(ex, ey), DIM if deg else INK, 1.0)
-        c.text(*p(ex, ey) if deg == 0 else (p(ex, ey)[0] + 8, p(ex, ey)[1] - 14), f"{deg}", 1, DIM)
-    c.text(ox - 230, oy + 130, "DOOR OPENS 0-110 DEG, NO CONTACT WITH CARCASS", 1, INK)
+        px, py = p(ex, ey)
+        c.text(px + 8, py - 14, f"{deg}", 1, DIM)
+    c.text(ox - 230, oy + 130, "DOOR OPENS 0-110 DEG, NO CONTACT WITH THE CARCASS", 1, INK)
 
 
 def draw_three_views(path):
