@@ -1,0 +1,1 @@
+{"analysis":"Multiline text is not interpreted as Enter in viewport. I will use explicit keypress confirmations.","plan":"Cancel malformed transform and scale one axis at a time.","action":{"type":"keypress","keys":["esc"]}}
