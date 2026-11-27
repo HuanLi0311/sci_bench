@@ -214,6 +214,14 @@
         "R14_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "banner-stand",
+      "kind": "negative-banner-unpacked-print",
+      "run": "banner-stand/authoring/runs/20261127T175905Z-final-negative-banner-unpacked-print",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
     }
   ]
 }
