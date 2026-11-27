@@ -121,8 +121,11 @@ def main():
                 for sock in ("Base Color", "Roughness", "Normal"):
                     for link in bsdf.inputs[sock].links:
                         node = link.from_node
-                        while node.type != 'TEX_IMAGE' and node.inputs:
-                            nxt = [l.from_node for l in node.inputs[0].links]
+                        guard = 0
+                        while node.type != 'TEX_IMAGE' and guard < 6:
+                            guard += 1
+                            nxt = [l.from_node for sock_in in node.inputs
+                                   for l in sock_in.links]
                             if not nxt:
                                 break
                             node = nxt[0]
@@ -155,8 +158,10 @@ def main():
             panels[ob.name] = {"dims_mm": [round(d * 1000, 2) for d in dims],
                                "thickness_mm": round(min(dims) * 1000, 2)}
     report["panels"] = panels
-    boxes = [report["objects"][o.name]["aabb"] for o in parts
-             if report["objects"][o.name]["aabb"]]
+    envelope = parts + [o for o in bpy.data.objects
+                        if o.type == 'MESH' and o.name.startswith("foot")]
+    boxes = [report["objects"][o.name]["aabb"] for o in envelope
+             if report["objects"].get(o.name, {}).get("aabb")]
     if boxes:
         mn = [min(b[0][i] for b in boxes) for i in range(3)]
         mx = [max(b[1][i] for b in boxes) for i in range(3)]
