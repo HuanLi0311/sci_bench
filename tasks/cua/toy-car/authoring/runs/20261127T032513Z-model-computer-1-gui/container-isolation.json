@@ -1,0 +1,15 @@
+{
+  "image_id": "sha256:8ba16b17d45c695a8e6b982f9c11bccdd59b16fdf650aa6592fa9f3c1f4a2779",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/toy-car/authoring/runs/20261127T032513Z-model-computer-1-gui/agent",
+      "Destination": "/logs/agent",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "network_mode": "none",
+  "name": "cua-gui-toy-car-ec6bc624"
+}

@@ -1,0 +1,15 @@
+{
+  "image_id": "sha256:7e26221ea0befae7fb81763db2c845ba5928c387a14c570169b9edc49e4bc989",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/crate-lookdev/authoring/runs/20261127T032511Z-model-computer-1-gui/agent",
+      "Destination": "/logs/agent",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "network_mode": "none",
+  "name": "cua-gui-crate-lookdev-93fb5dff"
+}

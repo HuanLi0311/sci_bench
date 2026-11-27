@@ -1,0 +1,92 @@
+GUI-only evaluation. Work in the Blender desktop using mouse and keyboard, observing screenshots. Do not open a terminal, Python Console, Scripting workspace, execute scripts or use command injection. You have no shell tool. Do not type code into Blender, a terminal, search box or editor to execute it. Use the task's native GUI operations to build from scratch, save the named .blend, and render/save outputs. You may type JSON into a plain text editor to save manifest.json; do not execute it. Use /app/materials and /app/material-previews (faithful PDF/table views of the supplied materials). Task reference solutions, grading scripts and prior runs are unavailable. Finish the work autonomously. Save progress frequently in /app/out. If the time limit arrives, preserve your actual partial output; do not claim missing deliverables exist.
+
+You are working in a Blender 4.2 desktop session. `/app/materials` contains the
+design pack for a weathered wooden shipping crate; `/app/out` is empty and is
+where you deliver.
+
+## What you are given
+
+- `materials/drawings/crate_three_views.png` (and `.pdf`) — front / side / top
+  views plus a corner-bracket detail, all dimensions in millimetres.
+- `materials/spec/material_spec.pdf` — the material brief (weathered oak,
+  rusted iron, worn stencil paint) and the render brief.
+- `materials/photos/` — four reference photographs of the same crate.
+- `materials/hdri/studio_soft.hdr` — CC0 studio environment.
+- `materials/LICENSE.txt` — the licence for everything in the pack.
+
+## What to build
+
+Model the crate in Blender and render it. Use the GUI; the deliverable is a
+scene a colleague can keep editing, not a screenshot.
+
+1. Geometry, in metres:
+   - five body panels `crate_front`, `crate_back`, `crate_left`, `crate_right`,
+     `crate_bottom`, each exactly 20 mm thick, outer envelope 800 × 600 × 600 mm;
+   - a lid `crate_lid`, hinged on the rear top edge, opening 0–95°, driven by a
+     real pivot (an empty or the lid's own origin parented to one) — not a
+     translate or a shape key;
+   - eight corner brackets `bracket_01` … `bracket_08`, 60 × 60 × 2 mm, one per
+     vertical corner, top and bottom, standing proud of the timber;
+   - a stencil object `stencil_text` on the front face, white worn paint.
+2. Edges are chamfered (bevel ≥ 2 mm). Panels and brackets are separate objects
+   with real thickness; do not fake thickness with a texture.
+3. Materials: weathered oak with 2K basecolor + roughness + normal maps (all
+   packed into the .blend), rusted iron brackets with metallic 1.0, and stencil
+   paint whose lettering is broken up by wear rather than a crisp new font.
+4. Lights, cameras and the HDRI live in the file; every image is packed. The
+   file must open and render after `/app/materials` is removed.
+
+## What to deliver in /app/out
+
+| File | Camera | Resolution |
+|---|---|---|
+| `crate.blend` | — | — |
+| `render_front.png` | `cam_front`: 35 mm, 1.6 m from the crate centre, lens 0.9 m above the floor, front three-quarter | 1600 × 1200 |
+| `render_back.png` | `cam_back`: same parameters, mirrored to the rear | 1600 × 1200 |
+| `render_top.png` | `cam_top`: orthographic, covering 1.0 × 0.8 m | 1600 × 1280 |
+| `render_macro.png` | `cam_macro`: 100 mm, 0.25 m from a top corner bracket | 1600 × 1200 |
+| `manifest.json` | — | — |
+
+Render with Cycles on CPU, 64 samples, denoising on, fixed seed. The four
+cameras must be named exactly as above and kept in the file.
+
+`manifest.json` follows the usual shape and must list every asset with a source
+and a licence, including the HDRI:
+
+```json
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3",
+  "assets": [
+    {"path": "hdri/studio_soft.hdr", "role": "hdri",
+     "source": "self-authored", "license": "CC0-1.0", "url": ""}
+  ],
+  "renders": [
+    {"file": "render_front.png", "camera": "cam_front",
+     "resolution": [1600, 1200], "samples": 64}
+  ]
+}
+```
+
+## How it is checked
+
+All of these must hold: the file reopens in Blender; all named objects exist;
+outer size 800 × 600 × 600 mm ±5 mm; every panel 20 mm ±2 mm; the lid pivots at
+the rear top edge and does not intersect the body at 0°, 45° and 95°; bevels
+≥ 2 mm; three packed maps ≥ 2048 px wired to basecolor / roughness / normal;
+wood roughness standard deviation ≥ 0.05; bracket metallic ≥ 0.9; the four
+renders exist at the stated resolutions from the stated cameras; the manifest
+covers the HDRI with a licence.
+
+Two anti-cheat checks run against the delivered files. The scene is re-rendered
+from `cam_front` and compared with your `render_front.png` (they must match), and
+the lid is then rotated 60° and rendered again (the image must change).
+
+Each delivered view/state is independently re-rendered from its specified
+camera. It must match in every RGB channel (SSIM >= 0.90) and in image
+structure (relative RGB gradient error after a 2-pixel Gaussian blur <= 0.60).
+Agreement on a large uniform background alone is insufficient. Compositing
+or a video sequence cannot substitute for the delivered 3D scene.
+
+You have 7200 seconds to complete this task.

@@ -1,0 +1,15 @@
+{
+  "image_id": "sha256:4fd6eb5621036f20753eabf65277222e8855c41d062a531939d3d64cc28c54e1",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/rainroom/authoring/runs/20261127T032512Z-model-computer-1-gui/agent",
+      "Destination": "/logs/agent",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "network_mode": "none",
+  "name": "cua-gui-rainroom-82375319"
+}

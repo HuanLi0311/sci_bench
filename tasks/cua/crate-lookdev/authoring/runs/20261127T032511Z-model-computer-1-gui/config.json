@@ -1,0 +1,20 @@
+{
+  "task": "crate-lookdev",
+  "agent": "computer-1",
+  "provider_flavor": "generic screenshot JSON",
+  "model_identifier": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "gui_only": true,
+  "bash_enabled": false,
+  "model_api_location": "host only; existing private configuration; credential omitted",
+  "image_id": "sha256:7e26221ea0befae7fb81763db2c845ba5928c387a14c570169b9edc49e4bc989",
+  "network": "none",
+  "cpus": 4,
+  "memory_mb": 8192,
+  "timeout_seconds": 7200,
+  "max_turns": 1200,
+  "instruction_sha256": "b641a887296df54f1f1cadd47defa2c9404014d497a33f2e215f2554303ca65d",
+  "fresh_output": true,
+  "reference_access": false,
+  "preview_provenance": "supplied materials only"
+}
