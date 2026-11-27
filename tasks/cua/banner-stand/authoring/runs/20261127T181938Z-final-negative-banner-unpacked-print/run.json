@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T18:19:46.471950+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T18:19:46.540085+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-ce7d5b4beb"
+      ],
+      "started_at": "2026-11-27T18:19:46.545390+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:22:25.908424+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-ce7d5b4beb"
+      ],
+      "started_at": "2026-11-27T18:22:25.914349+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:22:25.959495+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-ce7d5b4beb:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T181938Z-final-negative-banner-unpacked-print/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T18:22:25.974738+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:22:26.457082+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-ce7d5b4beb"
+      ],
+      "started_at": "2026-11-27T18:22:26.542312+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:22:26.575379+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-ce7d5b4beb"
+      ],
+      "started_at": "2026-11-27T18:22:26.584946+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:22:26.869213+00:00"
     }
   ],
   "nop_definition": null,
@@ -350,5 +404,10 @@
       "sha256": "4f9c05661168d54b9210ff0544c4d0a0731d878bcf37b5edd203ed67b72504e8",
       "bytes": 12262
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T18:22:26.893587+00:00"
 }
