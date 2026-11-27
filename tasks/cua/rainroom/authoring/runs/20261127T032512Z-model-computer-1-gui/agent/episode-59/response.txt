@@ -1,0 +1,1 @@
+{"analysis":"Allowing edit-mode update.","plan":"Observe current mode.","action":{"type":"wait"}}

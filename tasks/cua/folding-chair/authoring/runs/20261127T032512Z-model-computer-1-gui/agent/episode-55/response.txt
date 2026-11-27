@@ -1,0 +1,1 @@
+{"analysis":"Pivot currently 3D Cursor; choose Median.","plan":"Recenter back origin then place numerically.","action":{"type":"keypress","keys":["8","F3"]}}

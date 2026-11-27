@@ -1,0 +1,1 @@
+{"analysis":"Geometry to Origin will center the back on its intended coordinates.","plan":"Choose second search result.","action":{"type":"keypress","keys":["Down","enter","F2"]}}

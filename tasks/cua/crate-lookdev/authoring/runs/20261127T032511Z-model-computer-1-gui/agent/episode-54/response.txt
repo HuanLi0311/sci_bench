@@ -1,0 +1,1 @@
+{"analysis":"Duplicating bottom as lid.","plan":"Place lid at z=0.59.","action":{"type":"keypress","keys":["z","0","period","5","8","Return","F2"]}}

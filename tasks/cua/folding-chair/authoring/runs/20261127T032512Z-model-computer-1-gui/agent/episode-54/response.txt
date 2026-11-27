@@ -1,0 +1,1 @@
+{"analysis":"Back shape correct but edit transforms pivoted about 3D cursor; reset origin to geometry and reposition.","plan":"Set median pivot and recenter back.","action":{"type":"keypress","keys":["period"]}}
