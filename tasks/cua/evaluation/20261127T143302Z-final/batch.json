@@ -171,6 +171,16 @@
       "failed_checks": [
         "R_render_structure"
       ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "negative-spider-broken-skin",
+      "run": "spider-gait/authoring/runs/20261127T150227Z-final-negative-spider-broken-skin",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R03_skinning"
+      ]
     }
   ]
 }
