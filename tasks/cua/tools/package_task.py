@@ -30,6 +30,8 @@ def should_skip(path: Path, task: Path) -> bool:
     rel = path.relative_to(task)
     if any(part in SKIP_DIRS for part in rel.parts) or path.suffix in SKIP_SUFFIXES:
         return True
+    if rel.parts and rel.parts[0] == "-b":
+        return True
     # GUI evidence contains large, disposable X11 and verifier work trees;
     # run.json, raw logs, grader snapshots and metrics stay in the archive.
     if "verifier-tmp" in rel.parts:
