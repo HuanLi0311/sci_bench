@@ -1,0 +1,1 @@
+{"analysis":"Lid rename dialog ready.","plan":"Name lid then offset mesh relative to its hinge origin.","action":{"type":"type","text":"crate_lid"}}

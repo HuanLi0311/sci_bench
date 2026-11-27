@@ -1,0 +1,1 @@
+{"analysis":"Create 20×28×710 mm bar.","plan":"Scale mesh.","action":{"type":"keypress","keys":["enter","tab","s","x","period","0","1","enter","s","y","period","0","1","4","enter","s","z","period","3","5","5","enter"]}}

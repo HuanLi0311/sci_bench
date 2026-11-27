@@ -1,0 +1,1 @@
+{"analysis":"Inset command entered.","plan":"Confirm inset.","action":{"type":"keypress","keys":["enter"]}}

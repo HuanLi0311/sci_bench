@@ -1,0 +1,1 @@
+{"analysis":"Lid named; hinge origin will be at rear edge (0,0.3,0.58).","plan":"Offset mesh without changing its closed world position.","action":{"type":"keypress","keys":["Return","Tab","a","g","y","minus","0","period","3","Return","g","z","0","period","0","1","Return","Tab","g","y","0","period","3","Return","g","z","minus","0","period","0","1","Return"]}}
