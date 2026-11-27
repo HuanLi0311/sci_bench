@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T13:29:15.710989+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T13:29:15.837265+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-b3439594a3"
+      ],
+      "started_at": "2026-11-27T13:29:15.851309+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-27T13:36:55.052111+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-b3439594a3"
+      ],
+      "started_at": "2026-11-27T13:36:55.065412+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T13:36:55.113748+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-b3439594a3:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T132903Z-final-negative-truck-dielectric/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T13:36:55.126214+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T13:36:55.459817+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-b3439594a3"
+      ],
+      "started_at": "2026-11-27T13:36:55.498460+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T13:36:55.541472+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-b3439594a3"
+      ],
+      "started_at": "2026-11-27T13:36:55.549266+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T13:36:55.688283+00:00"
     }
   ],
   "nop_definition": null,
@@ -354,5 +408,12 @@
       "sha256": "8b4818cd1f02b551593cd513947c560f547f1ba55e847dc0aa7baf945572300c",
       "bytes": 996628
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R07_materials"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T13:36:55.711660+00:00"
 }
