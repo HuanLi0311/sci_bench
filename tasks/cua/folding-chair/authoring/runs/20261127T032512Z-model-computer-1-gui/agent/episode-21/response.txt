@@ -1,1 +1,0 @@
-{"analysis":"Inspect photos.","plan":"Navigate photos directory.","action":{"type":"type","text":"/app/materials/photos/"}}

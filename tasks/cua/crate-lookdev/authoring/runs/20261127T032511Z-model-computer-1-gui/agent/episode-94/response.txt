@@ -1,1 +1,0 @@
-{"analysis":"First L bracket has two 2 mm steel leaves at front-left bottom.","plan":"Name bracket and make seven duplicates around corners.","action":{"type":"keypress","keys":["F2"]}}

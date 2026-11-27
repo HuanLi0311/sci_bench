@@ -1,1 +1,0 @@
-{"analysis":"Confirming bracket and duplicating upward.","plan":"Create top bracket.","action":{"type":"keypress","keys":["shift","d"]}}

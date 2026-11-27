@@ -1,1 +1,0 @@
-{"analysis":"Numeric operation still active with 0 entered.","plan":"Finish decimal value using the period key name.","action":{"type":"keypress","keys":["period","4","enter"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Manager active.","plan":"Navigate previews.","action":{"type":"keypress","keys":["ctrl","l"]}}

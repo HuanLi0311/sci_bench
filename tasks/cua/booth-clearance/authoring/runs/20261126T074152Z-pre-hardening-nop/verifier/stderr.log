@@ -1,4 +1,0 @@
-  File "/tests/grade.py", line 280
-    sys.exit(main())
-    ^
-IndentationError: expected an indented block after 'try' statement on line 279

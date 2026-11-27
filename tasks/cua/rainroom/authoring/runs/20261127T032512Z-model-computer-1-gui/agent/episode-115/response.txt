@@ -1,1 +1,0 @@
-{"analysis":"Backrest duplicate created.","plan":"Cancel automatic translation, rotate upright.","action":{"type":"keypress","keys":["esc"]}}

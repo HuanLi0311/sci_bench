@@ -1,1 +1,0 @@
-{"analysis":"Shell hidden for modeling; add sofa base via native Add Cube command.","plan":"Create and size a soft rectangular sofa along the left wall.","action":{"type":"mouse_move","x":768,"y":570}}

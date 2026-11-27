@@ -1,2 +1,0 @@
-desktop ready on :1
-{"file": "render_night.png", "size": [1600, 900], "original_rgb_mean": [52.54437708333333, 44.07049652777778, 35.91514375], "replacement_rgb": [53, 44, 36]}

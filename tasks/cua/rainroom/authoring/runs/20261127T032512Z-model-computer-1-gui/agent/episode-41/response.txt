@@ -1,1 +1,0 @@
-{"analysis":"Floor footprint correct.","plan":"Flatten slab.","action":{"type":"type","text":"sz.01"}}

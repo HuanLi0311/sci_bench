@@ -1,1 +1,0 @@
-{"analysis":"Back and hinge selected.","plan":"Parent back.","action":{"type":"mouse_move","x":800,"y":530}}

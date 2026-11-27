@@ -1,1 +1,0 @@
-{"analysis":"Side profile inspected.","plan":"Inspect front proportions.","action":{"type":"double_click","x":955,"y":470}}

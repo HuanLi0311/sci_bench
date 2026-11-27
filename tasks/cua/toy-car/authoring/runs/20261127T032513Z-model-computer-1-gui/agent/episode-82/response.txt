@@ -1,1 +1,0 @@
-{"analysis":"Naming material.","plan":"Set color next.","action":{"type":"type","text":"Red plastic"}}

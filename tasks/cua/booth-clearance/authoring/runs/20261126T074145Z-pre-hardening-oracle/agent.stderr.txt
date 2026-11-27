@@ -1,1 +1,0 @@
-/solution/solve.sh: line 7: set: pipefail: invalid option name

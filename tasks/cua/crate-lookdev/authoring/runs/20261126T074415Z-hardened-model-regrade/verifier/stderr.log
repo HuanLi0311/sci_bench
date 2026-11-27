@@ -1,1 +1,0 @@
-check_scene failed: Command '['/usr/local/bin/blender', '--disable-autoexec', '--python-exit-code', '2', '-b', '/app/out/crate.blend', '--python', '/tests/check_scene.py', '--', '/tmp/cua-verifier-epix0o2h/scene.json']' returned non-zero exit status 2.

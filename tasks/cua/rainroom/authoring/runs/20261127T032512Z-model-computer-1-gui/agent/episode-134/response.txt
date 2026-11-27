@@ -1,1 +1,0 @@
-{"analysis":"Camera placed at eye level inside the room.","plan":"Name camera cam_room.","action":{"type":"double_click","x":1755,"y":477}}

@@ -1,1 +1,0 @@
-{"analysis":"Plan now visible, larger than screen. Sofa left, coffee table middle, window right.","plan":"Half-size image for full plan.","action":{"type":"keypress","keys":["shift","comma"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Material properties open.","plan":"Create body plastic.","action":{"type":"click","x":1789,"y":563}}

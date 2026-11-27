@@ -1,1 +1,0 @@
-{"analysis":"Frame 60 selected, hinge_01 only. Fold front bars to vertical and lift axis to ground the folded pack.","plan":"Rotate first hinge +50 degrees and lift 130 mm; keyframe.","action":{"type":"mouse_move","x":800,"y":530}}

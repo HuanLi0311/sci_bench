@@ -1,0 +1,65 @@
+{
+  "basis": "Windows local task directory CreationTime; not Git timestamps",
+  "repository": "D:\\benchmark",
+  "observed": [
+    {
+      "path": "tasks/cua/pose-repair",
+      "created_timestamp": 1795783373.9715843,
+      "created_asia_shanghai": "2026-11-27T20:42:53.971584+08:00"
+    },
+    {
+      "path": "tasks/cua/fight-retarget",
+      "created_timestamp": 1795783373.2551644,
+      "created_asia_shanghai": "2026-11-27T20:42:53.255164+08:00"
+    },
+    {
+      "path": "tasks/cua/microscope-focus",
+      "created_timestamp": 1795779933.096933,
+      "created_asia_shanghai": "2026-11-27T19:45:33.096933+08:00"
+    },
+    {
+      "path": "tasks/cua/spider-gait",
+      "created_timestamp": 1795779431.5571718,
+      "created_asia_shanghai": "2026-11-27T19:37:11.557172+08:00"
+    },
+    {
+      "path": "tasks/cua/crate-web3d",
+      "created_timestamp": 1795779431.0592785,
+      "created_asia_shanghai": "2026-11-27T19:37:11.059278+08:00"
+    },
+    {
+      "path": "tasks/cua/booth-clearance",
+      "created_timestamp": 1795779425.6524744,
+      "created_asia_shanghai": "2026-11-27T19:37:05.652474+08:00"
+    }
+  ],
+  "tracked_but_absent_locally": [
+    "tasks/cua/crate-lookdev",
+    "tasks/cua/folding-chair",
+    "tasks/cua/rainroom",
+    "tasks/cua/skateboard-prop",
+    "tasks/cua/toy-car",
+    "tasks/engineering-sciences/electrical-engineering/datapath-debug",
+    "tasks/engineering-sciences/electrical-engineering/fsm-recode",
+    "tasks/engineering-sciences/electrical-engineering/opamp-triage"
+  ],
+  "kept": [
+    "tasks/cua/pose-repair",
+    "tasks/cua/fight-retarget",
+    "tasks/cua/microscope-focus"
+  ],
+  "removed_task_packages": [
+    "tasks/cua/booth-clearance",
+    "tasks/cua/crate-lookdev",
+    "tasks/cua/crate-web3d",
+    "tasks/cua/folding-chair",
+    "tasks/cua/rainroom",
+    "tasks/cua/skateboard-prop",
+    "tasks/cua/spider-gait",
+    "tasks/cua/toy-car",
+    "tasks/engineering-sciences/electrical-engineering/datapath-debug",
+    "tasks/engineering-sciences/electrical-engineering/fsm-recode",
+    "tasks/engineering-sciences/electrical-engineering/opamp-triage"
+  ],
+  "previous_commit": "aa99890de6e665deb8def73cdad18194f26afda7"
+}

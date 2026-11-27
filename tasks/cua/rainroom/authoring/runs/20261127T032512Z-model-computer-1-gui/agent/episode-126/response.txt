@@ -1,1 +1,0 @@
-{"analysis":"Camera transform will be reset for an interior view.","plan":"Clear camera location.","action":{"type":"keypress","keys":["alt","g"]}}

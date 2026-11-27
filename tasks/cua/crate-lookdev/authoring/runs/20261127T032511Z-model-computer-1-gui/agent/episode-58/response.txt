@@ -1,1 +1,0 @@
-{"analysis":"Six panels exist with 2 mm chamfers and lid hinge origin on rear edge. Positive local X rotation would swing downward; orient local hinge axis for positive opening.","plan":"Rotate object axes 180° about Y while counter-rotating mesh, then save.","action":{"type":"keypress","keys":["Tab","a","r","y","1","8","0","Return","Tab","r","y","1","8","0","Return"]}}

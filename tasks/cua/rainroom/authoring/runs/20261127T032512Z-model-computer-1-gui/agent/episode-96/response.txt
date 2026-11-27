@@ -1,1 +1,0 @@
-{"analysis":"Function-key rename needs explicit focus and update. I will use the reliable Properties name field.","plan":"Name sofa base.","action":{"type":"double_click","x":1747,"y":476}}

@@ -1,1 +1,0 @@
-{"analysis":"Switching windows may need a moment.","plan":"Bring Blender forward.","action":{"type":"click","x":192,"y":12}}

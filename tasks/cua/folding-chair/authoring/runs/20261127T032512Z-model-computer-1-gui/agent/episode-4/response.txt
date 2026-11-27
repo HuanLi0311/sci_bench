@@ -1,1 +1,0 @@
-{"analysis":"Open reference.","plan":"Read coordinates.","action":{"type":"keypress","keys":["enter"]}}

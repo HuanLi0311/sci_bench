@@ -1,1 +1,0 @@
-{"analysis":"Use object name field in Properties.","plan":"Edit name directly.","action":{"type":"double_click","x":1755,"y":477}}

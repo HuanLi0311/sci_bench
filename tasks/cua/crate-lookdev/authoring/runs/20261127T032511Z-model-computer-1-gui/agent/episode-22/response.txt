@@ -1,1 +1,0 @@
-{"analysis":"Front panel at (0,-0.29,0.30).","plan":"Name it and duplicate for rear.","action":{"type":"type","text":"crate_front"}}

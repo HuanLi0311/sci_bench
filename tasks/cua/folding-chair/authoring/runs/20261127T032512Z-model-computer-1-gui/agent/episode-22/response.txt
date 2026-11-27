@@ -1,1 +1,0 @@
-{"analysis":"Photos list available.","plan":"Open unfolded.","action":{"type":"type","text":"ref_unfolded.jpg"}}

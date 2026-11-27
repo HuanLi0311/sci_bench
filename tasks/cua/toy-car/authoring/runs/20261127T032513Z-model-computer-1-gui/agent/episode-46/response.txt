@@ -1,1 +1,0 @@
-{"analysis":"Front reference confirms simple rounded rectangular body, dark underframe, and protruding door panels.","plan":"Return to Blender and match these proportions.","action":{"type":"click","x":955,"y":42}}

@@ -1,1 +1,0 @@
-{"analysis":"Mesh submenu opening.","plan":"Choose cube.","action":{"type":"mouse_move","x":795,"y":596}}

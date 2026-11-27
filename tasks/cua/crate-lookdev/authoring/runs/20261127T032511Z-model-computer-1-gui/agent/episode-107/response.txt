@@ -1,1 +1,0 @@
-{"analysis":"Duplicate requested.","plan":"Place fourth bracket at bottom.","action":{"type":"keypress","keys":["z","minus","0","period","5","2","Return","F2"]}}

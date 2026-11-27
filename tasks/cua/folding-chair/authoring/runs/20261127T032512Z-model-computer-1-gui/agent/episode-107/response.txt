@@ -1,1 +1,0 @@
-{"analysis":"Select front-right along with front-left.","plan":"Parent pair to hinge_01.","action":{"type":"click","x":1708,"y":222,"modifier":"ctrl"}}

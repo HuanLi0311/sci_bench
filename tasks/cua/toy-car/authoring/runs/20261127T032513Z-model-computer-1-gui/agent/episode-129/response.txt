@@ -1,1 +1,0 @@
-{"analysis":"First wheel at front axle.","plan":"Set lateral placement.","action":{"type":"type","text":"gy0.072"}}

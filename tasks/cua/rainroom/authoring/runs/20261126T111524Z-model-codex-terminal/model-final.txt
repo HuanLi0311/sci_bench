@@ -1,8 +1,0 @@
-Completed the rainroom scene and delivered:
-
-- [rainroom.blend](/app/out/rainroom.blend)
-- [render_night.png](/app/out/render_night.png)
-- [render_morning.png](/app/out/render_morning.png)
-- [manifest.json](/app/out/manifest.json)
-
-Validated 26 object names, exact room envelope, materials, switchable light collections, camera, 16k triangles, Cycles CPU/64 samples/denoise, and render luminance targets.

@@ -1,1 +1,0 @@
-{"analysis":"Back now aligned with seat at y=.56 z=.64, 360 mm high.","plan":"Name back and zoom out.","action":{"type":"type","text":"back"}}

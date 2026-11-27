@@ -1,1 +1,0 @@
-{"analysis":"Need file manager via dock.","plan":"Dismiss splash and launch home.","action":{"type":"keypress","keys":["super","e"]}}

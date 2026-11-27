@@ -1,1 +1,0 @@
-{"analysis":"I will read the rig specification and material guidance.","plan":"Navigate to drawings.","action":{"type":"keypress","keys":["ctrl","l"]}}

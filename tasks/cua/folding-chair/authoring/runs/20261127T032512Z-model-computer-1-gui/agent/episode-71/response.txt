@@ -1,1 +1,0 @@
-{"analysis":"Opposing bar will sit at x=.278 with 2 mm gap from outer bar.","plan":"Rotate rear right +100 degrees relative to front.","action":{"type":"keypress","keys":["x","minus","period","0","2","2","enter","r","x","1","0","0","enter","F2"]}}

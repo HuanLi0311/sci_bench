@@ -1,1 +1,0 @@
-{"analysis":"Path field focused.","plan":"Select path text.","action":{"type":"keypress","keys":["ctrl","a"]}}

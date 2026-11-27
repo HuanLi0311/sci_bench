@@ -1,1 +1,0 @@
-{"analysis":"Rename ready.","plan":"Set rear name.","action":{"type":"type","text":"crate_back"}}

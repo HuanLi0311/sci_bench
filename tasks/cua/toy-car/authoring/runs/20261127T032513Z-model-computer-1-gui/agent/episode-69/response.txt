@@ -1,1 +1,0 @@
-{"analysis":"All body geometry is selected in Edit Mode.","plan":"Round the perimeter edges.","action":{"type":"keypress","keys":["ctrl","b"]}}

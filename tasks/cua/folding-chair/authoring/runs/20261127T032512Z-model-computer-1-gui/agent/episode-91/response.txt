@@ -1,1 +1,0 @@
-{"analysis":"Left scissor hinge placed.","plan":"Name control.","action":{"type":"type","text":"hinge_01"}}

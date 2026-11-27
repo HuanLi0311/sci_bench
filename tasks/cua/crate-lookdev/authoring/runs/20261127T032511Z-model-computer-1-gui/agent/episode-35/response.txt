@@ -1,1 +1,0 @@
-{"analysis":"Bevel active.","plan":"Apply bevel and position side.","action":{"type":"keypress","keys":["0","period","0","0","2","Return","Tab","g","x","minus","0","period","3","9","Return","g","z","0","period","3","Return"]}}

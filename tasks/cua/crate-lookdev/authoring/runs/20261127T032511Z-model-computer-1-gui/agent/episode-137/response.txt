@@ -1,1 +1,0 @@
-{"analysis":"Stencil contains default text because selection did not take effect. Correcting lettering.","plan":"Enter edit mode then select all in a separate shortcut.","action":{"type":"keypress","keys":["Tab"]}}

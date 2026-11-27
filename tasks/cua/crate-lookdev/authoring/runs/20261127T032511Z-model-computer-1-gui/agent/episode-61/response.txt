@@ -1,1 +1,0 @@
-{"analysis":"Save browser ready.","plan":"Set output directory.","action":{"type":"click","x":983,"y":302}}

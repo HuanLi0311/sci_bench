@@ -1,1 +1,0 @@
-{"analysis":"Parent seat.","plan":"Keep transform.","action":{"type":"keypress","keys":["ctrl","p"]}}

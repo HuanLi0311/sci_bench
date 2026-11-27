@@ -1,1 +1,0 @@
-{"analysis":"Blender is still initializing.","plan":"Wait for the workspace, then inspect the supplied design pack using the file manager.","action":{"type":"wait"}}

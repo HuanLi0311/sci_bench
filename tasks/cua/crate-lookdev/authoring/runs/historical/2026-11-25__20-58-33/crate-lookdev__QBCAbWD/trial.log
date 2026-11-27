@@ -1,17 +1,0 @@
-Skipping image OS validation for hb__91b7b5461c192cf94a571ffcef3b3760: docker inspect returned 1
-Running command: apt-get update && apt-get install -y curl bash nodejs npm ripgrep
-Command outputs captured
-Running command: set -euo pipefail; if ldd --version 2>&1 | grep -qi musl || [ -f /etc/alpine-release ]; then  npm install -g @openai/codex@latest; else  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash &&  export NVM_DIR="$HOME/.nvm" &&  \. "$NVM_DIR/nvm.sh" || true &&  command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } &&  nvm install 22 && nvm alias default 22 && npm -v &&  npm install -g @openai/codex@latest; fi && codex --version
-Command failed
-Trial crate-lookdev__QBCAbWD failed: Command failed (exit 1): set -euo pipefail; if ldd --version 2>&1 | grep -qi musl || [ -f /etc/alpine-release ]; then  npm install -g @openai/codex@latest; else  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash &&  export NVM_DIR="$HOME/.nvm" &&  \. "$NVM_DIR/nvm.sh" || true &&  command -v nvm &>/dev/null || { echo 'Error: NVM failed to load' >&2; exit 1; } &&  nvm install 22 && nvm alias default 22 && npm -v &&  npm install -g @openai/codex@latest; fi && codex --version
-stdout:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    ... [46934 chars truncated] ...     0     0     11      0  0:25:11  0:09:54  0:15:17  1492 48 16631   48  8103    0     0     13      0  0:21:19  0:09:55  0:11:24  1405 65 16631   65 10807    0     0     18      0  0:15:23  0:09:57  0:05:26  1517 89 16631   89 14863    0     0     24      0  0:11:32  0:09:58  0:01:34  2019100 16631  100 16631    0     0     27      0  0:10:15  0:09:58  0:00:17  2239100 16631  100 16631    0     0     27      0  0:10:15  0:09:58  0:00:17  2402
-=> Downloading nvm from git to '/root/.nvm'
-=> Cloning into '/root/.nvm'...
-fatal: unable to access 'https://github.com/nvm-sh/nvm.git/': GnuTLS recv error (-110): The TLS connection was non-properly terminated.
-Failed to fetch origin with v0.40.2. Please report this!
-Error: NVM failed to load
-
-stderr: None
-Collecting main service artifacts

@@ -1,1 +1,0 @@
-{"analysis":"Narrow back.","plan":"Scale width.","action":{"type":"keypress","keys":["tab","a","s","x","period","9","2","8","5","7","1","enter","tab"]}}

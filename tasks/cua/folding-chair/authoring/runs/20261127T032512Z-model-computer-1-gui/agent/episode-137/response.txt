@@ -1,1 +1,0 @@
-{"analysis":"Start text appended; replace field fully.","plan":"Set start 0.","action":{"type":"keypress","keys":["ctrl","a"]}}

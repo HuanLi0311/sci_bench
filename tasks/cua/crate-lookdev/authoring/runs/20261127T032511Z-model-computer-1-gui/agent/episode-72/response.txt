@@ -1,1 +1,0 @@
-{"analysis":"Shell has accurate panel seams. Need inspect design image natively in Blender.","plan":"Temporarily switch viewport to image/UV editor and open drawing.","action":{"type":"keypress","keys":["shift","F10"]}}

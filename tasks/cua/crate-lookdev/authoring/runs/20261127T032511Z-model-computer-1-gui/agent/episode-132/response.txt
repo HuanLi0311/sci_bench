@@ -1,1 +1,0 @@
-{"analysis":"Text editing active.","plan":"Replace with shipping stencil lettering.","action":{"type":"type","text":"HANDLE\nWITH CARE"}}

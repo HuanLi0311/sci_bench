@@ -1,1 +1,0 @@
-{"analysis":"Default cube will become floor slab; native transform shortcuts.","plan":"Scale floor to 4.2 × 3.6 × 0.08 m.","action":{"type":"type","text":"sx2.1\nsy1.8\nsz.04\ngz-.04\n"}}

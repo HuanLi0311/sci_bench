@@ -1,1 +1,0 @@
-{"analysis":"Move duplicate across width.","plan":"Position and name right leg.","action":{"type":"keypress","keys":["x","period","6","enter","F2"]}}

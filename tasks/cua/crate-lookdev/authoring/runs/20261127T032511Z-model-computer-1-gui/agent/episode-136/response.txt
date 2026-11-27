@@ -1,1 +1,0 @@
-{"analysis":"Switching to front view for stencil inspection.","plan":"Zoom out slightly.","action":{"type":"scroll","x":780,"y":526,"scroll_y":350}}

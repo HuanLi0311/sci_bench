@@ -1,1 +1,0 @@
-{"analysis":"Chassis named.","plan":"Confirm and separate its material from the body.","action":{"type":"keypress","keys":["Return"]}}

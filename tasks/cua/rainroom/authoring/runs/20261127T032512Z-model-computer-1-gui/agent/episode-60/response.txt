@@ -1,1 +1,0 @@
-{"analysis":"Edit mode active. Face selection will isolate the visible +X wall.","plan":"Select face mode.","action":{"type":"click","x":207,"y":92}}

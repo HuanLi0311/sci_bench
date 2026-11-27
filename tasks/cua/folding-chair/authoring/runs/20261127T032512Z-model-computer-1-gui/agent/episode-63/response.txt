@@ -1,1 +1,0 @@
-{"analysis":"Bevel bar and rotate -50 degrees about X; centroid at z=.23.","plan":"Place outer left scissor bar.","action":{"type":"keypress","keys":["period","0","0","1","5","s","3","enter","tab","r","x","minus","5","0","enter","g","x","minus","period","3","enter","g","y","period","2","9","enter","g","z","period","2","3","enter","F2"]}}

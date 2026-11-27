@@ -1,1 +1,0 @@
-{"analysis":"Camera name entered. Set a wide interior focal length so the room fills the frame.","plan":"Open camera data properties.","action":{"type":"click","x":1604,"y":755}}

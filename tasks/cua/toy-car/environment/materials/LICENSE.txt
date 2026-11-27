@@ -1,1 +1,0 @@
-Toy car pack — CC0-1.0, authored for this benchmark task. Videos and silhouettes are rendered from the reference model.

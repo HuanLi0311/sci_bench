@@ -1,1 +1,0 @@
-{"analysis":"Animation range set 0–60. Set current frame 0.","plan":"Keyframe four hinge controls at unfolded state.","action":{"type":"double_click","x":1334,"y":999}}

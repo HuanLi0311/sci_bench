@@ -1,1 +1,0 @@
-{"analysis":"Parent menu open.","plan":"Choose keep transform.","action":{"type":"click","x":708,"y":552}}

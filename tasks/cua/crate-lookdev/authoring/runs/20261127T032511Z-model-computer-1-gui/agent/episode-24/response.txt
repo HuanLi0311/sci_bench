@@ -1,1 +1,0 @@
-{"analysis":"Rename dialog open.","plan":"Name front panel.","action":{"type":"type","text":"crate_front"}}

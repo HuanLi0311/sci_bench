@@ -1,1 +1,0 @@
-{"analysis":"Rear pair folds oppositely.","plan":"Set folded rear hinge and keyframe.","action":{"type":"keypress","keys":["r","x","minus","5","0","enter","g","z","period","1","3","enter","i"]}}

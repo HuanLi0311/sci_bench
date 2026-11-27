@@ -1,1 +1,0 @@
-{"analysis":"Rename did not open; text invoked rotation. Cancel and use explicit function key capitalization.","plan":"Cancel rotation.","action":{"type":"keypress","keys":["esc"]}}

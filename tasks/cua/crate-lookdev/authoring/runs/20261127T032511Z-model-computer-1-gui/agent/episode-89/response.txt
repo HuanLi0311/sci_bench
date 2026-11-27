@@ -1,1 +1,0 @@
-{"analysis":"Cube creation processing.","plan":"Dimension first bracket leaf.","action":{"type":"keypress","keys":["Tab","s","x","0","period","0","3","Return","s","y","0","period","0","0","1","Return","s","z","0","period","0","3","Return"]}}

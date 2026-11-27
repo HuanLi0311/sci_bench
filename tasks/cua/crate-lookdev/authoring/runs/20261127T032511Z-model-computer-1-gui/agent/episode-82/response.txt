@@ -1,1 +1,0 @@
-{"analysis":"Drawing listed.","plan":"Open drawing.","action":{"type":"double_click","x":806,"y":359}}

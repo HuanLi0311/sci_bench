@@ -1,1 +1,0 @@
-{"analysis":"ImageMagick not displaying image. Browser can view local PNG.","plan":"Launch browser.","action":{"type":"keypress","keys":["super","w"]}}

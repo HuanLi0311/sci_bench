@@ -1,1 +1,0 @@
-{"analysis":"Fourth hinge placed at back base.","plan":"Set position and name.","action":{"type":"keypress","keys":["z","period","0","1","9","enter","g","y","minus","period","0","1","enter","F2"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Backrest upright; position behind the seat.","plan":"Confirm rotation.","action":{"type":"keypress","keys":["enter"]}}

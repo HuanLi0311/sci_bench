@@ -1,1 +1,0 @@
-{"analysis":"Chassis slab is 15 mm thick below the body.","plan":"Slightly inset chassis perimeter.","action":{"type":"type","text":"s0.95"}}

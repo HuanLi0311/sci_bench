@@ -1,1 +1,0 @@
-{"analysis":"Camera lens settings visible.","plan":"Set a wide 18 mm lens for the small room.","action":{"type":"double_click","x":1802,"y":575}}

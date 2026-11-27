@@ -1,1 +1,0 @@
-{"analysis":"Chassis is neutral; darken it.","plan":"Edit value.","action":{"type":"double_click","x":1798,"y":642}}

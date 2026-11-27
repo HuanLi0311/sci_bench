@@ -1,1 +1,0 @@
-{"analysis":"First bracket positioned at (-0.4,-0.3,0.03).","plan":"Name first bracket.","action":{"type":"type","text":"bracket_01"}}

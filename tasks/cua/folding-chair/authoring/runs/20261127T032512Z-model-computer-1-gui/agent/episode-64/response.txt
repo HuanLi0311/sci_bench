@@ -1,1 +1,0 @@
-{"analysis":"Outer front-left bar placed at (-.30,.29,.23).","plan":"Name then duplicate right-side bar.","action":{"type":"type","text":"front_leg_l"}}

@@ -1,1 +1,0 @@
-{"analysis":"Bottom naming ready.","plan":"Name bottom panel.","action":{"type":"type","text":"crate_bottom"}}

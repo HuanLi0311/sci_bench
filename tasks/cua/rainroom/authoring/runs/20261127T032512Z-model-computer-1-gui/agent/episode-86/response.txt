@@ -1,1 +1,0 @@
-{"analysis":"Cube option visible.","plan":"Add cube.","action":{"type":"click","x":856,"y":618}}

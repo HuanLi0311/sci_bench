@@ -1,1 +1,0 @@
-{"analysis":"Recenter geometry.","plan":"Search origin operation.","action":{"type":"type","text":"Origin to Geometry"}}

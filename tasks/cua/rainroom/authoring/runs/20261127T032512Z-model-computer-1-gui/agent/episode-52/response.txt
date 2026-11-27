@@ -1,1 +1,0 @@
-{"analysis":"Z scale selected.","plan":"Set height.","action":{"type":"type","text":"1.4"}}

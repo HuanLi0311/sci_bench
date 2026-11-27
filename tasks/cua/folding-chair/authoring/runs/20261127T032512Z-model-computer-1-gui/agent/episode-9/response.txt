@@ -1,1 +1,0 @@
-{"analysis":"Use PDF/table previews for readable dimensions.","plan":"Open materials folder.","action":{"type":"click","x":590,"y":12}}

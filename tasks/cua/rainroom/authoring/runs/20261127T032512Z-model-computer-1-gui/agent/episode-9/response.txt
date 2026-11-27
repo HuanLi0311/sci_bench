@@ -1,1 +1,0 @@
-{"analysis":"Preview directory appears unavailable at present.","plan":"Inspect plan and PDF directly first.","action":{"type":"keypress","keys":["ctrl","a"]}}

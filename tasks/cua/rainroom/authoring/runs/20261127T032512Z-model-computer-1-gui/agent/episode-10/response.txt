@@ -1,1 +1,0 @@
-{"analysis":"Selected invalid path.","plan":"Open drawings.","action":{"type":"type","text":"/app/materials/drawings/"}}

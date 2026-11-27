@@ -1,1 +1,0 @@
-{"analysis":"Search invoked for primitive creation.","plan":"Add cube.","action":{"type":"type","text":"Add Cube"}}

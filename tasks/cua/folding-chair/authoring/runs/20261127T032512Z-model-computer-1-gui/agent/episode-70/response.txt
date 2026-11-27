@@ -1,1 +1,0 @@
-{"analysis":"Duplicate right bar for opposing scissor.","plan":"Move rear bar outward 22 mm to preserve seat clearance.","action":{"type":"keypress","keys":["shift","d"]}}

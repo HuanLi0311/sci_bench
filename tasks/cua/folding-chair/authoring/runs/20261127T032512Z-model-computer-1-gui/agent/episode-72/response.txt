@@ -1,1 +1,0 @@
-{"analysis":"Rear-right scissor bar is offset from the front bar and pinned through the shared axis.","plan":"Name it, then duplicate rear-left.","action":{"type":"type","text":"rear_leg_r"}}

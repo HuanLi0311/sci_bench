@@ -1,7 +1,0 @@
-part,material,parameters
-deck,7-ply maple,"12 total, ply ~1.7, 7 visible edge bands"
-deck underside,printed graphic,"2048x512, 1:1, UV not overlapping"
-deck top,grip tape,"roughness >=0.9, noise bump"
-truck_front/rear,6061 aluminium,"metallic >=0.8, roughness 0.30-0.40"
-wheel_01..04,polyurethane 78A,"dia 54, width 32, roughness 0.50-0.80"
-bearings,steel,"metallic 1.0, roughness 0.20-0.30"

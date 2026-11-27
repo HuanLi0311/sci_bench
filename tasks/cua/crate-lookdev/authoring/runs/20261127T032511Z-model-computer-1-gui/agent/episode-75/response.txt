@@ -1,1 +1,0 @@
-{"analysis":"Image browser loading.","plan":"Wait for controls.","action":{"type":"wait"}}

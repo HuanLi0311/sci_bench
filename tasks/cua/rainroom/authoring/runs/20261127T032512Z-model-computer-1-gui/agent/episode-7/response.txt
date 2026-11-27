@@ -1,1 +1,0 @@
-{"analysis":"Path selected.","plan":"Enter previews location.","action":{"type":"type","text":"/app/material-previews/"}}

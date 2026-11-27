@@ -1,1 +1,0 @@
-{"analysis":"Bottom bevel active.","plan":"Apply bevel and raise bottom 10 mm.","action":{"type":"keypress","keys":["0","period","0","0","2","Return","Tab","g","z","0","period","0","1","Return"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Directory field active.","plan":"Enter output path.","action":{"type":"type","text":"/app/out/"}}

@@ -1,1 +1,0 @@
-{"analysis":"Create hinge control empty.","plan":"Add plain axes.","action":{"type":"type","text":"Add Empty Plain Axes"}}

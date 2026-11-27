@@ -1,1 +1,0 @@
-{"analysis":"Rename shortcut did not invoke with lowercase function key; text triggered circle select instead. Geometry is unchanged.","plan":"Cancel circle selection and use proper F2 key.","action":{"type":"keypress","keys":["Escape","F2"]}}

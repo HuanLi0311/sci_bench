@@ -1,1 +1,0 @@
-{"analysis":"Beveling thin steel leaf.","plan":"Apply 0.5 mm edge break then make perpendicular leaf within same object.","action":{"type":"keypress","keys":["0","period","0","0","0","5","Return","g","x","0","period","0","3","Return","g","y","minus","0","period","0","0","1","Return"]}}

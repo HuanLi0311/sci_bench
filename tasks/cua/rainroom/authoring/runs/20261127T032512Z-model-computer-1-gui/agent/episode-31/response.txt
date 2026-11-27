@@ -1,1 +1,0 @@
-{"analysis":"No useful document viewer apparent. Proceed with scene from plan and visible object labels.","plan":"Return Blender and begin room shell.","action":{"type":"click","x":211,"y":12}}

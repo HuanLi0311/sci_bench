@@ -1,1 +1,0 @@
-{"analysis":"Reset malformed panel and rebuild cleanly; modifier chords must be isolated.","plan":"Exit edit mode then remove panel.","action":{"type":"keypress","keys":["tab"]}}

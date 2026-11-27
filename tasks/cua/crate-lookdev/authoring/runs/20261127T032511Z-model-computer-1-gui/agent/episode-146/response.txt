@@ -1,1 +1,0 @@
-{"analysis":"Shading workspace loading.","plan":"Create oak shader and then configure render cameras.","action":{"type":"wait"}}

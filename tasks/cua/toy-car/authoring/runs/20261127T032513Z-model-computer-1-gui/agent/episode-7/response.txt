@@ -1,1 +1,0 @@
-{"analysis":"The Blender file browser is open but its contents have not populated yet.","plan":"Wait for the file browser to finish loading, then set the destination and filename.","action":{"type":"wait"}}

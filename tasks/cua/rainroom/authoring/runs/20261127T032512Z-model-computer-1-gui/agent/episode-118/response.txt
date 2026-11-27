@@ -1,1 +1,0 @@
-{"analysis":"Backrest upright. Position it behind the seat.","plan":"Move backrest leftward.","action":{"type":"type","text":"gx-.4"}}

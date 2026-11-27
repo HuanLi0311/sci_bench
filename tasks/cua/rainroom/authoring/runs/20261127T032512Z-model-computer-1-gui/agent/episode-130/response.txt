@@ -1,1 +1,0 @@
-{"analysis":"Camera points into room. Positioning it just inside front wall.","plan":"Move camera to Y −1.65 m.","action":{"type":"type","text":"gy-1.65"}}

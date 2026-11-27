@@ -1,1 +1,0 @@
-{"analysis":"Seventh bracket placed correctly.","plan":"Name seventh bracket.","action":{"type":"type","text":"bracket_07"}}

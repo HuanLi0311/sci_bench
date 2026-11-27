@@ -1,1 +1,0 @@
-{"analysis":"Rear pair parented. Seat and back now need their pivots.","plan":"Select seat.","action":{"type":"click","x":1695,"y":306}}

@@ -1,1 +1,0 @@
-{"analysis":"Backrest translation entered.","plan":"Confirm then raise it.","action":{"type":"keypress","keys":["enter"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Narrow seat to clear the inner scissor bars.","plan":"Scale mesh width only.","action":{"type":"keypress","keys":["tab","a","s","x","period","9","2","8","5","7","1","enter","tab"]}}

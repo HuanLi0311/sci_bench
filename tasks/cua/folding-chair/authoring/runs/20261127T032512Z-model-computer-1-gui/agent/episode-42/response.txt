@@ -1,1 +1,0 @@
-{"analysis":"UI updates lag one turn; wait for current operation.","plan":"Inspect settled state.","action":{"type":"wait"}}

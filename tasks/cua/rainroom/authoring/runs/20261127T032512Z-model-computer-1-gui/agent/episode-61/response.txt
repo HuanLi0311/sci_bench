@@ -1,1 +1,0 @@
-{"analysis":"Face mode request processing.","plan":"Select +X wall.","action":{"type":"click","x":850,"y":490}}

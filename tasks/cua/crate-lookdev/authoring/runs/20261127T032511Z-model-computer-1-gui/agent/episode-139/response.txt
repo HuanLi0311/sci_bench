@@ -1,1 +1,0 @@
-{"analysis":"All characters selected.","plan":"Replace with first stencil line.","action":{"type":"type","text":"HANDLE"}}

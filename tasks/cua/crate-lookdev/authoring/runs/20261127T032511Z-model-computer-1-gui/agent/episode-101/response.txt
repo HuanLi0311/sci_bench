@@ -1,1 +1,0 @@
-{"analysis":"Top bracket named.","plan":"Confirm and duplicate to front-right top.","action":{"type":"keypress","keys":["Return"]}}

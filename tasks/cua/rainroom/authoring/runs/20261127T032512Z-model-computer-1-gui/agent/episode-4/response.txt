@@ -1,1 +1,0 @@
-{"analysis":"Object spreadsheet.","plan":"Read spreadsheet.","action":{"type":"double_click","x":860,"y":469}}

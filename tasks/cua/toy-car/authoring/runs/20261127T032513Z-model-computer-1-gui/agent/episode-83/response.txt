@@ -1,1 +1,0 @@
-{"analysis":"Material named.","plan":"Set base color.","action":{"type":"click","x":1813,"y":693}}

@@ -1,1 +1,0 @@
-{"analysis":"Drawings path entered.","plan":"Navigate there.","action":{"type":"keypress","keys":["Return"]}}

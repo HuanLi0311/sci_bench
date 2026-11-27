@@ -1,1 +1,0 @@
-{"analysis":"File manager has appeared at /app.","plan":"Dismiss menu and enter materials.","action":{"type":"keypress","keys":["esc"]}}

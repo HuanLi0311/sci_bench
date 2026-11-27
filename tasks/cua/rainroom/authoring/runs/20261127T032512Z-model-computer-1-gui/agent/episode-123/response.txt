@@ -1,1 +1,0 @@
-{"analysis":"Sofa assembly saved. Setting up cam_room inside the near wall to view the interior and window.","plan":"Select existing camera and set its transform numerically.","action":{"type":"click","x":1695,"y":159}}

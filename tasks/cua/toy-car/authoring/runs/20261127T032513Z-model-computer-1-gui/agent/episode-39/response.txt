@@ -1,1 +1,0 @@
-{"analysis":"The body is now framed correctly; desktop input refresh is delayed slightly.","plan":"Open the file manager to inspect the supplied photos and rig specification.","action":{"type":"keypress","keys":["super","e"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Moving main light into interior.","plan":"Reset light location.","action":{"type":"keypress","keys":["alt","g"]}}

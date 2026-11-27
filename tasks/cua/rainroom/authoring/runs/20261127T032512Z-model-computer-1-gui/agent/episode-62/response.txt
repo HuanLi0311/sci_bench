@@ -1,1 +1,0 @@
-{"analysis":"+X wall selected. Inset creates a centered pane; its proportions can be adjusted in local coordinates.","plan":"Inset the wall.","action":{"type":"type","text":"i.5"}}

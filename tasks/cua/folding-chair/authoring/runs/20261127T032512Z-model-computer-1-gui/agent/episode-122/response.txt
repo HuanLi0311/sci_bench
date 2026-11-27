@@ -1,1 +1,0 @@
-{"analysis":"Seat selected. Narrow 40 mm for frame clearance.","plan":"Scale seat mesh width to 520 mm.","action":{"type":"mouse_move","x":800,"y":530}}

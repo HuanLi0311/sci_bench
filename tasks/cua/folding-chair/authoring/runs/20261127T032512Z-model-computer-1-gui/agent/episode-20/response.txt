@@ -1,1 +1,0 @@
-{"analysis":"Preview directory is not present in current file manager. Will inspect original visual references.","plan":"Browse photos and states.","action":{"type":"keypress","keys":["ctrl","a"]}}

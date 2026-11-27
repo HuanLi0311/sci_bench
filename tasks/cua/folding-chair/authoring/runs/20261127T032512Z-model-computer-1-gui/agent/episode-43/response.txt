@@ -1,1 +1,0 @@
-{"analysis":"Object selected; discard malformed panel.","plan":"Rebuild with isolated modifier shortcuts.","action":{"type":"keypress","keys":["x"]}}

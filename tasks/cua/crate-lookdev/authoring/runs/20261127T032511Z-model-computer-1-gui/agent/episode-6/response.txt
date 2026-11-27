@@ -1,1 +1,0 @@
-{"analysis":"No default text viewer is installed.","plan":"Cancel and inspect drawing image instead.","action":{"type":"click","x":1070,"y":782}}

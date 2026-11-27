@@ -1,1 +1,0 @@
-{"analysis":"Base width correct; use remaining full Y length 2 m and height 0.4 m.","plan":"Flatten sofa base.","action":{"type":"type","text":"sz.2"}}

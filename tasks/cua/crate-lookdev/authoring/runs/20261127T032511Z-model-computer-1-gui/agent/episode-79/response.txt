@@ -1,1 +1,0 @@
-{"analysis":"Filename field sanitizes full paths; use directory field separately.","plan":"Set drawing folder in directory field.","action":{"type":"click","x":982,"y":303}}

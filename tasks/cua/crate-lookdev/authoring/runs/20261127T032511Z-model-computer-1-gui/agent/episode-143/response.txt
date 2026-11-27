@@ -1,1 +1,0 @@
-{"analysis":"Ready for wood shading.","plan":"Select front panel then switch to Shading workspace.","action":{"type":"click","x":865,"y":713}}

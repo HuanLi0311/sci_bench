@@ -1,1 +1,0 @@
-{"analysis":"Directory selected.","plan":"Enter drawings directory.","action":{"type":"type","text":"/app/materials/drawings/"}}

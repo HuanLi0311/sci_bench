@@ -1,1 +1,0 @@
-{"analysis":"ImageMagick blank; use PDF viewer instead.","plan":"Return file manager.","action":{"type":"click","x":598,"y":12}}

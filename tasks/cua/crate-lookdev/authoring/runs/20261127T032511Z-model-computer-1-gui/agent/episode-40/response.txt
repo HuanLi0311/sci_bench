@@ -1,1 +1,0 @@
-{"analysis":"Duplicate active.","plan":"Translate 0.78 m in X.","action":{"type":"keypress","keys":["x","0","period","7","8","Return"]}}

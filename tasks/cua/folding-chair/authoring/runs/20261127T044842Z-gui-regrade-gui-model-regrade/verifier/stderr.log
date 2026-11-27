@@ -1,1 +1,0 @@
-check_scene failed: Command '['/usr/local/bin/blender', '--disable-autoexec', '--python-exit-code', '2', '-b', '/app/out/folding_chair.blend', '--python', '/tests/check_scene.py', '--', '/logs/verifier/work-he5xtp89/scene.json']' returned non-zero exit status 2.

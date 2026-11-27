@@ -1,1 +1,0 @@
-{"analysis":"Joint specification PDF is available.","plan":"Open it.","action":{"type":"double_click","x":864,"y":465}}

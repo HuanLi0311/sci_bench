@@ -1,1 +1,0 @@
-{"analysis":"Cylinder operator selected.","plan":"Create and size the wheel.","action":{"type":"keypress","keys":["Return"]}}

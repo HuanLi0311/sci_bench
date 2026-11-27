@@ -1,1 +1,0 @@
-{"analysis":"Default scene is ready.","plan":"Open the materials folder through the desktop file manager.","action":{"type":"keypress","keys":["super","e"]}}

@@ -1,1 +1,0 @@
-{"command": ["/usr/local/bin/blender", "--disable-autoexec", "--python-exit-code", "2", "-b", "/app/out/rainroom.blend", "--python", "/tests/check_scene.py", "--", "/logs/verifier/work-rbdf39d5/scene.json"], "returncode": 0, "stdout": "Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)\nRead blend: \"/app/out/rainroom.blend\"\n\nBlender quit\n", "stderr": ""}

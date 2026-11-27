@@ -1,1 +1,0 @@
-{"analysis":"Cube reset.","plan":"Set X scale.","action":{"type":"type","text":"sx2.1"}}

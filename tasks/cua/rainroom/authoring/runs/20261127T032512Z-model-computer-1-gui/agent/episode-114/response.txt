@@ -1,1 +1,0 @@
-{"analysis":"Sofa selected; duplicating backrest.","plan":"Duplicate in place and rotate upright.","action":{"type":"keypress","keys":["shift","d"]}}

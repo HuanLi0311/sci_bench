@@ -1,1 +1,0 @@
-{"analysis":"Light selected; move it to the center of the room.","plan":"Reset location and place it below ceiling.","action":{"type":"mouse_move","x":785,"y":532}}

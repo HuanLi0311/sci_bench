@@ -1,1 +1,0 @@
-{"analysis":"Scaling seat width.","plan":"Set 560 mm width.","action":{"type":"keypress","keys":["0",".","2","8","enter"]}}

@@ -1,1 +1,0 @@
-{"analysis":"wheel_fl is named.","plan":"Duplicate to rear left with 240 mm wheelbase.","action":{"type":"keypress","keys":["shift","d"]}}

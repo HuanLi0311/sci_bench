@@ -1,1 +1,0 @@
-{"analysis":"Seat mesh sized 560×540×18 mm.","plan":"Bevel edges 4 mm with 3 segments.","action":{"type":"keypress","keys":["ctrl","b"]}}

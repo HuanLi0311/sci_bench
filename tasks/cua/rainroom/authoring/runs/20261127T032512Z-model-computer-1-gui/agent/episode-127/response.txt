@@ -1,1 +1,0 @@
-{"analysis":"Camera location reset.","plan":"Clear rotation and place interior camera.","action":{"type":"keypress","keys":["alt","r"]}}

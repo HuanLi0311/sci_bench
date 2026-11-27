@@ -1,5 +1,0 @@
-I couldn’t complete the deliverables because the terminal execution environment failed before any command could run:
-
-`failed to spawn code-mode host /usr/local/bin/codex-code-mode-host: host executable was not found`
-
-As a result, I could not inspect `/app/materials`, create the Blender scene, render the images, or write files to `/app/out`.

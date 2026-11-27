@@ -1,1 +1,0 @@
-{"analysis":"Four front corner brackets exist.","plan":"Duplicate to rear-right bottom.","action":{"type":"keypress","keys":["shift","d"]}}

@@ -1,1 +1,0 @@
-{"analysis":"Spec path entered.","plan":"Load folder.","action":{"type":"keypress","keys":["enter"]}}

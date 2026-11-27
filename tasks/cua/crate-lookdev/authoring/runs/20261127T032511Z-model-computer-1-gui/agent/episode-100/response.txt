@@ -1,1 +1,0 @@
-{"analysis":"Top bracket rename ready.","plan":"Name bracket_02.","action":{"type":"type","text":"bracket_02"}}

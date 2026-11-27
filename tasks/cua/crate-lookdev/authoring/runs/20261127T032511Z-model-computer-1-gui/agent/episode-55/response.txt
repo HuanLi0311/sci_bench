@@ -1,1 +1,0 @@
-{"analysis":"Lid at correct closed elevation; rename shortcut processing.","plan":"Wait briefly for rename dialog.","action":{"type":"wait"}}

@@ -1,1 +1,0 @@
-{"analysis":"File manager open.","plan":"Read hinge drawing.","action":{"type":"keypress","keys":["ctrl","l"]}}

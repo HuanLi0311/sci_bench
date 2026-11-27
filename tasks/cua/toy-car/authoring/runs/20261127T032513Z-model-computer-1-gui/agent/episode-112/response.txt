@@ -1,1 +1,0 @@
-{"analysis":"Dark chassis value entered.","plan":"Confirm color.","action":{"type":"keypress","keys":["Return"]}}

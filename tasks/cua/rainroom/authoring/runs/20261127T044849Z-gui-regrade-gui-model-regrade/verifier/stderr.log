@@ -1,1 +1,0 @@
-check_scene failed: Command '['/usr/local/bin/blender', '--disable-autoexec', '--python-exit-code', '2', '-b', '/app/out/rainroom.blend', '--python', '/tests/check_scene.py', '--', '/logs/verifier/work-isy8ftdg/scene.json']' returned non-zero exit status 2.

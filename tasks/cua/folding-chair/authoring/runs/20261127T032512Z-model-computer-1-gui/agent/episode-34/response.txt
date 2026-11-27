@@ -1,1 +1,0 @@
-{"analysis":"Seat at correct height.","plan":"Name and frame selected for close work.","action":{"type":"type","text":"seat"}}

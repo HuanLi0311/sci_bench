@@ -1,1 +1,0 @@
-{"analysis":"Height field ready.","plan":"Confirm height.","action":{"type":"keypress","keys":["enter"]}}

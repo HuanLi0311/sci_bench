@@ -1,1 +1,0 @@
-{"analysis":"Adding stencil.","plan":"Search text primitive.","action":{"type":"type","text":"Add Text"}}

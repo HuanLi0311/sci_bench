@@ -1,1 +1,0 @@
-{"analysis":"Filename field active.","plan":"Enter reference path.","action":{"type":"type","text":"/app/materials/drawings/crate_three_views.png"}}

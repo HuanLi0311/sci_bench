@@ -1,1 +1,0 @@
-{"analysis":"The path text is selected and ready for replacement.","plan":"Enter /app/out and press Enter to navigate there.","action":{"type":"type","text":"/app/out"}}

@@ -1,1 +1,0 @@
-{"analysis":"Rename requested.","plan":"Enter shell name.","action":{"type":"type","text":"room_shell"}}

@@ -1,1 +1,0 @@
-{"analysis":"Parent rear assembly.","plan":"Keep transform.","action":{"type":"keypress","keys":["ctrl","p"]}}

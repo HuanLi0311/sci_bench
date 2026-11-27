@@ -1,1 +1,0 @@
-{"analysis":"All core parts are now parented to hinge controls.","plan":"Set animation start to 0 and end to 60.","action":{"type":"double_click","x":1465,"y":998}}

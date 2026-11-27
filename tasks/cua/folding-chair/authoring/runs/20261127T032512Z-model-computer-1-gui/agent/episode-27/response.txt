@@ -1,1 +1,0 @@
-{"analysis":"Pointer was outside viewport. Focus mesh.","plan":"Enter edit mode.","action":{"type":"mouse_move","x":790,"y":530}}

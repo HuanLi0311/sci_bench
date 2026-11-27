@@ -1,1 +1,0 @@
-{"analysis":"Location entered. Next apply scale and create the window from the right-hand wall face.","plan":"Commit location by leaving field.","action":{"type":"click","x":1646,"y":511}}

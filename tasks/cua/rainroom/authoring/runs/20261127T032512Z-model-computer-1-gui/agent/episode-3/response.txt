@@ -1,1 +1,0 @@
-{"analysis":"Materials folders available.","plan":"Open object table.","action":{"type":"double_click","x":1137,"y":468}}

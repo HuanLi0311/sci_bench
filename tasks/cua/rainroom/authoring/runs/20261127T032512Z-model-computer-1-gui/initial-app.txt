@@ -1,7 +1,0 @@
-/usr/bin/display
-/usr/bin/thunar
-total 16
-drwxr-xr-x 1 root root 4096 Nov 26 05:41 .
-drwxr-xr-x 1 root root 4096 Nov 27 03:25 ..
-drwxr-xr-x 6 root root 4096 Nov 26 05:41 materials
-drwxr-xr-x 2 root root 4096 Nov 26 05:41 out

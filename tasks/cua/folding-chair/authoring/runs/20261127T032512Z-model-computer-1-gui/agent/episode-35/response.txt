@@ -1,1 +1,0 @@
-{"analysis":"Seat named.","plan":"Frame it and duplicate as back panel.","action":{"type":"keypress","keys":["enter","KP_Decimal"]}}

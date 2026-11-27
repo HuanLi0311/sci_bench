@@ -1,1 +1,0 @@
-{"analysis":"Camera selected. I will reset its transform, place it just inside the near wall, and aim it into the room.","plan":"Reset camera location.","action":{"type":"mouse_move","x":780,"y":520}}

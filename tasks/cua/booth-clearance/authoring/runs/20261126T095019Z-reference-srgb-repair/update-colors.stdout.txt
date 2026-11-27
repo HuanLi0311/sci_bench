@@ -1,8 +1,0 @@
-desktop ready on :1
-Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
-Read blend: "/input/booth.blend"
-Info: Total files 0 | Changed 0 | Failed 0
-Info: Saved "booth.blend"
-{"geometry_unchanged": true, "materials": {"mat_brand_primary": {"old_linear": [0.12160000205039978, 0.43529999256134033, 0.36079999804496765, 1.0], "new_linear": [0.013702083047289686, 0.1589608350608804, 0.10702310297826761, 1], "srgb_8bit": [31, 111, 92]}, "mat_brand_secondary": {"old_linear": [0.9490000009536743, 0.7569000124931335, 0.3059000074863434, 1.0], "new_linear": [0.8879231178819663, 0.5332764040105052, 0.07618538148130785, 1], "srgb_8bit": [242, 193, 78]}}}
-
-Blender quit

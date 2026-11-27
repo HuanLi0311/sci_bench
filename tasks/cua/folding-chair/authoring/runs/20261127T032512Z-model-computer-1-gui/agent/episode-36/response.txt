@@ -1,1 +1,0 @@
-{"analysis":"Frame-selected may still updating.","plan":"Zoom to selected.","action":{"type":"keypress","keys":["KP_Decimal"]}}

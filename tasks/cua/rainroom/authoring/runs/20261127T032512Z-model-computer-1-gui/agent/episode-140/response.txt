@@ -1,1 +1,0 @@
-{"analysis":"Lens field active.","plan":"Replace focal length with 18 mm.","action":{"type":"keypress","keys":["ctrl","a"]}}

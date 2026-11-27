@@ -1,1 +1,0 @@
-{"analysis":"Confirm seat parenting.","plan":"Then back panel.","action":{"type":"keypress","keys":["enter"]}}

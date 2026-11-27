@@ -1,1 +1,0 @@
-{"analysis":"Moving sofa base to X −1.45 m.","plan":"Confirm placement.","action":{"type":"keypress","keys":["enter"]}}

@@ -1,1 +1,0 @@
-2026-11-26T12:02:42.522577Z ERROR codex_core::tools::router: error=exec_command failed: CreateProcess { message: "Rejected(\"`/bin/bash -lc 'rm -f /app/out/test0001.png /app/out/testsmall.png /app/out/rainroom.blend1\\nls -lh /app/out'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }

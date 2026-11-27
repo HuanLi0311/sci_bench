@@ -1,1 +1,0 @@
-{"analysis":"Seat and pivot selected.","plan":"Parent panel.","action":{"type":"mouse_move","x":800,"y":530}}

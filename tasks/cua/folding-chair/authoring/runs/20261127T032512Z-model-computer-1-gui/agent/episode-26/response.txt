@@ -1,1 +1,0 @@
-{"analysis":"Build seat from default cube using edit-mode dimensions, preserving clean object scale.","plan":"Scale seat mesh.","action":{"type":"keypress","keys":["tab"]}}

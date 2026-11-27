@@ -1,2 +1,0 @@
-desktop ready on :1
-{"file": "render_three_quarter.png", "size": [1600, 1200], "original_rgb_mean": [32.11110260416667, 33.45897083333333, 34.99155625], "replacement_rgb": [32, 33, 35]}

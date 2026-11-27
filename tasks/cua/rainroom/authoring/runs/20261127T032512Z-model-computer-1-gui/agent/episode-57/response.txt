@@ -1,1 +1,0 @@
-{"analysis":"Room envelope is correct. I will make a window by insetting the +X face, then separating its inner pane.","plan":"Enter Edit Mode and face selection.","action":{"type":"mouse_move","x":845,"y":485}}

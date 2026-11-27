@@ -1,1 +1,0 @@
-{"analysis":"The filename text is selected in the Save As dialog.","plan":"Type toy_car.blend and click Save As to create the project file.","action":{"type":"type","text":"toy_car.blend"}}

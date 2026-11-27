@@ -1,1 +1,0 @@
-{"analysis":"Transform input still processing.","plan":"Wait for completion.","action":{"type":"wait"}}

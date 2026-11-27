@@ -1,1 +1,0 @@
-{"analysis":"All three default objects are selected now.","plan":"Delete them, open Save As, and enter the required project path.","action":{"type":"keypress","keys":["x"]}}

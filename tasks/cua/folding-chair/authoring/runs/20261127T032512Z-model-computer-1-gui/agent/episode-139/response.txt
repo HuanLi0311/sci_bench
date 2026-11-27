@@ -1,1 +1,0 @@
-{"analysis":"Start frame is zero.","plan":"Set end 60.","action":{"type":"double_click","x":1553,"y":998}}

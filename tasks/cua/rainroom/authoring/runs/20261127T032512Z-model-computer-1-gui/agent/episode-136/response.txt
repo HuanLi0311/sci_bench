@@ -1,1 +1,0 @@
-{"analysis":"Camera name selected.","plan":"Set exact camera name.","action":{"type":"type","text":"cam_room"}}
