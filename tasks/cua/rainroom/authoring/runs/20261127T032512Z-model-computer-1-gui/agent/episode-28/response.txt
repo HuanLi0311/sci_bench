@@ -1,0 +1,1 @@
+{"analysis":"PDF opening with ImageMagick.","plan":"Wait for document.","action":{"type":"wait"}}

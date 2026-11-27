@@ -1,0 +1,1 @@
+{"analysis":"PDF present.","plan":"Open PDF.","action":{"type":"double_click","x":878,"y":468}}
