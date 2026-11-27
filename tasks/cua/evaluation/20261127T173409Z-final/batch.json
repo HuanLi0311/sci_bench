@@ -1,0 +1,59 @@
+{
+  "started_at": "20261127T173409Z",
+  "label": "final",
+  "grader_sources": {
+    "drawer-cabinet": {
+      "Dockerfile": {
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "bytes": 710
+      },
+      "check_scene.py": {
+        "sha256": "65eda30677c2ffa6d3107f94a83381265df9c31174b75e6db168513ccfd3edfe",
+        "bytes": 10026
+      },
+      "grade.py": {
+        "sha256": "2a9e4e5392ce7a54d6794e2adf6d3cc8a88fb446d4e5a420c4e810f0fc77241c",
+        "bytes": 13567
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "9b02118de96e84140037f809ffbe0b9b4a2da870e576471191558f8cd4c9b580",
+        "bytes": 3067
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "banner-stand": {
+      "Dockerfile": {
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "bytes": 710
+      },
+      "check_scene.py": {
+        "sha256": "870fa78292d7fc3674400a737e60852de3f27aec193503a7bcfe7985eede99d7",
+        "bytes": 9097
+      },
+      "grade.py": {
+        "sha256": "9a296901c6729f1ddda9a04e0f7f86446cf60889f50aab578b5bd99fd7442c39",
+        "bytes": 13225
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "08ba0d23eae3941a5d94431f9268f1faa9b7c1c6196bf03333254ed6fec29104",
+        "bytes": 2796
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  "runs": []
+}
