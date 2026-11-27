@@ -386,6 +386,15 @@ def main():
     deck = build_deck(graphic)
     trucks = build_trucks(aluminium)
     wheels, bearings = build_wheels(wheel, steel)
+    # Hierarchy: deck is the root; each truck carries its two wheels; the
+    # bearings are a single service part under the deck.
+    for truck in trucks:
+        truck.parent = deck
+    bpy.data.objects["wheel_01"].parent = bpy.data.objects["truck_front"]
+    bpy.data.objects["wheel_02"].parent = bpy.data.objects["truck_front"]
+    bpy.data.objects["wheel_03"].parent = bpy.data.objects["truck_rear"]
+    bpy.data.objects["wheel_04"].parent = bpy.data.objects["truck_rear"]
+    bearings.parent = deck
     build_stage()
 
     bpy.context.view_layer.objects.active = deck
