@@ -16,7 +16,8 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 TASKS = ["crate-lookdev", "booth-clearance", "folding-chair", "rainroom", "toy-car",
-         "spider-gait", "skateboard-prop"]
+         "spider-gait", "skateboard-prop",
+         "drawer-cabinet", "banner-stand"]
 
 
 def sha(path):

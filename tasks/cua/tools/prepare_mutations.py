@@ -11,8 +11,8 @@ import shutil
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-RENDERS = {"crate-lookdev": "render_back.png", "booth-clearance": "render_top.png", "folding-chair": "render_locked.png", "rainroom": "render_night.png", "toy-car": "render_back.png", "spider-gait": "render_pose_02.png", "skateboard-prop": "render_three_quarter.png"}
-BLENDS = {"crate-lookdev": "crate.blend", "booth-clearance": "booth.blend", "folding-chair": "folding_chair.blend", "rainroom": "rainroom.blend", "toy-car": "toy_car.blend", "spider-gait": "spider.blend", "skateboard-prop": "skateboard.blend"}
+RENDERS = {"crate-lookdev": "render_back.png", "booth-clearance": "render_top.png", "folding-chair": "render_locked.png", "rainroom": "render_night.png", "toy-car": "render_back.png", "spider-gait": "render_pose_02.png", "skateboard-prop": "render_three_quarter.png", "drawer-cabinet": "render_day.png", "banner-stand": "render_front.png"}
+BLENDS = {"crate-lookdev": "crate.blend", "booth-clearance": "booth.blend", "folding-chair": "folding_chair.blend", "rainroom": "rainroom.blend", "toy-car": "toy_car.blend", "spider-gait": "spider.blend", "skateboard-prop": "skateboard.blend", "drawer-cabinet": "drawer_cabinet.blend", "banner-stand": "banner_stand.blend"}
 SCRIPTS = {
     "crate-disconnected-maps": '''import bpy
 mat = bpy.data.objects["crate_front"].data.materials[0]
@@ -161,6 +161,39 @@ mat = bpy.data.materials["mat_aluminium"]
 bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
 bsdf.inputs["Metallic"].default_value = 0.0
 ''',
+    "cabinet-static-slides": '''import bpy
+for i in range(1, 6):
+    d = bpy.data.objects[f"drawer_{i:02d}"]
+    m = d.matrix_world.copy()
+    d.parent = None
+    d.matrix_world = m
+''',
+    "cabinet-door-unparented": '''import bpy
+d = bpy.data.objects["door_right"]
+m = d.matrix_world.copy()
+d.parent = None
+d.matrix_world = m
+''',
+    "cabinet-unpacked-maps": '''import bpy
+img = bpy.data.images.new("adversarial_unpacked", 8, 8)
+img.filepath = "/app/materials/textures/wood_basecolor.png"
+''',
+    "banner-leg-unparented": '''import bpy
+leg = bpy.data.objects["leg_rear"]
+m = leg.matrix_world.copy()
+leg.parent = None
+leg.matrix_world = m
+''',
+    "banner-canvas-cropped": '''import bpy
+me = bpy.data.objects["canvas"].data
+uv = me.uv_layers.active
+for i in range(len(uv.data)):
+    uv.data[i].uv = (uv.data[i].uv[0] * 0.8, uv.data[i].uv[1] * 0.8)
+''',
+    "banner-unpacked-print": '''import bpy
+img = bpy.data.images.new("adversarial_unpacked", 8, 8)
+img.filepath = "/app/materials/textures/banner_graphic.png"
+''',
     "booth-empty-marker-positive": '''import bpy
 old = bpy.data.objects["entrance_zone"]
 matrix = old.matrix_world.copy()
@@ -223,6 +256,12 @@ if __name__ == "__main__":
                      "deck-single-ply", "deck-graphic-unlinked", "truck-dielectric"):
         if not options.only or options.only == mutation:
             prepare(("spider-gait" if mutation.startswith("spider") else "skateboard-prop"), mutation, SCRIPTS[mutation])
+    for mutation in ("cabinet-static-slides", "cabinet-door-unparented", "cabinet-unpacked-maps"):
+        if not options.only or options.only == mutation:
+            prepare("drawer-cabinet", mutation, SCRIPTS[mutation])
+    for mutation in ("banner-leg-unparented", "banner-canvas-cropped", "banner-unpacked-print"):
+        if not options.only or options.only == mutation:
+            prepare("banner-stand", mutation, SCRIPTS[mutation])
     for mutation in ("rain-unused-metal-slot", "rain-linked-metal-default", "rain-disconnected-metal-shader"):
         if not options.only or options.only == mutation:
             prepare("rainroom", mutation, SCRIPTS[mutation])

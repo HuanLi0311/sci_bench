@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "cabinet-static-slides",
+  "task": "drawer-cabinet",
+  "started_at": "20261127T165358Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165358Z-mutation-cabinet-static-slides:/mutation",
+    "cua-qc-drawer-cabinet-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/drawer_cabinet.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "283da4713fc1eedd27920c2fe753bc5ced5156b09edcca7ea230d08421225240",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T16:54:08.686615+00:00"
+}

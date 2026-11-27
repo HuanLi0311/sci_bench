@@ -28,6 +28,10 @@ NEGATIVE_CASES = {
                     "spider-floating-feet", "spider-static-pose"},
     "skateboard-prop": {"secondary-render-substitution", "deck-single-ply",
                         "deck-graphic-unlinked", "truck-dielectric"},
+    "drawer-cabinet": {"secondary-render-substitution", "cabinet-static-slides",
+                       "cabinet-door-unparented", "cabinet-unpacked-maps"},
+    "banner-stand": {"secondary-render-substitution", "banner-leg-unparented",
+                     "banner-canvas-cropped", "banner-unpacked-print"},
 }
 
 REQUIRED = [
@@ -281,6 +285,12 @@ def check_negative(t):
                 "negative-deck-single-ply": "R04_plies",
                 "negative-deck-graphic-unlinked": "R05_graphic_uv",
                 "negative-truck-dielectric": "R07_materials",
+                "negative-cabinet-static-slides": "R05_travel",
+                "negative-cabinet-door-unparented": "R07_door_hinge",
+                "negative-cabinet-unpacked-maps": "R10_self_contained",
+                "negative-banner-leg-unparented": "R06_fold_geometry",
+                "negative-banner-canvas-cropped": "R05_uv",
+                "negative-banner-unpacked-print": "R09_self_contained",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
             if not any(c["id"] == "R01_open" and c["pass"] for c in metrics["checks"]):
