@@ -1,0 +1,1 @@
+{"analysis":"Pane is 1.2 × 1.4 m. Separate it to leave an actual opening in room_shell.","plan":"Open Separate menu.","action":{"type":"keypress","keys":["p"]}}

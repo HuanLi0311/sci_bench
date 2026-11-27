@@ -1,0 +1,1 @@
+{"analysis":"Front-left named.","plan":"Confirm then duplicate.","action":{"type":"keypress","keys":["enter"]}}

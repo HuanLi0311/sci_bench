@@ -1,0 +1,1 @@
+{"analysis":"Inset leaves a 1.8 × 1.4 m pane in world dimensions. Narrow Y to 1.2 m.","plan":"Scale pane width by two-thirds.","action":{"type":"type","text":"sy.666667"}}

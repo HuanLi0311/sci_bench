@@ -1,0 +1,1 @@
+{"analysis":"Separate Selection menu ready.","plan":"Separate pane.","action":{"type":"click","x":792,"y":489}}
