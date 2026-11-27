@@ -1,0 +1,236 @@
+[
+    {
+        "Id": "8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf",
+        "Created": "2026-11-27T14:55:49.309652852Z",
+        "Path": "/usr/local/bin/entrypoint",
+        "Args": [
+            "bash",
+            "/tests/test.sh",
+            "/app/out"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2026-11-27T14:55:50.265561636Z",
+            "FinishedAt": "2026-11-27T15:05:22.421580364Z"
+        },
+        "Image": "sha256:10378e8f7f6611cf12b6a94b5df8f8cca4183b15b6b1b46570813468d990c93b",
+        "ResolvConfPath": "/var/lib/docker/containers/8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf/hostname",
+        "HostsPath": "/var/lib/docker/containers/8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf/hosts",
+        "LogPath": "/var/lib/docker/containers/8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf/8f3efff7ec7e6b4433615700424ac8c743accfa6cde775c38354e182c9f819cf-json.log",
+        "Name": "/cua-evidence-verifier-fa4bedce8d",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/grader-source:/tests:ro",
+                "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/submission:/app/out:ro",
+                "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/verifier:/logs/verifier"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/grader-source",
+                "Destination": "/tests",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/submission",
+                "Destination": "/app/out",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/迅雷下载/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution/verifier",
+                "Destination": "/logs/verifier",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "8f3efff7ec7e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONIOENCODING=utf-8",
+                "DISPLAY=:1",
+                "LIBGL_ALWAYS_SOFTWARE=1",
+                "XDG_RUNTIME_DIR=/tmp/runtime-root",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "bash",
+                "/tests/test.sh",
+                "/app/out"
+            ],
+            "Image": "cua-qc-skateboard-prop-tests",
+            "Volumes": null,
+            "WorkingDir": "/tests",
+            "Entrypoint": [
+                "/usr/local/bin/entrypoint"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "6875f68a6a9dc16878799d18b132fc3be423da2db66edc3a30ad3a5b0e686986",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:10378e8f7f6611cf12b6a94b5df8f8cca4183b15b6b1b46570813468d990c93b",
+            "size": 3369,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

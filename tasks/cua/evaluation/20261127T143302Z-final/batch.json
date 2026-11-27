@@ -161,6 +161,16 @@
       "failed_checks": [
         "R07_materials"
       ]
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "negative-secondary-render-substitution",
+      "run": "skateboard-prop/authoring/runs/20261127T145447Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R_render_structure"
+      ]
     }
   ]
 }
