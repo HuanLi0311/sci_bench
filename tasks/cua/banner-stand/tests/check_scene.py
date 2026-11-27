@@ -201,8 +201,9 @@ def main():
             set_hinge(deg)
             verts = world_verts(leg)
             state = {
-                "tip_z_mm": round(min(v.z for v in verts) * 1000, 2),
-                "tip_y_mm": round(max(abs(v.y) for v in verts) * 1000, 1),
+                "z_min_mm": round(min(v.z for v in verts) * 1000, 2),
+                "z_max_mm": round(max(v.z for v in verts) * 1000, 2),
+                "y_max_mm": round(max(abs(v.y) for v in verts) * 1000, 1),
                 "overlap": hits([leg], objs([n for n in FRAME + ["canvas"] if n != "canvas"]
                                             + ["canvas"])),
             }

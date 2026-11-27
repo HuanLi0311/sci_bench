@@ -149,15 +149,18 @@ def main():
     states = fold.get("states") or {}
     hinge_loc = fold.get("hinge_location") or [9, 9, 9]
     hinge_ok = (fold.get("parent") == "hinge_rear"
-                and abs(hinge_loc[0]) <= 0.01 and abs(hinge_loc[1]) <= 0.01
-                and abs(hinge_loc[2] - 1.96) <= 0.01)
+                and abs(hinge_loc[0]) <= 0.01 and abs(hinge_loc[1] + 0.045) <= 0.01
+                and abs(hinge_loc[2] - 0.075) <= 0.01)
     state14 = states.get("14") or {}
+    state0 = states.get("0") or {}
     fold_ok = (hinge_ok
-               and abs(state14.get("tip_z_mm", 99)) <= 5
-               and 450 <= state14.get("tip_y_mm", 0) <= 540
+               and 1860 <= state14.get("z_max_mm", 0) <= 1960
+               and 460 <= state14.get("y_max_mm", 0) <= 560
+               and abs(state0.get("z_min_mm", 99)) <= 5
                and fold.get("folded_depth_mm", 999) <= 130)
     add("R06_fold_geometry", "must", fold_ok,
-        f"hinge={hinge_loc} state14={state14} folded={fold.get('folded_depth_mm')}mm")
+        f"hinge={hinge_loc} state0={state0} state14={state14} "
+        f"folded={fold.get('folded_depth_mm')}mm")
 
     collision = {k: v.get("overlap") for k, v in states.items()}
     add("R07_no_contact", "must", states and all(v == 0 for v in collision.values()),

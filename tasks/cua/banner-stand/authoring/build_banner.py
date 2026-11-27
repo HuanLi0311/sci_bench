@@ -26,8 +26,9 @@ H = MAST_TOP + TOP_T          # 2.000
 CANVAS_W, CANVAS_H = 0.800, 1.900
 CANVAS_Z0 = 0.060
 CANVAS_Y = 0.030
-LEG_LEN = 2.020
-HINGE_Z = MAST_TOP
+LEG_LEN = 1.900
+HINGE_Z = 0.075
+HINGE_Y = -0.045
 OPEN_DEG = 14.0
 
 
@@ -162,10 +163,10 @@ def build_frame(alu):
 def build_leg(alu):
     hinge = bpy.data.objects.new("hinge_rear", None)
     hinge.empty_display_type = 'SINGLE_ARROW'
-    hinge.location = (0.0, 0.0, HINGE_Z)
+    hinge.location = (0.0, HINGE_Y, HINGE_Z)
     link(hinge)
     bpy.context.view_layer.update()
-    leg = box("leg_rear", (0.0, 0.0, HINGE_Z - LEG_LEN / 2), (0.036, 0.036, LEG_LEN),
+    leg = box("leg_rear", (0.0, HINGE_Y, HINGE_Z + LEG_LEN / 2), (0.036, 0.036, LEG_LEN),
               bevel=0.003)
     leg.data.materials.append(alu)
     leg.parent = hinge
