@@ -1,0 +1,1 @@
+{"reward": 0, "checks": [{"id": "R01", "level": "must", "detail": "", "pass": true}, {"id": "R02", "level": "must", "detail": "", "pass": false}, {"id": "submission", "level": "must", "detail": "24 finite bounded real controls required", "pass": false}]}

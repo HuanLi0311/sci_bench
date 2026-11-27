@@ -1,0 +1,162 @@
+{
+  "task": "pose-repair",
+  "kind": "zero-controls",
+  "validation": "direct Docker",
+  "reward": 0,
+  "verifier_exit_code": 0,
+  "agent_exit_code": 0,
+  "model_steps": 0,
+  "gui_compliant": null,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "sci-pose-env:dev",
+        "/bin/true"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6163886690010258,
+      "stdout": "agent.stdout.txt",
+      "stderr": "agent.stderr.txt"
+    },
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "--pids-limit",
+        "256",
+        "-v",
+        "/mnt/c/Users/GGB/Documents/Codex/2026-11-27/https-github-com-huanli0311-sci-bench/work/sci_bench/tasks/cua/pose-repair/authoring/runs/20261127T123213Z-final-zero-controls/submission:/app/out:ro",
+        "-v",
+        "/mnt/c/Users/GGB/Documents/Codex/2026-11-27/https-github-com-huanli0311-sci-bench/work/sci_bench/tasks/cua/pose-repair/authoring/runs/20261127T123213Z-final-zero-controls/verifier:/logs/verifier",
+        "-v",
+        "/mnt/c/Users/GGB/Documents/Codex/2026-11-27/https-github-com-huanli0311-sci-bench/work/sci_bench/tasks/cua/pose-repair/authoring/runs/20261127T123213Z-final-zero-controls/service-evidence:/service-evidence:ro",
+        "sci-pose-tests:dev",
+        "bash",
+        "/tests/test.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 1.3249793609993503,
+      "stdout": "verifier.stdout.txt",
+      "stderr": "verifier.stderr.txt"
+    }
+  ],
+  "finished_at": "2026-11-27T12:32:26.001725+00:00",
+  "grader_source": {
+    ".dockerignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "bytes": 19
+    },
+    "Dockerfile": {
+      "sha256": "a6b85dacb51f2bc1f4dac46d8551ca2d1cc0dd3ddfb90c52b02987b507e59a53",
+      "bytes": 721
+    },
+    "fixture.json": {
+      "sha256": "13505e6c988e6155823f193fa6ffcfa91fcc39a958a79c69a2b5bf509a7c8e45",
+      "bytes": 19670
+    },
+    "grade.py": {
+      "sha256": "a738ef1c0f0c4a4f6d534fd4099eb063f7bf50e143c1da64149ff4dbfdc5fa7b",
+      "bytes": 7853
+    },
+    "kinematics.py": {
+      "sha256": "23100c3398ceed070a997a08adee819ef67658c520c0c45f5234e86ad16ced32",
+      "bytes": 1088
+    },
+    "original/avatar.glb": {
+      "sha256": "b3a546bf7467558bfa346acc7821e7f084486680ba9d7042929b08316c2e07c1",
+      "bytes": 2400
+    },
+    "original/bounds.json": {
+      "sha256": "e1c2c29ed7a48e2913e2295194d4b7d056360e9dcf7dd0c8b8002d33117ff3e0",
+      "bytes": 446
+    },
+    "original/scene.json": {
+      "sha256": "f85b6329b44a6571b738f06e38097fab9f91f7b1d07e303c7757d0e2d1d0c56c",
+      "bytes": 996
+    },
+    "public-hashes.json": {
+      "sha256": "bdf387ee721fb26396be43e20f2707f879fcf4f78f69acfdf57b9d28790ef2f6",
+      "bytes": 259
+    },
+    "service/fixture.json": {
+      "sha256": "13505e6c988e6155823f193fa6ffcfa91fcc39a958a79c69a2b5bf509a7c8e45",
+      "bytes": 19670
+    },
+    "service/model.cjs": {
+      "sha256": "6448ac5d21dec2bc5b104b5b624b75942f78e4ce666248e25315cea41aaaa1ec",
+      "bytes": 1392
+    },
+    "service/server.cjs": {
+      "sha256": "ee661afbc3ad273ba7c5ac57432f2096ff76fcbde03583f4488de6804f896af8",
+      "bytes": 2023
+    },
+    "test.sh": {
+      "sha256": "df27fe2c157388b02db6520647886bae406e95f4cf259e60b990e41eb331fe00",
+      "bytes": 984
+    }
+  },
+  "solution_source": {
+    "client.cjs": {
+      "sha256": "b04bbe0911f4d2e5e8b837144a46eac59275b30ff275f7cd3b986d21a23e63c7",
+      "bytes": 717
+    },
+    "fitter.cjs": {
+      "sha256": "f5f5f68dce3a6cf3ad1a0f580bd937e2bdd89003e38f1e7bdce0a260186fac71",
+      "bytes": 2488
+    },
+    "solve.sh": {
+      "sha256": "622766d0500dd51f60bcb43a99fd4b0dfbb971842f3d70dd6283a1aa7b5336a0",
+      "bytes": 65
+    }
+  },
+  "submission": {
+    "controls_case_a.json": {
+      "sha256": "3e8ebd33f71f1b82e4e64cecea010e7097d953ec6ff97fe2c069794339aa9aa6",
+      "bytes": 477
+    },
+    "controls_case_b.json": {
+      "sha256": "c1f58dc946c4c9a2ff17727d0d5497d364202d7b56aa5970fc3a3613b04b9e2b",
+      "bytes": 475
+    },
+    "controls_case_c.json": {
+      "sha256": "2fc1d7e09200ebbaf653336f409b1e7f235a46521d11ebbe29f7de09db999f17",
+      "bytes": 72
+    },
+    "query_counts.json": {
+      "sha256": "a6be14b54e0eb3bf82adbcbc1968ab01d6d61f1f65655c4c3763b6bb14b0eb3b",
+      "bytes": 25
+    },
+    "replay.json": {
+      "sha256": "5ad8911c7d946859daff4e88107682fdcefd59a67423128f73b1ba382100c8f7",
+      "bytes": 119
+    },
+    "report.md": {
+      "sha256": "26b3e820c1efc19abe61622d1a1c57232be18687055e1f260a7a3f923ecffdee",
+      "bytes": 174
+    },
+    "solution/client.cjs": {
+      "sha256": "b04bbe0911f4d2e5e8b837144a46eac59275b30ff275f7cd3b986d21a23e63c7",
+      "bytes": 717
+    },
+    "solution/fitter.cjs": {
+      "sha256": "f5f5f68dce3a6cf3ad1a0f580bd937e2bdd89003e38f1e7bdce0a260186fac71",
+      "bytes": 2488
+    }
+  },
+  "images": {
+    "env": "sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf",
+    "tests": "sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499"
+  }
+}

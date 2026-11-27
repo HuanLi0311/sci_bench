@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3",
+  "assets": [
+    {
+      "path": "fighters",
+      "role": "geometry-and-animation",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_key_01.png",
+      "camera": "cam_fixed",
+      "frame": 48,
+      "resolution": [
+        1280,
+        720
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_key_02.png",
+      "camera": "cam_fixed",
+      "frame": 65,
+      "resolution": [
+        1280,
+        720
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_key_03.png",
+      "camera": "cam_fixed",
+      "frame": 235,
+      "resolution": [
+        1280,
+        720
+      ],
+      "samples": 64
+    },
+    {
+      "file": "render_key_04.png",
+      "camera": "cam_fixed",
+      "frame": 300,
+      "resolution": [
+        1280,
+        720
+      ],
+      "samples": 64
+    }
+  ]
+}

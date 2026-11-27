@@ -1,0 +1,112 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 760B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 59B 0.0s done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/5] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#5 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.0s done
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 1.24kB 0.1s done
+#4 DONE 0.1s
+
+#6 [2/5] RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g; s|http://security.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g' /etc/apt/sources.list.d/ubuntu.sources && apt-get update && apt-get install -y --no-install-recommends python3 python3-numpy && rm -rf /var/lib/apt/lists/*
+#6 0.479 Get:1 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble InRelease [256 kB]
+#6 0.669 Get:2 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates InRelease [126 kB]
+#6 0.723 Get:3 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-backports InRelease [126 kB]
+#6 0.766 Get:4 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-security InRelease [126 kB]
+#6 0.817 Get:5 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/universe amd64 Packages [19.3 MB]
+#6 1.381 Get:6 https://deb.nodesource.com/node_22.x nodistro InRelease [12.1 kB]
+#6 2.002 Get:7 https://deb.nodesource.com/node_22.x nodistro/main amd64 Packages [13.3 kB]
+#6 16.27 Get:8 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/restricted amd64 Packages [117 kB]
+#6 16.37 Get:9 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main amd64 Packages [1808 kB]
+#6 17.91 Get:10 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/multiverse amd64 Packages [331 kB]
+#6 18.19 Get:11 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main amd64 Packages [1843 kB]
+#6 19.72 Get:12 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/restricted amd64 Packages [2403 kB]
+#6 21.73 Get:13 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/universe amd64 Packages [2184 kB]
+#6 23.57 Get:14 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/multiverse amd64 Packages [61.7 kB]
+#6 23.62 Get:15 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-backports/main amd64 Packages [49.0 kB]
+#6 23.66 Get:16 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-backports/multiverse amd64 Packages [669 B]
+#6 23.66 Get:17 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-backports/universe amd64 Packages [36.0 kB]
+#6 23.69 Get:18 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-security/restricted amd64 Packages [2277 kB]
+#6 26.02 Get:19 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-security/universe amd64 Packages [1563 kB]
+#6 27.34 Get:20 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-security/multiverse amd64 Packages [55.6 kB]
+#6 27.38 Get:21 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-security/main amd64 Packages [1514 kB]
+#6 28.25 Fetched 34.2 MB in 28s (1227 kB/s)
+#6 28.25 Reading package lists...
+#6 29.32 Reading package lists...
+#6 30.40 Building dependency tree...
+#6 30.71 Reading state information...
+#6 31.05 The following additional packages will be installed:
+#6 31.05   libpython3-stdlib python3-minimal python3-pkg-resources
+#6 31.05 Suggested packages:
+#6 31.05   python3-doc python3-tk python3-venv gcc gfortran python3-dev python3-pytest
+#6 31.05   python3-setuptools
+#6 31.11 The following NEW packages will be installed:
+#6 31.11   python3-numpy python3-pkg-resources
+#6 31.11 The following packages will be upgraded:
+#6 31.11   libpython3-stdlib python3 python3-minimal
+#6 31.22 3 upgraded, 2 newly installed, 0 to remove and 162 not upgraded.
+#6 31.22 Need to get 4665 kB of archives.
+#6 31.22 After this operation, 24.6 MB of additional disk space will be used.
+#6 31.22 Get:1 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main amd64 python3-minimal amd64 3.12.3-0ubuntu2.1 [27.4 kB]
+#6 31.31 Get:2 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main amd64 python3 amd64 3.12.3-0ubuntu2.1 [23.0 kB]
+#6 31.32 Get:3 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main amd64 libpython3-stdlib amd64 3.12.3-0ubuntu2.1 [10.1 kB]
+#6 31.33 Get:4 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble-updates/main amd64 python3-pkg-resources all 68.1.2-2ubuntu1.2 [168 kB]
+#6 31.43 Get:5 http://mirrors.tuna.tsinghua.edu.cn/ubuntu noble/main amd64 python3-numpy amd64 1:1.26.4+ds-6ubuntu1 [4437 kB]
+#6 34.46 debconf: delaying package configuration, since apt-utils is not installed
+#6 34.51 Fetched 4665 kB in 3s (1486 kB/s)
+#6 34.56 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35216 files and directories currently installed.)
+#6 34.58 Preparing to unpack .../python3-minimal_3.12.3-0ubuntu2.1_amd64.deb ...
+#6 34.61 Unpacking python3-minimal (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#6 34.74 Setting up python3-minimal (3.12.3-0ubuntu2.1) ...
+#6 34.96 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 35216 files and directories currently installed.)
+#6 34.98 Preparing to unpack .../python3_3.12.3-0ubuntu2.1_amd64.deb ...
+#6 35.06 Unpacking python3 (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#6 35.16 Preparing to unpack .../libpython3-stdlib_3.12.3-0ubuntu2.1_amd64.deb ...
+#6 35.19 Unpacking libpython3-stdlib:amd64 (3.12.3-0ubuntu2.1) over (3.12.3-0ubuntu2) ...
+#6 35.26 Selecting previously unselected package python3-pkg-resources.
+#6 35.26 Preparing to unpack .../python3-pkg-resources_68.1.2-2ubuntu1.2_all.deb ...
+#6 35.27 Unpacking python3-pkg-resources (68.1.2-2ubuntu1.2) ...
+#6 35.35 Selecting previously unselected package python3-numpy.
+#6 35.35 Preparing to unpack .../python3-numpy_1%3a1.26.4+ds-6ubuntu1_amd64.deb ...
+#6 35.36 Unpacking python3-numpy (1:1.26.4+ds-6ubuntu1) ...
+#6 35.61 Setting up libpython3-stdlib:amd64 (3.12.3-0ubuntu2.1) ...
+#6 35.63 Setting up python3 (3.12.3-0ubuntu2.1) ...
+#6 35.75 Setting up python3-pkg-resources (68.1.2-2ubuntu1.2) ...
+#6 35.96 Setting up python3-numpy (1:1.26.4+ds-6ubuntu1) ...
+#6 DONE 38.0s
+
+#7 [3/5] WORKDIR /tests
+#7 DONE 0.1s
+
+#8 [4/5] COPY . /tests
+#8 DONE 0.1s
+
+#9 [5/5] RUN mkdir -p /app/out /service-evidence /original /logs/verifier && cp -r /tests/original/. /original/ && chmod 700 /tests && chmod 755 /tests/test.sh
+#9 DONE 0.3s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.6s done
+#10 exporting manifest sha256:435a89912fdcae40f4fe9c8baffb9ba0d2919098fddc321a91ccec8def24f656 0.0s done
+#10 exporting config sha256:f7b39c4df7eb1faa9c446119f594a503d1a7ef9a9da0d382888ed707c8ebd5ab 0.0s done
+#10 exporting attestation manifest sha256:d5886695be4719755f80b552e14114b6423d095170aa209105aff55a528d8d3a 0.0s done
+#10 exporting manifest list sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499
+#10 exporting manifest list sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499 0.0s done
+#10 naming to docker.io/library/sci-pose-tests:dev done
+#10 unpacking to docker.io/library/sci-pose-tests:dev
+#10 unpacking to docker.io/library/sci-pose-tests:dev 0.5s done
+#10 DONE 2.3s

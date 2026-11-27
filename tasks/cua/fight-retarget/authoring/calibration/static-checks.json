@@ -1,0 +1,10 @@
+[
+  {
+    "task": "fight-retarget",
+    "static": "pass"
+  },
+  {
+    "task": "pose-repair",
+    "static": "pass"
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "parents": {
+    "root": null,
+    "spine": "root",
+    "chest": "spine",
+    "neck": "chest",
+    "head": "neck",
+    "clavicle.L": "chest",
+    "upper_arm.L": "clavicle.L",
+    "forearm.L": "upper_arm.L",
+    "hand.L": "forearm.L",
+    "clavicle.R": "chest",
+    "upper_arm.R": "clavicle.R",
+    "forearm.R": "upper_arm.R",
+    "hand.R": "forearm.R",
+    "pelvis": "root",
+    "thigh.L": "pelvis",
+    "shin.L": "thigh.L",
+    "foot.L": "shin.L",
+    "toe.L": "foot.L",
+    "thigh.R": "pelvis",
+    "shin.R": "thigh.R",
+    "foot.R": "shin.R",
+    "toe.R": "foot.R"
+  },
+  "lengths": {
+    "left": {
+      "root": 0.10000002384185791,
+      "spine": 0.21000003814697266,
+      "chest": 0.24000000953674316,
+      "neck": 0.12000000476837158,
+      "head": 0.12000000476837158,
+      "clavicle.L": 0.1550000011920929,
+      "upper_arm.L": 0.309999942779541,
+      "forearm.L": 0.2900000810623169,
+      "hand.L": 0.08000002056360245,
+      "clavicle.R": 0.1550000011920929,
+      "upper_arm.R": 0.309999942779541,
+      "forearm.R": 0.2900000512599945,
+      "hand.R": 0.07999997586011887,
+      "pelvis": 0.05999999865889549,
+      "thigh.L": 0.41999998688697815,
+      "shin.L": 0.4100000560283661,
+      "foot.L": 0.14999999105930328,
+      "toe.L": 0.06000000983476639,
+      "thigh.R": 0.41999998688697815,
+      "shin.R": 0.4100000858306885,
+      "foot.R": 0.14999999105930328,
+      "toe.R": 0.06000002473592758
+    },
+    "right": {
+      "root": 0.11176472902297974,
+      "spine": 0.23470592498779297,
+      "chest": 0.26823535561561584,
+      "neck": 0.13411761820316315,
+      "head": 0.13411761820316315,
+      "clavicle.L": 0.17323528230190277,
+      "upper_arm.L": 0.34647053480148315,
+      "forearm.L": 0.3241175711154938,
+      "hand.L": 0.08000001311302185,
+      "clavicle.R": 0.17323528230190277,
+      "upper_arm.R": 0.34647053480148315,
+      "forearm.R": 0.32411763072013855,
+      "hand.R": 0.08000002801418304,
+      "pelvis": 0.06705882400274277,
+      "thigh.L": 0.4694117605686188,
+      "shin.L": 0.45823538303375244,
+      "foot.L": 0.14999999105930328,
+      "toe.L": 0.060000017285346985,
+      "thigh.R": 0.4694117605686188,
+      "shin.R": 0.45823538303375244,
+      "foot.R": 0.1499999761581421,
+      "toe.R": 0.059999991208314896
+    }
+  },
+  "events": [
+    {
+      "frame": 65,
+      "attacker": "left_hand.L",
+      "target": "right_hand.L"
+    },
+    {
+      "frame": 105,
+      "attacker": "left_hand.R",
+      "target": "right_hand.R"
+    },
+    {
+      "frame": 145,
+      "attacker": "left_hand.L",
+      "target": "right_hand.L"
+    },
+    {
+      "frame": 185,
+      "attacker": "left_hand.R",
+      "target": "right_chest"
+    }
+  ],
+  "supports": {
+    "L": [
+      [
+        1,
+        5
+      ],
+      [
+        20,
+        215
+      ],
+      [
+        253,
+        265
+      ],
+      [
+        280,
+        300
+      ]
+    ],
+    "R": [
+      [
+        1,
+        22
+      ],
+      [
+        37,
+        282
+      ],
+      [
+        297,
+        300
+      ]
+    ]
+  },
+  "keys": [
+    48,
+    65,
+    235,
+    300
+  ]
+}

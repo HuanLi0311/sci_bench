@@ -1,0 +1,126 @@
+[
+    {
+        "Id": "sha256:8e2fae008f50190d89441e0ed831b2e04202c70dc78d705ca81a97736b1eb7c1",
+        "RepoTags": [
+            "sci-fight-env:dev"
+        ],
+        "RepoDigests": [
+            "sci-fight-env@sha256:8e2fae008f50190d89441e0ed831b2e04202c70dc78d705ca81a97736b1eb7c1"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-27T20:30:54.040742576+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1",
+                "DISPLAY=:1"
+            ],
+            "Entrypoint": [
+                "/usr/local/bin/task-entrypoint"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2880050965,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:369ede38a92da8cd72a76f15f37e496def401830f3c8b7d39c0c7695682a51ce",
+                "sha256:e58bd718909ec9c0736219de646985cd3145a78103c9d6ad442995c4b95fdc64",
+                "sha256:cca0c6a0706f2e9799e8b663b3a4b2b0cee655462f3000f861446802e94ee738",
+                "sha256:2fcdbf50f5c7b71502804bfcd7a10ba3126f02b3329c7e6cc60fe9b45fc452e0",
+                "sha256:938f7ebfef22cd24c1dbfd7cd783c00a875623b484aa68a8e511d5d649be367c",
+                "sha256:ba620becf0242bb7d81960faed92e682ec9cf3171341e296dc169e22dda7fa88",
+                "sha256:8d7d8ff82f197609d2cda7fa094fe6ff2c0723c7708877d52fddd26b49a35b21",
+                "sha256:ee27d9dec1f249114048aa7c2f6ce081221636a3f9f01b8bd4c761942d6fe66c",
+                "sha256:4783f52b3e589a4f635017a139ca8da8c6dcba6b09b6fb2d7677b31ab5ce05c2",
+                "sha256:0aba61e142296ce1e4cfc5bc45ddc58dce4f1e3ec403adb04bff440b211c244d"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-27T12:30:57.669138072Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:8e2fae008f50190d89441e0ed831b2e04202c70dc78d705ca81a97736b1eb7c1",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "oibyuw3wpxy7abnjjntqyihdg",
+                    "CreatedAt": "2026-11-27T20:30:58.930564232+08:00"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:26de596efb9a98199961402e3a5669d65b21045c411f89bd0635dfb6fbe2d9d6",
+        "RepoTags": [
+            "sci-fight-tests:dev"
+        ],
+        "RepoDigests": [
+            "sci-fight-tests@sha256:26de596efb9a98199961402e3a5669d65b21045c411f89bd0635dfb6fbe2d9d6"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-27T20:25:30.55630781+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "WorkingDir": "/tests",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 2678602306,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:369ede38a92da8cd72a76f15f37e496def401830f3c8b7d39c0c7695682a51ce",
+                "sha256:e58bd718909ec9c0736219de646985cd3145a78103c9d6ad442995c4b95fdc64",
+                "sha256:cca0c6a0706f2e9799e8b663b3a4b2b0cee655462f3000f861446802e94ee738",
+                "sha256:cd3154fdb4e6037774994de1a802fb50daaeee7a4583c65ff107f2a847e17368",
+                "sha256:5f30fc83b1c1b1973319fcc12efd9170700cc481fa3b0e082cab8b634af35630",
+                "sha256:a701aa6b13638cf9bbb381cf3e496ff92d14f68f50ebdd5bca6b111a9d64e3c4"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-27T12:25:30.870144443Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:26de596efb9a98199961402e3a5669d65b21045c411f89bd0635dfb6fbe2d9d6",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "aahlzc5wtrc4udvb77wshnbge",
+                    "CreatedAt": "2026-11-27T20:25:30.924790614+08:00"
+                }
+            ]
+        }
+    }
+]

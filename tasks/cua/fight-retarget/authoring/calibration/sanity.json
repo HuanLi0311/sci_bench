@@ -1,0 +1,56 @@
+[
+  {
+    "probe": "oracle",
+    "reward": 1,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-oracle"
+  },
+  {
+    "probe": "nop",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-nop"
+  },
+  {
+    "probe": "render-substitution",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-render-substitution"
+  },
+  {
+    "probe": "malformed-image",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-malformed-image"
+  },
+  {
+    "probe": "floating-feet",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-floating-feet"
+  },
+  {
+    "probe": "static-action",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-static-action"
+  },
+  {
+    "probe": "camera-away",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123141Z-final-camera-away"
+  },
+  {
+    "probe": "fixture-corrupt",
+    "reward": null,
+    "exit_code": 1,
+    "evidence": "authoring/runs/20261127T123141Z-final-fixture-corrupt"
+  },
+  {
+    "probe": "metrics-omitted",
+    "reward": null,
+    "exit_code": 1,
+    "evidence": "authoring/runs/20261127T123141Z-final-metrics-omitted"
+  }
+]

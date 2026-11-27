@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!start-desktop.sh
+!entrypoint.sh
+!materials/
+!materials/**
+**/__pycache__/
+**/*.pyc
+**/*.blend1
+**/*.inspect.ndjson

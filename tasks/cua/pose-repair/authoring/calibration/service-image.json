@@ -1,0 +1,57 @@
+[
+    {
+        "Id": "sha256:84dc2ae010cf1f7e880cf5426ea389a9b12b1a1b833f6d7cb28b98fb961feb80",
+        "RepoTags": [
+            "sci-pose-service:dev"
+        ],
+        "RepoDigests": [
+            "sci-pose-service@sha256:84dc2ae010cf1f7e880cf5426ea389a9b12b1a1b833f6d7cb28b98fb961feb80"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-27T19:52:41.361775521+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive"
+            ],
+            "Cmd": [
+                "node",
+                "server.cjs"
+            ],
+            "WorkingDir": "/srv",
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 248889205,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:369ede38a92da8cd72a76f15f37e496def401830f3c8b7d39c0c7695682a51ce",
+                "sha256:6434e59d869dc98e838ad7afc693a3097075c62144013681280c103865df0151",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:bf3ca9b4d2e19d0a9abbe09af1c79696041e4932f9639506c6a728ee0b08b7a9",
+                "sha256:29871486574b79f0b486dd95ac4ea4da603e4fc0f9147332948e2cb7b29a59e2"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-27T12:14:54.348604214Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:84dc2ae010cf1f7e880cf5426ea389a9b12b1a1b833f6d7cb28b98fb961feb80",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "ufmp5y8wconarxt0ubsyk6zcg",
+                    "CreatedAt": "2026-11-27T20:14:54.387343302+08:00"
+                }
+            ]
+        }
+    }
+]

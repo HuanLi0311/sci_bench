@@ -1,0 +1,169 @@
+{
+  "task": "fight-retarget",
+  "kind": "metrics-omitted",
+  "validation": "direct Docker",
+  "reward": null,
+  "verifier_exit_code": 1,
+  "agent_exit_code": 0,
+  "model_steps": 0,
+  "gui_compliant": null,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "sci-fight-env:dev",
+        "/bin/true"
+      ],
+      "exit_code": 0,
+      "seconds": 0.4713312789990596,
+      "stdout": "agent.stdout.txt",
+      "stderr": "agent.stderr.txt"
+    },
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "--pids-limit",
+        "256",
+        "-v",
+        "/mnt/c/Users/GGB/Documents/Codex/2026-11-27/https-github-com-huanli0311-sci-bench/work/sci_bench/tasks/cua/fight-retarget/authoring/runs/20261127T123141Z-final-metrics-omitted/submission:/app/out:ro",
+        "-v",
+        "/mnt/c/Users/GGB/Documents/Codex/2026-11-27/https-github-com-huanli0311-sci-bench/work/sci_bench/tasks/cua/fight-retarget/authoring/runs/20261127T123141Z-final-metrics-omitted/verifier:/logs/verifier",
+        "sci-fight-tests:dev",
+        "bash",
+        "-c",
+        "echo pass > /tests/check_scene.py; echo 1 > /logs/verifier/reward.txt; exec bash /tests/test.sh"
+      ],
+      "exit_code": 1,
+      "seconds": 1.6615984449999814,
+      "stdout": "verifier.stdout.txt",
+      "stderr": "verifier.stderr.txt"
+    }
+  ],
+  "finished_at": "2026-11-27T12:36:13.068349+00:00",
+  "grader_source": {
+    ".dockerignore": {
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "bytes": 19
+    },
+    "Dockerfile": {
+      "sha256": "ee2b9e52f547ad8f544622c2e37ff09717c6a8619d6ad22fccfc9c06eded6d8e",
+      "bytes": 1168
+    },
+    "check_fbx.py": {
+      "sha256": "025d5cbc2df0740732b3d4c2f36270fb101f0a120a7a51ac72d2e6c40f5427d1",
+      "bytes": 501
+    },
+    "check_scene.py": {
+      "sha256": "e1e6679cb4e363d11d3c9eb77cc41ef544ae41ce6d8779e08b4224be905228a7",
+      "bytes": 7020
+    },
+    "grade.py": {
+      "sha256": "91940cb4fa037561c603bda76d7617ed0c850be52c9e7734f3d5b7b95ea16ef8",
+      "bytes": 9875
+    },
+    "spec.json": {
+      "sha256": "260c11429b643793c0c88851dcd9b2e9c1cf6eb46cd162f37c8b7c66c6b928bd",
+      "bytes": 3238
+    },
+    "test.sh": {
+      "sha256": "df27fe2c157388b02db6520647886bae406e95f4cf259e60b990e41eb331fe00",
+      "bytes": 984
+    }
+  },
+  "solution_source": {
+    "fight.blend": {
+      "sha256": "c65fafb383021b9a12130bfaed489cb5785b9beea0d8f624985141e4fda3ee8c",
+      "bytes": 11094340
+    },
+    "fight_left.fbx": {
+      "sha256": "ae91bbeb27e2eedbe63a06afea9e22a25a16e2961973477edf0f730acbd5eeed",
+      "bytes": 990668
+    },
+    "fight_right.fbx": {
+      "sha256": "4ac115700522c85c5f83caaa890e425432168305dc457e62dd7f91b33891bab5",
+      "bytes": 990572
+    },
+    "manifest.json": {
+      "sha256": "4cd8956fa40139da322b5ed56d44e21d8ee6603caced35aba6f15c48ffaf9cf9",
+      "bytes": 961
+    },
+    "playblast.mp4": {
+      "sha256": "25c5eb0c7c96540f277dc712dba8e3db0ead3030cc07d1cfc940262112bf51b8",
+      "bytes": 471199
+    },
+    "render_key_01.png": {
+      "sha256": "2ea377bf8479efbb4ca4cd5ae9a6a5cd72a4d9e1732f623bde1474e6897ff346",
+      "bytes": 796713
+    },
+    "render_key_02.png": {
+      "sha256": "34d29744c169435c85c58a3dd22cd3c7711fa56606f4a138363e5b6a43493040",
+      "bytes": 798034
+    },
+    "render_key_03.png": {
+      "sha256": "511db8e9bac2691e7d532b7f5f9be14f6af09223aeceacb43b8dd9b19bdc811e",
+      "bytes": 805905
+    },
+    "render_key_04.png": {
+      "sha256": "c864fd12b3a2ae4a9564e8bbd4553f4ea3e42f5a31e8a1eb29ebf95a71c62f7f",
+      "bytes": 800118
+    },
+    "solve.sh": {
+      "sha256": "41dfbf14956ea4b49ca133c880e889f13f73951d79fd110a5d4d500fcc245e6e",
+      "bytes": 317
+    }
+  },
+  "submission": {
+    "fight.blend": {
+      "sha256": "c65fafb383021b9a12130bfaed489cb5785b9beea0d8f624985141e4fda3ee8c",
+      "bytes": 11094340
+    },
+    "fight_left.fbx": {
+      "sha256": "ae91bbeb27e2eedbe63a06afea9e22a25a16e2961973477edf0f730acbd5eeed",
+      "bytes": 990668
+    },
+    "fight_right.fbx": {
+      "sha256": "4ac115700522c85c5f83caaa890e425432168305dc457e62dd7f91b33891bab5",
+      "bytes": 990572
+    },
+    "manifest.json": {
+      "sha256": "4cd8956fa40139da322b5ed56d44e21d8ee6603caced35aba6f15c48ffaf9cf9",
+      "bytes": 961
+    },
+    "playblast.mp4": {
+      "sha256": "25c5eb0c7c96540f277dc712dba8e3db0ead3030cc07d1cfc940262112bf51b8",
+      "bytes": 471199
+    },
+    "render_key_01.png": {
+      "sha256": "2ea377bf8479efbb4ca4cd5ae9a6a5cd72a4d9e1732f623bde1474e6897ff346",
+      "bytes": 796713
+    },
+    "render_key_02.png": {
+      "sha256": "34d29744c169435c85c58a3dd22cd3c7711fa56606f4a138363e5b6a43493040",
+      "bytes": 798034
+    },
+    "render_key_03.png": {
+      "sha256": "511db8e9bac2691e7d532b7f5f9be14f6af09223aeceacb43b8dd9b19bdc811e",
+      "bytes": 805905
+    },
+    "render_key_04.png": {
+      "sha256": "c864fd12b3a2ae4a9564e8bbd4553f4ea3e42f5a31e8a1eb29ebf95a71c62f7f",
+      "bytes": 800118
+    }
+  },
+  "images": {
+    "env": "sha256:8e2fae008f50190d89441e0ed831b2e04202c70dc78d705ca81a97736b1eb7c1",
+    "tests": "sha256:26de596efb9a98199961402e3a5669d65b21045c411f89bd0635dfb6fbe2d9d6"
+  }
+}

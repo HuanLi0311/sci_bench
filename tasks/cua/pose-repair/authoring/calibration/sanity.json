@@ -1,0 +1,62 @@
+[
+  {
+    "probe": "oracle",
+    "reward": 1,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-oracle"
+  },
+  {
+    "probe": "nop",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-nop"
+  },
+  {
+    "probe": "zero-controls",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-zero-controls"
+  },
+  {
+    "probe": "nan-controls",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-nan-controls"
+  },
+  {
+    "probe": "boolean-controls",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-boolean-controls"
+  },
+  {
+    "probe": "duplicate-json",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-duplicate-json"
+  },
+  {
+    "probe": "wrong-case",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-wrong-case"
+  },
+  {
+    "probe": "over-budget",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-over-budget"
+  },
+  {
+    "probe": "private-route",
+    "reward": 0,
+    "exit_code": 0,
+    "evidence": "authoring/runs/20261127T123213Z-final-private-route"
+  },
+  {
+    "probe": "fixture-corrupt",
+    "reward": null,
+    "exit_code": 1,
+    "evidence": "authoring/runs/20261127T123213Z-final-fixture-corrupt"
+  }
+]

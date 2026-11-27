@@ -1,0 +1,55 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 978B 0.1s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 147B 0.0s done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/8] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#5 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.0s done
+#5 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 888B 0.1s done
+#4 DONE 0.2s
+
+#6 [2/8] RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g; s|http://security.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g' /etc/apt/sources.list.d/ubuntu.sources && apt-get update && apt-get install -y --no-install-recommends python3 curl xvfb xfce4 dbus-x11 x11vnc imagemagick webp && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/8] WORKDIR /app
+#7 CACHED
+
+#8 [5/8] COPY web.cjs /app/web.cjs
+#8 CACHED
+
+#9 [4/8] COPY materials/ /app/materials/
+#9 CACHED
+
+#10 [6/8] COPY start-desktop.sh /usr/local/bin/start-desktop
+#10 CACHED
+
+#11 [7/8] COPY entrypoint.sh /usr/local/bin/task-entrypoint
+#11 CACHED
+
+#12 [8/8] RUN mkdir /app/out && chmod 755 /usr/local/bin/start-desktop /usr/local/bin/task-entrypoint
+#12 CACHED
+
+#13 exporting to image
+#13 exporting layers done
+#13 exporting manifest sha256:daf0890b84f42a8c1c38cc679cb86cc08c3a44cadf5f8183087b408c3d4061ec done
+#13 exporting config sha256:a7cd7a05fa6017221bb3d408892b8912cca1376f581759b25ac492d32457fefe done
+#13 exporting attestation manifest sha256:990e3239e64418ee753fc14f1cf2bfdb2e54bbab2ee74328d37919a0b9ccc6aa 0.0s done
+#13 exporting manifest list sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf
+#13 exporting manifest list sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf 0.0s done
+#13 naming to docker.io/library/sci-pose-env:dev done
+#13 unpacking to docker.io/library/sci-pose-env:dev 0.0s done
+#13 DONE 0.1s

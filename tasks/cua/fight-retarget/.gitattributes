@@ -1,0 +1,10 @@
+* -text
+*.sh text eol=lf
+*.py text eol=lf
+*.cjs text eol=lf
+*.mjs text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.blend binary
+*.fbx binary
+*.mp4 binary

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tests/grade.py", line 115, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/tests/grade.py", line 52, in main
+    if not (work/'scene.json').is_file():raise RuntimeError('successful trusted extractor omitted scene metrics')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: successful trusted extractor omitted scene metrics

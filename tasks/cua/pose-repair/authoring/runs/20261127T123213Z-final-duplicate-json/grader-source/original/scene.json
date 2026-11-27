@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "parents": [
+    -1,
+    0,
+    1,
+    2,
+    2,
+    4,
+    2,
+    6
+  ],
+  "offsets": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0.24
+    ],
+    [
+      0,
+      0,
+      0.25
+    ],
+    [
+      0,
+      0,
+      0.2
+    ],
+    [
+      0.21,
+      0,
+      0.05
+    ],
+    [
+      0.33,
+      0,
+      0
+    ],
+    [
+      -0.21,
+      0,
+      0.05
+    ],
+    [
+      -0.33,
+      0,
+      0
+    ]
+  ],
+  "joint_names": [
+    "hips",
+    "spine",
+    "chest",
+    "neck",
+    "upper_arm.L",
+    "forearm.L",
+    "upper_arm.R",
+    "forearm.R"
+  ],
+  "observations": "3 views, 8 joints, centre and XYZ-axis endpoints; 192 scalar pixel coordinates",
+  "projection": {
+    "views": [
+      "front",
+      "side",
+      "oblique"
+    ],
+    "width": 1280,
+    "height": 720,
+    "scale_xy": 240,
+    "scale_z": 300,
+    "origin": [
+      640,
+      650
+    ]
+  }
+}

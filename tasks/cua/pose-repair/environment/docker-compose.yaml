@@ -1,0 +1,21 @@
+services:
+  main:
+    depends_on:
+      pose-service:
+        condition: service_healthy
+    networks: [benchmark]
+  pose-service:
+    build:
+      context: ${CONTEXT_DIR}/service
+    networks: [benchmark]
+    # Keep evidence in the service layer: docker cp/Harbor must see actual data.
+    # The agent has no filesystem or exec access to this service.
+    cap_drop: [ALL]
+    healthcheck:
+      test: [CMD, node, -e, "require('http').get('http://localhost:8090/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 2s
+      timeout: 5s
+      retries: 15
+networks:
+  benchmark:
+    internal: true

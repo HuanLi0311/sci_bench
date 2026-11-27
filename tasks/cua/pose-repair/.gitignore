@@ -1,0 +1,7 @@
+!environment/materials/*.blend
+!environment/materials/*.fbx
+!environment/materials/*.mp4
+!solution/*.fbx
+!solution/*.mp4
+!authoring/runs/**/*.jsonl
+!authoring/calibration/*.log

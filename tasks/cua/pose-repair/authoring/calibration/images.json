@@ -1,0 +1,136 @@
+[
+    {
+        "Id": "sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf",
+        "RepoTags": [
+            "sci-pose-env:dev"
+        ],
+        "RepoDigests": [
+            "sci-pose-env@sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-27T20:13:12.785909864+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "DISPLAY=:1",
+                "POSE_SERVICE=http://pose-service:8090"
+            ],
+            "Entrypoint": [
+                "/usr/local/bin/task-entrypoint"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "WorkingDir": "/app",
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 3800817241,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:073ec47a8c22dcaa4d6e5758799ccefe2f9bde943685830b1bf6fd2395f5eabc",
+                "sha256:85570f35ae658f9cfb062a02080076c165379f5638e7d2f6d4a33cbebfa32e19",
+                "sha256:87e98826f381a50d07336fe52145886cb0a3fe32533e273de1402d803f4cc9ae",
+                "sha256:3b8c665cf5391cb5da4ea67f1eb8afe8a6532682617f2ed075a57039c7ba7205",
+                "sha256:2bb24bf74db7b62bdaf3776f8b37ef038fa2245b80e1dbab82d85d04a2b92a53",
+                "sha256:9fb69c84ca7b2f97761b8eef177200bfb7b079da32c6446ed5aec81630af0467",
+                "sha256:3e4ccf6cf2d3c54b76eae15cf4041c56e9259fcba69da2194c23a6dee3e229ce",
+                "sha256:caa33d6ca2ddcab8594a01f678ce2184c35f3e0570645e4cd20f47ff93d7c722",
+                "sha256:839a06b6cc042948a430857cb5cbc7763ebf4a057801ed318d3f5b155a0edd4b",
+                "sha256:36372f9a3d3d302f74ab712c53d6f28ea27a1988cef6e2407be3250dd1f55742",
+                "sha256:0bc3337428ade24485b5a619acada7966b1ad05e2357589531c81f4d69e9a0b2"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-27T12:20:44.42975284Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:9b31924d7e1f7e66ac2e34558319a5591f78b4ea46e3e5aa1d08298f29032abf",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "zhyqk13rliwleya3knq512gk3",
+                    "CreatedAt": "2026-11-27T20:20:44.45149342+08:00"
+                }
+            ]
+        }
+    },
+    {
+        "Id": "sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499",
+        "RepoTags": [
+            "sci-pose-tests:dev"
+        ],
+        "RepoDigests": [
+            "sci-pose-tests@sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-11-27T20:15:35.221820174+08:00",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "PLAYWRIGHT_BROWSERS_PATH=/ms-playwright",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "Cmd": [
+                "sleep",
+                "infinity"
+            ],
+            "WorkingDir": "/tests",
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 3736083046,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:073ec47a8c22dcaa4d6e5758799ccefe2f9bde943685830b1bf6fd2395f5eabc",
+                "sha256:85570f35ae658f9cfb062a02080076c165379f5638e7d2f6d4a33cbebfa32e19",
+                "sha256:87e98826f381a50d07336fe52145886cb0a3fe32533e273de1402d803f4cc9ae",
+                "sha256:3b8c665cf5391cb5da4ea67f1eb8afe8a6532682617f2ed075a57039c7ba7205",
+                "sha256:f0ade402610b5ccfe706d1d31e8a9818cf973927957ec57b2a330d19823ddb16",
+                "sha256:d06c1fc35074044b11d9e91da781f1d8f8ae7286b2a288d261c029b2f0a53327",
+                "sha256:a0534cdb5fa86ce556d70fefa24036467b849f9496dc0c3cfcd6509905d788a4",
+                "sha256:17d937bdcf2d5718944cc8e4f4b8d9a3a6c1be201e8154f9fbfa4d0f7651db24"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-11-27T12:15:37.047095641Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:fbc8e8fe451d909f27ac7a6044ab8b25d2b7934663dad76eb3d86ef17aefc499",
+            "size": 856
+        },
+        "Identity": {
+            "Build": [
+                {
+                    "Ref": "09we580a16rwidqog68jmohr3",
+                    "CreatedAt": "2026-11-27T20:15:37.540713561+08:00"
+                }
+            ]
+        }
+    }
+]

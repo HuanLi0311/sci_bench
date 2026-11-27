@@ -1,0 +1,1 @@
+{"reward": 0, "checks": [{"id": "submission", "level": "must", "detail": "missing, symlink or oversized: /app/out/controls_case_a.json", "pass": false}]}

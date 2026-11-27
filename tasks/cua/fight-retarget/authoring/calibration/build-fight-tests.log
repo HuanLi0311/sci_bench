@@ -1,0 +1,47 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.21kB 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04@sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 59B 0.0s done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/ubuntu:24.04@sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b
+#4 resolve docker.io/library/ubuntu:24.04@sha256:562111b88caa79c71391c0c4d3c2114a7d5c35915c20561fd893cb1e07929e6b 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 10.10kB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/6] RUN sed -i 's|http://archive.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g; s|http://security.ubuntu.com/ubuntu/|http://mirrors.tuna.tsinghua.edu.cn/ubuntu/|g' /etc/apt/sources.list.d/ubuntu.sources && apt-get update && apt-get install -y --no-install-recommends     ca-certificates curl xz-utils libx11-6 libxi6 libxxf86vm1 libxfixes3 libxrender1     libgl1 libegl1 libxkbcommon0 libsm6 python3 python3-numpy python3-pil ffmpeg     && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/6] RUN curl -fL --retry 4 https://mirrors.ocf.berkeley.edu/blender/release/Blender4.2/blender-4.2.3-linux-x64.tar.xz -o /tmp/blender.tar.xz     && echo '3a64efd1982465395abab4259b4091d5c8c56054c7267e9633e4f702a71ea3f4  /tmp/blender.tar.xz' | sha256sum -c -     && tar -xJf /tmp/blender.tar.xz -C /opt && rm /tmp/blender.tar.xz     && ln -s /opt/blender-4.2.3-linux-x64/blender /usr/local/bin/blender
+#7 CACHED
+
+#8 [4/6] WORKDIR /tests
+#8 CACHED
+
+#9 [5/6] COPY . /tests
+#9 DONE 0.1s
+
+#10 [6/6] RUN mkdir -p /app/out /logs/verifier && chmod +x /tests/test.sh
+#10 DONE 0.3s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.2s done
+#11 exporting manifest sha256:4b89a056ee62d814a4cbc3a39eb8e8571f0b9f78e542f058dc317f7c0032602c 0.0s done
+#11 exporting config sha256:5f279836ec205e05ef1fc6446471997990c18d1fb18bbbf28bad1ef64138d532 0.0s done
+#11 exporting attestation manifest sha256:eccec3e8656a02c442f0fdad57b7a32395d8be93b5ccdee421bd041d9a600ac1 0.0s done
+#11 exporting manifest list sha256:26de596efb9a98199961402e3a5669d65b21045c411f89bd0635dfb6fbe2d9d6 0.0s done
+#11 naming to docker.io/library/sci-fight-tests:dev
+#11 naming to docker.io/library/sci-fight-tests:dev done
+#11 unpacking to docker.io/library/sci-fight-tests:dev 0.0s done
+#11 DONE 0.4s

@@ -1,0 +1,1 @@
+{"reward": 0, "checks": [{"id": "submission", "level": "must", "pass": false, "detail": "missing, symlink or oversized fight.blend"}]}

@@ -1,0 +1,6 @@
+start,contact,end,attacker,target,tolerance_frames
+53,65,77,left_hand.L,right_hand.L,2
+93,105,117,left_hand.R,right_hand.R,2
+133,145,157,left_hand.L,right_hand.L,2
+173,185,197,left_hand.R,right_chest,2
+215,235,253,left_foot.L,duck_no_contact,2

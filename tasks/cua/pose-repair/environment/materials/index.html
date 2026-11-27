@@ -1,0 +1,25 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Pose repair laboratory</title>
+<style>body{background:#111927;color:#e0e9f5;font:16px system-ui;max-width:1340px;margin:32px auto}h1{font-size:26px}canvas{background:#18253b;width:100%;border:1px solid #38506d}button,select,input{font:inherit;padding:8px}textarea{width:95%;background:#202e46;color:white;padding:12px;height:70px}p{color:#a8b9cd}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid img{width:100%}</style>
+<h1>Multiview pose repair</h1><p>Immutable avatar · 24 coupled controls · 1200 queries per case. Orange: target. Cyan: current. Axis markers encode orientation.</p>
+<select id="case"><option>a</option><option>b</option><option>c</option></select> <button id="query">Query controls</button> <span id="status"></span>
+<p>Controls JSON (24 values in [-1, 1])</p><textarea id="controls"></textarea><canvas id="view" width="1280" height="720"></canvas>
+<p>Targets: front / side / oblique</p><div class="grid"><img id="front"><img id="side"><img id="oblique"></div>
+<script>
+const el=id=>document.getElementById(id), gl=el('view').getContext('webgl2');
+if(!gl)throw Error('WebGL2 unavailable');
+const vert=`#version 300 es\nin vec3 position;uniform float angle;void main(){float x=cos(angle)*position.x-sin(angle)*position.y;gl_Position=vec4(x*.65,(position.z-.95)*.9,0,1);gl_PointSize=6.;}`;
+const frag=`#version 300 es\nprecision highp float;uniform vec4 color;out vec4 pixel;void main(){pixel=color;}`;
+function shader(type,text){const s=gl.createShader(type);gl.shaderSource(s,text);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
+const p=gl.createProgram();gl.attachShader(p,shader(gl.VERTEX_SHADER,vert));gl.attachShader(p,shader(gl.FRAGMENT_SHADER,frag));gl.linkProgram(p);gl.useProgram(p);
+const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);const a=gl.getAttribLocation(p,'position');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,3,gl.FLOAT,false,0,0);
+let targets,current,angle=.4,parents=[];
+const avatarReady=fetch('avatar.glb').then(r=>r.arrayBuffer()).then(buffer=>{const d=new DataView(buffer);if(d.getUint32(0,true)!==0x46546c67)throw Error('invalid avatar');const doc=JSON.parse(new TextDecoder().decode(new Uint8Array(buffer,20,d.getUint32(12,true))));parents=Array(8).fill(-1);doc.nodes.slice(0,8).forEach((n,i)=>(n.children||[]).forEach(j=>parents[j]=i));if(doc.skins[0].joints.length!==8)throw Error('invalid skeleton');});
+function decode(obs){const pts=[];for(let j=0;j<8;j++)for(let axis=0;axis<4;axis++){let i=j*8+axis*2;pts.push([(obs[i]-640)/240,(obs[64+i]-640)/240,(650-obs[i+1])/300]);}return pts;}
+function draw(obs,color){if(!obs)return;const pts=decode(obs),lines=[];for(let j=0;j<8;j++){if(parents[j]>=0)lines.push(...pts[j*4],...pts[parents[j]*4]);for(let axis=1;axis<4;axis++)lines.push(...pts[j*4],...pts[j*4+axis]);}gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(lines),gl.DYNAMIC_DRAW);gl.uniform1f(gl.getUniformLocation(p,'angle'),angle);gl.uniform4fv(gl.getUniformLocation(p,'color'),color);gl.drawArrays(gl.LINES,0,lines.length/3);}
+function render(){gl.clearColor(.06,.09,.15,1);gl.clear(gl.COLOR_BUFFER_BIT);draw(targets?.[el('case').value],[1,.48,.17,1]);draw(current,[.15,.85,.95,1]);}
+function images(){for(const v of ['front','side','oblique'])el(v).src=`target_case_${el('case').value}_${v}.png`;render();}
+el('controls').value=JSON.stringify(Array(24).fill(0));el('case').onchange=images;
+el('view').onpointermove=e=>{if(e.buttons){angle+=e.movementX*.01;render();}};
+el('query').onclick=async()=>{try{const r=await fetch('/api/query',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({case:el('case').value,controls:JSON.parse(el('controls').value)})});const d=await r.json();if(!r.ok)throw Error(d.error);current=d.observations;el('status').textContent=`Queries used: ${d.queries}`;render();}catch(e){el('status').textContent=e.message;}};
+Promise.all([avatarReady,fetch('/api/targets').then(r=>r.json())]).then(([,t])=>{targets=t;images();});
+</script></html>

@@ -1,0 +1,1 @@
+{"reward": 0, "checks": [{"id": "submission", "level": "must", "detail": "malformed JSON: /app/out/controls_case_c.json", "pass": false}]}

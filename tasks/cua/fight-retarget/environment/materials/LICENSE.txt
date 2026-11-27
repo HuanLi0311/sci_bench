@@ -1,0 +1,3 @@
+All benchmark-authored assets in this materials pack: CC0-1.0.
+Source: authoring scripts in HuanLi0311/sci_bench.
+No external model, texture, motion capture, HDRI or font.

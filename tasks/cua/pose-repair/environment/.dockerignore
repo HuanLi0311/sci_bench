@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!start-desktop.sh
+!entrypoint.sh
+!web.cjs
+!materials/
+!materials/**
+**/__pycache__/
+**/*.pyc

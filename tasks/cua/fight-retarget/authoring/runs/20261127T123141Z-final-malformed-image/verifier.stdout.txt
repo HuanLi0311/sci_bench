@@ -1,0 +1,1 @@
+{"reward": 0, "checks": [{"id": "submission", "level": "must", "pass": false, "detail": "submitted image unreadable: /app/out/render_key_01.png"}]}
