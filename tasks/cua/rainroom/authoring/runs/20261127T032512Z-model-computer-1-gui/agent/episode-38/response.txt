@@ -1,0 +1,1 @@
+{"analysis":"X scale correct.","plan":"Confirm scale.","action":{"type":"keypress","keys":["enter"]}}

@@ -1,0 +1,1 @@
+{"analysis":"Combined modifier sequence altered the original instead of duplicating. Undo transformations to restore seat.","plan":"Undo back-panel attempt.","action":{"type":"keypress","keys":["ctrl","z"]}}

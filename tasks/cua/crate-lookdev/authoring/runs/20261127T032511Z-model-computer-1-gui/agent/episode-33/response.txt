@@ -1,0 +1,1 @@
+{"analysis":"New cube ready.","plan":"Scale left panel in mesh space to 20 ×560 ×560 mm.","action":{"type":"keypress","keys":["Tab","s","x","0","period","0","1","Return","s","y","0","period","2","8","Return","s","z","0","period","2","8","Return"]}}
