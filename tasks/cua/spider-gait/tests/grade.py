@@ -359,7 +359,7 @@ def main():
         view_scores["error"] = str(exc)
     add("R18_render_authenticity", "critical", views_ok, view_scores)
     structure_ok = views_ok and all(np.isfinite(v) and v <= 0.60 for v in view_gradients.values())
-    add("R19_render_structure", "critical", structure_ok, view_gradients)
+    add("R_render_structure", "critical", structure_ok, view_gradients)
 
     must = [c for c in CHECKS if c["level"] == "must"]
     crit = [c for c in CHECKS if c["level"] == "critical"]
