@@ -1,5 +1,50 @@
 [
   {
+    "task": "crate-lookdev",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 15,
+    "negative_cases": 2,
+    "model_attempts": 15,
+    "model_records_valid": true
+  },
+  {
+    "task": "booth-clearance",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 22,
+    "negative_cases": 9,
+    "model_attempts": 2,
+    "model_records_valid": true
+  },
+  {
+    "task": "folding-chair",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 15,
+    "negative_cases": 3,
+    "model_attempts": 1,
+    "model_records_valid": true
+  },
+  {
+    "task": "rainroom",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 16,
+    "negative_cases": 4,
+    "model_attempts": 2,
+    "model_records_valid": true
+  },
+  {
+    "task": "toy-car",
+    "oracle": 1,
+    "nop": 0,
+    "checks": 16,
+    "negative_cases": 2,
+    "model_attempts": 1,
+    "model_records_valid": true
+  },
+  {
     "task": "spider-gait",
     "oracle": 1,
     "nop": 0,
