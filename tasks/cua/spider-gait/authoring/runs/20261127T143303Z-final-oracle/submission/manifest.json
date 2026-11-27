@@ -1,0 +1,61 @@
+{
+ "schemaVersion": 1,
+ "units": "meters",
+ "blenderVersion": "4.2.3 LTS",
+ "assets": [
+  {
+   "path": "textures/chitin_basecolor.png",
+   "role": "texture",
+   "source": "self-authored",
+   "license": "CC0-1.0",
+   "url": ""
+  }
+ ],
+ "renders": [
+  {
+   "file": "render_pose_01.png",
+   "camera": "cam_side",
+   "resolution": [
+    960,
+    540
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_pose_02.png",
+   "camera": "cam_side",
+   "resolution": [
+    960,
+    540
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_pose_03.png",
+   "camera": "cam_side",
+   "resolution": [
+    960,
+    540
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_pose_04.png",
+   "camera": "cam_side",
+   "resolution": [
+    960,
+    540
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_top.png",
+   "camera": "cam_top",
+   "resolution": [
+    960,
+    960
+   ],
+   "samples": 64
+  }
+ ]
+}

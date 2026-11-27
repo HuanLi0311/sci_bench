@@ -1,0 +1,18 @@
+/app/out:
+total 4452
+drwxr-xr-x 1 root root    4096 Nov 27 14:33 .
+drwxr-xr-x 1 root root    4096 Nov 27 09:19 ..
+-rwxr-xr-x 1 root root     876 Nov 27 14:33 manifest.json
+-rwxr-xr-x 1 root root  497928 Nov 27 14:33 render_pose_01.png
+-rwxr-xr-x 1 root root  502060 Nov 27 14:33 render_pose_02.png
+-rwxr-xr-x 1 root root  499606 Nov 27 14:33 render_pose_03.png
+-rwxr-xr-x 1 root root  502469 Nov 27 14:33 render_pose_04.png
+-rwxr-xr-x 1 root root  860526 Nov 27 14:33 render_top.png
+-rwxr-xr-x 1 root root 1666320 Nov 27 14:33 spider.blend
+drwxr-xr-x 2 root root    4096 Nov 27 14:33 textures
+
+/app/out/textures:
+total 468
+drwxr-xr-x 2 root root   4096 Nov 27 14:33 .
+drwxr-xr-x 1 root root   4096 Nov 27 14:33 ..
+-rwxr-xr-x 1 root root 470723 Nov 27 14:33 chitin_basecolor.png
