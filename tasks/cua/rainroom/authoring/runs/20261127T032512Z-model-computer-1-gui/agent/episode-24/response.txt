@@ -1,0 +1,1 @@
+{"analysis":"Only materials and out exist; previews unavailable. Will inspect PDF via available viewer.","plan":"Navigate spec folder.","action":{"type":"keypress","keys":["ctrl","l"]}}

@@ -1,0 +1,1 @@
+{"analysis":"Choose app file manager window.","plan":"Inspect app folder.","action":{"type":"click","x":589,"y":44}}

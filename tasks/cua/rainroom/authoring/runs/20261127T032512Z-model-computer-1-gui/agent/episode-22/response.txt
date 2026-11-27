@@ -1,0 +1,1 @@
+{"analysis":"Full plan confirms door centered on near wall, window on right. Need table preview.","plan":"Check previews again via file manager.","action":{"type":"click","x":595,"y":12}}
