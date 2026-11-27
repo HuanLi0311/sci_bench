@@ -230,7 +230,7 @@ def build_deck(graphic):
             for li, (x, y) in zip(poly.loop_indices, uv):
                 # The graphic is printed on the underside: flip U so the wordmark
                 # reads correctly when the board is seen from below.
-                uv_layer.data[li].uv = (1.0 - (x - X0) / DECK_L, 1.0 - (y + DECK_W / 2) / DECK_W)
+                uv_layer.data[li].uv = ((x - X0) / DECK_L, 1.0 - (y + DECK_W / 2) / DECK_W)
 
     ob = bpy.data.objects.new("deck", me)
     link(ob)
