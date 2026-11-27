@@ -1,0 +1,1 @@
+{"analysis":"Confirm name.","plan":"Duplicate via isolated chord.","action":{"type":"keypress","keys":["enter"]}}
