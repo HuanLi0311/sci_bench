@@ -1,0 +1,6 @@
+* -text
+# Preserve evidence/fixture bytes exactly; shell entrypoints must remain Linux LF.
+*.sh text eol=lf
+*.png binary
+*.pdf binary
+authoring/runs/** -text -diff

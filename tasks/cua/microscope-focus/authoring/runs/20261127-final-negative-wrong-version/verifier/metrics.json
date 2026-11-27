@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "reward": 0,
+  "checks": [
+    {
+      "id": "R01",
+      "level": "must",
+      "pass": false,
+      "detail": ""
+    }
+  ]
+}

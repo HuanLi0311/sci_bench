@@ -1,0 +1,6 @@
+{
+  "path": "submission/link",
+  "type": "symlink",
+  "target": "state.json",
+  "archive_note": "WSL special file omitted from portable archive/Git; actual run and rejection retained. Recreated by run_sanity.py."
+}

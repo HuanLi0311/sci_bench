@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tests/grade.py", line 136, in <module>
+    try:main()
+        ^^^^^^
+  File "/tests/grade.py", line 61, in main
+    assert fixtures['version']==1 and len(fixtures['assembly'])==5
+           ~~~~~~~~^^^^^^^^^^^
+KeyError: 'version'

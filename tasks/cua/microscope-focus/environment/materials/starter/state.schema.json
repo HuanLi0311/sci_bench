@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:microscope:state:1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "units",
+    "assembly",
+    "settings"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "units": {
+      "const": "mm"
+    },
+    "assembly": {
+      "type": "object",
+      "required": [
+        "body",
+        "tube",
+        "objective",
+        "eyepiece",
+        "stage"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "body": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          }
+        },
+        "tube": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          }
+        },
+        "objective": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          }
+        },
+        "eyepiece": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          }
+        },
+        "stage": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": -1000,
+            "maximum": 1000
+          }
+        }
+      }
+    },
+    "settings": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "sample",
+          "stageOffset",
+          "objectiveOffset",
+          "eyepieceOffset"
+        ],
+        "properties": {
+          "id": {
+            "enum": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          "sample": {
+            "enum": [
+              "sample_a.png",
+              "sample_b.png"
+            ]
+          },
+          "stageOffset": {
+            "type": "number",
+            "minimum": -10,
+            "maximum": 10
+          },
+          "objectiveOffset": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2
+          },
+          "eyepieceOffset": {
+            "type": "number",
+            "minimum": -5,
+            "maximum": 5
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ prints a table. Exits non-zero if any check fails. Docker must be available;
 runs inside WSL (`wsl.exe -e bash -lc 'python3 ...'`).
 """
 import json
+import ast
 import hashlib
 from pathlib import Path
 import os
@@ -16,6 +17,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NEGATIVE_CASES = {
+    "microscope-focus": {"wrong-sign", "static-optics", "frozen-focus", "fixed-sample",
+                         "nan", "bool", "duplicate-key", "wrong-version", "symlink"},
     "booth-clearance": {"secondary-render-substitution", "booth-moved-entrance-marker", "booth-product-scaled",
                         "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening",
                         "booth-camera-away", "booth-missing-secondary-color", "booth-hidden-secondary-color"},
@@ -225,7 +228,9 @@ def check_deliverables(t):
 
 def check_anticheat(t):
     g = open(os.path.join(t, "tests", "grade.py"), encoding="utf-8").read()
-    return ('"critical"' in g, "critical check present" if '"critical"' in g
+    present = any(isinstance(node, ast.Constant) and node.value == "critical"
+                  for node in ast.walk(ast.parse(g)))
+    return (present, "critical check present" if present
             else "no critical check")
 
 
@@ -259,6 +264,11 @@ def check_negative(t):
             if any("timed out" in str(c.get("detail", "")) for c in metrics["checks"]):
                 raise ValueError("timeout is not a rejected negative")
             decisive = {
+                **({"negative-wrong-sign": "R05", "negative-static-optics": "R13",
+                    "negative-frozen-focus": "R04", "negative-fixed-sample": "R14",
+                    "negative-nan": "R01", "negative-bool": "R01",
+                    "negative-duplicate-key": "R01", "negative-wrong-version": "R01",
+                    "negative-symlink": "R01"} if task.name == "microscope-focus" else {}),
                 "negative-secondary-render-substitution": "R_render_structure",
                 "negative-booth-moved-entrance-marker": "R05_entrance_clearance",
                 "negative-booth-product-scaled": "R_furniture_product_sizes",
@@ -283,7 +293,10 @@ def check_negative(t):
                 "negative-truck-dielectric": "R07_materials",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
-            if not any(c["id"] == "R01_open" and c["pass"] for c in metrics["checks"]):
+            contract_negative = task.name == "microscope-focus" and kind in {
+                "negative-nan", "negative-bool", "negative-duplicate-key", "negative-wrong-version", "negative-symlink"}
+            open_id = "R01" if task.name == "microscope-focus" else "R01_open"
+            if not contract_negative and not any(c["id"] == open_id and c["pass"] for c in metrics["checks"]):
                 raise ValueError("valid-scene mutation failed extraction; rejection is not attributable to the intended check")
             if "R_verifier_error" in failed or decisive.get(kind) not in failed:
                 raise ValueError("the intended rubric check did not reject the mutation")

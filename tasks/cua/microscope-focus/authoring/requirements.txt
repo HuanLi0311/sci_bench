@@ -1,0 +1,4 @@
+# Optional authoring only; never installed at verifier runtime.
+numpy==2.3.5
+Pillow==13.0.0
+reportlab==4.4.9
