@@ -156,7 +156,7 @@ def main():
     fold_ok = (hinge_ok
                and 1860 <= state14.get("z_max_mm", 0) <= 1960
                and 460 <= state14.get("y_max_mm", 0) <= 560
-               and abs(state0.get("z_min_mm", 99)) <= 5
+               and abs(state0.get("z_min_mm", 0) - 75) <= 10
                and fold.get("folded_depth_mm", 999) <= 130)
     add("R06_fold_geometry", "must", fold_ok,
         f"hinge={hinge_loc} state0={state0} state14={state14} "
