@@ -166,6 +166,41 @@
       "reward": 1,
       "outcome": "graded",
       "failed_checks": []
+    },
+    {
+      "task": "drawer-cabinet",
+      "kind": "negative-secondary-render-substitution",
+      "run": "drawer-cabinet/authoring/runs/20261127T175133Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R14_anticheat",
+        "R15_render_authenticity",
+        "R_render_structure"
+      ]
+    },
+    {
+      "task": "banner-stand",
+      "kind": "negative-banner-leg-unparented",
+      "run": "banner-stand/authoring/runs/20261127T175605Z-final-negative-banner-leg-unparented",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_dimensions",
+        "R03_parts",
+        "R04_canvas",
+        "R05_uv",
+        "R06_fold_geometry",
+        "R07_no_contact",
+        "R08_materials",
+        "R09_self_contained",
+        "R10_polys",
+        "R11_renders",
+        "R13_anticheat",
+        "R14_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
