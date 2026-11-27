@@ -71,10 +71,10 @@ def main():
     setup()
 
     set_hinge(14)
-    shot("cam_front", os.path.join(work, "render_front.png"), 1200, 1600)
-    shot("cam_three_quarter", os.path.join(work, "render_three_quarter.png"), 1600, 1200)
+    shot("cam_front", os.path.join(work, "render_front.png"), 600, 800)
+    shot("cam_three_quarter", os.path.join(work, "render_three_quarter.png"), 800, 600)
     set_hinge(0)
-    shot("cam_folded", os.path.join(work, "render_folded.png"), 1200, 1600)
+    shot("cam_folded", os.path.join(work, "render_folded.png"), 600, 800)
 
     img = bpy.data.images.get("banner_graphic")
     if img is None:
@@ -83,10 +83,10 @@ def main():
     if img is not None:
         checker(img)
         set_hinge(14)
-        shot("cam_front", os.path.join(work, "ac_graphic.png"), 1200, 1600)
+        shot("cam_front", os.path.join(work, "ac_graphic.png"), 600, 800)
 
     set_hinge(25)
-    shot("cam_three_quarter", os.path.join(work, "ac_hinge.png"), 1600, 1200)
+    shot("cam_three_quarter", os.path.join(work, "ac_hinge.png"), 800, 600)
 
 
 if __name__ == "__main__":
