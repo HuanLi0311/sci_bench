@@ -1,0 +1,1 @@
+{"analysis":"Side reference shows a boxy body approximately 85 mm tall, chassis immediately below, 60 mm wheels, a small raised rectangular door, and a nearly transparent rectangular cabin.","plan":"Inspect front and top views, then adjust body height and build matching simple forms.","action":{"type":"click","x":954,"y":42}}

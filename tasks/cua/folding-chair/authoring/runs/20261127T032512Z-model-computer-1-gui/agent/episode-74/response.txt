@@ -1,0 +1,1 @@
+{"analysis":"Duplicate rear right for left side.","plan":"Mirror location across X.","action":{"type":"keypress","keys":["shift","d"]}}

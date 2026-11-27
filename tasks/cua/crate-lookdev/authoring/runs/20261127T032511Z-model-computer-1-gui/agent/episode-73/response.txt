@@ -1,0 +1,1 @@
+{"analysis":"Switching editor.","plan":"Open drawing image in image editor.","action":{"type":"wait"}}

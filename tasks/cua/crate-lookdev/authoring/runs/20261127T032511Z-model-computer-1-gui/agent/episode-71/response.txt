@@ -1,0 +1,1 @@
+{"analysis":"Framing command sent.","plan":"Inspect the enlarged shell.","action":{"type":"wait"}}

@@ -1,0 +1,1 @@
+{"analysis":"Position rear left at -.278.","plan":"Move and name.","action":{"type":"keypress","keys":["x","minus","period","5","5","6","enter","F2"]}}

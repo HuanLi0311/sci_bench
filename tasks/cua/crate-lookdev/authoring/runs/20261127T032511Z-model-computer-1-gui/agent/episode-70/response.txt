@@ -1,0 +1,1 @@
+{"analysis":"Saved shell; zooming to model.","plan":"Frame selected.","action":{"type":"keypress","keys":["KP_Decimal"]}}

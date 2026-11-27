@@ -1,0 +1,1 @@
+{"analysis":"Supplied pack includes photos and a licence file.","plan":"View the orthographic photos.","action":{"type":"double_click","x":1042,"y":469}}

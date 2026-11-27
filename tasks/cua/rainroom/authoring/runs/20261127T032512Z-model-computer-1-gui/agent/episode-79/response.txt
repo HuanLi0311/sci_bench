@@ -1,0 +1,1 @@
+{"analysis":"Save dialog remains open; first click committed filename only.","plan":"Confirm actual save.","action":{"type":"click","x":1436,"y":883}}

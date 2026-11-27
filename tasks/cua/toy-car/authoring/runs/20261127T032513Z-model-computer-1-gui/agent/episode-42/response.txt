@@ -1,0 +1,1 @@
+{"analysis":"Four orthographic reference images are available.","plan":"Open the side reference to identify the target profile.","action":{"type":"double_click","x":1054,"y":468}}

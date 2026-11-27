@@ -1,0 +1,1 @@
+{"analysis":"Image browser ready.","plan":"Load drawing by absolute path.","action":{"type":"click","x":936,"y":887}}

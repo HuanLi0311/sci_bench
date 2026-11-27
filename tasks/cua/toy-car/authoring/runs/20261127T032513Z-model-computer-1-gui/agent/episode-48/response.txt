@@ -1,0 +1,1 @@
+{"analysis":"Location bar selected.","plan":"Open drawing directory.","action":{"type":"type","text":"/app/materials/drawings/"}}
