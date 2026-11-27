@@ -98,9 +98,9 @@ def draw_three_views(path):
     c.text(40, 26, "DRAWER CABINET - THREE VIEWS (MM)", 3, INK)
     c.text(40, 60, "1000 x 450 x 900. PANELS 18. FIVE DRAWERS TRAVEL 420. ONE DOOR 0-110 DEG.", 1, INK)
     s = 1.05
-    front_view(c, 520, 560, s)
-    side_view(c, 1300, 560, s * 0.85)
-    door_detail(c, 1300, 900, s * 0.55)
+    front_view(c, 560, 1030, 0.80)
+    side_view(c, 1330, 1030, 0.58)
+    door_detail(c, 1330, 300, 0.55)
     c.text(40, 1050, "ORIGIN AT FLOOR CENTRE. +Y IS THE FRONT. DRAWERS SLIDE ALONG +Y, DOOR SWINGS ABOUT A VERTICAL AXIS.", 1, INK)
     c.text(40, 1074, "DRAWER FRONTS 440 x 150, TRAY DEPTH 400, TRAY PANELS 18. HANDLES: STEEL TUBES, 14 DIA.", 1, INK)
     with open(path, "wb") as fh:
