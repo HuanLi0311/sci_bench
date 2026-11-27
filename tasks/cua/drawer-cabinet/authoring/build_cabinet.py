@@ -23,7 +23,7 @@ W, D, H, T = 1.000, 0.450, 0.900, 0.018
 FRONT_Y = D / 2
 BAY_Z0, BAY_Z1 = 0.130, 0.880
 BAY_H = (BAY_Z1 - BAY_Z0) / 5
-DRAWER_W = 0.460
+DRAWER_W = 0.440
 TRAY_D = 0.400
 TRAVEL = 0.420
 PLINTH = 0.060
@@ -271,11 +271,11 @@ def build_stage(day_collection, night_collection):
     night_collection = bpy.data.collections.new("light_night")
     bpy.context.scene.collection.children.link(day_collection)
     bpy.context.scene.collection.children.link(night_collection)
-    area("light_key", day_collection, (1.1, -1.2, 1.5), 120.0, 1.2, (1.0, 0.97, 0.92))
-    area("light_fill", day_collection, (-1.3, -0.6, 0.9), 45.0, 1.5, (0.86, 0.91, 1.0))
-    area("light_rim", day_collection, (0.2, 1.2, 1.2), 55.0, 1.0, (1.0, 0.95, 0.88))
-    area("light_night_key", night_collection, (0.55, -0.85, 1.2), 22.0, 0.6, (1.0, 0.72, 0.42))
-    area("light_night_spot", night_collection, (-0.6, -0.9, 0.7), 8.0, 0.5, (0.55, 0.66, 1.0))
+    area("light_key", day_collection, (1.1, 1.4, 1.6), 120.0, 1.2, (1.0, 0.97, 0.92))
+    area("light_fill", day_collection, (-1.3, 1.0, 0.9), 45.0, 1.5, (0.86, 0.91, 1.0))
+    area("light_rim", day_collection, (0.2, -1.2, 1.3), 55.0, 1.0, (1.0, 0.95, 0.88))
+    area("light_night_key", night_collection, (0.55, 1.1, 1.25), 22.0, 0.6, (1.0, 0.72, 0.42))
+    area("light_night_spot", night_collection, (-0.6, 1.0, 0.7), 8.0, 0.5, (0.55, 0.66, 1.0))
 
     def camera(name, loc, target, lens, ortho=None):
         cam = bpy.data.cameras.new(name)
@@ -289,8 +289,8 @@ def build_stage(day_collection, night_collection):
         o.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
         return o
 
-    camera("cam_front34", (1.15, -1.05, 1.15), (0, 0, 0.45), 35.0)
-    camera("cam_detail", (0.05, -0.78, 0.62), (-0.22, 0.42, 0.355), 50.0)
+    camera("cam_front34", (1.15, 1.05, 1.15), (0, 0, 0.45), 35.0)
+    camera("cam_detail", (0.02, 1.02, 0.66), (-0.24, 0.46, 0.355), 50.0)
 
 
 def set_state(drawers, slides, hinge, open_drawer=None, amount=0.0, door_deg=0.0):
