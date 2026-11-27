@@ -1,0 +1,1 @@
+{"analysis":"Selected.","plan":"Browse previews.","action":{"type":"type","text":"/app/material-previews/"}}

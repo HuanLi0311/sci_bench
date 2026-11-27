@@ -1,0 +1,1 @@
+{"analysis":"Preview folder path.","plan":"Browse.","action":{"type":"keypress","keys":["ctrl","a"]}}

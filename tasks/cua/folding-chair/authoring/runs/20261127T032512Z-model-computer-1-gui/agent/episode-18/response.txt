@@ -1,0 +1,1 @@
+{"analysis":"Preview path entered.","plan":"Open directory.","action":{"type":"keypress","keys":["enter"]}}

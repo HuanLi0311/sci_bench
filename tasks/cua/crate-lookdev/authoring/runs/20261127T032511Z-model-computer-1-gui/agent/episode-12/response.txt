@@ -1,0 +1,1 @@
+{"analysis":"Blender default scene visible.","plan":"Dismiss splash and reshape the default cube into front panel in edit mode so scale stays applied.","action":{"type":"click","x":1274,"y":824}}

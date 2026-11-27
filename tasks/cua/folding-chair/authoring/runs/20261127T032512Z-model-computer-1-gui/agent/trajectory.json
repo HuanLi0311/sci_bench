@@ -928,12 +928,340 @@
         "cached_tokens": 33920,
         "cost_usd": 0.010082000000000008
       }
+    },
+    {
+      "step_id": 16,
+      "timestamp": "2026-11-27T03:27:43.942029+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Table path ready.\nPlan: Open.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_14_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_14_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep14.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 39333,
+        "completion_tokens": 26,
+        "cached_tokens": 36352,
+        "cost_usd": 0.00985720000000001
+      }
+    },
+    {
+      "step_id": 17,
+      "timestamp": "2026-11-27T03:27:54.833007+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: No spreadsheet app; use supplied previews.\nPlan: Cancel and browse preview directory.",
+      "reasoning_content": "**Checking preview access**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_15_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "click",
+            "x": 1101,
+            "y": 781,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_15_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep15.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 41815,
+        "completion_tokens": 63,
+        "cached_tokens": 38784,
+        "cost_usd": 0.010570400000000008
+      }
+    },
+    {
+      "step_id": 18,
+      "timestamp": "2026-11-27T03:28:02.536739+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Preview folder path.\nPlan: Browse.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_16_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "ctrl",
+              "a"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_16_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep16.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 44309,
+        "completion_tokens": 28,
+        "cached_tokens": 41216,
+        "cost_usd": 0.010587600000000003
+      }
+    },
+    {
+      "step_id": 19,
+      "timestamp": "2026-11-27T03:28:11.428859+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Selected.\nPlan: Browse previews.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_17_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "/app/material-previews/",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_17_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep17.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 46793,
+        "completion_tokens": 29,
+        "cached_tokens": 43776,
+        "cost_usd": 0.010701600000000006
+      }
+    },
+    {
+      "step_id": 20,
+      "timestamp": "2026-11-27T03:28:20.264173+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Preview path entered.\nPlan: Open directory.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_18_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_18_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep18.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 49278,
+        "completion_tokens": 45,
+        "cached_tokens": 46336,
+        "cost_usd": 0.010967599999999994
+      }
     }
   ],
   "final_metrics": {
-    "total_prompt_tokens": 289486,
-    "total_completion_tokens": 667,
-    "total_cached_tokens": 230528,
-    "total_cost_usd": 0.14763880000000001
+    "total_prompt_tokens": 511014,
+    "total_completion_tokens": 858,
+    "total_cached_tokens": 436992,
+    "total_cost_usd": 0.20032320000000003
   }
 }

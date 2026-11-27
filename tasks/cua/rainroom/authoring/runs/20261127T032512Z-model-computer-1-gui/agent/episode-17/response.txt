@@ -1,0 +1,1 @@
+{"analysis":"Blender splash still open.","plan":"Dismiss then use image editor.","action":{"type":"click","x":634,"y":821}}

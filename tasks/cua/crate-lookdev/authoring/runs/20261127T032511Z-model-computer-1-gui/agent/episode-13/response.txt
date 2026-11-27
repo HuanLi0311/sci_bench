@@ -1,0 +1,1 @@
+{"analysis":"Starting front panel from the cube; body spans z=0.02–0.58 with lid at 0.58–0.60.","plan":"Scale mesh to 800 ×20 ×560 mm and bevel edges.","action":{"type":"keypress","keys":["tab"]}}

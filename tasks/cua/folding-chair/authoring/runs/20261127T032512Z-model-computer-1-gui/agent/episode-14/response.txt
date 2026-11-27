@@ -1,0 +1,1 @@
+{"analysis":"Table path ready.","plan":"Open.","action":{"type":"keypress","keys":["enter"]}}

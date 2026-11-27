@@ -1,0 +1,1 @@
+{"analysis":"No spreadsheet app; use supplied previews.","plan":"Cancel and browse preview directory.","action":{"type":"click","x":1101,"y":781}}
