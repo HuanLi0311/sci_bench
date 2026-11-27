@@ -151,6 +151,16 @@
         "R15_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "negative-truck-dielectric",
+      "run": "skateboard-prop/authoring/runs/20261127T145105Z-final-negative-truck-dielectric",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R07_materials"
+      ]
     }
   ]
 }
