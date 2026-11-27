@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-27T18:32:05.177731+00:00",
+  "checked_utc": "2026-11-27T18:32:48.850020+00:00",
   "gates": {
     "oracle": [
       true,
@@ -14,8 +14,8 @@
       "all 4 prepared negative cases rejected by the current verifier"
     ],
     "models": [
-      false,
-      "[Errno 2] No such file or directory: '/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/model-attempts.json'"
+      true,
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   },
   "grader_source": {

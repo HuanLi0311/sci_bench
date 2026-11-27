@@ -1,0 +1,73 @@
+{
+  "checked_utc": "2026-11-27T18:32:48.850020+00:00",
+  "gates": {
+    "oracle": [
+      true,
+      "20261127T173916Z-final-oracle"
+    ],
+    "nop": [
+      true,
+      "20261127T174206Z-final-nop"
+    ],
+    "negatives": [
+      true,
+      "all 4 prepared negative cases rejected by the current verifier"
+    ],
+    "models": [
+      true,
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
+    ]
+  },
+  "grader_source": {
+    "check_scene.py": "870fa78292d7fc3674400a737e60852de3f27aec193503a7bcfe7985eede99d7",
+    "Dockerfile": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+    "grade.py": "9a296901c6729f1ddda9a04e0f7f86446cf60889f50aab578b5bd99fd7442c39",
+    "render_compare.py": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+    "rerender.py": "08ba0d23eae3941a5d94431f9268f1faa9b7c1c6196bf03333254ed6fec29104",
+    "test.sh": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c"
+  },
+  "records": [
+    {
+      "kind": "oracle",
+      "run": "20261127T173916Z-final-oracle",
+      "reward": 1,
+      "passed_checks": 15,
+      "check_count": 15
+    },
+    {
+      "kind": "nop",
+      "run": "20261127T174206Z-final-nop",
+      "reward": 0,
+      "passed_checks": 0,
+      "check_count": 15
+    },
+    {
+      "kind": "negative-banner-canvas-cropped",
+      "run": "20261127T175618Z-final-negative-banner-canvas-cropped",
+      "reward": 0,
+      "passed_checks": 11,
+      "check_count": 15
+    },
+    {
+      "kind": "negative-banner-hinge-moved",
+      "run": "20261127T181649Z-final-negative-banner-hinge-moved",
+      "reward": 0,
+      "passed_checks": 14,
+      "check_count": 15
+    },
+    {
+      "kind": "negative-banner-unpacked-print",
+      "run": "20261127T182816Z-final-negative-banner-unpacked-print",
+      "reward": 0,
+      "passed_checks": 14,
+      "check_count": 15
+    },
+    {
+      "kind": "negative-secondary-render-substitution",
+      "run": "20261127T180159Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "passed_checks": 12,
+      "check_count": 15
+    }
+  ]
+}

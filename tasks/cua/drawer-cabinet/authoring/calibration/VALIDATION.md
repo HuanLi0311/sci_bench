@@ -1,13 +1,13 @@
 # Current validation: drawer-cabinet
 
-Evidence checked 2026-11-27T18:32:05.177731+00:00. These records match the current verifier source. Model provenance/completeness is separate from model-solving success.
+Evidence checked 2026-11-27T18:32:48.850020+00:00. These records match the current verifier source. Model provenance/completeness is separate from model-solving success.
 
 | Gate | Status | Evidence |
 |---|---|---|
 | oracle | PASS | 20261127T173411Z-final-oracle |
 | nop | PASS | 20261127T173856Z-final-nop |
 | negatives | PASS | all 4 prepared negative cases rejected by the current verifier |
-| models | PENDING / FAIL | [Errno 2] No such file or directory: '/mnt/d/迅雷下载/ic-bench/tasks/cua/drawer-cabinet/authoring/model-attempts.json' |
+| models | PASS | 0 recorded attempts; complete raw trajectories checked where inference occurred |
 
 | Case | Reward | Checks passed | Raw evidence |
 |---|---:|---:|---|
