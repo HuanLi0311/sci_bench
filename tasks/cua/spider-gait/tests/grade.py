@@ -161,7 +161,8 @@ def main():
             skin_bad.append(f"{name}:influences={e.get('max_influences')}")
         if not (0.99 <= e.get("min_weight_sum", 0) and e.get("max_weight_sum", 2) <= 1.01):
             skin_bad.append(f"{name}:weightsum={e.get('min_weight_sum')}..{e.get('max_weight_sum')}")
-        if e.get("dominant_group") != name or e.get("dominant_frac", 0) < 0.9:
+        expected_group = name if name.startswith("leg_") else "body"
+        if e.get("dominant_group") != expected_group or e.get("dominant_frac", 0) < 0.9:
             skin_bad.append(f"{name}:bound_to={e.get('dominant_group')} "
                             f"({e.get('dominant_frac', 0):.2f})")
     add("R03_skinning", "must", not skin_bad, skin_bad[:6] or "26 meshes skinned")
