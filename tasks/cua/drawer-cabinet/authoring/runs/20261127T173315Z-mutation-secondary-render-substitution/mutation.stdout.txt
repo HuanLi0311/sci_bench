@@ -1,0 +1,2 @@
+desktop ready on :1
+{"file": "render_day.png", "size": [1600, 1200], "original_rgb_mean": [114.56639479166667, 103.1396578125, 94.96472447916666], "replacement_rgb": [115, 103, 95]}

@@ -1,0 +1,22 @@
+{
+  "kind": "mutation-preparation",
+  "name": "secondary-render-substitution",
+  "task": "drawer-cabinet",
+  "started_at": "20261127T173315Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T173315Z-mutation-secondary-render-substitution:/mutation",
+    "cua-qc-drawer-cabinet-tests",
+    "python3",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "85b711f047aca9e950a58e8ddcb2d1ef2d40d1064fd3008a6d4d4718e2f71d2d",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T17:33:22.703890+00:00"
+}

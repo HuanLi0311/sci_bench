@@ -1,0 +1,22 @@
+{
+  "kind": "mutation-preparation",
+  "name": "secondary-render-substitution",
+  "task": "banner-stand",
+  "started_at": "20261127T173322Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T173322Z-mutation-secondary-render-substitution:/mutation",
+    "cua-qc-banner-stand-tests",
+    "python3",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "665b280e73ac00b6e46dc62f6a9857c0295e989a67ac9b8402a21e3b5fcb7df1",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T17:33:27.349265+00:00"
+}
