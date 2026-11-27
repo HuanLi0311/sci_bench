@@ -27,7 +27,9 @@ DRAWER_W = 0.440
 TRAY_D = 0.400
 TRAVEL = 0.420
 PLINTH = 0.060
-HINGE_X = W / 2
+HINGE_X = 0.481
+DOOR_W = 0.450
+DOOR_Y = 0.2175
 DOOR_Z0, DOOR_Z1 = BAY_Z0, BAY_Z1
 DOOR_HINGE_Z = (DOOR_Z0 + DOOR_Z1) / 2
 
@@ -179,15 +181,16 @@ def metal_material(name, colour=(0.66, 0.67, 0.70), rough=0.28):
 def build_carcass(wood):
     parts = []
     half = W / 2
-    parts.append(box("carcass_left", (-half + T / 2, 0, (BAY_Z1 + PLINTH) / 2 + 0.0),
-                     (T, D, BAY_Z1 - PLINTH)))
-    parts.append(box("carcass_right", (half - T / 2, 0, (BAY_Z1 + PLINTH) / 2),
-                     (T, D, BAY_Z1 - PLINTH)))
-    parts.append(box("carcass_top", (0, 0, BAY_Z1 - T / 2), (W, D, T)))
+    top_z0 = H - T
+    parts.append(box("carcass_left", (-half + T / 2, 0, (top_z0 + PLINTH) / 2),
+                     (T, D, top_z0 - PLINTH)))
+    parts.append(box("carcass_right", (half - T / 2, 0, (top_z0 + PLINTH) / 2),
+                     (T, D, top_z0 - PLINTH)))
+    parts.append(box("carcass_top", (0, 0, H - T / 2), (W, D, T)))
     parts.append(box("carcass_bottom", (0, 0, PLINTH + T / 2), (W, D, T)))
-    parts.append(box("carcass_back", (0, -D / 2 + T / 2, (BAY_Z1 + PLINTH) / 2),
-                     (W, T, BAY_Z1 - PLINTH)))
-    parts.append(box("carcass_divider", (0, 0, (BAY_Z1 + PLINTH) / 2), (T, D - T, BAY_Z1 - PLINTH)))
+    parts.append(box("carcass_back", (0, -D / 2 + T / 2, (top_z0 + PLINTH) / 2),
+                     (W, T, top_z0 - PLINTH)))
+    parts.append(box("carcass_divider", (0, 0, (top_z0 + PLINTH) / 2), (T, D - T, top_z0 - PLINTH)))
     for ob in parts:
         ob.data.materials.append(wood)
     return parts
@@ -221,13 +224,12 @@ def build_drawer(index, wood, metal):
 def build_door(wood, metal):
     hinge = bpy.data.objects.new("hinge_right", None)
     hinge.empty_display_type = 'SINGLE_ARROW'
-    hinge.location = (HINGE_X, FRONT_Y - T / 2, DOOR_HINGE_Z)
+    hinge.location = (HINGE_X, FRONT_Y + 0.0015, DOOR_HINGE_Z)
     link(hinge)
-    width = 0.460
-    door = box("door_right", (HINGE_X - width / 2, FRONT_Y - T / 2, DOOR_HINGE_Z),
-               (width, T, DOOR_Z1 - DOOR_Z0 - 0.004))
+    door = box("door_right", (HINGE_X - DOOR_W / 2, DOOR_Y, DOOR_HINGE_Z),
+               (DOOR_W, T, DOOR_Z1 - DOOR_Z0 - 0.004))
     door.data.materials.append(wood)
-    handle = cylinder("handle_door", (HINGE_X - width + 0.030, FRONT_Y + 0.014, DOOR_HINGE_Z),
+    handle = cylinder("handle_door", (HINGE_X - DOOR_W + 0.030, FRONT_Y + 0.014, DOOR_HINGE_Z),
                       0.007, 0.180, axis='Z', segments=16)
     handle.data.materials.append(metal)
     door = join([door, handle], "door_right")
