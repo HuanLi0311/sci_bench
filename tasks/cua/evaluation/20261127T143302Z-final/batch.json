@@ -209,6 +209,18 @@
         "R17_phase_anticheat",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "negative-secondary-render-substitution",
+      "run": "spider-gait/authoring/runs/20261127T151131Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R18_render_authenticity",
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-27T15:18:09.560702+00:00"
 }
