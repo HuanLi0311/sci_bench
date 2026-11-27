@@ -75,21 +75,21 @@ def main():
 
     set_pose()
     set_lights(True, False)
-    shot("cam_front34", os.path.join(work, "render_day.png"), 1600, 1200)
+    shot("cam_front34", os.path.join(work, "render_day.png"), 800, 600)
 
     set_pose()
     set_lights(False, True)
-    shot("cam_front34", os.path.join(work, "render_night.png"), 1600, 1200)
+    shot("cam_front34", os.path.join(work, "render_night.png"), 800, 600)
     # mutation: same night camera, but the day lights are on as well
     set_lights(True, True)
-    shot("cam_front34", os.path.join(work, "ac_lights.png"), 1600, 1200)
+    shot("cam_front34", os.path.join(work, "ac_lights.png"), 800, 600)
 
     set_pose(drawer=2, amount=0.300)
     set_lights(True, False)
-    shot("cam_detail", os.path.join(work, "render_detail.png"), 1600, 1200)
+    shot("cam_detail", os.path.join(work, "render_detail.png"), 800, 600)
     # mutation: the same drawer pulled 150 mm
     set_pose(drawer=2, amount=0.150)
-    shot("cam_detail", os.path.join(work, "ac_drawer.png"), 1600, 1200)
+    shot("cam_detail", os.path.join(work, "ac_drawer.png"), 800, 600)
 
 
 if __name__ == "__main__":
