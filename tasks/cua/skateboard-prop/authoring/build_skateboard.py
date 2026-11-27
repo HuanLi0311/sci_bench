@@ -33,9 +33,9 @@ AXLE_LEN = 0.180
 TRUCK_H = 0.030
 
 PLY_COLOURS = [
-    (0.62, 0.45, 0.28), (0.55, 0.39, 0.24), (0.66, 0.49, 0.31),
-    (0.50, 0.35, 0.21), (0.60, 0.43, 0.27), (0.53, 0.37, 0.22),
-    (0.58, 0.41, 0.25),
+    (0.74, 0.60, 0.40), (0.40, 0.27, 0.16), (0.68, 0.52, 0.32),
+    (0.30, 0.20, 0.12), (0.72, 0.57, 0.37), (0.45, 0.31, 0.19),
+    (0.63, 0.47, 0.28),
 ]
 
 
@@ -228,7 +228,9 @@ def build_deck(graphic):
                 uv_layer.data[li].uv = ((vert.x - X0) / DECK_L, (vert.y + DECK_W / 2) / DECK_W)
         else:
             for li, (x, y) in zip(poly.loop_indices, uv):
-                uv_layer.data[li].uv = ((x - X0) / DECK_L, (y + DECK_W / 2) / DECK_W)
+                # The graphic is printed on the underside: flip U so the wordmark
+                # reads correctly when the board is seen from below.
+                uv_layer.data[li].uv = (1.0 - (x - X0) / DECK_L, (y + DECK_W / 2) / DECK_W)
 
     ob = bpy.data.objects.new("deck", me)
     link(ob)
@@ -340,6 +342,8 @@ def build_stage():
     area("light_fill", (-0.5, -0.9, 0.5), 45.0, 1.4, (0.85, 0.9, 1.0))
     area("light_rim", (0.1, 0.9, 0.7), 70.0, 1.0, (1.0, 0.95, 0.88))
     area("light_top", (0.22, 0.0, 1.4), 60.0, 0.8, (1.0, 1.0, 1.0))
+    area("light_bounce", (0.22, 0.0, -0.45), 45.0, 1.0, (1.0, 0.94, 0.86),
+         target=(0.22, 0.0, 0.02))
 
     def camera(name, loc, target, lens):
         cam = bpy.data.cameras.new(name)
