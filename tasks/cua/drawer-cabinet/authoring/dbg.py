@@ -1,13 +1,11 @@
-import sys
-sys.path.insert(0, "/task/authoring")
-import packgen, make_materials as mm
-
-orig_line = packgen.Canvas.line
-def traced(self, x0, y0, x1, y1, color=(0, 0, 0), width=1.0):
-    if abs(y1 - y0) < 2 and abs(x1 - x0) > 400:
-        print("WIDE-LINE", round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1), color, width)
-    return orig_line(self, x0, y0, x1, y1, color, width)
-packgen.Canvas.line = traced
-c = packgen.Canvas(1760, 1180, mm.PAPER)
-mm.front_view(c, 520, 1060, 0.85)
-print("DONE")
+import bpy
+d = bpy.data.objects["door_right"]
+bpy.context.view_layer.update()
+pts = [d.matrix_world @ v.co for v in d.data.vertices]
+print("DBG door z", round(min(p.z for p in pts),3), round(max(p.z for p in pts),3),
+      "x", round(min(p.x for p in pts),3), round(max(p.x for p in pts),3))
+print("DBG door parent_inverse", [round(c,3) for c in d.matrix_parent_inverse.translation])
+for i in (1,3):
+    dr = bpy.data.objects[f"drawer_{i:02d}"]
+    pts = [dr.matrix_world @ v.co for v in dr.data.vertices]
+    print("DBG drawer", i, "z", round(min(p.z for p in pts),3), round(max(p.z for p in pts),3))
