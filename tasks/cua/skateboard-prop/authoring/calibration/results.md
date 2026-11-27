@@ -9,6 +9,8 @@ CPU, 64 samples, denoise, seed 0) inside the verifier image.
 | slab thickness (centreline) | 12.06 mm | 12 ± 1 | R02 |
 | wheelbase | 440.0 mm | 440 ± 3 | R02 |
 | wheel diameter | 53.7 mm | 54 ± 1 | R02 |
+| overall deck height (kicks) | 67.3 mm | 45 … 90 | R02 |
+| concave at the rails | 8.0 mm | 8 ± 2 | R02 |
 | ply bands per side | 7 | ≥ 7 | R04 |
 | band thickness | 1.71 mm | 1.0 … 2.6 mm | R04 |
 | UV area of the underside | 1.000 | 0.95 … 1.02 | R05 |

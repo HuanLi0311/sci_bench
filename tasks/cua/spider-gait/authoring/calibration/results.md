@@ -6,6 +6,7 @@ Measured on the reference `solution/spider.blend` (Blender 4.2.3, Cycles CPU,
 | Metric | Reference | Threshold | Check |
 |---|---:|---|---|
 | bones / meshes | 25 / 26 | exact | R02, R03 |
+| mesh bound to its own bone | 26/26, 100 % of vertices | every mesh | R03 |
 | body length | 180.0 mm | 180 ± 5 | R04 |
 | foot span | 420.0 mm | 420 ± 10 | R04 |
 | stance height | 120.0 mm | 120 ± 5 | R04 |

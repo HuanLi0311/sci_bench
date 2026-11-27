@@ -136,11 +136,15 @@ def main():
     if "truck_front" in trucks and "truck_rear" in trucks:
         wheelbase = abs(trucks["truck_front"]["centre"][0] - trucks["truck_rear"]["centre"][0]) * 1000
     wheel_dia = np.mean([w["diameter_mm"] for w in wheels.values()]) if wheels else 0
+    z_extent = deck.get("z_extent_mm", 0)
+    concave = deck.get("concave_mm", 0)
     dims_ok = (abs(length - 800) <= 3 and abs(width - 200) <= 2
                and abs(thickness - 12) <= 1 and abs(wheelbase - 440) <= 3
-               and abs(wheel_dia - 54) <= 1)
+               and abs(wheel_dia - 54) <= 1
+               and 45 <= z_extent <= 90 and abs(concave - 8) <= 2)
     add("R02_dimensions", "must", dims_ok,
-        f"deck={length:.1f}x{width:.1f}x{thickness:.2f}mm wheelbase={wheelbase:.1f} wheel_dia={wheel_dia:.1f}")
+        f"deck={length:.1f}x{width:.1f}x{thickness:.2f}mm wheelbase={wheelbase:.1f} "
+        f"wheel_dia={wheel_dia:.1f} kick_z={z_extent:.1f}mm concave={concave:.1f}mm")
 
     present = scene.get("parts_present") or {}
     objs = scene.get("objects") or {}

@@ -172,6 +172,7 @@ def main():
         unweighted = 0
         max_infl = 0
         sums = []
+        group_hits = {}
         for v in ob.data.vertices:
             groups = [g for g in v.groups
                       if g.group < len(ob.vertex_groups)
@@ -181,6 +182,9 @@ def main():
                 continue
             max_infl = max(max_infl, len(groups))
             sums.append(sum(g.weight for g in groups))
+            for g in groups:
+                name = ob.vertex_groups[g.group].name
+                group_hits[name] = group_hits.get(name, 0) + 1
         skin[name] = {
             "present": True,
             "armature_modifiers": mods,
@@ -190,6 +194,9 @@ def main():
             "max_weight_sum": max(sums) if sums else 0.0,
             "vertices": len(ob.data.vertices),
             "shape_keys": bool(ob.data.shape_keys),
+            "dominant_group": (max(group_hits, key=group_hits.get) if group_hits else None),
+            "dominant_frac": (max(group_hits.values()) / max(len(ob.data.vertices), 1)
+                              if group_hits else 0.0),
         }
     report["skin"] = skin
 

@@ -104,12 +104,21 @@ def deck_report(ob):
     for v in verts:
         if abs(v.x) < 0.05 and abs(v.y) < 0.01:
             thickness_samples.append(v.z)
+    z_all = [v.z for v in verts]
+    mid = [v for v in verts if abs(v.x - 0.22) < 0.01]
+    centre_z = [v.z for v in mid if abs(v.y) < 0.006]
+    rail_z = [v.z for v in mid if abs(v.y) > 0.094]
+    concave_mm = ((max(rail_z) - max(centre_z)) * 1000.0
+                  if centre_z and rail_z else 0.0)
+    z_extent_mm = (max(z_all) - min(z_all)) * 1000.0 if z_all else 0.0
     thickness = (max(thickness_samples) - min(thickness_samples)) if thickness_samples else 0.0
     return {
         "aabb": world_aabb(ob),
         "polys": evaluated_polys(ob),
         "material_slots": [m.name if m else None for m in me.materials],
         "thickness_mm": thickness * 1000.0,
+        "z_extent_mm": z_extent_mm,
+        "concave_mm": concave_mm,
         "bottom_faces": bottom_faces,
         "uv_area": uv_area,
         "uv_bbox": [uv_min, uv_max] if bottom_faces else None,

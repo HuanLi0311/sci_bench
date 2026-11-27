@@ -73,7 +73,7 @@ Render with Cycles on CPU, 64 samples, denoising on, fixed seed.
 ## How it is checked
 
 The .blend must reopen; the eight named parts must exist with the stated
-parents; deck 800 ± 3 × 200 ± 2 mm and 12 ± 1 mm thick; wheelbase 440 ± 3 mm;
+parents; deck 800 ± 3 × 200 ± 2 mm, 12 ± 1 mm thick, with the kicks lifting the ends (45–90 mm overall height) and 8 ± 2 mm of concave at the rails; wheelbase 440 ± 3 mm;
 wheel diameter 54 ± 1 mm; seven distinct edge bands per side, each 1–2.6 mm
 thick, with distinct colours; the underside artwork 2048 × 512, mapped 1:1 with
 UV area and extent matching the sheet; textures packed and no larger than 2048;
