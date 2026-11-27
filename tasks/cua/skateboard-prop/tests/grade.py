@@ -256,8 +256,25 @@ def main():
     embedded = all(("bufferView" in i and "uri" not in i) for i in glb_meta.get("images", []))
     tri_ratio = (abs((glb_report.get("polys_total") or 0) - (scene.get("polys_total") or 1))
                  / max(scene.get("polys_total") or 1, 1))
+    # The task promises an engine-ready hierarchy.  Checking mesh names alone
+    # accepts a flattened export, which loses the truck/wheel relationships.
+    expected_glb_parents = {
+        "deck": None,
+        "truck_front": "deck", "truck_rear": "deck",
+        "wheel_01": "truck_front", "wheel_02": "truck_front",
+        "wheel_03": "truck_rear", "wheel_04": "truck_rear",
+        "bearings": "deck",
+    }
+    glb_objects = glb_report.get("objects") or {}
+    hierarchy_bad = [
+        f"{name}->{(glb_objects.get(name) or {}).get('parent')}"
+        for name, parent in expected_glb_parents.items()
+        if name not in glb_objects or (glb_objects.get(name) or {}).get("parent") != parent
+    ]
+    hierarchy_ok = not hierarchy_bad
     rt_ok = (bool(glb_report.get("ok"))
              and set(PARTS) <= imported
+             and hierarchy_ok
              and tri_ratio <= 0.01
              and glb_mats >= 7
              and bool(glb_meta.get("images"))
@@ -265,7 +282,8 @@ def main():
              and len(glb_meta.get("meshes", [])) >= 1)
     add("R09_glb_roundtrip", "must", rt_ok,
         f"imported={sorted(imported)[:9]} tri_diff={tri_ratio:.4f} glb_materials={glb_mats} "
-        f"images={len(glb_meta.get('images', []))} embedded={embedded}")
+        f"images={len(glb_meta.get('images', []))} embedded={embedded} "
+        f"hierarchy={'ok' if hierarchy_ok else hierarchy_bad[:4]}")
 
     add("R10_polys", "normal", (scene.get("polys_total") or 10 ** 9) <= 40000,
         f"{scene.get('polys_total')} triangles")
