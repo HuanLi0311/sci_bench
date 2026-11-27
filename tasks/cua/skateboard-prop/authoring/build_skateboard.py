@@ -230,7 +230,7 @@ def build_deck(graphic):
             for li, (x, y) in zip(poly.loop_indices, uv):
                 # The graphic is printed on the underside: flip U so the wordmark
                 # reads correctly when the board is seen from below.
-                uv_layer.data[li].uv = (1.0 - (x - X0) / DECK_L, (y + DECK_W / 2) / DECK_W)
+                uv_layer.data[li].uv = (1.0 - (x - X0) / DECK_L, 1.0 - (y + DECK_W / 2) / DECK_W)
 
     ob = bpy.data.objects.new("deck", me)
     link(ob)
@@ -338,11 +338,11 @@ def build_stage():
         o.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
         return link(o)
 
-    area("light_key", (0.9, -0.7, 1.1), 140.0, 1.2, (1.0, 0.97, 0.92))
-    area("light_fill", (-0.5, -0.9, 0.5), 45.0, 1.4, (0.85, 0.9, 1.0))
-    area("light_rim", (0.1, 0.9, 0.7), 70.0, 1.0, (1.0, 0.95, 0.88))
-    area("light_top", (0.22, 0.0, 1.4), 60.0, 0.8, (1.0, 1.0, 1.0))
-    area("light_bounce", (0.22, 0.0, -0.45), 45.0, 1.0, (1.0, 0.94, 0.86),
+    area("light_key", (0.9, -0.7, 1.1), 60.0, 1.2, (1.0, 0.97, 0.92))
+    area("light_fill", (-0.5, -0.9, 0.5), 20.0, 1.4, (0.85, 0.9, 1.0))
+    area("light_rim", (0.1, 0.9, 0.7), 34.0, 1.0, (1.0, 0.95, 0.88))
+    area("light_top", (0.22, 0.0, 1.4), 26.0, 0.8, (1.0, 1.0, 1.0))
+    area("light_bounce", (0.22, 0.0, -0.45), 22.0, 1.0, (1.0, 0.94, 0.86),
          target=(0.22, 0.0, 0.02))
 
     def camera(name, loc, target, lens):
@@ -361,7 +361,7 @@ def build_stage():
     cb = link(bpy.data.objects.new("cam_bottom", cam_bottom))
     cb.location = (0.22, 0.0, -0.5)
     cb.rotation_euler = (math.pi, 0, 0)   # look up the +Z axis
-    camera("cam_edge", (0.22, 0.35, 0.065), (0.22, 0.1, 0.037), 100.0)
+    camera("cam_edge", (0.34, 0.33, 0.105), (0.14, 0.10, 0.045), 100.0)
 
 
 def render(cam, path, width, height):
