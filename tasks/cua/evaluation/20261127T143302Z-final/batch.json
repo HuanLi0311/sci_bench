@@ -195,6 +195,20 @@
         "R18_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "negative-spider-static-pose",
+      "run": "spider-gait/authoring/runs/20261127T150854Z-final-negative-spider-static-pose",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R05_action",
+        "R07_support",
+        "R09_swing_lift",
+        "R17_phase_anticheat",
+        "R_render_structure"
+      ]
     }
   ]
 }
