@@ -5,7 +5,7 @@
   "started_at": "20261127T113655Z",
   "agent": "adversarial-input-regrade",
   "model": null,
-  "model_steps": 0,
+  "model_steps": null,
   "commands": [
     {
       "argv": [
@@ -37,6 +37,33 @@
       "started_at": "2026-11-27T11:37:01.192417+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T11:37:01.267255+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-a86c47cc5a",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T113655Z-final-negative-spider-broken-skin/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T113655Z-final-negative-spider-broken-skin/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T113655Z-final-negative-spider-broken-skin/verifier:/logs/verifier",
+        "cua-qc-spider-gait-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-27T11:37:02.367020+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:37:02.500860+00:00"
     }
   ],
   "nop_definition": null,
@@ -295,6 +322,49 @@
     "vendor/codex/package.json": {
       "sha256": "f839e64b5a657d1aa9881d42d4cc30f7493cf333a7c5e4cc3bd7f719e8f01391",
       "bytes": 1082
+    }
+  },
+  "source_submission": "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T100625Z-mutation-spider-broken-skin/submission",
+  "submission": {
+    "manifest.json": {
+      "sha256": "ca6029306b15eb6fa8404abb3f58ddf0f072c2a703623b4decc8c79770a8c725",
+      "bytes": 876
+    },
+    "render_pose_01.png": {
+      "sha256": "b5b23a3cfe948a5f7c33c3b201ee9c9bbf0e53f4b377b01ab6579719f8038b10",
+      "bytes": 497928
+    },
+    "render_pose_02.png": {
+      "sha256": "8b158fe2a3c7204dd6aeea0547cc717037dff74a9bad300a44e46068f944c445",
+      "bytes": 502060
+    },
+    "render_pose_03.png": {
+      "sha256": "6e27fb7ae5e05bc3502c5cf1a16dd6118e6a8c11ccef4079426fe0651d93ec1e",
+      "bytes": 499606
+    },
+    "render_pose_04.png": {
+      "sha256": "803d419acdaa7cb79b0457c54bebdeb26aebb5279734cb42f6c4da02edfc357b",
+      "bytes": 502469
+    },
+    "render_top.png": {
+      "sha256": "9a80a418d7698183b15617f801c6df7503e21a80d54b2e33420b31fafdd2a224",
+      "bytes": 860526
+    },
+    "scene.json": {
+      "sha256": "b6a7d60730835f793b73ae82fa8f3f2a48bf3a5058a515defab60e0055f860e6",
+      "bytes": 59637
+    },
+    "spider.blend": {
+      "sha256": "cca1cdf62a08b9c273849a631240f3927f11ac05c3b6d9caec8d3c058acfda94",
+      "bytes": 681238
+    },
+    "spider.blend1": {
+      "sha256": "f6ae07ae8a1b524174d5a1e4341b907a8d906fc6d2fbe5c1b9728d08a029ec78",
+      "bytes": 1666320
+    },
+    "textures/chitin_basecolor.png": {
+      "sha256": "b2e06b9e61d69fc7384907e0b7c8c28d3fa4060e4232434d8e81e62e5f8ce402",
+      "bytes": 470723
     }
   }
 }
