@@ -83,7 +83,7 @@ def set_hinge(deg):
     hinge = bpy.data.objects.get(HINGE)
     if hinge is not None:
         hinge.rotation_mode = 'XYZ'
-        hinge.rotation_euler = (math.radians(-deg), 0.0, 0.0)
+        hinge.rotation_euler = (math.radians(deg), 0.0, 0.0)
     bpy.context.view_layer.update()
 
 

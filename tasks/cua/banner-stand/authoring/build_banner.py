@@ -216,7 +216,7 @@ def build_stage():
 def set_hinge(hinge, deg):
     """Open the rear leg away from the print (towards -Y)."""
     hinge.rotation_mode = 'XYZ'
-    hinge.rotation_euler = (math.radians(-deg), 0.0, 0.0)
+    hinge.rotation_euler = (math.radians(deg), 0.0, 0.0)
     bpy.context.view_layer.update()
 
 
