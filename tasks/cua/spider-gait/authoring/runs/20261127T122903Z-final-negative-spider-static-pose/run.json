@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T12:29:29.409832+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T12:29:29.593355+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-01f427a501"
+      ],
+      "started_at": "2026-11-27T12:29:29.610007+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-27T12:41:29.629495+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-01f427a501"
+      ],
+      "started_at": "2026-11-27T12:41:29.712963+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T12:41:30.186664+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-01f427a501:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T122903Z-final-negative-spider-static-pose/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T12:41:30.207778+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T12:41:31.003678+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-01f427a501"
+      ],
+      "started_at": "2026-11-27T12:41:31.103618+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T12:41:31.244611+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-01f427a501"
+      ],
+      "started_at": "2026-11-27T12:41:31.264830+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T12:41:31.865842+00:00"
     }
   ],
   "nop_definition": null,
@@ -366,5 +420,16 @@
       "sha256": "b2e06b9e61d69fc7384907e0b7c8c28d3fa4060e4232434d8e81e62e5f8ce402",
       "bytes": 470723
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R05_action",
+    "R07_support",
+    "R09_swing_lift",
+    "R17_phase_anticheat",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T12:41:31.892884+00:00"
 }
