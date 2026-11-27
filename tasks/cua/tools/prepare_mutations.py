@@ -11,8 +11,8 @@ import shutil
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-RENDERS = {"crate-lookdev": "render_back.png", "booth-clearance": "render_top.png", "folding-chair": "render_locked.png", "rainroom": "render_night.png", "toy-car": "render_back.png"}
-BLENDS = {"crate-lookdev": "crate.blend", "booth-clearance": "booth.blend", "folding-chair": "folding_chair.blend", "rainroom": "rainroom.blend", "toy-car": "toy_car.blend"}
+RENDERS = {"crate-lookdev": "render_back.png", "booth-clearance": "render_top.png", "folding-chair": "render_locked.png", "rainroom": "render_night.png", "toy-car": "render_back.png", "spider-gait": "render_pose_02.png", "skateboard-prop": "render_three_quarter.png"}
+BLENDS = {"crate-lookdev": "crate.blend", "booth-clearance": "booth.blend", "folding-chair": "folding_chair.blend", "rainroom": "rainroom.blend", "toy-car": "toy_car.blend", "spider-gait": "spider.blend", "skateboard-prop": "skateboard.blend"}
 SCRIPTS = {
     "crate-disconnected-maps": '''import bpy
 mat = bpy.data.objects["crate_front"].data.materials[0]
@@ -129,6 +129,38 @@ unused.use_nodes = True
 unused.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value = (0.8879231178819663, 0.5332764040105052, 0.07618538148130785, 1)
 bpy.data.objects["booth_shell"].data.materials.append(unused)
 ''',
+    "spider-broken-skin": '''import bpy
+ob = bpy.data.objects["leg_01_femur"]
+for group in list(ob.vertex_groups):
+    ob.vertex_groups.remove(group)
+''',
+    "spider-floating-feet": '''import bpy
+bpy.data.objects["rig_spider"].location.z += 0.020
+''',
+    "spider-static-pose": '''import bpy
+rig = bpy.data.objects["rig_spider"]
+if rig.animation_data:
+    rig.animation_data.action = None
+for action in list(bpy.data.actions):
+    bpy.data.actions.remove(action)
+''',
+    "deck-single-ply": '''import bpy
+deck = bpy.data.objects["deck"]
+for poly in deck.data.polygons:
+    if poly.material_index >= 2:
+        poly.material_index = 2
+''',
+    "deck-graphic-unlinked": '''import bpy
+mat = bpy.data.materials["mat_deck_graphic"]
+bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+for link in list(bsdf.inputs["Base Color"].links):
+    mat.node_tree.links.remove(link)
+''',
+    "truck-dielectric": '''import bpy
+mat = bpy.data.materials["mat_aluminium"]
+bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
+bsdf.inputs["Metallic"].default_value = 0.0
+''',
     "booth-empty-marker-positive": '''import bpy
 old = bpy.data.objects["entrance_zone"]
 matrix = old.matrix_world.copy()
@@ -187,6 +219,10 @@ if __name__ == "__main__":
     for task_name, mutation in (("crate-lookdev", "crate-disconnected-maps"), ("folding-chair", "chair-common-root-collision"), ("folding-chair", "chair-shared-hinge-collision"), ("booth-clearance", "booth-moved-entrance-marker"), ("toy-car", "toy-wrong-wheel-parent"), ("booth-clearance", "booth-product-scaled"), ("booth-clearance", "booth-product-floating"), ("booth-clearance", "booth-unused-brand-slot"), ("booth-clearance", "booth-closed-opening"), ("booth-clearance", "booth-camera-away"), ("booth-clearance", "booth-missing-secondary-color"), ("booth-clearance", "booth-empty-marker-positive")):
         if not options.only or options.only == mutation:
             prepare(task_name, mutation, SCRIPTS[mutation])
+    for mutation in ("spider-broken-skin", "spider-floating-feet", "spider-static-pose",
+                     "deck-single-ply", "deck-graphic-unlinked", "truck-dielectric"):
+        if not options.only or options.only == mutation:
+            prepare(("spider-gait" if mutation.startswith("spider") else "skateboard-prop"), mutation, SCRIPTS[mutation])
     for mutation in ("rain-unused-metal-slot", "rain-linked-metal-default", "rain-disconnected-metal-shader"):
         if not options.only or options.only == mutation:
             prepare("rainroom", mutation, SCRIPTS[mutation])

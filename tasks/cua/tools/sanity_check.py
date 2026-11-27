@@ -24,6 +24,10 @@ NEGATIVE_CASES = {
     "rainroom": {"secondary-render-substitution", "rain-unused-metal-slot",
                  "rain-linked-metal-default", "rain-disconnected-metal-shader"},
     "toy-car": {"secondary-render-substitution", "toy-wrong-wheel-parent"},
+    "spider-gait": {"secondary-render-substitution", "spider-broken-skin",
+                    "spider-floating-feet", "spider-static-pose"},
+    "skateboard-prop": {"secondary-render-substitution", "deck-single-ply",
+                        "deck-graphic-unlinked", "truck-dielectric"},
 }
 
 REQUIRED = [
@@ -271,6 +275,12 @@ def check_negative(t):
                 "negative-rain-linked-metal-default": "R09_materials",
                 "negative-rain-disconnected-metal-shader": "R09_materials",
                 "negative-toy-wrong-wheel-parent": "R07_steering",
+                "negative-spider-broken-skin": "R03_skinning",
+                "negative-spider-floating-feet": "R07_support",
+                "negative-spider-static-pose": "R17_phase_anticheat",
+                "negative-deck-single-ply": "R04_plies",
+                "negative-deck-graphic-unlinked": "R05_graphic_uv",
+                "negative-truck-dielectric": "R07_materials",
             }
             failed = {c["id"] for c in metrics["checks"] if not c["pass"]}
             if not any(c["id"] == "R01_open" and c["pass"] for c in metrics["checks"]):
