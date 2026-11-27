@@ -1,0 +1,5 @@
+Info: Saved "booth.blend"
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
+Read blend: "/mutation/submission/booth.blend"
+
+Blender quit

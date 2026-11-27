@@ -1,0 +1,1 @@
+{"analysis":"Rear assembly parenting pending UI update.","plan":"Select seat next.","action":{"type":"wait"}}

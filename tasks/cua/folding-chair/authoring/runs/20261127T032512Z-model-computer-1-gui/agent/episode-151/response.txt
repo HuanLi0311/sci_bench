@@ -1,0 +1,1 @@
+{"analysis":"Set frame 60 committed next update.","plan":"Select first hinge only, fold front bars upright.","action":{"type":"click","x":1700,"y":181}}

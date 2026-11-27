@@ -1,0 +1,1 @@
+{"analysis":"Text edit active.","plan":"Select all existing characters.","action":{"type":"keypress","keys":["ctrl","a"]}}

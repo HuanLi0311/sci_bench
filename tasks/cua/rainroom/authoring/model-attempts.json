@@ -108,6 +108,44 @@
       "tool_calls": 64,
       "grading_run": "rainroom/authoring/runs/20261126T120513Z-final-model-regrade",
       "cli_exit_code": 0
+    },
+    {
+      "id": "20261127T032512Z-model-computer-1-gui",
+      "path": "tasks/cua/rainroom/authoring/runs/20261127T032512Z-model-computer-1-gui",
+      "model_identifier": "gpt-6.1-sol",
+      "agent": "computer-1",
+      "gui_compliant": true,
+      "effective_config": {
+        "task": "rainroom",
+        "agent": "computer-1",
+        "provider_flavor": "generic screenshot JSON",
+        "model_identifier": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "gui_only": true,
+        "bash_enabled": false,
+        "model_api_location": "host only; existing private configuration; credential omitted",
+        "image_id": "sha256:4fd6eb5621036f20753eabf65277222e8855c41d062a531939d3d64cc28c54e1",
+        "network": "none",
+        "cpus": 4,
+        "memory_mb": 8192,
+        "timeout_seconds": 7200,
+        "max_turns": 1200,
+        "instruction_sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
+        "fresh_output": true,
+        "reference_access": false,
+        "preview_provenance": "supplied materials only"
+      },
+      "outcome": "interrupted-by-operator",
+      "reward": 0,
+      "grading_run": "rainroom/authoring/runs/20261127T044849Z-gui-regrade-gui-model-regrade",
+      "clean_completion": false,
+      "trajectory_present": true,
+      "trajectory_format": "ATIF computer-1 with screenshot references",
+      "agent_steps": 149,
+      "tool_calls": 149,
+      "gui_operations": 142,
+      "image_observations": 150,
+      "step_definition": "ATIF source=agent steps; tool_calls count recorded computer_action requests including failed/wait requests. GUI operations count successful input actions excluding wait/zoom/done/answer."
     }
   ]
 }

@@ -1,0 +1,1 @@
+{"analysis":"Seat narrowed; parent to hinge_03.","plan":"Select seat hinge as active.","action":{"type":"click","x":1706,"y":243,"modifier":"ctrl"}}

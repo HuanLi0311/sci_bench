@@ -172,6 +172,18 @@ def main():
         and marker.name in sc.objects and abs(marker_point.x + 3.0) <= 0.15
         and abs(marker_point.y) <= 0.02 and -0.06 <= marker_point.z <= 4.02)
     rep["entrance_marker_type"] = marker.type if marker else None
+    # The entrance camera must actually face the booth. Position-only checks can
+    # otherwise be satisfied by a camera pointed at a side wall.
+    cam_for_direction = bpy.data.objects.get("cam_entrance")
+    if cam_for_direction is not None:
+        forward = -(cam_for_direction.matrix_world.to_3x3() @ Vector((0.0, 0.0, 1.0))).normalized()
+        target = Vector((0.0, 0.0, 1.5))
+        to_target = (target - cam_for_direction.matrix_world.translation).normalized()
+        rep["entrance_camera_facing_center"] = float(forward.dot(to_target)) >= 0.95
+        rep["entrance_camera_direction_dot"] = float(forward.dot(to_target))
+    else:
+        rep["entrance_camera_facing_center"] = False
+        rep["entrance_camera_direction_dot"] = None
     # A vertical opening plane gives horizontal clear distances at any cabinet height.
     entrance = [[-3.0, -1.2, -0.06], [-3.0, 1.2, 4.02]]
     rep["entrance_clearance"] = {
@@ -271,9 +283,11 @@ def main():
     rep["brand_back_wall_samples"] = samples
     rep["brand_sampled_face_area"] = sampled_area
 
-    # Secondary colour must be used by a real rendered surface, not merely
-    # declared in an unused material or material slot.
+    # Secondary colour must be used by a substantial, outward-facing surface
+    # on one of the specified display elements. A tiny hidden helper face or an
+    # unrelated mesh must not satisfy the brand-colour requirement.
     secondary = []
+    secondary_objects = {"counter", "plinth_01", "plinth_02", "plinth_03"}
     deps = bpy.context.evaluated_depsgraph_get()
     for ob in sc.objects:
         if ob.name == "entrance_zone" or ob.hide_render or ob.type not in ('MESH', 'FONT', 'CURVE', 'SURFACE'):
@@ -290,13 +304,39 @@ def main():
             used = set()
             for polygon in mesh.polygons:
                 index = polygon.material_index
-                if index not in candidates or index in used:
+                if index not in candidates or index in used or ob.name not in secondary_objects:
                     continue
                 points = [evaluated.matrix_world @ mesh.vertices[i].co for i in polygon.vertices]
                 area = sum((points[i] - points[0]).cross(points[i + 1] - points[0]).length / 2 for i in range(1, len(points) - 1))
-                if area > 1e-10:
+                world_normal = (evaluated.matrix_world.to_3x3() @ polygon.normal).normalized()
+                # Require a meaningful outward/upward display face. The lower
+                # threshold is far above a decal/helper sliver.
+                display_face = area >= 0.02 and max(abs(world_normal.x), abs(world_normal.y), world_normal.z) >= 0.5
+                if display_face:
+                    center = sum(points, Vector()) / len(points)
+                    visible = False
+                    for camera_name in ("cam_entrance", "cam_top"):
+                        camera = bpy.data.objects.get(camera_name)
+                        if camera is None:
+                            continue
+                        origin = camera.matrix_world.translation
+                        direction = center - origin
+                        if direction.length < 1e-6:
+                            continue
+                        if camera.data.type == "ORTHO":
+                            forward = -(camera.matrix_world.to_3x3() @ Vector((0, 0, 1))).normalized()
+                            origin = center - forward * 20.0
+                            direction = center - origin
+                        hit, location, _normal, _index, hit_object, _matrix = sc.ray_cast(
+                            deps, origin, direction.normalized(), distance=direction.length + 0.003)
+                        if hit and hit_object.name == ob.name and (location - center).length < 0.003:
+                            visible = True
+                            break
+                    if not visible:
+                        continue
                     name, delta = candidates[index]
-                    secondary.append({"object": ob.name, "material": name, "delta": delta})
+                    secondary.append({"object": ob.name, "material": name, "delta": delta,
+                                      "area": float(area), "normal": list(world_normal)})
                     used.add(index)
         finally:
             evaluated.to_mesh_clear()

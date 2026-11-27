@@ -1,0 +1,1 @@
+{"analysis":"Rear-left selected.","plan":"Add rear-right.","action":{"type":"click","x":1703,"y":327,"modifier":"ctrl"}}

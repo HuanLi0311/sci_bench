@@ -1,0 +1,1 @@
+{"analysis":"Back selected; narrow to same 520 mm width for moving clearance.","plan":"Edit width then parent to hinge_04.","action":{"type":"mouse_move","x":800,"y":530}}

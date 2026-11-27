@@ -1,13 +1,16 @@
-# GUI trajectory statistics ? four CUA tasks
+# Actual GUI trajectories
 
-Generated from the recovered task indexes and raw trajectories. A GUI operation requires an actual computer/CUA input event or screenshot-control call. Terminal `exec` and `wait` calls do not count as GUI operations.
+Four Harbor computer-1 screenshot/input trials. All were interrupted by the operator before the full budget. No successful GUI solution is claimed.
 
-| Task | Attempts | Trajectories | GUI trajectories | Terminal trajectories | Agent steps | Tool calls |
-|---|---:|---:|---:|---:|---:|---:|
-| crate-lookdev | 14 | 1 | 0 | 1 | 67 | 66 |
-| folding-chair | 0 | 0 | 0 | 0 | 0 | 0 |
-| rainroom | 1 | 1 | 0 | 1 | 68 | 64 |
-| toy-car | 0 | 0 | 0 | 0 | 0 | 0 |
-| **Total** | **15** | **2** | **0** | **2** | **135** | **130** |
+| Task | GUI inputs executed | Action requests | Screenshots | Artifact reward |
+|---|---:|---:|---:|---:|
+| crate-lookdev | 134 | 147 | 148 | 0 |
+| folding-chair | 149 | 157 | 158 | 0 |
+| rainroom | 142 | 149 | 150 | 0 |
+| toy-car | 131 | 138 | 139 | 0 |
 
-The crate trajectory is an ATIF terminal run. The rainroom trajectory is a Codex raw JSONL terminal run with 56 `exec` calls and 8 `wait` calls. No recovered model attempt contains GUI click, drag, key, screenshot-control, or computer-1 input events. Oracle/NOP/negative verifier runs are excluded from model trajectory counts.
+GUI input counts exclude wait/zoom/done/answer and failed requests. ATIF agent steps include all 591 requests. Each screenshot reference resolves and every screenshot decodes. Submission hashes agree with the separate current-source grading records.
+
+The files opened in Blender but required objects and output files were missing. R01_open in the existing verifier also reflects extraction prerequisites, so its unreadable detail does not mean the .blend bytes were corrupt. See Blender subprocess logs for the exact missing parts.
+
+GUI/terminal compliance and artifact success are separate. This package includes partial, failed GUI trajectories. It does not meet a requirement for successful, full-budget GUI demonstrations.

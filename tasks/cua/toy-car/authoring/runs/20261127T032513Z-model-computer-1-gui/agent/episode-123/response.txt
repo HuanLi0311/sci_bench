@@ -1,0 +1,1 @@
+{"analysis":"Wheel diameter is 60 mm.","plan":"Set tyre width.","action":{"type":"type","text":"sz0.416667"}}

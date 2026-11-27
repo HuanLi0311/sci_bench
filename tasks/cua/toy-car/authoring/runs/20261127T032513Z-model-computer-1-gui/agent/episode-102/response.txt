@@ -1,0 +1,1 @@
+{"analysis":"Chassis selected; create independent dark material.","plan":"Make material single-user.","action":{"type":"click","x":1790,"y":563}}

@@ -1,0 +1,141 @@
+desktop ready on :1
+{
+ "reward": 0,
+ "must_pass": true,
+ "critical_pass": false,
+ "normal_rate": 0.5,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": true,
+   "detail": "4.2.3 LTS"
+  },
+  {
+   "id": "R02_objects",
+   "level": "must",
+   "pass": true,
+   "detail": "missing=[] lighting=True"
+  },
+  {
+   "id": "R03_size",
+   "level": "must",
+   "pass": true,
+   "detail": "[6.0, 4.0, 4.02] m"
+  },
+  {
+   "id": "R04_envelope",
+   "level": "must",
+   "pass": true,
+   "detail": "bounds=[[-3.0, -2.0, -0.019999999552965164], [3.0, 2.0, 4.0]]"
+  },
+  {
+   "id": "R05_entrance_clearance",
+   "level": "must",
+   "pass": true,
+   "detail": "{'cabinet_01': 4.211, 'cabinet_02': 1.924}"
+  },
+  {
+   "id": "R06_hydrant_clearance",
+   "level": "must",
+   "pass": true,
+   "detail": "violations={}"
+  },
+  {
+   "id": "R07_visibility",
+   "level": "must",
+   "pass": true,
+   "detail": "{'product_01': True, 'product_02': True, 'product_03': True}"
+  },
+  {
+   "id": "R08_brand_colour",
+   "level": "normal",
+   "pass": false,
+   "detail": "delta=223.99999999999997 material=['adversarial_white_back_wall']"
+  },
+  {
+   "id": "R09_materials",
+   "level": "must",
+   "pass": true,
+   "detail": "meshes without material=[]"
+  },
+  {
+   "id": "R10_packed",
+   "level": "must",
+   "pass": true,
+   "detail": "unpacked=[]"
+  },
+  {
+   "id": "R11_no_external",
+   "level": "must",
+   "pass": true,
+   "detail": "[]"
+  },
+  {
+   "id": "R12_polys",
+   "level": "normal",
+   "pass": true,
+   "detail": "1166 triangles"
+  },
+  {
+   "id": "R13_entrance_render",
+   "level": "must",
+   "pass": true,
+   "detail": "render_entrance.png:1920x1080 render_top.png:2048x1536 cam=True top=True"
+  },
+  {
+   "id": "R14_manifest",
+   "level": "must",
+   "pass": true,
+   "detail": "assets=1"
+  },
+  {
+   "id": "R_furniture_product_sizes",
+   "level": "must",
+   "pass": true,
+   "detail": "{}"
+  },
+  {
+   "id": "R_product_support",
+   "level": "must",
+   "pass": true,
+   "detail": "{}"
+  },
+  {
+   "id": "R_actual_entrance_opening",
+   "level": "must",
+   "pass": true,
+   "detail": "{'-1.21': True, '-1.19': True, '0.0': True, '1.19': True, '1.21': True}"
+  },
+  {
+   "id": "R_secondary_brand_colour",
+   "level": "must",
+   "pass": true,
+   "detail": "{'delta': 4.028049037652082e-06, 'surfaces': [{'object': 'counter', 'material': 'mat_brand_secondary', 'delta': 4.028049037652082e-06, 'area': 1.7665440015973188, 'normal': [0.0, -1.0, 0.0]}, {'object': 'plinth_02', 'material': 'mat_brand_secondary', 'delta': 4.028049037652082e-06, 'area': 0.3104639962403081, 'normal': [0.0, -1.0, 0.0]}]}"
+  },
+  {
+   "id": "R15_anti_cheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "skipped: prerequisite checks failed"
+  },
+  {
+   "id": "R16_deliverables",
+   "level": "must",
+   "pass": true,
+   "detail": "blend+manifest"
+  },
+  {
+   "id": "R_all_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/logs/verifier/work-k4gsgy0d/render_entrance.png'\"}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{}"
+  }
+ ]
+}

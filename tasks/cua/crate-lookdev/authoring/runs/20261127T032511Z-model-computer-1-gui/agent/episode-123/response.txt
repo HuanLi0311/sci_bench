@@ -1,0 +1,1 @@
+{"analysis":"Seven brackets complete.","plan":"Duplicate final bracket downward.","action":{"type":"keypress","keys":["shift","d"]}}

@@ -1,0 +1,236 @@
+[
+    {
+        "Id": "9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb",
+        "Created": "2026-11-26T12:33:32.25024888Z",
+        "Path": "/usr/local/bin/entrypoint",
+        "Args": [
+            "bash",
+            "/tests/test.sh",
+            "/app/out"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 1,
+            "Error": "",
+            "StartedAt": "2026-11-26T12:33:32.804399983Z",
+            "FinishedAt": "2026-11-26T12:33:41.142544406Z"
+        },
+        "Image": "sha256:9e3ee5a7c1c06fe9e3093a1ed16f943baa70e276c3e9af69ed22a86b145d23ff",
+        "ResolvConfPath": "/var/lib/docker/containers/9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb/hostname",
+        "HostsPath": "/var/lib/docker/containers/9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb/hosts",
+        "LogPath": "/var/lib/docker/containers/9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb/9fa42a812d4ac40c157385c23a47b7288fc7a766d4e2f141321f498c9ea703fb-json.log",
+        "Name": "/cua-evidence-verifier-7421884a08",
+        "RestartCount": 0,
+        "Driver": "overlayfs",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/submission:/app/out:ro",
+                "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/verifier:/logs/verifier",
+                "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/grader-source:/tests:ro"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": null,
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 4000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 17179869184,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/acpi",
+                "/proc/asound",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/sys/devices/virtual/powercap",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "Storage": {
+            "RootFS": {
+                "Snapshot": {
+                    "Name": "overlayfs"
+                }
+            }
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/verifier",
+                "Destination": "/logs/verifier",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/grader-source",
+                "Destination": "/tests",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/mnt/d/qcfix2/package/ic-bench/tasks/cua/booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker/submission",
+                "Destination": "/app/out",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "9fa42a812d4a",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "PYTHONIOENCODING=utf-8",
+                "DISPLAY=:1",
+                "LIBGL_ALWAYS_SOFTWARE=1",
+                "XDG_RUNTIME_DIR=/tmp/runtime-root",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PYTHONUNBUFFERED=1"
+            ],
+            "Cmd": [
+                "bash",
+                "/tests/test.sh",
+                "/app/out"
+            ],
+            "Image": "cua-qc-booth-clearance-tests",
+            "Volumes": null,
+            "WorkingDir": "/tests",
+            "Entrypoint": [
+                "/usr/local/bin/entrypoint"
+            ],
+            "Labels": {
+                "org.opencontainers.image.version": "24.04"
+            }
+        },
+        "NetworkSettings": {
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "6875f68a6a9dc16878799d18b132fc3be423da2db66edc3a30ad3a5b0e686986",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "MacAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        },
+        "ImageManifestDescriptor": {
+            "mediaType": "application/vnd.oci.image.manifest.v1+json",
+            "digest": "sha256:9e3ee5a7c1c06fe9e3093a1ed16f943baa70e276c3e9af69ed22a86b145d23ff",
+            "size": 3369,
+            "platform": {
+                "architecture": "amd64",
+                "os": "linux"
+            }
+        }
+    }
+]

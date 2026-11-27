@@ -1,0 +1,1 @@
+{"analysis":"Front hinge ready.","plan":"Fold front pair.","action":{"type":"keypress","keys":["r","x","5","0","enter","g","z","period","1","3","enter","i"]}}

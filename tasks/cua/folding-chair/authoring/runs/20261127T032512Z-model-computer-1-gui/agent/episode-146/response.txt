@@ -1,0 +1,1 @@
+{"analysis":"Insert keys for hinge transforms.","plan":"Use I key.","action":{"type":"keypress","keys":["i"]}}

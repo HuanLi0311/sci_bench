@@ -1,0 +1,1 @@
+{"analysis":"Cylinder selected in viewport.","plan":"Scale radius to 30 mm.","action":{"type":"type","text":"s0.03"}}

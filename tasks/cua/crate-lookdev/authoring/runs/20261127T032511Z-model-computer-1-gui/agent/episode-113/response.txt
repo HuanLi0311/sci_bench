@@ -1,0 +1,1 @@
+{"analysis":"Rear-right bottom bracket positioned.","plan":"Name fifth bracket.","action":{"type":"type","text":"bracket_05"}}

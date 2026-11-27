@@ -1,0 +1,9 @@
+leg,group,phase_offset,touchdown_frame,stance_frames,swing_frames,swing_start_frame,swing_end_frame
+leg_01,A,0,1,18,6,19,24
+leg_02,B,12,13,18,6,31,36
+leg_03,A,6,7,18,6,25,30
+leg_04,B,18,19,18,6,37,42
+leg_05,A,12,13,18,6,31,36
+leg_06,B,0,1,18,6,19,24
+leg_07,A,18,19,18,6,37,42
+leg_08,B,6,7,18,6,25,30

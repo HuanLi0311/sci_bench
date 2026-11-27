@@ -1,0 +1,1 @@
+{"analysis":"Front panel selected.","plan":"Open Shading workspace for oak material.","action":{"type":"click","x":680,"y":68}}

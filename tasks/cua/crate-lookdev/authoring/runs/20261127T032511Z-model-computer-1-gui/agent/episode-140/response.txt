@@ -1,0 +1,1 @@
+{"analysis":"Replacing default text succeeded; adding line break via Return.","plan":"Finish two-line stencil.","action":{"type":"keypress","keys":["Return"]}}

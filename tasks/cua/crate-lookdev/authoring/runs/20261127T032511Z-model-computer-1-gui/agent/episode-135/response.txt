@@ -1,0 +1,1 @@
+{"analysis":"Stencil named.","plan":"Inspect front orthographic view and zoom out for composition.","action":{"type":"keypress","keys":["Return","KP_1"]}}

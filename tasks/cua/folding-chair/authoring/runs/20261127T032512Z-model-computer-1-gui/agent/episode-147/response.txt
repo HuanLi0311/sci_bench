@@ -1,0 +1,1 @@
+{"analysis":"Keyframe insertion requested.","plan":"Inspect keyed channels and proceed to frame 60.","action":{"type":"wait"}}

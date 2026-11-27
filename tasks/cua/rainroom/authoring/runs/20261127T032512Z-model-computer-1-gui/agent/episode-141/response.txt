@@ -1,0 +1,1 @@
+{"analysis":"Wide lens selected.","plan":"Set focal length.","action":{"type":"type","text":"18"}}

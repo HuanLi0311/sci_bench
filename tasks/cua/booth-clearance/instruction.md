@@ -90,4 +90,8 @@ opening plane at x=-3 m, -1.2 <= y <= 1.2 m. The actual shell must have the
 requires the product centres to lie inside the entrance camera's frame as well
 as have unobstructed sight lines.
 
+The entrance camera must face the booth centre (direction cosine >= 0.95).
+The secondary brand colour must occupy a face of at least 0.02 square metres
+on the counter or a plinth, visible to an entrance or top camera ray.
+
 You have 7200 seconds to complete this task.

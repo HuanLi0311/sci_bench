@@ -1,0 +1,1 @@
+{"analysis":"Camera Y translation entered.","plan":"Confirm then raise to eye level.","action":{"type":"keypress","keys":["enter"]}}

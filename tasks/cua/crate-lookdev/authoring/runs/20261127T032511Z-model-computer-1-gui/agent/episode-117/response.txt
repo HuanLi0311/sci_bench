@@ -1,0 +1,1 @@
+{"analysis":"Sixth bracket at rear-right top.","plan":"Name sixth bracket.","action":{"type":"type","text":"bracket_06"}}

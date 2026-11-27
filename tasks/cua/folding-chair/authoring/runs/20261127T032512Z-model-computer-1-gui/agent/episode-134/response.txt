@@ -1,0 +1,1 @@
+{"analysis":"Confirm back parenting.","plan":"Set timeline range and animate controls.","action":{"type":"keypress","keys":["enter"]}}

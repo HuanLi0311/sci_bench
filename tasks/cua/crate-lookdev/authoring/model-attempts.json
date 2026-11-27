@@ -345,6 +345,44 @@
         ],
         "classification": "artifact-failure after successful scene extraction; original historical Harbor verifier was an infrastructure failure; earlier TextCurve exception scores are superseded and preserved"
       }
+    },
+    {
+      "id": "20261127T032511Z-model-computer-1-gui",
+      "path": "tasks/cua/crate-lookdev/authoring/runs/20261127T032511Z-model-computer-1-gui",
+      "model_identifier": "gpt-6.1-sol",
+      "agent": "computer-1",
+      "gui_compliant": true,
+      "effective_config": {
+        "task": "crate-lookdev",
+        "agent": "computer-1",
+        "provider_flavor": "generic screenshot JSON",
+        "model_identifier": "gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "gui_only": true,
+        "bash_enabled": false,
+        "model_api_location": "host only; existing private configuration; credential omitted",
+        "image_id": "sha256:7e26221ea0befae7fb81763db2c845ba5928c387a14c570169b9edc49e4bc989",
+        "network": "none",
+        "cpus": 4,
+        "memory_mb": 8192,
+        "timeout_seconds": 7200,
+        "max_turns": 1200,
+        "instruction_sha256": "b641a887296df54f1f1cadd47defa2c9404014d497a33f2e215f2554303ca65d",
+        "fresh_output": true,
+        "reference_access": false,
+        "preview_provenance": "supplied materials only"
+      },
+      "outcome": "interrupted-by-operator",
+      "reward": 0,
+      "grading_run": "crate-lookdev/authoring/runs/20261127T044822Z-gui-regrade-gui-model-regrade",
+      "clean_completion": false,
+      "trajectory_present": true,
+      "trajectory_format": "ATIF computer-1 with screenshot references",
+      "agent_steps": 147,
+      "tool_calls": 147,
+      "gui_operations": 134,
+      "image_observations": 148,
+      "step_definition": "ATIF source=agent steps; tool_calls count recorded computer_action requests including failed/wait requests. GUI operations count successful input actions excluding wait/zoom/done/answer."
     }
   ]
 }

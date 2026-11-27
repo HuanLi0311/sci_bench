@@ -1,0 +1,1 @@
+{"analysis":"Value selected.","plan":"Enter dark value.","action":{"type":"type","text":"0.035"}}

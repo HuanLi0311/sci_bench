@@ -1,0 +1,1 @@
+{"analysis":"Stencil lettering entered.","plan":"Orient text onto front face and scale to 0.4 m width approximately.","action":{"type":"keypress","keys":["Tab","s","0","period","0","7","Return","r","x","9","0","Return","g","x","minus","0","period","2","Return","g","y","minus","0","period","3","0","0","5","Return","g","z","0","period","3","5","Return","F2"]}}

@@ -1,0 +1,1 @@
+{"analysis":"Camera orientation entered.","plan":"Confirm rotation and position camera near doorway.","action":{"type":"keypress","keys":["enter"]}}

@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NEGATIVE_CASES = {
     "booth-clearance": {"secondary-render-substitution", "booth-moved-entrance-marker", "booth-product-scaled",
                         "booth-product-floating", "booth-unused-brand-slot", "booth-closed-opening",
-                        "booth-camera-away", "booth-missing-secondary-color"},
+                        "booth-camera-away", "booth-missing-secondary-color", "booth-hidden-secondary-color"},
     "crate-lookdev": {"secondary-render-substitution", "crate-disconnected-maps"},
     "folding-chair": {"secondary-render-substitution", "chair-common-root-collision", "chair-shared-hinge-collision"},
     "rainroom": {"secondary-render-substitution", "rain-unused-metal-slot",
@@ -263,6 +263,7 @@ def check_negative(t):
                 "negative-booth-closed-opening": "R_actual_entrance_opening",
                 "negative-booth-camera-away": "R07_visibility",
                 "negative-booth-missing-secondary-color": "R_secondary_brand_colour",
+                "negative-booth-hidden-secondary-color": "R_secondary_brand_colour",
                 "negative-crate-disconnected-maps": "R07_pbr_maps",
                 "negative-chair-common-root-collision": "R07_no_interpenetration",
                 "negative-chair-shared-hinge-collision": "R07_no_interpenetration",

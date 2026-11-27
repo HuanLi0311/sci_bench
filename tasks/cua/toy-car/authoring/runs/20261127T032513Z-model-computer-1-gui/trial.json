@@ -2,9 +2,9 @@
   "task": "toy-car",
   "id": "20261127T032513Z-model-computer-1-gui",
   "started_at": "2026-11-27T03:25:13.516873+00:00",
-  "outcome": "running",
-  "gui_compliant": null,
-  "artifact_reward": null,
+  "outcome": "interrupted-by-operator",
+  "gui_compliant": true,
+  "artifact_reward": 0,
   "effective_config": {
     "task": "toy-car",
     "agent": "computer-1",
@@ -25,5 +25,36 @@
     "reference_access": false,
     "preview_provenance": "supplied materials only"
   },
-  "agent_started_at": "2026-11-27T03:25:16.177016+00:00"
+  "agent_started_at": "2026-11-27T03:25:16.177016+00:00",
+  "agent_finished_at": "2026-11-27T04:42:25.617359+00:00",
+  "submission": {
+    "toy_car.blend": {
+      "bytes": 932196,
+      "sha256": "9b0f0f24a979d4552d2ce24c9e8429f35d454cd2c83427148321e45279255c92"
+    },
+    "toy_car.blend1": {
+      "bytes": 891456,
+      "sha256": "85af0233ed582e0e9dc1ddcb886924f216354045523952e0eb02d216bfc0f200"
+    }
+  },
+  "gui_operations": 131,
+  "screenshots": 139,
+  "finished_at": "2026-11-27T04:53:31.104403+00:00",
+  "gui_action_records": 138,
+  "blocked_actions": 0,
+  "submission_files": {
+    "toy_car.blend": {
+      "bytes": 932196,
+      "sha256": "9b0f0f24a979d4552d2ce24c9e8429f35d454cd2c83427148321e45279255c92"
+    },
+    "toy_car.blend1": {
+      "bytes": 891456,
+      "sha256": "85af0233ed582e0e9dc1ddcb886924f216354045523952e0eb02d216bfc0f200"
+    }
+  },
+  "grading_run": "toy-car/authoring/runs/20261127T044855Z-gui-regrade-gui-model-regrade",
+  "clean_completion": false,
+  "termination_note": "Operator stopped the trials before the 7200-second budget; partial GUI work and failures retained. No successful GUI solution is claimed.",
+  "agent_steps": 138,
+  "tool_calls": 138
 }

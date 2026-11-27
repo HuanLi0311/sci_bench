@@ -1,0 +1,1 @@
+{"analysis":"Chassis dark value entered.","plan":"Close picker then add wheels.","action":{"type":"click","x":1637,"y":705}}

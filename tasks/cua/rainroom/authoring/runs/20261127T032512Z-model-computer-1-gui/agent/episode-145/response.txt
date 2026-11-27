@@ -1,0 +1,1 @@
+{"analysis":"Shell visibility toggled; set the existing light to illuminate the interior.","plan":"Select light and reset it to the room center.","action":{"type":"click","x":1690,"y":179}}

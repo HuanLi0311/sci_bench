@@ -1,0 +1,1 @@
+{"analysis":"Front pair folded. Rear pair will rotate oppositely to the same vertical orientation.","plan":"Select hinge_02.","action":{"type":"click","x":1703,"y":200}}

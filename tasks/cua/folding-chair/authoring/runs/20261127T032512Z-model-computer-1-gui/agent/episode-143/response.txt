@@ -1,0 +1,1 @@
+{"analysis":"Frame zero ready.","plan":"Select only all four hinge controls for keyframing.","action":{"type":"click","x":1701,"y":181}}

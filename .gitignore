@@ -310,3 +310,11 @@ dump.rdb
 *.tfstate
 *.tfstate.*
 node_modules/.cache/
+
+# ---------- agent episode debug dumps ----------
+# Regenerable per-episode traces. Each debug.json can be 20-50MB and a
+# single model run produces hundreds of them, which makes git push hang
+# and get disconnected by GitHub. Keep them local only.
+**/agent/**/debug.json
+**/agent/episode-*/debug.json
+**/agent/**/debug.json.*

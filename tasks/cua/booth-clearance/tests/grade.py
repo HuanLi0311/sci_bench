@@ -169,7 +169,8 @@ def main():
     ce = cams.get("cam_entrance")
     cam_ok = bool(ce) and abs(ce.get("lens", 0) - 35) <= 1 \
         and abs(ce["location"][0] - (-1.5)) <= 0.05 \
-        and abs(ce["location"][2] - 1.6) <= 0.05
+        and abs(ce["location"][2] - 1.6) <= 0.05 \
+        and scene.get("entrance_camera_facing_center", False)
     ct = cams.get("cam_top")
     top_ok = bool(ct) and ct.get("type") == "ORTHO" and ct.get("ortho_scale", 0) >= 5.95
     add("R13_entrance_render", "must", r_ok and distinct and cam_ok and top_ok,
@@ -198,8 +199,11 @@ def main():
     add("R_actual_entrance_opening", "must", len(opening) == 5 and all(opening.values()), opening)
 
     secondary_delta = scene.get("secondary_brand_delta")
-    add("R_secondary_brand_colour", "must", secondary_delta is not None and secondary_delta <= 2.0,
-        {"delta": secondary_delta, "surfaces": scene.get("secondary_brand_surfaces", [])})
+    secondary_surfaces = scene.get("secondary_brand_surfaces", [])
+    secondary_ok = (secondary_delta is not None and secondary_delta <= 2.0
+                    and any(float(item.get("area", 0.0)) >= 0.02 for item in secondary_surfaces))
+    add("R_secondary_brand_colour", "must", secondary_ok,
+        {"delta": secondary_delta, "surfaces": secondary_surfaces})
 
     # anti-cheat: move cabinet_01 by 0.5 m and re-render
     ac_ok, ac_detail = False, "skipped: prerequisite checks failed"
@@ -208,7 +212,7 @@ def main():
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
             run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp, "--python", "/tests/rerender.py",
-                 "--", os.path.join(WORK, "ac_base.png"), os.path.join(WORK, "ac_moved.png")], timeout=900)
+                 "--", os.path.join(WORK, "ac_base.png"), os.path.join(WORK, "ac_moved.png")], timeout=1200)
             if os.path.exists(os.path.join(WORK, "ac_base.png")) and os.path.exists(os.path.join(WORK, "ac_moved.png")):
                 base = load_gray(os.path.join(WORK, "ac_base.png"))
                 moved = load_gray(os.path.join(WORK, "ac_moved.png"))

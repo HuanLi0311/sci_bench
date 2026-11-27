@@ -1,0 +1,1 @@
+{"analysis":"Camera lens is set. Restore shell viewport visibility and set the existing light inside the room.","plan":"Restore hidden room shell.","action":{"type":"keypress","keys":["alt","h"]}}

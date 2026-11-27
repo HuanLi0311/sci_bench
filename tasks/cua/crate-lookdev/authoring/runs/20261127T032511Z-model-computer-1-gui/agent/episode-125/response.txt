@@ -1,0 +1,1 @@
+{"analysis":"Eight brackets placed; final name pending.","plan":"Name final bracket.","action":{"type":"type","text":"bracket_08"}}

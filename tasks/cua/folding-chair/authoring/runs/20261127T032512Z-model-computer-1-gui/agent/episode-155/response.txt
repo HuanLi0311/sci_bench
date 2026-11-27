@@ -1,0 +1,1 @@
+{"analysis":"Second hinge selected.","plan":"Fold rear pair upright and lift.","action":{"type":"mouse_move","x":800,"y":530}}

@@ -1,0 +1,1 @@
+{"analysis":"First line correct, line break inserted.","plan":"Enter second line.","action":{"type":"type","text":"WITH CARE"}}

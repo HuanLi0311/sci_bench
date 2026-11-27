@@ -1,0 +1,1 @@
+{"analysis":"All hinges keyed at frame 0. Folded layout will use parallel bars and separated vertical panels within a 90 mm pack.","plan":"Set current frame 60.","action":{"type":"double_click","x":1332,"y":999}}

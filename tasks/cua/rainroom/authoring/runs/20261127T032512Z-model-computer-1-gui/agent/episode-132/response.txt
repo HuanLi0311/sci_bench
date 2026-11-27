@@ -1,0 +1,1 @@
+{"analysis":"Camera is at the near wall.","plan":"Raise camera to 1.5 m.","action":{"type":"type","text":"gz1.5"}}

@@ -1,0 +1,1 @@
+{"analysis":"First wheel named.","plan":"Confirm then duplicate.","action":{"type":"keypress","keys":["Return"]}}

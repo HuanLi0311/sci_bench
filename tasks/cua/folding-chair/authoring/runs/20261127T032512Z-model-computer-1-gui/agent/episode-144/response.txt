@@ -1,0 +1,1 @@
+{"analysis":"First hinge selected.","plan":"Select hinge range.","action":{"type":"click","x":1703,"y":242,"modifier":"shift"}}

@@ -1,0 +1,1 @@
+{"analysis":"Camera name field active.","plan":"Replace camera name exactly.","action":{"type":"keypress","keys":["ctrl","a"]}}

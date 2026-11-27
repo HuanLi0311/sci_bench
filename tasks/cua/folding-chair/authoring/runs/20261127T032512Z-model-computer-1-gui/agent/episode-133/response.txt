@@ -1,0 +1,1 @@
+{"analysis":"Parent back panel.","plan":"Keep transform.","action":{"type":"keypress","keys":["ctrl","p"]}}

@@ -1,23 +1,22 @@
 # Current validation: booth-clearance
 
-Completed current-source verification, checked 2026-11-26T10:57:43.459080+00:00. All rows below have raw stdout/stderr, exact source/input hashes, metrics and reward files.
+Only matching-source records below validate this revision. Historical failures remain separately indexed.
 
-| Case | Reward | Checks passed | Raw evidence |
+| Case | Reward | Checks | Evidence |
 |---|---:|---:|---|
-| oracle | 1 | 22/22 | [metadata](../runs/20261126T102746Z-final-oracle/run.json), [metrics](../runs/20261126T102746Z-final-oracle/verifier/metrics.json), [reward](../runs/20261126T102746Z-final-oracle/verifier/reward.txt) |
-| nop | 0 | 5/22 | [metadata](../runs/20261126T103358Z-final-nop/run.json), [metrics](../runs/20261126T103358Z-final-nop/verifier/metrics.json), [reward](../runs/20261126T103358Z-final-nop/verifier/reward.txt) |
-| negative-booth-camera-away | 0 | 18/22 | [metadata](../runs/20261126T102733Z-final-negative-booth-camera-away/run.json), [metrics](../runs/20261126T102733Z-final-negative-booth-camera-away/verifier/metrics.json), [reward](../runs/20261126T102733Z-final-negative-booth-camera-away/verifier/reward.txt) |
-| negative-booth-closed-opening | 0 | 18/22 | [metadata](../runs/20261126T102726Z-final-negative-booth-closed-opening/run.json), [metrics](../runs/20261126T102726Z-final-negative-booth-closed-opening/verifier/metrics.json), [reward](../runs/20261126T102726Z-final-negative-booth-closed-opening/verifier/reward.txt) |
-| negative-booth-missing-secondary-color | 0 | 18/22 | [metadata](../runs/20261126T102739Z-final-negative-booth-missing-secondary-color/run.json), [metrics](../runs/20261126T102739Z-final-negative-booth-missing-secondary-color/verifier/metrics.json), [reward](../runs/20261126T102739Z-final-negative-booth-missing-secondary-color/verifier/reward.txt) |
-| negative-booth-moved-entrance-marker | 0 | 18/22 | [metadata](../runs/20261126T102659Z-final-negative-booth-moved-entrance-marker/run.json), [metrics](../runs/20261126T102659Z-final-negative-booth-moved-entrance-marker/verifier/metrics.json), [reward](../runs/20261126T102659Z-final-negative-booth-moved-entrance-marker/verifier/reward.txt) |
-| negative-booth-product-floating | 0 | 18/22 | [metadata](../runs/20261126T102712Z-final-negative-booth-product-floating/run.json), [metrics](../runs/20261126T102712Z-final-negative-booth-product-floating/verifier/metrics.json), [reward](../runs/20261126T102712Z-final-negative-booth-product-floating/verifier/reward.txt) |
-| negative-booth-product-scaled | 0 | 17/22 | [metadata](../runs/20261126T102706Z-final-negative-booth-product-scaled/run.json), [metrics](../runs/20261126T102706Z-final-negative-booth-product-scaled/verifier/metrics.json), [reward](../runs/20261126T102706Z-final-negative-booth-product-scaled/verifier/reward.txt) |
-| negative-booth-unused-brand-slot | 0 | 18/22 | [metadata](../runs/20261126T102720Z-final-negative-booth-unused-brand-slot/run.json), [metrics](../runs/20261126T102720Z-final-negative-booth-unused-brand-slot/verifier/metrics.json), [reward](../runs/20261126T102720Z-final-negative-booth-unused-brand-slot/verifier/reward.txt) |
-| negative-secondary-render-substitution | 0 | 21/22 | [metadata](../runs/20261126T104017Z-final-negative-secondary-render-substitution/run.json), [metrics](../runs/20261126T104017Z-final-negative-secondary-render-substitution/verifier/metrics.json), [reward](../runs/20261126T104017Z-final-negative-secondary-render-substitution/verifier/reward.txt) |
-| model-regrade | 1 | 22/22 | [metadata](../runs/20261126T103405Z-final-model-regrade/run.json), [metrics](../runs/20261126T103405Z-final-model-regrade/verifier/metrics.json), [reward](../runs/20261126T103405Z-final-model-regrade/verifier/reward.txt) |
+| model-regrade | 1 | 22/22 | [run](../runs/20261126T125640Z-final-model-regrade/run.json), [metrics](../runs/20261126T125640Z-final-model-regrade/verifier/metrics.json) |
+| negative-booth-camera-away | 0 | 17/22 | [run](../runs/20261126T125630Z-final-negative-booth-camera-away/run.json), [metrics](../runs/20261126T125630Z-final-negative-booth-camera-away/verifier/metrics.json) |
+| negative-booth-closed-opening | 0 | 18/22 | [run](../runs/20261126T125630Z-final-negative-booth-closed-opening/run.json), [metrics](../runs/20261126T125630Z-final-negative-booth-closed-opening/verifier/metrics.json) |
+| negative-booth-hidden-secondary-color | 0 | 18/22 | [run](../runs/20261126T125858Z-final-negative-booth-hidden-secondary-color/run.json), [metrics](../runs/20261126T125858Z-final-negative-booth-hidden-secondary-color/verifier/metrics.json) |
+| negative-booth-missing-secondary-color | 0 | 18/22 | [run](../runs/20261126T125639Z-final-negative-booth-missing-secondary-color/run.json), [metrics](../runs/20261126T125639Z-final-negative-booth-missing-secondary-color/verifier/metrics.json) |
+| negative-booth-moved-entrance-marker | 0 | 18/22 | [run](../runs/20261126T125621Z-final-negative-booth-moved-entrance-marker/run.json), [metrics](../runs/20261126T125621Z-final-negative-booth-moved-entrance-marker/verifier/metrics.json) |
+| negative-booth-product-floating | 0 | 18/22 | [run](../runs/20261126T125621Z-final-negative-booth-product-floating/run.json), [metrics](../runs/20261126T125621Z-final-negative-booth-product-floating/verifier/metrics.json) |
+| negative-booth-product-scaled | 0 | 17/22 | [run](../runs/20261126T125621Z-final-negative-booth-product-scaled/run.json), [metrics](../runs/20261126T125621Z-final-negative-booth-product-scaled/verifier/metrics.json) |
+| negative-booth-unused-brand-slot | 0 | 18/22 | [run](../runs/20261126T125629Z-final-negative-booth-unused-brand-slot/run.json), [metrics](../runs/20261126T125629Z-final-negative-booth-unused-brand-slot/verifier/metrics.json) |
+| negative-secondary-render-substitution | 0 | 21/22 | [run](../runs/20261126T125652Z-final-negative-secondary-render-substitution/run.json), [metrics](../runs/20261126T125652Z-final-negative-secondary-render-substitution/verifier/metrics.json) |
+| nop | 0 | 5/22 | [run](../runs/20261126T130004Z-final-nop/run.json), [metrics](../runs/20261126T130004Z-final-nop/verifier/metrics.json) |
+| oracle | 1 | 22/22 | [run](../runs/20261126T125639Z-final-oracle/run.json), [metrics](../runs/20261126T125639Z-final-oracle/verifier/metrics.json) |
 
-NOP executes only `/bin/true` in a fresh task image and exports the untouched empty output. Negative mutations are separate runs. The final package QC is [here](../../../evaluation/20261126T105010Z-all-tasks-final-qc/qc.json).
-
-The model artifact is unchanged from the isolated `gpt-6.1-sol` / high / Codex CLI 0.172.0 terminal attempt. It now passes all 22 checks, after correcting Empty-marker and sRGB judge errors. Its CLI terminated on API 429 (exit 1), so artifact success is separate from clean execution/GUI success. The complete trace has 88 raw agent items, 73 tool requests and 13 image observations; see [model attempts](../model-attempts.json) and [observations](../runs/20261126T084651Z-model-codex-terminal/observations/README.md).
-
-The earlier constant-image counterexample really scored [1](../runs/20261126T082402Z-final-negative-secondary-render-substitution/verifier/reward.txt). Its same PNG bytes are rejected by the current structure check. Reference colour correction retained identical geometry and preserved the old scene/photos; see [COLOR_SPACE.md](COLOR_SPACE.md).
+The model row regrades a preserved terminal-baseline artifact; it is not a new GUI-compliant model run.
+Independent verification renders use 16 samples; delivered renders retain their original contract. RGB SSIM/structure thresholds are unchanged.
+The companion runtime archive includes exact prebuilt base, environment and verifier images.

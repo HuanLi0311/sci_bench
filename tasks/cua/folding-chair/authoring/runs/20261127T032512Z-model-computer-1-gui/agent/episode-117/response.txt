@@ -1,0 +1,1 @@
+{"analysis":"Hinge_02 active.","plan":"Parent rear bars.","action":{"type":"mouse_move","x":800,"y":530}}

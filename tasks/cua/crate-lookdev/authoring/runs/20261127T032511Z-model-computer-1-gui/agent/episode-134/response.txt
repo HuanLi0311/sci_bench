@@ -1,0 +1,1 @@
+{"analysis":"Text placed on front, rename requested.","plan":"Name stencil object.","action":{"type":"type","text":"stencil_text"}}

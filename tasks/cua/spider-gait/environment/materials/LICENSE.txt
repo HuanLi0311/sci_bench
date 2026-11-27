@@ -1,0 +1,7 @@
+CARTOON SPIDER DESIGN PACK - CC0-1.0
+
+Every file in this pack was authored for this task and is released
+under CC0-1.0. You may copy, modify and redistribute it, including
+commercially, without attribution.
+
+Files: drawings/spider_three_views.png, spec/*, poses/*, textures/*

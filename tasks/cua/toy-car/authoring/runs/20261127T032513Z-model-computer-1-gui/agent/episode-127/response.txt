@@ -1,0 +1,1 @@
+{"analysis":"First tyre oriented correctly.","plan":"Set front axle X to +0.12 m.","action":{"type":"type","text":"gx0.12"}}

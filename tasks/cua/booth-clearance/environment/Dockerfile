@@ -3,7 +3,7 @@
 #
 # Base: the local Blender desktop image (Ubuntu 24.04 + Blender 4.2.3 LTS +
 # Xvfb/XFCE/x11vnc/xdotool). Recipe: crate-lookdev/authoring/base-image.md.
-FROM blender-bench:gui
+FROM blender-bench:gui@sha256:210d1ac38c39509a58d74df77a21ead78d64396f16cc0a61bc08fc09813cacdf
 
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONDONTWRITEBYTECODE=1 \

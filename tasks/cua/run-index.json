@@ -1987,6 +1987,1369 @@
     }
   },
   {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-moved-entrance-marker",
+    "kind": "negative-booth-moved-entrance-marker",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:43.024777+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R05_entrance_clearance",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-product-floating",
+    "kind": "negative-booth-product-floating",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:43.238766+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_product_support",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123328Z-final-negative-booth-product-scaled",
+    "kind": "negative-booth-product-scaled",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:43.251622+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_furniture_product_sizes",
+      "R_product_support",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123343Z-final-negative-booth-camera-away",
+    "kind": "negative-booth-camera-away",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:55.378985+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R07_visibility",
+      "R13_entrance_render",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123343Z-final-negative-booth-closed-opening",
+    "kind": "negative-booth-closed-opening",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:55.129837+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_actual_entrance_opening",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123343Z-final-negative-booth-unused-brand-slot",
+    "kind": "negative-booth-unused-brand-slot",
+    "label": "final",
+    "finished_at": "2026-11-26T12:33:55.235231+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R08_brand_colour",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123355Z-final-model-regrade",
+    "kind": "model-regrade",
+    "label": "final",
+    "finished_at": "2026-11-26T12:39:03.362662+00:00",
+    "reward": 1,
+    "agent_exit_code": null,
+    "verifier_exit_code": 0,
+    "failed_checks": [],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123355Z-final-negative-booth-missing-secondary-color",
+    "kind": "negative-booth-missing-secondary-color",
+    "label": "final",
+    "finished_at": "2026-11-26T12:34:06.514339+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_secondary_brand_colour",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123355Z-final-oracle",
+    "kind": "oracle",
+    "label": "final",
+    "finished_at": "2026-11-26T12:38:52.800256+00:00",
+    "reward": 1,
+    "agent_exit_code": 0,
+    "verifier_exit_code": 0,
+    "failed_checks": [],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123406Z-final-negative-secondary-render-substitution",
+    "kind": "negative-secondary-render-substitution",
+    "label": "final",
+    "finished_at": "2026-11-26T12:39:04.766731+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T123852Z-final-nop",
+    "kind": "nop",
+    "label": "final",
+    "finished_at": "2026-11-26T12:39:05.009382+00:00",
+    "reward": 0,
+    "agent_exit_code": 0,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_objects",
+      "R03_size",
+      "R05_entrance_clearance",
+      "R07_visibility",
+      "R08_brand_colour",
+      "R12_polys",
+      "R13_entrance_render",
+      "R14_manifest",
+      "R_furniture_product_sizes",
+      "R_product_support",
+      "R_actual_entrance_opening",
+      "R_secondary_brand_colour",
+      "R15_anti_cheat",
+      "R16_deliverables",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "f909d090aa54a343c840c2b598025306edd3af11d26b24ae900186a0c1dcf867",
+        "bytes": 16075
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125621Z-final-negative-booth-moved-entrance-marker",
+    "kind": "negative-booth-moved-entrance-marker",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:29.955962+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R05_entrance_clearance",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125621Z-final-negative-booth-product-floating",
+    "kind": "negative-booth-product-floating",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:30.382826+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_product_support",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125621Z-final-negative-booth-product-scaled",
+    "kind": "negative-booth-product-scaled",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:29.667545+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_furniture_product_sizes",
+      "R_product_support",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125629Z-final-negative-booth-unused-brand-slot",
+    "kind": "negative-booth-unused-brand-slot",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:39.761292+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R08_brand_colour",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125630Z-final-negative-booth-camera-away",
+    "kind": "negative-booth-camera-away",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:40.106389+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R07_visibility",
+      "R13_entrance_render",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125630Z-final-negative-booth-closed-opening",
+    "kind": "negative-booth-closed-opening",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:39.907147+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_actual_entrance_opening",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125639Z-final-negative-booth-missing-secondary-color",
+    "kind": "negative-booth-missing-secondary-color",
+    "label": "final",
+    "finished_at": "2026-11-26T12:56:52.813668+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_secondary_brand_colour",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125639Z-final-oracle",
+    "kind": "oracle",
+    "label": "final",
+    "finished_at": "2026-11-26T13:00:04.690079+00:00",
+    "reward": 1,
+    "agent_exit_code": 0,
+    "verifier_exit_code": 0,
+    "failed_checks": [],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125640Z-final-model-regrade",
+    "kind": "model-regrade",
+    "label": "final",
+    "finished_at": "2026-11-26T13:00:24.584060+00:00",
+    "reward": 1,
+    "agent_exit_code": null,
+    "verifier_exit_code": 0,
+    "failed_checks": [],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125652Z-final-negative-secondary-render-substitution",
+    "kind": "negative-secondary-render-substitution",
+    "label": "final",
+    "finished_at": "2026-11-26T13:00:13.413834+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T125858Z-final-negative-booth-hidden-secondary-color",
+    "kind": "negative-booth-hidden-secondary-color",
+    "label": "final",
+    "finished_at": "2026-11-26T12:59:16.992896+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R_secondary_brand_colour",
+      "R15_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
+    "task": "booth-clearance",
+    "run": "booth-clearance/authoring/runs/20261126T130004Z-final-nop",
+    "kind": "nop",
+    "label": "final",
+    "finished_at": "2026-11-26T13:00:13.918200+00:00",
+    "reward": 0,
+    "agent_exit_code": 0,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_objects",
+      "R03_size",
+      "R05_entrance_clearance",
+      "R07_visibility",
+      "R08_brand_colour",
+      "R12_polys",
+      "R13_entrance_render",
+      "R14_manifest",
+      "R_furniture_product_sizes",
+      "R_product_support",
+      "R_actual_entrance_opening",
+      "R_secondary_brand_colour",
+      "R15_anti_cheat",
+      "R16_deliverables",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "a7dda01353c84d3391dc06003bbd1cec56767a2eff902e972b857c6581925329",
+        "bytes": 803
+      },
+      "check_scene.py": {
+        "sha256": "1a1d5ed9c98403f58727b104eeccc5a75b25ffda5d592c11efb7b933f8a392c7",
+        "bytes": 17334
+      },
+      "grade.py": {
+        "sha256": "aab8dc24e473a1278d9cf45664a47d1bc595596efefc103d5017a112f71af2d6",
+        "bytes": 12262
+      },
+      "reference/geometry.json": {
+        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 2570
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "6ecfa99e6b7a20f049c9cc616e977e90cca856f3814981f1e187829e3f9dd076",
+        "bytes": 2230
+      },
+      "rubric.py": {
+        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 1835
+      },
+      "test.sh": {
+        "sha256": "01ba75db63f6717bd5b4f0901b71b9efe0f385ad7ef5b22cc8efda32a5e8ba99",
+        "bytes": 854
+      },
+      "test_rubric.py": {
+        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
+        "bytes": 1540
+      },
+      "validate_result.py": {
+        "sha256": "39c4a4bfe1c5d0a01b60dd5b4ffd785f8351d899b946877aa64939b180ac3eaa",
+        "bytes": 1442
+      }
+    }
+  },
+  {
     "task": "crate-lookdev",
     "run": "crate-lookdev/authoring/runs/20261126T073902Z-pre-hardening-oracle",
     "kind": "oracle",
@@ -2957,6 +4320,62 @@
     }
   },
   {
+    "task": "crate-lookdev",
+    "run": "crate-lookdev/authoring/runs/20261127T044822Z-gui-regrade-gui-model-regrade",
+    "kind": "gui-model-regrade",
+    "label": "gui-regrade",
+    "finished_at": "2026-11-27T04:48:41.986267+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_parts",
+      "R03_outer_size",
+      "R04_thickness",
+      "R05_lid_hinge",
+      "R06_real_geometry",
+      "R07_pbr_maps",
+      "R08_materials",
+      "R09_stencil_wear",
+      "R10_renders",
+      "R11_polys",
+      "R12_manifest",
+      "R13_render_authenticity",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "69c349f0833583acb07575df79d8a4156c5d8a512a5c65f2f4756414903fc4f9",
+        "bytes": 11916
+      },
+      "grade.py": {
+        "sha256": "ba4d73a7edc4df65b29796a1c7b98627e3a94781ebcbf30b5639b455020d4462",
+        "bytes": 16604
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "8c9dd4f2057ff14d298a0acda74bffbb0e0f0688da7b206d41010e15697afe7f",
+        "bytes": 3119
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  {
     "task": "folding-chair",
     "run": "folding-chair/authoring/runs/20261126T074157Z-pre-hardening-oracle",
     "kind": "oracle",
@@ -3858,6 +5277,60 @@
     "agent_exit_code": null,
     "verifier_exit_code": 1,
     "failed_checks": [
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "93626c3f9eaa7ce463a5f05ca6e53f76211787d1fddd282fd33d7575442da27c",
+        "bytes": 6672
+      },
+      "grade.py": {
+        "sha256": "701642000bd129d440890845c5496c0cbf89e22c5465a80c8bf339b23078f260",
+        "bytes": 10237
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "d8958baf0b4af4e2993c8ea534fc77debc6d4a4481ed671d9b76d03c634e2149",
+        "bytes": 2028
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  {
+    "task": "folding-chair",
+    "run": "folding-chair/authoring/runs/20261127T044842Z-gui-regrade-gui-model-regrade",
+    "kind": "gui-model-regrade",
+    "label": "gui-regrade",
+    "finished_at": "2026-11-27T04:48:48.670993+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_parts",
+      "R03_hinges",
+      "R04_unfolded",
+      "R05_folded_thickness",
+      "R06_animation",
+      "R08_hinge_coincidence",
+      "R09_states",
+      "R11_polys",
+      "R12_manifest",
+      "R13_anti_cheat",
       "R_all_render_authenticity",
       "R_render_structure"
     ],
@@ -4883,6 +6356,62 @@
     }
   },
   {
+    "task": "rainroom",
+    "run": "rainroom/authoring/runs/20261127T044849Z-gui-regrade-gui-model-regrade",
+    "kind": "gui-model-regrade",
+    "label": "gui-regrade",
+    "finished_at": "2026-11-27T04:48:55.324018+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_objects",
+      "R03_room_size",
+      "R04_light_sets",
+      "R05_camera",
+      "R06_renders",
+      "R07_brightness",
+      "R08_time_of_day",
+      "R09_materials",
+      "R11_polys",
+      "R12_manifest",
+      "R_object_positions",
+      "R13_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "14fb06d4105fd0db89de5036bde8d37bf6c8cfee8227ac1ba31f9238e583ef55",
+        "bytes": 7794
+      },
+      "grade.py": {
+        "sha256": "3861e7c7883c1eab6e5182279eca342f3d9116d538c0991e28a2f114d9e43e03",
+        "bytes": 9959
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "48a136de1c05840f60aef88d43f6b3a9e17437779be85c1229bfe63bd0368b39",
+        "bytes": 2361
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  {
     "task": "toy-car",
     "run": "toy-car/authoring/runs/20261126T080029Z-hardened-oracle",
     "kind": "oracle",
@@ -5622,6 +7151,78 @@
     "verifier_exit_code": 1,
     "failed_checks": [
       "R10_silhouette",
+      "R14_anti_cheat",
+      "R_all_render_authenticity",
+      "R_render_structure"
+    ],
+    "metrics_error": null,
+    "run_error": null,
+    "classification": "graded",
+    "grader_source": {
+      "Dockerfile": {
+        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 709
+      },
+      "check_scene.py": {
+        "sha256": "a5870f6ba1a728ca0c7057a47cdbe54eb527240934597118002671da5127f1f3",
+        "bytes": 6578
+      },
+      "grade.py": {
+        "sha256": "2e884f0fae9535646de7092d7d340d07caad5d6c763acadfee31ff34e7a9f9ec",
+        "bytes": 10616
+      },
+      "reference/silhouettes/back.png": {
+        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
+        "bytes": 348
+      },
+      "reference/silhouettes/front.png": {
+        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
+        "bytes": 347
+      },
+      "reference/silhouettes/side.png": {
+        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
+        "bytes": 440
+      },
+      "reference/silhouettes/top.png": {
+        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
+        "bytes": 471
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "a85a9b10aca45a22cda7de9dc50244afe32d3da9ac6acf188ff452ae33684f35",
+        "bytes": 2407
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  {
+    "task": "toy-car",
+    "run": "toy-car/authoring/runs/20261127T044855Z-gui-regrade-gui-model-regrade",
+    "kind": "gui-model-regrade",
+    "label": "gui-regrade",
+    "finished_at": "2026-11-27T04:49:02.862662+00:00",
+    "reward": 0,
+    "agent_exit_code": null,
+    "verifier_exit_code": 1,
+    "failed_checks": [
+      "R01_open",
+      "R02_parts",
+      "R03_wheelbase",
+      "R04_wheel_diameter",
+      "R05_axle_pose",
+      "R06_wheel_spin",
+      "R07_steering",
+      "R08_doors",
+      "R09_views",
+      "R10_silhouette",
+      "R12_polys",
+      "R13_manifest",
       "R14_anti_cheat",
       "R_all_render_authenticity",
       "R_render_structure"

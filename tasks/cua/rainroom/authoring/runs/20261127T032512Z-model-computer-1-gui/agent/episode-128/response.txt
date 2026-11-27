@@ -1,0 +1,1 @@
+{"analysis":"Camera reset. Aim it toward +Y with a slight downward tilt.","plan":"Rotate camera X to 80 degrees.","action":{"type":"type","text":"rx80"}}

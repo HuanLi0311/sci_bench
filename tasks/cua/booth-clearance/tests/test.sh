@@ -12,6 +12,13 @@ OUT="${1:-/app/out}"
 python3 /tests/grade.py "$OUT" > /logs/verifier/metrics.json 2>/logs/verifier/stderr.log
 STATUS=$?
 
+# A stale reward must never survive a new run.
+rm -f /logs/verifier/reward.txt
+python3 /tests/validate_result.py /logs/verifier/metrics.json "$STATUS"
+if [ "$?" -ne 0 ]; then
+  echo "Verifier infrastructure error; no candidate reward written" >&2
+  exit 2
+fi
 if [ "$STATUS" -eq 0 ]; then
   echo 1 > /logs/verifier/reward.txt
 else

@@ -1,0 +1,1849 @@
+{
+ "ok": true,
+ "blender": "4.2.3 LTS",
+ "unit_system": "METRIC",
+ "objects": {
+  "Back wall / headline": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    2.1000852584838867,
+    0.10880062729120255,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     2.8535499572753906,
+     -1.0519802570343018,
+     2.051954507827759
+    ],
+    [
+     2.854450225830078,
+     1.0481048822402954,
+     2.160755157470703
+    ]
+   ],
+   "polys": 7908,
+   "materials": [
+    "Warm porcelain | satin lacquer"
+   ]
+  },
+  "Back wall / headline rule": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.012000000104308128,
+    0.5199999809265137,
+    0.012000000104308128
+   ],
+   "aabb": [
+    [
+     2.8469998836517334,
+     -0.25999999046325684,
+     1.6639999151229858
+    ],
+    [
+     2.8589999675750732,
+     0.25999999046325684,
+     1.6759999990463257
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "Back wall / series label": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.9393781423568726,
+    0.02970055863261223,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     2.8535499572753906,
+     -0.46847108006477356,
+     1.3468717336654663
+    ],
+    [
+     2.854450225830078,
+     0.470907062292099,
+     1.3765722513198853
+    ]
+   ],
+   "polys": 13404,
+   "materials": [
+    "Lettering | pale sage"
+   ]
+  },
+  "Back wall / soft graze": {
+   "type": "LIGHT",
+   "parent": "lighting"
+  },
+  "Back wall / subline": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    1.1175479888916016,
+    0.033900558948516846,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     2.8515498638153076,
+     -0.5605257749557495,
+     1.8250178098678589
+    ],
+    [
+     2.852450132369995,
+     0.557022213935852,
+     1.858918309211731
+    ]
+   ],
+   "polys": 17652,
+   "materials": [
+    "Lettering | pale sage"
+   ]
+  },
+  "Back wall edge detail": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.017999999225139618,
+    0.014000000432133675,
+    2.950000047683716
+   ],
+   "aabb": [
+    [
+     2.8539998531341553,
+     -1.7369999885559082,
+     0.5749999284744263
+    ],
+    [
+     2.871999979019165,
+     -1.7230000495910645,
+     3.5250000953674316
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "Back wall edge detail.001": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.017999999225139618,
+    0.014000000432133675,
+    2.950000047683716
+   ],
+   "aabb": [
+    [
+     2.8539998531341553,
+     1.7230000495910645,
+     0.5749999284744263
+    ],
+    [
+     2.871999979019165,
+     1.7369999885559082,
+     3.5250000953674316
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "Back wall shadow skirting": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.02199999988079071,
+    3.740000009536743,
+    0.07800000160932541
+   ],
+   "aabb": [
+    [
+     2.8560001850128174,
+     -1.8700000047683716,
+     0.01599999889731407
+    ],
+    [
+     2.878000020980835,
+     1.8700000047683716,
+     0.09399999678134918
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "back_wall_logo": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.0,
+    0.8999999761581421,
+    0.2999999523162842
+   ],
+   "aabb": [
+    [
+     2.8350000381469727,
+     -0.44999998807907104,
+     2.450000047683716
+    ],
+    [
+     2.8350000381469727,
+     0.44999998807907104,
+     2.75
+    ]
+   ],
+   "polys": 2,
+   "materials": [
+    "VOLTA / packed logo print"
+   ]
+  },
+  "booth_shell": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    6.0,
+    4.0,
+    4.0
+   ],
+   "aabb": [
+    [
+     -3.0,
+     -2.0,
+     -1.5832483768463135e-08
+    ],
+    [
+     3.0,
+     2.0,
+     4.0
+    ]
+   ],
+   "polys": 72,
+   "materials": [
+    "Pale mineral terrazzo",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "Exhibition wall | warm white"
+   ]
+  },
+  "Brushed skirting": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    5.760000228881836,
+    0.01600000075995922,
+    0.07800000160932541
+   ],
+   "aabb": [
+    [
+     -2.880000114440918,
+     -1.878000020980835,
+     0.01599999889731407
+    ],
+    [
+     2.880000114440918,
+     -1.8619999885559082,
+     0.09399999678134918
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Brushed aluminium"
+   ]
+  },
+  "Brushed skirting.001": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    5.760000228881836,
+    0.01600000075995922,
+    0.07800000160932541
+   ],
+   "aabb": [
+    [
+     -2.880000114440918,
+     1.8619999885559082,
+     0.01599999889731407
+    ],
+    [
+     2.880000114440918,
+     1.878000020980835,
+     0.09399999678134918
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Brushed aluminium"
+   ]
+  },
+  "cabinet_01": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    1.2000000476837158,
+    0.500499963760376,
+    2.0
+   ],
+   "aabb": [
+    [
+     0.3999999761581421,
+     -1.875,
+     0.016000032424926758
+    ],
+    [
+     1.600000023841858,
+     -1.374500036239624,
+     2.0160000324249268
+    ]
+   ],
+   "polys": 1316,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "Graphite | powder coated aluminium",
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "cabinet_01 / storage ID": {
+   "type": "MESH",
+   "parent": "cabinet_01",
+   "dimensions": [
+    0.2796475291252136,
+    0.03180120885372162,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     0.8647149801254272,
+     -1.3744499683380127,
+     1.835944414138794
+    ],
+    [
+     1.1443625688552856,
+     -1.3735499382019043,
+     1.8677456378936768
+    ]
+   ],
+   "polys": 2764,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "cabinet_02": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    1.2000000476837158,
+    0.500499963760376,
+    2.0
+   ],
+   "aabb": [
+    [
+     -0.9500000476837158,
+     1.374500036239624,
+     0.016000032424926758
+    ],
+    [
+     0.2500000298023224,
+     1.875,
+     2.0160000324249268
+    ]
+   ],
+   "polys": 1316,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "Graphite | powder coated aluminium",
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "cabinet_02 / storage ID": {
+   "type": "MESH",
+   "parent": "cabinet_02",
+   "dimensions": [
+    0.28711754083633423,
+    0.03180120885372162,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     -0.4943625330924988,
+     1.3735499382019043,
+     1.835944414138794
+    ],
+    [
+     -0.20724499225616455,
+     1.3744499683380127,
+     1.8677456378936768
+    ]
+   ],
+   "polys": 3784,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "cam_entrance": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    -1.5,
+    0.0,
+    1.600000023841858
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.75,
+   "location": [
+    0.0,
+    0.0,
+    10.0
+   ]
+  },
+  "Ceiling / broad key": {
+   "type": "LIGHT",
+   "parent": "lighting"
+  },
+  "corner_column": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.4000000059604645,
+    0.4000000059604645,
+    4.0
+   ],
+   "aabb": [
+    [
+     2.5999999046325684,
+     -2.0,
+     0.0
+    ],
+    [
+     3.0,
+     -1.5999999046325684,
+     4.0
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Exhibition wall | warm white"
+   ]
+  },
+  "counter": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    1.7999999523162842,
+    0.6000001430511475,
+    1.0
+   ],
+   "aabb": [
+    [
+     -2.7200000286102295,
+     -1.8300000429153442,
+     0.01600000262260437
+    ],
+    [
+     -0.9200000762939453,
+     -1.2299998998641968,
+     1.0160000324249268
+    ]
+   ],
+   "polys": 752,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 secondary \u2022 #F2C14E",
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Counter / welcome": {
+   "type": "MESH",
+   "parent": "counter",
+   "dimensions": [
+    0.835952639579773,
+    0.052800558507442474,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     -2.237980842590332,
+     -1.228450059890747,
+     0.57667475938797
+    ],
+    [
+     -1.402028203010559,
+     -1.2275500297546387,
+     0.6294752955436707
+    ]
+   ],
+   "polys": 5768,
+   "materials": [
+    "VOLTA \u2022 primary \u2022 #1F6F5C"
+   ]
+  },
+  "Entrance / forward chevron": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.21000003814697266,
+    0.3400000035762787,
+    0.0
+   ],
+   "aabb": [
+    [
+     -2.180000066757202,
+     -0.17000000178813934,
+     0.01899999938905239
+    ],
+    [
+     -1.9700000286102295,
+     0.17000000178813934,
+     0.01899999938905239
+    ]
+   ],
+   "polys": 4,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "Entrance / soft fill": {
+   "type": "LIGHT",
+   "parent": "lighting"
+  },
+  "Entrance / yellow threshold": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.11999999731779099,
+    2.4000000953674316,
+    0.004000000189989805
+   ],
+   "aabb": [
+    [
+     -2.990000009536743,
+     -1.2000000476837158,
+     0.01599999889731407
+    ],
+    [
+     -2.870000123977661,
+     1.2000000476837158,
+     0.019999999552965164
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "entrance_zone": {
+   "type": "EMPTY",
+   "parent": null
+  },
+  "Floor / entrance label": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.8427717685699463,
+    0.1123005598783493,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     -2.5695903301239014,
+     -0.41902998089790344,
+     0.018549999222159386
+    ],
+    [
+     -2.457289695739746,
+     0.42374178767204285,
+     0.019449999555945396
+    ]
+   ],
+   "polys": 3000,
+   "materials": [
+    "VOLTA \u2022 primary \u2022 #1F6F5C"
+   ]
+  },
+  "lighting": {
+   "type": "EMPTY",
+   "parent": null
+  },
+  "Lighting / downlight housing": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     -1.5449999570846558,
+     -1.8049999475479126,
+     3.640000104904175
+    ],
+    [
+     -1.4550000429153442,
+     -1.715000033378601,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / downlight housing.001": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     0.2549999952316284,
+     -1.8049999475479126,
+     3.640000104904175
+    ],
+    [
+     0.3450000286102295,
+     -1.715000033378601,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / downlight housing.002": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     1.65500009059906,
+     -1.8049999475479126,
+     3.640000104904175
+    ],
+    [
+     1.7450000047683716,
+     -1.715000033378601,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / downlight housing.003": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     -1.5449999570846558,
+     1.715000033378601,
+     3.640000104904175
+    ],
+    [
+     -1.4550000429153442,
+     1.8049999475479126,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / downlight housing.004": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     0.2549999952316284,
+     1.715000033378601,
+     3.640000104904175
+    ],
+    [
+     0.3450000286102295,
+     1.8049999475479126,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / downlight housing.005": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.09000000357627869,
+    0.09000000357627869,
+    0.10000000149011612
+   ],
+   "aabb": [
+    [
+     1.65500009059906,
+     1.715000033378601,
+     3.640000104904175
+    ],
+    [
+     1.7450000047683716,
+     1.8049999475479126,
+     3.740000009536743
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / luminous lens": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     -1.5360000133514404,
+     -1.7960000038146973,
+     3.636500120162964
+    ],
+    [
+     -1.4639999866485596,
+     -1.7239999771118164,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / luminous lens.001": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     0.2639999985694885,
+     -1.7960000038146973,
+     3.636500120162964
+    ],
+    [
+     0.3360000252723694,
+     -1.7239999771118164,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / luminous lens.002": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     1.6640000343322754,
+     -1.7960000038146973,
+     3.636500120162964
+    ],
+    [
+     1.7360000610351562,
+     -1.7239999771118164,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / luminous lens.003": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     -1.5360000133514404,
+     1.7239999771118164,
+     3.636500120162964
+    ],
+    [
+     -1.4639999866485596,
+     1.7960000038146973,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / luminous lens.004": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     0.2639999985694885,
+     1.7239999771118164,
+     3.636500120162964
+    ],
+    [
+     0.3360000252723694,
+     1.7960000038146973,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / luminous lens.005": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    0.07199999690055847,
+    0.07199999690055847,
+    0.003000000026077032
+   ],
+   "aabb": [
+    [
+     1.6640000343322754,
+     1.7239999771118164,
+     3.636500120162964
+    ],
+    [
+     1.7360000610351562,
+     1.7960000038146973,
+     3.6394999027252197
+    ]
+   ],
+   "polys": 284,
+   "materials": [
+    "Warm light diffuser"
+   ]
+  },
+  "Lighting / slim track": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    4.900000095367432,
+    0.03500000014901161,
+    0.05000000074505806
+   ],
+   "aabb": [
+    [
+     -2.299999952316284,
+     -1.777500033378601,
+     3.734999895095825
+    ],
+    [
+     2.6000001430511475,
+     -1.7424999475479126,
+     3.7850000858306885
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Lighting / slim track.001": {
+   "type": "MESH",
+   "parent": "lighting",
+   "dimensions": [
+    4.900000095367432,
+    0.03500000014901161,
+    0.05000000074505806
+   ],
+   "aabb": [
+    [
+     -2.299999952316284,
+     1.7424999475479126,
+     3.734999895095825
+    ],
+    [
+     2.6000001430511475,
+     1.777500033378601,
+     3.7850000858306885
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "Logo plaque / gold edge": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.024000000208616257,
+    0.9399999976158142,
+    0.3400000035762787
+   ],
+   "aabb": [
+    [
+     2.8389999866485596,
+     -0.4699999988079071,
+     2.429999828338623
+    ],
+    [
+     2.8630001544952393,
+     0.4699999988079071,
+     2.7699999809265137
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "P1000 / index": {
+   "type": "MESH",
+   "parent": "plinth_01",
+   "dimensions": [
+    0.04255009442567825,
+    0.03530120849609375,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.8975499868392944,
+     -1.4170249700546265,
+     0.07339939475059509
+    ],
+    [
+     1.8984500169754028,
+     -1.3744748830795288,
+     0.10870060324668884
+    ]
+   ],
+   "polys": 1196,
+   "materials": [
+    "Warm porcelain | satin lacquer"
+   ]
+  },
+  "P1000 / plinth caption": {
+   "type": "MESH",
+   "parent": "plinth_01",
+   "dimensions": [
+    0.21717265248298645,
+    0.01640055701136589,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     -1.209463119506836,
+     0.22374272346496582
+    ],
+    [
+     1.8994500637054443,
+     -0.9922904968261719,
+     0.240143284201622
+    ]
+   ],
+   "polys": 7904,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "P1000 / plinth title": {
+   "type": "MESH",
+   "parent": "plinth_01",
+   "dimensions": [
+    0.18187010288238525,
+    0.047201208770275116,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     -1.1922751665115356,
+     0.273146390914917
+    ],
+    [
+     1.8994500637054443,
+     -1.0104050636291504,
+     0.3203476071357727
+    ]
+   ],
+   "polys": 4172,
+   "materials": [
+    "VOLTA \u2022 primary \u2022 #1F6F5C"
+   ]
+  },
+  "P2000 / index": {
+   "type": "MESH",
+   "parent": "plinth_02",
+   "dimensions": [
+    0.050850097090005875,
+    0.03530120849609375,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.8975499868392944,
+     -0.32532501220703125,
+     0.07339939475059509
+    ],
+    [
+     1.8984500169754028,
+     -0.2744749188423157,
+     0.10870060324668884
+    ]
+   ],
+   "polys": 2216,
+   "materials": [
+    "Warm porcelain | satin lacquer"
+   ]
+  },
+  "P2000 / plinth caption": {
+   "type": "MESH",
+   "parent": "plinth_02",
+   "dimensions": [
+    0.21717265248298645,
+    0.01640055701136589,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     -0.1094631478190422,
+     0.22374272346496582
+    ],
+    [
+     1.8994500637054443,
+     0.10770951211452484,
+     0.240143284201622
+    ]
+   ],
+   "polys": 7904,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "P2000 / plinth title": {
+   "type": "MESH",
+   "parent": "plinth_02",
+   "dimensions": [
+    0.18187010288238525,
+    0.047201208770275116,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     -0.09227510541677475,
+     0.273146390914917
+    ],
+    [
+     1.8994500637054443,
+     0.0895950049161911,
+     0.3203476071357727
+    ]
+   ],
+   "polys": 5192,
+   "materials": [
+    "VOLTA \u2022 primary \u2022 #1F6F5C"
+   ]
+  },
+  "P3000 / index": {
+   "type": "MESH",
+   "parent": "plinth_03",
+   "dimensions": [
+    0.04875026270747185,
+    0.03530120849609375,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.8975499868392944,
+     0.7767748236656189,
+     0.07339939475059509
+    ],
+    [
+     1.8984500169754028,
+     0.8255251049995422,
+     0.10870060324668884
+    ]
+   ],
+   "polys": 2912,
+   "materials": [
+    "Warm porcelain | satin lacquer"
+   ]
+  },
+  "P3000 / plinth caption": {
+   "type": "MESH",
+   "parent": "plinth_03",
+   "dimensions": [
+    0.21717265248298645,
+    0.01640055701136589,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     0.9905368685722351,
+     0.22374272346496582
+    ],
+    [
+     1.8994500637054443,
+     1.207709550857544,
+     0.240143284201622
+    ]
+   ],
+   "polys": 7904,
+   "materials": [
+    "Graphite | powder coated aluminium"
+   ]
+  },
+  "P3000 / plinth title": {
+   "type": "MESH",
+   "parent": "plinth_03",
+   "dimensions": [
+    0.18187010288238525,
+    0.047201208770275116,
+    0.0009000000427477062
+   ],
+   "aabb": [
+    [
+     1.898550033569336,
+     1.0077248811721802,
+     0.273146390914917
+    ],
+    [
+     1.8994500637054443,
+     1.1895949840545654,
+     0.3203476071357727
+    ]
+   ],
+   "polys": 5888,
+   "materials": [
+    "VOLTA \u2022 primary \u2022 #1F6F5C"
+   ]
+  },
+  "plinth_01": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.8019999265670776,
+    0.800000011920929,
+    0.4000000059604645
+   ],
+   "aabb": [
+    [
+     1.8980000019073486,
+     -1.5,
+     0.01600000262260437
+    ],
+    [
+     2.700000047683716,
+     -0.7000000476837158,
+     0.41600000858306885
+    ]
+   ],
+   "polys": 564,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "plinth_02": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.8019999265670776,
+    0.800000011920929,
+    0.4000000059604645
+   ],
+   "aabb": [
+    [
+     1.8980000019073486,
+     -0.4000000059604645,
+     0.01600000262260437
+    ],
+    [
+     2.700000047683716,
+     0.4000000059604645,
+     0.41600000858306885
+    ]
+   ],
+   "polys": 564,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "plinth_03": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.8019999265670776,
+    0.800000011920929,
+    0.4000000059604645
+   ],
+   "aabb": [
+    [
+     1.8980000019073486,
+     0.7000000476837158,
+     0.01600000262260437
+    ],
+    [
+     2.700000047683716,
+     1.5,
+     0.41600000858306885
+    ]
+   ],
+   "polys": 564,
+   "materials": [
+    "Warm porcelain | satin lacquer",
+    "VOLTA \u2022 primary \u2022 #1F6F5C",
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "product_01": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.20424985885620117,
+    0.3009999394416809,
+    0.25
+   ],
+   "aabb": [
+    [
+     2.1957499980926514,
+     -1.250999927520752,
+     0.41600000858306885
+    ],
+    [
+     2.3999998569488525,
+     -0.949999988079071,
+     0.6660000085830688
+    ]
+   ],
+   "polys": 13620,
+   "materials": [
+    "Graphite | powder coated aluminium",
+    "Rubber | soft touch",
+    "Brushed aluminium",
+    "VOLTA \u2022 secondary \u2022 #F2C14E",
+    "LCD glass",
+    "LCD mint readout"
+   ]
+  },
+  "product_02": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.2642500400543213,
+    0.38099998235702515,
+    0.3199999928474426
+   ],
+   "aabb": [
+    [
+     2.1657497882843018,
+     -0.19099999964237213,
+     0.41600000858306885
+    ],
+    [
+     2.429999828338623,
+     0.1899999976158142,
+     0.7360000014305115
+    ]
+   ],
+   "polys": 13620,
+   "materials": [
+    "Graphite | powder coated aluminium",
+    "Rubber | soft touch",
+    "Brushed aluminium",
+    "VOLTA \u2022 secondary \u2022 #F2C14E",
+    "LCD glass",
+    "LCD mint readout"
+   ]
+  },
+  "product_03": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    0.3042500615119934,
+    0.4610000252723694,
+    0.3799999952316284
+   ],
+   "aabb": [
+    [
+     2.145749807357788,
+     0.8689999580383301,
+     0.41600000858306885
+    ],
+    [
+     2.450000047683716,
+     1.3300000429153442,
+     0.7960000038146973
+    ]
+   ],
+   "polys": 13620,
+   "materials": [
+    "Graphite | powder coated aluminium",
+    "Rubber | soft touch",
+    "Brushed aluminium",
+    "VOLTA \u2022 secondary \u2022 #F2C14E",
+    "LCD glass",
+    "LCD mint readout"
+   ]
+  },
+  "Upper architectural reveal": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    5.760000228881836,
+    0.01600000075995922,
+    0.02500000037252903
+   ],
+   "aabb": [
+    [
+     -2.880000114440918,
+     -1.878000020980835,
+     3.4674999713897705
+    ],
+    [
+     2.880000114440918,
+     -1.8619999885559082,
+     3.492500066757202
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  },
+  "Upper architectural reveal.001": {
+   "type": "MESH",
+   "parent": null,
+   "dimensions": [
+    5.760000228881836,
+    0.01600000075995922,
+    0.02500000037252903
+   ],
+   "aabb": [
+    [
+     -2.880000114440918,
+     1.8619999885559082,
+     3.4674999713897705
+    ],
+    [
+     2.880000114440918,
+     1.878000020980835,
+     3.492500066757202
+    ]
+   ],
+   "polys": 188,
+   "materials": [
+    "VOLTA \u2022 secondary \u2022 #F2C14E"
+   ]
+  }
+ },
+ "meshes": [
+  "Back wall / headline",
+  "Back wall / headline rule",
+  "Back wall / series label",
+  "Back wall / subline",
+  "Back wall edge detail",
+  "Back wall edge detail.001",
+  "Back wall shadow skirting",
+  "back_wall_logo",
+  "booth_shell",
+  "Brushed skirting",
+  "Brushed skirting.001",
+  "cabinet_01",
+  "cabinet_01 / storage ID",
+  "cabinet_02",
+  "cabinet_02 / storage ID",
+  "corner_column",
+  "counter",
+  "Counter / welcome",
+  "Entrance / forward chevron",
+  "Entrance / yellow threshold",
+  "Floor / entrance label",
+  "Lighting / downlight housing",
+  "Lighting / downlight housing.001",
+  "Lighting / downlight housing.002",
+  "Lighting / downlight housing.003",
+  "Lighting / downlight housing.004",
+  "Lighting / downlight housing.005",
+  "Lighting / luminous lens",
+  "Lighting / luminous lens.001",
+  "Lighting / luminous lens.002",
+  "Lighting / luminous lens.003",
+  "Lighting / luminous lens.004",
+  "Lighting / luminous lens.005",
+  "Lighting / slim track",
+  "Lighting / slim track.001",
+  "Logo plaque / gold edge",
+  "P1000 / index",
+  "P1000 / plinth caption",
+  "P1000 / plinth title",
+  "P2000 / index",
+  "P2000 / plinth caption",
+  "P2000 / plinth title",
+  "P3000 / index",
+  "P3000 / plinth caption",
+  "P3000 / plinth title",
+  "plinth_01",
+  "plinth_02",
+  "plinth_03",
+  "product_01",
+  "product_02",
+  "product_03",
+  "Upper architectural reveal",
+  "Upper architectural reveal.001"
+ ],
+ "cameras": {
+  "cam_entrance": {
+   "type": "PERSP",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.0,
+   "location": [
+    -1.5,
+    0.0,
+    1.600000023841858
+   ]
+  },
+  "cam_top": {
+   "type": "ORTHO",
+   "parent": null,
+   "lens": 35.0,
+   "ortho_scale": 6.75,
+   "location": [
+    0.0,
+    0.0,
+    10.0
+   ]
+  }
+ },
+ "materials": {
+  "Brushed aluminium": {
+   "name": "Brushed aluminium",
+   "basecolor": [
+    0.6666666649079432,
+    0.7098039161494702,
+    0.7098039161494702
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.4019777774810791,
+    0.46207699179649353,
+    0.46207699179649353
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.75
+  },
+  "Exhibition wall | warm white": {
+   "name": "Exhibition wall | warm white",
+   "basecolor": [
+    0.9137254917039592,
+    0.921568637115834,
+    0.90196077033812
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.8148465752601624,
+    0.8307698965072632,
+    0.7912979125976562
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Graphite | powder coated aluminium": {
+   "name": "Graphite | powder coated aluminium",
+   "basecolor": [
+    0.1254901962314727,
+    0.16862744979935432,
+    0.188235296286246
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.014443843625485897,
+    0.024157632142305374,
+    0.02955683507025242
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.30000001192092896
+  },
+  "LCD glass": {
+   "name": "LCD glass",
+   "basecolor": [
+    0.03137254979461431,
+    0.11764705971039388,
+    0.14509803877478403
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.002428215928375721,
+    0.012983032502233982,
+    0.01850022003054619
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.25
+  },
+  "LCD mint readout": {
+   "name": "LCD mint readout",
+   "basecolor": [
+    0.5372548974272265,
+    0.8862745132394668,
+    0.7725490078869277
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.25015828013420105,
+    0.7605245113372803,
+    0.5583403706550598
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Lettering | pale sage": {
+   "name": "Lettering | pale sage",
+   "basecolor": [
+    0.7098039161494702,
+    0.8078431437011544,
+    0.7607843169279758
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.46207699179649353,
+    0.6172065734863281,
+    0.5394794940948486
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Pale mineral terrazzo": {
+   "name": "Pale mineral terrazzo",
+   "basecolor": [
+    0.7764705915666622,
+    0.8000000108774858,
+    0.7725490078869277
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.5647115111351013,
+    0.6038273572921753,
+    0.5583403706550598
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Rubber | soft touch": {
+   "name": "Rubber | soft touch",
+   "basecolor": [
+    0.06274509631919944,
+    0.09019607955318307,
+    0.09803921802643792
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.005181516520678997,
+    0.008568125776946545,
+    0.009721217676997185
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "VOLTA / packed logo print": {
+   "name": "VOLTA / packed logo print",
+   "basecolor": [
+    0.9063317593127924,
+    0.9063317593127924,
+    0.9063317593127924
+   ],
+   "images": [
+    {
+     "name": "VOLTA / supplied logo",
+     "size": [
+      1800,
+      600
+     ],
+     "packed": true,
+     "filepath": "//brand/logo.png",
+     "alpha_frac": 0.0036935185185185187
+    }
+   ],
+   "basecolor_linear": [
+    0.800000011920929,
+    0.800000011920929,
+    0.800000011920929
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "VOLTA \u2022 primary \u2022 #1F6F5C": {
+   "name": "VOLTA \u2022 primary \u2022 #1F6F5C",
+   "basecolor": [
+    0.12156862923218678,
+    0.43529411647071276,
+    0.36078431703910646
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.013702083379030228,
+    0.15896083414554596,
+    0.10702310502529144
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "VOLTA \u2022 secondary \u2022 #F2C14E": {
+   "name": "VOLTA \u2022 secondary \u2022 #F2C14E",
+   "basecolor": [
+    0.9490196095253008,
+    0.7568627293017685,
+    0.30588235574643513
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.8879231214523315,
+    0.533276379108429,
+    0.07618538290262222
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Warm light diffuser": {
+   "name": "Warm light diffuser",
+   "basecolor": [
+    0.9999999999999999,
+    0.9450980405985859,
+    0.7803921704164768
+   ],
+   "images": [],
+   "basecolor_linear": [
+    1.0,
+    0.8796223998069763,
+    0.5711248517036438
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  },
+  "Warm porcelain | satin lacquer": {
+   "name": "Warm porcelain | satin lacquer",
+   "basecolor": [
+    0.9450980405985859,
+    0.9411764599667072,
+    0.9137254917039592
+   ],
+   "images": [],
+   "basecolor_linear": [
+    0.8796223998069763,
+    0.8713670969009399,
+    0.8148465752601624
+   ],
+   "basecolor_space": "sRGB",
+   "metallic": 0.0
+  }
+ },
+ "images": [
+  {
+   "name": "VOLTA / supplied logo",
+   "size": [
+    1800,
+    600
+   ],
+   "packed": true,
+   "filepath": "//brand/logo.png"
+  }
+ ],
+ "polys_total": 151434,
+ "bounds": [
+  [
+   -3.0,
+   -2.0,
+   -1.5832483768463135e-08
+  ],
+  [
+   3.0,
+   2.0,
+   4.0
+  ]
+ ],
+ "size": [
+  6.0,
+  4.0,
+  4.000000015832484
+ ],
+ "entrance_marker_valid": true,
+ "entrance_marker_type": "EMPTY",
+ "entrance_camera_facing_center": true,
+ "entrance_camera_direction_dot": 0.9999253400601447,
+ "entrance_clearance": {
+  "cabinet_01": 3.4044750109999335,
+  "cabinet_02": 2.057413440984674
+ },
+ "entrance_opening_samples": {
+  "-1.21": true,
+  "-1.19": true,
+  "0.0": true,
+  "1.19": true,
+  "1.21": true
+ },
+ "hydrant_distance": {
+  "Back wall / headline": 7.053549766540527,
+  "Back wall / headline rule": 7.04699969291687,
+  "Back wall / series label": 7.053549766540527,
+  "Back wall / subline": 7.051549673080444,
+  "Back wall edge detail": 7.261380062220964,
+  "Back wall edge detail.001": 7.261380062220964,
+  "Back wall shadow skirting": 7.055999994277954,
+  "back_wall_logo": 7.034999847412109,
+  "Brushed skirting": 2.282420459012369,
+  "Brushed skirting.001": 2.282420459012369,
+  "cabinet_01": 4.800963275793404,
+  "cabinet_01 / storage ID": 5.247663797406038,
+  "cabinet_02": 3.5287035579518466,
+  "cabinet_02 / storage ID": 3.952010507993953,
+  "corner_column": 6.9856993782894135,
+  "counter": 1.9243957764463389,
+  "Counter / welcome": 2.3143892285314247,
+  "Entrance / forward chevron": 2.0199997425079346,
+  "Entrance / yellow threshold": 1.2099997997283936,
+  "Floor / entrance label": 1.6304094791412354,
+  "Lighting / downlight housing": 3.1607355678017384,
+  "Lighting / downlight housing.001": 4.773703842149701,
+  "Lighting / downlight housing.002": 6.101003929018433,
+  "Lighting / downlight housing.003": 3.1607355678017384,
+  "Lighting / downlight housing.004": 4.773703842149701,
+  "Lighting / downlight housing.005": 6.101003929018433,
+  "Lighting / luminous lens": 3.173179924572472,
+  "Lighting / luminous lens.001": 4.785339089910883,
+  "Lighting / luminous lens.002": 6.112173924782574,
+  "Lighting / luminous lens.003": 3.173179924572472,
+  "Lighting / luminous lens.004": 4.785339089910883,
+  "Lighting / luminous lens.005": 6.112173924782574,
+  "Lighting / slim track": 2.578042963879799,
+  "Lighting / slim track.001": 2.578042963879799,
+  "Logo plaque / gold edge": 7.038999795913696,
+  "P1000 / index": 6.250543553979099,
+  "P1000 / plinth caption": 6.178749923376726,
+  "P1000 / plinth title": 6.181684930352225,
+  "P2000 / index": 6.10372427269177,
+  "P2000 / plinth caption": 6.098549842834473,
+  "P2000 / plinth title": 6.098549842834473,
+  "P3000 / index": 6.146827852043193,
+  "P3000 / plinth caption": 6.178468537877105,
+  "P3000 / plinth title": 6.181247416312492,
+  "plinth_01": 6.138045435137872,
+  "plinth_02": 6.097999811172485,
+  "plinth_03": 6.138045435137872,
+  "product_01": 6.465919546024944,
+  "product_02": 6.3657495975494385,
+  "product_03": 6.404974560756711,
+  "Upper architectural reveal": 2.282420459012369,
+  "Upper architectural reveal.001": 2.282420459012369
+ },
+ "visible_from_entrance": {
+  "product_01": true,
+  "product_02": true,
+  "product_03": true
+ },
+ "brand_delta": 8.449721489167672e-07,
+ "brand_material": [
+  "VOLTA \u2022 primary \u2022 #1F6F5C"
+ ],
+ "brand_back_wall_samples": {
+  "-1.0,0.5": 8.449721489167672e-07,
+  "-1.0,2.0": 8.449721489167672e-07,
+  "-1.0,3.5": 8.449721489167672e-07,
+  "0.0,0.5": 8.449721489167672e-07,
+  "0.0,2.0": 8.449721489167672e-07,
+  "0.0,3.5": 8.449721489167672e-07,
+  "1.0,0.5": 8.449721489167672e-07,
+  "1.0,2.0": 8.449721489167672e-07,
+  "1.0,3.5": 8.449721489167672e-07
+ },
+ "brand_sampled_face_area": 16.0,
+ "secondary_brand_delta": 4.028049037652082e-06,
+ "secondary_brand_surfaces": [
+  {
+   "object": "counter",
+   "material": "VOLTA \u2022 secondary \u2022 #F2C14E",
+   "delta": 4.028049037652082e-06,
+   "area": 1.4929841795822179,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ]
+  }
+ ],
+ "required_present": {
+  "booth_shell": true,
+  "counter": true,
+  "cabinet_01": true,
+  "cabinet_02": true,
+  "product_01": true,
+  "product_02": true,
+  "product_03": true,
+  "entrance_zone": true
+ },
+ "has_lighting": true
+}
