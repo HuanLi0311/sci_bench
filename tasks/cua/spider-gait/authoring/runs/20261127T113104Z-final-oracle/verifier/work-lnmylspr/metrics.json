@@ -1,0 +1,122 @@
+{
+ "reward": 1,
+ "must_pass": true,
+ "critical_pass": true,
+ "normal_rate": 1.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": true,
+   "detail": "4.2.3 LTS"
+  },
+  {
+   "id": "R02_bones",
+   "level": "must",
+   "pass": true,
+   "detail": "count=25 missing=[] extra=[]"
+  },
+  {
+   "id": "R03_skinning",
+   "level": "must",
+   "pass": true,
+   "detail": "26 meshes skinned"
+  },
+  {
+   "id": "R04_size",
+   "level": "must",
+   "pass": true,
+   "detail": "body=180.0mm span=420.0mm height=120.0mm unit_scale=1.0"
+  },
+  {
+   "id": "R05_action",
+   "level": "must",
+   "pass": true,
+   "detail": "name=Walk_Cycle range=1.0-25.0 scene=1-24 animated=24"
+  },
+  {
+   "id": "R06_loop",
+   "level": "must",
+   "pass": true,
+   "detail": "rotation=0.0deg translation=0.0mm"
+  },
+  {
+   "id": "R07_support",
+   "level": "must",
+   "pass": true,
+   "detail": "all stance feet on the floor"
+  },
+  {
+   "id": "R08_no_penetration",
+   "level": "must",
+   "pass": true,
+   "detail": "min foot z >= -1mm"
+  },
+  {
+   "id": "R09_swing_lift",
+   "level": "must",
+   "pass": true,
+   "detail": "all swing feet lift >= 15mm"
+  },
+  {
+   "id": "R10_slide",
+   "level": "normal",
+   "pass": true,
+   "detail": "stance drift <= 5mm"
+  },
+  {
+   "id": "R11_body_bob",
+   "level": "normal",
+   "pass": true,
+   "detail": "0.0mm"
+  },
+  {
+   "id": "R12_no_intersection",
+   "level": "normal",
+   "pass": true,
+   "detail": "{'1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0, '14': 0, '15': 0, '16': 0, '17': 0, '18': 0, '19': 0, '20': 0, '21': 0, '22': 0, '23': 0, '24': 0}"
+  },
+  {
+   "id": "R13_renders",
+   "level": "must",
+   "pass": true,
+   "detail": "render_pose_01.png:960x540 render_pose_02.png:960x540 render_pose_03.png:960x540 render_pose_04.png:960x540 render_top.png:960x960 distinct=True side lens=50.0 loc=[0.75, 0.04, 0.13] top ortho=0.5 type=ORTHO"
+  },
+  {
+   "id": "R14_polys",
+   "level": "normal",
+   "pass": true,
+   "detail": "2906 triangles"
+  },
+  {
+   "id": "R15_self_contained",
+   "level": "must",
+   "pass": true,
+   "detail": "images=1 unpacked=[] libraries=[]"
+  },
+  {
+   "id": "R16_manifest",
+   "level": "must",
+   "pass": true,
+   "detail": "assets=1 licensed=1 textures=1 renders=5"
+  },
+  {
+   "id": "R17_phase_anticheat",
+   "level": "critical",
+   "pass": true,
+   "detail": "delivered_vs_scene=1.000 (>=0.90) frame7_vs_frame1=0.964 (<=0.98)"
+  },
+  {
+   "id": "R18_render_authenticity",
+   "level": "critical",
+   "pass": true,
+   "detail": "{'render_pose_01.png': 1.0, 'render_pose_02.png': 1.0, 'render_pose_03.png': 1.0, 'render_pose_04.png': 1.0, 'render_top.png': 1.0}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": true,
+   "detail": "{'render_pose_01.png': 0.0, 'render_pose_02.png': 0.0, 'render_pose_03.png': 0.0, 'render_pose_04.png': 0.0, 'render_top.png': 0.0}"
+  }
+ ]
+}

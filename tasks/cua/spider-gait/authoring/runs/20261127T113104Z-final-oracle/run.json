@@ -172,6 +172,60 @@
       "started_at": "2026-11-27T11:31:17.155767+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T11:31:17.282220+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-0283deb67e"
+      ],
+      "started_at": "2026-11-27T11:31:17.292557+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:36:37.705132+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-0283deb67e"
+      ],
+      "started_at": "2026-11-27T11:36:37.736497+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:36:37.893314+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-0283deb67e:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T113104Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T11:36:37.901980+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:36:38.236307+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-0283deb67e"
+      ],
+      "started_at": "2026-11-27T11:36:38.285734+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:36:38.720523+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-0283deb67e"
+      ],
+      "started_at": "2026-11-27T11:36:38.771080+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:36:38.903979+00:00"
     }
   ],
   "nop_definition": null,
@@ -504,5 +558,10 @@
       "sha256": "b2e06b9e61d69fc7384907e0b7c8c28d3fa4060e4232434d8e81e62e5f8ce402",
       "bytes": 470723
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T11:36:38.913064+00:00"
 }
