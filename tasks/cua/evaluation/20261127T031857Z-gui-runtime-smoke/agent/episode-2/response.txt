@@ -1,0 +1,1 @@
+{"analysis":"The startup splash is dismissed and the default Cube is selected; the Transform panel shows Location X = 0 m.","plan":"Use Blender's GUI transform shortcut to move the selected Cube exactly +0.1 on X, then report success.","action":{"type":"click","x":800,"y":530,"button":"left"}}
