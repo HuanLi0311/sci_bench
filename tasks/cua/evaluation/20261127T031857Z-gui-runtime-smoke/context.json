@@ -1,0 +1,20 @@
+{
+  "n_input_tokens": 44527,
+  "n_cache_tokens": 36224,
+  "n_output_tokens": 2075,
+  "cost_usd": 0.0409784,
+  "model_usage": null,
+  "rollout_details": [],
+  "metadata": {
+    "n_episodes": 6,
+    "api_request_times_msec": [
+      86816.61868095398,
+      29050.45747756958,
+      35964.1535282135,
+      40904.40034866333,
+      18364.927053451538
+    ],
+    "early_termination_reason": null,
+    "compaction_count": 0
+  }
+}

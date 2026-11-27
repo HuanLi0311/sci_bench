@@ -42,7 +42,7 @@
     "litellm_params": {
         "acompletion": true,
         "allm_passthrough_route": "None",
-        "api_key": "sk-p39gA258Lp9HhrBND97dzQ",
+        "api_key": "[REDACTED]",
         "force_timeout": 600,
         "verbose": false,
         "custom_llm_provider": "openai",
@@ -217,5 +217,5 @@
     "first_api_call_start_time": "2026-11-27 11:20:29.173756",
     "llm_api_duration_ms": 29037.37,
     "original_response": "{\"id\": \"8cc62410-c5ee-41fd-ad6a-91090540ee5b\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"message\": {\"content\": \"{\\\"analysis\\\":\\\"Blender is visible with the startup splash dialog open; the default Cube is already selected and its Location X is 0 m.\\\",\\\"plan\\\":\\\"Dismiss the splash, then move the selected Cube +0.1 on X using the GUI and finish.\\\",\\\"action\\\":{\\\"type\\\":\\\"click\\\",\\\"x\\\":1300,\\\"y\\\":800,\\\"button\\\":\\\"left\\\"}}\", \"role\": \"assistant\", \"reasoning_content\": \"**Dismissing splash overlay with click**\"}}], \"created\": 1795749629, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"usage\": {\"completion_tokens\": 174, \"prompt_tokens\": 6498, \"total_tokens\": 6672, \"completion_tokens_details\": {\"reasoning_tokens\": 97, \"text_tokens\": 77}, \"prompt_tokens_details\": {\"cached_tokens\": 2816}}}",
-    "api_key_sha256": "549a23d938f94adb11c15babc88d85ca3e499b47a20908822bac4ad7356768ad"
+    "credential_fingerprint_omitted": true,
 }

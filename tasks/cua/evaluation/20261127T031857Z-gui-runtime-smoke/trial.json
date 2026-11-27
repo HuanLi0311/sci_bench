@@ -2,8 +2,8 @@
   "task": "folding-chair",
   "id": "20261127T031857Z-gui-runtime-smoke",
   "started_at": "2026-11-27T03:18:57.202635+00:00",
-  "outcome": "running",
-  "gui_compliant": null,
+  "outcome": "task-timeout",
+  "gui_compliant": true,
   "artifact_reward": null,
   "effective_config": {
     "task": "folding-chair",
@@ -25,5 +25,10 @@
     "reference_access": false,
     "preview_provenance": "supplied materials only"
   },
-  "agent_started_at": "2026-11-27T03:18:59.194517+00:00"
+  "agent_started_at": "2026-11-27T03:18:59.194517+00:00",
+  "agent_finished_at": "2026-11-27T03:23:24.099936+00:00",
+  "submission": {},
+  "gui_operations": 4,
+  "screenshots": 6,
+  "finished_at": "2026-11-27T03:23:27.419701+00:00"
 }

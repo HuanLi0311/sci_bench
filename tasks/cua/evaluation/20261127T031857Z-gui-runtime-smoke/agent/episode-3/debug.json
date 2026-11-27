@@ -74,7 +74,7 @@
     "litellm_params": {
         "acompletion": true,
         "allm_passthrough_route": "None",
-        "api_key": "sk-p39gA258Lp9HhrBND97dzQ",
+        "api_key": "[REDACTED]",
         "force_timeout": 600,
         "verbose": false,
         "custom_llm_provider": "openai",
@@ -313,5 +313,5 @@
     "first_api_call_start_time": "2026-11-27 11:21:38.051274",
     "llm_api_duration_ms": 40851.502,
     "original_response": "{\"id\": \"948b155d-01cf-4287-b808-95017f092c28\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"message\": {\"content\": \"{\\\"analysis\\\":\\\"The cube remains selected and the viewport is focused.\\\",\\\"plan\\\":\\\"Start a constrained X-axis move, enter 0.1, and confirm it.\\\",\\\"action\\\":{\\\"type\\\":\\\"keypress\\\",\\\"keys\\\":[\\\"g\\\"]}}\", \"role\": \"assistant\", \"reasoning_content\": \"**Performing incremental X-axis move**\"}}], \"created\": 1795749698, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"usage\": {\"completion_tokens\": 103, \"prompt_tokens\": 11558, \"total_tokens\": 11661, \"completion_tokens_details\": {\"reasoning_tokens\": 54, \"text_tokens\": 49}, \"prompt_tokens_details\": {\"cached_tokens\": 11008}}}",
-    "api_key_sha256": "549a23d938f94adb11c15babc88d85ca3e499b47a20908822bac4ad7356768ad"
+    "credential_fingerprint_omitted": true,
 }

@@ -58,7 +58,7 @@
     "litellm_params": {
         "acompletion": true,
         "allm_passthrough_route": "None",
-        "api_key": "sk-p39gA258Lp9HhrBND97dzQ",
+        "api_key": "[REDACTED]",
         "force_timeout": 600,
         "verbose": false,
         "custom_llm_provider": "openai",
@@ -265,5 +265,5 @@
     "first_api_call_start_time": "2026-11-27 11:20:59.249690",
     "llm_api_duration_ms": 35949.602,
     "original_response": "{\"id\": \"04759150-cc06-4308-8102-e7647491fcb1\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"message\": {\"content\": \"{\\\"analysis\\\":\\\"The startup splash is dismissed and the default Cube is selected; the Transform panel shows Location X = 0 m.\\\",\\\"plan\\\":\\\"Use Blender's GUI transform shortcut to move the selected Cube exactly +0.1 on X, then report success.\\\",\\\"action\\\":{\\\"type\\\":\\\"click\\\",\\\"x\\\":800,\\\"y\\\":530,\\\"button\\\":\\\"left\\\"}}\", \"role\": \"assistant\", \"reasoning_content\": \"**Planning precise cube movement**\"}}], \"created\": 1795749659, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"usage\": {\"completion_tokens\": 173, \"prompt_tokens\": 9029, \"total_tokens\": 9202, \"completion_tokens_details\": {\"reasoning_tokens\": 98, \"text_tokens\": 75}, \"prompt_tokens_details\": {\"cached_tokens\": 8576}}}",
-    "api_key_sha256": "549a23d938f94adb11c15babc88d85ca3e499b47a20908822bac4ad7356768ad"
+    "credential_fingerprint_omitted": true,
 }

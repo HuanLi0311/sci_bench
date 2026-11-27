@@ -90,7 +90,7 @@
     "litellm_params": {
         "acompletion": true,
         "allm_passthrough_route": "None",
-        "api_key": "sk-p39gA258Lp9HhrBND97dzQ",
+        "api_key": "[REDACTED]",
         "force_timeout": 600,
         "verbose": false,
         "custom_llm_provider": "openai",
@@ -361,5 +361,5 @@
     "first_api_call_start_time": "2026-11-27 11:22:21.747852",
     "llm_api_duration_ms": 18348.145,
     "original_response": "{\"id\": \"287ffba5-08e7-48ed-b93a-679321b20f5f\", \"choices\": [{\"finish_reason\": \"stop\", \"index\": 0, \"message\": {\"content\": \"{\\\"analysis\\\":\\\"The move operation is active for the selected Cube.\\\",\\\"plan\\\":\\\"Constrain the move to X, enter 0.1, and confirm.\\\",\\\"action\\\":{\\\"type\\\":\\\"keypress\\\",\\\"keys\\\":[\\\"x\\\"]}}\", \"role\": \"assistant\"}}], \"created\": 1795749742, \"model\": \"gpt-6.1-sol\", \"object\": \"chat.completion\", \"usage\": {\"completion_tokens\": 76, \"prompt_tokens\": 14061, \"total_tokens\": 14137, \"completion_tokens_details\": {\"reasoning_tokens\": 28, \"text_tokens\": 48}, \"prompt_tokens_details\": {\"cached_tokens\": 11008}}}",
-    "api_key_sha256": "549a23d938f94adb11c15babc88d85ca3e499b47a20908822bac4ad7356768ad"
+    "credential_fingerprint_omitted": true,
 }
