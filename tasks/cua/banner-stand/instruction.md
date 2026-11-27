@@ -23,11 +23,13 @@ deliverable is a scene a colleague can keep editing.
 2. Canvas `canvas`: 800 × 1900 mm from z = 60 to 1960, facing +Y. It hangs flat:
    every vertex within 2 mm of its plane and its top edge within 3 mm of the top
    bar underside. The print is mapped 1:1 with no crop and no overlap; UV area 1.0.
-3. Rear leg `leg_rear`: 2020 mm long, parented to an empty `hinge_rear` at
-   (0, 0, 1.960) that rotates about X, swinging the leg away from the print. At 0° it is
-   folded against the masts; at 14° it is open and its foot rests on the floor
-   (|z| ≤ 5 mm) about 490 mm behind the stand. At 0°, 7° and 14° the leg must not touch the masts,
-   the top bar or the canvas. Folded, the whole stand is at most 130 mm deep.
+3. Rear brace `leg_rear`: 1900 mm long, parented to an empty `hinge_rear` at
+   (0, −0.045, 0.075) — on the base's rear edge — that rotates about X so the
+   brace swings away from the print. At 0° it stands folded against the masts
+   (bottom at z ≈ 75 mm, folded stand ≤ 130 mm deep); at 14° it is open with its
+   top 460–560 mm behind the stand and 1860–1960 mm above the floor. At 0°, 7°
+   and 14° the brace must not touch the masts, the top bar, the base or the
+   canvas.
 4. Materials: printed textile on the canvas (roughness 0.55–0.85, artwork
    packed) and aluminium frame at metallic ≥ 0.8.
 

@@ -9,7 +9,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> /XObject <<  >> >> /Contents 4 0 R >>
 endobj
 4 0 obj
-<< /Length 2939 >>
+<< /Length 2996 >>
 stream
 BT /F2 16 Tf 56.00 786.00 Td (FOLDING BANNER STAND - DESIGN PACK) Tj ET
 BT /F1 10 Tf 56.00 766.00 Td (Exhibition display. Units: millimetres.) Tj ET
@@ -21,18 +21,19 @@ BT /F1 9 Tf 64.00 684.00 Td (Parts: base, mast_left, mast_right, top_bar, canvas
 BT /F1 9 Tf 64.00 670.00 Td (Origin at floor centre, +Y front, +Z up.) Tj ET
 BT /F2 13 Tf 56.00 636.00 Td (2. Canvas) Tj ET
 0.8 w 56.00 630.00 m 539.00 630.00 l S
-BT /F1 9 Tf 64.00 614.00 Td (Canvas 800 x 1900, from z = 60 to 1955, facing +Y at y = 30.) Tj ET
+BT /F1 9 Tf 64.00 614.00 Td (Canvas 800 x 1900, from z = 60 to 1960, facing +Y at y = 30.) Tj ET
 BT /F1 9 Tf 64.00 600.00 Td (It hangs flat: every vertex within 2 mm of the plane and the top edge within) Tj ET
 BT /F1 9 Tf 64.00 586.00 Td (   3 mm of the top bar underside.) Tj ET
 BT /F1 9 Tf 64.00 572.00 Td (Print artwork 819 x 1945 \(1.024 px/mm\) mapped 1:1: UV area 1.0, no crop,) Tj ET
 BT /F1 9 Tf 64.00 558.00 Td (   no overlap, image aspect within 2 percent of 800/1900.) Tj ET
 BT /F2 13 Tf 56.00 532.00 Td (3. Rear leg) Tj ET
 0.8 w 56.00 526.00 m 539.00 526.00 l S
-BT /F1 9 Tf 64.00 510.00 Td (leg_rear is 2020 long, parented to an empty hinge_rear at \(0, 0, 1960\).) Tj ET
-BT /F1 9 Tf 64.00 496.00 Td (The hinge rotates about +X: 0 degrees is folded against the masts, 14 degrees) Tj ET
-BT /F1 9 Tf 64.00 482.00 Td (   is open, with the foot on the floor \(z between -5 and 5 mm\) about 490 mm back.) Tj ET
-BT /F1 9 Tf 64.00 468.00 Td (At 0, 7 and 14 degrees the leg must not touch the masts, the top bar or the canvas.) Tj ET
-BT /F1 9 Tf 64.00 454.00 Td (Folded, the whole stand is at most 130 mm deep.) Tj ET
+BT /F1 9 Tf 64.00 510.00 Td (leg_rear is 1900 long, parented to an empty hinge_rear at \(0, -45, 75\) on the) Tj ET
+BT /F1 9 Tf 64.00 496.00 Td (   base rear edge. The hinge rotates about X away from the print: 0 degrees is) Tj ET
+BT /F1 9 Tf 64.00 482.00 Td (   folded against the masts, 14 degrees is open with the top 500 mm behind the) Tj ET
+BT /F1 9 Tf 64.00 468.00 Td (   stand and 1920 high.) Tj ET
+BT /F1 9 Tf 64.00 454.00 Td (At 0, 7 and 14 degrees the brace must not touch the masts, bar, base or canvas.) Tj ET
+BT /F1 9 Tf 64.00 440.00 Td (Folded, the whole stand is at most 130 mm deep.) Tj ET
 BT /F2 13 Tf 56.00 432.00 Td (4. Materials) Tj ET
 0.8 w 56.00 426.00 m 539.00 426.00 l S
 BT /F1 9 Tf 64.00 410.00 Td (Canvas: printed, roughness 0.55-0.85, artwork packed.) Tj ET
@@ -41,9 +42,9 @@ BT /F2 13 Tf 56.00 372.00 Td (5. Deliverables and render brief) Tj ET
 0.8 w 56.00 366.00 m 539.00 366.00 l S
 BT /F1 9 Tf 64.00 350.00 Td (banner_stand.blend, manifest.json.) Tj ET
 BT /F1 9 Tf 64.00 336.00 Td (render_front.png: cam_front, orthographic, 2.15 m coverage, 1200 x 1600,) Tj ET
-BT /F1 9 Tf 64.00 322.00 Td (   rear leg open at 14 degrees.) Tj ET
+BT /F1 9 Tf 64.00 322.00 Td (   rear brace open at 14 degrees.) Tj ET
 BT /F1 9 Tf 64.00 308.00 Td (render_three_quarter.png: cam_three_quarter, 35 mm, 1600 x 1200, open.) Tj ET
-BT /F1 9 Tf 64.00 294.00 Td (render_folded.png: cam_folded, orthographic, 1200 x 1600, rear leg folded to 0.) Tj ET
+BT /F1 9 Tf 64.00 294.00 Td (render_folded.png: cam_folded, orthographic, 1200 x 1600, brace folded to 0.) Tj ET
 BT /F1 9 Tf 64.00 280.00 Td (Cycles CPU, 64 samples, denoising, fixed seed.) Tj ET
 BT /F2 13 Tf 56.00 230.00 Td (6. Licence) Tj ET
 0.8 w 56.00 224.00 m 539.00 224.00 l S
@@ -63,10 +64,10 @@ xref
 0000000058 00000 n 
 0000000115 00000 n 
 0000000267 00000 n 
-0000003258 00000 n 
-0000003328 00000 n 
+0000003315 00000 n 
+0000003385 00000 n 
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-3403
+3460
 %%EOF

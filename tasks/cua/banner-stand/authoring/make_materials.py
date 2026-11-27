@@ -106,11 +106,11 @@ def spec_pdf(path):
         pdf.text(64, 228 + 14 * i, line, 9)
     heading(310, "3. Rear leg")
     for i, line in enumerate([
-        "leg_rear is 2020 long, parented to an empty hinge_rear at (0, 0, 1960).",
-        "The hinge rotates about X away from the print: 0 degrees is folded against the",
-        "   masts, 14 degrees is open, with the foot on the floor (z within 5 mm) about",
-        "   490 mm behind the stand.",
-        "At 0, 7 and 14 degrees the leg must not touch the masts, the top bar or the canvas.",
+        "leg_rear is 1900 long, parented to an empty hinge_rear at (0, -45, 75) on the",
+        "   base rear edge. The hinge rotates about X away from the print: 0 degrees is",
+        "   folded against the masts, 14 degrees is open with the top 500 mm behind the",
+        "   stand and 1920 high.",
+        "At 0, 7 and 14 degrees the brace must not touch the masts, bar, base or canvas.",
         "Folded, the whole stand is at most 130 mm deep.",
     ]):
         pdf.text(64, 332 + 14 * i, line, 9)
@@ -124,9 +124,9 @@ def spec_pdf(path):
     for i, line in enumerate([
         "banner_stand.blend, manifest.json.",
         "render_front.png: cam_front, orthographic, 2.15 m coverage, 1200 x 1600,",
-        "   rear leg open at 14 degrees.",
+        "   rear brace open at 14 degrees.",
         "render_three_quarter.png: cam_three_quarter, 35 mm, 1600 x 1200, open.",
-        "render_folded.png: cam_folded, orthographic, 1200 x 1600, rear leg folded to 0.",
+        "render_folded.png: cam_folded, orthographic, 1200 x 1600, brace folded to 0.",
         "Cycles CPU, 64 samples, denoising, fixed seed.",
     ]):
         pdf.text(64, 492 + 14 * i, line, 9)
@@ -149,7 +149,7 @@ def main():
         ["mast_left/right", "40 x 40 x 1910", "aluminium"],
         ["top_bar", "800 x 40 x 40", "aluminium"],
         ["canvas", "800 x 1900, print 819 x 1945", "printed textile, roughness 0.72"],
-        ["leg_rear", "2020 long, 36 square", "aluminium, hinged at 0-14 deg"],
+        ["leg_rear", "1900 long, 36 square", "aluminium, hinged at 0-14 deg"],
     ]
     with open(os.path.join(materials, "spec", "parts.csv"), "w", newline="") as fh:
         csv.writer(fh).writerows(rows)
