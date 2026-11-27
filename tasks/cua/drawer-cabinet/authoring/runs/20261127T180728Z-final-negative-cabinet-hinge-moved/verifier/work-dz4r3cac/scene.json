@@ -1,0 +1,855 @@
+{
+ "ok": true,
+ "blender": "4.2.3 LTS",
+ "unit_scale": 1.0,
+ "objects": {
+  "cam_detail": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    0.019999999552965164,
+    1.0199999809265137,
+    0.6600000262260437
+   ],
+   "lens": 50.0,
+   "ortho_scale": 6.0
+  },
+  "cam_front34": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    1.149999976158142,
+    1.0499999523162842,
+    1.149999976158142
+   ],
+   "lens": 35.0,
+   "ortho_scale": 6.0
+  },
+  "carcass_back": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.5,
+     -0.22500000894069672,
+     0.0599999725818634
+    ],
+    [
+     0.5,
+     -0.2070000022649765,
+     0.8819999694824219
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "carcass_bottom": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.5,
+     -0.22499999403953552,
+     0.05999999865889549
+    ],
+    [
+     0.5,
+     0.22499999403953552,
+     0.07799999415874481
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "carcass_divider": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.008999999612569809,
+     -0.2160000056028366,
+     0.0599999725818634
+    ],
+    [
+     0.008999999612569809,
+     0.2160000056028366,
+     0.8819999694824219
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "carcass_left": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.5,
+     -0.22499999403953552,
+     0.0599999725818634
+    ],
+    [
+     -0.4819999933242798,
+     0.22499999403953552,
+     0.8819999694824219
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "carcass_right": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     0.4819999933242798,
+     -0.22499999403953552,
+     0.0599999725818634
+    ],
+    [
+     0.5,
+     0.22499999403953552,
+     0.8819999694824219
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "carcass_top": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.5,
+     -0.22499999403953552,
+     0.8819999694824219
+    ],
+    [
+     0.5,
+     0.22499999403953552,
+     0.8999999761581421
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_wood"
+   ]
+  },
+  "door_right": {
+   "type": "MESH",
+   "parent": "hinge_right",
+   "location": [
+    0.050000011920928955,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     0.08100003004074097,
+     0.2084999978542328,
+     0.13199999928474426
+    ],
+    [
+     0.531000018119812,
+     0.2459999918937683,
+     0.878000020980835
+    ]
+   ],
+   "polys": 120,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "drawer_01": {
+   "type": "MESH",
+   "parent": "slide_01",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.19300000369548798,
+     0.13499999046325684
+    ],
+    [
+     -0.019999999552965164,
+     0.2459999918937683,
+     0.2750000059604645
+    ]
+   ],
+   "polys": 360,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "drawer_02": {
+   "type": "MESH",
+   "parent": "slide_02",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.19300000369548798,
+     0.2849999964237213
+    ],
+    [
+     -0.019999999552965164,
+     0.2459999918937683,
+     0.42499998211860657
+    ]
+   ],
+   "polys": 360,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "drawer_03": {
+   "type": "MESH",
+   "parent": "slide_03",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.19300000369548798,
+     0.4350000023841858
+    ],
+    [
+     -0.019999999552965164,
+     0.2459999918937683,
+     0.574999988079071
+    ]
+   ],
+   "polys": 360,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "drawer_04": {
+   "type": "MESH",
+   "parent": "slide_04",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.19300000369548798,
+     0.5849999785423279
+    ],
+    [
+     -0.019999999552965164,
+     0.2459999918937683,
+     0.7249999642372131
+    ]
+   ],
+   "polys": 360,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "drawer_05": {
+   "type": "MESH",
+   "parent": "slide_05",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.19300000369548798,
+     0.7350000143051147
+    ],
+    [
+     -0.019999999552965164,
+     0.2459999918937683,
+     0.875
+    ]
+   ],
+   "polys": 360,
+   "materials": [
+    "mat_wood",
+    "mat_metal"
+   ]
+  },
+  "foot_1": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     -0.18700000643730164,
+     0.0
+    ],
+    [
+     -0.4179999828338623,
+     -0.14300000667572021,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 76,
+   "materials": [
+    "mat_metal"
+   ]
+  },
+  "foot_2": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4620000123977661,
+     0.14300000667572021,
+     0.0
+    ],
+    [
+     -0.4179999828338623,
+     0.18700000643730164,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 76,
+   "materials": [
+    "mat_metal"
+   ]
+  },
+  "foot_3": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     0.4179999828338623,
+     -0.18700000643730164,
+     0.0
+    ],
+    [
+     0.4620000123977661,
+     -0.14300000667572021,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 76,
+   "materials": [
+    "mat_metal"
+   ]
+  },
+  "foot_4": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     0.4179999828338623,
+     0.14300000667572021,
+     0.0
+    ],
+    [
+     0.4620000123977661,
+     0.18700000643730164,
+     0.05999999865889549
+    ]
+   ],
+   "polys": 76,
+   "materials": [
+    "mat_metal"
+   ]
+  },
+  "ground": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -1.5,
+     -1.5,
+     -0.009999999776482582
+    ],
+    [
+     1.5,
+     1.5,
+     0.0
+    ]
+   ],
+   "polys": 12,
+   "materials": [
+    "mat_ground"
+   ]
+  },
+  "hinge_right": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.531000018119812,
+    0.226500004529953,
+    0.5049999952316284
+   ]
+  },
+  "light_fill": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    -1.2999999523162842,
+    1.0,
+    0.8999999761581421
+   ],
+   "energy": 45.0
+  },
+  "light_key": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    1.100000023841858,
+    1.399999976158142,
+    1.600000023841858
+   ],
+   "energy": 120.0
+  },
+  "light_night_key": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    0.550000011920929,
+    1.100000023841858,
+    1.25
+   ],
+   "energy": 22.0
+  },
+  "light_night_spot": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    -0.6000000238418579,
+    1.0,
+    0.699999988079071
+   ],
+   "energy": 8.0
+  },
+  "light_rim": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    0.20000000298023224,
+    -1.2000000476837158,
+    1.2999999523162842
+   ],
+   "energy": 55.0
+  },
+  "slide_01": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "slide_02": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "slide_03": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "slide_04": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "slide_05": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "meshes": [
+  "carcass_back",
+  "carcass_bottom",
+  "carcass_divider",
+  "carcass_left",
+  "carcass_right",
+  "carcass_top",
+  "door_right",
+  "drawer_01",
+  "drawer_02",
+  "drawer_03",
+  "drawer_04",
+  "drawer_05",
+  "foot_1",
+  "foot_2",
+  "foot_3",
+  "foot_4",
+  "ground"
+ ],
+ "cameras": {
+  "cam_detail": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    0.019999999552965164,
+    1.0199999809265137,
+    0.6600000262260437
+   ],
+   "lens": 50.0,
+   "ortho_scale": 6.0
+  },
+  "cam_front34": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    1.149999976158142,
+    1.0499999523162842,
+    1.149999976158142
+   ],
+   "lens": 35.0,
+   "ortho_scale": 6.0
+  }
+ },
+ "materials": {
+  "mat_ground": {
+   "name": "mat_ground",
+   "metallic": 0.0,
+   "roughness": 0.699999988079071,
+   "images": []
+  },
+  "mat_metal": {
+   "name": "mat_metal",
+   "metallic": 1.0,
+   "roughness": 0.2800000011920929,
+   "images": []
+  },
+  "mat_wood": {
+   "name": "mat_wood",
+   "metallic": 0.0,
+   "roughness": 0.44999998807907104,
+   "images": [
+    {
+     "name": "wood_basecolor",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "feeds": "Base Color"
+    },
+    {
+     "name": "wood_roughness",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "feeds": "Roughness"
+    },
+    {
+     "name": "wood_normal",
+     "size": [
+      2048,
+      2048
+     ],
+     "packed": true,
+     "feeds": "Normal"
+    }
+   ]
+  }
+ },
+ "images": [
+  {
+   "name": "wood_basecolor",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/wood_basecolor.png"
+  },
+  {
+   "name": "wood_normal",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/wood_normal.png"
+  },
+  {
+   "name": "wood_roughness",
+   "size": [
+    2048,
+    2048
+   ],
+   "packed": true,
+   "filepath": "//textures/wood_roughness.png"
+  }
+ ],
+ "libraries": [],
+ "collections": {
+  "light_day": [
+   "light_key",
+   "light_fill",
+   "light_rim"
+  ],
+  "light_night": [
+   "light_night_key",
+   "light_night_spot"
+  ]
+ },
+ "polys_total": 2596,
+ "unpacked_images": [],
+ "parts_present": {
+  "carcass_left": true,
+  "carcass_right": true,
+  "carcass_top": true,
+  "carcass_bottom": true,
+  "carcass_back": true,
+  "carcass_divider": true,
+  "drawer_01": true,
+  "drawer_02": true,
+  "drawer_03": true,
+  "drawer_04": true,
+  "drawer_05": true,
+  "slide_01": true,
+  "slide_02": true,
+  "slide_03": true,
+  "slide_04": true,
+  "slide_05": true,
+  "door_right": true,
+  "hinge_right": true
+ },
+ "panels": {
+  "carcass_left": {
+   "dims_mm": [
+    18.0,
+    450.0,
+    822.0
+   ],
+   "thickness_mm": 18.0
+  },
+  "carcass_right": {
+   "dims_mm": [
+    18.0,
+    450.0,
+    822.0
+   ],
+   "thickness_mm": 18.0
+  },
+  "carcass_top": {
+   "dims_mm": [
+    1000.0,
+    450.0,
+    18.0
+   ],
+   "thickness_mm": 18.0
+  },
+  "carcass_bottom": {
+   "dims_mm": [
+    1000.0,
+    450.0,
+    18.0
+   ],
+   "thickness_mm": 18.0
+  },
+  "carcass_back": {
+   "dims_mm": [
+    1000.0,
+    18.0,
+    822.0
+   ],
+   "thickness_mm": 18.0
+  },
+  "carcass_divider": {
+   "dims_mm": [
+    18.0,
+    432.0,
+    822.0
+   ],
+   "thickness_mm": 18.0
+  }
+ },
+ "outer_size_mm": [
+  1000.0,
+  450.0,
+  900.0
+ ],
+ "outer_min": [
+  -0.5,
+  -0.22500000894069672,
+  0.0
+ ],
+ "drawer_travel_mm": {
+  "drawer_01": 420.0,
+  "drawer_02": 420.0,
+  "drawer_03": 420.0,
+  "drawer_04": 420.0,
+  "drawer_05": 420.0
+ },
+ "drawer_clearance": {
+  "drawer_01": {
+   "carcass_hits": 0,
+   "neighbour_hits": 0
+  },
+  "drawer_02": {
+   "carcass_hits": 0,
+   "neighbour_hits": 0
+  },
+  "drawer_03": {
+   "carcass_hits": 0,
+   "neighbour_hits": 0
+  },
+  "drawer_04": {
+   "carcass_hits": 0,
+   "neighbour_hits": 0
+  },
+  "drawer_05": {
+   "carcass_hits": 0,
+   "neighbour_hits": 0
+  }
+ },
+ "drawer_front_mm": {
+  "drawer_01": [
+   442.0,
+   140.0
+  ],
+  "drawer_02": [
+   442.0,
+   140.0
+  ],
+  "drawer_03": [
+   442.0,
+   140.0
+  ],
+  "drawer_04": [
+   442.0,
+   140.0
+  ],
+  "drawer_05": [
+   442.0,
+   140.0
+  ]
+ },
+ "door": {
+  "parent": "hinge_right",
+  "hinge_location": [
+   0.531,
+   0.2265,
+   0.505
+  ],
+  "rotation_mode": "XYZ",
+  "overlap": {
+   "0": 32,
+   "55": 0,
+   "110": 0
+  },
+  "combined_overlap": 0
+ },
+ "light_collections": {
+  "light_day": [
+   "light_fill",
+   "light_key",
+   "light_rim"
+  ],
+  "light_night": [
+   "light_night_key",
+   "light_night_spot"
+  ]
+ }
+}
