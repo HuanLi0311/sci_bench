@@ -134,6 +134,44 @@
       "started_at": "2026-11-27T17:00:24.673046+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T17:00:24.927330+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-agent-ac83116fd6:/app/out/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165957Z-final-oracle/submission"
+      ],
+      "started_at": "2026-11-27T17:00:24.949073+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:00:27.228472+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-ac83116fd6",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165957Z-final-oracle/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165957Z-final-oracle/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165957Z-final-oracle/verifier:/logs/verifier",
+        "cua-qc-drawer-cabinet-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-27T17:00:28.644680+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:00:28.886578+00:00"
     }
   ],
   "nop_definition": null,
@@ -440,5 +478,39 @@
       "bytes": 1681485
     }
   },
-  "agent_exit_code": 0
+  "agent_exit_code": 0,
+  "submission": {
+    "drawer_cabinet.blend": {
+      "sha256": "aea90cfcabab2bf1544eaf6d3d7e7e7825491f52b450ff30eadb8425f33c757c",
+      "bytes": 15082816
+    },
+    "manifest.json": {
+      "sha256": "d341777cd5280d26b3a2bd3aef132cf0a056a0a4bd8bf64b7fece746b7327a62",
+      "bytes": 913
+    },
+    "render_day.png": {
+      "sha256": "187ee5391a54ea3db3244b9cf410ef1157eeaa33e0ecd49d1115e12e0e694d6f",
+      "bytes": 1724206
+    },
+    "render_detail.png": {
+      "sha256": "5fa101f04768cb324f658c57992a6fb11a4104d2975e2915235a03195502ba88",
+      "bytes": 1703139
+    },
+    "render_night.png": {
+      "sha256": "839a0c69399dc0a968213e2d1af2f164648d3953adac147ee751475fd1da6b35",
+      "bytes": 1703448
+    },
+    "textures/wood_basecolor.png": {
+      "sha256": "5c172d36a10f50d06bba7069bc8df20ec0f5648d373451b2ce7e96db73b81b0c",
+      "bytes": 1808263
+    },
+    "textures/wood_normal.png": {
+      "sha256": "b3c0127c8ebdd31e4fe5ff2a9ca02cfac94fd7d57ddfc69f97481b47d5d4fbd3",
+      "bytes": 10914486
+    },
+    "textures/wood_roughness.png": {
+      "sha256": "dbecbc89329c1e35624adc8daa5e21c3558bb948acc3bde6141a11442bcb770d",
+      "bytes": 1681485
+    }
+  }
 }
