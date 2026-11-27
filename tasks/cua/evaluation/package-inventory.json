@@ -1,156 +1,144 @@
 {
-  "checked_utc": "2026-11-26T10:57:43.967712+00:00",
+  "checked_utc": "2026-11-27T13:45:51.839707+00:00",
   "scope": "instruction, metadata, environment recipe/materials, reference deliverables and complete verifier source/fixtures; excludes caches and blend1 backups",
   "tasks": {
-    "booth-clearance": [
+    "spider-gait": [
       {
         "path": "environment/Dockerfile",
-        "bytes": 633,
-        "sha256": "63e5178bd9799148e1335b0c9260b0090b23d785ac73dc573d8ada3fc990b9fb",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/brand/brand_sheet.pdf",
         "bytes": 2118,
-        "sha256": "9026c31199930da7e53c90cc2943d78f1a7cd56128a7172a053cfb4d5036c665",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/brand/logo.png",
-        "bytes": 26366,
-        "sha256": "b9cc059d26ecc078ea73233b79f72ad80c4dda3991ee9830102815aca112a958",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/brand/logo.svg",
-        "bytes": 395,
-        "sha256": "39575ef834001d492339803d534d07bfa56be8f70b651c1a98b0336f08253ca9",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/booth_floor_plan.pdf",
-        "bytes": 28147,
-        "sha256": "f5f96facd93d5cc93560f2cf1f496ffc0553a227b30a886a72ca79a8a3452f10",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/booth_floor_plan.png",
-        "bytes": 126863,
-        "sha256": "43a7c70adcd1941c049e1446501a1019fddea54610368932f5c4a641d2edf4be",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/constraints.pdf",
-        "bytes": 2422,
-        "sha256": "986c9e1c5594cae4c955838fc5cebc351436e359158f647e0b35c95c6d780c8b",
+        "sha256": "d226b4cd217753f69717c82ac1b182b66ecec0548e38ac8d2148fcc3b87b10c2",
         "tracked": true
       },
       {
         "path": "environment/materials/LICENSE.txt",
-        "bytes": 289,
-        "sha256": "414c110381f66f77dbe349d0f31e780c97adc4faec9da457f44286bda19a4734",
+        "bytes": 276,
+        "sha256": "415d65ad6e064db95cb1039b6e210b8a83a8d4498713a6cf4e82066a72633bf1",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_corner.jpg",
-        "bytes": 77538,
-        "sha256": "0fc4c6318aea5d792810df1dd13ecd7e4eeecf78b90a05a93f67ffb73625fe8d",
+        "path": "environment/materials/drawings/spider_three_views.png",
+        "bytes": 35266,
+        "sha256": "8e9ec3b20eb9a58ee66044dd9b2c5ad9755a8edaec5a408836a0af9eba9ae23e",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_counter.jpg",
-        "bytes": 51751,
-        "sha256": "fb791a412e854bd7f04c7f6c7a49014e87ec83aabcec95d7f3c4365ed8dcae76",
+        "path": "environment/materials/spec/bone_spec.csv",
+        "bytes": 2034,
+        "sha256": "d07779da4efe0e97ff4e9763a9380a001ef2fad270d009ea36dec7a7d7599947",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_overview.jpg",
-        "bytes": 93999,
-        "sha256": "11a895ffebb5afa0b76dd4cded6f07c08db5e9cb45f4a08ba91bfb7e4b7ec627",
+        "path": "environment/materials/spec/bone_spec.xlsx",
+        "bytes": 2923,
+        "sha256": "fed7dc75d6ae777aa7fa14458b1ccc93d653bbdb7bf31a928ed096e258d02ad9",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_products.jpg",
-        "bytes": 88811,
-        "sha256": "4eca3c78bf3c3bce5a2970a5bd7c294fcd86d3d4e28609fb67d1fbb36fbd9ff4",
+        "path": "environment/materials/spec/gait_phase.png",
+        "bytes": 10631,
+        "sha256": "7046a9cae465a2342b056f4756a341797c21edc279fa4bcec4bf49b1f091fc2b",
         "tracked": true
       },
       {
-        "path": "environment/materials/tables/furniture_list.xlsx",
-        "bytes": 5076,
-        "sha256": "b6f8fa972672aabfd159df130ec11d022e047c46d221077e02ec11a8422be6a0",
+        "path": "environment/materials/spec/gait_timing.csv",
+        "bytes": 309,
+        "sha256": "2858544ee111e76df4c8edaa0daaa898c9dd8697c3540901b3b5410b59b687d5",
         "tracked": true
       },
       {
-        "path": "environment/materials/tables/product_sizes.xlsx",
-        "bytes": 5075,
-        "sha256": "63869b305d13fc2b064d6d401938cff676a9d2ce6ebfd2bb3254781c9649935e",
+        "path": "environment/materials/spec/spider_spec.pdf",
+        "bytes": 4227,
+        "sha256": "de743d2bfe37a89b44aab4d91737a66f0a96ada5731d937e355347bc7adc20d8",
+        "tracked": true
+      },
+      {
+        "path": "environment/materials/textures/chitin_basecolor.png",
+        "bytes": 544849,
+        "sha256": "80c8fc3921ff88e19ebf435363422dd493e2f8feed68faaef82696090f96a8e5",
         "tracked": true
       },
       {
         "path": "instruction.md",
-        "bytes": 4939,
-        "sha256": "72fd615dc1531ded403d2c146202abb64ba2fb2893cdc39ffe895e06bd170330",
-        "tracked": true
-      },
-      {
-        "path": "solution/booth.blend",
-        "bytes": 120709,
-        "sha256": "fb539437a1869296870c4e28ce989b4e89e69764245d4f5b108077ebfd9df921",
+        "bytes": 4597,
+        "sha256": "9a8aab2e4501680db9f1b9e9fee241be3e560f077946ea7b1f1bd42249370556",
         "tracked": true
       },
       {
         "path": "solution/manifest.json",
-        "bytes": 572,
-        "sha256": "8a15f3e6049efbb19322b10cb44a3ab38f0058c037c0e8a1a0a64710380674cf",
+        "bytes": 876,
+        "sha256": "ca6029306b15eb6fa8404abb3f58ddf0f072c2a703623b4decc8c79770a8c725",
         "tracked": true
       },
       {
-        "path": "solution/render_entrance.png",
-        "bytes": 1730640,
-        "sha256": "e7e4accdb85b0a39a2e22f926be763a66bc66d97df0cc14f6a2cc4fed6019035",
+        "path": "solution/render_pose_01.png",
+        "bytes": 497928,
+        "sha256": "b5b23a3cfe948a5f7c33c3b201ee9c9bbf0e53f4b377b01ab6579719f8038b10",
+        "tracked": true
+      },
+      {
+        "path": "solution/render_pose_02.png",
+        "bytes": 502060,
+        "sha256": "8b158fe2a3c7204dd6aeea0547cc717037dff74a9bad300a44e46068f944c445",
+        "tracked": true
+      },
+      {
+        "path": "solution/render_pose_03.png",
+        "bytes": 499606,
+        "sha256": "6e27fb7ae5e05bc3502c5cf1a16dd6118e6a8c11ccef4079426fe0651d93ec1e",
+        "tracked": true
+      },
+      {
+        "path": "solution/render_pose_04.png",
+        "bytes": 502469,
+        "sha256": "803d419acdaa7cb79b0457c54bebdeb26aebb5279734cb42f6c4da02edfc357b",
         "tracked": true
       },
       {
         "path": "solution/render_top.png",
-        "bytes": 2518726,
-        "sha256": "14132dc1a890a83c76077cd6690096baa71a07eb1d30ba987255081c970529ec",
+        "bytes": 860526,
+        "sha256": "9a80a418d7698183b15617f801c6df7503e21a80d54b2e33420b31fafdd2a224",
         "tracked": true
       },
       {
         "path": "solution/solve.sh",
-        "bytes": 652,
-        "sha256": "8cb15654c1c569c2b0d3e98786532eb5189231cfb721c2e358272f7cc5dc3fcd",
+        "bytes": 825,
+        "sha256": "e06611e67ad163dc25480524d5cd94e518037d421c3bdaf82cd981b1816b735e",
+        "tracked": true
+      },
+      {
+        "path": "solution/spider.blend",
+        "bytes": 1666320,
+        "sha256": "f6ae07ae8a1b524174d5a1e4341b907a8d906fc6d2fbe5c1b9728d08a029ec78",
+        "tracked": true
+      },
+      {
+        "path": "solution/textures/chitin_basecolor.png",
+        "bytes": 470723,
+        "sha256": "b2e06b9e61d69fc7384907e0b7c8c28d3fa4060e4232434d8e81e62e5f8ce402",
         "tracked": true
       },
       {
         "path": "task.toml",
-        "bytes": 1720,
-        "sha256": "3c0b70759097c288154cce076362be08d0c7994844cabba5e428bfa704b9d427",
-        "tracked": true
-      },
-      {
-        "path": "tests/check_scene.py",
-        "bytes": 14344,
-        "sha256": "f9b1cd5512cebda56b76584d2a64f6e2db4334c9b5b8c0e4aa69f1db19ba1e69",
+        "bytes": 1977,
+        "sha256": "5d709447804d2a724707a237fab9a9981bf1618218a6c71d1e7085cc601abd18",
         "tracked": true
       },
       {
         "path": "tests/Dockerfile",
-        "bytes": 709,
-        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 710,
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "tracked": true
+      },
+      {
+        "path": "tests/check_scene.py",
+        "bytes": 12814,
+        "sha256": "1dad8df654a419a67e9c6eb1b7191fb8e473335e1930631904b6573919431171",
         "tracked": true
       },
       {
         "path": "tests/grade.py",
-        "bytes": 11742,
-        "sha256": "9dcc4fd1bd2cca51f7d77972b8854ca4531a08a3e7d7569594f86fd4ba6b9809",
-        "tracked": true
-      },
-      {
-        "path": "tests/reference/geometry.json",
-        "bytes": 2570,
-        "sha256": "842dd860eedb1c29a893b6f4067ecd382eb94ce55a46c028918cdda48fd1a1bf",
+        "bytes": 16938,
+        "sha256": "89a0eb3e905caac53d4d8b30849e286bb5f990766130483d1429018a1652fde5",
         "tracked": true
       },
       {
@@ -161,14 +149,8 @@
       },
       {
         "path": "tests/rerender.py",
-        "bytes": 2160,
-        "sha256": "b8a5992373eff7ac715f9ee020a2c54aaa01a104844059b68b47b0f0a8a6eaf8",
-        "tracked": true
-      },
-      {
-        "path": "tests/rubric.py",
-        "bytes": 1835,
-        "sha256": "6efdca7c448c245fed3c10c2a9b208d85978b05b70abf8632b1049e99417eafb",
+        "bytes": 2078,
+        "sha256": "b760013d85f06447dd209160eb81ab0219f00e47d0f35914921122c84d3bcfb5",
         "tracked": true
       },
       {
@@ -176,175 +158,127 @@
         "bytes": 595,
         "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
         "tracked": true
-      },
-      {
-        "path": "tests/test_rubric.py",
-        "bytes": 1540,
-        "sha256": "85aae4e9591f14e76d93bab4b284c5051d85d6dcc1b4474bc8723255cf0d26c5",
-        "tracked": true
       }
     ],
-    "crate-lookdev": [
+    "skateboard-prop": [
       {
         "path": "environment/Dockerfile",
-        "bytes": 2558,
-        "sha256": "7d6b4e7e87fafc3f52c07a2eec8914cc7b1db316b15257b963f4f84fd9e3a388",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/crate_three_views.pdf",
-        "bytes": 35235,
-        "sha256": "cebb3481048eefe420342d79d4137b4a065a395d88810fb93575081637c5ebd1",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/crate_three_views.png",
-        "bytes": 206796,
-        "sha256": "fb7df063ce80075beb6c3057e642d4483f78b1c1f7694813b9e7ff3ab09f29f5",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/hdri/studio_soft.hdr",
-        "bytes": 2097202,
-        "sha256": "f2d02398b5715fbd6206758414834b524600a2ef30134dbf56ed4267497b6f22",
+        "bytes": 2118,
+        "sha256": "d226b4cd217753f69717c82ac1b182b66ecec0548e38ac8d2148fcc3b87b10c2",
         "tracked": true
       },
       {
         "path": "environment/materials/LICENSE.txt",
-        "bytes": 646,
-        "sha256": "d0ac621fe1cf1c65b1ff79f9906d384942b2d7026bbd529542ea90f1ffc77318",
+        "bytes": 267,
+        "sha256": "87e60a00d71fb3d83f27f6950d179e282f55881ff0a6dbc4398f200f9bdbb559",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_back34.jpg",
-        "bytes": 156403,
-        "sha256": "ad4edddbbd2ee60199c2ca65c47491e9bfbc23ada9c44e4b7b19312eeefe5961",
+        "path": "environment/materials/drawings/skateboard_three_views.png",
+        "bytes": 23144,
+        "sha256": "669bb62fd0c851abdc943ff6eb4a370e0ada9bfbebd4bc109c3be81f9c81329a",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_corner.jpg",
-        "bytes": 193183,
-        "sha256": "9ea0eb97d1c91753f0715c8df999c048ce16d343e25000aee3ef1a6d48e614a1",
+        "path": "environment/materials/spec/deck_graphic.png",
+        "bytes": 15756,
+        "sha256": "e2fbf476e362ec439d2b0ba56816b85070b8d664620dc22213b2f1b440a8ebd3",
         "tracked": true
       },
       {
-        "path": "environment/materials/photos/ref_front34.jpg",
-        "bytes": 228938,
-        "sha256": "1d58e11404b513dac59a0fd131e849ec1309e444c3c0ccb7cb385e27b2203d5f",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_top.jpg",
-        "bytes": 154414,
-        "sha256": "f1db50bca19105ef0f4a6c2d24286d6ad796d812fe44399996feeeca6cdac215",
+        "path": "environment/materials/spec/material_spec.csv",
+        "bytes": 399,
+        "sha256": "f50e85e1f8ff001ec8db6b8d5a0134b93c5337ba1888ae18f5ba65985133ec09",
         "tracked": true
       },
       {
         "path": "environment/materials/spec/material_spec.pdf",
-        "bytes": 3329,
-        "sha256": "d62dfb175983206a8c3e10b617c7c5063e4ca910fc1ef0327a82bcd03d52fec2",
+        "bytes": 3802,
+        "sha256": "4338b90be45d8ceb43a8da847e6d7ee2eb3e1976ae83c8dffdae2f017109f60d",
+        "tracked": true
+      },
+      {
+        "path": "environment/materials/spec/material_spec.xlsx",
+        "bytes": 1939,
+        "sha256": "43f79c571c0400b7047042882802abe855539b914ee632be3fc40be2d74883b6",
         "tracked": true
       },
       {
         "path": "instruction.md",
-        "bytes": 4291,
-        "sha256": "b641a887296df54f1f1cadd47defa2c9404014d497a33f2e215f2554303ca65d",
-        "tracked": true
-      },
-      {
-        "path": "solution/crate.blend",
-        "bytes": 13019171,
-        "sha256": "04505499328cecb060f4651268cf328bb1dba40114df28a44d86321d87ef3d14",
+        "bytes": 4745,
+        "sha256": "ed55177f27072d3cd93419b6290856958d5ae863df419a3a8a3d3cd39bf3ffc5",
         "tracked": true
       },
       {
         "path": "solution/manifest.json",
-        "bytes": 1827,
-        "sha256": "02444d32039716eb683b6c5e00280408eb17f5d5c16b508dc59a629ce81e4d3d",
+        "bytes": 639,
+        "sha256": "fa67be74b328b0870cb09edd7e01c747cd15c5990d2ec1154953ae5cbc860c59",
         "tracked": true
       },
       {
-        "path": "solution/render_back.png",
-        "bytes": 1722469,
-        "sha256": "9494755509dedb8180fcd3798b69407d55b7b58e9355925a1ad85ccf7b533a25",
+        "path": "solution/render_bottom.png",
+        "bytes": 1343555,
+        "sha256": "a571bed19f002dd93b29cc2464334430614b46aace0165e39874ed9c987ec877",
         "tracked": true
       },
       {
-        "path": "solution/render_front.png",
-        "bytes": 1868666,
-        "sha256": "d2d4a5ee27981a71668ac7d041cb4aabf16dcf0988203ecbb83020220831ff2b",
+        "path": "solution/render_edge.png",
+        "bytes": 1870465,
+        "sha256": "f441e16ce6e59bdfdcaa66987c0c2ef5a8098b6ac49caf8eb90855bfbc91f2ca",
         "tracked": true
       },
       {
-        "path": "solution/render_macro.png",
-        "bytes": 1992194,
-        "sha256": "edb1de344f2b2fbc56af32f60dd81b50054c06c8755e3601c0021004c6a6207b",
+        "path": "solution/render_three_quarter.png",
+        "bytes": 1632668,
+        "sha256": "3b6321db786881aeb0c473f3cf22576f19e807066bb5ebadc509e80ed879a68e",
         "tracked": true
       },
       {
-        "path": "solution/render_top.png",
-        "bytes": 1948077,
-        "sha256": "690bb82de81c1e3550379d47043c7a79aaa6416029eed9b107368445395dd7ec",
+        "path": "solution/skateboard.blend",
+        "bytes": 1648180,
+        "sha256": "8365fe94b12089dcbdb2786015d9a1c611ee00256751ac2222c5c458705e8554",
+        "tracked": true
+      },
+      {
+        "path": "solution/skateboard.glb",
+        "bytes": 996628,
+        "sha256": "8b4818cd1f02b551593cd513947c560f547f1ba55e847dc0aa7baf945572300c",
         "tracked": true
       },
       {
         "path": "solution/solve.sh",
-        "bytes": 772,
-        "sha256": "e62f3cf139d037749f5444c0de9bba2b66d0dc2f8e18a8b4d7ea5b545641178c",
-        "tracked": true
-      },
-      {
-        "path": "solution/textures/iron_basecolor.png",
-        "bytes": 3129403,
-        "sha256": "3714f7f5f077c6f77bbce939bf9fc96ef80730bfdeb9e808664af9321f53489d",
-        "tracked": true
-      },
-      {
-        "path": "solution/textures/iron_roughness.png",
-        "bytes": 1964882,
-        "sha256": "5621ecb43e9cfcaa4e0c6c4a69a3fa5f33a43c5afe547439adc0d40c4415b8bd",
-        "tracked": true
-      },
-      {
-        "path": "solution/textures/oak_basecolor.png",
-        "bytes": 2288663,
-        "sha256": "f584563f0df5df402e78f65096c4fe328e710e75f23483202803bfbefc9917cc",
-        "tracked": true
-      },
-      {
-        "path": "solution/textures/oak_normal.png",
-        "bytes": 3414606,
-        "sha256": "3af6b17c5976714a477283b12ba5788f90aba741b2230d5b8339bc4778b5f5c6",
-        "tracked": true
-      },
-      {
-        "path": "solution/textures/oak_roughness.png",
-        "bytes": 1710161,
-        "sha256": "9c7f6626cec4731441af6d347a0c3f72e2ffc1a1765f556856e4b6192bcecf10",
+        "bytes": 752,
+        "sha256": "9213ffce6136a1500ce9b7a709c141f4f1f822c33114d8a6507a928d2987dfe0",
         "tracked": true
       },
       {
         "path": "task.toml",
-        "bytes": 1901,
-        "sha256": "93274420e9e6fac9f959ab3afcb0201ef19605d81ec4b72b2d5b3f8fd58f60bb",
-        "tracked": true
-      },
-      {
-        "path": "tests/check_scene.py",
-        "bytes": 11916,
-        "sha256": "69c349f0833583acb07575df79d8a4156c5d8a512a5c65f2f4756414903fc4f9",
+        "bytes": 1957,
+        "sha256": "3b266fb538c7e6f674aa3e286cfe186ce42ec789d24d36bc54b87dd2659d0ba2",
         "tracked": true
       },
       {
         "path": "tests/Dockerfile",
-        "bytes": 709,
-        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
+        "bytes": 710,
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "tracked": true
+      },
+      {
+        "path": "tests/check_glb.py",
+        "bytes": 1968,
+        "sha256": "8ab4903907f4d77b20d48bff70f0f1ab682c3cae493f08156890451384ce8c36",
+        "tracked": true
+      },
+      {
+        "path": "tests/check_scene.py",
+        "bytes": 8644,
+        "sha256": "b632d11b7a027eaf93e130758b22c462b4a788b08e0a558e836c79368ab44dbf",
         "tracked": true
       },
       {
         "path": "tests/grade.py",
-        "bytes": 16604,
-        "sha256": "ba4d73a7edc4df65b29796a1c7b98627e3a94781ebcbf30b5639b455020d4462",
+        "bytes": 18557,
+        "sha256": "255317fb3db7dbf231c978a660b59fad5cf36623cc06285a7beab3c24c6a8c8a",
         "tracked": true
       },
       {
@@ -355,596 +289,8 @@
       },
       {
         "path": "tests/rerender.py",
-        "bytes": 3119,
-        "sha256": "8c9dd4f2057ff14d298a0acda74bffbb0e0f0688da7b206d41010e15697afe7f",
-        "tracked": true
-      },
-      {
-        "path": "tests/test.sh",
-        "bytes": 595,
-        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
-        "tracked": true
-      }
-    ],
-    "folding-chair": [
-      {
-        "path": "environment/Dockerfile",
-        "bytes": 715,
-        "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/hinge_layout.pdf",
-        "bytes": 21052,
-        "sha256": "40d964944172eb66a0be0326f89762928285b274ff592c4fb7698facfe93f075",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/hinge_layout.png",
-        "bytes": 105019,
-        "sha256": "339236851f5f4dacd5c331bd44231abe92532055fb278c6ed1598d535283542a",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/states.pdf",
-        "bytes": 2186,
-        "sha256": "a4153781aa421510d6ea933c581454d248cca633d5026b006ba07ad9634763e1",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/LICENSE.txt",
-        "bytes": 66,
-        "sha256": "95179d37e705f61d2289908e0e6eb5a4759f1925b97a8d3e93315a00ba62fddc",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_folded.jpg",
-        "bytes": 60303,
-        "sha256": "198cb32692fc51bb9df89a3d34624128ebc43bc756ace9fee01e19cdff953605",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_half.jpg",
-        "bytes": 70865,
-        "sha256": "2842f22db8d3d1cadc811141f156e9bc9e7068feaefbe8630d2a30d9dc230d24",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_hinge.jpg",
-        "bytes": 78553,
-        "sha256": "3e0ce75ccbb5a1229fb3a2c64a0f08fbdbcdfc9eb7e6938ad071e071297bc996",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_locked.jpg",
-        "bytes": 68350,
-        "sha256": "56d502be37078afb5955284e079dc3d6f79fb25ff3a89dc6e664e1a03eaa91d1",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_unfolded.jpg",
-        "bytes": 68350,
-        "sha256": "8beb5f37000021b2140b857efb0d0ad8dd55774a1a27bc50c5d05db58c49a75e",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/tables/chair_sizes.xlsx",
-        "bytes": 5027,
-        "sha256": "bf7fe1192bc196420e9551fab7a23bcb522e0d6d42dc0e2ed564a8aec2d3882e",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/tables/hinge_layout.xlsx",
-        "bytes": 5016,
-        "sha256": "0d632ba1c71e2214db4485b4059baf694b0e30b4cb56dab1376a6e1b0311125b",
-        "tracked": true
-      },
-      {
-        "path": "instruction.md",
-        "bytes": 3506,
-        "sha256": "e50407da2c141f518b2cded4d535be80f04bedbe091e96dbd101f25e179bcb67",
-        "tracked": true
-      },
-      {
-        "path": "solution/folding_chair.blend",
-        "bytes": 93043,
-        "sha256": "faaec5aa87a50313d345edfc43cd77cd19ed5751fe811f5fefba4729c53d52b1",
-        "tracked": true
-      },
-      {
-        "path": "solution/manifest.json",
-        "bytes": 1059,
-        "sha256": "d7af829a6d69f22f95f8323b511b0aef4f26c5aaa05e4843005bc53dd483d887",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_folded.png",
-        "bytes": 1401925,
-        "sha256": "91bffb5cad07823c0dde4a4cbceddf46352c447f0fbe6c00455fc92ce0e3d6a8",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_half.png",
-        "bytes": 1434740,
-        "sha256": "966955c11a8df26326864af557e4adf5550277280126ea0de559f4d97a940603",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_locked.png",
-        "bytes": 1418329,
-        "sha256": "ecc7afe203fa9064841cafb09129166b9c78aa94ed38ad4a496d4affb754186b",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_unfolded.png",
-        "bytes": 1418329,
-        "sha256": "b5c013d89e8f070705cc9ac36d564786ca55ae0408c31de5d66f1587bcbd83d3",
-        "tracked": true
-      },
-      {
-        "path": "solution/solve.sh",
-        "bytes": 478,
-        "sha256": "9d4ab58c6f2cce38f98025ee83628b761ebf1157e90798612d92ae3d88819b46",
-        "tracked": true
-      },
-      {
-        "path": "task.toml",
-        "bytes": 1663,
-        "sha256": "4afb211aa8770d5ebad63b6784e40a1ce303e22e42b2e950a16e83ac2b553086",
-        "tracked": true
-      },
-      {
-        "path": "tests/check_scene.py",
-        "bytes": 6501,
-        "sha256": "3f211e77a364e619d57c43a0041965efaa7641c591114a4985be6c7b0ed5ec47",
-        "tracked": true
-      },
-      {
-        "path": "tests/Dockerfile",
-        "bytes": 709,
-        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
-        "tracked": true
-      },
-      {
-        "path": "tests/grade.py",
-        "bytes": 10237,
-        "sha256": "701642000bd129d440890845c5496c0cbf89e22c5465a80c8bf339b23078f260",
-        "tracked": true
-      },
-      {
-        "path": "tests/render_compare.py",
-        "bytes": 951,
-        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
-        "tracked": true
-      },
-      {
-        "path": "tests/rerender.py",
-        "bytes": 2028,
-        "sha256": "d8958baf0b4af4e2993c8ea534fc77debc6d4a4481ed671d9b76d03c634e2149",
-        "tracked": true
-      },
-      {
-        "path": "tests/test.sh",
-        "bytes": 595,
-        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
-        "tracked": true
-      }
-    ],
-    "rainroom": [
-      {
-        "path": "environment/Dockerfile",
-        "bytes": 715,
-        "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/room_plan.png",
-        "bytes": 88574,
-        "sha256": "22c2f8e8c0c64a59b7e5a0941fd200ebd1a3a16ae95369e37e2749bf53bbf70d",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/LICENSE.txt",
-        "bytes": 61,
-        "sha256": "565f2bbae101816c6fc96a5a10f9aba088fd10084c7d53e11240367f0691f9e5",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_detail.jpg",
-        "bytes": 54191,
-        "sha256": "ea8762b439dd0ae6bdd1b548ae529da8c6040c47bad8257f5e90f95b471de020",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_morning.jpg",
-        "bytes": 71539,
-        "sha256": "b67aef4c77602e7701937fb6c718ddd1b168f60db91ec442518c63200ad15e1b",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_night.jpg",
-        "bytes": 62699,
-        "sha256": "759719255357c1af44797ad3495b21755359dcc24cc933643474ef2791808554",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/spec/material_spec.pdf",
-        "bytes": 2513,
-        "sha256": "9dd2a8a8ffb79a939663e8a9fd5e5ebdf8f39c2ded8293569316b8c753e4aabd",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/tables/objects.xlsx",
-        "bytes": 5921,
-        "sha256": "493cb0fbb55bd46b334cc108c910234cb69ed366dda9688d78535c56a3253d7f",
-        "tracked": true
-      },
-      {
-        "path": "instruction.md",
-        "bytes": 2848,
-        "sha256": "60e96ae7284851010ad93193c0b3718b498a46bfd5ef3efee42d757250025ed5",
-        "tracked": true
-      },
-      {
-        "path": "solution/manifest.json",
-        "bytes": 1190,
-        "sha256": "11413af76b43d9916615353126f560c07f7194237b16f853b995f5e5d2f758ab",
-        "tracked": true
-      },
-      {
-        "path": "solution/rainroom.blend",
-        "bytes": 105368,
-        "sha256": "5924c7ea85ee1a9fb2edf72f0f55f8cb3e759b4b14d970b367f0d535a01a0d06",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_morning.png",
-        "bytes": 1507461,
-        "sha256": "6b458696dad52d6eb25391f46c14980afde50d2ef8609e59bef938fbebedb90c",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_night.png",
-        "bytes": 1441442,
-        "sha256": "65b203cd0b8011d60815a2bfb053d4a8d617cd7b2e11d065b5d83d9d4542600f",
-        "tracked": true
-      },
-      {
-        "path": "solution/solve.sh",
-        "bytes": 429,
-        "sha256": "e8e58772fe750d5fbd1dd08b8550f5c767192759c3735b195081f0ceb5295688",
-        "tracked": true
-      },
-      {
-        "path": "task.toml",
-        "bytes": 1659,
-        "sha256": "b76ae2318a93614d294d2d72d6191de015e026cbe5ef4d7cdc03e1c8a27307ca",
-        "tracked": true
-      },
-      {
-        "path": "tests/check_scene.py",
-        "bytes": 5918,
-        "sha256": "4d8b6876577d7d5ac7e8f44cb93a835213e2d7803c02993316e750638a2be749",
-        "tracked": true
-      },
-      {
-        "path": "tests/Dockerfile",
-        "bytes": 709,
-        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
-        "tracked": true
-      },
-      {
-        "path": "tests/grade.py",
-        "bytes": 9627,
-        "sha256": "be41db475bc30b0f1af205331558bf790d515ea6e3275d85628928deac7a1028",
-        "tracked": true
-      },
-      {
-        "path": "tests/render_compare.py",
-        "bytes": 951,
-        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
-        "tracked": true
-      },
-      {
-        "path": "tests/rerender.py",
-        "bytes": 2291,
-        "sha256": "a976880936e5e14e3333454857467046761bf18fc499b1e765b0d5088e4801e5",
-        "tracked": true
-      },
-      {
-        "path": "tests/test.sh",
-        "bytes": 595,
-        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
-        "tracked": true
-      }
-    ],
-    "toy-car": [
-      {
-        "path": "environment/Dockerfile",
-        "bytes": 715,
-        "sha256": "e4203328cc27fdd649945e90a15591cbe37fca544b9a06f9a1752661f94d4c92",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/drawings/joint_spec.pdf",
-        "bytes": 2141,
-        "sha256": "159a50bbe01f9de6af7f996dbdfb0a669041f5a1dc39e923436f52c5b06e9366",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_00.jpg",
-        "bytes": 4835,
-        "sha256": "bb2c5492bfb4a767b2c6a9bda4e8314764995146758f0bfec8c357d5e2893aec",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_01.jpg",
-        "bytes": 4820,
-        "sha256": "c8439ea431bfee7acce57655d32e507231e58ff1d093225af999c8e6a17ca3c2",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_02.jpg",
-        "bytes": 4837,
-        "sha256": "d63b87527d03ab3b8940bac04d2a7b9394bf97a657389c0cb3d76614a477286a",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_03.jpg",
-        "bytes": 4833,
-        "sha256": "e6207f5e8d6feeab81ebad3ac48b90bc5e80475ea1cabae79505e37fcec6f171",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_04.jpg",
-        "bytes": 4836,
-        "sha256": "bc2ffae6458460bd217c77074c90d3290c647cd8cfce19cbe9f48faaadb6283f",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_05.jpg",
-        "bytes": 4831,
-        "sha256": "2b09183d04840b3f537ce001907534d5ec7ed3843a80ad387883510407c6c93d",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_06.jpg",
-        "bytes": 4823,
-        "sha256": "6bfe95f055327046ae40952486f0d2d7fa542e1f6962972863911ab2db262778",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/front_07.jpg",
-        "bytes": 4820,
-        "sha256": "b1d3ac3ed931d369c7b18a145ed100c964862d82bd117bdf668972a68e29e1ed",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_00.jpg",
-        "bytes": 7484,
-        "sha256": "6b278073a844a65d0a0b83ccc8b03a0b752c9bf0820a75ee2be11ce0f44769dd",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_01.jpg",
-        "bytes": 7470,
-        "sha256": "7e8ba44b81a297820c7756815e55a75993884d2255f2b6d87df1e49a4629698b",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_02.jpg",
-        "bytes": 7484,
-        "sha256": "95528fa1685dae56ca42e446bda47cea92df39843875cc40ac8188704d9e6f8c",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_03.jpg",
-        "bytes": 7484,
-        "sha256": "0ce4644b9975f4e9b9b141a09cb90ae961223f22783a2b453e513aa3dda9aae3",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_04.jpg",
-        "bytes": 7482,
-        "sha256": "dd1d79da770d0d422e79b63ddde1ee41464a3898f5ea337a087a1e92f8c85be1",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_05.jpg",
-        "bytes": 7480,
-        "sha256": "5445a003075cee9a98d8cd1b222a5d168b9b058eacc21895ec6c89df9f695cc9",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_06.jpg",
-        "bytes": 7498,
-        "sha256": "def57337d94d77de4dfc6c72402da8cfa89a88636ee81b5bce1108a4f00bb8b9",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/frames/side_07.jpg",
-        "bytes": 7494,
-        "sha256": "8a0a72f6080b13ac13056aa6383177a182783bde650645528bc5796a8bab790e",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/LICENSE.txt",
-        "bytes": 122,
-        "sha256": "f306f06e8934336c54af53bf28c218b686b4876ad62c3f112b16049bdead6a22",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_back.jpg",
-        "bytes": 25452,
-        "sha256": "c45a40bc55c54fd87b3161073aa63276897d374dd004a78d14b452ae058eb309",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_front.jpg",
-        "bytes": 25272,
-        "sha256": "1fb799556e6e97be9d3e86a546314900b7705b8f9e149ead0785bdb7ccb9183d",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_side.jpg",
-        "bytes": 33014,
-        "sha256": "5cb71174752e0f5be7c8e1ce1be5fd122ec36148cf654006e76df11d00eddc96",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/photos/ref_top.jpg",
-        "bytes": 28314,
-        "sha256": "2346a7b1118253c61f9fa0982885e8b8250aaf9803a47443f24c95c49fcecd12",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/silhouettes/back.png",
-        "bytes": 348,
-        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/silhouettes/front.png",
-        "bytes": 347,
-        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/silhouettes/side.png",
-        "bytes": 440,
-        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/silhouettes/top.png",
-        "bytes": 471,
-        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/tables/car_sizes.xlsx",
-        "bytes": 5040,
-        "sha256": "f49cedb3671cc8fd54d5c08ff23de24afa188a640a857c283762c1a1ea61c123",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/videos/front.mp4",
-        "bytes": 8754,
-        "sha256": "6cffe49e0e8f32b21b42ea5c60f9f6e79d431178b62726efdbd597a0f8586817",
-        "tracked": true
-      },
-      {
-        "path": "environment/materials/videos/side.mp4",
-        "bytes": 10304,
-        "sha256": "552500b879a26576903668e47d9e2ba8cae2434ee6f761af1569721dada75bb2",
-        "tracked": true
-      },
-      {
-        "path": "instruction.md",
-        "bytes": 2985,
-        "sha256": "6bd8ac91672c08cb860393fed48fab4f13b743585400cdb08cc32c39c66e7d95",
-        "tracked": true
-      },
-      {
-        "path": "solution/manifest.json",
-        "bytes": 883,
-        "sha256": "0fbf2fe6bda6db9b95dc3560e00982e4b004fd77d0163892df63f198ba974c20",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_back.png",
-        "bytes": 229170,
-        "sha256": "a03242c53d1504ea64865cb958ffed2bdd56e2965bc50bee903483087475faa6",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_front.png",
-        "bytes": 225130,
-        "sha256": "698f492e4fb680964267a921139b79370a68bae0bb32b238b945528a4f94fad7",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_side.png",
-        "bytes": 346609,
-        "sha256": "2f5a7a91e4f8dfa3df4c3f877bfb98d7fcd20c048d8b9e1c2e5c655fa7026d99",
-        "tracked": true
-      },
-      {
-        "path": "solution/render_top.png",
-        "bytes": 259516,
-        "sha256": "4db66cfb75243bc7ae9a57151fc4615fd0bf153f169d4b613973994f8add2755",
-        "tracked": true
-      },
-      {
-        "path": "solution/solve.sh",
-        "bytes": 436,
-        "sha256": "3df0fd44ed4fa11de69e7e14f44e7cb3bdc01f38b4f9d3e7e38595aed97cfa23",
-        "tracked": true
-      },
-      {
-        "path": "solution/toy_car.blend",
-        "bytes": 97618,
-        "sha256": "d9fab6d17c19bfb79cb2548577eb3f15ab80d056af0bb2f251ffff4a51e3705d",
-        "tracked": true
-      },
-      {
-        "path": "task.toml",
-        "bytes": 1712,
-        "sha256": "cf821c916d95841c05b7918731e4fe67f7a1f357561653ba485066568d91240a",
-        "tracked": true
-      },
-      {
-        "path": "tests/check_scene.py",
-        "bytes": 6578,
-        "sha256": "a5870f6ba1a728ca0c7057a47cdbe54eb527240934597118002671da5127f1f3",
-        "tracked": true
-      },
-      {
-        "path": "tests/Dockerfile",
-        "bytes": 709,
-        "sha256": "de3da93ed6dd11c2ef2582615d25eca017700e3d639f80d33aa2727f169cb17a",
-        "tracked": true
-      },
-      {
-        "path": "tests/grade.py",
-        "bytes": 10616,
-        "sha256": "2e884f0fae9535646de7092d7d340d07caad5d6c763acadfee31ff34e7a9f9ec",
-        "tracked": true
-      },
-      {
-        "path": "tests/reference/silhouettes/back.png",
-        "bytes": 348,
-        "sha256": "22c7c1871ab48659f8c266d4e1da4fb7ffacd3b8474e594a2b1e6658e2f64eb9",
-        "tracked": true
-      },
-      {
-        "path": "tests/reference/silhouettes/front.png",
-        "bytes": 347,
-        "sha256": "38a885288ea999ce488020fde60aeb190ae754875d3ee2f6cae6170852dcbe70",
-        "tracked": true
-      },
-      {
-        "path": "tests/reference/silhouettes/side.png",
-        "bytes": 440,
-        "sha256": "0eb5dbb2c32021bde702ae01891d4664900ab23c4747d2a73750c217a2bc29d4",
-        "tracked": true
-      },
-      {
-        "path": "tests/reference/silhouettes/top.png",
-        "bytes": 471,
-        "sha256": "a4f4d4415b803dc29f633f30fe8d8035d8067bbf8df48176cb63273c736dc7b7",
-        "tracked": true
-      },
-      {
-        "path": "tests/render_compare.py",
-        "bytes": 951,
-        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
-        "tracked": true
-      },
-      {
-        "path": "tests/rerender.py",
-        "bytes": 2407,
-        "sha256": "a85a9b10aca45a22cda7de9dc50244afe32d3da9ac6acf188ff452ae33684f35",
+        "bytes": 3203,
+        "sha256": "b5215bc69da55aefdfbfff59ab883c76604e33ca3247aa71babf0f595d5952f8",
         "tracked": true
       },
       {

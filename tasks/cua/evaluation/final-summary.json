@@ -1,37 +1,20 @@
 [
   {
-    "task": "booth-clearance",
+    "task": "spider-gait",
     "oracle": 1,
     "nop": 0,
-    "checks": 22,
-    "negative_cases": 8
+    "checks": 19,
+    "negative_cases": 4,
+    "model_attempts": 0,
+    "model_records_valid": true
   },
   {
-    "task": "crate-lookdev",
-    "oracle": 1,
-    "nop": 0,
-    "checks": 15,
-    "negative_cases": 2
-  },
-  {
-    "task": "folding-chair",
-    "oracle": 1,
-    "nop": 0,
-    "checks": 15,
-    "negative_cases": 2
-  },
-  {
-    "task": "rainroom",
+    "task": "skateboard-prop",
     "oracle": 1,
     "nop": 0,
     "checks": 16,
-    "negative_cases": 1
-  },
-  {
-    "task": "toy-car",
-    "oracle": 1,
-    "nop": 0,
-    "checks": 16,
-    "negative_cases": 2
+    "negative_cases": 4,
+    "model_attempts": 0,
+    "model_records_valid": true
   }
 ]

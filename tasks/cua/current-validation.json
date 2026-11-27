@@ -1,70 +1,13 @@
 [
   {
-    "task": "booth-clearance",
+    "task": "spider-gait",
     "oracle": [
       true,
-      "20261126T125639Z-final-oracle"
+      "20261127T113104Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T130004Z-final-nop"
-    ],
-    "negatives": [
-      true,
-      "all 9 prepared negative cases rejected by the current verifier"
-    ],
-    "model_records": [
-      true,
-      "2 recorded attempts; complete raw trajectories checked where inference occurred"
-    ]
-  },
-  {
-    "task": "crate-lookdev",
-    "oracle": [
-      true,
-      "20261126T185106Z-final-oracle"
-    ],
-    "nop": [
-      true,
-      "20261126T185838Z-final-nop"
-    ],
-    "negatives": [
-      true,
-      "all 2 prepared negative cases rejected by the current verifier"
-    ],
-    "model_records": [
-      true,
-      "15 recorded attempts; complete raw trajectories checked where inference occurred"
-    ]
-  },
-  {
-    "task": "folding-chair",
-    "oracle": [
-      true,
-      "20261126T185107Z-final-oracle"
-    ],
-    "nop": [
-      true,
-      "20261126T185750Z-final-nop"
-    ],
-    "negatives": [
-      true,
-      "all 3 prepared negative cases rejected by the current verifier"
-    ],
-    "model_records": [
-      true,
-      "1 recorded attempts; complete raw trajectories checked where inference occurred"
-    ]
-  },
-  {
-    "task": "rainroom",
-    "oracle": [
-      true,
-      "20261126T185131Z-final-oracle"
-    ],
-    "nop": [
-      true,
-      "20261126T185435Z-final-nop"
+      "20261127T113638Z-final-nop"
     ],
     "negatives": [
       true,
@@ -72,26 +15,26 @@
     ],
     "model_records": [
       true,
-      "2 recorded attempts; complete raw trajectories checked where inference occurred"
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   },
   {
-    "task": "toy-car",
+    "task": "skateboard-prop",
     "oracle": [
       true,
-      "20261126T185446Z-final-oracle"
+      "20261127T113104Z-final-oracle"
     ],
     "nop": [
       true,
-      "20261126T185856Z-final-nop"
+      "20261127T113829Z-final-nop"
     ],
     "negatives": [
       true,
-      "all 2 prepared negative cases rejected by the current verifier"
+      "all 4 prepared negative cases rejected by the current verifier"
     ],
     "model_records": [
       true,
-      "1 recorded attempts; complete raw trajectories checked where inference occurred"
+      "0 recorded attempts; complete raw trajectories checked where inference occurred"
     ]
   }
 ]
