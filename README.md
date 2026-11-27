@@ -1,131 +1,611 @@
-# ic-bench — verifiable-reward IC tasks
+# Blender / Web3D / 游戏开发 CUA 评测题 — 第二批 5 题合成提案
 
-Three tasks, all Terminal-Bench-Science / Harbor format, all original work.
+> v6 · 2026-11-27
+> 两条线、5 道新增题：**Blender 游戏资产 3 道、Web3D 2 道**。全部按 Harbor 1.4 打包，全部可自动判分。
+> 已实现的 5 道 Blender 生产题在 `ic-bench/tasks/cua`，本批不重复提案，只复用环境镜像与判分模板。
+> 每道题给一份资料包，要求交付 **可编辑源文件 + 指定渲染或状态回放 + 素材授权清单**；判分看骨架/动作闭环、双人交互、GLB 规格、查询预算、光学一致性和重渲染差异。
 
-## Tasks
+---
 
-| Task | What the agent must do | Reference | Frontier model (codex, gpt-6.1-sol, high) |
+## 1. 这一批要合成什么
+
+**5 个新增 Harbor 任务包**，按两条线分布：
+
+| 线 | 题 | 交付形态 | 判分重心 |
 |---|---|---|---|
-| `opamp-triage` | Diagnose three drifted parameters of a CMOS op-amp macro-model from two noisy scope captures, then deliver a sizing that also holds at an amplitude and process corners that were never captured | reward 1.0 in container | **passes**, reward 1, all five tiers |
-| `fsm-recode` | Re-implement a 20-state one-hot controller so it is cycle-accurately equivalent but synthesises to <=160 cells and <=42 levels | 140 cells / 34 levels | **fails**, 485,034/500,000 cycles mismatched |
-| `datapath-debug` | Repair a four-stage streaming datapath whose modules were written against two revisions of one interface spec, so every unit test passes while the integrated system drops and rejects beats | `TOP_ERR=0`, 9000/9000 beats | pending |
+| B · Blender 游戏资产 | 1–3 | `.blend` + 动作 / `.glb` / 双角色 FBX | 绑定、步态闭环、双人碰撞与时序、引擎可用性 |
+| C · Web3D | 4–5 | 修复后的程序 + 控制量 / 可运行装配 | 代码、查询预算、干净场景回放、光学一致性 |
+
+> 表中题号是本批**新增题**的编号；已实现的展位、折叠椅、玩具车、Rainroom、木箱五道不在本批。
+
+每个任务包含：
+
+| 组成 | 内容 |
+|---|---|
+| 题面 | 一段可直接交给模型的指令：拿到什么、做什么、怎么算做好 |
+| 资料包 | 图纸、参考图、尺寸表、约束单、授权基础资产 |
+| 参考解 | 美术手工搭好的 `.blend` 或可运行的参考程序 + 全部交付 + `manifest.json` |
+| 判分器 | Blender 题导出场景 JSON + 图像差异；Web3D 题干净场景回放 + 查询日志；统一授权检查 |
+| 标定记录 | 5 次强模型试跑的通过率、失败点、容差调整 |
+
+## 2. 选题规则与五题总览
+
+### 2.1 规则
+
+1. **硬门槛**：方向必须落在产品展示 / 游戏道具 / 室内空间 / 展陈设计之内，或能直接服务游戏资产与 Web3D 展示；必须有可写成数字的判据；必须能离线复现；素材必须可授权。
+2. **难度优先**：门槛都过、相关度接近时，选难度高的。只要 verify 能稳定保障，难度高不构成降级理由；只有判据无法复现或无法自动判定时才降级。难度相同再看判分约束密度（可判条目越多越优先）。
+3. **成本最后**：工时和容器成本只在难度与可验证性都打平时作为 tie-break，不因为"好做"或"工时长"而放弃可验证的高难题。
+
+### 2.2 五道新增题
+
+| # | 题目 | 方向 | 模型要交什么 | 一句话判据 | 难度 | 目标通过率 | 工时 |
+|---|---|---|---|---|---|---|---|
+| 1 | 卡通蜘蛛角色闭环 | 游戏角色 | 蜘蛛 `.blend` + 24 帧步态 + 4 张关键帧 | 25 骨、8 足着地、1↔25 帧闭环 ≤0.5°、滑步 ≤5 mm | 4.7 | 40–60% | 7 人日 |
+| 2 | 滑板游戏道具 | 游戏道具 | 滑板 `.blend` + `.glb` + 3 机位渲染 | 800×200 mm、7 层板边、GLB 回导一致 | 4.6 | 45–65% | 5 人日 |
+| 3 | 双人同屏格斗重定向 | 双角色动画 | 双角色 `.blend` + 2 个 Action + playblast | 22 骨 ×2、接触帧 ±2、穿插 ≤1 cm、脚锁 ≤5 mm | 5.0 | 30–50% | 8 人日 |
+| 4 | 角色多视角姿态修复 | Web3D/技术动画 | 修复后的 fitter + 3 组控制量 | 3 例均 ≤2 cm / 5°，每例 ≤1200 次查询 | 5.0 | 30–50% | 5 人日 |
+| 5 | 显微镜装配与对焦 | Web3D/光学装配 | 可运行 Web 应用 + 状态回放 | 装配 ≤2 mm、两阶段成像 ≤1%、近焦无 NaN | 5.0 | 30–50% | 7 人日 |
+
+### 2.3 为什么是这五道
+
+- **不与已实现的题重复**：展位、折叠椅、玩具车、Rainroom、木箱五道已在 `ic-bench/tasks/cua`，本批五道全部是新增题。
+- **两条线都有覆盖**：B 线 3 道游戏资产/动画题，C 线 2 道 Web3D 题；游戏角色、游戏道具、双角色交互、浏览器代码与光学装配都有落点。
+- **难度拉满**：3 道 5.0、1 道 4.7、1 道 4.6；双人碰撞时序、查询预算和光学两阶段成像都是高难闭环。
+- **每题都有可写成数字的判据**：骨骼数、闭环误差、滑步距离、接触帧、穿插深度、GLB 回导差异、查询次数、成像距离，不靠"好不好看"打分。
+- **每题都带反作弊**：Blender 题靠重渲染与骨架/动作检查，Web3D 题靠干净场景重放、查询日志和光学扰动，堵死贴图、单帧、自报分数和纯 UI 造假。
+
+### 2.4 难度更高但被门槛刷掉的候选
+
+| 候选 | 难度 | 没进的原因 |
+|---|---|---|
+| 布料垂坠（固定销钉） | 5.0 | 布料解算跨机器不完全可复现，判分脆弱，过不了"复现"门槛 |
+| 浮空矿场短片 | 5.0 | 跨 DCC 动画短片，不属于本批的展陈/产品/室内/游戏/Web3D 方向 |
+| 黄铜产品短片 ×2 | 4.9 | 镜头/叙事为主，静态几何判据弱，过不了"可判定"门槛 |
+| 雨浸跑车 | 4.8 | 静态几何判据弱，且只做材质、不含建模环节 |
+| 红色秋千 | 4.8 | 绳索/布料物理，稳定性不足 |
+| 四视图车辆 | 4.7 | 拓扑审计偏主观，低于同方向现成题 |
+
+> 结论：不是选"最好做"的题，而是在能稳定判分的题里选**最难**的。
+
+### 2.5 本批未收的候选（留待后续）
+
+| 候选 | 难度 | 为什么本批不收 |
+|---|---|---|
+| 十秒格斗：单演员重定向 | 4.9 | 单角色版本，被题 3 的双人交互闭环完全覆盖 |
+| 埃及空战镜头 | 4.8 | 运镜和叙事为主，静态几何判据弱 |
+| 刀刃节点材质 | 4.6 | 与题 2 的材质判据重叠，暂不单独成题 |
+| 体数据三维重建 | 5.0 | 需要切片数据和体渲染判分器，Web3D 线已有两道更完整的题 |
+
+---
+
+## 3. 通用规则（五道新增题都适用）
+
+### 3.1 交付物
 
 ```
-tasks/engineering-sciences/electrical-engineering/
-  opamp-triage/
-  fsm-recode/
-  datapath-debug/
-tasks/cua/
-  crate-lookdev/
+out/
+├── <task>.blend           # 可重开、可编辑、贴图全部打包
+├── render_*.png           # 题面指定的机位与分辨率
+└── manifest.json          # 单位、版本、资产来源与许可、渲染参数
 ```
 
-## CUA batch
+`manifest.json` 最小结构：
 
-`tasks/cua/` holds computer-use tasks that run against the harbor `computer-1`
-agent on a virtual 1920x1080 XFCE desktop. First one built:
+```json
+{
+  "schemaVersion": 1,
+  "units": "meters",
+  "blenderVersion": "4.2.3",
+  "assets": [
+    {
+      "path": "textures/wood_basecolor.png",
+      "role": "texture",
+      "source": "self-authored",
+      "license": "CC0-1.0",
+      "url": ""
+    }
+  ],
+  "renders": [
+    {
+      "file": "render_front.png",
+      "camera": "cam_front",
+      "resolution": [1600, 1200],
+      "samples": 128
+    }
+  ]
+}
+```
 
-| Task | What the agent must do | Reference | Oracle |
+**Web3D 题（题 4–5）额外交付**：
+
+题 4（姿态修复）：
+
+```
+out/
+├── solution/              # 修复后的 fitter 与依赖，断网可跑
+├── controls_case_a.json   # 每例 24 个控制量
+├── controls_case_b.json
+├── controls_case_c.json
+├── replay.json            # 干净场景回放入口
+└── report.md              # 每例查询次数、方法、复现步骤
+```
+
+题 5（显微镜）：
+
+```
+out/
+├── microscope/            # 可运行项目与本地依赖，断网可跑
+├── state.json             # 装配、对焦与 3 个成像设置
+├── replay.json            # 干净加载与回放入口
+└── report.md              # 单位、符号约定、实像/虚像说明
+```
+
+Web3D 题不要求 `.blend`；题 4 只凭控制量回放，题 5 只凭 `state.json` 回放。截图、录屏和自报误差都不计分。
+
+### 3.2 可编辑性
+
+- 对象必须有语义命名和层级，不接受合并成单一网格。
+- 修改器、约束、父子关系、相机、灯光必须保留，能继续改。
+- 折叠、开门、转轮、开盖这类动作必须由**真实轴/父子关系**驱动，不能用形态键或逐帧烘焙冒充。
+- 角色题必须保留骨架、蒙皮权重和 Action；骨架不能被应用成静态网格。
+- 双人题必须保留两套独立骨架、两个 Action 和角色间距离；不能把两人烘进同一网格。
+- 道具题必须能导出 `.glb`，且回导后层级、材质槽和贴图引用不变。
+- 光学题的对焦必须移动真实镜片/载物台；不能只改滑杆数值或贴图。
+- Web3D 题必须交可运行代码和回放入口；不能只交截图或录屏。
+
+### 3.3 自包含
+
+- 所有贴图、HDRI 打包进 `.blend`；验证时会移走资料目录，仍须能打开并渲染。
+- 不接受任何绝对路径、外链、在线素材。
+- 面数按三角面计，超过题面预算即扣分或判否。
+- Web3D 题不得引用 CDN、外网字体或在线模型；依赖必须随包提交，断网可运行。
+
+### 3.4 判分结构
+
+每题 12–16 条，分三级：
+
+| 级别 | 含义 | 规则 |
+|---|---|---|
+| `must` | 硬门槛 | 全部通过，否则 reward 0 |
+| `critical` | 反作弊 | 全部通过，否则 reward 0 |
+| `normal` | 质量分 | 通过率 ≥80%，否则 reward 0 |
+
+全部满足 → reward 1；任一条不过 → reward 0。
+
+### 3.5 反作弊（每题至少一条 `critical`）
+
+| 检查 | 做法 | 通过条件 |
+|---|---|---|
+| 移动物体 | 脚本把指定物体平移 0.5 m 后重渲染 | 与交付图 SSIM ≤0.98 |
+| 换机位 | 相机绕场景转 15° 后重渲染 | 新画面必须出现对应几何 |
+| 切灯光 | 关闭一个灯光集合后重渲染 | 画面必须变暗/变色，SSIM ≤0.98 |
+| 换 HDRI | 替换环境贴图后重渲染 | 反射与整体色调必须变化，SSIM ≤0.98 |
+| 开合关节 | 把门/盖/轮转到指定角度后重渲染 | 姿态与遮挡关系必须变化，SSIM ≤0.98 |
+| 步态相位 | 把 `Walk_Cycle` 整体错 6 帧后重渲染 | 四张关键帧姿态必须变化，SSIM ≤0.98 |
+| 双人时序 | 把右角色 Action 整体错 6 帧后重渲染接触帧 | 攻击/格挡关系必须变化，SSIM ≤0.98 |
+| 角色互换 | 交换两名角色的 Action 后重渲染 | 攻击可达与接触帧必须崩坏，SSIM ≤0.98 |
+| 换贴图 | 把板面图案换成棋盘格后重渲染底面 | 图案区域必须变化，SSIM ≤0.98 |
+| GLB 回导 | 重新导入交付的 `.glb`，比对层级/材质/三角面 | 与 `.blend` 导出结果一致，缺一项即判否 |
+| 光学扰动 | 把物镜沿光轴移动 1 mm 后重算像距 | 像距必须按透镜方程变化，误差 >0.5% 即判否 |
+| 数值造假 | 只改 UI 数值，不改镜片/载物台世界坐标 | 几何坐标必须变化，否则判否 |
+| 干净回放 | 用提交的控制量/状态在原始场景重放两次 | 两次结果一致（≤1e-4），且未读取私有映射 |
+| 移走资料 | 验证前删除资料目录 | `.blend` 仍能打开，无紫块、无缺失引用 |
+
+> Blender 题渲染固定 Cycles CPU、固定 seed、64 samples + denoise；同一场景重复渲染 SSIM ≥0.999，所以 0.98 的阈值只会在真实改动时触发。Web3D 题不看截图：题 4 看干净回放后的世界坐标，题 5 看装配坐标与两阶段成像量。
+
+---
+
+## 4. 题面
+
+> 以下五段就是本批新增题的原始指令，可直接作为 `instruction.md`。
+
+---
+
+### 4.1 题 1 · 卡通蜘蛛：建模、绑定与 24 帧闭环步态
+
+**方向**：游戏角色　**难度**：4.7/5　**目标通过率**：40–60%
+
+#### 给你的资料
+
+- **角色设定三视图**（PNG + PDF，单位毫米）：卡通蜘蛛，头胸与腹两段，8 足；体长 180 mm，足展 420 mm，站立高 120 mm；正面/侧面/顶面各一张，标出关节中心。
+- **骨骼规格**（xlsx）：25 根骨，`body` 为根骨，8 条腿各 `coxa` / `femur` / `tibia` 三段（共 24 根），命名 `leg_01..08_{coxa|femur|tibia}`；父子关系为 `body → coxa → femur → tibia`；给出旋转轴方向与每段长度。
+- **步态时序表**（CSV + PNG）：24 帧循环，交替四足步态；8 足分两组，每组四足同相，两组相差 12 帧；组内相位 0/6/12/18；支撑相占 75%。
+- **关键姿态图** 4 张：触地、支撑中段、离地、摆动中段，标出足端位置。
+- **约束**：三角面 ≤80k；贴图全部打包；旋转用四元数；不强制 IK，但足端必须落地。
+
+#### 你要完成
+
+1. 按三视图建 8 足蜘蛛：头胸、腹分体；每足三段；左右对称；命名 `body_head`、`body_abdomen`、`leg_XX_seg`。
+2. 建 25 骨骨架 `rig_spider`：`body` 为根骨，8 条腿各 3 段；按规格命名与父子；蒙皮后每个顶点 1–4 个权重，无未赋权顶点。
+3. Action 名 `Walk_Cycle`，键帧 1–25；第 25 帧复制第 1 帧；场景播放范围 1–24，保证无缝循环。
+4. 支撑相足端 Z ≤2 mm 且不穿地（≥-1 mm）；摆动相抬起 ≥15 mm。
+5. 交付：`spider.blend`；`render_pose_01..04.png`（侧视，960×540，对应 4 个关键姿态）；`render_top.png`（正交俯视，覆盖 500×500 mm，960×960）；`manifest.json`。
+
+#### 怎么算做得好
+
+| ID | 检查 | 阈值 | 级别 |
 |---|---|---|---|
-| `crate-lookdev` | Weathered 800x600x600 mm wooden crate in the Blender GUI from a three-view drawing: 20 mm panels, rear-hinged lid, eight rusted brackets, worn stencil | 13/13, 2858 tris | **reward 1**; swapped render and unpacked textures score 0 |
-| `booth-clearance` | 6x4 m exhibition booth from a floor plan: entrance, aisle and hydrant clearances, three products visible from the entrance camera, brand colours | 16/16, 1166 tris | **reward 1**; deleted entrance marker scores 0 |
-| `folding-chair` | 620x580x820 mm scissor chair whose four hinges drive a 0-60 fold to a 90 mm pack, no interpenetration in 31 sampled poses | 13/13, 96 tris | **reward 1**; displaced hinge scores 0 |
-| `toy-car` | 380 mm jointed car from two turntables: 240 mm wheelbase, spinning/steering wheels, front-edge door hinges, four silhouette-matched views | 14/14, 748 tris | **reward 1**; 1.2x wheels score 0 |
-| `rainroom` | 4.2x3.6x2.8 m interior with 26 objects, two switchable light collections and night/morning renders from one camera | 13/13, 1476 tris | **reward 1**; emptied light collection scores 0 |
+| R01 | `.blend` 可重开 | `blender -b` 无错误 | must |
+| R02 | 骨骼齐全 | 25 骨，名称与规格完全一致 | must |
+| R03 | 蒙皮有效 | 有 Armature 修改器；未赋权顶点 = 0 | must |
+| R04 | 尺寸 | 体长 180±5 mm、足展 420±10 mm、站立高 120±5 mm | must |
+| R05 | 动作存在 | `Walk_Cycle` 覆盖 1–25，播放范围 1–24 | must |
+| R06 | 闭环接缝 | 第 1 帧与第 25 帧骨骼矩阵差 ≤0.5°、≤1 mm | must |
+| R07 | 支撑足着地 | 指定支撑帧足端 Z ≤2 mm | must |
+| R08 | 不穿地 | 全帧足端最低点 ≥-1 mm | must |
+| R09 | 摆动抬足 | 摆动相足端抬起 ≥15 mm | normal |
+| R10 | 滑步 | 单个支撑相内足端水平位移 ≤5 mm | normal |
+| R11 | 身体起伏 | 躯干 Z 振幅 ≤8 mm | normal |
+| R12 | 自穿插 | 4 个关键帧无足-足/足-体穿插 | normal |
+| R13 | 渲染 | 4 张姿态图 + 1 张俯视图，尺寸与机位符合 | must |
+| R14 | 面数 | ≤80k 三角面 | normal |
+| R15 | **相位反作弊** | 把动作整体错 6 帧后重渲染，SSIM ≤0.98 | critical |
 
-Current CUA execution evidence is linked from [EVIDENCE.md](tasks/cua/EVIDENCE.md) and [RUNS.md](tasks/cua/RUNS.md). Historical Oracle claims in the table above describe the original rubric; final raw runs use the hardened verifier and include source hashes. `tasks/cua/tools/sanity_check.py` validates `tasks/cua/SANITY_LIST.md`
-(layout, task.toml, instruction suffix, materials, environment image and
-isolation, verifier image, oracle reward 1, deliverables, anti-cheat, recorded
-negative test, licences).
+#### 常见错误
 
-Its base image is the local Blender desktop image (`blender-bench:gui`), recipe
-in `tasks/cua/crate-lookdev/authoring/base-image.md`.
+- 8 条腿共用一套关键帧，走起来像划船。
+- 只做腿的旋转，足端悬空或穿地。
+- 第 24 帧直接复制第 1 帧，但没有循环修改器，播放时抖一下。
+- 骨架命名随手起，权重只给 1 根骨，膝盖处塌陷。
+- 用逐帧烘焙代替骨架动画，文件里没有可编辑 Action。
 
-Both are laid out per the TB-Science schema: `instruction.md`, `task.toml`,
-`environment/Dockerfile`, `tests/Dockerfile` (separate verifier), `tests/test.sh`,
-`solution/solve.sh`, `README.md` with the three required sections, and
-`authoring/provenance/SOURCES.md`.
+---
 
-## Verified state
+### 4.2 题 2 · 滑板游戏道具：硬表面、板面图案与 GLB 交付
 
-| Check | opamp-triage | fsm-recode | datapath-debug |
+**方向**：游戏道具　**难度**：4.6/5　**目标通过率**：45–65%
+
+#### 给你的资料
+
+- **设计三视图**（PDF + PNG）：板面 800 × 200 × 12 mm，翘头 20°，内凹 8 mm，轴距 440 mm；支架 180 mm；轮径 54 mm。
+- **板面图案**（PNG，2048 × 512）：含品牌标与底色，要求 1:1 贴到板面，不裁切。
+- **材质标注**（PDF）：7 层枫木（总厚 12 mm，每层约 1.7 mm，板边可见）、铝支架、聚氨酯轮 78A、钢轴承；砂纸纹理。
+- **游戏规格**：≤40k 三角面；贴图 ≤2048；PBR metallic-roughness；GLB ≤15 MB；单位米；原点在后桥中心。
+- **参考照片** 4 张：3/4 整体、底面图案、板边层压、轮架特写。
+
+#### 你要完成
+
+1. 建 `deck`、`truck_front`、`truck_rear`、`wheel_01..04`、`bearings`，保留层级。
+2. 板边做出 7 层可见层压：7 条材质带或 7 层几何，颜色略有差异。
+3. 板面图案 1:1 铺满，UV 不重叠；其余部件共用 1024 图集。
+4. 材质符合标注：铝支架金属度 ≥0.8；轮子粗糙度 0.5–0.8；木材有粗糙度变化。
+5. 导出 `skateboard.glb`，回导后层级、材质槽、贴图不变。
+6. 交付：
+   - `render_three_quarter.png`：3/4 俯视，35 mm，距板中心 1.2 m、高 0.8 m，1600×1200；
+   - `render_bottom.png`：底面正交，覆盖 900×260 mm，1600×900；
+   - `render_edge.png`：板边微距，7 层清晰可辨，1600×1200；
+   - `skateboard.blend`、`skateboard.glb`、`manifest.json`。
+
+#### 怎么算做得好
+
+| ID | 检查 | 阈值 | 级别 |
 |---|---|---|---|
-| all 24 static `ci_checks/` | pass | pass | same result as fsm-recode on every check |
-| reference solution, host | reward 1 | reward 1 (140/34) | reward 1 (`TOP_ERR=0`, 9000/9000) |
-| reference solution, container (oracle) | **reward 1.0** | **reward 1.0** (0 mismatch, 140/34) | **reward 1.0** (38 s) |
-| agent image isolation | verified: only `sim/`, `fixtures/`, empty `out/`; no answer values | verified by construction: only `rtl/baseline.v` | verified: only `rtl/`, `tb/`, `SPEC.md`, `REPORT.md`, `sim.sh`; no answer values |
-| blind frontier model (codex) | **passes** — needs hardening | **fails** — discriminating | pending |
+| R01 | `.blend` 可重开 | 无错误 | must |
+| R02 | 主要尺寸 | 800±3 × 200±2 × 12±1 mm；轴距 440±3；轮径 54±1 | must |
+| R03 | 部件齐全 | deck / 2 trucks / 4 wheels / bearings 命名齐全 | must |
+| R04 | 7 层板边 | 板边可见 ≥7 条材质带或几何层 | must |
+| R05 | 板面 UV | 图案 UV 无重叠，覆盖板面 ≥95% | must |
+| R06 | 贴图规格 | 单张 ≤2048，全部打包，无绝对路径 | must |
+| R07 | 材质范围 | 支架金属度 ≥0.8；轮粗糙度 0.5–0.8 | normal |
+| R08 | GLB 导出 | 文件存在且 ≤15 MB | must |
+| R09 | GLB 回导 | 三角面差 ≤1%，材质槽 ≥7，贴图内嵌 | must |
+| R10 | 面数 | ≤40k | normal |
+| R11 | 原点 | 距后桥中心 ≤5 mm | normal |
+| R12 | 渲染 | 3 张，尺寸与机位符合 | must |
+| R13 | 授权 | `manifest.json` 覆盖图案、贴图、HDRI | must |
+| R14 | **换图反作弊** | 板面图案换棋盘格后重渲染底面，SSIM ≤0.98 | critical |
+| R15 | **轮位反作弊** | 四轮转 90° 后重渲染 3/4 图，SSIM ≤0.98 | critical |
 
-## Blind-run findings
+#### 常见错误
 
-**`opamp-triage` is too easy.** codex passed all five tiers. The task hands
-over the full specification (gain band, overshoot, settling, slew, all three
-amplitudes, the corner model), the simulator costs 50 ms, and there are 14
-parameters with a stated budget of 4 edits. That is a search problem, and the
-model solved it by search. The `vsat` holdout — designed to punish an agent
-that only fixes what it can see in the captures — did not bite, because the
-datasheet states the 1.2 V amplitude and the +/-1.5 V input range explicitly.
+- 板边只有一种木色，看不到 7 层。
+- 图案拉伸铺满，比例错了 20%。
+- GLB 导出时贴图没内嵌，回导后全是白模。
+- 轮子与支架同材质，金属度/粗糙度不分。
+- 原点在世界的 (0,0,0)，引擎里挂点全错。
 
-**`fsm-recode` works, and for a reason worth recording.** codex produced a
-39-cell / 27-level design, comfortably inside both QoR budgets, and it did
-write its own equivalence testbench. It still failed on 485,034 of 500,000
-cycles. Two distinct errors compounded:
+---
 
-1. It assumed the transition function was `state + in + 1` with three
-   hand-patched exceptions. The real table has no such regularity.
-2. Its testbench checked the design against *its own inferred state mapping*
-   (`16 -> 3, 17 -> 7, 18 -> 11, 19 -> 14`) rather than against observable
-   behaviour, so the implementation and the check shared one wrong premise.
+### 4.3 题 3 · 双人同屏格斗：异体型角色的交互式动作重定向
 
-The second is the interesting one. It is not a failure to verify; it is
-verification that cannot fail. A task that only measured QoR would have
-scored this a pass.
+**方向**：双角色动画 / 游戏动作　**难度**：5.0/5　**目标通过率**：30–50%
 
-## Why these two
+#### 给你的资料
 
-They test different things. `opamp-triage` is inference from partial evidence —
-two of the three drifts are visible in the captures, the third only appears at an
-amplitude that is declared but never measured. `fsm-recode` is structural
-optimisation under an equivalence constraint — and the obvious move (re-encode
-the state register) is measurably insufficient, because four states are
-behavioural duplicates that must be merged first.
+- **双人参考视频**（MP4/H.264，10 s、30 fps、1280×720、固定机位）：左方四拳接回旋踢，右方格挡、吃身击、下潜躲踢；两人全身入镜，地面有 0.5 m 网格。
+- **两名角色基础模型**（`.blend` + FBX，各含 22 骨人形骨架）：`fighter_left` 身高 1.70 m，`fighter_right` 身高 1.90 m；体型与肢长不同；贴图已打包，许可可再用。
+- **骨架映射表**（xlsx）：22 骨命名、父子、rest pose、左右侧对应、每段长度。
+- **动作切分表**（CSV）：每个攻击/防守段的起止帧、接触窗口、接触部位、参考距离。
+- **舞台规格**（PDF）：6×6 m 地面，原点在中心，固定机位；两人初始站位与朝向。
+- **约束**：每人 ≤150k 三角面；30 fps；Action 可编辑；支撑脚锁定；非接触帧角色间穿插 = 0；接触帧穿插 ≤1 cm；不得用形态键或逐帧烘焙冒充骨骼动画。
 
-## Negative results worth keeping
+#### 你要完成
 
-Three plausible designs were measured and rejected. They are recorded because
-each one looked good on paper:
+1. 按屏幕侧拆分两名表演者，分别重定向到 `rig_left` / `rig_right`；保留原始时序和接触帧。
+2. 建两个 Action：`Fight_Left`、`Fight_Right`，帧 1–300；初始距离 2.4 m，朝向按舞台规格。
+3. 接触帧：攻击手/脚到目标身体表面距离 ≤3 cm；与切分表的接触帧差 ≤2 帧；接触帧允许 ≤1 cm 穿插，非接触帧穿插必须为 0。
+4. 支撑脚锁定：支撑相水平漂移 ≤5 mm，脚底 Z ≤2 mm，不得穿地。
+5. 全帧做 BVH 碰撞检查：无自穿插；角色间非接触帧无穿插。
+6. 导出 `fight_left.fbx`、`fight_right.fbx`（含骨架与 Action），并保留可编辑 `.blend`。
+7. 交付：`fight.blend`、两个 FBX、4 张关键帧渲染（攻击/接触/躲闪/收势，1280×720，固定机位）、`playblast.mp4`（10 s、30 fps、1280×720）、`manifest.json`。
 
-- **Constant multipliers (CSD)**: 2592 -> 1965 cells, but CSD is textbook, so a
-  threshold there tests recall rather than optimisation.
-- **Post-CSD headroom**: none. A hand-built balanced adder tree came out at 1972
-  cells vs 1965 — `yosys`/`abc` had already found the better structure.
-- **Karatsuba 16x16**: 1647 cells / 47 levels vs 1579 / 34 for plain `a*b`. The
-  hand-written algorithm loses to the synthesiser.
+#### 怎么算做得好
 
-Conclusion: on flat combinational datapaths, `abc` is a strong enough optimiser
-that RTL-level rewrites get erased. What is left is structural decisions it does
-not make — state encoding, resource sharing, retiming.
+| ID | 检查 | 阈值 | 级别 |
+|---|---|---|---|
+| R01 | `.blend` 可重开 | `blender -b` 无错误 | must |
+| R02 | 双骨架 | 2 套骨架，各 22 骨，命名与映射表一致 | must |
+| R03 | 双 Action | `Fight_Left` / `Fight_Right` 覆盖 1–300，可编辑 | must |
+| R04 | 体型 | 身高 1.70 / 1.90 m ±2 cm；骨长与映射表差 ≤1 mm | must |
+| R05 | 初始站位 | 距离 2.4 m ±5 cm，朝向误差 ≤2° | must |
+| R06 | 接触时序 | 每个接触帧与切分表差 ≤2 帧 | must |
+| R07 | 攻击可达 | 接触帧攻击端到目标表面 ≤3 cm | must |
+| R08 | 全帧碰撞 | 非接触帧角色间穿插 = 0；自穿插 = 0 | must |
+| R09 | 接触穿插 | 接触帧最大穿插 ≤1 cm | normal |
+| R10 | 脚锁 | 支撑相水平漂移 ≤5 mm | normal |
+| R11 | 地面接触 | 支撑脚 Z ≤2 mm，最低点 ≥-1 mm | must |
+| R12 | 根运动 | 两人始终在 6×6 m 舞台内 | must |
+| R13 | 渲染/Playblast | 4 张 1280×720 + 10 s MP4，机位与帧率符合 | must |
+| R14 | FBX 导出 | 两个 FBX 均含骨架 + Action，回导后骨数/帧范围一致 | must |
+| R15 | **时序反作弊** | 右角色错 6 帧后重渲染接触帧，SSIM ≤0.98 | critical |
+| R16 | **互换反作弊** | 交换两个 Action 后重渲染，攻击可达判定必须失败 | critical |
 
-A fourth negative result, on the first attempt at `fsm-recode`: a 12-state
-machine reduced to 10 gives no separation between "re-encode" and "minimise",
-because both fit in a 4-bit register (68 vs 63 cells). Moving to 20 states with
-4 dead duplicates crosses the 5-bit/4-bit boundary and separates the two steps
-(192 vs 140).
+#### 常见错误
 
-## Tooling notes
+- 两人交错时 tracker ID 交换，左右动作对调。
+- 只重定向关节角度，不改骨长，2 cm 近失变成穿模。
+- 接触帧整体晚 3–5 帧，拳脚看起来没打到。
+- 支撑脚滑动，脚锁检查不过。
+- 两人烘成一个网格或一个 Action，失去可编辑性。
+- 只交视频，不交 FBX/Action，引擎里用不了。
 
-- Local docker is a WSL2 Ubuntu 24.04 with `harbor==0.23.0` installed via uv.
-- `network_mode = "no-network"` for the verifier is rejected by the docker
-  backend here: harbor probes the kernel for `nftables fib inet` support and
-  WSL2 fails it. Local runs flip the verifier to `public`; the committed files
-  stay at `no-network`.
-- `codex` cannot be installed inside the task container here (81 minutes, then
-  `curl: not found`). `aider` also fails (uv download from GitHub breaks). Model
-  tests were therefore run from the host against a sanitised directory.
-- apt from within containers is flaky; both Dockerfiles retry the install.
+---
 
-## Open items
+### 4.4 题 4 · 角色多视角姿态修复（Web3D）
 
-- `fsm-recode` oracle needs a rerun to completion.
-- `opamp-triage` blind model test not yet run.
-- Both thresholds are calibrated against one reference solution and one model
-  run each; more data would sharpen them.
+**方向**：Web3D / 技术动画　**难度**：5.0/5　**目标通过率**：30–50%
+
+#### 给你的资料
+
+- **3 个 case 的目标图**：每个 case 有前视、侧视、斜视三张 PNG（1280 × 720），标出关节中心和方向箭头。
+- **有缺陷的 fitter**：一份可运行的 JS/TS 程序，初始姿态明显偏离；配套 public client 与本地服务。
+- **公开接口**：提交 24 个控制量，返回当前姿态渲染与二维关节观测；每例预算 1200 次查询。
+- **控制边界**（JSON）：24 个值各自的上下限；超出即拒绝。
+- **不可变项**：角色 GLB、骨长、比例、全局耦合映射；私有目标数值与耦合参数不在资料包内。
+- **规则**：不得读取私有文件、不得改场景、不得绕过查询计数；只交代码与控制量。
+
+#### 你要完成
+
+1. 修复 fitter，使 3 个 case 的姿态同时满足世界坐标位置与朝向。
+2. 每个 case 导出 `controls_case_{a,b,c}.json`，24 个值全部在边界内。
+3. 提供 `replay.json`：在干净原始场景里只凭控制量复现姿态。
+4. `report.md` 写清每例查询次数、方法、复现步骤。
+5. 不联网；依赖随包提交。
+6. 交付到 `/app/out`：`solution/`、3 个控制量文件、`replay.json`、`report.md`。
+
+#### 怎么算做得好
+
+| ID | 检查 | 阈值 | 级别 |
+|---|---|---|---|
+| R01 | 交付齐全 | 3 个控制量 + replay + report 均存在且可解析 | must |
+| R02 | 控制量合法 | 每例 24 个值，全部在边界内 | must |
+| R03 | 查询预算 | 每例 ≤1200 次，以服务端日志为准 | must |
+| R04 | 位置误差 | 每例全部指定关节 ≤0.02 m | must |
+| R05 | 朝向误差 | 每例全部指定关节 ≤5° | must |
+| R06 | 骨长不变 | 变化 ≤1e-6 m | must |
+| R07 | 场景未改 | 角色/场景哈希与原始一致 | must |
+| R08 | 无私有读取 | 审计日志无越权访问 | critical |
+| R09 | 回放确定 | 同一控制量重放两次，关节差 ≤1e-4 | critical |
+| R10 | 断网可跑 | 无网络请求，依赖齐全 | critical |
+| R11 | 三例独立 | 任一例失败即整体失败，不取平均 | must |
+| R12 | 报告一致 | 报告中的查询次数与服务端日志一致 | normal |
+| R13 | 查询效率 | 三例平均 ≤800 次 | normal |
+| R14 | 干净检出 | 从空目录按 report 步骤可复现 | normal |
+
+#### 常见错误
+
+- 只对一例调参，另外两例直接复制控制量。
+- 用截图目测代替世界坐标，斜视角误差超 5°。
+- 绕过 public client 直接读私有 JSON，审计日志一查就露。
+- 把骨长改短来"凑"位置，R06 直接判否。
+- 控制量超出边界，服务端拒绝后仍写进交付文件。
+
+---
+
+### 4.5 题 5 · 显微镜装配与对焦（Web3D）
+
+**方向**：Web3D / 光学装配　**难度**：5.0/5　**目标通过率**：30–50%
+
+#### 给你的资料
+
+- **多视角参考图** 3 张（前/侧/3/4，PNG 1280×960）：显微镜外形、装配地标、镜筒/载物台/物镜/目镜位置。
+- **光学图**（PDF）：空气介质、有限共轭薄透镜模型；物镜焦距 `f_o = 4 mm`，目镜焦距 `f_e = 25 mm`；物镜到目镜的镜筒长度 `L = 160 mm`；载物台行程 ±10 mm，目镜调焦 ±5 mm；坐标与符号约定。
+- **样本图案** 2 张（PNG 1024×1024）：用于成像映射与第二个样本检查。
+- **目标图**：3 个物面位置下的目镜视图（PNG 1280×720），用于比对像距、放大率与朝向。
+- **本地脚手架**：`starter/` 内含 Three.js、OrbitControls、空白场景、`state.schema.json` 与本地静态服务；断网可跑。
+- **约束**：不得用 CDN；对焦必须移动真实镜片/载物台；只允许傍轴模型，不考虑衍射/像差；交付可运行项目与状态回放。
+
+#### 你要完成
+
+1. 按多视角参考建 `body`、`stage`、`tube`、`objective`、`eyepiece`，保留装配层级与地标。
+2. 对焦时真实移动载物台或物镜；镜片世界坐标与 `state.json` 必须一致。
+3. 按笛卡尔符号约定做两阶段成像：物镜成中间实像，目镜以该中间像为物；像距、像高、横向放大率、朝向必须闭合。
+4. 从实际镜片位置画光线；按计算出的像映射样本图案；实像用会聚光线，虚像用反向延长或观察视图。
+5. 处理近焦、无穷远像、无有限会聚状态，不得出现 NaN/Inf 或永久不变的清晰画面。
+6. 第二个样本必须走同一套光学模型；保存、重载、重置要恢复装配与光学状态。
+7. 交付到 `/app/out`：`microscope/`、`state.json`（3 个成像设置）、`replay.json`、`report.md`（单位、符号约定、实像/虚像说明）。
+
+#### 怎么算做得好
+
+| ID | 检查 | 阈值 | 级别 |
+|---|---|---|---|
+| R01 | 交付齐全 | 项目、state、replay、report 均存在；本地服务可启动 | must |
+| R02 | 断网可跑 | 无外网请求、无 CDN；依赖齐全 | critical |
+| R03 | 装配几何 | 五个主部件齐全；地标位置 ≤2 mm、角度 ≤1° | must |
+| R04 | 对焦真实 | 控制量改变时载物台/物镜世界坐标变化 ±0.1 mm | must |
+| R05 | 两阶段成像 | 物镜像距误差 ≤1%；目镜物距 = 中间像到目镜距离 ±0.5 mm | must |
+| R06 | 放大率/朝向 | 总横向放大率误差 ≤2%；符号与朝向符合约定 | must |
+| R07 | 光路 | 光线穿过实际镜片；与像面交点 ≤1 mm；实/虚像分类正确 | must |
+| R08 | 样本映射 | 像面质心 ≤2% 画幅、尺度 ≤2%、朝向 ≤1°；SSIM ≥0.90 | normal |
+| R09 | 近焦边界 | 无 NaN/Inf；无穷远像有显式标记；场景不崩 | must |
+| R10 | 第二样本 | 同一模型成像，目标匹配；不得硬编码图片 | must |
+| R11 | 保存/重载/重置 | 位置恢复 ≤1e-4 mm；光学量恢复 ≤1e-6 | must |
+| R12 | 回放确定 | 同一 `state.json` 重放两次，结果差 ≤1e-4 | critical |
+| R13 | **光学扰动反作弊** | 物镜沿光轴移 1 mm 后重算，像距变化符合透镜方程，误差 ≤0.5% | critical |
+| R14 | **样本替换反作弊** | 样本换棋盘格后，像面内容必须跟着变 | critical |
+| R15 | 授权 | `manifest.json` 覆盖参考图、样本、贴图、字体 | must |
+
+#### 常见错误
+
+- 只改滑杆和数字，镜片/载物台不动。
+- 物镜中间像和目镜成像分开算，目镜物距没跟着变。
+- 符号约定用错，把虚像当成实像直接投在屏幕上。
+- 近焦时出现 NaN/Inf，场景直接消失。
+- 用一张预渲染图冒充样本映射，换样本就露。
+- 引用 CDN，断网打不开。
+- 只做外形，不做光路。
+
+---
+
+### 4.6 输入资料清单（当前状态：全部未制作）
+
+> 题面里写的"给你的资料"目前只是规格，实际文件还没生成。下面是要做的全套输入；做完之前，任何一题都不能进入试跑。
+
+| 题 | 必须制作的输入文件 | 格式 / 规格 | 制作方式 | 状态 |
+|---|---|---|---|---|
+| 1 蜘蛛 | 角色三视图 | PDF + PNG，体长 180/足展 420/高 120 mm，带关节中心 | 用参考模型正交渲染 | 未制作 |
+| 1 蜘蛛 | 骨骼规格 | xlsx，25 骨命名/父子/轴向/段长 | 手工撰写 + Blender 校验 | 未制作 |
+| 1 蜘蛛 | 步态时序表 | CSV + PNG，24 帧相位与支撑相 | 手工推导，按四足交替 | 未制作 |
+| 1 蜘蛛 | 关键姿态图 | 4 张 PNG，触地/支撑/离地/摆动 | 参考解渲染 | 未制作 |
+| 2 滑板 | 设计三视图 | PDF + PNG，800×200×12、轴距 440、轮 54 | CAD 绘制 | 未制作 |
+| 2 滑板 | 板面图案 | PNG 2048×512，1:1 比例 | Illustrator / 程序生成 | 未制作 |
+| 2 滑板 | 材质标注 | PDF，7 层枫木/铝/聚氨酯参数 | 手工撰写 | 未制作 |
+| 2 滑板 | 参考照片 | 4 张 JPG，整体/底面/板边/轮架 | 自拍或 CC0 | 未制作 |
+| 3 B13 | 双人参考视频 | MP4/H.264，10 s、30 fps、1280×720，固定机位 | 双演员实拍或动作库合成 | 未制作 |
+| 3 B13 | 两名角色基础模型 | `.blend` + FBX，各 22 骨，1.70/1.90 m | 自制或 CC0，附许可 | 未制作 |
+| 3 B13 | 骨架映射表 + 动作切分表 | xlsx + CSV，22 骨、接触帧、接触部位 | 手工撰写 + Blender 校验 | 未制作 |
+| 3 B13 | 舞台规格 + 许可文本 | PDF + TXT，6×6 m、站位、角色许可 | 手工撰写 | 未制作 |
+| 4 Web3D | 3 例目标图 | 每例前/侧/斜 3 张 PNG，1280×720，带关节标记 | 参考姿态正交渲染 | 未制作 |
+| 4 Web3D | 有缺陷 fitter + public client | JS/TS 工程，断网可跑 | 手工实现 + 注入偏差 | 未制作 |
+| 4 Web3D | 控制边界 + 预算配置 | JSON，24 值边界；1200 次/例 | 手工设定 | 未制作 |
+| 4 Web3D | 干净回放场景 + 私有耦合 | GLB + 服务端配置，仅 verifier 可见 | 参考解生成 | 未制作 |
+| 5 W13 | 多视角参考图 | 前/侧/3/4 三张 PNG，1280×960，带装配地标 | 参考模型正交渲染 | 未制作 |
+| 5 W13 | 光学图 + 符号约定 | PDF，f_o=4、f_e=25、L=160 mm、行程 | 手工撰写 + 光路核算 | 未制作 |
+| 5 W13 | 样本图案 + 目标图 | 2 张 PNG 1024²；3 档目镜视图 1280×720 | 傍轴模型渲染 | 未制作 |
+| 5 W13 | starter + state schema + 回放场景 | Three.js 本地工程、JSON Schema、干净加载器 | 手工实现 | 未制作 |
+
+**制作顺序与工时**：
+
+| 批次 | 内容 | 工时 |
+|---|---|---|
+| 1 | 题 1 蜘蛛包：三视图、骨骼表、步态表、姿态图 | 2.5 人日 |
+| 2 | 题 2 滑板包：三视图、板面图案、材质标注、参考照片 | 1.5 人日 |
+| 3 | 题 3 B13 双人包：视频、两套角色、骨架映射、切分表、舞台规格 | 2.5 人日 |
+| 4 | 题 4 Web3D 包：目标图、fitter、边界、回放场景 | 3.0 人日 |
+| 5 | 题 5 显微镜包：参考图、光学图、样本、目标图、starter | 3.5 人日 |
+| 6 | 全部参考照片与外部资产的许可核对、manifest 底稿 | 0.5 人日 |
+
+**一致性要求**：
+
+- 蜘蛛的三视图、骨骼表、步态表必须能互相推导：足展 420 mm 要能由三段腿长相加得到。
+- 滑板的板面图案比例必须与 800 × 200 mm 板面一致，否则 UV 判定无意义。
+- 双人视频、两套角色骨架、骨架映射表、动作切分表必须同源；接触帧、骨长和初始距离要能互相推导。
+- 题 4 的目标图、fitter 偏差、控制边界必须来自同一套耦合参数；换一套就对不上。
+- 题 5 的参考图、光学参数、样本图案、目标图必须由同一套理想装配和傍轴模型生成。
+- 所有参考照片、HDRI、角色模型、字体必须在制作时就记下来源和许可，不能等交付时补。
+
+---
+
+## 5. 环境与判分实现
+
+### 5.1 运行环境
+
+**Blender 线（题 1–3）**
+
+- Ubuntu 24.04 + Blender 4.2.3 LTS（官方 linux-x64 包）+ Xvfb + Xfce。
+- 容器内 1920 × 1080 桌面，`computer-1` 通过截图、鼠标、键盘操作 Blender。
+- 素材预置在 `/app/materials`，输出目录 `/app/out`。
+- Cycles CPU 渲染；验证用 960 × 540、64 samples、固定 seed；单帧 ≤3 分钟。
+- 题 3 额外要求 BVH 碰撞树可导出；镜像 ≤3 GB，构建 ≤20 分钟；agent 超时 2 小时；verifier 超时 30 分钟。
+
+**Web3D 线（题 4–5）**
+
+- 本机已构建 `web3d-bench:dev`：基于 `blender-bench:gui`，Ubuntu 24.04 + Node 20.20.2 + Playwright 1.65.1 / Chrome for Testing 159 + Xvfb/XFCE + 本地静态服务；已验证 WebGL2 / SwiftShader 可用。
+- 素材预置 `/app/materials`：题 4 是目标图、fitter、边界 JSON；题 5 是参考图、光学图、样本、starter。
+- 浏览器禁用外网：CDN、远程字体、在线模型一律不可用；依赖随镜像打包。
+- 题 4 的查询计数在服务端记账，agent 无法关闭；verifier 用同一服务日志核对。
+- 回放容器与 agent 容器同镜像、同版本，保证姿态与光学状态可复现。
+
+### 5.2 判分流程
+
+**Blender 题（1–3）**
+
+1. verifier 启动同版本 Blender 镜像。
+2. 先移走 `/app/materials`，确认 `.blend` 自包含。
+3. `blender -b <task>.blend --python check_scene.py` 输出一行 JSON：
+   `objects`、`bounds`、`clearance`、`packed`、`external_images`、`polys`、`unit_scale`、`cameras`、`materials`、`bones`、`action`、`collisions`。
+4. `grade.py` 读 JSON + 交付渲染 + `manifest.json`，按 rubric 逐条判定。
+5. 反作弊：复制工程，用脚本改一处（移动物体/换机位/切灯光/换 HDRI/开合关节/错步态相位/错双人时序/互换角色/换图案），重渲染并与交付图比 SSIM；题 2 额外回导 GLB，题 3 额外回导 FBX 并复核 BVH 碰撞。
+6. 全部 `must` + 全部 `critical` + `normal` ≥80% → reward 1，否则 0。
+
+**Web3D 题（4–5）**
+
+1. verifier 启动同镜像；题 4 加载原始 fitter 与私有耦合，题 5 加载理想装配与光学模型。
+2. 校验交付文件与控制量/状态边界；题 4 读取服务端查询日志。
+3. 题 4 只凭 `controls_case_*.json` 在干净场景重放，读世界坐标；题 5 只凭 `state.json` 重放，读装配坐标与两阶段成像量。两者都不读截图。
+4. 同一控制量/状态重放两次，比对确定性；检查审计日志无越权读取。
+5. 题 4 三例、题 5 三个成像设置分别判定，任一超差即整体失败。
+6. 全部 `must` + 全部 `critical` + `normal` ≥80% → reward 1，否则 0。
+
+### 5.3 关键实现约束
+
+- 渲染必须确定性：固定 seed、固定 samples、固定色彩管理，否则 SSIM 阈值不可用。
+- AABB 净距是保守判定；参考解必须留 ≥30% 余量，避免贴边。
+- 所有阈值先在参考解上跑通，再写进 rubric；参考解不过就是阈值错。
+- `manifest.json` 缺一个外部资产即判 `must` 失败，不接受"忘了写"。
+- 骨架题必须先确认 Action 可编辑，再把逐帧烘焙判否；否则"动画对了但改不了"会漏过。
+- 双人题按世界坐标做 BVH 碰撞，接触帧以切分表为准，不按画面遮挡判定。
+- 光学题的像距、像高、放大率用同一符号约定独立计算，不能只看渲染图；虚像不得当作屏幕实像。
+- Web3D 的查询预算和私有读取必须由服务端记账，不能靠 agent 自报。
+
+---
+
+## 6. 生产与排期
+
+| 周 | 交付 |
+|---|---|
+| W1 | 复用现有 5 道底座 + 题 1 蜘蛛全链路：资料、参考解、判分器、5 次试跑 |
+| W2 | 题 2 滑板：7 层板边、UV、GLB 回导判分器 |
+| W3 | 题 3 双人：重定向、BVH 碰撞、交互时序判分器 |
+| W4 | 题 4/5：Web3D 浏览器底座、查询记账、光学回放判分 |
+| W5 | 5 题 × 5 次试跑、容差校准、返修 |
+
+**单题工时**：资料 1.5–3.5 人日；参考解 1.5–3 人日；判分器 1.5–3 人日；容器/测试 1–2 人日；标定 0.5 人日。
+
+| 线 | 题 | 工时 |
+|---|---|---|
+| B | 1 蜘蛛 | 7 人日 |
+| B | 2 滑板 | 5 人日 |
+| B | 3 双人格斗 | 8 人日 |
+| C | 4 姿态修复 | 5 人日 |
+| C | 5 显微镜 | 7 人日 |
+| — | **合计** | **32 人日** |
+
+> 已实现 5 道的镜像、判分模板和标定记录可直接复用，因此本批不含从零搭建 Blender 桌面底座的工时；Web3D 两道仍需新建浏览器底座。
+
+**难度校准**：
+
+- 通过率 >75%：收紧尺寸容差、增加状态数或视角数、把关键尺寸藏进图纸局部。
+- 通过率 <40%：放宽容差、减少器物数量、给出更明确的命名表。
+- 步态题先调相位容差，再调滑步阈值；双人题先调接触帧容差，再调穿插深度；Web3D 先调查询预算/成像量容差，再调 SSIM。
+- 每次只改一个变量，记录在标定表里。
+
+---
+
+## 7. 需要确认的三件事
+
+| # | 问题 | 建议 |
+|---|---|---|
+| 1 | 本批是否与 `ic-bench/tasks/cua` 已有题重复？ | 否。已实现的展位、折叠椅、玩具车、Rainroom、木箱五道不在本批；本批 5 道全部为新增题。 |
+| 2 | 先做哪一道？ | 先做题 1 蜘蛛打通 B 线，再做题 2/3；题 4/5 需要单独的浏览器底座，最后做。 |
+| 3 | 模型必须用 GUI 操作 Blender，还是允许写 `bpy` 脚本？ | Blender 题默认 GUI（真实 CUA）；如果只考结果，可放开 `bpy`，但需在题面单独标注。题 4/5 允许写代码，因为任务本身就是修程序/搭装配。 |
