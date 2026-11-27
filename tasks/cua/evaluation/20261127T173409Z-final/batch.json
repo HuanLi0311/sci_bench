@@ -201,6 +201,19 @@
         "R14_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "banner-stand",
+      "kind": "negative-banner-canvas-cropped",
+      "run": "banner-stand/authoring/runs/20261127T175618Z-final-negative-banner-canvas-cropped",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R05_uv",
+        "R13_anticheat",
+        "R14_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
