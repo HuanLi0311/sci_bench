@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T18:12:21.144701+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T18:12:21.269042+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-ac19acc2c8"
+      ],
+      "started_at": "2026-11-27T18:12:21.283363+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:16:45.701192+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-ac19acc2c8"
+      ],
+      "started_at": "2026-11-27T18:16:45.736569+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:16:45.828307+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-ac19acc2c8:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T181208Z-final-negative-cabinet-unpacked-maps/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T18:16:45.924095+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:16:48.144308+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-ac19acc2c8"
+      ],
+      "started_at": "2026-11-27T18:16:48.809333+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:16:49.121841+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-ac19acc2c8"
+      ],
+      "started_at": "2026-11-27T18:16:49.202710+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:16:49.593838+00:00"
     }
   ],
   "nop_definition": null,
@@ -362,5 +416,10 @@
       "sha256": "dbecbc89329c1e35624adc8daa5e21c3558bb948acc3bde6141a11442bcb770d",
       "bytes": 1681485
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T18:16:49.605020+00:00"
 }
