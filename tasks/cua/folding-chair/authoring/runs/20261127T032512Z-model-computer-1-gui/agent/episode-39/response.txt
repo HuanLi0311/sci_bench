@@ -1,0 +1,1 @@
+{"analysis":"Rename popup still open; escape first.","plan":"Restore state carefully.","action":{"type":"keypress","keys":["escape"]}}

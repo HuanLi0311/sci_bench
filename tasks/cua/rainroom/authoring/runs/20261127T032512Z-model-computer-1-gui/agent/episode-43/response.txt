@@ -1,0 +1,1 @@
+{"analysis":"Floor slab formed. Rename as shell base, then add wall segments in edit mode so the shell remains one mesh.","plan":"Name room_shell.","action":{"type":"keypress","keys":["f2"]}}

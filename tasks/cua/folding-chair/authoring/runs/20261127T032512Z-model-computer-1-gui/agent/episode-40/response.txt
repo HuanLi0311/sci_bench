@@ -1,0 +1,1 @@
+{"analysis":"Undo last mesh translation.","plan":"Restore panel then create back separately.","action":{"type":"keypress","keys":["ctrl","z"]}}
