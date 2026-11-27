@@ -88,8 +88,8 @@ and embedded (not linked) images.
 Two anti-cheat checks run against the delivered files. Every delivered render
 is re-rendered from your scene and compared with the PNG you shipped (per
 channel and in structure), the artwork is swapped for a checkerboard and the
-underside re-rendered, and the four wheels are scaled 1.4× and the three-quarter
-view re-rendered. If the parts and the renders are real, both images must
-change.
+underside re-rendered, and the deck mesh is lifted 60 mm off its trucks and the
+three-quarter view re-rendered. If the parts and the renders are real, both
+images must change.
 
 You have 7200 seconds to complete this task.

@@ -3,9 +3,9 @@
     blender -b <copy.blend> --python rerender.py -- <work_dir>
 
 Renders the three delivered views, then re-renders with (a) the deck artwork
-replaced by a checkerboard and (b) the four wheels scaled 1.4 about their own
-centres. Both must change their image if the delivered renders came from this
-scene and the parts are real geometry.
+replaced by a checkerboard and (b) the deck mesh lifted 60 mm off its trucks.
+Both must change their image if the delivered renders came from this scene and
+the deck is real geometry.
 """
 import os
 import sys
@@ -67,19 +67,21 @@ def checker_image(img):
     img.pixels.foreach_set(rgba.ravel())
 
 
-def scale_wheels(factor):
-    for name in ("wheel_01", "wheel_02", "wheel_03", "wheel_04"):
-        ob = bpy.data.objects.get(name)
-        if ob is None or ob.type != 'MESH':
-            continue
-        me = ob.data
-        co = np.empty(len(me.vertices) * 3, dtype=np.float32)
-        me.vertices.foreach_get("co", co)
-        co = co.reshape(-1, 3)
-        centre = co.mean(axis=0)
-        co = centre + (co - centre) * factor
-        me.vertices.foreach_set("co", co.ravel())
-        me.update()
+def lift_deck(dz):
+    """Move the deck mesh up while the trucks and wheels stay put.
+
+    A deck that is only a picture fails this: the render cannot change.
+    """
+    ob = bpy.data.objects.get("deck")
+    if ob is None or ob.type != 'MESH':
+        return
+    me = ob.data
+    co = np.empty(len(me.vertices) * 3, dtype=np.float32)
+    me.vertices.foreach_get("co", co)
+    co = co.reshape(-1, 3)
+    co[:, 2] += dz
+    me.vertices.foreach_set("co", co.ravel())
+    me.update()
 
 
 def main():
@@ -99,8 +101,8 @@ def main():
         checker_image(img)
         shot("cam_bottom", os.path.join(work, "ac_graphic.png"), 1600, 900)
 
-    scale_wheels(1.4)
-    shot("cam_three_quarter", os.path.join(work, "ac_wheels.png"), 1600, 1200)
+    lift_deck(0.060)
+    shot("cam_three_quarter", os.path.join(work, "ac_decklift.png"), 1600, 1200)
 
 
 if __name__ == "__main__":

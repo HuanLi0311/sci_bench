@@ -356,14 +356,14 @@ def main():
             base_tq = load_gray(os.path.join(WORK, "render_three_quarter.png"))
             delivered_bottom = load_gray(os.path.join(out, "render_bottom.png"))
             checker_bottom = load_gray(os.path.join(WORK, "ac_graphic.png"))
-            scaled_tq = load_gray(os.path.join(WORK, "ac_wheels.png"))
+            lifted_tq = load_gray(os.path.join(WORK, "ac_decklift.png"))
             s_match = ss_img(base_bottom, delivered_bottom)
             s_graphic = ss_img(base_bottom, checker_bottom)
-            s_wheels = ss_img(base_tq, scaled_tq)
-            ac_ok = s_match >= 0.90 and s_graphic <= 0.98 and s_wheels <= 0.98
+            s_lift = ss_img(base_tq, lifted_tq)
+            ac_ok = s_match >= 0.90 and s_graphic <= 0.98 and s_lift <= 0.98
             ac_detail = (f"delivered_vs_scene={s_match:.3f} (>=0.90) "
                          f"checker_vs_base={s_graphic:.3f} (<=0.98) "
-                         f"wheels14_vs_base={s_wheels:.3f} (<=0.98)")
+                         f"decklift_vs_base={s_lift:.3f} (<=0.98)")
         except Exception as exc:
             ac_detail = f"rerender failed: {exc}"
     add("R14_anticheat", "critical", ac_ok, ac_detail)
