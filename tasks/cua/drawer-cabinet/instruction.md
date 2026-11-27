@@ -28,7 +28,7 @@ deliverable is a scene a colleague can keep editing, not a screenshot.
    along +Y from 0 to 420 mm and nothing else moves. Fully open, the tray must
    clear the carcass and every other drawer.
 3. One door `door_right`, 460 × 750 × 18 mm, covering the right bay, parented to
-   an empty `hinge_right` at (0.500, 0.216, 0.505) that rotates about the
+   an empty `hinge_right` at (0.481, 0.2265, 0.505) that rotates about the
    vertical axis from 0° to 110°, swinging outwards. At 0°, 55° and 110° the
    door must not touch the carcass or the drawer fronts.
 4. Materials: oak with 2048² base colour, roughness and normal maps driven into

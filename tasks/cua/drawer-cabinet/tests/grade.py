@@ -144,7 +144,7 @@ def main():
     door_clean = bool(door_ov) and all(v == 0 for v in door_ov.values())
     hinge_loc = door.get("hinge_location") or [9, 9, 9]
     hinge_ok = (door.get("parent") == "hinge_right"
-                and abs(hinge_loc[0] - 0.5) <= 0.01 and abs(hinge_loc[1] - 0.216) <= 0.01
+                and abs(hinge_loc[0] - 0.481) <= 0.01 and abs(hinge_loc[1] - 0.2265) <= 0.01
                 and abs(hinge_loc[2] - 0.505) <= 0.01)
     add("R07_door_hinge", "must", hinge_ok and door_clean,
         f"hinge={hinge_loc} overlap={door_ov}")

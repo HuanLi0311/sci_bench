@@ -136,7 +136,7 @@ def spec_pdf(path):
     heading(310, "3. Door")
     for i, line in enumerate([
         "One door_right 460 x 750 x 18 covering the right bay, hinged on its outer edge",
-        "   by an empty hinge_right at (500, 216, 505).",
+        "   by an empty hinge_right at (481, 226.5, 505).",
         "Rotation is about the vertical axis, 0 to 110 degrees, swinging outwards.",
         "The door must not touch the carcass or the drawer fronts at any angle.",
     ]):
