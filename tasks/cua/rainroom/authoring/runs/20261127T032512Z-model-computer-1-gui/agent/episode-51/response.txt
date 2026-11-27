@@ -1,0 +1,1 @@
+{"analysis":"Switching shell base to an enclosing room mesh; exact overall envelope will be 4.2 × 3.6 × 2.8.","plan":"Set Z scale to 1.4.","action":{"type":"double_click","x":1792,"y":744}}

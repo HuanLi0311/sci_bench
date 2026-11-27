@@ -1,0 +1,1 @@
+{"analysis":"The shell can be built efficiently as a thin six-sided room mesh with an inset window opening.","plan":"Confirm name then set shell height and position directly.","action":{"type":"keypress","keys":["enter"]}}

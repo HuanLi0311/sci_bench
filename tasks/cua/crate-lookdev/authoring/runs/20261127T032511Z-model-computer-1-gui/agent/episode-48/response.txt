@@ -1,0 +1,1 @@
+{"analysis":"Bottom sized.","plan":"Bevel bottom edges 2 mm.","action":{"type":"keypress","keys":["ctrl","b"]}}
