@@ -402,12 +402,407 @@
         "cached_tokens": 13696,
         "cost_usd": 0.007959599999999997
       }
+    },
+    {
+      "step_id": 8,
+      "timestamp": "2026-11-27T03:26:07.436309+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Use path entry.\nPlan: Open previews folder.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_6_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "ctrl",
+              "l"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_6_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep6.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 19237,
+        "completion_tokens": 30,
+        "cached_tokens": 16128,
+        "cost_usd": 0.0081308
+      }
+    },
+    {
+      "step_id": 9,
+      "timestamp": "2026-11-27T03:26:14.610348+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Path selected.\nPlan: Enter previews location.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_7_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "/app/material-previews/",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_7_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep7.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 21723,
+        "completion_tokens": 31,
+        "cached_tokens": 18816,
+        "cost_usd": 0.008005599999999995
+      }
+    },
+    {
+      "step_id": 10,
+      "timestamp": "2026-11-27T03:26:20.181887+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Path entered.\nPlan: Load folder.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_8_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_8_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep8.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 24210,
+        "completion_tokens": 26,
+        "cached_tokens": 21248,
+        "cost_usd": 0.008308800000000005
+      }
+    },
+    {
+      "step_id": 11,
+      "timestamp": "2026-11-27T03:26:30.031895+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Preview directory appears unavailable at present.\nPlan: Inspect plan and PDF directly first.",
+      "reasoning_content": "**Waiting for preview path**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_9_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "ctrl",
+              "a"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_9_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep9.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 26692,
+        "completion_tokens": 55,
+        "cached_tokens": 23680,
+        "cost_usd": 0.008942000000000005
+      }
+    },
+    {
+      "step_id": 12,
+      "timestamp": "2026-11-27T03:26:36.427350+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Selected invalid path.\nPlan: Open drawings.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_10_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "/app/materials/drawings/",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_10_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep10.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 29184,
+        "completion_tokens": 33,
+        "cached_tokens": 26112,
+        "cost_usd": 0.009085200000000002
+      }
+    },
+    {
+      "step_id": 13,
+      "timestamp": "2026-11-27T03:26:43.088325+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Drawings path valid.\nPlan: Load.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_11_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_11_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep11.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 31673,
+        "completion_tokens": 27,
+        "cached_tokens": 28672,
+        "cost_usd": 0.0091392
+      }
     }
   ],
   "final_metrics": {
-    "total_prompt_tokens": 63110,
-    "total_completion_tokens": 245,
-    "total_cached_tokens": 40960,
-    "total_cost_usd": 0.050846
+    "total_prompt_tokens": 215829,
+    "total_completion_tokens": 447,
+    "total_cached_tokens": 175616,
+    "total_cost_usd": 0.10245760000000001
   }
 }

@@ -1,0 +1,1 @@
+{"analysis":"Drawing oversized now loaded.","plan":"Shrink to fit.","action":{"type":"keypress","keys":["escape"]}}

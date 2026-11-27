@@ -1,0 +1,1 @@
+{"analysis":"Drawings path valid.","plan":"Load.","action":{"type":"keypress","keys":["enter"]}}

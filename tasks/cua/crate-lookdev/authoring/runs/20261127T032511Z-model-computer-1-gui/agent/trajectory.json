@@ -401,12 +401,203 @@
         "cached_tokens": 14080,
         "cost_usd": 0.007955999999999998
       }
-    }
-  ],
-  "final_metrics": {
-    "total_prompt_tokens": 65433,
-    "total_completion_tokens": 280,
-    "total_cached_tokens": 42496,
-    "total_cost_usd": 0.052923599999999994
-  }
-}
+    },
+    {
+      "step_id": 8,
+      "timestamp": "2026-11-27T03:26:20.160767+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: No default text viewer is installed.\nPlan: Cancel and inspect drawing image instead.",
+      "reasoning_content": "**Preparing drawing preview**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_6_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "click",
+            "x": 1070,
+            "y": 782,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_6_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep6.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 19634,
+        "completion_tokens": 91,
+        "cached_tokens": 4096,
+        "cost_usd": 0.032395600000000004
+      }
+    },
+    {
+      "step_id": 9,
+      "timestamp": "2026-11-27T03:26:29.418709+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Drawing folder is available.\nPlan: Inspect dimensional image.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_7_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "double_click",
+            "x": 856,
+            "y": 471,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_7_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep7.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 22128,
+        "completion_tokens": 124,
+        "cached_tokens": 19200,
+        "cost_usd": 0.009015999999999996
+      }
+    },
+    {
+      "step_id": 10,
+      "timestamp": "2026-11-27T03:26:39.317639+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: PNG drawing found.\nPlan: Open it.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_8_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "double_click",
+            "x": 1022,
+            "y": 470,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_8_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep8.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 24617,
+        "completion_tokens": 32,
+        "cached_tokens": 21632,
+        "cost_usd": 0.008453200000000008
+      }
+    },
+    {
+      "step_id": 11,
+      "timestamp": "2026-11-27T03:26:53.015984+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysi

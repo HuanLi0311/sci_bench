@@ -1,0 +1,1 @@
+{"analysis":"Drawing folder is available.","plan":"Inspect dimensional image.","action":{"type":"double_click","x":856,"y":471}}
