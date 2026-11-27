@@ -1,0 +1,2 @@
+desktop ready on :1
+{"file": "render_pose_02.png", "size": [960, 540], "original_rgb_mean": [132.25726466049383, 129.95757908950617, 129.1066512345679], "replacement_rgb": [132, 130, 129]}

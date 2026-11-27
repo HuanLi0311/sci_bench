@@ -1,7 +1,7 @@
 from PIL import Image, ImageStat
 from pathlib import Path
 import json
-p = Path("/mutation/submission") / 'render_back.png'
+p = Path("/mutation/submission") / 'render_pose_02.png'
 original = Image.open(p).convert("RGB")
 mean = tuple(round(v) for v in ImageStat.Stat(original).mean)
 Image.new("RGB", original.size, mean).save(p)

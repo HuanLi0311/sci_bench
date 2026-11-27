@@ -1,0 +1,22 @@
+{
+  "kind": "mutation-preparation",
+  "name": "secondary-render-substitution",
+  "task": "spider-gait",
+  "started_at": "20261127T100740Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T100740Z-mutation-secondary-render-substitution:/mutation",
+    "cua-qc-spider-gait-tests",
+    "python3",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "21c41511cd77608257aa5799cbfd2533abf87a17d0651ebfa27dc3dbe0b23867",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T10:07:44.517190+00:00"
+}
