@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "units": "mm",
+  "assets": [
+    {
+      "path": "microscope/assets/sample_a.png",
+      "role": "sample",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "microscope/assets/sample_b.png",
+      "role": "sample",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "references/front.png",
+      "role": "reference",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "references/side.png",
+      "role": "reference",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "references/three_quarter.png",
+      "role": "reference",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "optics.pdf",
+      "role": "spec",
+      "source": "self-authored",
+      "license": "CC0-1.0"
+    },
+    {
+      "path": "microscope/vendor/three.module.js",
+      "role": "library",
+      "source": "https://github.com/mrdoob/three.js/tree/r169",
+      "license": "MIT"
+    },
+    {
+      "path": "microscope/vendor/OrbitControls.js",
+      "role": "library",
+      "source": "https://github.com/mrdoob/three.js/tree/r169",
+      "license": "MIT"
+    }
+  ]
+}

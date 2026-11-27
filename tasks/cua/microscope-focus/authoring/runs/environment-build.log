@@ -1,0 +1,52 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.08kB 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/7] FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
+#5 resolve mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a 0.0s done
+#5 DONE 0.1s
+
+#4 [internal] load build context
+#4 transferring context: 150.86kB 0.2s done
+#4 DONE 0.2s
+
+#6 [2/7] RUN apt-get update && apt-get install -y --no-install-recommends xfce4 xfce4-terminal x11vnc novnc websockify imagemagick webp python3 && rm -rf /var/lib/apt/lists/*
+#6 CACHED
+
+#7 [3/7] RUN mkdir -p /opt/runtime && cd /opt/runtime && npm init -y && npm install --save-exact three@0.169.0 playwright@1.56.1 --no-audit --no-fund
+#7 CACHED
+
+#8 [4/7] COPY materials/ /app/materials/
+#8 CACHED
+
+#9 [5/7] COPY start.sh /usr/local/bin/start-microscope
+#9 CACHED
+
+#10 [6/7] RUN mkdir -p /app/out /app/materials/starter/vendor && cp /opt/runtime/node_modules/three/build/three.module.js /app/materials/starter/vendor/ && cp /opt/runtime/node_modules/three/examples/jsm/controls/OrbitControls.js /app/materials/starter/vendor/ && cp /opt/runtime/node_modules/three/LICENSE /app/materials/starter/vendor/THREE-LICENSE.txt && chmod +x /usr/local/bin/start-microscope
+#10 CACHED
+
+#11 [7/7] WORKDIR /app
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers 0.0s done
+#12 exporting manifest sha256:a789601c394f3bbebbe460231f34471d0ae02a474b1b2e4044fe4508ad0756b1 done
+#12 exporting config sha256:07ddc841f8e6c5669984459c1885c6ef09ac3760333bbf8732b72702cc6ff9a5 done
+#12 exporting attestation manifest sha256:8519a8cd97a96defaf83264d8b86b9de5b6cc3e48ae91a99dd0fd8152ee8e6a8 0.0s done
+#12 exporting manifest list sha256:87a588aaf4050c9c17506c399a5f9dac783548c5bbaf215da67620a061247ac4 0.0s done
+#12 naming to docker.io/library/cua-qc-microscope-focus-env:latest
+#12 naming to docker.io/library/cua-qc-microscope-focus-env:latest done
+#12 unpacking to docker.io/library/cua-qc-microscope-focus-env:latest 0.0s done
+#12 DONE 0.2s

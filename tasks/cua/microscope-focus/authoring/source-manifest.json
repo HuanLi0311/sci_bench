@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "SHA-256 of actual source bytes; evidence indexed separately",
+  "files": {
+    ".gitattributes": {
+      "sha256": "55ea1ce5b0f793e648f1b65027cad78c562bb73ffec45ff1ebd76bfcd79f8113",
+      "bytes": 164
+    },
+    "authoring/annotate_references.py": {
+      "sha256": "9273f63b62fb6810bd3f013ffeb91782085ecf92f6d665d287adc282e69b49f3",
+      "bytes": 1220
+    },
+    "authoring/calibration/results.md": {
+      "sha256": "d631f7a4108f19f2ce76adb806893588def25f13ebceab3eddb75f5d2df07fa2",
+      "bytes": 455
+    },
+    "authoring/generate_materials.py": {
+      "sha256": "978991bc59ee0fef550237efd88c555d766a9fab34f77fa8525187c40880818b",
+      "bytes": 6455
+    },
+    "authoring/model-attempts.json": {
+      "sha256": "f367314a66757dc0a4411c59a424847ece6a7671f6b75f5b01041b3e10b70bab",
+      "bytes": 108
+    },
+    "authoring/provenance/SOURCES.md": {
+      "sha256": "a638aeae573b269b69794a4f6a05c5b062c8c6cd16545229fa5f150643dfc2f6",
+      "bytes": 739
+    },
+    "authoring/render_references.mjs": {
+      "sha256": "541ac46f3b2e7769fdecc1ee6d1118db7d40a400dbfabc9413611d60d5a4f857",
+      "bytes": 1536
+    },
+    "authoring/requirements.txt": {
+      "sha256": "3e866cd9fb271957e924590f020a9523029e74d8371c03d100d8b79ddb8a326f",
+      "bytes": 109
+    },
+    "authoring/run_sanity.py": {
+      "sha256": "097ae471097e73a0aad7ae4d90402f77bd72cb5cc8929669fc0cd286bfd7812c",
+      "bytes": 7818
+    },
+    "environment/Dockerfile": {
+      "sha256": "b27016f6103568b1798901c6794fa2acfbe86c7eaaf0c69a6eeae3e28074aa84",
+      "bytes": 1041
+    },
+    "environment/materials/LICENSE.txt": {
+      "sha256": "32442291a6b03bc46a1bce87d1c37e6c81129863660531a5fc98a51d4f34ea31",
+      "bytes": 237
+    },
+    "environment/materials/manifest.json": {
+      "sha256": "2f97eddda1b3a13af8f36c469afb2fa1a974b3142ab15a76eaf951bfbd03014b",
+      "bytes": 1301
+    },
+    "environment/materials/optics.pdf": {
+      "sha256": "d2a6fee86c5ddafdf5f52e8478acfdf3ec359f2bd75cb9c92608232386e1a775",
+      "bytes": 2638
+    },
+    "environment/materials/references/front.png": {
+      "sha256": "de758c7efda19bacb438ae18fa7ee42bb90dbf969cbe47657ec781aa37c1a215",
+      "bytes": 32459
+    },
+    "environment/materials/references/landmarks.json": {
+      "sha256": "f22cf34de4558cca5d4e986ebf9f29760067de06876439bfa14180a9e64ba911",
+      "bytes": 692
+    },
+    "environment/materials/references/side.png": {
+      "sha256": "83a1296f0b50ab0e60b0a7193d20453cfd77a8bc088b64116b7533b2f37f8bfb",
+      "bytes": 28057
+    },
+    "environment/materials/references/three_quarter.png": {
+      "sha256": "52f78d53769f8cb63367dcd2fb59bd5a73a99076e36d708a0e1f2bb0b126b991",
+      "bytes": 39843
+    },
+    "environment/materials/samples/sample_a.png": {
+      "sha256": "2cbbbc1ef78ddfd520567adc00df01845237155b5aae57518bcfb9ab41e778aa",
+      "bytes": 8673
+    },
+    "environment/materials/samples/sample_b.png": {
+      "sha256": "0a9aac2ac373a296d0cb90290130655d3664d724c11617eb2458a30196822aac",
+      "bytes": 9010
+    },
+    "environment/materials/SPEC.md": {
+      "sha256": "c322936d74f839947c32511935db8b4bced4de02a653ffd9ead0ca66ec236a2d",
+      "bytes": 5921
+    },
+    "environment/materials/starter/app.js": {
+      "sha256": "83fe5c0c2cee42d9bb14d21c24bc156be95a490f2421e7cef523a9ba7df677cd",
+      "bytes": 832
+    },
+    "environment/materials/starter/index.html": {
+      "sha256": "e491c43736261fb1469d0a2b35daaa68637fb235af596207e90d281a6c5afff5",
+      "bytes": 580
+    },
+    "environment/materials/starter/state.schema.json": {
+      "sha256": "3439e8992cf9e8c38d770976ec347efedc791e55bebd9c548cbb3c3645bf6304",
+      "bytes": 2773
+    },
+    "environment/materials/targets/case_a.png": {
+      "sha256": "8b970685dd4506d5c48acd05c3523e80e9d49582f466d29f3cfc33ca5ad1c890",
+      "bytes": 6075
+    },
+    "environment/materials/targets/case_b.png": {
+      "sha256": "ba209848b90c09b62cfbbf1c065457eaa3b6066341c36f2c033632e2bd27e4ed",
+      "bytes": 4993
+    },
+    "environment/materials/targets/case_c.png": {
+      "sha256": "b4767571ce54ed87978c23191bee2a8006dd7c9bb4d3ba81a3602f5e6e425758",
+      "bytes": 4765
+    },
+    "environment/start.sh": {
+      "sha256": "1afd432a208945c077d24a736281a940a94045374c0100c93b98d63c0d28a321",
+      "bytes": 835
+    },
+    "instruction.md": {
+      "sha256": "5ad7080b454dbddba9b00fa6679235f3525a5ccaffb7dd31664d767af2873fc5",
+      "bytes": 2873
+    },
+    "README.md": {
+      "sha256": "ba643033d8dbe153973b6d2bc4803f2667b744efd9b4fc64263fa3d7f5466a31",
+      "bytes": 3066
+    },
+    "solution/manifest.json": {
+      "sha256": "2f97eddda1b3a13af8f36c469afb2fa1a974b3142ab15a76eaf951bfbd03014b",
+      "bytes": 1301
+    },
+    "solution/microscope/app.js": {
+      "sha256": "153bcba4a0addb33dc8964e8c3e1cfc922ded0e0f7491ff8dd2e3c84921162ef",
+      "bytes": 6965
+    },
+    "solution/microscope/index.html": {
+      "sha256": "74cd87a9281afb1599a066e03c451bafe8a6e88e5edd2e7397e2dc1db59e1a83",
+      "bytes": 2142
+    },
+    "solution/microscope/optics.js": {
+      "sha256": "96d08362b7694eaf541c744c381fdfb86139a6ed7d2d1554e0f61f53893dde96",
+      "bytes": 826
+    },
+    "solution/replay.json": {
+      "sha256": "47f9eb63b0e167460a01420c9682bd0c031c049fe85dc696b4cc3fcb18095a14",
+      "bytes": 91
+    },
+    "solution/report.md": {
+      "sha256": "e5e1cce849858009fc2a65cfcb98fde95ee8cc2c72890c01080f362d3765618e",
+      "bytes": 1051
+    },
+    "solution/solve.sh": {
+      "sha256": "a2f0994254e855daf88e3c5d8f2119b214046e18433684aaa3ac8ded2edfc05c",
+      "bytes": 294
+    },
+    "solution/state.json": {
+      "sha256": "ef95345cd2564f77e0b4b88c3092e700e6078ed73cb85437e4aa9df38d5bf59e",
+      "bytes": 819
+    },
+    "task.toml": {
+      "sha256": "50f2d7b68c99a0c7e3aa27df393795493fc7e8acd1f97cc6b93385cc3e210a66",
+      "bytes": 818
+    },
+    "tests/browser.mjs": {
+      "sha256": "b0b9b2b9bbfa8310e79d31977f5ab3124c23889745aa4caaa978444b7611307d",
+      "bytes": 3234
+    },
+    "tests/check_scene.py": {
+      "sha256": "4b2c1d52ab55c282e19fbc285611e429868ca8d3a41473dee298c307d71a8768",
+      "bytes": 1272
+    },
+    "tests/Dockerfile": {
+      "sha256": "d81160f3f49c2df34a859f221cfd7f769ef5dbb9cc4ac8f852e3f63dfe7955eb",
+      "bytes": 741
+    },
+    "tests/fixtures/checker.png": {
+      "sha256": "2fbb7bfe9b2734609ee23ca83f43b45510d69c4f9f7904705e991af02d578e5f",
+      "bytes": 5796
+    },
+    "tests/fixtures/sample_a.png": {
+      "sha256": "2cbbbc1ef78ddfd520567adc00df01845237155b5aae57518bcfb9ab41e778aa",
+      "bytes": 8673
+    },
+    "tests/fixtures/sample_b.png": {
+      "sha256": "0a9aac2ac373a296d0cb90290130655d3664d724c11617eb2458a30196822aac",
+      "bytes": 9010
+    },
+    "tests/fixtures/truth.json": {
+      "sha256": "436a736fedc7bbccbd6afca4a6266b15a6288542eaf7c16b890411d43b4c1515",
+      "bytes": 795
+    },
+    "tests/grade.py": {
+      "sha256": "629ebb530ee24a0f8c2607ee7085b244af11fec3e764b8a05a5ccc0ef3c0393b",
+      "bytes": 13103
+    },
+    "tests/rerender.py": {
+      "sha256": "f58dee04a6c17565360fb8ceba406e756559fe71a4f8a160133222c5cc7a5156",
+      "bytes": 2745
+    },
+    "tests/test.sh": {
+      "sha256": "5591cf28a1dc5d4f93657f027cba30077b175765b68fac2270a493f2bda8dbdc",
+      "bytes": 361
+    }
+  }
+}

@@ -1,0 +1,3 @@
+All original drawings, geometry, samples and targets: self-authored for this task, CC0-1.0.
+Three.js and OrbitControls 0.169.0: MIT; see starter/vendor/THREE-LICENSE.txt at runtime.
+No external fonts, models, textures or photographs.

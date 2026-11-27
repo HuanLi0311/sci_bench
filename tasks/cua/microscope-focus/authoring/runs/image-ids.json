@@ -1,0 +1,18 @@
+{
+  "cua-qc-microscope-focus-env": {
+    "Id": "sha256:87a588aaf4050c9c17506c399a5f9dac783548c5bbaf215da67620a061247ac4",
+    "RepoDigests": [
+      "cua-qc-microscope-focus-env@sha256:87a588aaf4050c9c17506c399a5f9dac783548c5bbaf215da67620a061247ac4"
+    ],
+    "Size": 4084505036,
+    "Created": "2026-11-27T20:05:12.864187156+08:00"
+  },
+  "cua-qc-microscope-focus-tests": {
+    "Id": "sha256:057e6712537cf1b7f3ec238349a1b2a782b56b491d76a379e74055c99d3bde46",
+    "RepoDigests": [
+      "cua-qc-microscope-focus-tests@sha256:057e6712537cf1b7f3ec238349a1b2a782b56b491d76a379e74055c99d3bde46"
+    ],
+    "Size": 3898109164,
+    "Created": "2026-11-27T20:07:45.181237087+08:00"
+  }
+}

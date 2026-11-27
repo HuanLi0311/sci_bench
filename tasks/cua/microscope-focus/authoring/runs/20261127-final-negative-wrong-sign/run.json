@@ -1,0 +1,164 @@
+{
+  "kind": "negative-wrong-sign",
+  "started_at": "2026-11-27T12:08:44.666238+00:00",
+  "finished_at": "2026-11-27T12:09:08.248336+00:00",
+  "backend": "direct Docker, WSL2",
+  "agent_exit_code": 0,
+  "verifier_exit_code": 0,
+  "reward": 0,
+  "outcome": "graded",
+  "model_steps": 0,
+  "gui_compliant": null,
+  "submission": {
+    "manifest.json": {
+      "sha256": "2f97eddda1b3a13af8f36c469afb2fa1a974b3142ab15a76eaf951bfbd03014b",
+      "bytes": 1301
+    },
+    "microscope/app.js": {
+      "sha256": "153bcba4a0addb33dc8964e8c3e1cfc922ded0e0f7491ff8dd2e3c84921162ef",
+      "bytes": 6965
+    },
+    "microscope/assets/sample_a.png": {
+      "sha256": "2cbbbc1ef78ddfd520567adc00df01845237155b5aae57518bcfb9ab41e778aa",
+      "bytes": 8673
+    },
+    "microscope/assets/sample_b.png": {
+      "sha256": "0a9aac2ac373a296d0cb90290130655d3664d724c11617eb2458a30196822aac",
+      "bytes": 9010
+    },
+    "microscope/index.html": {
+      "sha256": "74cd87a9281afb1599a066e03c451bafe8a6e88e5edd2e7397e2dc1db59e1a83",
+      "bytes": 2142
+    },
+    "microscope/optics.js": {
+      "sha256": "5035a683652f76dd3adf5650075af4a2ae82c5ac7fb5bca458bf8cf7f15dd796",
+      "bytes": 827
+    },
+    "microscope/vendor/OrbitControls.js": {
+      "sha256": "80efaadea4f8a636a65fb0bd08bfef62f3d93a0bb94e2e7500f23176c5c07f4e",
+      "bytes": 32134
+    },
+    "microscope/vendor/THREE-LICENSE.txt": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "microscope/vendor/three.module.js": {
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+      "bytes": 1304820
+    },
+    "replay.json": {
+      "sha256": "47f9eb63b0e167460a01420c9682bd0c031c049fe85dc696b4cc3fcb18095a14",
+      "bytes": 91
+    },
+    "report.md": {
+      "sha256": "e5e1cce849858009fc2a65cfcb98fde95ee8cc2c72890c01080f362d3765618e",
+      "bytes": 1051
+    },
+    "state.json": {
+      "sha256": "ef95345cd2564f77e0b4b88c3092e700e6078ed73cb85437e4aa9df38d5bf59e",
+      "bytes": 819
+    }
+  },
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "d81160f3f49c2df34a859f221cfd7f769ef5dbb9cc4ac8f852e3f63dfe7955eb",
+      "bytes": 741
+    },
+    "browser.mjs": {
+      "sha256": "b0b9b2b9bbfa8310e79d31977f5ab3124c23889745aa4caaa978444b7611307d",
+      "bytes": 3234
+    },
+    "check_scene.py": {
+      "sha256": "4b2c1d52ab55c282e19fbc285611e429868ca8d3a41473dee298c307d71a8768",
+      "bytes": 1272
+    },
+    "fixtures/checker.png": {
+      "sha256": "2fbb7bfe9b2734609ee23ca83f43b45510d69c4f9f7904705e991af02d578e5f",
+      "bytes": 5796
+    },
+    "fixtures/sample_a.png": {
+      "sha256": "2cbbbc1ef78ddfd520567adc00df01845237155b5aae57518bcfb9ab41e778aa",
+      "bytes": 8673
+    },
+    "fixtures/sample_b.png": {
+      "sha256": "0a9aac2ac373a296d0cb90290130655d3664d724c11617eb2458a30196822aac",
+      "bytes": 9010
+    },
+    "fixtures/truth.json": {
+      "sha256": "436a736fedc7bbccbd6afca4a6266b15a6288542eaf7c16b890411d43b4c1515",
+      "bytes": 795
+    },
+    "grade.py": {
+      "sha256": "629ebb530ee24a0f8c2607ee7085b244af11fec3e764b8a05a5ccc0ef3c0393b",
+      "bytes": 13103
+    },
+    "rerender.py": {
+      "sha256": "f58dee04a6c17565360fb8ceba406e756559fe71a4f8a160133222c5cc7a5156",
+      "bytes": 2745
+    },
+    "test.sh": {
+      "sha256": "5591cf28a1dc5d4f93657f027cba30077b175765b68fac2270a493f2bda8dbdc",
+      "bytes": 361
+    }
+  },
+  "solution_source": {
+    "manifest.json": {
+      "sha256": "2f97eddda1b3a13af8f36c469afb2fa1a974b3142ab15a76eaf951bfbd03014b",
+      "bytes": 1301
+    },
+    "microscope/app.js": {
+      "sha256": "153bcba4a0addb33dc8964e8c3e1cfc922ded0e0f7491ff8dd2e3c84921162ef",
+      "bytes": 6965
+    },
+    "microscope/index.html": {
+      "sha256": "74cd87a9281afb1599a066e03c451bafe8a6e88e5edd2e7397e2dc1db59e1a83",
+      "bytes": 2142
+    },
+    "microscope/optics.js": {
+      "sha256": "96d08362b7694eaf541c744c381fdfb86139a6ed7d2d1554e0f61f53893dde96",
+      "bytes": 826
+    },
+    "replay.json": {
+      "sha256": "47f9eb63b0e167460a01420c9682bd0c031c049fe85dc696b4cc3fcb18095a14",
+      "bytes": 91
+    },
+    "report.md": {
+      "sha256": "e5e1cce849858009fc2a65cfcb98fde95ee8cc2c72890c01080f362d3765618e",
+      "bytes": 1051
+    },
+    "solve.sh": {
+      "sha256": "a2f0994254e855daf88e3c5d8f2119b214046e18433684aaa3ac8ded2edfc05c",
+      "bytes": 294
+    },
+    "state.json": {
+      "sha256": "ef95345cd2564f77e0b4b88c3092e700e6078ed73cb85437e4aa9df38d5bf59e",
+      "bytes": 819
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8192m",
+        "--pids-limit",
+        "512",
+        "--ulimit",
+        "nofile=1024:1024",
+        "-v",
+        "/mnt/d/benchmark/tasks/cua/microscope-focus/authoring/runs/20261127-final-negative-wrong-sign/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/benchmark/tasks/cua/microscope-focus/authoring/runs/20261127-final-negative-wrong-sign/verifier:/logs/verifier",
+        "cua-qc-microscope-focus-tests"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "elapsed_sec": 24.16180983399954
+}
