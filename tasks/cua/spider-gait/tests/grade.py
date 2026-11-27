@@ -170,12 +170,23 @@ def main():
         expected[f"leg_{leg:02d}_coxa"] = "body"
         expected[f"leg_{leg:02d}_femur"] = f"leg_{leg:02d}_coxa"
         expected[f"leg_{leg:02d}_tibia"] = f"leg_{leg:02d}_femur"
-    bones_ok = set(bones) == set(expected) and all(
+    bone_geometry_bad = []
+    for name, (head_mm, tail_mm) in BONE_SPEC_MM.items():
+        got = bones.get(name) or {}
+        head = got.get("head") or []
+        tail = got.get("tail") or []
+        expected_head = [v / 1000.0 for v in head_mm]
+        expected_tail = [v / 1000.0 for v in tail_mm]
+        if (len(head) != 3 or len(tail) != 3
+                or max(abs(a - b) for a, b in zip(head, expected_head)) > 0.0005
+                or max(abs(a - b) for a, b in zip(tail, expected_tail)) > 0.0005):
+            bone_geometry_bad.append(name)
+    bones_ok = set(bones) == set(expected) and not bone_geometry_bad and all(
         bones[n].get("parent") == p and bones[n].get("deform", False)
         for n, p in expected.items())
     add("R02_bones", "must", bones_ok,
         f"count={len(bones)} missing={sorted(set(expected) - set(bones))[:4]} "
-        f"extra={sorted(set(bones) - set(expected))[:4]}")
+        f"extra={sorted(set(bones) - set(expected))[:4]} geometry_bad={bone_geometry_bad[:4]}")
 
     skin = scene.get("skin") or {}
     skin_bad = []
@@ -229,10 +240,12 @@ def main():
                  and (action.get("frame_min") or 99) <= 1.0
                  and (action.get("frame_max") or 0) >= 25.0
                  and scene.get("frame_start") == 1 and scene.get("frame_end") == 24
+                 and scene.get("fps") == 24
                  and leg_bones <= animated)
     add("R05_action", "must", action_ok,
         f"name={action.get('name')} range={action.get('frame_min')}-{action.get('frame_max')} "
-        f"scene={scene.get('frame_start')}-{scene.get('frame_end')} animated={len(animated)}")
+        f"scene={scene.get('frame_start')}-{scene.get('frame_end')} fps={scene.get('fps')} "
+        f"animated={len(animated)}")
 
     seam = scene.get("seam") or {}
     seam_ok = (seam.get("max_rotation_deg", 99) <= 0.5
