@@ -172,7 +172,7 @@ for i in range(1, 6):
 bpy.data.objects["hinge_right"].location.x += 0.050
 ''',
     "cabinet-unpacked-maps": '''import bpy
-img = bpy.data.images.load("/app/materials/textures/wood_basecolor.png")
+img = bpy.data.images.load("/mutation/submission/textures/wood_basecolor.png")
 img.name = "adversarial_unpacked"
 img.use_fake_user = True
 assert img.packed_file is None
@@ -187,7 +187,7 @@ for i in range(len(uv.data)):
     uv.data[i].uv = (uv.data[i].uv[0] * 0.8, uv.data[i].uv[1] * 0.8)
 ''',
     "banner-unpacked-print": '''import bpy
-img = bpy.data.images.load("/app/materials/textures/banner_graphic.png")
+img = bpy.data.images.load("/mutation/submission/textures/banner_graphic.png")
 img.name = "adversarial_unpacked"
 img.use_fake_user = True
 assert img.packed_file is None
