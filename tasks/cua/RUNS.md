@@ -10,10 +10,24 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | crate-lookdev | PASS | PASS | PASS | PASS |
 | folding-chair | PASS | PASS | PASS | PASS |
 | rainroom | PASS | PASS | PASS | PASS |
+| spider-gait | PASS | PASS | PASS | PASS |
+| skateboard-prop | PASS | PASS | PASS | PASS |
 | toy-car | PASS | PASS | PASS | PASS |
 
 | Task | Run | Reward | Failed checks / state |
 |---|---|---|---|
+| spider-gait | [final / oracle](spider-gait/authoring/runs/20261127T113104Z-final-oracle/run.json) | 1 | all checks pass |
+| spider-gait | [final / nop](spider-gait/authoring/runs/20261127T113638Z-final-nop/run.json) | 0 | R01_open, R02_bones, ... (empty output) |
+| spider-gait | [final / negative-spider-broken-skin](spider-gait/authoring/runs/20261127T121018Z-final-negative-spider-broken-skin/run.json) | 0 | R03_skinning |
+| spider-gait | [final / negative-spider-floating-feet](spider-gait/authoring/runs/20261127T121633Z-final-negative-spider-floating-feet/run.json) | 0 | R04_size, R07_support, R17_phase_anticheat, R18_render_authenticity |
+| spider-gait | [final / negative-spider-static-pose](spider-gait/authoring/runs/20261127T122844Z-final-negative-spider-static-pose/run.json) | 0 | R05_action, R07_support, R09_swing_lift, R17_phase_anticheat |
+| spider-gait | [final / negative-secondary-render-substitution](spider-gait/authoring/runs/20261127T123952Z-final-negative-secondary-render-substitution/run.json) | 0 | R18_render_authenticity, R_render_structure |
+| skateboard-prop | [final / oracle](skateboard-prop/authoring/runs/20261127T113104Z-final-oracle/run.json) | 1 | all checks pass |
+| skateboard-prop | [final / nop](skateboard-prop/authoring/runs/20261127T113829Z-final-nop/run.json) | 0 | R01_open, R02_dimensions, ... (empty output) |
+| skateboard-prop | [final / negative-deck-single-ply](skateboard-prop/authoring/runs/20261127T125515Z-final-negative-deck-single-ply/run.json) | 0 | R04_plies |
+| skateboard-prop | [final / negative-deck-graphic-unlinked](skateboard-prop/authoring/runs/20261127T131500Z-final-negative-deck-graphic-unlinked/run.json) | 0 | R05_graphic_uv, R14_anticheat, R15_render_authenticity, R_render_structure |
+| skateboard-prop | [final / negative-truck-dielectric](skateboard-prop/authoring/runs/20261127T132903Z-final-negative-truck-dielectric/run.json) | 0 | R07_materials |
+| skateboard-prop | [final / negative-secondary-render-substitution](skateboard-prop/authoring/runs/20261127T133707Z-final-negative-secondary-render-substitution/run.json) | 0 | R_render_structure |
 | booth-clearance | [pre-hardening / oracle](booth-clearance/authoring/runs/20261126T074145Z-pre-hardening-oracle/run.json) | 0 | agent-execution-error: invalid/missing metrics (see raw stderr) |
 | booth-clearance | [pre-hardening / nop](booth-clearance/authoring/runs/20261126T074152Z-pre-hardening-nop/run.json) | 0 | verifier-execution-error: invalid/missing metrics (see raw stderr) |
 | booth-clearance | [hardened / oracle](booth-clearance/authoring/runs/20261126T074403Z-hardened-oracle/run.json) | 0 | agent-execution-error: R01_open, R02_objects, R03_size, R05_entrance_clearance, R07_visibility, R08_brand_colour, R12_polys, R13_entrance_render, R14_manifest, R15_anti_cheat, R16_deliverables, R_all_render_authenticity |
