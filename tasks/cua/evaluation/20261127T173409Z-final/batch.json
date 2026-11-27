@@ -222,6 +222,19 @@
       "reward": 1,
       "outcome": "graded",
       "failed_checks": []
+    },
+    {
+      "task": "banner-stand",
+      "kind": "negative-secondary-render-substitution",
+      "run": "banner-stand/authoring/runs/20261127T180159Z-final-negative-secondary-render-substitution",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R13_anticheat",
+        "R14_render_authenticity",
+        "R_render_structure"
+      ]
     }
-  ]
+  ],
+  "finished_at": "2026-11-27T18:04:49.431275+00:00"
 }

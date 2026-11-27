@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T18:02:12.703934+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T18:02:12.772902+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-5de7c7e630"
+      ],
+      "started_at": "2026-11-27T18:02:12.801519+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-27T18:04:48.774050+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-5de7c7e630"
+      ],
+      "started_at": "2026-11-27T18:04:48.784921+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:04:48.808960+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-5de7c7e630:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T180159Z-final-negative-secondary-render-substitution/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T18:04:48.816878+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:04:49.148525+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-5de7c7e630"
+      ],
+      "started_at": "2026-11-27T18:04:49.185072+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:04:49.228090+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-5de7c7e630"
+      ],
+      "started_at": "2026-11-27T18:04:49.239311+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T18:04:49.367537+00:00"
     }
   ],
   "nop_definition": null,
@@ -350,5 +404,14 @@
       "sha256": "4f9c05661168d54b9210ff0544c4d0a0731d878bcf37b5edd203ed67b72504e8",
       "bytes": 12262
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R13_anticheat",
+    "R14_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T18:04:49.376691+00:00"
 }
