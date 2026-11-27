@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "cabinet-unpacked-maps",
+  "task": "drawer-cabinet",
+  "started_at": "20261127T182316Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T182316Z-mutation-cabinet-unpacked-maps:/mutation",
+    "cua-qc-drawer-cabinet-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/drawer_cabinet.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "677c8f992e50f3f9b6c55f9ac154c0def65be1281dc90b6f1a2dc1112eaaa70a",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T18:23:24.030365+00:00"
+}

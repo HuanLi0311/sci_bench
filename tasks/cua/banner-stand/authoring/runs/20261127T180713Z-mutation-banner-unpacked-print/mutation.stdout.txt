@@ -1,6 +1,0 @@
-desktop ready on :1
-Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-14 23:31:34)
-Read blend: "/mutation/submission/banner_stand.blend"
-Error: Cannot read '/app/materials/textures/banner_graphic.png': No such file or directory
-
-Blender quit
