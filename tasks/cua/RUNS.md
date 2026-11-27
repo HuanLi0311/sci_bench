@@ -12,10 +12,24 @@ Model-record PASS validates provenance/completeness; it does not mean the model 
 | rainroom | PASS | PASS | PASS | PASS |
 | spider-gait | PASS | PASS | PASS | PASS |
 | skateboard-prop | PASS | PASS | PASS | PASS |
+| drawer-cabinet | PASS | PASS | PASS | PASS |
+| banner-stand | PASS | PASS | PASS | PASS |
 | toy-car | PASS | PASS | PASS | PASS |
 
 | Task | Run | Reward | Failed checks / state |
 |---|---|---|---|
+| drawer-cabinet | [final / oracle](drawer-cabinet/authoring/runs/20261127T173411Z-final-oracle/run.json) | 1 | all checks pass |
+| drawer-cabinet | [final / nop](drawer-cabinet/authoring/runs/20261127T173856Z-final-nop/run.json) | 0 | empty output |
+| drawer-cabinet | [final / negative-cabinet-static-slides](drawer-cabinet/authoring/runs/20261127T174219Z-final-negative-cabinet-static-slides/run.json) | 0 | R03_parts, R05_travel |
+| drawer-cabinet | [final / negative-secondary-render-substitution](drawer-cabinet/authoring/runs/20261127T175133Z-final-negative-secondary-render-substitution/run.json) | 0 | R14_anticheat, R15_render_authenticity |
+| drawer-cabinet | [final / negative-cabinet-hinge-moved](drawer-cabinet/authoring/runs/20261127T180728Z-final-negative-cabinet-hinge-moved/run.json) | 0 | R07_door_hinge, R_render_structure |
+| drawer-cabinet | [final / negative-cabinet-unpacked-maps](drawer-cabinet/authoring/runs/20261127T182338Z-final-negative-cabinet-unpacked-maps/run.json) | 0 | R10_self_contained |
+| banner-stand | [final / oracle](banner-stand/authoring/runs/20261127T173916Z-final-oracle/run.json) | 1 | all checks pass |
+| banner-stand | [final / nop](banner-stand/authoring/runs/20261127T174206Z-final-nop/run.json) | 0 | empty output |
+| banner-stand | [final / negative-banner-canvas-cropped](banner-stand/authoring/runs/20261127T175618Z-final-negative-banner-canvas-cropped/run.json) | 0 | R05_uv, R13_anticheat |
+| banner-stand | [final / negative-secondary-render-substitution](banner-stand/authoring/runs/20261127T180159Z-final-negative-secondary-render-substitution/run.json) | 0 | R13_anticheat, R14_render_authenticity |
+| banner-stand | [final / negative-banner-hinge-moved](banner-stand/authoring/runs/20261127T181649Z-final-negative-banner-hinge-moved/run.json) | 0 | R06_fold_geometry |
+| banner-stand | [final / negative-banner-unpacked-print](banner-stand/authoring/runs/20261127T182816Z-final-negative-banner-unpacked-print/run.json) | 0 | R09_self_contained |
 | spider-gait | [final / oracle](spider-gait/authoring/runs/20261127T113104Z-final-oracle/run.json) | 1 | all checks pass |
 | spider-gait | [final / nop](spider-gait/authoring/runs/20261127T113638Z-final-nop/run.json) | 0 | R01_open, R02_bones, ... (empty output) |
 | spider-gait | [final / negative-spider-broken-skin](spider-gait/authoring/runs/20261127T121018Z-final-negative-spider-broken-skin/run.json) | 0 | R03_skinning |
