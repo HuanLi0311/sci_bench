@@ -20,6 +20,7 @@ CPU, 64 samples, denoise, seed 0) inside the verifier image.
 | triangles | 17 496 | ≤ 40 000 | R10 |
 | GLB size | 1.0 MB | ≤ 15 MB | R08 |
 | GLB triangle difference | 0.0000 | ≤ 1 % | R09 |
+| GLB hierarchy | deck root; trucks under deck; wheels under their truck; bearings under deck | exact | R09 |
 | rear axle centre | (0, 0, 0) | ≤ 5 mm | R11 |
 | delivered vs re-render | SSIM 1.000 | ≥ 0.90 | R15, R_render_structure |
 | checkerboard vs base (bottom) | SSIM 0.851 | ≤ 0.98 | R14 |
