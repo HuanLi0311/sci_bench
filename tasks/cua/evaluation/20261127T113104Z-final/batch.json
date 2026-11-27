@@ -95,6 +95,39 @@
         "R18_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "oracle",
+      "run": "skateboard-prop/authoring/runs/20261127T113104Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "nop",
+      "run": "skateboard-prop/authoring/runs/20261127T113829Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_dimensions",
+        "R03_parts",
+        "R04_plies",
+        "R05_graphic_uv",
+        "R06_textures",
+        "R07_materials",
+        "R08_glb",
+        "R09_glb_roundtrip",
+        "R10_polys",
+        "R11_origin",
+        "R12_renders",
+        "R13_manifest",
+        "R14_anticheat",
+        "R15_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
