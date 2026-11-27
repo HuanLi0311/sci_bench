@@ -1,0 +1,63 @@
+{
+  "started_at": "20261127T102136Z",
+  "label": "final",
+  "grader_sources": {
+    "spider-gait": {
+      "Dockerfile": {
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "bytes": 710
+      },
+      "check_scene.py": {
+        "sha256": "649e60e60332eaece9ee4c266907aab4029e0241ce312d5596da79b542425b27",
+        "bytes": 12384
+      },
+      "grade.py": {
+        "sha256": "88780c4cdca2f563029854f9c5f31881f4d67db810d569c18e702d4e24656ad7",
+        "bytes": 16636
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "b760013d85f06447dd209160eb81ab0219f00e47d0f35914921122c84d3bcfb5",
+        "bytes": 2078
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    },
+    "skateboard-prop": {
+      "Dockerfile": {
+        "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+        "bytes": 710
+      },
+      "check_glb.py": {
+        "sha256": "8ab4903907f4d77b20d48bff70f0f1ab682c3cae493f08156890451384ce8c36",
+        "bytes": 1968
+      },
+      "check_scene.py": {
+        "sha256": "277f348064d126e2ba017655760901ba8a2a7549dc9159190a7b5a27a28ca8ee",
+        "bytes": 8192
+      },
+      "grade.py": {
+        "sha256": "8c2f931cf1dfb459fb498e2a9ac0fa6b598f76dcce89226e7afcc6f3c931e8f0",
+        "bytes": 18345
+      },
+      "render_compare.py": {
+        "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+        "bytes": 951
+      },
+      "rerender.py": {
+        "sha256": "b5215bc69da55aefdfbfff59ab883c76604e33ca3247aa71babf0f595d5952f8",
+        "bytes": 3203
+      },
+      "test.sh": {
+        "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+        "bytes": 595
+      }
+    }
+  },
+  "runs": []
+}

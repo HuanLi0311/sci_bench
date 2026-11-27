@@ -1,0 +1,153 @@
+{
+ "ok": true,
+ "objects": {
+  "bearings": {
+   "type": "MESH",
+   "parent": "deck",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 608,
+   "materials": [
+    "mat_steel"
+   ]
+  },
+  "deck": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 12000,
+   "materials": [
+    "mat_grip",
+    "mat_deck_graphic",
+    "mat_ply_1",
+    "mat_ply_2",
+    "mat_ply_3",
+    "mat_ply_4",
+    "mat_ply_5",
+    "mat_ply_6",
+    "mat_ply_7"
+   ]
+  },
+  "truck_front": {
+   "type": "MESH",
+   "parent": "deck",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 212,
+   "materials": [
+    "mat_aluminium"
+   ]
+  },
+  "truck_rear": {
+   "type": "MESH",
+   "parent": "deck",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 212,
+   "materials": [
+    "mat_aluminium"
+   ]
+  },
+  "wheel_01": {
+   "type": "MESH",
+   "parent": "truck_front",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 1116,
+   "materials": [
+    "mat_pu_wheel"
+   ]
+  },
+  "wheel_02": {
+   "type": "MESH",
+   "parent": "truck_front",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 1116,
+   "materials": [
+    "mat_pu_wheel"
+   ]
+  },
+  "wheel_03": {
+   "type": "MESH",
+   "parent": "truck_rear",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 1116,
+   "materials": [
+    "mat_pu_wheel"
+   ]
+  },
+  "wheel_04": {
+   "type": "MESH",
+   "parent": "truck_rear",
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "polys": 1116,
+   "materials": [
+    "mat_pu_wheel"
+   ]
+  }
+ },
+ "meshes": [
+  "bearings",
+  "deck",
+  "truck_front",
+  "truck_rear",
+  "wheel_01",
+  "wheel_02",
+  "wheel_03",
+  "wheel_04"
+ ],
+ "materials": [
+  "mat_aluminium",
+  "mat_deck_graphic",
+  "mat_grip",
+  "mat_ply_1",
+  "mat_ply_2",
+  "mat_ply_3",
+  "mat_ply_4",
+  "mat_ply_5",
+  "mat_ply_6",
+  "mat_ply_7",
+  "mat_pu_wheel",
+  "mat_steel"
+ ],
+ "images": [
+  {
+   "name": "deck_graphic",
+   "size": [
+    2048,
+    512
+   ],
+   "packed": true,
+   "filepath": ""
+  }
+ ],
+ "polys_total": 17496
+}

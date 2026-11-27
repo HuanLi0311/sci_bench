@@ -1,0 +1,488 @@
+{
+  "task": "skateboard-prop",
+  "kind": "oracle",
+  "label": "final",
+  "started_at": "20261127T102136Z",
+  "agent": "reference-publisher",
+  "model": null,
+  "model_steps": 0,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "version"
+      ],
+      "started_at": "2026-11-27T10:21:48.178593+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:48.353604+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-skateboard-prop-env"
+      ],
+      "started_at": "2026-11-27T10:21:48.366899+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:48.452404+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "image",
+        "inspect",
+        "cua-qc-skateboard-prop-tests"
+      ],
+      "started_at": "2026-11-27T10:21:48.468743+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:48.548809+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-agent-e53f073bb4",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/solution:/solution:ro",
+        "cua-qc-skateboard-prop-env",
+        "sleep",
+        "infinity"
+      ],
+      "started_at": "2026-11-27T10:21:48.563400+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:48.690213+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "cua-evidence-agent-e53f073bb4"
+      ],
+      "started_at": "2026-11-27T10:21:48.709287+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:48.991007+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-e53f073bb4",
+        "blender",
+        "--version"
+      ],
+      "started_at": "2026-11-27T10:21:49.006083+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:49.740934+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-e53f073bb4",
+        "ls",
+        "-laR",
+        "/app"
+      ],
+      "started_at": "2026-11-27T10:21:49.752038+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:49.879729+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-e53f073bb4",
+        "test",
+        "!",
+        "-e",
+        "/tests"
+      ],
+      "started_at": "2026-11-27T10:21:49.889902+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:50.019780+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-e53f073bb4",
+        "bash",
+        "/solution/solve.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-27T10:21:50.184389+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:50.458209+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "exec",
+        "cua-evidence-agent-e53f073bb4",
+        "ls",
+        "-laR",
+        "/app/out"
+      ],
+      "started_at": "2026-11-27T10:21:50.466466+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:50.591978+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-agent-e53f073bb4:/app/out/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T102136Z-final-oracle/submission"
+      ],
+      "started_at": "2026-11-27T10:21:50.602766+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:50.936998+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "create",
+        "--name",
+        "cua-evidence-verifier-e53f073bb4",
+        "--network",
+        "none",
+        "--cpus",
+        "4",
+        "--memory",
+        "8g",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T102136Z-final-oracle/grader-source:/tests:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T102136Z-final-oracle/submission:/app/out:ro",
+        "-v",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T102136Z-final-oracle/verifier:/logs/verifier",
+        "cua-qc-skateboard-prop-tests",
+        "bash",
+        "/tests/test.sh",
+        "/app/out"
+      ],
+      "started_at": "2026-11-27T10:21:51.174208+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T10:21:51.347286+00:00"
+    }
+  ],
+  "nop_definition": null,
+  "grader_source": {
+    "Dockerfile": {
+      "sha256": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+      "bytes": 710
+    },
+    "check_glb.py": {
+      "sha256": "8ab4903907f4d77b20d48bff70f0f1ab682c3cae493f08156890451384ce8c36",
+      "bytes": 1968
+    },
+    "check_scene.py": {
+      "sha256": "277f348064d126e2ba017655760901ba8a2a7549dc9159190a7b5a27a28ca8ee",
+      "bytes": 8192
+    },
+    "grade.py": {
+      "sha256": "8c2f931cf1dfb459fb498e2a9ac0fa6b598f76dcce89226e7afcc6f3c931e8f0",
+      "bytes": 18345
+    },
+    "render_compare.py": {
+      "sha256": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+      "bytes": 951
+    },
+    "rerender.py": {
+      "sha256": "b5215bc69da55aefdfbfff59ab883c76604e33ca3247aa71babf0f595d5952f8",
+      "bytes": 3203
+    },
+    "test.sh": {
+      "sha256": "fa87cb284fff91693a3032705dcc6446bd24abfe389e22923e213638097d356c",
+      "bytes": 595
+    }
+  },
+  "instruction_sha256": "947ab90766df24a967cefec8f12e2538e7308e72f773d994f35bffbbed8e889e",
+  "environment_source": {
+    "Dockerfile": {
+      "sha256": "d226b4cd217753f69717c82ac1b182b66ecec0548e38ac8d2148fcc3b87b10c2",
+      "bytes": 2118
+    },
+    "materials/LICENSE.txt": {
+      "sha256": "87e60a00d71fb3d83f27f6950d179e282f55881ff0a6dbc4398f200f9bdbb559",
+      "bytes": 267
+    },
+    "materials/drawings/skateboard_three_views.png": {
+      "sha256": "669bb62fd0c851abdc943ff6eb4a370e0ada9bfbebd4bc109c3be81f9c81329a",
+      "bytes": 23144
+    },
+    "materials/spec/deck_graphic.png": {
+      "sha256": "e2fbf476e362ec439d2b0ba56816b85070b8d664620dc22213b2f1b440a8ebd3",
+      "bytes": 15756
+    },
+    "materials/spec/material_spec.csv": {
+      "sha256": "f50e85e1f8ff001ec8db6b8d5a0134b93c5337ba1888ae18f5ba65985133ec09",
+      "bytes": 399
+    },
+    "materials/spec/material_spec.pdf": {
+      "sha256": "4338b90be45d8ceb43a8da847e6d7ee2eb3e1976ae83c8dffdae2f017109f60d",
+      "bytes": 3802
+    },
+    "materials/spec/material_spec.xlsx": {
+      "sha256": "43f79c571c0400b7047042882802abe855539b914ee632be3fc40be2d74883b6",
+      "bytes": 1939
+    },
+    "vendor/codex/README.md": {
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334
+    },
+    "vendor/codex/bin/codex.js": {
+      "sha256": "0e0c66f50074965a40cbd12f625b0a35963baf41bbd8c201a93e32fddbe2e073",
+      "bytes": 8925
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/README.md": {
+      "sha256": "ba4e1f69ff48386e72a9c5e1edaf76aad64a475c2d51af79ccba6d1128261ba7",
+      "bytes": 3334
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/package.json": {
+      "sha256": "7697b544ca78473d62b61d28d658d422742275bda94bf4c73c2a274742e5de59",
+      "bytes": 511
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex": {
+      "sha256": "ad83b94c093f0cdd8176a6bc8005a461bdf23a759863e157d40f562b8a9d664d",
+      "bytes": 321244472
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host": {
+      "sha256": "1800682c85429ff546b23a1aa96b5c1405fe74ac6743690d89d6dc5cfaf3b4f1",
+      "bytes": 69339672
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-package.json": {
+      "sha256": "7474282cef91b11ed3957e12db9103c48dd779b013bdcfe935fdf66480f46287",
+      "bytes": 205
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-path/rg": {
+      "sha256": "e62198eb19b136b88c330af83647b5a962cb99b6b1f066758568f12de1974849",
+      "bytes": 5408904
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/bwrap": {
+      "sha256": "512b7d47b27de10e13e86525a03d43c1a85422021b013bb15dc6384ae51f6425",
+      "bytes": 492984
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/NOTICE.md": {
+      "sha256": "40097a1799441051aa0b6645cdc819cceb19be73cdd265eb602aa2b15e0b1f48",
+      "bytes": 2403
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/bin/codex-voice-host": {
+      "sha256": "7ffe2c5385b7f628e486af0beacaa12955ca84c87e7adf072d657e0e14880a34",
+      "bytes": 40481312
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstapp.so": {
+      "sha256": "7676b0627a02fa51df71e8ff31984b52ca25961fd09c3026a532701ccc26cbe7",
+      "bytes": 6488
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstaudioconvert.so": {
+      "sha256": "670fdb27b899975c1813427d82adea889345bca31d9a229790a6ee065901740c",
+      "bytes": 41040
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstaudioresample.so": {
+      "sha256": "52477d88ab5652026ddf8c3af3e3bffda2b60b78654f6c0344b6354f6f3ac4fa",
+      "bytes": 35248
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstcoreelements.so": {
+      "sha256": "49fca203bc5d7ee056563faa15b21227ddd13445080d69f1d4fdf341b7d21914",
+      "bytes": 479464
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstopus.so": {
+      "sha256": "6b4ca611ad8c406fee577b2062f200c8eefc34dbb352a29bc70f90fde4596179",
+      "bytes": 73496
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstrtp.so": {
+      "sha256": "0932af9ae506f6b9c3c10c66266e7ffc4fba8b73f106fbe58a00acc437123dd9",
+      "bytes": 759304
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/gstreamer-1.0/libgstrtpmanager.so": {
+      "sha256": "3c8148d2ea4fc6d561683b64c3ffae7c0aaaf516f89e5a01df7f9542b291084f",
+      "bytes": 563976
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libffi.so.8": {
+      "sha256": "9343712fef5adb7f0d00b6f9c96d3b76c7eaed0ff3f96b1db665c221e68c2c7c",
+      "bytes": 63088
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgio-2.0.so.0": {
+      "sha256": "41e6ad75932a3307d68ca05ea992811529f2bedd76a74d92a764e86634d44595",
+      "bytes": 2336176
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libglib-2.0.so.0": {
+      "sha256": "09450319de31973a3eeffb8eb586180eee498aa01630e0b5e6be23c2f5a3acd9",
+      "bytes": 1520592
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgmodule-2.0.so.0": {
+      "sha256": "1f3e62bc2398f6deb38797efe9c533a406b69795a6992d40b093232b093fc01e",
+      "bytes": 15736
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgobject-2.0.so.0": {
+      "sha256": "6240441affd3fbe8874a34bf8afe4b1fb38bd654baf5cfe1d6e83e3a375fb80a",
+      "bytes": 455408
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstallocators-1.0.so.0": {
+      "sha256": "807b12788c4686361838f324cd92d825e82461b0fd51e61a4922f9faba00ee75",
+      "bytes": 30352
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstapp-1.0.so.0": {
+      "sha256": "72e724059b022757d22e775f17d1e4281bc38f9aa368c240cb54a760eb2d7812",
+      "bytes": 106128
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstaudio-1.0.so.0": {
+      "sha256": "bb6694de870e16723945d9f5a62972ef11a146f190a414c8ae8b1d90c5390fe5",
+      "bytes": 637664
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstbase-1.0.so.0": {
+      "sha256": "6218ce0102ecb55cbd75d9e93a78237f51a4e1c7ba32ed826c699a226fcd84f2",
+      "bytes": 573472
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstnet-1.0.so.0": {
+      "sha256": "bdf1f4c95024e5995e0534fdaa65c4098b6a2bd266f3860f0779e536760a1bc0",
+      "bytes": 74160
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstpbutils-1.0.so.0": {
+      "sha256": "696637055f0af52223a7c241b3d3858b350f762c7046d4a8a5c112a32b0709a5",
+      "bytes": 323208
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstreamer-1.0.so.0": {
+      "sha256": "d42db07c331c83a5d14d8b0301bf2dcd575af31b04e296858cc59aac0f421244",
+      "bytes": 1582984
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstrtp-1.0.so.0": {
+      "sha256": "0f3473333429ccfebf6d2cbc61a34c96375af339931490179b50648cd5faede9",
+      "bytes": 211696
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgsttag-1.0.so.0": {
+      "sha256": "6509a34c1c5ede834da6afeec45b0e160617777f7d1bdc18191770e9b4ed1f6e",
+      "bytes": 273992
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libgstvideo-1.0.so.0": {
+      "sha256": "bc67bf129eef842a0b63cd3f4b7bd108c61a96fae300d93e29c0add2a086f0a3",
+      "bytes": 1006016
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libintl.so.8": {
+      "sha256": "52508cf6dadff7cc431dd76d1f36754eb4184f56a49f93442f1a48bcb240df20",
+      "bytes": 6304
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libopus.so.0": {
+      "sha256": "1eb478952006315cd43a959ca8bbef2bb6dce811bacdee9286e158216f81474b",
+      "bytes": 563184
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libpcre2-8.so.0": {
+      "sha256": "6d589f935f093df4fbcebf01b7f8afa997378f4a4ac5fd0a76e0c5f604af64b7",
+      "bytes": 441864
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/lib/libz.so.1": {
+      "sha256": "7088b2cc0f2812f6617666d851bd779925de4350a87ef0a288bbedda87e76083",
+      "bytes": 110112
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/LGPL-2.1.txt": {
+      "sha256": "ad2eec519ebd4b5df86ea84dff24ae3bfa2edea846a703b58902dd221ae375db",
+      "bytes": 26431
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/Opus.txt": {
+      "sha256": "01e1167d54a096d123cf6dfbbeb19587278845c6481d2d66d545669846079551",
+      "bytes": 1945
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/PCRE2.md": {
+      "sha256": "197d8a73ffee0d6b09adba2f9c677b5f5aede24edf89258a68e48248d010d811",
+      "bytes": 4011
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/libffi.txt": {
+      "sha256": "17b64dc60f3b6897a60f971e288b973f655c2edcdf08b25f3c3dd5549857881c",
+      "bytes": 1132
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/proxy-libintl.txt": {
+      "sha256": "d245807f90032872d1438d741ed21e2490e1175dc8aa3afa5ddb6c8e529b58e5",
+      "bytes": 25292
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/sljit.txt": {
+      "sha256": "5f216505c0f6ea3273caec89e766eef93cdeb7bbb0c429f9360116d7c938feeb",
+      "bytes": 1444
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/licenses/zlib.txt": {
+      "sha256": "e32ff4e00d9d94930537635291da39e7e612703334bf6fde8c7f1686fe8a45a2",
+      "bytes": 1002
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/manifest.json": {
+      "sha256": "f53738602e296bb803b20262923828296829506846bf4309ef9816f87260db4a",
+      "bytes": 4768
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/runtime.json": {
+      "sha256": "a1c29890b958d90e086f15b7b5f942154269f6182cd35fbbd139393278e56564",
+      "bytes": 13941
+    },
+    "vendor/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/voice/sources.json": {
+      "sha256": "5613f37012effc3e28cdad52a7c88b9098aaaf7aae43f3cb7199f55ffbb15908",
+      "bytes": 4911
+    },
+    "vendor/codex/package.json": {
+      "sha256": "f839e64b5a657d1aa9881d42d4cc30f7493cf333a7c5e4cc3bd7f719e8f01391",
+      "bytes": 1082
+    }
+  },
+  "solution_source": {
+    "manifest.json": {
+      "sha256": "fa67be74b328b0870cb09edd7e01c747cd15c5990d2ec1154953ae5cbc860c59",
+      "bytes": 639
+    },
+    "render_bottom.png": {
+      "sha256": "a571bed19f002dd93b29cc2464334430614b46aace0165e39874ed9c987ec877",
+      "bytes": 1343555
+    },
+    "render_edge.png": {
+      "sha256": "f441e16ce6e59bdfdcaa66987c0c2ef5a8098b6ac49caf8eb90855bfbc91f2ca",
+      "bytes": 1870465
+    },
+    "render_three_quarter.png": {
+      "sha256": "3b6321db786881aeb0c473f3cf22576f19e807066bb5ebadc509e80ed879a68e",
+      "bytes": 1632668
+    },
+    "skateboard.blend": {
+      "sha256": "8365fe94b12089dcbdb2786015d9a1c611ee00256751ac2222c5c458705e8554",
+      "bytes": 1648180
+    },
+    "skateboard.glb": {
+      "sha256": "8b4818cd1f02b551593cd513947c560f547f1ba55e847dc0aa7baf945572300c",
+      "bytes": 996628
+    },
+    "solve.sh": {
+      "sha256": "9213ffce6136a1500ce9b7a709c141f4f1f822c33114d8a6507a928d2987dfe0",
+      "bytes": 752
+    }
+  },
+  "agent_exit_code": 0,
+  "submission": {
+    "manifest.json": {
+      "sha256": "fa67be74b328b0870cb09edd7e01c747cd15c5990d2ec1154953ae5cbc860c59",
+      "bytes": 639
+    },
+    "render_bottom.png": {
+      "sha256": "a571bed19f002dd93b29cc2464334430614b46aace0165e39874ed9c987ec877",
+      "bytes": 1343555
+    },
+    "render_edge.png": {
+      "sha256": "f441e16ce6e59bdfdcaa66987c0c2ef5a8098b6ac49caf8eb90855bfbc91f2ca",
+      "bytes": 1870465
+    },
+    "render_three_quarter.png": {
+      "sha256": "3b6321db786881aeb0c473f3cf22576f19e807066bb5ebadc509e80ed879a68e",
+      "bytes": 1632668
+    },
+    "skateboard.blend": {
+      "sha256": "8365fe94b12089dcbdb2786015d9a1c611ee00256751ac2222c5c458705e8554",
+      "bytes": 1648180
+    },
+    "skateboard.glb": {
+      "sha256": "8b4818cd1f02b551593cd513947c560f547f1ba55e847dc0aa7baf945572300c",
+      "bytes": 996628
+    }
+  }
+}

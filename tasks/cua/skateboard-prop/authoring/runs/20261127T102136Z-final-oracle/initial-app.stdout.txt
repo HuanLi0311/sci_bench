@@ -1,0 +1,40 @@
+/app:
+total 16
+drwxr-xr-x 1 root root 4096 Nov 27 09:52 .
+drwxr-xr-x 1 root root 4096 Nov 27 10:21 ..
+drwxr-xr-x 5 root root 4096 Nov 27 09:52 materials
+drwxr-xr-x 2 root root 4096 Nov 27 09:52 out
+
+/app/materials:
+total 24
+drwxr-xr-x 5 root root 4096 Nov 27 09:52 .
+drwxr-xr-x 1 root root 4096 Nov 27 09:52 ..
+-rwxrwxrwx 1 root root  267 Nov 27 09:32 LICENSE.txt
+drwxrwxrwx 2 root root 4096 Nov 27 09:32 drawings
+drwxrwxrwx 2 root root 4096 Nov 27 09:31 photos
+drwxrwxrwx 2 root root 4096 Nov 27 09:32 spec
+
+/app/materials/drawings:
+total 32
+drwxrwxrwx 2 root root  4096 Nov 27 09:32 .
+drwxr-xr-x 5 root root  4096 Nov 27 09:52 ..
+-rwxrwxrwx 1 root root 23144 Nov 27 09:32 skateboard_three_views.png
+
+/app/materials/photos:
+total 8
+drwxrwxrwx 2 root root 4096 Nov 27 09:31 .
+drwxr-xr-x 5 root root 4096 Nov 27 09:52 ..
+
+/app/materials/spec:
+total 36
+drwxrwxrwx 2 root root  4096 Nov 27 09:32 .
+drwxr-xr-x 5 root root  4096 Nov 27 09:52 ..
+-rwxrwxrwx 1 root root 15756 Nov 27 09:31 deck_graphic.png
+-rwxrwxrwx 1 root root   399 Nov 27 09:32 material_spec.csv
+-rwxrwxrwx 1 root root  3802 Nov 27 09:32 material_spec.pdf
+-rwxrwxrwx 1 root root  1939 Nov 27 09:32 material_spec.xlsx
+
+/app/out:
+total 8
+drwxr-xr-x 2 root root 4096 Nov 27 09:52 .
+drwxr-xr-x 1 root root 4096 Nov 27 09:52 ..
