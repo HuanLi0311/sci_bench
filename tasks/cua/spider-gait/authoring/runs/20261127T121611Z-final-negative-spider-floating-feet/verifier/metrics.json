@@ -1,0 +1,122 @@
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 1.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": true,
+   "detail": "4.2.3 LTS"
+  },
+  {
+   "id": "R02_bones",
+   "level": "must",
+   "pass": true,
+   "detail": "count=25 missing=[] extra=[]"
+  },
+  {
+   "id": "R03_skinning",
+   "level": "must",
+   "pass": true,
+   "detail": "26 meshes skinned"
+  },
+  {
+   "id": "R04_size",
+   "level": "must",
+   "pass": false,
+   "detail": "body=180.0mm span=420.0mm height=140.0mm unit_scale=1.0"
+  },
+  {
+   "id": "R05_action",
+   "level": "must",
+   "pass": true,
+   "detail": "name=Walk_Cycle range=1.0-25.0 scene=1-24 animated=24"
+  },
+  {
+   "id": "R06_loop",
+   "level": "must",
+   "pass": true,
+   "detail": "rotation=0.0deg translation=0.0mm"
+  },
+  {
+   "id": "R07_support",
+   "level": "must",
+   "pass": false,
+   "detail": "['leg_01@1:21.5mm', 'leg_01@2:21.5mm', 'leg_01@3:21.5mm', 'leg_01@4:21.5mm', 'leg_01@5:21.5mm', 'leg_01@6:21.5mm']"
+  },
+  {
+   "id": "R08_no_penetration",
+   "level": "must",
+   "pass": true,
+   "detail": "min foot z >= -1mm"
+  },
+  {
+   "id": "R09_swing_lift",
+   "level": "must",
+   "pass": true,
+   "detail": "all swing feet lift >= 15mm"
+  },
+  {
+   "id": "R10_slide",
+   "level": "normal",
+   "pass": true,
+   "detail": "stance drift <= 5mm"
+  },
+  {
+   "id": "R11_body_bob",
+   "level": "normal",
+   "pass": true,
+   "detail": "0.0mm"
+  },
+  {
+   "id": "R12_no_intersection",
+   "level": "normal",
+   "pass": true,
+   "detail": "{'1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0, '13': 0, '14': 0, '15': 0, '16': 0, '17': 0, '18': 0, '19': 0, '20': 0, '21': 0, '22': 0, '23': 0, '24': 0}"
+  },
+  {
+   "id": "R13_renders",
+   "level": "must",
+   "pass": true,
+   "detail": "render_pose_01.png:960x540 render_pose_02.png:960x540 render_pose_03.png:960x540 render_pose_04.png:960x540 render_top.png:960x960 distinct=True side lens=50.0 loc=[0.75, 0.04, 0.13] top ortho=0.5 type=ORTHO"
+  },
+  {
+   "id": "R14_polys",
+   "level": "normal",
+   "pass": true,
+   "detail": "2906 triangles"
+  },
+  {
+   "id": "R15_self_contained",
+   "level": "must",
+   "pass": true,
+   "detail": "images=1 unpacked=[] libraries=[]"
+  },
+  {
+   "id": "R16_manifest",
+   "level": "must",
+   "pass": true,
+   "detail": "assets=1 licensed=1 textures=1 renders=5"
+  },
+  {
+   "id": "R17_phase_anticheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "delivered_vs_scene=0.858 (>=0.90) frame7_vs_frame1=0.959 (<=0.98)"
+  },
+  {
+   "id": "R18_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'render_pose_01.png': 0.8474303556747973, 'render_pose_02.png': 0.8403383805216976, 'render_pose_03.png': 0.8462715214013469, 'render_pose_04.png': 0.836225870631373, 'render_top.png': 0.9961400424260843}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'render_pose_01.png': 1.1723396483094308, 'render_pose_02.png': 1.2494344187997892, 'render_pose_03.png': 1.2014375191408253, 'render_pose_04.png': 1.1946266340403817, 'render_top.png': 0.3499375128835636}"
+  }
+ ]
+}
