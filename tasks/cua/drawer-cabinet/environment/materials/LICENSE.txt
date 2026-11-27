@@ -1,0 +1,6 @@
+DRAWER CABINET DESIGN PACK - CC0-1.0
+
+Drawings, tables and the sample wood texture were authored for this
+task and are released under CC0-1.0. The reference photographs under
+photos/ were rendered from the reference model and carry the same
+licence. Copy, modify and redistribute freely.

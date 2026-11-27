@@ -1,0 +1,7 @@
+part,size_mm,material
+carcass panels,"18 thick, 1000x450x900 outer","oak, 2K maps"
+drawer front,440 x 150 x 18,oak
+drawer tray,"400 deep, panels 18",oak
+drawer handle,"320 long, 14 dia","steel, metallic 1.0"
+door_right,460 x 750 x 18,"oak, hinged outer edge"
+plinth feet,"60 high, 44 dia",steel
