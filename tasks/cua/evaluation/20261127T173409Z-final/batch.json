@@ -88,6 +88,38 @@
         "R15_render_authenticity",
         "R_render_structure"
       ]
+    },
+    {
+      "task": "banner-stand",
+      "kind": "oracle",
+      "run": "banner-stand/authoring/runs/20261127T173916Z-final-oracle",
+      "reward": 1,
+      "outcome": "graded",
+      "failed_checks": []
+    },
+    {
+      "task": "banner-stand",
+      "kind": "nop",
+      "run": "banner-stand/authoring/runs/20261127T174206Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_dimensions",
+        "R03_parts",
+        "R04_canvas",
+        "R05_uv",
+        "R06_fold_geometry",
+        "R07_no_contact",
+        "R08_materials",
+        "R09_self_contained",
+        "R10_polys",
+        "R11_renders",
+        "R12_manifest",
+        "R13_anticheat",
+        "R14_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }

@@ -1,0 +1,4 @@
+remove protoname=ICE protodata="" netid=local/efe085e2433b:@/tmp/.ICE-unix/22 authname=MIT-MAGIC-COOKIE-1
+remove protoname=XSMP protodata="" netid=local/efe085e2433b:@/tmp/.ICE-unix/22 authname=MIT-MAGIC-COOKIE-1
+remove protoname=ICE protodata="" netid=unix/efe085e2433b:/tmp/.ICE-unix/22 authname=MIT-MAGIC-COOKIE-1
+remove protoname=XSMP protodata="" netid=unix/efe085e2433b:/tmp/.ICE-unix/22 authname=MIT-MAGIC-COOKIE-1

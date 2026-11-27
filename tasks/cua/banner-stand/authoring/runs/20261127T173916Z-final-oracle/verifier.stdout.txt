@@ -1,1 +1,99 @@
 desktop ready on :1
+{
+ "reward": 1,
+ "must_pass": true,
+ "critical_pass": true,
+ "normal_rate": 1.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": true,
+   "detail": "4.2.3 LTS"
+  },
+  {
+   "id": "R02_dimensions",
+   "level": "must",
+   "pass": true,
+   "detail": "frame={'width': 800.0, 'height': 2000.0, 'depth': 120.0, 'min_z': 0.0} unit_scale=1.0"
+  },
+  {
+   "id": "R03_parts",
+   "level": "must",
+   "pass": true,
+   "detail": "missing=[] leg_parent=hinge_rear"
+  },
+  {
+   "id": "R04_canvas",
+   "level": "must",
+   "pass": true,
+   "detail": "w=800.0 h=1900.0 top=1960.0 planarity=0.0mm"
+  },
+  {
+   "id": "R05_uv",
+   "level": "must",
+   "pass": true,
+   "detail": "image={'name': 'banner_graphic', 'size': [819, 1945], 'packed': True} area=1.0 bbox=[[0.0, 0.0], [1.0, 1.0]] aspect_ok=True"
+  },
+  {
+   "id": "R06_fold_geometry",
+   "level": "must",
+   "pass": true,
+   "detail": "hinge=[0.0, -0.045, 0.075] state0={'z_min_mm': 75.0, 'z_max_mm': 1975.0, 'y_max_mm': 63.0, 'overlap': 0} state14={'z_min_mm': 71.37, 'z_max_mm': 1922.19, 'y_max_mm': 521.4, 'overlap': 0} folded=123.0mm"
+  },
+  {
+   "id": "R07_no_contact",
+   "level": "must",
+   "pass": true,
+   "detail": "{'0': 0, '7': 0, '14': 0}"
+  },
+  {
+   "id": "R08_materials",
+   "level": "normal",
+   "pass": true,
+   "detail": "metal=0.92 canvas_roughness=0.7200000286102295"
+  },
+  {
+   "id": "R09_self_contained",
+   "level": "must",
+   "pass": true,
+   "detail": "images=1 unpacked=[]"
+  },
+  {
+   "id": "R10_polys",
+   "level": "normal",
+   "pass": true,
+   "detail": "952 triangles"
+  },
+  {
+   "id": "R11_renders",
+   "level": "must",
+   "pass": true,
+   "detail": "render_front.png:1200x1600 render_three_quarter.png:1600x1200 render_folded.png:1200x1600 distinct=True cams=True/True/True"
+  },
+  {
+   "id": "R12_manifest",
+   "level": "must",
+   "pass": true,
+   "detail": "assets=1 licensed=1 renders=3"
+  },
+  {
+   "id": "R13_anticheat",
+   "level": "critical",
+   "pass": true,
+   "detail": "delivered_vs_scene=0.994 (>=0.90) checker_vs_base=0.826 (<=0.98) hinge25_vs_14=0.914 (<=0.98)"
+  },
+  {
+   "id": "R14_render_authenticity",
+   "level": "critical",
+   "pass": true,
+   "detail": "{'render_front.png': 0.9917268572873807, 'render_three_quarter.png': 0.9922984344929364, 'render_folded.png': 0.9917257120188534}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": true,
+   "detail": "{'render_front.png': 0.13310367048362484, 'render_three_quarter.png': 0.16517409534502384, 'render_folded.png': 0.1331053114310116}"
+  }
+ ]
+}
