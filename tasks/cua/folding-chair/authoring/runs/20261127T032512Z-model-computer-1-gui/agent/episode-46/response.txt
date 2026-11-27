@@ -1,0 +1,1 @@
+{"analysis":"Cube search selected.","plan":"Create seat dimensions.","action":{"type":"keypress","keys":["enter","tab","s","x","period","2","8","enter","s","y","period","2","7","enter","s","z","period","0","0","9","enter"]}}

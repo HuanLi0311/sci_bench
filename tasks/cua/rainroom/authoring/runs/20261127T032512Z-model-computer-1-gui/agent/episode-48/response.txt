@@ -1,0 +1,1 @@
+{"analysis":"Property name field targeted.","plan":"Select and replace text.","action":{"type":"keypress","keys":["ctrl","a"]}}

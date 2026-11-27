@@ -1,0 +1,1 @@
+{"analysis":"Right rename dialog.","plan":"Enter exact name.","action":{"type":"type","text":"crate_right"}}

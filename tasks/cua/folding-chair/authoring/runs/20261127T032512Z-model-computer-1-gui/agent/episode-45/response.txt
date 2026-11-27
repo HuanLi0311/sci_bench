@@ -1,0 +1,1 @@
+{"analysis":"Search ready.","plan":"Add cube.","action":{"type":"type","text":"Add Cube"}}
