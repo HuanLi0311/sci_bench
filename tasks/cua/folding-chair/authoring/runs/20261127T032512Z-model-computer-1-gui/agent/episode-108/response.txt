@@ -1,0 +1,1 @@
+{"analysis":"Both front bars selected.","plan":"Make hinge_01 active.","action":{"type":"click","x":1703,"y":243,"modifier":"ctrl"}}

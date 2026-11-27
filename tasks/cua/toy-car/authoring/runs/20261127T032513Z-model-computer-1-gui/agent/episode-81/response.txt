@@ -1,0 +1,1 @@
+{"analysis":"Material name is active.","plan":"Name red plastic.","action":{"type":"keypress","keys":["ctrl","a"]}}

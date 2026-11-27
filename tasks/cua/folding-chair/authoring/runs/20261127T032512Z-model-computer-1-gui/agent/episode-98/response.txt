@@ -1,0 +1,1 @@
+{"analysis":"Create seat pivot from right scissor empty.","plan":"Duplicate to (0,.57,.441).","action":{"type":"keypress","keys":["shift","d"]}}

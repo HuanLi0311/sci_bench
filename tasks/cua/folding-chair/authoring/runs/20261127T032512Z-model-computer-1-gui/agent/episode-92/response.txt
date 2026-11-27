@@ -1,0 +1,1 @@
+{"analysis":"Name first hinge and reduce display size.","plan":"Duplicate right hinge.","action":{"type":"keypress","keys":["enter","s","period","0","6","enter"]}}

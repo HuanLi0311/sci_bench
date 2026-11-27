@@ -1,0 +1,1 @@
+{"analysis":"Bevel active.","plan":"Set 4 mm rounding.","action":{"type":"type","text":"0.004"}}

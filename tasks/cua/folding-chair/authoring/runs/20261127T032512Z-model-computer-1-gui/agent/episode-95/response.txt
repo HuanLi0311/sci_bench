@@ -1,0 +1,1 @@
+{"analysis":"Right hinge placed.","plan":"Name hinge_02.","action":{"type":"type","text":"hinge_02"}}

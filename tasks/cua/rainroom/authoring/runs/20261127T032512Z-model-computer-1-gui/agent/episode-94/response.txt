@@ -1,0 +1,1 @@
+{"analysis":"Sofa base raised.","plan":"Confirm position and name sofa.","action":{"type":"keypress","keys":["enter"]}}

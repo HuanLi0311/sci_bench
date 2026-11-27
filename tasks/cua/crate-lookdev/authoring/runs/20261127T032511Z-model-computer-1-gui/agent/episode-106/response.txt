@@ -1,0 +1,1 @@
+{"analysis":"Three brackets complete.","plan":"Duplicate down to fourth bracket.","action":{"type":"keypress","keys":["shift","d"]}}

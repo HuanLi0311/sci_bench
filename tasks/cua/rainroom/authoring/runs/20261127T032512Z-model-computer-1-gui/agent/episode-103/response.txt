@@ -1,0 +1,1 @@
+{"analysis":"Function keys aren't opening search reliably. Use native Edit menu search entry instead.","plan":"Open menu search to add a bevel modifier.","action":{"type":"click","x":83,"y":65}}

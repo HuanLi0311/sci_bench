@@ -1,0 +1,1 @@
+{"analysis":"Segments field active.","plan":"Round the sofa edges.","action":{"type":"type","text":"4"}}

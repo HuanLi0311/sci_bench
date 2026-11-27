@@ -1,0 +1,1 @@
+{"analysis":"Parent front bars to first hinge.","plan":"Select front pair.","action":{"type":"click","x":1714,"y":201}}

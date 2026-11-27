@@ -1,0 +1,1 @@
+{"analysis":"Move duplicated hinge right.","plan":"Name hinge_02.","action":{"type":"keypress","keys":["x","period","6","enter","F2"]}}

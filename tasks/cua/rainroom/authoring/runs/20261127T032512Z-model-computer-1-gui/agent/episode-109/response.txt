@@ -1,0 +1,1 @@
+{"analysis":"Bevel added. Increase segments for a rounded upholstered edge.","plan":"Set bevel segments to four.","action":{"type":"double_click","x":1800,"y":616}}

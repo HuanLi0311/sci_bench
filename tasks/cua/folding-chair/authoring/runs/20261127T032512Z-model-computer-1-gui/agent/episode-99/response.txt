@@ -1,0 +1,1 @@
+{"analysis":"Seat pivot moves to rear edge.","plan":"Place third hinge.","action":{"type":"keypress","keys":["x","minus","period","3","enter","g","y","period","2","8","enter","g","z","period","2","1","1","enter","F2"]}}

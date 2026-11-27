@@ -1,0 +1,1 @@
+{"analysis":"All four hinge controls exist. Will parent front pair to hinge_01 and rear pair to hinge_02, maintaining their shared X-axis.","plan":"Confirm name, select front-left bar in outliner.","action":{"type":"keypress","keys":["enter"]}}

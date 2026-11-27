@@ -1,0 +1,1 @@
+{"analysis":"Fourth hinge at back lower edge. Next parent panels and scissor pairs, animate controls into compact parallel pack.","plan":"Name hinge_04.","action":{"type":"type","text":"hinge_04"}}

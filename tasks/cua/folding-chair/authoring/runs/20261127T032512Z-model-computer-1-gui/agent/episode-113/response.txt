@@ -1,0 +1,1 @@
+{"analysis":"Waiting for parent operation to settle.","plan":"Inspect hierarchy.","action":{"type":"wait"}}

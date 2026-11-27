@@ -1,0 +1,1 @@
+{"analysis":"Sofa base named. Native operator search can add bevels efficiently.","plan":"Open operator search.","action":{"type":"keypress","keys":["F3"]}}

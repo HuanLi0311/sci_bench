@@ -1,0 +1,1 @@
+{"analysis":"Name appended rather than replaced; select entire field.","plan":"Correct exact object name.","action":{"type":"keypress","keys":["ctrl","a"]}}

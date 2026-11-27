@@ -1,0 +1,1 @@
+{"analysis":"Front-right top bracket fitted.","plan":"Name third bracket.","action":{"type":"type","text":"bracket_03"}}

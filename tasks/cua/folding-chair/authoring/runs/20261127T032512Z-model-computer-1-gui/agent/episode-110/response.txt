@@ -1,0 +1,1 @@
+{"analysis":"Parent operation.","plan":"Object keep transform.","action":{"type":"keypress","keys":["ctrl","p"]}}

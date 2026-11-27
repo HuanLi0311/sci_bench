@@ -1,0 +1,1 @@
+{"analysis":"Seat pivot named.","plan":"Confirm then duplicate back pivot.","action":{"type":"keypress","keys":["enter"]}}

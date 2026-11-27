@@ -1,0 +1,1 @@
+{"analysis":"Exact sofa name entered.","plan":"Commit name and use duplicate to form backrest.","action":{"type":"keypress","keys":["enter"]}}

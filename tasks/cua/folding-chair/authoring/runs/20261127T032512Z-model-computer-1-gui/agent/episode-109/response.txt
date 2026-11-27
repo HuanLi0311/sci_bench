@@ -1,0 +1,1 @@
+{"analysis":"Hinge_01 active, front pair selected.","plan":"Parent with keep transform.","action":{"type":"mouse_move","x":799,"y":532}}

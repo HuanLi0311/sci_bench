@@ -1,0 +1,1 @@
+{"analysis":"First hinge created; duplicate across width.","plan":"Create hinge_02.","action":{"type":"keypress","keys":["shift","d"]}}

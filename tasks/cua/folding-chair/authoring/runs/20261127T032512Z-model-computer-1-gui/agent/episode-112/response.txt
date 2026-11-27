@@ -1,0 +1,1 @@
+{"analysis":"Keep transform highlighted.","plan":"Confirm parent.","action":{"type":"keypress","keys":["enter"]}}

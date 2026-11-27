@@ -1,0 +1,1 @@
+{"analysis":"Back pivot should be at lower back edge (0,.56,.46).","plan":"Duplicate seat pivot upward 19 mm and back 10 mm.","action":{"type":"keypress","keys":["shift","d"]}}

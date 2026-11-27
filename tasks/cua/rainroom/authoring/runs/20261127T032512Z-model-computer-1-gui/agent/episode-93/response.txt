@@ -1,0 +1,1 @@
+{"analysis":"Sofa X placement correct.","plan":"Raise base to seating height.","action":{"type":"type","text":"gz.28"}}
