@@ -1,0 +1,1 @@
+{"analysis":"The move operation is active for the selected Cube.","plan":"Constrain the move to X, enter 0.1, and confirm.","action":{"type":"keypress","keys":["x"]}}
