@@ -1,0 +1,1 @@
+{"analysis":"The cube remains selected and the viewport is focused.","plan":"Start a constrained X-axis move, enter 0.1, and confirm it.","action":{"type":"keypress","keys":["g"]}}
