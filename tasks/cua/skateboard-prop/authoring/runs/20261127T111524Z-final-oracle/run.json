@@ -172,6 +172,60 @@
       "started_at": "2026-11-27T11:15:39.604904+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T11:15:39.837106+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-c4248bbab6"
+      ],
+      "started_at": "2026-11-27T11:15:39.858750+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:23:50.179160+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-c4248bbab6"
+      ],
+      "started_at": "2026-11-27T11:23:50.190921+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:23:50.232480+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-c4248bbab6:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T111524Z-final-oracle/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T11:23:50.268626+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:23:50.596658+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-c4248bbab6"
+      ],
+      "started_at": "2026-11-27T11:23:50.629174+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:23:51.021696+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-c4248bbab6"
+      ],
+      "started_at": "2026-11-27T11:23:51.048930+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T11:23:51.196386+00:00"
     }
   ],
   "nop_definition": null,
@@ -484,5 +538,10 @@
       "sha256": "8b4818cd1f02b551593cd513947c560f547f1ba55e847dc0aa7baf945572300c",
       "bytes": 996628
     }
-  }
+  },
+  "verifier_exit_code": 0,
+  "reward": 1,
+  "failed_checks": [],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T11:23:51.205349+00:00"
 }
