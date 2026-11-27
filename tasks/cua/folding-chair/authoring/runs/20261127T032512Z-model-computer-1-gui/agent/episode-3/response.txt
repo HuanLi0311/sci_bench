@@ -1,0 +1,1 @@
+{"analysis":"Path selected.","plan":"Open drawing.","action":{"type":"type","text":"/app/materials/drawings/hinge_layout.png"}}

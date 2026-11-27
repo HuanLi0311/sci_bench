@@ -1,0 +1,1 @@
+{"analysis":"File manager at /app.","plan":"Inspect materials.","action":{"type":"double_click","x":847,"y":473}}

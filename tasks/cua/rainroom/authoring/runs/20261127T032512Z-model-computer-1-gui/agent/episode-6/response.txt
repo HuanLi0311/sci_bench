@@ -1,0 +1,1 @@
+{"analysis":"Use path entry.","plan":"Open previews folder.","action":{"type":"keypress","keys":["ctrl","l"]}}

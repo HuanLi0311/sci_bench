@@ -1,0 +1,1 @@
+{"analysis":"Desktop ready.","plan":"Launch file manager shortcut.","action":{"type":"keypress","keys":["super","e"]}}

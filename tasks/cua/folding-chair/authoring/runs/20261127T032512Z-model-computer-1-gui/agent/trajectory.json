@@ -17,4 +17,337 @@
       "step_id": 2,
       "timestamp": "2026-11-27T03:25:29.194932+00:00",
       "source": "agent",
-      "model_name
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Blender is starting. Need inspect supplied drawings before construction.\nPlan: Open file manager to reference materials.",
+      "reasoning_content": "**Inspecting files in GUI**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_0_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "super",
+              "e"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_0_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep0.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 4503,
+        "completion_tokens": 52,
+        "cost_usd": 0.009526
+      }
+    },
+    {
+      "step_id": 3,
+      "timestamp": "2026-11-27T03:25:37.010167+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Need file manager via dock.\nPlan: Dismiss splash and launch home.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_1_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "super",
+              "e"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_1_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep1.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 7000,
+        "completion_tokens": 34,
+        "cached_tokens": 3968,
+        "cost_usd": 0.006800799999999999
+      }
+    },
+    {
+      "step_id": 4,
+      "timestamp": "2026-11-27T03:25:44.652288+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: File manager open.\nPlan: Read hinge drawing.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_2_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "ctrl",
+              "l"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_2_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep2.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 9490,
+        "completion_tokens": 30,
+        "cached_tokens": 6528,
+        "cost_usd": 0.006876799999999999
+      }
+    },
+    {
+      "step_id": 5,
+      "timestamp": "2026-11-27T03:25:50.956490+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Path selected.\nPlan: Open drawing.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_3_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "type",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": "/app/materials/drawings/hinge_layout.png",
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_3_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep3.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 11976,
+        "completion_tokens": 36,
+        "cost_usd": 0.024311999999999993
+      }
+    },
+    {
+      "step_id": 6,
+      "timestamp": "2026-11-27T03:26:00.492495+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Open reference.\nPlan: Read coordinates.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_4_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "enter"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_4_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep4.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 14468,
+        "completion_tokens": 26,
+        "cached_tokens": 11904,
+        "cost_usd": 0.006578399999999998
+      }
+    }
+  ],
+  "final_metrics": {
+    "total_prompt_tokens": 47437,
+    "total_completion_tokens": 178,
+    "total_cached_tokens": 22400,
+    "total_cost_usd": 0.05409399999999999
+  }
+}

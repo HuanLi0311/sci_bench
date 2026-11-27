@@ -1,0 +1,1 @@
+{"analysis":"No spreadsheet viewer installed; use supplied faithful preview.","plan":"Navigate to material-previews.","action":{"type":"click","x":1080,"y":781}}

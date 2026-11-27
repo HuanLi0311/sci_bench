@@ -1,0 +1,1 @@
+{"analysis":"Ready to inspect pack.","plan":"Open materials.","action":{"type":"double_click","x":853,"y":470}}
