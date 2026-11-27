@@ -64,6 +64,60 @@
       "started_at": "2026-11-27T17:42:34.064439+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T17:42:34.195771+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-06880e8838"
+      ],
+      "started_at": "2026-11-27T17:42:34.228588+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-27T17:46:50.203640+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-06880e8838"
+      ],
+      "started_at": "2026-11-27T17:46:50.217791+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:46:50.268842+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-06880e8838:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T174219Z-final-negative-cabinet-static-slides/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T17:46:50.289935+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:46:50.574536+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-06880e8838"
+      ],
+      "started_at": "2026-11-27T17:46:50.593375+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:46:50.628853+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-06880e8838"
+      ],
+      "started_at": "2026-11-27T17:46:50.670073+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:46:50.762238+00:00"
     }
   ],
   "nop_definition": null,
@@ -366,5 +420,16 @@
       "sha256": "dbecbc89329c1e35624adc8daa5e21c3558bb948acc3bde6141a11442bcb770d",
       "bytes": 1681485
     }
-  }
+  },
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R03_parts",
+    "R05_travel",
+    "R14_anticheat",
+    "R15_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T17:46:50.774098+00:00"
 }

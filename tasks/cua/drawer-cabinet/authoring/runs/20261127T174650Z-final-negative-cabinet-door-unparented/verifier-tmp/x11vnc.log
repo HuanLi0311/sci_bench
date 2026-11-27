@@ -1,0 +1,90 @@
+27/11/2026 17:47:07 passing arg to libvncserver: -rfbport
+27/11/2026 17:47:07 passing arg to libvncserver: 5900
+27/11/2026 17:47:07 x11vnc version: 0.9.16 lastmod: 2019-01-05  pid: 70
+27/11/2026 17:47:07 Using X display :1
+27/11/2026 17:47:07 rootwin: 0x21f reswin: 0xc00001 dpy: 0x510f9dd0
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 ------------------ USEFUL INFORMATION ------------------
+27/11/2026 17:47:07 X DAMAGE available on display, using it for polling hints.
+27/11/2026 17:47:07   To disable this behavior use: '-noxdamage'
+27/11/2026 17:47:07 
+27/11/2026 17:47:07   Most compositing window managers like 'compiz' or 'beryl'
+27/11/2026 17:47:07   cause X DAMAGE to fail, and so you may not see any screen
+27/11/2026 17:47:07   updates via VNC.  Either disable 'compiz' (recommended) or
+27/11/2026 17:47:07   supply the x11vnc '-noxdamage' command line option.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 Wireframing: -wireframe mode is in effect for window moves.
+27/11/2026 17:47:07   If this yields undesired behavior (poor response, painting
+27/11/2026 17:47:07   errors, etc) it may be disabled:
+27/11/2026 17:47:07    - use '-nowf' to disable wireframing completely.
+27/11/2026 17:47:07    - use '-nowcr' to disable the Copy Rectangle after the
+27/11/2026 17:47:07      moved window is released in the new position.
+27/11/2026 17:47:07   Also see the -help entry for tuning parameters.
+27/11/2026 17:47:07   You can press 3 Alt_L's (Left "Alt" key) in a row to 
+27/11/2026 17:47:07   repaint the screen, also see the -fixscreen option for
+27/11/2026 17:47:07   periodic repaints.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 XFIXES available on display, resetting cursor mode
+27/11/2026 17:47:07   to: '-cursor most'.
+27/11/2026 17:47:07   to disable this behavior use: '-cursor arrow'
+27/11/2026 17:47:07   or '-noxfixes'.
+27/11/2026 17:47:07 using XFIXES for cursor drawing.
+27/11/2026 17:47:07 GrabServer control via XTEST.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 Scroll Detection: -scrollcopyrect mode is in effect to
+27/11/2026 17:47:07   use RECORD extension to try to detect scrolling windows
+27/11/2026 17:47:07   (induced by either user keystroke or mouse input).
+27/11/2026 17:47:07   If this yields undesired behavior (poor response, painting
+27/11/2026 17:47:07   errors, etc) it may be disabled via: '-noscr'
+27/11/2026 17:47:07   Also see the -help entry for tuning parameters.
+27/11/2026 17:47:07   You can press 3 Alt_L's (Left "Alt" key) in a row to 
+27/11/2026 17:47:07   repaint the screen, also see the -fixscreen option for
+27/11/2026 17:47:07   periodic repaints.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 XKEYBOARD: number of keysyms per keycode 7 is greater
+27/11/2026 17:47:07   than 4 and 51 keysyms are mapped above 4.
+27/11/2026 17:47:07   Automatically switching to -xkb mode.
+27/11/2026 17:47:07   If this makes the key mapping worse you can
+27/11/2026 17:47:07   disable it with the "-noxkb" option.
+27/11/2026 17:47:07   Also, remember "-remap DEAD" for accenting characters.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 X FBPM extension not supported.
+Xlib:  extension "DPMS" missing on display ":1".
+27/11/2026 17:47:07 X display is not capable of DPMS.
+27/11/2026 17:47:07 --------------------------------------------------------
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 Default visual ID: 0x21
+27/11/2026 17:47:07 Read initial data from X display into framebuffer.
+27/11/2026 17:47:07 initialize_screen: fb_depth/fb_bpp/fb_Bpl 24/32/7680
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 X display :1 is 32bpp depth=24 true color
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 Listening for VNC connections on TCP port 5900
+27/11/2026 17:47:07 Listening for VNC connections on TCP6 port 5900
+27/11/2026 17:47:07 listen6: bind: Address already in use
+27/11/2026 17:47:07 Not listening on IPv6 interface.
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 Xinerama is present and active (e.g. multi-head).
+27/11/2026 17:47:07 Xinerama: number of sub-screens: 1
+27/11/2026 17:47:07 Xinerama: no blackouts needed (only one sub-screen)
+27/11/2026 17:47:07 
+27/11/2026 17:47:07 fb read rate: 1193 MB/sec
+27/11/2026 17:47:07 fast read: reset -wait  ms to: 10
+27/11/2026 17:47:07 fast read: reset -defer ms to: 10
+27/11/2026 17:47:07 The X server says there are 10 mouse buttons.
+27/11/2026 17:47:07 screen setup finished.
+27/11/2026 17:47:07 
+
+The VNC desktop is:      d0dce77a2185:0
+
+******************************************************************************
+Have you tried the x11vnc '-ncache' VNC client-side pixel caching feature yet?
+
+The scheme stores pixel data offscreen on the VNC viewer side for faster
+retrieval.  It should work with any VNC viewer.  Try it by running:
+
+    x11vnc -ncache 10 ...
+
+One can also add -ncache_cr for smooth 'copyrect' window motion.
+More info: http://www.karlrunge.com/x11vnc/faq.html#faq-client-caching
+
