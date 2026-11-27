@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "spider-floating-feet",
+  "task": "spider-gait",
+  "started_at": "20261127T100656Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/spider-gait/authoring/runs/20261127T100656Z-mutation-spider-floating-feet:/mutation",
+    "cua-qc-spider-gait-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/spider.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "69a300fd7430b75b4c9ee500abb334cdc7fb578db77cb09f6c05909765ff92e6",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T10:07:00.937708+00:00"
+}

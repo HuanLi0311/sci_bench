@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "truck-dielectric",
+  "task": "skateboard-prop",
+  "started_at": "20261127T100710Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/skateboard-prop/authoring/runs/20261127T100710Z-mutation-truck-dielectric:/mutation",
+    "cua-qc-skateboard-prop-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/skateboard.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "497705a5fe119e396215a2aded3f8377b047c5295a31258d12d76baab5c47f47",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T10:07:15.051113+00:00"
+}
