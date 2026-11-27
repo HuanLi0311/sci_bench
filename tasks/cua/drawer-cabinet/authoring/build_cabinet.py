@@ -14,6 +14,8 @@ import bmesh
 import numpy as np
 from mathutils import Matrix, Vector
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 OUT = sys.argv[sys.argv.index("--") + 1]
 MATERIALS = sys.argv[sys.argv.index("--") + 2]
 
@@ -133,6 +135,8 @@ def wood_maps(size=2048, seed=99):
 
 def save_image(name, rgb, path):
     import packgen
+    if rgb.ndim == 2:
+        rgb = np.dstack([rgb, rgb, rgb])
     with open(path, "wb") as fh:
         fh.write(packgen.encode_png(rgb))
     img = bpy.data.images.load(path)
