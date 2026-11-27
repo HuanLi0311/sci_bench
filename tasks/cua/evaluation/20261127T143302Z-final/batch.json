@@ -138,6 +138,19 @@
       "failed_checks": [
         "R04_plies"
       ]
+    },
+    {
+      "task": "skateboard-prop",
+      "kind": "negative-deck-graphic-unlinked",
+      "run": "skateboard-prop/authoring/runs/20261127T144236Z-final-negative-deck-graphic-unlinked",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R05_graphic_uv",
+        "R14_anticheat",
+        "R15_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
