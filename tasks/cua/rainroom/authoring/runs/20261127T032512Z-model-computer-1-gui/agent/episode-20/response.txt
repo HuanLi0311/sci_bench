@@ -1,0 +1,1 @@
+{"analysis":"Half Size option.","plan":"Select half size.","action":{"type":"click","x":160,"y":248}}

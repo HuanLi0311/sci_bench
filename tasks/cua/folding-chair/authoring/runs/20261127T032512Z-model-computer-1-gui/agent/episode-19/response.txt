@@ -1,0 +1,1 @@
+{"analysis":"Directory appears unavailable; verify.","plan":"Wait for navigation.","action":{"type":"wait"}}
