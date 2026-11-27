@@ -59,5 +59,44 @@
       }
     }
   },
-  "runs": []
+  "runs": [
+    {
+      "task": "spider-gait",
+      "kind": "oracle",
+      "run": "spider-gait/authoring/runs/20261127T111524Z-final-oracle",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R03_skinning"
+      ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "nop",
+      "run": "spider-gait/authoring/runs/20261127T112154Z-final-nop",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R01_open",
+        "R02_bones",
+        "R03_skinning",
+        "R04_size",
+        "R05_action",
+        "R06_loop",
+        "R07_support",
+        "R08_no_penetration",
+        "R09_swing_lift",
+        "R10_slide",
+        "R11_body_bob",
+        "R12_no_intersection",
+        "R13_renders",
+        "R14_polys",
+        "R15_self_contained",
+        "R16_manifest",
+        "R17_phase_anticheat",
+        "R18_render_authenticity",
+        "R_render_structure"
+      ]
+    }
+  ]
 }

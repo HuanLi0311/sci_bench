@@ -1,0 +1,122 @@
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 0.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": false,
+   "detail": "unreadable"
+  },
+  {
+   "id": "R02_bones",
+   "level": "must",
+   "pass": false,
+   "detail": "count=0 missing=['body', 'leg_01_coxa', 'leg_01_femur', 'leg_01_tibia'] extra=[]"
+  },
+  {
+   "id": "R03_skinning",
+   "level": "must",
+   "pass": false,
+   "detail": "['body_head:missing', 'body_abdomen:missing', 'leg_01_coxa:missing', 'leg_01_femur:missing', 'leg_01_tibia:missing', 'leg_02_coxa:missing']"
+  },
+  {
+   "id": "R04_size",
+   "level": "must",
+   "pass": false,
+   "detail": "body=0.0mm span=0.0mm height=0.0mm unit_scale=None"
+  },
+  {
+   "id": "R05_action",
+   "level": "must",
+   "pass": false,
+   "detail": "name=None range=None-None scene=None-None animated=0"
+  },
+  {
+   "id": "R06_loop",
+   "level": "must",
+   "pass": false,
+   "detail": "rotation=Nonedeg translation=Nonemm"
+  },
+  {
+   "id": "R07_support",
+   "level": "must",
+   "pass": false,
+   "detail": "feet missing"
+  },
+  {
+   "id": "R08_no_penetration",
+   "level": "must",
+   "pass": false,
+   "detail": "feet missing"
+  },
+  {
+   "id": "R09_swing_lift",
+   "level": "must",
+   "pass": false,
+   "detail": "feet missing"
+  },
+  {
+   "id": "R10_slide",
+   "level": "normal",
+   "pass": false,
+   "detail": "feet missing"
+  },
+  {
+   "id": "R11_body_bob",
+   "level": "normal",
+   "pass": false,
+   "detail": "feet missing"
+  },
+  {
+   "id": "R12_no_intersection",
+   "level": "normal",
+   "pass": false,
+   "detail": "not measured"
+  },
+  {
+   "id": "R13_renders",
+   "level": "must",
+   "pass": false,
+   "detail": "render_pose_01.png:missing render_pose_02.png:missing render_pose_03.png:missing render_pose_04.png:missing render_top.png:missing distinct=False cam_side missing cam_top missing"
+  },
+  {
+   "id": "R14_polys",
+   "level": "normal",
+   "pass": false,
+   "detail": "None triangles"
+  },
+  {
+   "id": "R15_self_contained",
+   "level": "must",
+   "pass": false,
+   "detail": "images=0 unpacked=None libraries=None"
+  },
+  {
+   "id": "R16_manifest",
+   "level": "must",
+   "pass": false,
+   "detail": "missing"
+  },
+  {
+   "id": "R17_phase_anticheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "skipped: prerequisite checks failed"
+  },
+  {
+   "id": "R18_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/logs/verifier/work-p367nj54/render_pose_01.png'\"}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{}"
+  }
+ ]
+}
