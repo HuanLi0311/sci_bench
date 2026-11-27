@@ -183,8 +183,8 @@ def main():
             max_infl = max(max_infl, len(groups))
             sums.append(sum(g.weight for g in groups))
             for g in groups:
-                name = ob.vertex_groups[g.group].name
-                group_hits[name] = group_hits.get(name, 0) + 1
+                group_name = ob.vertex_groups[g.group].name
+                group_hits[group_name] = group_hits.get(group_name, 0) + 1
         skin[name] = {
             "present": True,
             "armature_modifiers": mods,
