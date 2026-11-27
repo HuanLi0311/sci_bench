@@ -1,0 +1,1 @@
+{"analysis":"External viewer appears blank; Blender can display reference images natively later.","plan":"Return to Blender and start dimensionally accurate panels.","action":{"type":"click","x":1908,"y":37}}

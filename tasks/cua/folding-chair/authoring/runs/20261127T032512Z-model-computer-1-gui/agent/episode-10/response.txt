@@ -1,0 +1,1 @@
+{"analysis":"Drawing shrunk; hinge labels overlap; table needed.","plan":"Open hinge table.","action":{"type":"click","x":597,"y":43}}

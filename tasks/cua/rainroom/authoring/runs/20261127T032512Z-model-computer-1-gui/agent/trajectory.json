@@ -797,12 +797,207 @@
         "cached_tokens": 28672,
         "cost_usd": 0.0091392
       }
+    },
+    {
+      "step_id": 14,
+      "timestamp": "2026-11-27T03:26:54.789136+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Plan image.\nPlan: View plan.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_12_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "double_click",
+            "x": 871,
+            "y": 473,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_12_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep12.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 34156,
+        "completion_tokens": 30,
+        "cached_tokens": 31104,
+        "cost_usd": 0.009514400000000006
+      }
+    },
+    {
+      "step_id": 15,
+      "timestamp": "2026-11-27T03:27:07.309245+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Image loading.\nPlan: Wait.",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_13_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "wait",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": null,
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_13_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep13.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 36642,
+        "completion_tokens": 20,
+        "cached_tokens": 33664,
+        "cost_usd": 0.0095224
+      }
+    },
+    {
+      "step_id": 16,
+      "timestamp": "2026-11-27T03:27:25.985365+00:00",
+      "source": "agent",
+      "model_name": "gpt-6.1-sol",
+      "message": "Analysis: Image viewer blank at full size; try fitting.\nPlan: Reduce image display.",
+      "reasoning_content": "**Checking browser availability**",
+      "tool_calls": [
+        {
+          "tool_call_id": "call_14_1",
+          "function_name": "computer_action",
+          "arguments": {
+            "type": "keypress",
+            "x": null,
+            "y": null,
+            "end_x": null,
+            "end_y": null,
+            "text": null,
+            "keys": [
+              "<"
+            ],
+            "url": null,
+            "scroll_x": null,
+            "scroll_y": null,
+            "button": null,
+            "result": null,
+            "source": "native_prescaled",
+            "model_x": null,
+            "model_y": null,
+            "zoom_region": null,
+            "modifier": null,
+            "duration": null,
+            "duration_seconds": null,
+            "press_enter": null,
+            "clear_before_typing": null,
+            "command": null,
+            "timeout_sec": null
+          }
+        }
+      ],
+      "observation": {
+        "results": [
+          {
+            "source_call_id": "call_14_1",
+            "content": [
+              {
+                "type": "text",
+                "text": ""
+              },
+              {
+                "type": "image",
+                "source": {
+                  "media_type": "image/webp",
+                  "path": "screenshot_ep14.webp"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "metrics": {
+        "prompt_tokens": 39118,
+        "completion_tokens": 58,
+        "cached_tokens": 36096,
+        "cost_usd": 0.010233599999999995
+      }
     }
   ],
   "final_metrics": {
-    "total_prompt_tokens": 215829,
-    "total_completion_tokens": 447,
-    "total_cached_tokens": 175616,
-    "total_cost_usd": 0.10245760000000001
+    "total_prompt_tokens": 325745,
+    "total_completion_tokens": 555,
+    "total_cached_tokens": 276480,
+    "total_cost_usd": 0.131728
   }
 }

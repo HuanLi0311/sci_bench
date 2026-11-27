@@ -1,0 +1,1 @@
+{"analysis":"Image viewer blank at full size; try fitting.","plan":"Reduce image display.","action":{"type":"keypress","keys":["<"]}}

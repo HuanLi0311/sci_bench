@@ -1,0 +1,1 @@
+{"analysis":"Image loading.","plan":"Wait.","action":{"type":"wait"}}

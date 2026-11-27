@@ -1,0 +1,1 @@
+{"analysis":"Navigate directly table.","plan":"Read hinge coordinates.","action":{"type":"type","text":"tables/hinge_layout.xlsx"}}
