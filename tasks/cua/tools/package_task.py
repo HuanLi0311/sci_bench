@@ -65,7 +65,8 @@ def package(task_name: str, output_dir: Path) -> Path:
             name = f"ic-bench/tasks/cua/{task_name}/{path.relative_to(task).as_posix()}"
             entries[name] = path.read_bytes()
             sources[name] = path
-    for path in (ROOT / "SANITY_LIST.md", ROOT / "tools" / "sanity_check.py"):
+    for path in (ROOT / "SANITY_LIST.md", ROOT / "tools" / "sanity_check.py",
+                 ROOT / "tools" / "package_task.py"):
         name = f"ic-bench/tasks/cua/{path.relative_to(ROOT).as_posix()}"
         entries[name] = path.read_bytes()
         sources[name] = path
