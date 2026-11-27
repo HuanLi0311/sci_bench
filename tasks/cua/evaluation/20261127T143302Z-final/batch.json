@@ -181,6 +181,20 @@
       "failed_checks": [
         "R03_skinning"
       ]
+    },
+    {
+      "task": "spider-gait",
+      "kind": "negative-spider-floating-feet",
+      "run": "spider-gait/authoring/runs/20261127T150523Z-final-negative-spider-floating-feet",
+      "reward": 0,
+      "outcome": "graded",
+      "failed_checks": [
+        "R04_size",
+        "R07_support",
+        "R17_phase_anticheat",
+        "R18_render_authenticity",
+        "R_render_structure"
+      ]
     }
   ]
 }
