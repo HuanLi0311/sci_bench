@@ -1,0 +1,1 @@
+{"analysis":"The directory path field is active with /root selected.","plan":"Replace it with /app/out and confirm the directory, then set the filename.","action":{"type":"keypress","keys":["ctrl","a"]}}

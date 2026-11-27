@@ -1,0 +1,1 @@
+{"analysis":"Ready to model. I will build in metres, with the front door on −Y and window on +X.","plan":"Dismiss splash and start shell from default cube.","action":{"type":"click","x":641,"y":814}}

@@ -1,0 +1,1 @@
+{"analysis":"Numeric input currently 0; use period key name.","plan":"Complete dimensions.","action":{"type":"keypress","keys":["period","2","8","enter","s","y","period","2","7","enter","s","z","period","0","0","9","enter"]}}

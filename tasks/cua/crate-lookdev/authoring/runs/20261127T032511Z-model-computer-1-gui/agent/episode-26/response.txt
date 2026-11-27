@@ -1,0 +1,1 @@
+{"analysis":"Front panel named.","plan":"Duplicate with Shift+D.","action":{"type":"keypress","keys":["shift","d"]}}
