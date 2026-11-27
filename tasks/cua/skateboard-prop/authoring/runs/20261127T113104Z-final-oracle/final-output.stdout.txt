@@ -1,0 +1,10 @@
+/app/out:
+total 7344
+drwxr-xr-x 1 root root    4096 Nov 27 11:31 .
+drwxr-xr-x 1 root root    4096 Nov 27 09:52 ..
+-rwxr-xr-x 1 root root     639 Nov 27 11:31 manifest.json
+-rwxr-xr-x 1 root root 1343555 Nov 27 11:31 render_bottom.png
+-rwxr-xr-x 1 root root 1870465 Nov 27 11:31 render_edge.png
+-rwxr-xr-x 1 root root 1632668 Nov 27 11:31 render_three_quarter.png
+-rwxr-xr-x 1 root root 1648180 Nov 27 11:31 skateboard.blend
+-rwxr-xr-x 1 root root  996628 Nov 27 11:31 skateboard.glb
