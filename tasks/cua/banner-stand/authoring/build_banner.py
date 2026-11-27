@@ -131,8 +131,10 @@ def build_canvas(mat):
         for i in range(nx):
             a = j * (nx + 1) + i
             faces.append((a, a + 1, a + nx + 2, a + nx + 1))
-            uvs.append([(i / nx, j / ny), ((i + 1) / nx, j / ny),
-                        ((i + 1) / nx, (j + 1) / ny), (i / nx, (j + 1) / ny)])
+            # The canvas faces +Y and is viewed from +Y, so +X is on the
+            # viewer's left: flip U so the print reads left-to-right.
+            uvs.append([(1 - i / nx, j / ny), (1 - (i + 1) / nx, j / ny),
+                        (1 - (i + 1) / nx, (j + 1) / ny), (1 - i / nx, (j + 1) / ny)])
     me = bpy.data.meshes.new("canvas")
     me.from_pydata(verts, [], faces)
     me.validate()
