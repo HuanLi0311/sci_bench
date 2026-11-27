@@ -168,6 +168,60 @@
       "started_at": "2026-11-27T17:39:12.235253+00:00",
       "exit_code": 0,
       "finished_at": "2026-11-27T17:39:12.363814+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "start",
+        "-a",
+        "cua-evidence-verifier-67df9a9d14"
+      ],
+      "started_at": "2026-11-27T17:39:12.375887+00:00",
+      "exit_code": 1,
+      "finished_at": "2026-11-27T17:39:15.473159+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "cua-evidence-verifier-67df9a9d14"
+      ],
+      "started_at": "2026-11-27T17:39:15.477828+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:39:15.528283+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "cp",
+        "cua-evidence-verifier-67df9a9d14:/tmp/.",
+        "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T173856Z-final-nop/verifier-tmp"
+      ],
+      "started_at": "2026-11-27T17:39:15.554343+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:39:15.843893+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-agent-67df9a9d14"
+      ],
+      "started_at": "2026-11-27T17:39:15.897393+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:39:16.185826+00:00"
+    },
+    {
+      "argv": [
+        "docker",
+        "rm",
+        "-f",
+        "cua-evidence-verifier-67df9a9d14"
+      ],
+      "started_at": "2026-11-27T17:39:16.194768+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-11-27T17:39:16.336018+00:00"
     }
   ],
   "nop_definition": "fresh task environment; /bin/true only; no solving actions; export original /app/out",
@@ -433,5 +487,27 @@
     }
   },
   "agent_exit_code": 0,
-  "submission": {}
+  "submission": {},
+  "verifier_exit_code": 1,
+  "reward": 0,
+  "failed_checks": [
+    "R01_open",
+    "R02_dimensions",
+    "R03_parts",
+    "R04_panels",
+    "R05_travel",
+    "R06_drawer_clearance",
+    "R07_door_hinge",
+    "R08_combined",
+    "R09_materials",
+    "R10_self_contained",
+    "R11_polys",
+    "R12_renders",
+    "R13_manifest",
+    "R14_anticheat",
+    "R15_render_authenticity",
+    "R_render_structure"
+  ],
+  "outcome": "graded",
+  "finished_at": "2026-11-27T17:39:16.342963+00:00"
 }
