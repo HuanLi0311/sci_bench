@@ -161,8 +161,8 @@ def build_deck(graphic):
     # top (grip) and bottom (graphic) grids
     for i in range(nx):
         for j in range(ny):
-            add_face([top_idx[i, j], top_idx[i + 1, j], top_idx[i + 1, j + 1], top_idx[i, j + 1]], 0)
-            add_face([bot_idx[i, j], bot_idx[i, j + 1], bot_idx[i + 1, j + 1], bot_idx[i + 1, j]], 1,
+            add_face([top_idx[i, j], top_idx[i, j + 1], top_idx[i + 1, j + 1], top_idx[i + 1, j]], 0)
+            add_face([bot_idx[i, j], bot_idx[i + 1, j], bot_idx[i + 1, j + 1], bot_idx[i, j + 1]], 1,
                      [(xs[i], ys[j]), (xs[i], ys[j + 1]), (xs[i + 1], ys[j + 1]), (xs[i + 1], ys[j])])
 
     # side walls, seven ply bands per side, plus end caps
@@ -234,11 +234,6 @@ def build_deck(graphic):
 
     ob = bpy.data.objects.new("deck", me)
     link(ob)
-    bm = bmesh.new()
-    bm.from_mesh(me)
-    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    bm.to_mesh(me)
-    bm.free()
     return ob
 
 

@@ -80,10 +80,15 @@ def deck_report(ob):
         if abs(n.y) > 0.9 and abs(n.z) < 0.5:
             zs = [verts[v].z for v in poly.vertices]
             side = "right" if n.y > 0 else "left"
-            entry = bands[side].setdefault(idx, {"faces": 0, "zmin": 1e9, "zmax": -1e9})
+            centre = poly.center
+            entry = bands[side].setdefault(idx, {"faces": 0, "zmin": 1e9, "zmax": -1e9,
+                                                 "mid_spans": []})
             entry["faces"] += 1
             entry["zmin"] = min(entry["zmin"], min(zs))
             entry["zmax"] = max(entry["zmax"], max(zs))
+            if abs(centre.x - 0.22) < 0.10:
+                # vertical extent of this band along the straight mid-section
+                entry["mid_spans"].append(max(zs) - min(zs))
         if n.z < -0.5:
             bottom_faces += 1
             if uv_layer is not None:
@@ -108,7 +113,11 @@ def deck_report(ob):
         "bottom_faces": bottom_faces,
         "uv_area": uv_area,
         "uv_bbox": [uv_min, uv_max] if bottom_faces else None,
-        "bands": {side: {str(k): v for k, v in bands[side].items()} for side in bands},
+        "bands": {side: {str(k): {
+            "faces": v["faces"],
+            "thickness_mm": (sum(v["mid_spans"]) / len(v["mid_spans"]) * 1000.0
+                             if v["mid_spans"] else 0.0),
+        } for k, v in bands[side].items()} for side in bands},
         "origin": list(ob.matrix_world.translation),
         "rotation": list(ob.matrix_world.to_euler()),
         "scale": list(ob.matrix_world.to_scale()),
