@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "banner-canvas-cropped",
+  "task": "banner-stand",
+  "started_at": "20261127T165429Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T165429Z-mutation-banner-canvas-cropped:/mutation",
+    "cua-qc-banner-stand-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/banner_stand.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "98df0977de513499ee617ff6561a16140897765391eebbc1027dbb2ee87f625f",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T16:54:34.689547+00:00"
+}

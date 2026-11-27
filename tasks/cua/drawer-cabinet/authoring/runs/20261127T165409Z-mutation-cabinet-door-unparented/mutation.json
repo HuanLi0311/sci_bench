@@ -1,0 +1,29 @@
+{
+  "kind": "mutation-preparation",
+  "name": "cabinet-door-unparented",
+  "task": "drawer-cabinet",
+  "started_at": "20261127T165409Z",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--cpus",
+    "4",
+    "--memory",
+    "8g",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T165409Z-mutation-cabinet-door-unparented:/mutation",
+    "cua-qc-drawer-cabinet-tests",
+    "blender",
+    "-b",
+    "/mutation/submission/drawer_cabinet.blend",
+    "--python",
+    "/mutation/mutate.py"
+  ],
+  "script_sha256": "ace9a19d161f5561a5d8831dc390b5cb184e92ccf854e88a4011c3194cef4b75",
+  "meaning": "Preserved reference copy mutated; this is a negative input, never NOP or model attempt.",
+  "exit_code": 0,
+  "finished_at": "2026-11-27T16:54:15.648966+00:00"
+}
