@@ -125,7 +125,7 @@ def main():
     canvas_ok = (abs(canvas.get("width_mm", 0) - 800) <= 3
                  and abs(canvas.get("height_mm", 0) - 1900) <= 3
                  and canvas.get("planarity_mm", 9) <= 2.0
-                 and abs(canvas.get("z_top_mm", 0) - 1955) <= 3)
+                 and abs(canvas.get("z_top_mm", 0) - 1960) <= 3)
     add("R04_canvas", "must", canvas_ok,
         f"w={canvas.get('width_mm')} h={canvas.get('height_mm')} "
         f"top={canvas.get('z_top_mm')} planarity={canvas.get('planarity_mm')}mm")

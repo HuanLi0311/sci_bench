@@ -164,11 +164,14 @@ def build_leg(alu):
     hinge.empty_display_type = 'SINGLE_ARROW'
     hinge.location = (0.0, 0.0, HINGE_Z)
     link(hinge)
+    bpy.context.view_layer.update()
     leg = box("leg_rear", (0.0, 0.0, HINGE_Z - LEG_LEN / 2), (0.036, 0.036, LEG_LEN),
               bevel=0.003)
     leg.data.materials.append(alu)
     leg.parent = hinge
-    leg.matrix_parent_inverse = hinge.matrix_world.inverted()
+    # Explicit inverse: the mesh already carries world coordinates, so the
+    # parent must not translate it a second time.
+    leg.matrix_parent_inverse = Matrix.Translation(Vector(-hinge.location))
     return hinge, leg
 
 
@@ -210,8 +213,9 @@ def build_stage():
 
 
 def set_hinge(hinge, deg):
+    """Open the rear leg away from the print (towards -Y)."""
     hinge.rotation_mode = 'XYZ'
-    hinge.rotation_euler = (math.radians(deg), 0.0, 0.0)
+    hinge.rotation_euler = (math.radians(-deg), 0.0, 0.0)
     bpy.context.view_layer.update()
 
 

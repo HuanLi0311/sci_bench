@@ -32,7 +32,7 @@ def set_hinge(deg):
     if hinge is None:
         return
     hinge.rotation_mode = 'XYZ'
-    hinge.rotation_euler = (deg * 3.141592653589793 / 180.0, 0.0, 0.0)
+    hinge.rotation_euler = (-deg * 3.141592653589793 / 180.0, 0.0, 0.0)
     bpy.context.view_layer.update()
 
 

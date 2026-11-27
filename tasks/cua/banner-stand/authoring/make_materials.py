@@ -97,7 +97,7 @@ def spec_pdf(path):
         pdf.text(64, 130 + 14 * i, line, 9)
     heading(206, "2. Canvas")
     for i, line in enumerate([
-        "Canvas 800 x 1900, from z = 60 to 1955, facing +Y at y = 30.",
+        "Canvas 800 x 1900, from z = 60 to 1960, facing +Y at y = 30.",
         "It hangs flat: every vertex within 2 mm of the plane and the top edge within",
         "   3 mm of the top bar underside.",
         "Print artwork 819 x 1945 (1.024 px/mm) mapped 1:1: UV area 1.0, no crop,",
@@ -107,8 +107,9 @@ def spec_pdf(path):
     heading(310, "3. Rear leg")
     for i, line in enumerate([
         "leg_rear is 2020 long, parented to an empty hinge_rear at (0, 0, 1960).",
-        "The hinge rotates about +X: 0 degrees is folded against the masts, 14 degrees",
-        "   is open, with the foot on the floor (z between -5 and 5 mm) about 490 mm back.",
+        "The hinge rotates about X away from the print: 0 degrees is folded against the",
+        "   masts, 14 degrees is open, with the foot on the floor (z within 5 mm) about",
+        "   490 mm behind the stand.",
         "At 0, 7 and 14 degrees the leg must not touch the masts, the top bar or the canvas.",
         "Folded, the whole stand is at most 130 mm deep.",
     ]):
