@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "docker",
+    "build",
+    "-t",
+    "delivery-banner-stand-tests:20261128",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/tests"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-28T05:53:50.765354+00:00",
+  "ended_utc": "2026-11-28T05:54:10.584858+00:00"
+}

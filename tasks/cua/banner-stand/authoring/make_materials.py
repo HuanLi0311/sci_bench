@@ -30,7 +30,7 @@ def front(c, ox, oy, s):
     c.text_center(ox, p(0, 1700)[1], "BANNER 800 x 1900", 2, GREY)
     c.text_center(ox, p(0, 1500)[1], "PRINT 1:1", 2, GREY)
     yb = oy + 50
-    c.line(*p(-400, 0), p(400, 0)[0], yb, DIM, 1.0)
+    c.line(p(-400, 0)[0], yb, p(400, 0)[0], yb, DIM, 1.0)
     c.line(p(-400, 0)[0], yb - 8, p(-400, 0)[0], yb + 8, DIM, 1.0)
     c.line(p(400, 0)[0], yb - 8, p(400, 0)[0], yb + 8, DIM, 1.0)
     c.text_center(ox, yb + 14, "800", 2, DIM)
@@ -78,6 +78,7 @@ def draw_views(path):
     c.text(40, 1240, "ORIGIN AT FLOOR CENTRE. +Y IS THE FRONT. MASTS 40 SQUARE, TOP BAR 800 x 40 x 40, BASE 800 x 120 x 50.", 1, INK)
     with open(path, "wb") as fh:
         fh.write(c.png())
+    c.save_pdf(os.path.splitext(path)[0] + '.pdf')
 
 
 def spec_pdf(path):

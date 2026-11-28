@@ -94,6 +94,16 @@ def cylinder(name, centre, radius, depth, axis='Z', segments=32, r2=None):
     return link(bpy.data.objects.new(name, me))
 
 
+def disc(name, centre, radius, segments=24):
+    me = bpy.data.meshes.new(name)
+    bm = bmesh.new()
+    bmesh.ops.create_circle(bm, cap_ends=True, segments=segments, radius=radius)
+    bmesh.ops.translate(bm, verts=bm.verts, vec=Vector(centre))
+    bm.to_mesh(me)
+    bm.free()
+    return link(bpy.data.objects.new(name, me))
+
+
 def empty(name, location):
     ob = bpy.data.objects.new(name, None)
     ob.empty_display_type = 'ARROWS'
@@ -208,8 +218,10 @@ def build_chain(paint, metal, lamp_collection):
     shade = cylinder("shade", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L / 2),
                      0.052, SHADE_L, segments=40, r2=0.030)
     shade.data.materials.append(metal)
-    bulb = cylinder("bulb", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L - 0.004), 0.020, 0.012,
-                    segments=24)
+    # An open disc at the mouth: a closed cap here would trap the spot light
+    # inside the bulb mesh and the lamp would contribute nothing to the render.
+    bulb = disc("bulb", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L - 0.002), 0.020,
+                segments=24)
     bulb.data.materials.append(plain("mat_bulb", (1.0, 0.93, 0.78), 0.3))
 
     parent_keep(lower, joints["joint_shoulder"])
@@ -233,19 +245,23 @@ def build_light(joints, lamp_collection):
     lamp.shadow_soft_size = 0.012
     ob = bpy.data.objects.new("lamp_spot", lamp)
     lamp_collection.objects.link(ob)
-    ob.location = (0, 0, PIVOT_Z + L1 + L2 + SHADE_L - 0.004)
+    ob.location = (0, 0, PIVOT_Z + L1 + L2 + SHADE_L + 0.010)
     parent_keep(ob, joints["joint_head"])
     return ob
 
 
 def aim_light(frame_target):
-    """Point the spot at the target of the current pose, from the bulb."""
+    """Point the spot at the target of the current pose, from the shade mouth.
+
+    The light is parented to a joint that is itself rotated, so the aim is
+    written as a world matrix and Blender resolves the local rotation from it.
+    """
     light = bpy.data.objects["lamp_spot"]
     bpy.context.view_layer.update()
     eye = light.matrix_world.translation
-    d = Vector(frame_target) - eye
-    light.rotation_mode = 'XYZ'
-    light.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
+    quat = (Vector(frame_target) - eye).to_track_quat('-Z', 'Y')
+    matrix = Matrix.Translation(eye) @ quat.to_matrix().to_4x4()
+    light.matrix_world = matrix
     bpy.context.view_layer.update()
 
 

@@ -105,6 +105,7 @@ def draw_three_views(path):
     c.text(40, 1074, "DRAWER FRONTS 440 x 140, TRAY DEPTH 400, TRAY PANELS 18. HANDLES: STEEL TUBES, 14 DIA.", 1, INK)
     with open(path, "wb") as fh:
         fh.write(c.png())
+    c.save_pdf(os.path.splitext(path)[0] + '.pdf')
 
 
 def spec_pdf(path):

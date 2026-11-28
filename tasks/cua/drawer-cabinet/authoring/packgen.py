@@ -163,6 +163,14 @@ class Canvas:
         data = np.clip(img, 0, 255).astype(np.uint8)
         return encode_png(data)
 
+    def save_pdf(self, path):
+        s = self.s
+        rgb = np.clip(self.buf.reshape(self.h, s, self.w, s, 3).mean(axis=(1, 3)), 0, 255).astype(np.uint8)
+        pdf = PDF(self.w / 2, self.h / 2)
+        pdf.add_image('drawing', rgb)
+        pdf.image('drawing', 0, 0, self.w / 2, self.h / 2)
+        pdf.save(path)
+
 
 def encode_png(rgb):
     h, w, _ = rgb.shape
@@ -234,7 +242,7 @@ class PDF:
             objs.append(b"<< /Length " + str(len(data)).encode() + b" >>\nstream\n" + data + b"\nendstream")
         for name, rgb in self.images:
             h, w, _ = rgb.shape
-            raw = b"".join(b"\x00" + rgb[y].tobytes() for y in range(h))
+            raw = rgb.tobytes()
             payload = zlib.compress(raw, 9)
             objs.append((f"<< /Type /XObject /Subtype /Image /Width {w} /Height {h} "
                          f"/ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /FlateDecode "
