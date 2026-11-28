@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
-import os
+import uuid
 
 ROOT = Path(__file__).resolve().parent
 TASK = ROOT.name
@@ -27,7 +27,8 @@ def grade(out, logs):
     for p in logs.iterdir():
         if p.name in {'reward.txt', 'metrics.json', 'stderr.log'} and p.is_file():
             p.unlink()
-    command = ['docker', 'run', '--rm', '--network', 'none', '--read-only',
+    container = 'delivery-verifier-' + uuid.uuid4().hex[:12]
+    command = ['docker', 'run', '--rm', '--name', container, '--network', 'none', '--read-only',
                '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
                '--user', '65534:65534', '--pids-limit', '256', '--cpus', '4',
                '--memory', '8g', '--shm-size', '1g', '--tmpfs', '/tmp:rw,nosuid,size=2g,mode=1777',
@@ -35,7 +36,12 @@ def grade(out, logs):
                '--mount', f'type=bind,src={out},dst=/app/out,readonly',
                '--mount', f'type=bind,src={logs},dst=/logs/verifier', TESTS,
                '/tests/test.sh', '/app/out']
-    result = subprocess.run(command, timeout=3660)
+    try:
+        result = subprocess.run(command, timeout=3660)
+    except subprocess.TimeoutExpired:
+        subprocess.run(['docker','rm','-f',container], capture_output=True)
+        (logs/'metrics.json').write_text(json.dumps({'status':'infrastructure_error','reward':None,'error':'verifier timeout'}))
+        raise SystemExit('Infrastructure failure: verifier timeout; container removed')
     metrics = logs / 'metrics.json'
     if not metrics.is_file():
         raise SystemExit(f'Infrastructure failure (docker exit {result.returncode}); no grading result')
