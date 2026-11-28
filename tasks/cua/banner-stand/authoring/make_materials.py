@@ -26,7 +26,7 @@ def front(c, ox, oy, s):
     for x in (-380, 380):
         c.rect(*p(x - 20, 1960), *p(x + 20, 50), INK, fill=ALU, width=1.1)
     c.rect(*p(-400, 2000), *p(400, 1960), INK, fill=ALU, width=1.1)
-    c.rect(*p(-400, 1955), *p(400, 60), INK, fill=(238, 232, 216), width=1.1)
+    c.rect(*p(-400, 1960), *p(400, 60), INK, fill=(238, 232, 216), width=1.1)
     c.text_center(ox, p(0, 1700)[1], "BANNER 800 x 1900", 2, GREY)
     c.text_center(ox, p(0, 1500)[1], "PRINT 1:1", 2, GREY)
     yb = oy + 50
@@ -45,14 +45,15 @@ def side_open(c, ox, oy, s):
 
     c.rect(*p(-60, 50), *p(60, 0), INK, fill=ALU, width=1.1)
     c.rect(*p(-20, 2000), *p(20, 50), INK, fill=ALU, width=1.1)
-    c.rect(*p(-400, 1955), *p(-370, 60), GREY, width=0.8)
+    c.line(*p(30, 60), *p(30, 1960), GREY, 1.0)
     r = math.radians(14)
-    tipy, tipz = 2020 * math.sin(r), 1960 - 2020 * math.cos(r)
-    c.line(*p(0, 1960), *p(tipy, tipz), INK, 1.2)
-    c.circle(*p(0, 1960), 4, INK, fill=INK)
+    tipy, tipz = -45 - 1900 * math.sin(r), 75 + 1900 * math.cos(r)
+    c.line(*p(-45, 75), *p(tipy, tipz), INK, 1.2)
+    c.circle(*p(-45, 75), 4, INK, fill=INK)
     c.dashed(*p(0, 0), *p(tipy, 0), DIM)
-    c.text(p(tipy, 0)[0] - 30, p(0, 0)[1] + 16, "FOOTPRINT 490", 1, DIM)
-    c.text(ox - 150, oy - 2100 * s - 10, "REAR LEG 2020, HINGED AT THE TOP BAR, OPENS 0-14 DEG", 1, INK)
+    c.text(p(tipy, 0)[0] - 10, p(0, 0)[1] + 16, "TOP OFFSET 505", 1, DIM)
+    c.text(ox - 150, oy - 2100 * s - 10, "BRACE 1900. HINGE Y=-45 Z=75. OPEN 14 DEG.", 1, INK)
+
 
 
 def side_folded(c, ox, oy, s):
@@ -61,15 +62,16 @@ def side_folded(c, ox, oy, s):
 
     c.rect(*p(-60, 50), *p(60, 0), INK, fill=ALU, width=1.1)
     c.rect(*p(-20, 2000), *p(20, 50), INK, fill=ALU, width=1.1)
-    c.line(*p(0, 50), *p(0, 1960), INK, 1.2)
-    c.text(ox - 40, p(0, 2000)[1] - 30, "FOLDED: 120 DEEP", 2, INK)
+    c.line(*p(-45, 75), *p(-45, 1975), INK, 1.2)
+    c.circle(*p(-45, 75), 4, INK, fill=INK)
+    c.text(ox - 40, p(0, 2000)[1] - 30, "FOLDED: 123 DEEP", 2, INK)
 
 
 def draw_views(path):
     W, H = 1800, 1300
     c = packgen.Canvas(W, H, PAPER)
     c.text(40, 26, "FOLDING BANNER STAND - FRONT, SIDE AND FOLDED (MM)", 3, INK)
-    c.text(40, 60, "800 WIDE, 2000 HIGH. CANVAS 800 x 1900. REAR LEG 2020, OPENS 0-14 DEG. FOLDED DEPTH 120.", 1, INK)
+    c.text(40, 60, "800 WIDE, 2000 HIGH. CANVAS 800 x 1900. REAR BRACE 1900, OPENS 0-14 DEG. FOLDED DEPTH <=130.", 1, INK)
     front(c, 430, 1150, 0.42)
     side_open(c, 1030, 1150, 0.36)
     side_folded(c, 1500, 1150, 0.36)
@@ -106,7 +108,7 @@ def spec_pdf(path):
         pdf.text(64, 228 + 14 * i, line, 9)
     heading(310, "3. Rear leg")
     for i, line in enumerate([
-        "leg_rear is 1900 long, parented to an empty hinge_rear at (0, -45, 75) on the",
+        "leg_rear is 1900 long, parented to an empty hinge_rear at (0, -45, 75) near the",
         "   base rear edge. The hinge rotates about X away from the print: 0 degrees is",
         "   folded against the masts, 14 degrees is open with the top 500 mm behind the",
         "   stand and 1920 high.",

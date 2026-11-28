@@ -6,7 +6,7 @@ artifacts = ["/app/out"]
 
 [task]
 name = "terminal-bench-science/banner-stand"
-description = "Model an 800x2000 mm folding exhibition banner stand in the Blender GUI: 40 mm masts, a 40 mm top bar, a flat 800x1900 print mapped 1:1, and a 2020 mm rear leg on a 0-14 degree hinge that folds the stand to 120 mm and opens its foot to the floor, delivered as an editable packed .blend plus three specified renders."
+description = "Model an 800x2000 mm folding exhibition banner stand in the Blender GUI: 40 mm masts, a 40 mm top bar, a flat 800x1900 print mapped 1:1, and a 1900 mm rear brace on a base-mounted 0-14 degree hinge that folds within 130 mm and opens its top 460-560 mm behind the stand, delivered as an editable packed .blend plus three specified renders."
 authors = [{ name = "Huan Li", email = "huanhuanli104@gmail.com" }]
 keywords = ["blender", "computer-use", "exhibition", "display-stand", "hinge", "verifiable-reward"]
 

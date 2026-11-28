@@ -22,12 +22,12 @@ deliverable is a scene a colleague can keep editing, not a screenshot.
    `carcass_left`, `carcass_right`, `carcass_top`, `carcass_bottom`,
    `carcass_back` and a centre `carcass_divider`. Origin at floor centre, +Y
    front, +Z up.
-2. Five drawers `drawer_01` … `drawer_05` in the left bay: fronts 440 × 150 mm
-   and 18 mm thick, trays 400 mm deep, steel handles. Each drawer is its own
+2. Five drawers `drawer_01` … `drawer_05` in the left bay: fronts 440 × 140 mm
+   and 18 mm thick on a 150 mm vertical pitch (10 mm gaps), trays 400 mm deep, steel handles. Each drawer is its own
    mesh, parented to an empty `slide_01` … `slide_05`; the empty translates
    along +Y from 0 to 420 mm and nothing else moves. Fully open, the tray must
    clear the carcass and every other drawer.
-3. One door `door_right`, 460 × 750 × 18 mm, covering the right bay, parented to
+3. One door `door_right`, 450 × 746 × 18 mm, covering the right bay, parented to
    an empty `hinge_right` at (0.481, 0.2265, 0.505) that rotates about the
    vertical axis from 0° to 110°, swinging outwards. At 0°, 55° and 110° the
    door must not touch the carcass or the drawer fronts.

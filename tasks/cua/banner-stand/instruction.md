@@ -24,7 +24,7 @@ deliverable is a scene a colleague can keep editing.
    every vertex within 2 mm of its plane and its top edge within 3 mm of the top
    bar underside. The print is mapped 1:1 with no crop and no overlap; UV area 1.0.
 3. Rear brace `leg_rear`: 1900 mm long, parented to an empty `hinge_rear` at
-   (0, −0.045, 0.075) — on the base's rear edge — that rotates about X so the
+   (0, −0.045, 0.075) — near the base's rear edge — that rotates about X so the
    brace swings away from the print. At 0° it stands folded against the masts
    (bottom at z ≈ 75 mm, folded stand ≤ 130 mm deep); at 14° it is open with its
    top 460–560 mm behind the stand and 1860–1960 mm above the floor. At 0°, 7°
@@ -71,8 +71,8 @@ The file must reopen; frame 800 ± 3 mm wide and 2000 ± 3 mm high, standing on
 the floor; all parts present with `leg_rear` parented to an empty `hinge_rear`;
 the canvas 800 ± 3 × 1900 ± 3 mm, flat within 2 mm, top within 3 mm of the bar;
 UV area 1.0 with full extent and the print aspect within 2 % of 800/1900; the
-hinge at (0, 0, 1.96) ± 10 mm; at 14° the leg tip on the floor and 450–540 mm
-behind the stand; folded depth ≤ 130 mm; no contact between the leg and the
+hinge at (0, −0.045, 0.075) ± 10 mm; at 14° the brace top 460–560 mm
+behind the stand and 1860–1960 mm above the floor; folded depth ≤ 130 mm; no contact between the leg and the
 frame at 0°, 7° and 14°; aluminium metallic ≥ 0.8 and canvas roughness in range;
 the print packed; at most 40 000 triangles; the three renders at the stated
 sizes from the named cameras; the manifest covering the print.

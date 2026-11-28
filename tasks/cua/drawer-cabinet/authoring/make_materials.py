@@ -26,13 +26,13 @@ def front_view(c, ox, oy, s):
     for i in range(5):
         z0 = 130 + i * 150
         z1 = z0 + 150
-        c.rect(*p(-462, z0 + 4), *p(-22, z1 - 4), INK, width=1.1)
+        c.rect(*p(-462, z0 + 5), *p(-22, z1 - 5), INK, width=1.1)
         cx, cy = p(-242, z0 + 75)
         c.circle(cx, cy, 5, GREY, fill=GREY, width=0)
         c.text(p(-462, z0 + 75)[0] - 46, p(-462, z0 + 75)[1] - 6, f"D{i + 1:02d}", 1, GREY)
-    c.rect(*p(22, 130), *p(478, 880), INK, width=1.1)
-    c.line(*p(22, 130), *p(478, 880), GREY, 0.6)
-    c.line(*p(22, 880), *p(478, 130), GREY, 0.6)
+    c.rect(*p(31, 132), *p(481, 878), INK, width=1.1)
+    c.line(*p(31, 132), *p(481, 878), GREY, 0.6)
+    c.line(*p(31, 878), *p(481, 132), GREY, 0.6)
     hx0, hy0 = p(58, 505)
     c.line(hx0, hy0 - 40, hx0, hy0 + 40, INK, 1.0)
 
@@ -63,9 +63,9 @@ def side_view(c, ox, oy, s):
     c.rect(*p(-225, 900), *p(225, 60), INK, width=1.4)
     c.rect(*p(-225, 60), *p(225, 0), GREY, width=1.0)
     c.text(ox - 40, oy - 30 * s, "PLINTH 60", 1, GREY)
-    c.rect(*p(225, 280), *p(525, 430), INK, fill=WOOD, width=1.2)
-    c.rect(*p(525 - 18, 280), *p(525, 430), INK, fill=INK, width=1.0)
-    c.dashed(*p(225, 355), *p(525, 355), DIM)
+    c.rect(*p(225, 280), *p(645, 430), INK, fill=WOOD, width=1.2)
+    c.rect(*p(645 - 18, 280), *p(645, 430), INK, fill=INK, width=1.0)
+    c.dashed(*p(225, 355), *p(645, 355), DIM)
     c.text(p(300, 355)[0] + 10, p(300, 355)[1] - 26, "TRAVEL 420", 1, DIM)
     yb = oy + 40
     c.line(p(-225, 0)[0], yb, p(225, 0)[0], yb, DIM, 1.0)
@@ -102,7 +102,7 @@ def draw_three_views(path):
     side_view(c, 1185, 1030, 0.50)
     door_detail(c, 1330, 300, 0.55)
     c.text(40, 1050, "ORIGIN AT FLOOR CENTRE. +Y IS THE FRONT. DRAWERS SLIDE ALONG +Y, DOOR SWINGS ABOUT A VERTICAL AXIS.", 1, INK)
-    c.text(40, 1074, "DRAWER FRONTS 440 x 150, TRAY DEPTH 400, TRAY PANELS 18. HANDLES: STEEL TUBES, 14 DIA.", 1, INK)
+    c.text(40, 1074, "DRAWER FRONTS 440 x 140, TRAY DEPTH 400, TRAY PANELS 18. HANDLES: STEEL TUBES, 14 DIA.", 1, INK)
     with open(path, "wb") as fh:
         fh.write(c.png())
 
@@ -126,7 +126,7 @@ def spec_pdf(path):
         pdf.text(64, 130 + 14 * i, line, 9)
     heading(206, "2. Drawers")
     for i, line in enumerate([
-        "Five drawers drawer_01..05 in the left bay (x -462..-22), fronts 440 x 150 x 18,",
+        "Five drawers drawer_01..05 in the left bay (x -462..-22), fronts 440 x 140 x 18, pitch 150,",
         "   tray 400 deep with 18 panels, steel handle tubes 320 long, 14 diameter.",
         "Each drawer is a separate mesh parented to an empty slide_01..05.",
         "The slide empty translates along +Y from 0 to 420; nothing else moves.",
@@ -135,7 +135,7 @@ def spec_pdf(path):
         pdf.text(64, 228 + 14 * i, line, 9)
     heading(310, "3. Door")
     for i, line in enumerate([
-        "One door_right 460 x 750 x 18 covering the right bay, hinged on its outer edge",
+        "One door_right 450 x 746 x 18 covering the right bay, hinged on its outer edge",
         "   by an empty hinge_right at (481, 226.5, 505).",
         "Rotation is about the vertical axis, 0 to 110 degrees, swinging outwards.",
         "The door must not touch the carcass or the drawer fronts at any angle.",
@@ -152,7 +152,7 @@ def spec_pdf(path):
     heading(506, "5. Deliverables and render brief")
     for i, line in enumerate([
         "drawer_cabinet.blend, manifest.json.",
-        "render_day.png: cam_front34, 35 mm, 1.6 m from the cabinet centre, 0.70 m above",
+        "render_day.png: cam_front34, 35 mm, 1.6 m from the cabinet centre, 1.15 m above",
         "   the floor, 1600 x 1200, light_day only.",
         "render_night.png: same camera, light_night only, 1600 x 1200.",
         "render_detail.png: cam_detail, 50 mm, 0.60 m from the front, 0.66 m high, aimed at",
@@ -176,10 +176,10 @@ def main():
     rows = [
         ["part", "size_mm", "material"],
         ["carcass panels", "18 thick, 1000x450x900 outer", "oak, 2K maps"],
-        ["drawer front", "440 x 150 x 18", "oak"],
+        ["drawer front", "440 x 140 x 18", "oak"],
         ["drawer tray", "400 deep, panels 18", "oak"],
         ["drawer handle", "320 long, 14 dia", "steel, metallic 1.0"],
-        ["door_right", "460 x 750 x 18", "oak, hinged outer edge"],
+        ["door_right", "450 x 746 x 18", "oak, hinged outer edge"],
         ["plinth feet", "60 high, 44 dia", "steel"],
     ]
     with open(os.path.join(materials, "spec", "parts.csv"), "w", newline="") as fh:
