@@ -1,0 +1,110 @@
+{
+ "reward": 0,
+ "must_pass": false,
+ "critical_pass": false,
+ "normal_rate": 0.0,
+ "checks": [
+  {
+   "id": "R01_open",
+   "level": "must",
+   "pass": false,
+   "detail": "unreadable"
+  },
+  {
+   "id": "R02_dimensions",
+   "level": "must",
+   "pass": false,
+   "detail": "outer=[0, 0, 0] mm unit_scale=None"
+  },
+  {
+   "id": "R03_parts",
+   "level": "must",
+   "pass": false,
+   "detail": "missing=['carcass_left', 'carcass_right', 'carcass_top', 'carcass_bottom', 'carcass_back', 'carcass_divider', 'drawer_01', 'drawer_02', 'drawer_03', 'drawer_04', 'drawer_05', 'slide_01', 'slide_02', 'slide_03', 'slide_04', 'slide_05', 'door_right', 'hinge_right'] slide_parents=False door=False"
+  },
+  {
+   "id": "R04_panels",
+   "level": "must",
+   "pass": false,
+   "detail": "panels=0 out_of_range=[]"
+  },
+  {
+   "id": "R05_travel",
+   "level": "must",
+   "pass": false,
+   "detail": "{} errors={}"
+  },
+  {
+   "id": "R06_drawer_clearance",
+   "level": "must",
+   "pass": false,
+   "detail": "no overlap at 420 mm"
+  },
+  {
+   "id": "R07_door_hinge",
+   "level": "must",
+   "pass": false,
+   "detail": "hinge=[9, 9, 9] overlap={} motion_error_mm={}"
+  },
+  {
+   "id": "R08_combined",
+   "level": "normal",
+   "pass": false,
+   "detail": "drawer_05 out 420 + door 110 overlaps=None"
+  },
+  {
+   "id": "R09_materials",
+   "level": "must",
+   "pass": false,
+   "detail": "wood={'carcass_left': False, 'carcass_right': False, 'carcass_top': False, 'carcass_bottom': False, 'carcass_back': False, 'carcass_divider': False, 'drawer_01': False, 'drawer_02': False, 'drawer_03': False, 'drawer_04': False, 'drawer_05': False, 'door_right': False} steel={'drawer_01': None, 'drawer_02': None, 'drawer_03': None, 'drawer_04': None, 'drawer_05': None, 'door_right': None, 'foot_1': None, 'foot_2': None, 'foot_3': None, 'foot_4': None}"
+  },
+  {
+   "id": "R_panel_fronts",
+   "level": "must",
+   "pass": false,
+   "detail": "{'drawer_01': False, 'drawer_02': False, 'drawer_03': False, 'drawer_04': False, 'drawer_05': False, 'door_right': False}"
+  },
+  {
+   "id": "R10_self_contained",
+   "level": "must",
+   "pass": false,
+   "detail": "images=0 unpacked=None libs=None"
+  },
+  {
+   "id": "R11_polys",
+   "level": "normal",
+   "pass": false,
+   "detail": "None triangles"
+  },
+  {
+   "id": "R12_renders",
+   "level": "must",
+   "pass": false,
+   "detail": "render_day.png:missing render_night.png:missing render_detail.png:missing distinct=False lights=[]"
+  },
+  {
+   "id": "R13_manifest",
+   "level": "must",
+   "pass": false,
+   "detail": "missing"
+  },
+  {
+   "id": "R14_anticheat",
+   "level": "critical",
+   "pass": false,
+   "detail": "skipped: prerequisite checks failed"
+  },
+  {
+   "id": "R15_render_authenticity",
+   "level": "critical",
+   "pass": false,
+   "detail": "{'error': \"[Errno 2] No such file or directory: '/logs/verifier/work-tsbgqvtz/render_day.png'\"}"
+  },
+  {
+   "id": "R_render_structure",
+   "level": "critical",
+   "pass": false,
+   "detail": "{}"
+  }
+ ]
+}
