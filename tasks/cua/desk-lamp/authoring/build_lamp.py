@@ -226,7 +226,7 @@ def build_chain(paint, metal, lamp_collection):
 
 def build_light(joints, lamp_collection):
     lamp = bpy.data.lights.new("lamp_spot", 'SPOT')
-    lamp.energy = 45.0
+    lamp.energy = 70.0
     lamp.spot_size = math.radians(42)
     lamp.spot_blend = 0.35
     lamp.color = (1.0, 0.90, 0.74)
@@ -272,8 +272,8 @@ def build_stage():
         o.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
         return link(o)
 
-    area("light_fill", (1.4, -0.8, 1.1), 28.0, 1.6, (0.72, 0.80, 1.0))
-    area("light_rim", (-0.9, 1.1, 0.9), 14.0, 1.2, (1.0, 0.88, 0.75))
+    area("light_fill", (1.4, -0.8, 1.1), 9.0, 1.6, (0.72, 0.80, 1.0))
+    area("light_rim", (-0.9, 1.1, 0.9), 5.0, 1.2, (1.0, 0.88, 0.75))
 
     def camera(name, loc, target, lens):
         cam = bpy.data.cameras.new(name)
@@ -284,8 +284,8 @@ def build_stage():
         o.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
         return o
 
-    camera("cam_pose", (1.05, -0.95, 0.85), (0.10, 0.30, 0.22), 35.0)
-    camera("cam_hero", (0.62, -0.52, 0.46), (0.08, 0.22, 0.26), 50.0)
+    camera("cam_pose", (0.86, -0.80, 0.62), (0.04, 0.26, 0.20), 40.0)
+    camera("cam_hero", (0.52, -0.46, 0.40), (0.02, 0.20, 0.22), 50.0)
 
 
 def render(cam, path, width, height):
