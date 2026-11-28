@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+    "grade",
+    "--out",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/authoring/runs/20261127T182316Z-mutation-cabinet-unpacked-maps/submission",
+    "--logs",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/validation-final/negative-cabinet-unpacked-maps"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-28T06:21:27.936422+00:00",
+  "ended_utc": "2026-11-28T06:21:31.124086+00:00"
+}
