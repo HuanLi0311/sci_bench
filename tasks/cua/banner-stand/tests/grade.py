@@ -249,7 +249,7 @@ def main():
     if scene_ok and os.path.exists(blend) and all(c["pass"] for c in CHECKS if c["level"] == "must"):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
-            shutil.copy(blend, cp)
+            shutil.copyfile(blend, cp)
             run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp,
                  "--python", "/tests/rerender.py", "--", WORK], timeout=1800)
             base_front = load_gray(os.path.join(WORK, "render_front.png"))
@@ -260,7 +260,11 @@ def main():
             folded25 = load_gray(os.path.join(WORK, "ac_hinge.png"))
             s_match = min(ss_img(base_front, delivered_front), ss_img(base_q, delivered_q))
             s_graphic = ss_img(base_front, checker)
-            s_hinge = ss_img(base_q, folded25)
+            with open(os.path.join(WORK, 'mutation_roi.json')) as fh:
+                x0, y0, x1, y1 = json.load(fh)
+            if x1-x0 < 8 or y1-y0 < 8:
+                raise ValueError('rear brace is outside the three-quarter camera')
+            s_hinge = ss_img(base_q[y0:y1, x0:x1], folded25[y0:y1, x0:x1])
             ac_ok = s_match >= 0.90 and s_graphic <= 0.98 and s_hinge <= 0.98
             ac_detail = (f"delivered_vs_scene={s_match:.3f} (>=0.90) "
                          f"checker_vs_base={s_graphic:.3f} (<=0.98) "

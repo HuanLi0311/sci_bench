@@ -251,7 +251,7 @@ def main():
     if scene_ok and os.path.exists(blend) and all(c["pass"] for c in CHECKS if c["level"] == "must"):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
-            shutil.copy(blend, cp)
+            shutil.copyfile(blend, cp)
             run([BLENDER, "--disable-autoexec", "--python-exit-code", "2", "-b", cp,
                  "--python", "/tests/rerender.py", "--", WORK], timeout=1800)
             base_day = load_gray(os.path.join(WORK, "render_day.png"))

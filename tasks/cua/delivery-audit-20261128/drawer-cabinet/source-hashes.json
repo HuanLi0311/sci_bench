@@ -1,0 +1,13 @@
+{
+  "instruction.md": "a1540ac4c2455f867cabaf590c39b07ebbe9e098569828119bfed2954e6239fb",
+  "run.py": "00e3160fc01230b5074850f47692aba6d0f2b20929e93075edcc7c4a7156b237",
+  "task.toml": "ed005adb5ec830b59861c1c5e58d067a2835a110d1c03d8d1dffb06ca8eaaeb7",
+  "tests/check_scene.py": "930294700618ac9e52827ff3be1fe59e4e370dee2830d7677a75589238dffd62",
+  "tests/Dockerfile": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+  "tests/grade.py": "d978b95bd64c1a9a6a906b4b774099077418b9eaa6fe4395b6c120f26525db4a",
+  "tests/render_compare.py": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+  "tests/rerender.py": "9b02118de96e84140037f809ffbe0b9b4a2da870e576471191558f8cd4c9b580",
+  "tests/scene_support.py": "613e79e78bd83738d11f75c53e94f5fd8acd24601d0420cc44cca23c27435c3a",
+  "tests/submission_support.py": "d4efdac0f6d07eda57eee1acb016e27b6b9561e6a991dc685a25f0ddab303cd2",
+  "tests/test.sh": "2b70a4f9eedd3b9b1e7a409c1b1706aaa7cc225fe5c7e2d8b2c1e2cd925d7ed2"
+}

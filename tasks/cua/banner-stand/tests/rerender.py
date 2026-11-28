@@ -8,6 +8,9 @@ view with the rear leg at 25 degrees instead of 14.
 """
 import os
 import sys
+import json
+from bpy_extras.object_utils import world_to_camera_view
+from mathutils import Vector
 
 import bpy
 import numpy as np
@@ -64,11 +67,31 @@ def checker(img):
     img.pixels.foreach_set(rgba.ravel())
 
 
+def hinge_roi():
+    sc = bpy.context.scene
+    sc.render.resolution_x = 800
+    sc.render.resolution_y = 600
+    leg = bpy.data.objects.get('leg_rear')
+    cam = bpy.data.objects.get('cam_three_quarter')
+    points = []
+    for deg in (14, 25):
+        set_hinge(deg)
+        points.extend(world_to_camera_view(sc, cam, leg.matrix_world @ Vector(v)) for v in leg.bound_box)
+    # Compare the region containing the moving brace; a thin part otherwise
+    # occupies too few pixels for a whole-image SSIM threshold.
+    return [max(0, int(min(p.x for p in points)*800)-12),
+            max(0, int((1-max(p.y for p in points))*600)-12),
+            min(800, int(max(p.x for p in points)*800)+13),
+            min(600, int((1-min(p.y for p in points))*600)+13)]
+
+
 def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     work = argv[0]
     os.makedirs(work, exist_ok=True)
     setup()
+    with open(os.path.join(work, 'mutation_roi.json'), 'w') as fh:
+        json.dump(hinge_roi(), fh)
 
     set_hinge(14)
     shot("cam_front", os.path.join(work, "render_front.png"), 600, 800)
