@@ -16,7 +16,9 @@ import numpy as np
 from bpy_extras.object_utils import world_to_camera_view
 from mathutils import Vector
 
-TARGET = (-0.280, 0.320, 0.340)
+# The wrist target of frame 2 is in the air; the patch that matters is the
+# desk directly under it, where the beam lands.
+TARGET = (-0.280, 0.320, 0.002)
 PATCH = 61
 FRAME = 2
 
