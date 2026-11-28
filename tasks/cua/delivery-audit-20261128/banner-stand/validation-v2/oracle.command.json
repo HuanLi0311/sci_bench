@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+    "oracle",
+    "--out",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/validation-v2/oracle-submission",
+    "--logs",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/validation-v2/oracle"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-28T05:58:40.538741+00:00",
+  "ended_utc": "2026-11-28T06:03:03.171653+00:00"
+}
