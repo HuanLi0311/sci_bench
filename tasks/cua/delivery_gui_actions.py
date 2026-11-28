@@ -30,6 +30,9 @@ def act(task):
         time.sleep(3)
     elif stage=='confirm':
         key('Return');time.sleep(2)
+    elif stage=='reopen':
+        command(['docker','exec',name,'xdotool','mousemove','800','520'])
+        key('F3');type_text('Revert');key('Return');time.sleep(1);key('Return');time.sleep(5)
     command(['docker','exec',name,'scrot','/tmp/gui-'+stage+'.png'])
     command(['docker','cp',name+':/tmp/gui-'+stage+'.png',directory/(stage+'.png')])
     (directory/(stage+'-actions.json')).write_text(json.dumps(actions,indent=2))
