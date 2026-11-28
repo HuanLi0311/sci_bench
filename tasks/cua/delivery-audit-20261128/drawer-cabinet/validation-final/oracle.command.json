@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+    "oracle",
+    "--out",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/validation-final/oracle-submission",
+    "--logs",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/validation-final/oracle"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-28T06:09:05.400579+00:00",
+  "ended_utc": "2026-11-28T06:15:42.721292+00:00"
+}
