@@ -7,6 +7,10 @@ import math
 import sys
 
 import bpy
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from scene_support import used_materials, material_report, visible_mesh, component_dimensions, motion_error
+from mathutils import Matrix, Vector
 from mathutils.bvhtree import BVHTree
 
 CARCASS = ["carcass_left", "carcass_right", "carcass_top", "carcass_bottom",
@@ -87,6 +91,7 @@ def main():
     argv = sys.argv[sys.argv.index("--") + 1:]
     out_path = argv[0]
     sc = bpy.context.scene
+    reset_pose()
     report = {"ok": True, "blender": bpy.app.version_string,
               "unit_scale": float(sc.unit_settings.scale_length),
               "objects": {}, "meshes": [], "cameras": {}, "materials": {},
@@ -100,7 +105,9 @@ def main():
         if ob.type == 'MESH':
             entry["aabb"] = world_aabb(ob)
             entry["polys"] = polys(ob)
-            entry["materials"] = [m.name if m else None for m in ob.data.materials]
+            entry["materials"] = used_materials(ob)
+            entry["visible_mesh"] = visible_mesh(ob)
+            entry["components_mm"] = component_dimensions(ob)
             report["polys_total"] += entry["polys"]
             report["meshes"].append(ob.name)
         elif ob.type == 'CAMERA':
@@ -111,30 +118,10 @@ def main():
             entry["energy"] = float(ob.data.energy)
         report["objects"][ob.name] = entry
 
+    used = {m for ob in report['objects'].values() for m in ob.get('materials', [])}
     for mat in bpy.data.materials:
-        info = {"name": mat.name, "metallic": None, "roughness": None, "images": []}
-        if mat.use_nodes:
-            bsdf = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
-            if bsdf is not None:
-                info["metallic"] = float(bsdf.inputs["Metallic"].default_value)
-                info["roughness"] = float(bsdf.inputs["Roughness"].default_value)
-                for sock in ("Base Color", "Roughness", "Normal"):
-                    for link in bsdf.inputs[sock].links:
-                        node = link.from_node
-                        guard = 0
-                        while node.type != 'TEX_IMAGE' and guard < 6:
-                            guard += 1
-                            nxt = [l.from_node for sock_in in node.inputs
-                                   for l in sock_in.links]
-                            if not nxt:
-                                break
-                            node = nxt[0]
-                        if node.type == 'TEX_IMAGE' and node.image is not None:
-                            info["images"].append({"name": node.image.name,
-                                                   "size": list(node.image.size),
-                                                   "packed": bool(node.image.packed_file is not None),
-                                                   "feeds": sock})
-        report["materials"][mat.name] = info
+        if mat.name in used:
+            report['materials'][mat.name] = material_report(mat)
 
     for img in bpy.data.images:
         if img.name in ("Render Result", "Viewer Node"):
@@ -186,7 +173,7 @@ def main():
         bpy.context.view_layer.update()
         after = world_aabb(d_ob)
         travel[drawer] = round((after[1][1] - before[1][1]) * 1000, 2) if after and before else None
-        others = [o for o in objs(CARCASS) if o.name != "carcass_back"]
+        others = objs(CARCASS)
         neighbours = [bpy.data.objects[d] for d in DRAWERS if d != drawer]
         clearance[drawer] = {"carcass_hits": overlaps([d_ob], others),
                              "neighbour_hits": overlaps([d_ob], neighbours)}
@@ -201,16 +188,22 @@ def main():
     # ---- door ----------------------------------------------------------
     hinge = bpy.data.objects.get(HINGE)
     door = bpy.data.objects.get(DOOR)
-    door_rep = {"parent": door.parent.name if door else None}
+    door_rep = {"parent": door.parent.name if door and door.parent else None}
     if hinge is not None:
         door_rep["hinge_location"] = [round(c, 4) for c in hinge.matrix_world.translation]
         door_rep["rotation_mode"] = hinge.rotation_mode
         door_rep["overlap"] = {}
+        door_rep['motion_error_mm'] = {}
+        reset_pose()
+        initial = door.matrix_world.copy()
+        pivot = hinge.matrix_world.translation.copy()
         for deg in (0, 55, 110):
             reset_pose()
             hinge.rotation_mode = 'XYZ'
             hinge.rotation_euler = (0.0, 0.0, -math.radians(deg))
             bpy.context.view_layer.update()
+            expected = Matrix.Translation(pivot) @ Matrix.Rotation(-math.radians(deg), 4, 'Z') @ Matrix.Translation(-pivot)
+            door_rep['motion_error_mm'][str(deg)] = motion_error(door, initial, expected)
             door_rep["overlap"][str(deg)] = overlaps([door], objs(CARCASS) + objs(DRAWERS))
         # combined pose: top drawer out 420 and door 110
         reset_pose()
@@ -219,7 +212,7 @@ def main():
         hinge.rotation_euler = (0.0, 0.0, -math.radians(110))
         bpy.context.view_layer.update()
         door_rep["combined_overlap"] = overlaps(
-            [door] + objs(["drawer_05"]), objs(CARCASS))
+            [door] + objs(["drawer_05"]), objs(CARCASS)) + overlaps([door], objs(["drawer_05"]))
     reset_pose()
     report["door"] = door_rep
 

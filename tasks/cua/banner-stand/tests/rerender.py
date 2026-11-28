@@ -81,10 +81,15 @@ def main():
         img = next((i for i in bpy.data.images
                     if i.name not in ("Render Result", "Viewer Node")), None)
     if img is not None:
+        original = np.array(img.pixels[:], dtype=np.float32)
         checker(img)
+        img.update()
         set_hinge(14)
         shot("cam_front", os.path.join(work, "ac_graphic.png"), 600, 800)
 
+    if img is not None:
+        img.pixels.foreach_set(original)
+        img.update()
     set_hinge(25)
     shot("cam_three_quarter", os.path.join(work, "ac_hinge.png"), 800, 600)
 

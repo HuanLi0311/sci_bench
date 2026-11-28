@@ -17,6 +17,7 @@ import traceback
 import numpy as np
 from PIL import Image
 from render_compare import gradient_error
+from submission_support import manifest_error
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
@@ -113,14 +114,14 @@ def main():
         f"outer={size} mm unit_scale={scene.get('unit_scale')}")
 
     present = scene.get("parts_present") or {}
-    missing = [k for k, v in present.items() if not v]
+    missing = [k for k in CARCASS + DRAWERS + SLIDES + ["door_right", "hinge_right"] if not present.get(k)]
     objs = scene.get("objects") or {}
-    parents_ok = all(objs.get(s, {}).get("parent") == d
-                     for s, d in ())
+    meshes_ok = all(objs.get(n, {}).get("visible_mesh") for n in CARCASS + DRAWERS + ["door_right"])
+    empties_ok = all(objs.get(n, {}).get("type") == "EMPTY" for n in SLIDES)
     slides_ok = all(objs.get(d, {}).get("parent") == s for d, s in zip(DRAWERS, SLIDES))
     door_ok = (objs.get("door_right", {}).get("parent") == "hinge_right"
                and objs.get("hinge_right", {}).get("type") == "EMPTY")
-    add("R03_parts", "must", not missing and slides_ok and door_ok,
+    add("R03_parts", "must", not missing and slides_ok and door_ok and meshes_ok and empties_ok,
         f"missing={missing} slide_parents={slides_ok} door={door_ok}")
 
     panels = scene.get("panels") or {}
@@ -141,30 +142,39 @@ def main():
 
     door = scene.get("door") or {}
     door_ov = door.get("overlap") or {}
-    door_clean = bool(door_ov) and all(v == 0 for v in door_ov.values())
+    door_clean = set(door_ov) == {"0", "55", "110"} and all(v == 0 for v in door_ov.values())
+    motion = door.get("motion_error_mm") or {}
+    door_clean &= set(motion) == {"0", "55", "110"} and all(v <= 2 for v in motion.values())
     hinge_loc = door.get("hinge_location") or [9, 9, 9]
     hinge_ok = (door.get("parent") == "hinge_right"
                 and abs(hinge_loc[0] - 0.481) <= 0.01 and abs(hinge_loc[1] - 0.2265) <= 0.01
                 and abs(hinge_loc[2] - 0.505) <= 0.01)
     add("R07_door_hinge", "must", hinge_ok and door_clean,
-        f"hinge={hinge_loc} overlap={door_ov}")
+        f"hinge={hinge_loc} overlap={door_ov} motion_error_mm={motion}")
 
     add("R08_combined", "normal", door.get("combined_overlap") == 0,
         f"drawer_05 out 420 + door 110 overlaps={door.get('combined_overlap')}")
 
     mats = scene.get("materials") or {}
-    wood_imgs = []
-    metal = 0.0
-    for name, m in mats.items():
-        for img in m.get("images") or []:
-            if img["size"][0] >= 2048 and img["size"][1] >= 2048:
-                wood_imgs.append(img)
-        metal = max(metal, m.get("metallic") or 0.0)
-    feeds = {i["feeds"] for i in wood_imgs}
-    maps_ok = (len(wood_imgs) >= 3 and {"Base Color", "Roughness", "Normal"} <= feeds
-               and all(i["packed"] for i in wood_imgs) and metal >= 0.9)
-    add("R09_materials", "must", maps_ok,
-        f"2k_maps={len(wood_imgs)} feeds={sorted(feeds)} metal={metal:.2f}")
+    wood_ok, metal_ok = {}, {}
+    for n in CARCASS + DRAWERS + ['door_right']:
+        assigned = [mats[m] for m in objs.get(n, {}).get('materials', []) if m in mats]
+        wood_ok[n] = any({'Base Color', 'Roughness', 'Normal'} <=
+                         {i['feeds'] for i in m.get('images', []) if i['size'] == [2048, 2048] and i['packed']}
+                         and len({i['name'] for i in m.get('images', [])}) >= 3 for m in assigned)
+    for n in DRAWERS + ['door_right'] + [f'foot_{i}' for i in range(1, 5)]:
+        metal_ok[n] = any((mats.get(m, {}).get('metallic') or 0) >= 0.9
+                          for m in objs.get(n, {}).get('materials', []))
+    add('R09_materials', 'must', all(wood_ok.values()) and all(metal_ok.values()),
+        f'wood={wood_ok} steel={metal_ok}')
+    geometry = {}
+    for n in DRAWERS + ['door_right']:
+        target = [440, 18, 140] if n in DRAWERS else [450, 18, 746]
+        geometry[n] = any(all(abs(d[i]-target[i]) <= 2 for i in range(3))
+                          for d in objs.get(n, {}).get('components_mm', []))
+        if n in DRAWERS:
+            geometry[n] &= any(abs(d[1]-400) <= 2 for d in objs.get(n, {}).get('components_mm', []))
+    add('R_panel_fronts', 'must', all(geometry.values()), geometry)
 
     imgs = [i for i in (scene.get("images") or []) if i.get("filepath")]
     packed_ok = (bool(imgs) and all(i["packed"] for i in imgs)
@@ -177,7 +187,7 @@ def main():
         f"{scene.get('polys_total')} triangles")
 
     lights = scene.get("light_collections") or {}
-    lights_ok = all(len(lights.get(k) or []) >= 1 for k in ("light_day", "light_night"))
+    lights_ok = len(lights.get("light_day") or []) == 3 and len(lights.get("light_night") or []) == 2
     renders_ok, detail, hashes = True, [], []
     for name, (w, h) in RENDERS.items():
         p = os.path.join(out, name)
@@ -221,13 +231,9 @@ def main():
         try:
             with open(mp) as fh:
                 man = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
-            assets = man.get("assets", [])
-            licensed = [a for a in assets if a.get("source") and a.get("license")]
-            listed = {r.get("file") for r in man.get("renders", [])}
-            man_ok = (len(assets) >= 1 and len(licensed) == len(assets)
-                      and any(a.get("role") == "texture" for a in licensed)
-                      and set(RENDERS) <= listed)
-            m_detail = f"assets={len(assets)} licensed={len(licensed)} renders={len(listed)}"
+            error = manifest_error(man, scene, RENDERS, {'render_day.png': 'cam_front34', 'render_night.png': 'cam_front34', 'render_detail.png': 'cam_detail'})
+            man_ok = error is None
+            m_detail = error or 'all scene images licensed; render metadata matches'
         except Exception as exc:
             m_detail = f"unreadable: {exc}"
     add("R13_manifest", "must", man_ok, m_detail)
@@ -235,7 +241,7 @@ def main():
     # ---- anti-cheat ----------------------------------------------------
     ac_ok = False
     ac_detail = "skipped: prerequisite checks failed"
-    if scene_ok and os.path.exists(blend):
+    if scene_ok and os.path.exists(blend) and all(c["pass"] for c in CHECKS if c["level"] == "must"):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)

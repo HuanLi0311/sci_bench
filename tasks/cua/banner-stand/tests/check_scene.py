@@ -7,6 +7,10 @@ import math
 import sys
 
 import bpy
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from scene_support import used_materials, material_report, visible_mesh, component_dimensions, motion_error
+from mathutils import Matrix, Vector
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 
@@ -105,7 +109,17 @@ def canvas_uv(ob):
         for u, v in pts:
             lo = [min(lo[0], u), min(lo[1], v)]
             hi = [max(hi[0], u), max(hi[1], v)]
-    return {"area": area, "bbox": [lo, hi]}
+    # A full-sheet map has a single spatial correspondence, so overlapping,
+    # shuffled or tiled islands cannot pass using total area and bounds alone.
+    pts = [ob.matrix_world @ v.co for v in me.vertices]
+    xmin, xmax = min(p.x for p in pts), max(p.x for p in pts)
+    zmin, zmax = min(p.z for p in pts), max(p.z for p in pts)
+    error = 1.0
+    if xmax > xmin and zmax > zmin:
+        error = max(max(abs(uv.data[li].uv.x - (xmax - pts[me.loops[li].vertex_index].x)/(xmax-xmin)),
+                        abs(uv.data[li].uv.y - (pts[me.loops[li].vertex_index].z-zmin)/(zmax-zmin)))
+                    for poly in me.polygons for li in poly.loop_indices)
+    return {"area": area, "bbox": [lo, hi], "mapping_error": error}
 
 
 def main():
@@ -124,7 +138,9 @@ def main():
         if ob.type == 'MESH':
             entry["aabb"] = world_aabb(ob)
             entry["polys"] = polys(ob)
-            entry["materials"] = [m.name if m else None for m in ob.data.materials]
+            entry["materials"] = used_materials(ob)
+            entry["visible_mesh"] = visible_mesh(ob)
+            entry["components_mm"] = component_dimensions(ob)
             report["polys_total"] += entry["polys"]
             report["meshes"].append(ob.name)
         elif ob.type == 'CAMERA':
@@ -133,27 +149,10 @@ def main():
             report["cameras"][ob.name] = entry
         report["objects"][ob.name] = entry
 
+    used = {m for ob in report['objects'].values() for m in ob.get('materials', [])}
     for mat in bpy.data.materials:
-        info = {"name": mat.name, "metallic": None, "roughness": None, "images": []}
-        if mat.use_nodes:
-            bsdf = next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
-            if bsdf is not None:
-                info["metallic"] = float(bsdf.inputs["Metallic"].default_value)
-                info["roughness"] = float(bsdf.inputs["Roughness"].default_value)
-                for link in bsdf.inputs["Base Color"].links:
-                    node = link.from_node
-                    guard = 0
-                    while node.type != 'TEX_IMAGE' and guard < 6:
-                        guard += 1
-                        nxt = [l.from_node for s in node.inputs for l in s.links]
-                        if not nxt:
-                            break
-                        node = nxt[0]
-                    if node.type == 'TEX_IMAGE' and node.image is not None:
-                        info["images"].append({"name": node.image.name,
-                                               "size": list(node.image.size),
-                                               "packed": bool(node.image.packed_file is not None)})
-        report["materials"][mat.name] = info
+        if mat.name in used:
+            report['materials'][mat.name] = material_report(mat)
 
     for img in bpy.data.images:
         if img.name in ("Render Result", "Viewer Node"):
@@ -193,10 +192,13 @@ def main():
     hinge = bpy.data.objects.get(HINGE)
     leg = bpy.data.objects.get("leg_rear")
     fold = {"hinge": hinge.name if hinge else None,
-            "parent": leg.parent.name if leg else None,
+            "parent": leg.parent.name if leg and leg.parent else None,
             "hinge_location": [round(c, 4) for c in hinge.matrix_world.translation] if hinge else None,
             "states": {}}
     if hinge is not None and leg is not None:
+        set_hinge(0)
+        initial = leg.matrix_world.copy()
+        pivot = hinge.matrix_world.translation.copy()
         for deg in (0, 7, 14):
             set_hinge(deg)
             verts = world_verts(leg)
@@ -204,6 +206,7 @@ def main():
                 "z_min_mm": round(min(v.z for v in verts) * 1000, 2),
                 "z_max_mm": round(max(v.z for v in verts) * 1000, 2),
                 "y_max_mm": round(max(abs(v.y) for v in verts) * 1000, 1),
+                "motion_error_mm": motion_error(leg, initial, Matrix.Translation(pivot) @ Matrix.Rotation(math.radians(deg), 4, 'X') @ Matrix.Translation(-pivot)),
                 "overlap": hits([leg], objs([n for n in FRAME + ["canvas"] if n != "canvas"]
                                             + ["canvas"])),
             }

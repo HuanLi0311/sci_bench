@@ -17,6 +17,7 @@ import traceback
 import numpy as np
 from PIL import Image
 from render_compare import gradient_error
+from submission_support import manifest_error
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
@@ -113,10 +114,11 @@ def main():
 
     present = scene.get("parts_present") or {}
     objs = scene.get("objects") or {}
-    missing = [k for k, v in present.items() if not v]
+    missing = [k for k in PARTS + ["hinge_rear"] if not present.get(k)]
+    mesh_ok = all(objs.get(n, {}).get("visible_mesh") for n in PARTS)
     parent_ok = objs.get("leg_rear", {}).get("parent") == "hinge_rear" \
         and objs.get("hinge_rear", {}).get("type") == "EMPTY"
-    add("R03_parts", "must", not missing and parent_ok,
+    add("R03_parts", "must", not missing and parent_ok and mesh_ok,
         f"missing={missing} leg_parent={objs.get('leg_rear', {}).get('parent')}")
 
     canvas = scene.get("canvas") or {}
@@ -131,8 +133,8 @@ def main():
         f"top={canvas.get('z_top_mm')} planarity={canvas.get('planarity_mm')}mm")
 
     imgs = []
-    for m in (scene.get("materials") or {}).values():
-        imgs.extend(m.get("images") or [])
+    for name in objs.get('canvas', {}).get('materials', []):
+        imgs.extend((scene.get('materials') or {}).get(name, {}).get('images') or [])
     graphic = imgs[0] if imgs else None
     aspect_ok = False
     if graphic:
@@ -141,7 +143,8 @@ def main():
     uv_ok = (graphic is not None and 0.95 <= uv.get("area", 0) <= 1.02
              and bbox[0][0] <= 0.05 and bbox[0][1] <= 0.05
              and bbox[1][0] >= 0.95 and bbox[1][1] >= 0.95
-             and aspect_ok and max(graphic["size"]) <= 2048)
+             and aspect_ok and max(graphic["size"]) <= 2048
+             and uv.get("mapping_error", 1) <= 0.005)
     add("R05_uv", "must", uv_ok,
         f"image={graphic} area={uv.get('area')} bbox={bbox} aspect_ok={aspect_ok}")
 
@@ -163,17 +166,25 @@ def main():
         f"folded={fold.get('folded_depth_mm')}mm")
 
     collision = {k: v.get("overlap") for k, v in states.items()}
-    add("R07_no_contact", "must", states and all(v == 0 for v in collision.values()),
+    add("R07_no_contact", "must", set(states) == {"0", "7", "14"} and all(v == 0 for v in collision.values())
+        and all(v.get("motion_error_mm", 999) <= 2 for v in states.values()),
         collision)
 
-    metal = max([m.get("metallic") or 0 for m in (scene.get("materials") or {}).values()] or [0])
-    canvas_rough = None
-    for m in (scene.get("materials") or {}).values():
-        if m.get("images"):
-            canvas_rough = m.get("roughness")
-    mats_ok = (metal >= 0.8 and canvas_rough is not None and 0.55 <= canvas_rough <= 0.85)
-    add("R08_materials", "normal", mats_ok,
-        f"metal={metal:.2f} canvas_roughness={canvas_rough}")
+    mats = scene.get('materials') or {}
+    metal_ok = all(any((mats.get(m, {}).get('metallic') or 0) >= 0.8
+                       for m in objs.get(n, {}).get('materials', []))
+                   for n in ('base', 'mast_left', 'mast_right', 'top_bar', 'leg_rear'))
+    canvas_ok = all(mats.get(m, {}).get('images') and
+                    0.55 <= (mats.get(m, {}).get('roughness') or 0) <= 0.85
+                    for m in objs.get('canvas', {}).get('materials', []))
+    add('R08_materials', 'must', metal_ok and canvas_ok, f'frame={metal_ok} canvas={canvas_ok}')
+    expected = {'base': [800, 120, 50], 'mast_left': [40, 40, 1910],
+                'mast_right': [40, 40, 1910], 'top_bar': [800, 40, 40]}
+    dimensions = {}
+    for n, target in expected.items():
+        box = objs.get(n, {}).get('aabb')
+        dimensions[n] = bool(box) and all(abs((box[1][i]-box[0][i])*1000-target[i]) <= 3 for i in range(3))
+    add('R_frame_parts', 'must', all(dimensions.values()), dimensions)
 
     path_imgs = [i for i in (scene.get("images") or []) if i.get("filepath")]
     packed_ok = (bool(path_imgs) and all(i["packed"] for i in path_imgs)
@@ -219,20 +230,16 @@ def main():
         try:
             with open(mp) as fh:
                 man = json.load(fh, parse_constant=lambda v: (_ for _ in ()).throw(ValueError(v)))
-            assets = man.get("assets", [])
-            licensed = [a for a in assets if a.get("source") and a.get("license")]
-            listed = {r.get("file") for r in man.get("renders", [])}
-            man_ok = (len(assets) >= 1 and len(licensed) == len(assets)
-                      and any(a.get("role") == "texture" for a in licensed)
-                      and set(RENDERS) <= listed)
-            m_detail = f"assets={len(assets)} licensed={len(licensed)} renders={len(listed)}"
+            error = manifest_error(man, scene, RENDERS, {'render_front.png': 'cam_front', 'render_folded.png': 'cam_folded', 'render_three_quarter.png': 'cam_three_quarter'})
+            man_ok = error is None
+            m_detail = error or 'all scene images licensed; render metadata matches'
         except Exception as exc:
             m_detail = f"unreadable: {exc}"
     add("R12_manifest", "must", man_ok, m_detail)
 
     ac_ok = False
     ac_detail = "skipped: prerequisite checks failed"
-    if scene_ok and os.path.exists(blend):
+    if scene_ok and os.path.exists(blend) and all(c["pass"] for c in CHECKS if c["level"] == "must"):
         try:
             cp = os.path.join(WORK, "anticheat.blend")
             shutil.copy(blend, cp)
