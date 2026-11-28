@@ -154,7 +154,10 @@ def solve_ik(target):
             if best is None or err < best[0]:
                 best = (err, beta1, beta2, px, pz)
     err, beta1, beta2, px, pz = best
-    yaw = math.atan2(tx, ty) - math.pi / 2.0
+    # Rz(yaw) maps the local +Y the arm swings in onto (tx, ty): the shoulder
+    # rotation tilts the chain towards local +Y, so the yaw must be measured
+    # from +Y towards +X with the opposite sign.
+    yaw = -math.atan2(tx, ty)
     return yaw, beta1, beta2, err
 
 
