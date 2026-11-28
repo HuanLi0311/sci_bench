@@ -1,0 +1,76 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> /XObject <<  >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3419 >>
+stream
+BT /F2 16 Tf 56.00 786.00 Td (ARTICULATED DESK LAMP - DESIGN PACK) Tj ET
+BT /F1 10 Tf 56.00 766.00 Td (Product visualisation. Units: millimetres unless stated.) Tj ET
+BT /F2 13 Tf 56.00 734.00 Td (1. Geometry) Tj ET
+0.8 w 56.00 728.00 m 539.00 728.00 l S
+BT /F1 9 Tf 64.00 712.00 Td (Base disc 120 diameter, 22 high, on the desk plane z = 0.) Tj ET
+BT /F1 9 Tf 64.00 698.00 Td (Lower arm 320 x 30 x 30, upper arm 300 x 24 x 24, shade 90 long,) Tj ET
+BT /F1 9 Tf 64.00 684.00 Td (   104 at the mouth tapering to 60. Rest pose: every joint at zero, arm vertical,) Tj ET
+BT /F1 9 Tf 64.00 670.00 Td (   top of the shade at 732.) Tj ET
+BT /F1 9 Tf 64.00 656.00 Td (Meshes: base, column, lower_arm, upper_arm, shade, bulb, desk, target_01..03.) Tj ET
+BT /F2 13 Tf 56.00 622.00 Td (2. Joints) Tj ET
+0.8 w 56.00 616.00 m 539.00 616.00 l S
+BT /F1 9 Tf 64.00 600.00 Td (Four empties, named joint_yaw, joint_shoulder, joint_elbow, joint_head.) Tj ET
+BT /F1 9 Tf 64.00 586.00 Td (joint_yaw at \(0, 0, 22\) rotates about Z; joint_shoulder sits at the same) Tj ET
+BT /F1 9 Tf 64.00 572.00 Td (   point as its child and rotates about X; joint_elbow at \(0, 0, 342\);) Tj ET
+BT /F1 9 Tf 64.00 558.00 Td (   joint_head at \(0, 0, 642\). lower_arm hangs off joint_shoulder,) Tj ET
+BT /F1 9 Tf 64.00 544.00 Td (   upper_arm off joint_elbow, shade and bulb off joint_head.) Tj ET
+BT /F1 9 Tf 64.00 530.00 Td (Do not bake the poses into the mesh: the empties must carry the chain.) Tj ET
+BT /F2 13 Tf 56.00 502.00 Td (3. Reach) Tj ET
+0.8 w 56.00 496.00 m 539.00 496.00 l S
+BT /F1 9 Tf 64.00 480.00 Td (Action Pose_Reach, keyframes at 1, 2 and 3 on all four joints. At frame 1 the) Tj ET
+BT /F1 9 Tf 64.00 466.00 Td (   head pivot must sit on T1 = \(0.300, 0.350, 0.120\), frame 2 on) Tj ET
+BT /F1 9 Tf 64.00 452.00 Td (   T2 = \(-0.280, 0.320, 0.120\), frame 3 on T3 = \(0.050, 0.550, 0.140\),) Tj ET
+BT /F1 9 Tf 64.00 438.00 Td (   each within 8 mm of the target position. Scene range 1-3.) Tj ET
+BT /F1 9 Tf 64.00 424.00 Td (The arms and shade must stay above the desk \(z >= 0\) at all three poses and) Tj ET
+BT /F1 9 Tf 64.00 410.00 Td (   must not pass through each other.) Tj ET
+BT /F2 13 Tf 56.00 390.00 Td (4. Light) Tj ET
+0.8 w 56.00 384.00 m 539.00 384.00 l S
+BT /F1 9 Tf 64.00 368.00 Td (One spot lamp, named lamp_spot, parented to joint_head, 42 degree cone,) Tj ET
+BT /F1 9 Tf 64.00 354.00 Td (   energy 40-60 W at 2700-3200 K, aimed at the frame's target.) Tj ET
+BT /F1 9 Tf 64.00 340.00 Td (With the lamp on, the desk under the target must be clearly brighter than) Tj ET
+BT /F1 9 Tf 64.00 326.00 Td (   with it off: the mean image luminance has to rise by at least 30 percent.) Tj ET
+BT /F2 13 Tf 56.00 294.00 Td (5. Deliverables and render brief) Tj ET
+0.8 w 56.00 288.00 m 539.00 288.00 l S
+BT /F1 9 Tf 64.00 272.00 Td (desk_lamp.blend, manifest.json.) Tj ET
+BT /F1 9 Tf 64.00 258.00 Td (render_pose_01..03.png: cam_pose, 35 mm, 1.6 m from the lamp base, 0.85 m high,) Tj ET
+BT /F1 9 Tf 64.00 244.00 Td (   1600 x 1200, frames 1, 2 and 3.) Tj ET
+BT /F1 9 Tf 64.00 230.00 Td (render_hero.png: cam_hero, 50 mm, 1600 x 1200, frame 1.) Tj ET
+BT /F1 9 Tf 64.00 216.00 Td (Cycles CPU, 64 samples, denoising, fixed seed. Textures packed.) Tj ET
+BT /F2 13 Tf 56.00 162.00 Td (6. Licence) Tj ET
+0.8 w 56.00 156.00 m 539.00 156.00 l S
+BT /F1 9 Tf 64.00 140.00 Td (Everything in this pack was authored for this task; CC0-1.0.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000003738 00000 n 
+0000003808 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3883
+%%EOF

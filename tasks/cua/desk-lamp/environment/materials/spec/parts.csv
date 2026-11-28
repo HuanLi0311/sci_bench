@@ -1,0 +1,8 @@
+part,size_mm,material
+base,dia 120 x 22,powder-coat paint
+lower_arm,320 x 30 x 30,powder-coat paint
+upper_arm,300 x 24 x 24,powder-coat paint
+shade,"90 long, 104 to 60","brushed steel, metallic 1.0"
+bulb,dia 40,"warm emitter, 2700-3200 K"
+lamp_spot,"spot, 42 deg cone",40-60 W
+joint_yaw/shoulder/elbow/head,empties,"yaw Z, others X"
