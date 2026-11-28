@@ -1,0 +1,52 @@
+{
+ "schemaVersion": 1,
+ "units": "meters",
+ "blenderVersion": "4.2.3 LTS",
+ "assets": [
+  {
+   "path": "textures/lamp_paint.png",
+   "role": "texture",
+   "source": "self-authored",
+   "license": "CC0-1.0",
+   "url": ""
+  }
+ ],
+ "renders": [
+  {
+   "file": "render_pose_01.png",
+   "camera": "cam_pose",
+   "resolution": [
+    1600,
+    1200
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_pose_02.png",
+   "camera": "cam_pose",
+   "resolution": [
+    1600,
+    1200
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_pose_03.png",
+   "camera": "cam_pose",
+   "resolution": [
+    1600,
+    1200
+   ],
+   "samples": 64
+  },
+  {
+   "file": "render_hero.png",
+   "camera": "cam_hero",
+   "resolution": [
+    1600,
+    1200
+   ],
+   "samples": 64
+  }
+ ]
+}
