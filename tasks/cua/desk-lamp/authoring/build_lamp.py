@@ -154,6 +154,19 @@ def solve_ik(target):
             if best is None or err < best[0]:
                 best = (err, beta1, beta2, px, pz)
     err, beta1, beta2, px, pz = best
+    # Refine the coarse 0.1 degree grid so the reference is far inside the
+    # 8 mm acceptance band rather than sitting on the grid quantisation.
+    step = math.radians(0.1)
+    for _ in range(60):
+        step *= 0.5
+        for db1 in (-step, 0.0, step):
+            for db2 in (-step, 0.0, step):
+                b1, b2 = beta1 + db1, beta2 + db2
+                qx = L1 * math.sin(b1) + L2 * math.sin(b1 + b2)
+                qz = L1 * math.cos(b1) + L2 * math.cos(b1 + b2)
+                e = math.hypot(qx - r, qz - h)
+                if e < err:
+                    err, beta1, beta2 = e, b1, b2
     # Rz(yaw) maps the local +Y the arm swings in onto (tx, ty): the shoulder
     # rotation tilts the chain towards local +Y, so the yaw must be measured
     # from +Y towards +X with the opposite sign.
