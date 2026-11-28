@@ -53,7 +53,7 @@ def main():
             path=out/'manifest.json';man=json.loads(path.read_text());man['assets'][0]['path']='textures/unrelated.png'
             path.write_text(json.dumps(man))
         elif case=='corrupt-render':
-            (out/next(iter(runtime.RENDERS if hasattr(runtime,'RENDERS') else {'render_front.png' if banner else 'render_day.png':None}))).write_bytes(b'not a png')
+            (out/('render_front.png' if banner else 'render_day.png')).write_bytes(b'not a png')
         else:
             with (directory/'mutation.log').open('w') as stream:
                 subprocess.run(['docker','run','--rm','--network','none','--entrypoint','blender',
