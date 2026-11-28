@@ -1,0 +1,48 @@
+[
+  {
+    "case": "unused-materials",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T05:59:36.736585+00:00",
+    "failed_checks": [
+      "R09_materials",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/unused-materials/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/unused-materials/verifier"
+    ]
+  },
+  {
+    "case": "hidden-part",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T05:59:46.753371+00:00",
+    "failed_checks": [
+      "R03_parts",
+      "R09_materials",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/hidden-part/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/hidden-part/verifier"
+    ]
+  },
