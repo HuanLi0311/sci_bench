@@ -1,8 +1,8 @@
 {
  "ok": true,
  "target_px": [
-  224,
-  148
+  229,
+  289
  ],
  "target_in_frame": true,
  "lamp_present": true,
@@ -20,7 +20,7 @@
   -1.0
  ],
  "lamp_hits_down": true,
- "on_patch": 0.05813814699649811,
- "off_patch": 0.05632719770073891,
- "ratio": 1.0322
+ "on_patch": 0.49578073620796204,
+ "off_patch": 0.2552089989185333,
+ "ratio": 1.9426
 }
