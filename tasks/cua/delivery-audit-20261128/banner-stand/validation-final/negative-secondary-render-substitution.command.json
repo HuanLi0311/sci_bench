@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+    "grade",
+    "--out",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/authoring/runs/20261127T173322Z-mutation-secondary-render-substitution/submission",
+    "--logs",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/validation-final/negative-secondary-render-substitution"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-28T06:13:54.598141+00:00",
+  "ended_utc": "2026-11-28T06:17:30.756645+00:00"
+}

@@ -13,10 +13,10 @@ import sys
 import bpy
 
 VIEWS = [
-    ("render_pose_01.png", "cam_pose", 800, 600, 1),
-    ("render_pose_02.png", "cam_pose", 800, 600, 2),
-    ("render_pose_03.png", "cam_pose", 800, 600, 3),
-    ("render_hero.png", "cam_hero", 800, 600, 1),
+    ("render_pose_01.png", "cam_pose", 1600, 1200, 1),
+    ("render_pose_02.png", "cam_pose", 1600, 1200, 2),
+    ("render_pose_03.png", "cam_pose", 1600, 1200, 3),
+    ("render_hero.png", "cam_hero", 1600, 1200, 1),
 ]
 
 
@@ -65,7 +65,7 @@ def main():
         yaw.rotation_mode = 'XYZ'
         yaw.rotation_euler = (0.0, 0.0, yaw.rotation_euler[2] + math.radians(25.0))
         bpy.context.view_layer.update()
-        shot("cam_pose", os.path.join(work, "ac_yaw.png"), 800, 600, 1)
+        shot("cam_pose", os.path.join(work, "ac_yaw.png"), 1600, 1200, 1)
 
 
 if __name__ == "__main__":

@@ -47,6 +47,14 @@ def bvh_of(ob):
     return BVHTree.FromPolygons(verts, faces, all_triangles=False, epsilon=0.0)
 
 
+def local_dims(ob):
+    """Mesh bounding box in its own space: unaffected by the pose."""
+    if not ob.data.vertices:
+        return None
+    xs = [v.co for v in ob.data.vertices]
+    return [max(v[i] for v in xs) - min(v[i] for v in xs) for i in range(3)]
+
+
 def polys(ob):
     deps = bpy.context.evaluated_depsgraph_get()
     ev = ob.evaluated_get(deps)
@@ -83,6 +91,7 @@ def main():
                  "world": list(ob.matrix_world.translation)}
         if ob.type == 'MESH':
             entry["aabb"] = world_aabb(ob)
+            entry["local_dims"] = local_dims(ob)
             entry["polys"] = polys(ob)
             entry["materials"] = [m.name if m else None for m in ob.data.materials]
             report["polys_total"] += entry["polys"]
@@ -212,6 +221,33 @@ def main():
                           "world": [round(c, 4) for c in spot.matrix_world.translation]}
         sc.frame_set(1)
         bpy.context.view_layer.update()
+
+        # Optical alignment: the spot and the bulb must sit on the shade axis,
+        # otherwise the lamp is not rigged inside the shade it appears to be in.
+        head = bpy.data.objects.get("joint_head")
+        bulb = bpy.data.objects.get("bulb")
+        if head is not None:
+            origin = head.matrix_world.translation.copy()
+            axis = (head.matrix_world.to_quaternion() @ Vector((0, 0, 1))).normalized()
+            spot_pos = spot.matrix_world.translation.copy()
+
+            def off_axis(p):
+                d = p - origin
+                return (d - axis * d.dot(axis)).length
+
+            optics = {"lamp_off_axis_mm": round(off_axis(spot_pos) * 1000, 2),
+                      "lamp_along_axis_mm": round((spot_pos - origin).dot(axis) * 1000, 2)}
+            if bulb is not None:
+                deps = bpy.context.evaluated_depsgraph_get()
+                ev = bulb.evaluated_get(deps)
+                me = ev.to_mesh()
+                mw = ev.matrix_world
+                pts = [mw @ v.co for v in me.vertices]
+                ev.to_mesh_clear()
+                if pts:
+                    centre = sum(pts, Vector()) / len(pts)
+                    optics["bulb_off_axis_mm"] = round(off_axis(centre) * 1000, 2)
+            report["optics"] = optics
 
     with open(out_path, "w") as fh:
         json.dump(report, fh, indent=1)

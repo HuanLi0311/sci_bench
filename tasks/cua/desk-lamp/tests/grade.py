@@ -106,27 +106,27 @@ def main():
 
     objs = scene.get("objects") or {}
 
-    def extent(name):
-        a = (objs.get(name) or {}).get("aabb")
-        if not a:
-            return None
-        return [a[1][i] - a[0][i] for i in range(3)]
+    def local(name):
+        d = (objs.get(name) or {}).get("local_dims")
+        return [v * 1000.0 for v in d] if d else None
 
-    base = extent("base")
-    lower = extent("lower_arm")
-    upper = extent("upper_arm")
-    shade = extent("shade")
+    base = local("base")
+    lower = local("lower_arm")
+    upper = local("upper_arm")
+    shade = local("shade")
+    # Local mesh extents: the arm length is the long axis of its own box, and
+    # the shade length is its axial extent (its mouth diameter is larger).
     dims_ok = (
-        base is not None and abs(max(base[0], base[1]) * 1000 - 120) <= 2
-        and abs(base[2] * 1000 - 22) <= 1
-        and lower is not None and abs(max(lower) * 1000 - 320) <= 3
-        and upper is not None and abs(max(upper) * 1000 - 300) <= 3
-        and shade is not None and abs(max(shade) * 1000 - 90) <= 4
+        base is not None and abs(max(base[0], base[1]) - 120) <= 2
+        and abs(base[2] - 22) <= 1
+        and lower is not None and abs(max(lower) - 320) <= 3
+        and upper is not None and abs(max(upper) - 300) <= 3
+        and shade is not None and abs(shade[2] - 90) <= 4
         and abs(float(scene.get("unit_scale", 0)) - 1.0) <= 1e-6)
     add("R02_geometry", "must", dims_ok,
-        f"base={[round(v * 1000, 1) for v in base] if base else None} "
-        f"lower={max(lower) * 1000:.1f} upper={max(upper) * 1000:.1f} "
-        f"shade={max(shade) * 1000:.1f}")
+        f"base={[round(v, 1) for v in base] if base else None} "
+        f"lower={max(lower):.1f} upper={max(upper):.1f} shade_z={shade[2]:.1f}" if dims_ok
+        else f"base={base} lower={lower} upper={upper} shade={shade}")
 
     joints = scene.get("joints") or {}
     chain_bad = []
@@ -179,9 +179,13 @@ def main():
     above = all(all(z >= -1.0 for z in (d or {}).values()) for d in lows.values())
     add("R07_above_desk", "must", len(lows) == 3 and above, lows)
 
-    overlaps = {k: v.get("arm_overlap") for k, v in poses.items()}
-    add("R08_no_intersection", "normal",
-        len(overlaps) == 3 and all(v == 0 for v in overlaps.values()), overlaps)
+    optics = scene.get("optics") or {}
+    optics_ok = (optics.get("lamp_off_axis_mm") is not None
+                 and optics["lamp_off_axis_mm"] <= 3.0
+                 and optics.get("bulb_off_axis_mm") is not None
+                 and optics["bulb_off_axis_mm"] <= 5.0
+                 and 60.0 <= (optics.get("lamp_along_axis_mm") or 0) <= 110.0)
+    add("R08_optics", "normal", optics_ok, optics)
 
     lamp = scene.get("lamp") or {}
     spot = objs.get("lamp_spot") or {}
@@ -283,7 +287,7 @@ def main():
                  "--python", "/tests/rerender.py", "--", WORK], timeout=1800)
             base1 = load_gray(os.path.join(WORK, "render_pose_01.png"))
             yawed = load_gray(os.path.join(WORK, "ac_yaw.png"))
-            delivered = load_gray(os.path.join(out, "render_pose_01.png"), size=(800, 600))
+            delivered = load_gray(os.path.join(out, "render_pose_01.png"))
             s_match = ss_img(base1, delivered)
             s_yaw = ss_img(base1, yawed)
             ac_ok = s_match >= 0.90 and s_yaw <= 0.98
