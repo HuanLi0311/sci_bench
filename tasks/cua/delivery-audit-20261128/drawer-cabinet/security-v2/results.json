@@ -46,3 +46,96 @@
       "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/hidden-part/verifier"
     ]
   },
+  {
+    "case": "static-door",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T05:59:54.914855+00:00",
+    "failed_checks": [
+      "R07_door_hinge",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/static-door/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/static-door/verifier"
+    ]
+  },
+  {
+    "case": "coupled-slides",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:00:03.561534+00:00",
+    "failed_checks": [
+      "R05_travel",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/coupled-slides/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/coupled-slides/verifier"
+    ]
+  },
+  {
+    "case": "manifest-omission",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:00:09.267978+00:00",
+    "failed_checks": [
+      "R13_manifest",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/manifest-omission/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/manifest-omission/verifier"
+    ]
+  },
+  {
+    "case": "corrupt-render",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:00:14.644640+00:00",
+    "failed_checks": [
+      "R12_renders",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/corrupt-render/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-v2/corrupt-render/verifier"
+    ]
+  }
+]

@@ -27,10 +27,11 @@ L1, L2 = 0.320, 0.300
 SHADE_L = 0.090
 DESK_W, DESK_D, DESK_T = 1.200, 0.700, 0.030
 TARGETS = [
-    (0.300, 0.350, 0.120),
-    (-0.280, 0.320, 0.120),
-    (0.050, 0.550, 0.140),
+    (0.300, 0.350, 0.350),
+    (-0.280, 0.320, 0.340),
+    (0.050, 0.470, 0.360),
 ]
+LIGHT_OFFSET = 0.082   # from the head pivot to the spot, along the shade axis
 
 
 def log(*a):
@@ -92,6 +93,19 @@ def cylinder(name, centre, radius, depth, axis='Z', segments=32, r2=None):
     bm.to_mesh(me)
     bm.free()
     return link(bpy.data.objects.new(name, me))
+
+
+def cone_open(name, centre, r_bottom, r_top, depth, segments=40):
+    """Cone frustum without caps."""
+    me = bpy.data.meshes.new(name)
+    bm = bmesh.new()
+    bmesh.ops.create_cone(bm, cap_ends=False, cap_tris=False, segments=segments,
+                          radius1=r_bottom, radius2=r_top, depth=depth)
+    bmesh.ops.translate(bm, verts=bm.verts, vec=Vector(centre))
+    bm.to_mesh(me)
+    bm.free()
+    ob = link(bpy.data.objects.new(name, me))
+    return ob
 
 
 def disc(name, centre, radius, segments=24):
@@ -215,14 +229,14 @@ def build_chain(paint, metal, lamp_collection):
     upper = box("upper_arm", (0, 0, PIVOT_Z + L1 + L2 / 2), (0.024, 0.024, L2), bevel=0.003)
     upper.data.materials.append(paint)
 
-    shade = cylinder("shade", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L / 2),
-                     0.052, SHADE_L, segments=40, r2=0.030)
+    # An open cone: a capped shade would enclose the spot and the lamp would
+    # contribute nothing to the render.
+    shade = cone_open("shade", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L / 2),
+                      0.030, 0.052, SHADE_L, segments=40)
     shade.data.materials.append(metal)
-    # An open disc at the mouth: a closed cap here would trap the spot light
-    # inside the bulb mesh and the lamp would contribute nothing to the render.
-    bulb = disc("bulb", (0, 0, PIVOT_Z + L1 + L2 + SHADE_L - 0.002), 0.020,
-                segments=24)
-    bulb.data.materials.append(plain("mat_bulb", (1.0, 0.93, 0.78), 0.3))
+    # Reflector plate behind the spot: diffuse warm, it never blocks the beam.
+    bulb = disc("bulb", (0, 0, PIVOT_Z + L1 + L2 + 0.030), 0.024, segments=24)
+    bulb.data.materials.append(plain("mat_bulb", (1.0, 0.90, 0.72), 0.35))
 
     parent_keep(lower, joints["joint_shoulder"])
     parent_keep(upper, joints["joint_elbow"])
@@ -245,24 +259,26 @@ def build_light(joints, lamp_collection):
     lamp.shadow_soft_size = 0.012
     ob = bpy.data.objects.new("lamp_spot", lamp)
     lamp_collection.objects.link(ob)
-    ob.location = (0, 0, PIVOT_Z + L1 + L2 + SHADE_L + 0.010)
+    ob.location = (0, 0, PIVOT_Z + L1 + L2 + LIGHT_OFFSET)
     parent_keep(ob, joints["joint_head"])
+    # A spot emits along its local -Z; the shade opens along the head's +Z.
+    ob.rotation_euler = (math.pi, 0.0, 0.0)
+    bpy.context.view_layer.update()
     return ob
 
 
-def aim_light(frame_target):
-    """Point the spot at the target of the current pose, from the shade mouth.
-
-    The light is parented to a joint that is itself rotated, so the aim is
-    written as a world matrix and Blender resolves the local rotation from it.
-    """
-    light = bpy.data.objects["lamp_spot"]
+def aim_head(desk_point):
+    """Tilt joint_head so the shade axis points at a point on the desk."""
+    head = bpy.data.objects["joint_head"]
     bpy.context.view_layer.update()
-    eye = light.matrix_world.translation
-    quat = (Vector(frame_target) - eye).to_track_quat('-Z', 'Y')
-    matrix = Matrix.Translation(eye) @ quat.to_matrix().to_4x4()
-    light.matrix_world = matrix
+    pivot = head.matrix_world.translation.copy()
+    u = (Vector(desk_point) - pivot).normalized()
+    # Keep the pivot, rotate the frame so its local +Z follows u.
+    quat = u.to_track_quat('Z', 'Y')
+    head.matrix_world = Matrix.Translation(pivot) @ quat.to_matrix().to_4x4()
     bpy.context.view_layer.update()
+    axis = head.matrix_world.to_quaternion() @ Vector((0, 0, 1))
+    return (axis - u).length
 
 
 def build_stage():
@@ -332,13 +348,14 @@ def main():
     sc.frame_start, sc.frame_end = 1, 3
     for i, target in enumerate(TARGETS, start=1):
         err_mm, _ = set_pose(target)
-        log(f"target {i}: head error {err_mm * 1000:.3f} mm")
+        axis_err = aim_head((target[0], target[1], 0.0))
+        log(f"target {i}: head error {err_mm * 1000:.3f} mm, axis error {axis_err:.4f}")
         assert err_mm < 1e-4, f"pose {i} missed by {err_mm * 1000:.2f} mm"
-        aim_light(target)
+        assert axis_err < 1e-4, f"pose {i} axis off by {axis_err:.4f}"
         for name in ("joint_yaw", "joint_shoulder", "joint_elbow", "joint_head"):
             ob = bpy.data.objects[name]
             ob.keyframe_insert("rotation_euler", frame=i)
-        light.keyframe_insert("rotation_euler", frame=i)
+
 
     # keyframe on the empties lives in one action shared by all four objects
     ad = bpy.data.objects["joint_yaw"].animation_data
