@@ -1,0 +1,95 @@
+[
+  {
+    "case": "unused-materials",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:28:40.439982+00:00",
+    "failed_checks": [
+      "R09_materials",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/unused-materials/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/unused-materials/verifier"
+    ]
+  },
+  {
+    "case": "hidden-part",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:28:54.154910+00:00",
+    "failed_checks": [
+      "R03_parts",
+      "R09_materials",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/hidden-part/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/hidden-part/verifier"
+    ]
+  },
+  {
+    "case": "static-door",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:29:06.545673+00:00",
+    "failed_checks": [
+      "R07_door_hinge",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/static-door/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/static-door/verifier"
+    ]
+  },
+  {
+    "case": "coupled-slides",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:29:21.185107+00:00",
+    "failed_checks": [
+      "R05_travel",
+      "R14_anticheat",
+      "R15_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/coupled-slides/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/security-final/coupled-slides/verifier"
+    ]
+  }
+]

@@ -1,0 +1,466 @@
+{
+ "ok": true,
+ "blender": "4.2.3 LTS",
+ "unit_scale": 1.0,
+ "objects": {
+  "base": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.05999999865889549,
+     0.0
+    ],
+    [
+     0.4000000059604645,
+     0.05999999865889549,
+     0.05000000074505806
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_aluminium"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     800.0,
+     120.0,
+     50.0
+    ]
+   ]
+  },
+  "cam_folded": {
+   "type": "ORTHO",
+   "parent": null,
+   "location": [
+    0.0,
+    2.200000047683716,
+    1.0
+   ],
+   "lens": 50.0,
+   "ortho_scale": 2.1500000953674316
+  },
+  "cam_front": {
+   "type": "ORTHO",
+   "parent": null,
+   "location": [
+    0.0,
+    3.200000047683716,
+    1.0
+   ],
+   "lens": 50.0,
+   "ortho_scale": 2.1500000953674316
+  },
+  "cam_three_quarter": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    1.899999976158142,
+    2.4000000953674316,
+    1.7999999523162842
+   ],
+   "lens": 35.0,
+   "ortho_scale": 6.0
+  },
+  "canvas": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4000000059604645,
+     0.029999999329447746,
+     0.05999999865889549
+    ],
+    [
+     0.4000000059604645,
+     0.029999999329447746,
+     1.9600000381469727
+    ]
+   ],
+   "polys": 640,
+   "materials": [
+    "mat_canvas"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     800.0,
+     0.0,
+     1900.0
+    ]
+   ]
+  },
+  "ground": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -2.0,
+     -2.0,
+     -0.009999999776482582
+    ],
+    [
+     2.0,
+     2.0,
+     0.0
+    ]
+   ],
+   "polys": 12,
+   "materials": [
+    "mat_ground"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     4000.0,
+     4000.0,
+     10.0
+    ]
+   ]
+  },
+  "hinge_rear": {
+   "type": "EMPTY",
+   "parent": null,
+   "location": [
+    0.0,
+    -0.04500000178813934,
+    0.07500000298023224
+   ]
+  },
+  "leg_rear": {
+   "type": "MESH",
+   "parent": "hinge_rear",
+   "location": [
+    0.0,
+    0.016807449981570244,
+    0.013114306144416332
+   ],
+   "aabb": [
+    [
+     -0.017999999225139618,
+     -0.5213911533355713,
+     0.0713711604475975
+    ],
+    [
+     0.017999999225139618,
+     -0.028260447084903717,
+     1.922190546989441
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_aluminium"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     36.0,
+     493.131,
+     1850.819
+    ]
+   ]
+  },
+  "light_fill": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    -2.0,
+    1.600000023841858,
+    1.2000000476837158
+   ]
+  },
+  "light_key": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    1.600000023841858,
+    2.200000047683716,
+    2.5999999046325684
+   ]
+  },
+  "light_rim": {
+   "type": "LIGHT",
+   "parent": null,
+   "location": [
+    0.4000000059604645,
+    -2.4000000953674316,
+    2.4000000953674316
+   ]
+  },
+  "mast_left": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.019999999552965164,
+     0.050000011920928955
+    ],
+    [
+     -0.35999998450279236,
+     0.019999999552965164,
+     1.9600000381469727
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_aluminium"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     40.0,
+     40.0,
+     1910.0
+    ]
+   ]
+  },
+  "mast_right": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     0.35999998450279236,
+     -0.019999999552965164,
+     0.050000011920928955
+    ],
+    [
+     0.4000000059604645,
+     0.019999999552965164,
+     1.9600000381469727
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_aluminium"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     40.0,
+     40.0,
+     1910.0
+    ]
+   ]
+  },
+  "top_bar": {
+   "type": "MESH",
+   "parent": null,
+   "location": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "aabb": [
+    [
+     -0.4000000059604645,
+     -0.019999999552965164,
+     1.9600000381469727
+    ],
+    [
+     0.4000000059604645,
+     0.019999999552965164,
+     2.0
+    ]
+   ],
+   "polys": 60,
+   "materials": [
+    "mat_aluminium"
+   ],
+   "visible_mesh": true,
+   "components_mm": [
+    [
+     800.0,
+     40.0,
+     40.0
+    ]
+   ]
+  }
+ },
+ "meshes": [
+  "base",
+  "canvas",
+  "ground",
+  "leg_rear",
+  "mast_left",
+  "mast_right",
+  "top_bar"
+ ],
+ "cameras": {
+  "cam_folded": {
+   "type": "ORTHO",
+   "parent": null,
+   "location": [
+    0.0,
+    2.200000047683716,
+    1.0
+   ],
+   "lens": 50.0,
+   "ortho_scale": 2.1500000953674316
+  },
+  "cam_front": {
+   "type": "ORTHO",
+   "parent": null,
+   "location": [
+    0.0,
+    3.200000047683716,
+    1.0
+   ],
+   "lens": 50.0,
+   "ortho_scale": 2.1500000953674316
+  },
+  "cam_three_quarter": {
+   "type": "PERSP",
+   "parent": null,
+   "location": [
+    1.899999976158142,
+    2.4000000953674316,
+    1.7999999523162842
+   ],
+   "lens": 35.0,
+   "ortho_scale": 6.0
+  }
+ },
+ "materials": {
+  "mat_aluminium": {
+   "name": "mat_aluminium",
+   "metallic": 0.9200000166893005,
+   "roughness": 0.3199999928474426,
+   "images": []
+  },
+  "mat_canvas": {
+   "name": "mat_canvas",
+   "metallic": 0.0,
+   "roughness": 0.7200000286102295,
+   "images": [
+    {
+     "name": "banner_graphic",
+     "size": [
+      819,
+      1945
+     ],
+     "packed": true,
+     "feeds": "Base Color",
+     "filepath": "//textures/banner_graphic.png"
+    }
+   ]
+  },
+  "mat_ground": {
+   "name": "mat_ground",
+   "metallic": 0.0,
+   "roughness": 0.699999988079071,
+   "images": []
+  }
+ },
+ "images": [
+  {
+   "name": "banner_graphic",
+   "size": [
+    819,
+    1945
+   ],
+   "packed": true,
+   "filepath": "//textures/banner_graphic.png"
+  }
+ ],
+ "libraries": [],
+ "polys_total": 952,
+ "unpacked_images": [],
+ "parts_present": {
+  "base": true,
+  "mast_left": true,
+  "mast_right": true,
+  "top_bar": true,
+  "canvas": true,
+  "leg_rear": true,
+  "hinge_rear": true
+ },
+ "frame_mm": {
+  "width": 800.0,
+  "height": 2000.0,
+  "depth": 120.0,
+  "min_z": 0.0
+ },
+ "canvas": {
+  "width_mm": 800.0,
+  "height_mm": 1900.0,
+  "z_top_mm": 1960.0,
+  "y": 0.03,
+  "planarity_mm": 0.0,
+  "uv": {
+   "area": 1.0,
+   "bbox": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     1.25,
+     1.0
+    ]
+   ],
+   "mapping_error": 0.25000000931322564
+  }
+ },
+ "fold": {
+  "hinge": "hinge_rear",
+  "parent": "hinge_rear",
+  "hinge_location": [
+   0.0,
+   -0.045,
+   0.075
+  ],
+  "states": {
+   "0": {
+    "z_min_mm": 75.0,
+    "z_max_mm": 1975.0,
+    "y_max_mm": 63.0,
+    "motion_error_mm": 0.0,
+    "overlap": 0
+   },
+   "7": {
+    "z_min_mm": 73.17,
+    "z_max_mm": 1962.67,
+    "y_max_mm": 294.1,
+    "motion_error_mm": 5.9604644775390625e-05,
+    "overlap": 0
+   },
+   "14": {
+    "z_min_mm": 71.37,
+    "z_max_mm": 1922.19,
+    "y_max_mm": 521.4,
+    "motion_error_mm": 8.940696716308594e-05,
+    "overlap": 0
+   }
+  },
+  "folded_depth_mm": 123.0,
+  "open_depth_mm": 521.4
+ }
+}

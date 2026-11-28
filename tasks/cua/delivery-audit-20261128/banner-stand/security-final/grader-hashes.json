@@ -1,0 +1,10 @@
+{
+  "tests/check_scene.py": "019df0eaeebf88bb712b71e5909b714018f3b7175e69534bbf083308f9ca696e",
+  "tests/Dockerfile": "66ae6b986fb0c577556df710d972fec98b46ab4228222422f89df3341d44d981",
+  "tests/grade.py": "005854cb9e6de075d7c9c5ab193161d1f255e2e29179a6ebfcb673a53e85e72c",
+  "tests/render_compare.py": "7a14393c2ee611d9a76e0c3051bd6ef2cc8ea7a297631dddf808dabf75b54cf2",
+  "tests/rerender.py": "d13663b9d7e9c983628cb7176a82d84f800c22e2405a15feee88b58dea776f9f",
+  "tests/scene_support.py": "613e79e78bd83738d11f75c53e94f5fd8acd24601d0420cc44cca23c27435c3a",
+  "tests/submission_support.py": "d4efdac0f6d07eda57eee1acb016e27b6b9561e6a991dc685a25f0ddab303cd2",
+  "tests/test.sh": "2b70a4f9eedd3b9b1e7a409c1b1706aaa7cc225fe5c7e2d8b2c1e2cd925d7ed2"
+}

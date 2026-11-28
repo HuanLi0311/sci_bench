@@ -1,0 +1,118 @@
+[
+  {
+    "case": "unused-materials",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:28:39.442805+00:00",
+    "failed_checks": [
+      "R05_uv",
+      "R08_materials",
+      "R13_anticheat",
+      "R14_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/unused-materials/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/unused-materials/verifier"
+    ]
+  },
+  {
+    "case": "hidden-part",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:28:49.347213+00:00",
+    "failed_checks": [
+      "R03_parts",
+      "R13_anticheat",
+      "R14_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/hidden-part/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/hidden-part/verifier"
+    ]
+  },
+  {
+    "case": "uv-tiling",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:28:56.885778+00:00",
+    "failed_checks": [
+      "R05_uv",
+      "R13_anticheat",
+      "R14_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/uv-tiling/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/uv-tiling/verifier"
+    ]
+  },
+  {
+    "case": "manifest-omission",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:29:02.043443+00:00",
+    "failed_checks": [
+      "R12_manifest",
+      "R13_anticheat",
+      "R14_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/manifest-omission/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/manifest-omission/verifier"
+    ]
+  },
+  {
+    "case": "corrupt-render",
+    "expected_reward": 0,
+    "reward": 0,
+    "exit_code": 1,
+    "pass": true,
+    "started_utc": "2026-11-28T06:29:07.296916+00:00",
+    "failed_checks": [
+      "R11_renders",
+      "R13_anticheat",
+      "R14_render_authenticity",
+      "R_render_structure"
+    ],
+    "argv": [
+      "/usr/bin/python3",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+      "grade",
+      "--out",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/corrupt-render/submission",
+      "--logs",
+      "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/security-final/corrupt-render/verifier"
+    ]
+  }
+]
