@@ -178,7 +178,7 @@ def main():
         collision)
 
     mats = scene.get('materials') or {}
-    metal_ok = all(any((mats.get(m, {}).get('metallic') or 0) >= 0.8
+    metal_ok = all(objs.get(n, {}).get('materials') and all((mats.get(m, {}).get('metallic') or 0) >= 0.8
                        for m in objs.get(n, {}).get('materials', []))
                    for n in ('base', 'mast_left', 'mast_right', 'top_bar', 'leg_rear'))
     canvas_ok = all(mats.get(m, {}).get('images') and

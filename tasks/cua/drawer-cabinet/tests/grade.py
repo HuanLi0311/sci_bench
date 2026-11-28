@@ -179,10 +179,11 @@ def main():
     geometry = {}
     for n in DRAWERS + ['door_right']:
         target = [440, 18, 140] if n in DRAWERS else [450, 18, 746]
-        geometry[n] = any(all(abs(d[i]-target[i]) <= 2 for i in range(3))
-                          for d in objs.get(n, {}).get('components_mm', []))
+        slab = (scene.get('front_slabs') or {}).get(n, {})
+        dims = slab.get('dims_mm') or []
+        geometry[n] = len(dims) == 3 and all(abs(dims[i]-target[i]) <= 3 for i in range(3))
         if n in DRAWERS:
-            geometry[n] &= any(abs(d[1]-400) <= 2 for d in objs.get(n, {}).get('components_mm', []))
+            geometry[n] &= abs(slab.get('tray_depth_mm', 0)-400) <= 3
     add('R_panel_fronts', 'must', all(geometry.values()), geometry)
 
     imgs = [i for i in (scene.get("images") or []) if i.get("filepath")]

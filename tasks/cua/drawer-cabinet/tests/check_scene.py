@@ -145,6 +145,21 @@ def main():
             panels[ob.name] = {"dims_mm": [round(d * 1000, 2) for d in dims],
                                "thickness_mm": round(min(dims) * 1000, 2)}
     report["panels"] = panels
+    # Measure the front slab by its position, independent of whether the
+    # author joined, welded or boolean-unioned the front and tray meshes.
+    report['front_slabs'] = {}
+    for ob in objs(DRAWERS + [DOOR]):
+        ev = ob.evaluated_get(bpy.context.evaluated_depsgraph_get())
+        me = ev.to_mesh()
+        pts = [ev.matrix_world @ v.co for v in me.vertices]
+        slab = [p for p in pts if 0.205 <= p.y <= 0.228]
+        dims = [round((max(p[i] for p in slab)-min(p[i] for p in slab))*1000, 3) for i in range(3)] if slab else []
+        tray = [p for p in pts if p.y < 0.208]
+        report['front_slabs'][ob.name] = {
+            'dims_mm': dims,
+            'tray_depth_mm': round((max(p.y for p in tray)-min(p.y for p in tray))*1000, 3) if tray else 0,
+        }
+        ev.to_mesh_clear()
     envelope = parts + [o for o in bpy.data.objects
                         if o.type == 'MESH' and o.name.startswith("foot")]
     boxes = [report["objects"][o.name]["aabb"] for o in envelope
