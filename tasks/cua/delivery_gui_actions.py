@@ -23,9 +23,10 @@ def act(task):
         # File browser address and filename fields observed in dialog.png.
         command(['docker','exec',name,'xdotool','mousemove','950','295','click','1'])
         key('ctrl+a');type_text('/app/out/');key('Return')
-        command(['docker','exec',name,'xdotool','mousemove','925','850','click','1'])
+        time.sleep(1)
+        command(['docker','exec',name,'xdotool','mousemove','925','886','click','1'])
         key('ctrl+a');type_text('gui_smoke.blend')
-        command(['docker','exec',name,'xdotool','mousemove','1416','850','click','1'])
+        command(['docker','exec',name,'xdotool','mousemove','1416','886','click','1'])
         time.sleep(3)
     elif stage=='confirm':
         key('Return');time.sleep(2)

@@ -20,7 +20,7 @@ def run(args,path,timeout=3700):
     return rc
 
 def validate(task):
-    directory=ROOT/task; evidence=AUDIT/task/'validation-v2';evidence.mkdir(exist_ok=True)
+    directory=ROOT/task; evidence=AUDIT/task/'validation-final';evidence.mkdir(exist_ok=True)
     frozen=evidence/'grader-source'
     shutil.copytree(directory/'tests',frozen,ignore=shutil.ignore_patterns('__pycache__'))
     hashes={str(p.relative_to(directory)):hashlib.sha256(p.read_bytes()).hexdigest()
