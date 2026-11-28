@@ -117,13 +117,13 @@ def spec_pdf(path):
         "Folded, the whole stand is at most 130 mm deep.",
     ]):
         pdf.text(64, 332 + 14 * i, line, 9)
-    heading(410, "4. Materials")
+    heading(430, "4. Materials")
     for i, line in enumerate([
         "Canvas: printed, roughness 0.55-0.85, artwork packed.",
         "Frame: aluminium, metallic >= 0.8, roughness 0.25-0.40.",
     ]):
-        pdf.text(64, 432 + 14 * i, line, 9)
-    heading(470, "5. Deliverables and render brief")
+        pdf.text(64, 452 + 14 * i, line, 9)
+    heading(510, "5. Deliverables and render brief")
     for i, line in enumerate([
         "banner_stand.blend, manifest.json.",
         "render_front.png: cam_front, orthographic, 2.15 m coverage, 1200 x 1600,",
@@ -132,9 +132,9 @@ def spec_pdf(path):
         "render_folded.png: cam_folded, orthographic, 1200 x 1600, brace folded to 0.",
         "Cycles CPU, 64 samples, denoising, fixed seed.",
     ]):
-        pdf.text(64, 492 + 14 * i, line, 9)
-    heading(612, "6. Licence")
-    pdf.text(64, 634, "Authored for this task; CC0-1.0.", 9)
+        pdf.text(64, 532 + 14 * i, line, 9)
+    heading(652, "6. Licence")
+    pdf.text(64, 674, "Authored for this task; CC0-1.0.", 9)
     pdf.save(path)
 
 

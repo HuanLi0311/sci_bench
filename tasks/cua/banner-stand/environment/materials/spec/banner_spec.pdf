@@ -34,21 +34,21 @@ BT /F1 9 Tf 64.00 482.00 Td (   folded against the masts, 14 degrees is open wit
 BT /F1 9 Tf 64.00 468.00 Td (   stand and 1920 high.) Tj ET
 BT /F1 9 Tf 64.00 454.00 Td (At 0, 7 and 14 degrees the brace must not touch the masts, bar, base or canvas.) Tj ET
 BT /F1 9 Tf 64.00 440.00 Td (Folded, the whole stand is at most 130 mm deep.) Tj ET
-BT /F2 13 Tf 56.00 432.00 Td (4. Materials) Tj ET
-0.8 w 56.00 426.00 m 539.00 426.00 l S
-BT /F1 9 Tf 64.00 410.00 Td (Canvas: printed, roughness 0.55-0.85, artwork packed.) Tj ET
-BT /F1 9 Tf 64.00 396.00 Td (Frame: aluminium, metallic >= 0.8, roughness 0.25-0.40.) Tj ET
-BT /F2 13 Tf 56.00 372.00 Td (5. Deliverables and render brief) Tj ET
-0.8 w 56.00 366.00 m 539.00 366.00 l S
-BT /F1 9 Tf 64.00 350.00 Td (banner_stand.blend, manifest.json.) Tj ET
-BT /F1 9 Tf 64.00 336.00 Td (render_front.png: cam_front, orthographic, 2.15 m coverage, 1200 x 1600,) Tj ET
-BT /F1 9 Tf 64.00 322.00 Td (   rear brace open at 14 degrees.) Tj ET
-BT /F1 9 Tf 64.00 308.00 Td (render_three_quarter.png: cam_three_quarter, 35 mm, 1600 x 1200, open.) Tj ET
-BT /F1 9 Tf 64.00 294.00 Td (render_folded.png: cam_folded, orthographic, 1200 x 1600, brace folded to 0.) Tj ET
-BT /F1 9 Tf 64.00 280.00 Td (Cycles CPU, 64 samples, denoising, fixed seed.) Tj ET
-BT /F2 13 Tf 56.00 230.00 Td (6. Licence) Tj ET
-0.8 w 56.00 224.00 m 539.00 224.00 l S
-BT /F1 9 Tf 64.00 208.00 Td (Authored for this task; CC0-1.0.) Tj ET
+BT /F2 13 Tf 56.00 412.00 Td (4. Materials) Tj ET
+0.8 w 56.00 406.00 m 539.00 406.00 l S
+BT /F1 9 Tf 64.00 390.00 Td (Canvas: printed, roughness 0.55-0.85, artwork packed.) Tj ET
+BT /F1 9 Tf 64.00 376.00 Td (Frame: aluminium, metallic >= 0.8, roughness 0.25-0.40.) Tj ET
+BT /F2 13 Tf 56.00 332.00 Td (5. Deliverables and render brief) Tj ET
+0.8 w 56.00 326.00 m 539.00 326.00 l S
+BT /F1 9 Tf 64.00 310.00 Td (banner_stand.blend, manifest.json.) Tj ET
+BT /F1 9 Tf 64.00 296.00 Td (render_front.png: cam_front, orthographic, 2.15 m coverage, 1200 x 1600,) Tj ET
+BT /F1 9 Tf 64.00 282.00 Td (   rear brace open at 14 degrees.) Tj ET
+BT /F1 9 Tf 64.00 268.00 Td (render_three_quarter.png: cam_three_quarter, 35 mm, 1600 x 1200, open.) Tj ET
+BT /F1 9 Tf 64.00 254.00 Td (render_folded.png: cam_folded, orthographic, 1200 x 1600, brace folded to 0.) Tj ET
+BT /F1 9 Tf 64.00 240.00 Td (Cycles CPU, 64 samples, denoising, fixed seed.) Tj ET
+BT /F2 13 Tf 56.00 190.00 Td (6. Licence) Tj ET
+0.8 w 56.00 184.00 m 539.00 184.00 l S
+BT /F1 9 Tf 64.00 168.00 Td (Authored for this task; CC0-1.0.) Tj ET
 endstream
 endobj
 5 0 obj
