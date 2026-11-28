@@ -1,0 +1,24 @@
+[
+  [
+    "docker",
+    "exec",
+    "delivery-drawer-cabinet",
+    "xdotool",
+    "key",
+    "--clearmodifiers",
+    "Return"
+  ],
+  [
+    "docker",
+    "exec",
+    "delivery-drawer-cabinet",
+    "scrot",
+    "/tmp/gui-confirm.png"
+  ],
+  [
+    "docker",
+    "cp",
+    "delivery-drawer-cabinet:/tmp/gui-confirm.png",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/gui-smoke/confirm.png"
+  ]
+]

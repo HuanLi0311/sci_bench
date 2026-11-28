@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--network",
+    "none",
+    "--entrypoint",
+    "blender",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/tests:/tests:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/drawer-cabinet/solution:/solution:ro",
+    "-v",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/drawer-cabinet/validation-final:/evidence",
+    "delivery-drawer-cabinet-tests:20261128",
+    "--disable-autoexec",
+    "--python-exit-code",
+    "2",
+    "-b",
+    "/solution/drawer_cabinet.blend",
+    "-P",
+    "/tests/check_scene.py",
+    "--",
+    "/evidence/oracle-scene.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-28T06:09:00.810083+00:00",
+  "ended_utc": "2026-11-28T06:09:05.377418+00:00"
+}

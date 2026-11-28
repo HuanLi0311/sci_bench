@@ -1,0 +1,24 @@
+[
+  [
+    "docker",
+    "exec",
+    "delivery-banner-stand",
+    "xdotool",
+    "key",
+    "--clearmodifiers",
+    "Return"
+  ],
+  [
+    "docker",
+    "exec",
+    "delivery-banner-stand",
+    "scrot",
+    "/tmp/gui-confirm.png"
+  ],
+  [
+    "docker",
+    "cp",
+    "delivery-banner-stand:/tmp/gui-confirm.png",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/gui-smoke/confirm.png"
+  ]
+]
