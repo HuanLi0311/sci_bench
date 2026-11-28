@@ -21,6 +21,7 @@ from submission_support import manifest_error
 
 BLENDER = shutil.which("blender") or "/usr/local/bin/blender"
 CHECKS = []
+INFRA_ERRORS = []
 os.makedirs("/logs/verifier", exist_ok=True)
 WORK = tempfile.mkdtemp(prefix="work-", dir="/logs/verifier")
 
@@ -45,7 +46,13 @@ def record(cmd, result):
 
 
 def run(cmd, timeout):
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    except (subprocess.TimeoutExpired, OSError) as exc:
+        INFRA_ERRORS.append(str(exc))
+        raise
+    if r.returncode in (-9, 137):
+        INFRA_ERRORS.append(f'Blender killed: {r.returncode}')
     record(cmd, r)
     r.check_returncode()
     return r
@@ -284,6 +291,8 @@ def main():
     structure_ok = views_ok and all(np.isfinite(v) and v <= 0.60 for v in view_gradients.values())
     add("R_render_structure", "critical", structure_ok, view_gradients)
 
+    if INFRA_ERRORS:
+        raise RuntimeError('; '.join(INFRA_ERRORS))
     must = [c for c in CHECKS if c["level"] == "must"]
     crit = [c for c in CHECKS if c["level"] == "critical"]
     norm = [c for c in CHECKS if c["level"] == "normal"]
@@ -305,6 +314,6 @@ if __name__ == "__main__":
     except Exception as exc:
         traceback.print_exc(file=sys.stderr)
         CHECKS.append({"id": "R_verifier_error", "level": "must", "pass": False, "detail": str(exc)})
-        print(json.dumps({"reward": 0, "must_pass": False, "critical_pass": False,
+        print(json.dumps({"status": "infrastructure_error", "reward": None, "must_pass": False, "critical_pass": False,
                           "normal_rate": 0, "checks": CHECKS}, indent=1))
-        sys.exit(1)
+        sys.exit(2)

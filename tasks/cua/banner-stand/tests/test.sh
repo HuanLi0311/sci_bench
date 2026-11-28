@@ -14,8 +14,10 @@ STATUS=$?
 
 if [ "$STATUS" -eq 0 ]; then
   echo 1 > /logs/verifier/reward.txt
-else
+elif [ "$STATUS" -eq 1 ]; then
   echo 0 > /logs/verifier/reward.txt
+else
+  rm -f /logs/verifier/reward.txt
 fi
 
 cat /logs/verifier/metrics.json

@@ -43,4 +43,6 @@ WORKDIR /app
 COPY materials/ /app/materials/
 RUN mkdir -p /app/out && chmod -R a+rX /app
 
-CMD ["sleep", "infinity"]
+# Open a usable Blender session on the desktop, without the first-run overlay.
+RUN blender --background --factory-startup --python-expr "import bpy; bpy.context.preferences.view.show_splash=False; bpy.ops.wm.save_userpref()"
+CMD ["blender", "--disable-autoexec"]
