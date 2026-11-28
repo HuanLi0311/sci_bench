@@ -20,10 +20,15 @@ def run(args,path,timeout=3700):
     return rc
 
 def validate(task):
-    directory=ROOT/task; evidence=AUDIT/task;evidence.mkdir(exist_ok=True)
-    for suffix,context in [('env','environment'),('tests','tests')]:
+    directory=ROOT/task; evidence=AUDIT/task/'validation-v2';evidence.mkdir(exist_ok=True)
+    frozen=evidence/'grader-source'
+    shutil.copytree(directory/'tests',frozen,ignore=shutil.ignore_patterns('__pycache__'))
+    hashes={str(p.relative_to(directory)):hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in directory.rglob('*') if p.is_file() and (p.parent.name=='tests' or p.name in ('instruction.md','run.py','task.toml'))}
+    (evidence/'source-hashes.json').write_text(json.dumps(hashes,indent=2))
+    for suffix,context in [('env',directory/'environment'),('tests',frozen)]:
         tag=f'delivery-{task}-{suffix}:20261128'
-        rc=run(['docker','build','-t',tag,directory/context],evidence/f'build-{suffix}.log',2400)
+        rc=run(['docker','build','-t',tag,context],evidence/f'build-{suffix}.log',2400)
         if rc: return
     # Check the actual Blender report before committing to rendering.
     rc=run(['docker','run','--rm','--network','none','--entrypoint','blender',
@@ -40,9 +45,6 @@ def validate(task):
         run(['python3',directory/'run.py','grade','--out',submission,'--logs',evidence/('negative-'+name)],evidence/f'negative-{name}.log')
     if task=='drawer-cabinet':
         run(['python3',directory/'run.py','grade','--out',AUDIT/'static-door','--logs',evidence/'negative-static-door'],evidence/'negative-static-door.log')
-    hashes={str(p.relative_to(directory)):hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in directory.rglob('*') if p.is_file() and (p.parent.name=='tests' or p.name in ('instruction.md','run.py','task.toml'))}
-    (evidence/'source-hashes.json').write_text(json.dumps(hashes,indent=2))
 
 if __name__=='__main__':
     with ThreadPoolExecutor(max_workers=2) as pool:

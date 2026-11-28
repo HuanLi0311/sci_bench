@@ -161,6 +161,7 @@ def main():
               if report["objects"].get(d, {}).get("aabb")}
     travel = {}
     clearance = {}
+    slide_motion = {}
     for i, (drawer, slide) in enumerate(zip(DRAWERS, SLIDES), start=1):
         s_ob = bpy.data.objects.get(slide)
         d_ob = bpy.data.objects.get(drawer)
@@ -169,16 +170,24 @@ def main():
             continue
         reset_pose()
         before = world_aabb(d_ob)
+        initial = d_ob.matrix_world.copy()
+        other_objects = objs(CARCASS + [n for n in DRAWERS if n != drawer] + [DOOR])
+        other_initial = {o.name: o.matrix_world.copy() for o in other_objects}
         s_ob.location.y = TRAVEL
         bpy.context.view_layer.update()
         after = world_aabb(d_ob)
         travel[drawer] = round((after[1][1] - before[1][1]) * 1000, 2) if after and before else None
+        slide_motion[drawer] = {
+            'target_error_mm': motion_error(d_ob, initial, Matrix.Translation((0, TRAVEL, 0))),
+            'collateral_error_mm': max(motion_error(o, other_initial[o.name], Matrix.Identity(4)) for o in other_objects),
+        }
         others = objs(CARCASS)
         neighbours = [bpy.data.objects[d] for d in DRAWERS if d != drawer]
         clearance[drawer] = {"carcass_hits": overlaps([d_ob], others),
                              "neighbour_hits": overlaps([d_ob], neighbours)}
     reset_pose()
     report["drawer_travel_mm"] = travel
+    report['slide_motion'] = slide_motion
     report["drawer_clearance"] = clearance
     report["drawer_front_mm"] = {
         d: (lambda a: [round((a[1][0] - a[0][0]) * 1000, 1), round((a[1][2] - a[0][2]) * 1000, 1)])(closed[d])

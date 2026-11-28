@@ -139,7 +139,9 @@ def main():
 
     travel = scene.get("drawer_travel_mm") or {}
     travel_ok = all(v is not None and abs(v - 420) <= 2 for v in travel.values()) and len(travel) == 5
-    add("R05_travel", "must", travel_ok, travel)
+    motion = scene.get('slide_motion') or {}
+    travel_ok &= len(motion) == 5 and all(v['target_error_mm'] <= 2 and v['collateral_error_mm'] <= 2 for v in motion.values())
+    add("R05_travel", "must", travel_ok, f'{travel} errors={motion}')
 
     clearance = scene.get("drawer_clearance") or {}
     hits = {k: v for k, v in clearance.items()
@@ -170,7 +172,7 @@ def main():
                          {i['feeds'] for i in m.get('images', []) if i['size'] == [2048, 2048] and i['packed']}
                          and len({i['name'] for i in m.get('images', [])}) >= 3 for m in assigned)
     for n in DRAWERS + ['door_right'] + [f'foot_{i}' for i in range(1, 5)]:
-        metal_ok[n] = any((mats.get(m, {}).get('metallic') or 0) >= 0.9
+        metal_ok[n] = objs.get(n, {}).get('visible_mesh') and any((mats.get(m, {}).get('metallic') or 0) >= 0.9
                           for m in objs.get(n, {}).get('materials', []))
     add('R09_materials', 'must', all(wood_ok.values()) and all(metal_ok.values()),
         f'wood={wood_ok} steel={metal_ok}')
