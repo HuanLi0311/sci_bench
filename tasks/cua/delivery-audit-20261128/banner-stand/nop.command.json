@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "python3",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/banner-stand/run.py",
+    "nop",
+    "--out",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/nop-submission",
+    "--logs",
+    "/mnt/d/\u8fc5\u96f7\u4e0b\u8f7d/ic-bench/tasks/cua/delivery-audit-20261128/banner-stand/nop"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-28T05:54:36.990534+00:00",
+  "ended_utc": "2026-11-28T05:54:49.027233+00:00"
+}
